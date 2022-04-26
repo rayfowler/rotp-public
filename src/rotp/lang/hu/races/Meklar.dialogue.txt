@@ -1,0 +1,143 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Meklar specific dialogue
+
+CONTACT_ERRATIC            | Faj: [your_race]. Vezető elrendelve mint: [your_title]. Technológiai újítások: változatos. A fenyegetés értékelése: következtetésmentes.
+CONTACT_HONORABLE          | [your_race_whose_prefix_uppercase] faj érdeklődést mutat ki. [my_empire_prefix_uppercase] érzékeli a kölcsönös előnyöket. Az eredményeket nem láthatók előre.
+CONTACT_RUTHLESS           | [my_empire_prefix_uppercase] most tudatában van [your_race_possessive_prefix_lowercase] létezésével. [my_title] [your_race_giving_prefix_lowercase] a következő figyelmeztetést küldi: ne gátoljátok a Domínum célkitűzéseit. Ennek mulasztása [your_race_possessive_prefix_lowercase] kihalását fogja eredményezni.
+//
+GREETING_01                | A szövetséges nagykövet azonossága megerősítve. A Domínium állami kérelme folyamatban. A Domínium segít, ha lehetséges.
+GREETING_04                | [my_empire_prefix_uppercase] elismeri [your_race_possessive_prefix_lowercase] nagykövetét. A Domínium pillanatnyilag hajlandó a kérések feldolgozására.
+GREETING_07                | Állami kérelem. A Domínium nem tartja valószínűnek, hogy [your_race_possessive_prefix_lowercase] kéréseit feldolgozásra továbbítaná a vezérlő [my_title] egységnek.
+//
+DECLAREWAR_HATE_01         | [my_empire_prefix_uppercase] már nem hajlandó elviselni [your_empire_prefix_lowercase] jelenlétét. [your_race_whose_prefix_uppercase] faj hatalma viszonylag primitív. A kereséső-megsemmisítő protokoll végrehajtása elindítva.
+DECLAREWAR_HATE_02         | A vezérlő [my_title] egység már nem engedélyezi [your_race_whose_prefix_lowercase] faj beavatkozását a Domínium célkitűzéseibe. A Domínium készen áll, hogy sokat szenteljen az elsődleges irányelv fenntartásához.
+DECLAREWAR_HATE_03         | A Domínium nem tudja folytatni a direktíváit, miközben [your_empire_prefix_lowercase] állhatatos. A Domíniumnak el kell törölnie ezt a fajt. Nincs találat alternatívára.
+DECLAREWAR_ERRATIC_01      | A vezérlő [my_title] egység arra a következtetésre jutott, hogy [your_race_whose_prefix_lowercase] faj veszélyezteti a Domínium célkitűzéseit. A Domínium azonnal megkezdi a megsemmisítési protokollokat.
+DECLAREWAR_ERRATIC_02      | A vezérlő [my_title] egység úgy bírálja, hogy [your_race_whose_prefix_lowercase] faj valószínűleg a Domínium célkitűzéseihez szükséges titkoknak a birtokosai. A Domínium [your_race_whose_prefix_lowercase] faj titkait erőszakkal fogja elkaparintani.
+DECLAREWAR_ERRATIC_03      | A vezérlő [my_title] egység úgy bírálja, hogy [your_race_whose_prefix_lowercase] faj elfogadhatatlan változó a Domínium tervszámításaiban. A Domínium felszámolja [your_race_whose_prefix_lowercase] fajt vagy megszünteti magát a folyamatban.
+DECLAREWAR_MILITARY_01     | [my_empire_giving_prefix_uppercase] továbbra is szaporodnia kell a galaxison át az alapvető cél elérése érdekében. [your_empire_prefix_uppercase] gátolja a bővítést. A probléma most javításra kerül.
+DECLAREWAR_MILITARY_02     | A Domínium nem tudta kikutatni az alapvető célt. Lehetőség arra, hogy [your_empire_approaching_prefix_lowercase] tartozó bolygón vagy azok közelében deríthető fel az, amit keresünk. A háború elkerülhetetlen.
+DECLAREWAR_MILITARY_03     | A Domínium arra kényszerül, hogy bővítse a területét. [your_race_whose_prefix_uppercase] faj hatalma nem lehet eltántorító tényező. A háború sajnálatos, de szükséges.
+DECLAREWAR_ALLIANCE_01     | [your_empire_prefix_uppercase] hadat üzent a Domínium szövetségesének. A Domínium meg fogja védeni a saját céljai iránti érdekeit [your_race_whose_prefix_lowercase] faj elpusztításával.
+DECLAREWAR_ALLIANCE_02     | A Domínium támogatási kérelmet kapott [other_empire_taking_prefix_lowercase]. Amíg a konfliktus továbbra is fennáll, a Domínium támogatni fogja szövetségesét [your_race_whose_prefix_lowercase] faj elleni küzdelmében.
+DECLAREWAR_ALLIANCE_03     | Deknarewar_alliance_03 | [your_race_whose_prefix_uppercase] faj egyre arrogánsabb a másokkal való hadakozában. A Domínium megsegíti a többi birodalmat [your_race_whose_prefix_lowercase] faj kiírtásában a galaxisból.
+DECLAREWAR_SPYING_01       | [your_race_whose_prefix_uppercase] faj titkos akciókat szervez a Domínium ellen. Következmények a Domínium számára: elhanyagolható. Következmények [your_race_whose_prefix_lowercase] faj számára: végzetes.
+DECLAREWAR_SPYING_02       | A Domínium területén cselszövés észlelve. Forrásként [your_race_whose_prefix_lowercase] faj: igazolva. A Domínium protokolljai válaszként háborút igényelnek.
+DECLAREWAR_SPYING_03       | A Domínium nyilvánvaló destabilizációs kísérletet észlel [your_empire_prefix_lowercase] által. [your_race_whose_prefix_uppercase] faj beleavatkozása a tevékenységeinkbe: engedélyezhetetlen. A Domíniumnak vissza kell vágnia minden áron.
+DECLAREWAR_ATTACK_01       | [your_race_whose_prefix_uppercase] faj bizonyítottan ellenséges, a nyilvánvaló [my_race_possessive] fölénye ellenére. A Domínium teljes mértékben el fogja távolítani a fenyegetést.
+DECLAREWAR_ATTACK_02       | [your_race_whose_prefix_uppercase] faj egyenes támadással gátolja a Domínium célkitűzéseit. A konfrontáció elkerülhetetlen.
+DECLAREWAR_ATTACK_03       | [your_race_whose_prefix_uppercase] faj akadályoztatja a Domínium célkitűzéseinek elérését azzal, hogy megkísérlik a kiírtásukat. A Domínium minden rendelkezésre álló katonai erővel fog visszavágni.
+DECLAREWAR_OPPORTUNITY_01  | A vezérlő [my_title] egység úgy véli, hogy [your_race_whose_prefix_lowercase] faj végső soron hátrányosnak bizonyul az elsődleges irányelv elérésében. A Domínium kiírtja [your_race_whose_prefix_lowercase] fajt mielőtt a fenyegetés teljes mértékben megvalósul.
+DECLAREWAR_ASSASSIN_01     | A Domínium nagykövete működőképtelenné vált [your_race_whose_prefix_lowercase] faj által, mielőtt azt visszaigénylehettük volna a Főrendszerbe. [your_race_whose_prefix_uppercase] faj tettei erőszakos megtorlást igényelnek.
+
+OFFER_PEACE_01             | A vezérlő [my_title] egység új ítéletet hozott. A háború már nem elfogadható kiadás a Domíniumnak. A Domínium haladéktalanul békét kíván alkudni.
+OFFER_TRADE_01             | [your_race_whose_prefix_uppercase] faj jelentős erőforrásokkal rendelkezik. A Domínium is rendelkezik minőségi értékekkel. A Domínium kereskedelmi megállapodást javasol évi [amt] EK értékben.
+OFFER_PACT_01              | A Domínium az értelmetlen konfliktuson túli eredményre törekszik. A megnemtámadási szerződes [your_race_whose_prefix_lowercase] fajjal a legkörültekintőbb eszköznek vélendő az említett eredmény elérése érdekében.
+OFFER_ALLIANCE_01          | A vezérlő [my_title] egység értékeli a diplomáciát [your_race_whose_prefix_lowercase] fajjal. A Domínium formális szövetségkötést javasol [your_race_whose_prefix_lowercase] faj és [my_race_possessive_prefix_lowercase] túlélésének biztosítására. Azonnali válasz kérvényezve.
+
+WARN_TRESPASSING_01        | [your_race_whose_prefix_uppercase] faj észlelve a behatolt [system] rendszerben. A terület előzőleg már elfoglalta a Domínium. Azonnali elhagyás követelve.
+WARN_EXPANSION_01          | [your_race_whose_prefix_uppercase] faj gyors terjedése veszélyezteti a Domínium célkitűzéseinek. A területi növekedés folytatása hadviselési beavatkozást fog kikényszeríteni.
+WARN_BUILDUP_01            | A Domínium felügyelőhálózata [your_race_whose_prefix_lowercase] flottákat lehetséges biztonsági fenyegetésnek azonosítja. A Domínium érdekeinek biztosítása nevében [your_race_whose_prefix_lowercase] fajt megnövelt figyelemmel kísérjük.
+WARN_SKIRMISH_01           | A Domínium és [your_race_whose_prefix_lowercase] flották közötti konfliktus észlelve az érintett [system] rendszerben. A Domínium ismételt túllépések ellen int: a Domínium készen áll, hogy megfelelően reagáljon ha a figyelmeztetés hiábavalónak bizonyul.
+WARN_ATTACKED_01           | [attacker_race_whose_uppercase] agresszió megfigyelve a következő rendszerben: [system]. A vezérlő [defender_title] egység  üzeni a nagykövetnek: a Domínium biztonságának további veszélyeztetése [attacker_race_whose_prefix_lowercase] faj kihalását fogja eredményezni.
+WARN_INVADED_01            | Emlékeztető a Domíniumtól, hogy [attacker_race_whose_prefix_lowercase] fajnak nincs joga [defender_race_possessive_prefix_lowercase] teréhez. A flottáitok elávolításának eredménytelensége a teljes megsemmisítéseteket fogja eredményezni.
+WARN_ESPIONAGE_01          | [spy_race_whose_uppercase] kémtevékenység észlelve a Domínium területén. A Domínium biztonsági protokolljai fejlettebbek, mint [spy_race_possessive_prefix_lowercase] kémkedési képességei. A Domínium további próbára tevése végzetesnek bizonyulhat. [framed]
+WARN_SABOTAGE_01           | A Domínium tudatában van [spy_race_whose_prefix_lowercase] faj résztvételéről a legutóbbi szabotázsban. A káoszra tett kísérlet túl alantas, hogy választ érdemeljen. A szabotálásra tett további kísérletek viszont gyors megtorlást fognak biztosítani. [forced]
+WARN_BIOWEAPON_01          | A Domínium észlelte a kezdetleges biológiai fegyver használatát. Hatékony fegyverzet. [attacker_race_whose_prefix_uppercase] faj fenyegetési szintjének értékelése 3 szinttel növekedett.
+WARN_GENOCIDE_01           | [victim_race_whose_prefix_uppercase] faj népirtása [attacker_race_whose_prefix_lowercase] faj által rögzítve. A Domínium közömbös az esetleges okokkal vagy alternatívákkal szemben. [attacker_race_whose_prefix_uppercase] faj fenyegetési szintjének értékelése 5 szinttel növekedett.
+WARN_FINAL_WAR_01          | Minden ismert faj a galaxisban megegyezést kötött tartós béke biztosítása érdekében. [rebel_race_whose_prefix_uppercase] faj az egyetlen ellenálló. A Domínium megteszi a megfelelő intézkedéseket.
+WARN_COUNCIL_VOTE_01       | A Domínium tudatában van [voter_race_possessive_prefix_lowercase] cselekedeteikkel a Tanácsban. Jelentésük irreleváns. Az eredmény károsítónak minősül [candidate_race_possessive_prefix_lowercase] céljaira tekintve. A diplomáciai viszonyt ennek megfelelően igazítottuk.
+WARN_OATHBREAKER_01        | A vezérlő [my_title] egység ítéletet hozott: [your_race_whose_prefix_lowercase] faj már nem tekinthető megbízhatónak. Minden jövőbeni ügyintézés, amely a szerződést megszegő [your_race_whose_lowercase] fajra vonatkozik, felülvizsgálatra szorul. [spiesCaught]
+WARN_ATTACKED_ALLY_01      | [your_race_whose_prefix_uppercase] és [defender_race_whose_prefix_lowercase] fajok közötti konfliktust rögzítettük. [defender_race_whose_prefix_uppercase] faj ismert szövetségese a Domíniumnak. Szüntessétek meg a küzdelmet vagy a  készüljetek elő a következményekre. 
+WARN_REBELLING_AGAINST_01  | [your_race_whose_prefix_uppercase] faj most a Domínium célkitűzéseinek akadályává vált. A Galaktikus Tanács döntése elfogadhatatlan. Várakozás a Legfelsőbb Felügyelő válaszára.
+
+
+PRAISE_COUNCIL_VOTE_01     | [voter_race_whose_prefix_uppercase] faj nagykövete továbbra is támogatást nyújt [candidate_race_possessive_prefix_lowercase] célkitűzések előmozdításában. A Domínium elismeri [voter_race_whose_prefix_lowercase] fajjal való folyamatos kapcsolat előnyeit. A Domínium szükség szerint visszafizeti a szívességeket.
+PRAISE_COUNCIL_VOTE_02     | A Domínium megjegyzi a Tanácsban tett pozitív szavazást. A Domínium ennek megfelelően módosítja [voter_race_whose_prefix_lowercase] fajról alkotott eddigi véleményét.
+PRAISE_COUNCIL_VOTE_03     | A Domínium elismeri [voter_race_whose_prefix_lowercase] faj cselszövési potenciálját. További Tanácsban nyújtott támogatás a Domínium számára aggodalmakat okozhat.
+
+PRAISE_ATTACKED_ENEMY_01   | A Domínium ellenségeinek támadása elkötelezettségét bizonyít [my_race_possessive_prefix_lowercase] célkitűzéseire nézve. A Domínium elszánja magát [attacker_race_whose_prefix_lowercase] faj áldozatainak alapos csökkentésére.
+PRAISE_ATTACKED_ENEMY_02   | A Domínium üdvözli [defender_race_whose_prefix_lowercase] faj szembeni segítséget. Ez a háború új kezdetnek bizonyulhat [my_race_whose_prefix_lowercase] és [attacker_race_whose_prefix_lowercase] fajok között.
+PRAISE_ATTACKED_ENEMY_03   | [defender_race_whose_prefix_uppercase] faj megtámadása nem ment fel a Domínium ellen elkövetett múltbéli bűncselekményekkel szemben. A Domínium újraértékeli [attacker_race_whose_prefix_lowercase] faj fenyegetési szintjét az e háborúban elkövetett cselekvései alapján.
+
+PRAISE_TRADE_01            | A Domínium és [your_race_whose_prefix_lowercase] faj továbbra is sokat nyernek a folyamatos kereskedelemből. A Domínium azt kívánja, hogy a kereskedelem mindaddig tartson, amíg a megállapodás előnyösnek bizonyul.
+PRAISE_TRADE_02            | A Domínium elégedettséget fejez ki [your_race_whose_prefix_lowercase] fajjal kötött kereskedelmi megállapodással kapsolatban. Biztosítsuk, hogy a megállapodás kitartson és mindkét faj nyereségét szolgálja.
+PRAISE_REBELLING_WITH_01     | A Domínium egyetért, hogy a Galaktikus Tanács uralkodója nem megbízható. [your_race_whose_prefix_uppercase] faj ellenszenve rögzítve. A Domínium megsegíti [your_race_whose_prefix_lowercase] fajt a lázadásban.
+ 
+ACCEPT_TRADE_01            | [your_race_whose_prefix_uppercase] faj kereskedési megállapodásra tett kérés rögzítve. [amt] EK-nyi javasolt összeg. A Domínium egyetért.
+RESPOND_IGNORE_THREAT_01   | [your_race_whose_prefix_uppercase] faj fenyegetése rejtélyes. [your_race_whose_prefix_uppercase] civilizáció a Domínium flottáihoz képest lényegesen alacsonyrendűbb. Figyelmen kívül hagyás.
+RESPOND_STOP_SPYING_01     | DEgy Domíniumi kém rajta lett kapva, miközben megpróbált betekintést szerezni [you_race_whose_prefix_lowercase] életforma tevékénységeibe. A Domínium bocsánatkérést nyújt be. A rabul ejtett [my_race] mihamarabbi visszatérése kérvényelt.
+RESPOND_STOP_ATTACKING_01  | A Domínium sikeresen bemutatta katonai képességit [your_race_whose_prefix_lowercase] civilizációnak. A flottákat visszatérítem a kijelölt állomásoló koordinátákhoz.
+
+DIPLO_TECH_REQUEST_MENU_01   | Technológia specifikációja.
+DIPLO_TECH_COUNTER_MENU_01   | Kompenzáció specifikációja.
+DIPLO_TRADE_MENU_01          | Terjedelem specifikációja.
+DIPLO_TREATY_MENU_01         | Szerződés specifikációja.
+DIPLO_DECLARE_WAR_MENU_01    | Ellenőrizzd, mielőtt folytatnád.
+DIPLO_SUGGEST_WAR_MENU_01    | Célpont specifikációja.
+DIPLO_BREAK_ALLIANCE_MENU_01 | Szövetséges specifikációja.
+DIPLO_THREATEN_MENU_01       | Specifikáció.
+DIPLO_OFFER_AID_MENU_01      | Specifikáció.
+DIPLO_OFFER_TECH_MENU_01     | Technológia specifikációja.
+
+DECLINE_OFFER_01           | Kérelem megtagadva.
+DECLINE_OFFER_02           | Kérelem megtagadva.
+DECLINE_OFFER_03           | Kérelem megtagadva.
+DECLINE_OFFER_04           | Kérelem megtagadva.
+DECLINE_OFFER_05           | Kérelem megtagadva.
+DECLINE_OFFER_06           | Kérelem megtagadva.
+DECLINE_OFFER_07           | Kérelem megtagadva.
+DECLINE_OFFER_08           | Kérelem megtagadva.
+DECLINE_OFFER_09           | Kérelem megtagadva.
+DECLINE_ENEMY_ALLY_01      | Kérelem megtagadva.
+DECLINE_NO_WAR_ON_ALLY_01  | Kérelem megtagadva.
+DECLINE_PEACE_TREATY_01    | Kérelem megtagadva.
+DECLINE_ANNOYED_01         | Kérelem megtagadva.
+DECLINE_ANNOYED_02         | Kérelem megtagadva.
+DECLINE_ANNOYED_03         | Kérelem megtagadva.
+DECLINE_OATHBREAKER_01     | Kérelem megtagadva.
+DECLINE_ESPIONAGE_01       | Kérelem megtagadva.
+DECLINE_SABOTAGE_01        | Kérelem megtagadva.
+DECLINE_BUILDUP_01         | Kérelem megtagadva.
+DECLINE_ENCROACH_01        | Kérelem megtagadva.
+DECLINE_SKIRMISH_01        | Kérelem megtagadva.
+DECLINE_ATTACK_01          | Kérelem megtagadva.
+DECLINE_INVASION_01        | Kérelem megtagadva.
+DECLINE_BIOWEAPONS_01      | Kérelem megtagadva.
+DECLINE_TECH_TRADE_01      | Kérelem megtagadva.
+OFFER_TECH_EXCHANGE_01     | A Domínium [tech] technológiát igényel. Kompenzáció specifikációja.
+ACCEPT_TECH_EXCHANGE_01    | Elfogadás rögzítve.
+ACCEPT_FINANCIAL_AID_01    | Elfogadás rögzítve.
+ACCEPT_TECHNOLOGY_AID_01   | Elfogadás rögzítve.
+
+BREAK_TRADE_01             | Kereskedelmi megállapodás megszűntetve.
+ANNOUNCE_PEACE_01          | Elfogadás rögzítve.
+ACCEPT_PEACE_01            | Kérelem elfogadva.
+
+BREAK_PACT_01              | Megnemtámadási szerződés megszűntetve.
+ANNOUNCE_PACT_01           | Elfogadás rögzítve.
+ACCEPT_PACT_01             | Kérelem elfogadva.
+
+BREAK_ALLIANCE_01          | Szövetség megszűntetve.
+ANNOUNCE_ALLIANCE_01       | Elfogadás rögzítve.
+ACCEPT_ALLIANCE_01         | Kérelem elfogadva.
+ACCEPT_JOINT_WAR_01        | Kérelem elfogadva.
+
+RESPOND_CLOSE_EMBASSY_01   | Cselekvések rögzítve.
+RESPOND_BREAK_TRADE_01     | Cselekvések rögzítve.
+RESPOND_BREAK_PACT_01      | Cselekvések rögzítve.
+RESPOND_BREAK_ALLIANCE_01  | Cselekvések rögzítve.
+RESPOND_DECLARE_WAR_01     | Cselekvések rögzítve.

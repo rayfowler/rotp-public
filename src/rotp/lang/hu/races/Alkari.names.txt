@@ -1,0 +1,22 @@
+// all possible names
+name: Szárnyaló, Röppenő, Költő, Tollász, Égivándor, Fészkelő
+
+desc1: Tiszteletreméltó Militaristák
+desc2: Legügyesebb Pilóták
+desc3: A Szárnyaló Szuverenitás egy szervezett harcos társadalom, amely magasra értékeli a csatában szerzett dicsőséget.
+
+// possible home system names
+home: Fészek, Lebbeg, Szásuh, Tollár, Ozat
+
+title:     Király
+fulltitle: Oromkirály
+
+// possible leader names
+leader: Ariel, Távlátnok, Villámröpp, Rőtszárny, Élkarom, Mennyúr
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Denevér, Karvaly, Pelikán, Pinty, Ökörszem, Holló, Toll
+ship2: Sólyom, Égisas, Űrsirály, Harci Bagoly, Lunda, Csillagszárny
+ship3: Hadimadár, Ostromsas, Csatahéja, Viharadár, Keselyű, Hárpia, Harcikondor
+ship4: Mennydörgésmadár, Rettegésszárny, Égimester, Süsü, Pteranodon, Griff, Főnix
+

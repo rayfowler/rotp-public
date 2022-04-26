@@ -1,0 +1,21 @@
+// all possible names
+name: Nazlok, Sarlok, Spilok, Sadelok, Dralok
+
+desc1: Agresszív Diplomaták
+desc2: Legfőbb Kémek
+desc3: A Nazlokok természetellenes és titkos képmásai egy másik dimenzióból származnak 
+
+// possible home system names
+home: Nazin, Mordora, Hádész, Mélység, Rejtek
+title:     Uralkodó
+fulltitle: Uralkodó
+
+// possible leader names
+leader: Darkan, Morfan, Narzina, Nazgur, Sador, Sitra
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Köd, Pára, Szikra, Fátyol, Omen, Éter, Csillám
+ship2: Ábránd, Árnyék, Álom, Illúzió, Reflex, Látomás, Kísértés
+ship3: Fantom, Szellem, Képmás, Szörny, Szellem, Lélek, Rém
+ship4: Rémálom, Káprázat, Terror, Horror, Élőholt, Kaszás, Fóbia
+

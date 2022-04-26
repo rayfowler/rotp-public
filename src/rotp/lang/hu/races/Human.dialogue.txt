@@ -1,0 +1,100 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Human specific dialogue
+
+CONTACT_HONORABLE          | Mi, a földi [my_race_possessive], [your_title] és mi nagyon izgatottak vagyunk, hogy kapcsolatot létesítünk veletek. Ha bármire szükségetek van a Tirumvirátustól, bármire, kérjük ne habozzatok kérni.
+CONTACT_PACIFIST           | Forrón köszöntünk,[your_name]. Ti vagytok [your_empire_prefix_lowercase]? Mi [my_empire_addressing_prefix_lowercase] képviseljük és reméljük, hogy ez lesz az első a népeink közötti számtalan baráti értékcsere sorában.
+CONTACT_ERRATIC            | Mi, a Föld emberei, általában előnyben részesítjük a problémáinkat tárgyalással és diplomáciával megoldani. Ha a népetek inkább erőszakosabb módszereket preferál, úgy boldogan kiszolgálunk benneteket, [your_race_possessive].
+//
+GREETING_01                | 
+Hah! Itt van [your_empire_prefix_lowercase] nagykövete! Megkínálhatunk bármilyen étellel vagy itallal?  Kérjük helyezzétek magatokat kényelembe és mondjátok el, mit tehetünk ma értetek.
+GREETING_04                | Üdvözlet! Kívántok valamit a Triumvirátustól? Nem vagyunk benne biztosak, hogy a kéréseteket el tudjuk juttatni a Triumvirátushoz, de talán olyasmit szeretnétek amiért nem szükséges zavarni őket?
+GREETING_07                | Lám, megjelennek [your_race_prefix_lowercase] nagykövetei. Mit akartok egészen pontosan tőlünk? Legjobb lenne nem kérni semmi ésszerűtlenséget.
+//
+DECLAREWAR_HATE_01         | A Triumvirátus örül, hogy megmutathatja miért nem kéne egy olyan fajt irritálni, amelynek ereje eltörpíti a tiéteket. Tanulnotok kellene ebből a leckéből... ha túlélitek.
+DECLAREWAR_HATE_02         | Elszomorít bennünket az idő, amit arra vesztegettünk el, hogy "játszottuk a kedveset" veletek, miközben ti egyértelműen egy hosszú és véres háborúra rendeltettetek.
+DECLAREWAR_HATE_03         | 
+Nincs többé értelme megjátszani semmit! Egy másodperccel sem fogjuk tovább tolerálni az igényt a galaxis veletek való megosztására!  Nem számít milyen árat kell fizetnünk érte!
+DECLAREWAR_ERRATIC_01      | 
+Mostanában sok mende-monda járta arról, hogy a katonaságunk kezd lusta és öntelt lenni. Remélhetőleg egy háború veletek vissza fogja őket rázni a formájukba, a Triumvirátus veszélyesebb ellenfelei számára.
+DECLAREWAR_ERRATIC_02      | Ismeritek a háborús játékokat, nagykövet? Imitált harcok ami során bedobjuk erőinket egymás ellen gyakorlás céljából. Szóval, azt reméljük, hogy egy igazi háború a népetekkel előnyösebb lehet ebből a szempontból. 
+DECLAREWAR_ERRATIC_03      | Semmi sem egyesíti jobban a népességet mint egy közös ellenség, nagykövet! Ha nem szolgáljátok ki az érdeklődésünket diplomáciai úton, legalább olyan erőként válhattok hasznunkra, ami összehozza a népünket. 
+//
+DECLAREWAR_MILITARY_01     | Jobb lett volna nektek, ha beleegyeztek, hogy átengeditek a területeket diplomatikus úton. Az elutasításotok arra kényszerít minket, hogy alternatív lépéseket tegyünk.
+DECLAREWAR_MILITARY_02     | Amint jól tudjátok, a növekvő népesség folyamatos területi terjeszkedést igényel, hogy megfelelhessen az egyre bővülő szükségleteknek. Eljött számunkra a terjeszkedés ideje, és a terület, amire szükségünk van a tiétek. 
+DECLAREWAR_MILITARY_03     | A Triumvirátus tagjai épppoly elkötelezettek a népük felé, amennyire a népük elkötelezett irányukban. Ha a szükségleteink azt diktálják, hogy gyarmatosítanunk kell a világaitokat, boldogan adják majd életüket, hogy megtörténni lássák!
+//
+DECLAREWAR_ALLIANCE_01     | Sok módja van egy szövetséges lenyűgözésének, nagykövet. Kiiktatásotok a legnagyobb bizonnyal megerősíti viszonyunkat [other_race_relational_prefix_lowercase], szóval próbáljatok jó műsort csinálni, rendben?
+DECLAREWAR_ALLIANCE_02     | A Triumvirátus sosem fogja magára hagyni a szövetségeseit, hogy egyedül nézzenek szembe az ellenségeikkel! Az Ember és [other_race_prefix_lowercase] egyesülésével nincs reményetek a győzelemre!
+DECLAREWAR_ALLIANCE_03     | Csak amiért erős hadsereggel rendelkeztek, nem jelenti azt, hogy a galaxis alapesetben a tiétek. Örömmel csatlakozunk [other_race_approaching_prefix_lowercase] és együtt nézzük majd bűnhődéseteket számtalan bűntettetek miatt!
+//
+DECLAREWAR_SPYING_01       | Úgy tűnik azt gondoltátok, hogy megúszhattok egy ilyen alulkezelt taktikát, csak a diplomatikai preferenciáitok miatt. Ne féljetek! Meg fogjuk tanítani nektek mekkora hibát követtetek el!
+DECLAREWAR_SPYING_02       | Jobb lett volna mindkettőnknek, ha ti is épp oly elkötelezettek lettetek volna a diplomácia iránt, mint mi. A háborús ürügyetekre mi egy kissé... tradicionálisabb hadviseléssel fogunk válaszolni.
+DECLAREWAR_SPYING_03       | 
+Reméltük, hogy egyetértetek diplomáciai nézeteinkkel, mint a célok elérésének eszközével. Mióta nektek egyértelműen aljasabb elképzeléseitek vannak, attól tartunk, hogy nem maradt más választásunk, csak ily módon reagálni.
+//
+DECLAREWAR_ATTACK_01       | 
+Nincs szükség a diplomatikus álcára többé! A megtámadásunk egyszerűen bizonyítja, hogy kinőttétek a hasznosságotokat. De ne aggódjatok! Biztosan találunk majd számotokra egy oldalt a történelem könyveinkben valahol.
+DECLAREWAR_ATTACK_02       | Ne becsüljétek alá a Triumvirátus hadseregét! Ha harcot akartok, akkor örömmel állunk elébe, nagykövet!
+DECLAREWAR_ATTACK_03       | 
+Az emberiség számos sötét időszakon átesett, de minden alkalommal erősebben és bölcsebben emelkedett ki belőle, mint előtte volt. Biztosíthatunk nagykövet, hogy ezúttal sem lesz másképp.
+//
+DECLAREWAR_OPPORTUNITY_01  | Minden cselekedetünkkel a saját céljainkat szolgáljuk, nagykövet. Általában a diplomáciát preferáljuk, de miőta nincs valódi oka annak, hogy a közelünkben tartsunk, egy gyors háború veletek jobban szolgálja az érdekeinket.
+DECLAREWAR_ASSASSIN_01     | Sokkolt bennünket megtudni, hogy egy értelmesnek tűnő faj képes lehet olyan kegyetlenségre mint egy nagykövet megölése. Példát fogunk statuálni általatok, hogy egy birodalom se tegyen olyat a Triumvirátus ellen, amit ti!
+
+OFFER_PEACE_01             | 
+Biztosan látjátok mostanra, hogy az olyan háborúk, mint ezek csupán tragédiát hoznak. Állítsuk meg ezt az ostobaságot mielőtt több értékes [your_race] és [my_race] vér hull. Csatlakozzatok a háború befejezéséhez és az új jövő kovácsolásához amit gyermekeink büszkén örökölhetnek!
+OFFER_TRADE_01             | Van egy mondás [my_home], hogy "a háború elkerülhetetlen", de régen megtanultuk, hogy ez sosem válik igazzá, ha jólét uralkodik. Álljunk össze ennek a jólétnek az eléréséért. Kezdhetnénk mondjuk, hmm, [amt] EK értékben évente?
+OFFER_PACT_01              | Mindketten tudjuk, hogy háborúk véletlenül is kirobbanhatnak amikor a birodalmak a galaxison át terjeszkednek. Az utolsó dolog amit a Triumvirátus akar az háború, egy olyan kivételes néppel, mint a tiétek. A megnemtámadási egyezség mindkettőnk népének könnyebb pihenlést fog biztosítani éjszaka. Egyetértetek?
+OFFER_ALLIANCE_01          | 
+[your_race_possessive_prefix_uppercase] tényleg csodálatosak! Nagykövet, épp most jutott eszünkbe egy elképzelés: alakítsunk szövetséget [your_race_possessive_prefix_lowercase] és [your_race_possessive_prefix_lowercase] között. Együtt meg tudjuk tanítani a galaxis csőcselékének, hogy nem az erőszak, hanem a diplomácia az egyetlen út előre! 
+
+WARN_TRESPASSING_01        | 
+Nagykövet, úgy tűnik, hogy [your_race_possessive_prefix_lowercase] flottája [your_race_possessive_prefix_lowercase] helyét foglalta el az űrben. Bizonyára tudjátok, hogy ezt nem engedhetjük meg? Minden rendben, csak távolítsátok el a flottátokat és elfelejtjük, hogy valaha megtörtént.  
+WARN_EXPANSION_01          | WAmíg a Triumvirátus tiszteletben kívánja tartani a néped akaratát, egyszerűen nem lehetünk vakok ilyen erőszakos területi terjeszkedésre. Biztosak vagyunk benne, hogy mindezt megszűntetitek diplomáciai kötelékeink nevében, igaz nagykövet?
+WARN_BUILDUP_01            | Kérjük, nagykövet! A katonai vezetőink fel vannak háborodva flottáitok legutóbbi felsorakozásán! Megkérünk, hogy lassítsátok le a hajóitok építését, hogy megmutassátok azoknak a katonai bolondoknak, hogy a félelmük alaptalan!
+WARN_SKIRMISH_01           | Az imént olvastunk egy zord jelentést az összetűzésről a Triumvirátus hajói és [your_empire_prefix_lowercase] flottája között. Kérjük biztosítsatok róla, hogy ez nem történik meg többet, különben attól tartunk háború lesz az elkerülhetetlen jövő!
+WARN_ATTACKED_01           | Nem jó nagykövet: nagyon nem jó. Megtámadni bennünket [system] rendszerben... mit gondoltok? Mi megpróbáljuk a katonaságot féken tartani a diplomáciai elköteleződés jegyében, de ha fenntartjátok ezt, nem marad semmi amivel kielégíthetnénk őket. 
+WARN_INVADED_01            | A tábornokaink dühösek a népetek legutolsó akciója miatt! [system] rendszer általatok való elfoglalásával immár készek harcba menni! Azonnal abba kell hagynotok ezt! Nem akartok háborút kezdeni, ugye?!
+WARN_ESPIONAGE_01          | 
+A népünktől nem idegen a kémkedés, már az évszázadokkal ezelőtti keserűen rideg háború óta átjárta a kultúránkat. De tudnotok kell, hogy az ismételt próbálkozások titkaink ellopására megtorlással fognak találkozni a jövőben? [framed]
+WARN_SABOTAGE_01           | A kémkedést meg tudtuk érteni, de a szabotázst? Meg fogjuk tenni amit tudunk, hogy a tábornokokat kiengesztelve tartsuk, de ha mégegyszer megpróbálkoztok valami hasonlóval, kétséges, hogy képesek vagy egyáltalán hajlandóak leszünk-e segíteni nektek a jövőben. [forced]
+WARN_BIOWEAPON_01          | Tudomásunkra jutott, hogy biofegyvereket használtatok civileken [system] rendszerben. Mi... őszintén, nem találunk szavakat. A diplomatikus kapcsolataink érdekében meg fogjuk tenni amit tudunk, de nem mondhatjuk, hogy lelkesek volnánk a Triumvirátus várható reakciójával kapcsolatban.
+WARN_GENOCIDE_01           | Mit tettetek?! Egy gyönyörű és antik kultúra örökre elveszett! Borzongunk belegondolni, mi lesz a Triumvirátus tagjainak reakciója erre a hírre: [victim_race_possessive_prefix_lowercase] kiirtása a filozófiánk abszolút antitézise!
+WARN_FINAL_WAR_01          | A galaxis végre úgy választott, hogy összefog és a békéért mozdul, és mégis, a népetek úgy választ, hogy dacol a demokratikusan kijelölt teendőinkkel? Az összes közös ügyletünk után hibáztunk, hogy többet gondoltunk rólatok. De tudjuk, hogy ez a hiba hamarosan helyesbítve lesz! 
+WARN_COUNCIL_VOTE_01       | Bevalljuk, hogy csalódottak vagyunk tanácsbéli tetteitek miatt, nagykövet. Reméljük, hogy ez egyszeri hiba volt részetekről, és mindez idővel - ahogy mi, emberek szeretjük mondani - "vízzé válik a híd alatt".
+WARN_OATHBREAKER_01        | A bizalom minden diplomácia alapja, nagykövet. Megszegve a szavatokat köptetek a bizalmunkra, és biztosíthatunk titeket, hogy a diplomatikus kapcsolataink olyan ütést szenvedtek, amiből valószínűleg sosem fognak felépülni. [spiesCaught]
+WARN_ATTACKED_ALLY_01      | Nagykövet, erősen javasoljuk, hogy tartózkodjatok [defender_race_possessive_prefix_lowercase] ellen elkövetett további támadásoktól. Szövetséget esküdtünk velük, és nem leszünk képesek féken tartani a hadseregünket, ha továbbra is ragaszkodtok az erőszakos akciók sorához!
+WARN_REBELLING_AGAINST_01  | Nem lehet, hogy helyettünk lettetek megválasztva a Galaktikus Tanács vezetésére! A Triumvirátus tagjai dühöngeni fognak! Attól tartunk, hogy a háborút fogják az egyetlen megmaradt, életképes lehetőségnek tekinteni!
+//
+PRAISE_COUNCIL_VOTE_01     | Jó barátunk, a nagykövet! Csak el akartuk mondani: jól cselekedtetek ma a tanácsban! A Triumvirátus mindig értékeli azokat, akik támogatják az ügyeinket és örül, hogy egy olyan nagyszabású szövetséges mint ti, továbbra is kiérdemli ezt a megbecsülést. 
+PRAISE_COUNCIL_VOTE_02     | Ó, [voter_empire_prefix_lowercase] nagykövete. Örülünk, hogy megtaláltunk titeket mielőtt elnapolnánk. Boldogok vagyunk, hogy ilyen erősnek látjuk a hiteteket a Triumvirátus elképzeléseiben! Mikor mindannyian hazatértünk, tegyetek róla, hogy felveszitek velünk a kapcsolatot, tehát megerősíthetjük diplomáciai kötelékeinket!
+PRAISE_COUNCIL_VOTE_03     | 
+Szóval mindenek után ránk szavaztatok, úgy-e? Örvendetes, hogy végül észhez tértetek. Ha hajlandóak vagytok munkát fektetni új diplomatikus kötelékek kovácsolásába a Triumvirátussal, talán hajlandóak leszünk egy jó szót szólni az érdeketekben.
+
+PRAISE_ATTACKED_ENEMY_01   | Kevés kétségünk van afelől, hogy [defender_race_possessive_prefix_lowercase] ne számítottak volna arra, hogy a Triumvirátus valaha háborút vívjon, de tudjuk, hogy azt nem várták, hogy a barátaink, [your_race_possessive_prefix_lowercase] is csatlakoznak! Együtt megmutathatjuk nekik, hogy miért a diplomácia és a bizalom a legfontosabb eszközök valaki kezében!
+PRAISE_ATTACKED_ENEMY_02   | A mai egy jó nap a harcra, nagykövet. Bár a barátságkötést messze békésebb körülmények között részesítjük előnyben, de ha a háború [defender_race_possessive_prefix_lowercase] ellen egy hosszú barátság kezdetét jelöli a ti népetek és a miénk közt, akkor kétségkívül megéri megvívni egy háborút!
+PRAISE_ATTACKED_ENEMY_03   | 
+A Triumvirátus több, mint képes leküzdeni bármely ellenséget, aki megveti a békés kapcsolatokra irányuló próbálkozásainkat. Ám, ha ragaszkodtok csatlakozni ehhez a harchoz, mint egy jóhiszemű cselekedetként, bizonyosan nem állunk semmivel az utatokba!
+PRAISE_TRADE_01            | Namost, ez az amiről az egész szól! A jóbarátok és virágzó kereskedelmi egyezségek többet érnek mint az ellenségek és pusztító háborúk! Örvendünk, hogy a népetek barátunkká lett és biztosak vagyunk benne, hogy a Triumvirátus tagjai ugyanígy éreznek!
+PRAISE_TRADE_02            | Igen, a bizalom a diplomácia alapja, de a kölcsönösen előnyös kereskedelem bizonyosan nem árt, igaz-e?  Reméljük, hogy határozatlan ideig folytathajtuk egyezségünket és új módokat találunk felbukkanni egymás megsegítésére. Ahogyan mi emberek szeretjük mondani: "Ha megvakarod a hátam, akkor én is megvakarom a tiéd!"
+
+PRAISE_REBELLING_WITH_01   | 
+Ne féljetek, nagykövet! Mi is felismerjük a tanácsot annak, ami: korrupt diktatúra békés együttélésként leplezve. Egyként fogunk állni és nem nyugszunk addig amíg nem szabadulunk meg ezektől a zsarnokoktól egyszer és mindenkorra!
+
+ACCEPT_TRADE_01            | Ez a kereskedelmi megállapodás mindkettőnknek hasznot fog hozni, nagykövet. [my_empire_prefix_uppercase] és [your_empire_prefix_lowercase], barátok az évi [amt] EK dallamára! Ennek van egy szép csengése, egyetértetek?
+RESPOND_IGNORE_THREAT_01   | Ó, a fenyegetésetek valamiféle vicc ugyebár? Igen, igen, egy vicc! Haha, nagyon szórakoztató, nagykövet!
+RESPOND_STOP_SPYING_01     | Mondjuk, ez egy kusza ügy. A Triumvirátus megtagad minden ismeretet erről a zsivány ügynökről, aki önszántából kémkedett a népetek után. Kérjük, küldjétek vissza hozzánk és biztosítunk róla, hogy ez nem fog többé megtörténni.
+RESPOND_STOP_ATTACKING_01  | Ez egy régi [my_race] tradíció amit mi "szablyacsörgésnek" hívunk. Tekintsétek a szablyát megfelelően csörögni, nagykövet: a flottáink most visszatérnek hozzánk.

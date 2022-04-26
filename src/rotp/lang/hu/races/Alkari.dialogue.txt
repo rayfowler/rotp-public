@@ -1,0 +1,94 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Alkari specific dialogue
+
+CONTACT_HONORABLE          | Üdv neked, oh [your_nametitle] [your_name] [your_empire_originating_prefix_lowercase]! Mi [my_empire_originating_prefix_lowercase] kiterjesszük szívélyes üdvözletünket és várjuk, hogy közös tiszteletben fejlesszük a kapcsolatunkat.
+CONTACT_PACIFIST           | Legőszintébb üdvözletünk, [your_title] [your_empire_originating_prefix_lowercase]. Ne tereljen háborút a Szuverenitásunk küszöbéhez, és mindkét fajunk virágozni fog közös, nemes viszonyunkban.
+CONTACT_ERRATIC            | A hosszú léttartamú [my_empire] nagykövete vagyok. Az én népem kiterjeszti üdvözletetét, ahogy az a szokásunk. A fajotok [your_race] néven ismert? Milyen... érdekes.
+
+//
+GREETING_01                | Üdv neked, nagykövet! Milyen szolgáltatást nyújthat a Szuverenitás egy ilyen nagyra méltatott szövetséges számára ezen a napon?
+GREETING_04                | Üdvözlöm, nagykövet. A Szuverenitás készen áll, hogy meghallja a kérését, ám, hogy milyen messzire megy el annak teljesítésében, még kiderül...
+GREETING_07                | Beszéljen gyorsan, nagykövet! A törvényeink előírják, hogy betartsunk minden megfelelő illemszabályt, de ez nem jelenti azt, hogy szívesen pazaroljuk időnket a triviális igényeinek a teljesítésére!
+
+//
+DECLAREWAR_HATE_01         | Egy olyan faj, mint a tiéd, amely nem törődik a tulajdonnal és politikával, nem tartozik a Szuverenitás által uralt galaxisba, nagykövet! Készülj fel a harcra!
+DECLAREWAR_HATE_02         | Az ostobaságod és arroganciád idézte ezt elő! Add át a követekző az üzenetet a balgatag [your_title] vezérednek: a háború szele feléd fúj!
+DECLAREWAR_HATE_03         | Micsoda vulgaritás! [my_empire_prefix_uppercase] inkább megszűnik, mintsem hogy továbbra is egy világegyetemben éljen egy ilyen faragatlan néppel, nagykövet!
+//
+DECLAREWAR_ERRATIC_01      | Nagykövet, nem tagadhatjuk meg, hogy kellemes volt egy olyan érdekfeszítő fajjal ügyködni, mint az öné. Sajnáljuk, hogy az eféle kapcsolataink most véget érnek.
+DECLAREWAR_ERRATIC_02      | Ön megállás nélkül elszórakoztatott minket amióta a népeink először találkoztak. A Szuverenitás lelkesen figyeli, hogy hasonlóan szórakoztató lesz-e háború idején, nagykövet!
+DECLAREWAR_ERRATIC_03      | Üdv, [your_empire_originating_prefix_lowercase] nagykövete! [my_empire_prefix_uppercase] tisztességes megmérkőztettésben kívánja próbára tenni magát az önök jelentős erejével szemben. Készítse fel a flottáit és népét a háborúra!
+//
+DECLAREWAR_MILITARY_01     | A Szuverenitásnak továbbra is terjesztenie kell a területét, hogy biztosíthasson a rajunk számára. Amikor nem találunk lakatlan világokat, az alsóbbrendűbb birodalmak világait kobozzuk el. A birodalmatok jelentéktelenebb a miénknél, így a világaitok most a mieink lesznek.
+DECLAREWAR_MILITARY_02     | Az idő végül eljött, nagykövet! Egy szárnyal, a Szuverenitás a háború árnyékát veti rátok, míg a másikkal az uralma alá söpri a világaitokat.
+DECLAREWAR_MILITARY_03     | Ez... sajnálatos, hogy ide jutottunk, nagykövet. Meg kell kaparintanunk a bolygóit a saját használatunkra, vagy belelpusztulunk a próbálkozásba. Nincs más választásunk, készüljenek a háborúra!
+//
+DECLAREWAR_ALLIANCE_01     | [other_empire_prefix_uppercase] diplomatái tájékoztattak, hogy háborúban vannak az ön népével. [my_empire_prefix_uppercase] becsület-köteles hadakozás idején segítségükre sietni a szövetségeseinknek: ez egy tény, amelyet hamarosan meg fog bánni, nagykövet.
+DECLAREWAR_ALLIANCE_02     | A szövetségesünk segítségért hív, és a Szuverenitás válaszol! A végetek közeleg, nagykövet: a kombinált flottáinknak nem állhattok ellent sokáig!
+DECLAREWAR_ALLIANCE_03     | Felkavarónak tartjuk, hogy az egyik szövetségesünk elleni háború mellett döntöttetek. A legszentebb törvényink szerint most meg kell segítenünk őket az ellenetek irányuló küzdelemben! Kérjük, térjetek le erről az útról, mielőtt túl késő lenne mindnyájunknak!
+//
+DECLAREWAR_SPYING_01       | Hajlandóak voltunk barátságos viszonyokat folytatni a népével, nagykövet. Ám, hogy ilyen tisztességtelen cselekedeteket tettek a koronánk ellen arra kényszerített minket, hogy újraértékeljük az álláspontunkat.
+DECLAREWAR_SPYING_02       | Egy ilyen súlyos sértés nem marad büntetlenül, nagykövet! Azok, akik a titokban cselekszenek ellenünk, megalázkodásra fognak kényszerülni a haragunk által!
+DECLAREWAR_SPYING_03       | Nagykövet! Hogyan mer a népe ilyen szörnyű cselekedeteket elkövetni a Szuverenitás ellen?! Minden áron igazságot teszünk e felett! Készüljenek fel a háborúra!
+//
+DECLAREWAR_ATTACK_01       | Hm! Micsoda bolondos döntés, nagykövet! De ha háború az, amit kíván, akkor háború az, amit a Szuverenitás megad!
+DECLAREWAR_ATTACK_02       | S íme, elkezdődött, nagykövet! Ha [my_race_possessive_prefix_lowercase] népe túlélte a Vörös Évezred végtelen háborúit, akkor könnyedén túlélünk egy háborút a fajotok ellen!
+DECLAREWAR_ATTACK_03       | El kellett volna várnuk ezt a fajta vulgaritást egy olyan faragatlan fajtól, mint az öné, nagykövet! Ne gondolja, hogy a Szuverenitás megadja magát kihívás nélkül!
+//
+DECLAREWAR_OPPORTUNITY_01  | Mint látható mi, [my_empire_prefix_lowercase], nagy sikerre tettünk szert az űrutazó kalandjaink során. Sajnos, nagykövet, a szükségleteinknek azt diktálják, hogy a következő sikerünket az ön birodalmának rovására érjük el.
+DECLAREWAR_ASSASSIN_01     | Milyen durvaság ez? Olyan szörnyű cselekményt követnétek el, mint a nagykövetünkk hidegvérű meggyilkolása? A Szuverenitás nem fogja tovább tűrni, hogy egy olyan visszataszító faj, mint a tiéd, tovább létezzen!
+
+
+OFFER_PEACE_01             | A Vörös Évezred története nem ismétlődhet meg, nagykövet! Arra kérjük, hogy tisztelje meg [your_race_regarding_prefix_lowercase] es [my_race_regarding_prefix_lowercase] egyaránt azzal, hogy aláírja ezt a békeszerződést, amellyel megakadályozhatunk minden további vérontást!
+OFFER_TRADE_01             | Ilyen civilizált fajok, mint a mieink bizonyára képesek megsegíteni egymást becsületes együttműködéssel. [my_empire_prefix_uppercase] kereskedelmi megállapodást kíván kötni [your_empire_relational_prefix_lowercase], évi rögzített [amt] EK-nyi mennyiséget. Mi a válasza, nagykövet?
+OFFER_PACT_01              | A Szuverenitás elégedett azzal, ahogyan a népe bemutatja magát a diplomáciai ügyein keresztül. Hogy alátámasszuk, milyen nagyra méltányoljuk a kapcsolatunk, szeretnénk aláírni egy megnemtámadási szerződést, biztosítva, hogy egyikünk sem esik áldozatul... Egymás szándékainak félreértelmezésének.
+OFFER_ALLIANCE_01          | Az intézkedései sok megbecsülést nyertek a Szuverenitásban, nagykövet! Az Oromkirály elrendelte [your_race_possessive_prefix_lowercase] és [my_race_possessive_prefix_lowercase] közötti szövetség azonnal megkötését! Csupán az aláírására várunk!
+
+WARN_TRESPASSING_01        | Felettébb helytelen, hogy [your_race_possessive_prefix_lowercase] flottái körül a mi [system] rendszerünkben parádéznak, mintha a saját területükön lennének. Mindenki legjobb érdekét szolgálná, nagykövet, ha ezt azonnal orvosolná.
+WARN_EXPANSION_01          | Kontroll nélküli bővelkedés amerre csak kívánják! Nagy tiszteletlenséget mutat ez a szomszédaik felé, nagykövet! Azt javasoljuk, hogy ne folytassák e tiszteletlenséget a Szuverenitással szemben.
+WARN_BUILDUP_01            | Vakoknak tekintenek minket, nagykövet?! Látjuk a flottáik továbbra is növekvő a méretét és erejét. Bizonyítsák be, hogy nem kívánnak ártani nekünk és hatálytalanítsák ezt a felhalmozódást, máskülönben megelőző beavatkozásra fogunk kényszerülni!
+WARN_SKIRMISH_01           | Tudatában vagyunk az érintett [rendszer] rendszerben végbemenő hadjárataikróé, nagykövet! A Szuverenitás eltekint e tevékenységét felett, ez az egyszer. Miért? Nem látok okot arra, hogy egy olyasvalakit, mint ön, válasszal méltassak!
+WARN_ATTACKED_01           | Egy ilyen merész támadás csak a teljes tisztelet hiányából fakadhat, nagykövet! Szerencsésnek tekintheti a birodalmát, hogy az Oromkirály nem kegyeskedik megróni azt e szemtelenségéért. Lehet, hogy legközelebb nem lesznek ilyen szerencsések!
+WARN_INVADED_01            | Szóval meg akarjátok kaparintani azt, ami nem a tietek, nagykövet?! Inkább ne csábítsátok a haragunk: szívesen megszabadulnánk attól az értéktelen bolygótól ha ez azt jelentené, hogy egyúttal megszabadulnánk a butaságotoktól is!
+WARN_ESPIONAGE_01          | Hümm, hümm, hümm... Egyáltalán nem lep meg bennünket, hogy egy ilyen mocskos faj kémkedésbe vetelmülne, hogy elérje céljait. Ne felejtse el, nagykövet: [my_race_possessive_prefix_lowercase] szeme olyannyira éles, hogy semmi sem kerüli el a tekintetünket. [framed]
+WARN_SABOTAGE_01           | Ez végletesen gusztustalan, nagykövet! A sötétségben ólálkodni és szabotázst elkövetni, mint valami lidércek az éjszakában!? De olyan hülyék vagytok, mint amilyen ádázok: az elpusztított épületek nem voltak elég fontosak ahhoz, hogy választ indokoljanak! [forced]
+WARN_BIOWEAPON_01          | Becstelenség! Becstelenség! Az a kimondhatatlanul rémisztő fegyvert vetettétek be azok ellen, akik még csak pajzsot sem tudtak védelmükbe emelni! A jól kiérdemelt hírhedtsége végig követni fog titeket, nagykövet!
+WARN_GENOCIDE_01           | Bár egyetértek abban, hogy [victim_race_possessive_prefix_lowercase] mind egy trágár férgekből álló nyomorúságos horda voltak, a Szuverenitás határozottan elitéli a népirtást. Kíváncsiak vagyunk, nagykövet, ha az ön faja képes-e megismételni ezen intézkedéseket további... Civilizáltabb fajokon?
+WARN_FINAL_WAR_01          | Nincs erény abban ez irányban, amelyet választottatok, nagykövet. Félreértés ne essék: most, hogy a szabályszerűen megválasztott galaxis vezetője ellenállása mellett döntöttetek, a mi becsületünk azt diktálja, hogy mindent megtegyünk a megállításotok érdekében!
+WARN_COUNCIL_VOTE_01       | Ennyit a jeles [your_empire] nagykövetőről! Valóban úgy gondolta, hogy nem fogunk rájönni a tanács megtévesztésének tettére? Féltenije kellene a népét, nagykövet: az Oromkirály felettébb elégedetlen lesz.
+WARN_OATHBREAKER_01        | Minő botrányos! Tudja jól, milyen fontosnak tartjuk becsület erényét, mégis ilyen nyíltan szegi meg a saját szavát csupán azért, hogy a saját vágyait kielégítse?! A Szuverenitás örökre emlékezni fog erre a sértésre, nagykövet, és minden bizonyal hasonlóképpen visszafizeti! [spiesCaught]
+WARN_ATTACKED_ALLY_01      | Felzaklató az a tény, nagykövet, hogy a nép, amelyet képvisel, és [defender_empire_prefix_lowercase] így civakodnak. Nem remélheti, hogy megfelelhetnek a kombinált erőinknek, nagykövet: a Szuverenitás arra kéri önt, hogy birodalmával együtt vizsgálják felül a tetteiket.
+WARN_REBELLING_AGAINST_01  | Azt hiszed, hogy már elfelejtettük volna milyen becstelennek bizonyultatok a múltban? Nem számít, ha ellenetek kell harcolnunk vagy az egész galaxis ellen: amíg az Oromkirály él, soha nem fogsz a tanács trónján ülni!
+ 
+PRAISE_COUNCIL_VOTE_01     | [your_empire_prefix_uppercase] tisztelt és nagyra méltatott nagykövete! E Tanács ülésén az ön adósai vagyunk a szolgálataiért. Buzgón várjuk, hogy ezt az adósságot tisztázzuk, akármikor is döntsön arról, hogy ennek mi a legmegfelelőbb módja.
+PRAISE_COUNCIL_VOTE_02     | Üdvözlet önnek, nagykövet. Megtisztel minket egy olyan hanggal, amely pártfogólag beszél az ügyünkért az összegyűltek előtt. Biztos vagyok benne, hogy az Oromkirály többet szeretne tudni egy ilyen tisztességes népről, amint a jelentésem kézbesítettem neki.
+PRAISE_COUNCIL_VOTE_03     | Hümm, hümm, hümm! Biztosan nem várja el tőlünk, hogy azt higgyük tiszteletből vagy becsületből állt ki a Szuverenitás mellett, nagykövet? Mégis, talán továbbra is bizonyítani fogja magát, ha csak megadunk még egy esélyt?
+
+PRAISE_ATTACKED_ENEMY_01   | Ó! A tisztelt barátunk és szövetségesünk jó híreket hoz a háború idején! Jöjjön, nagykövet: engedjük, hogy a népeink együtt harcoljanak ezek a borzalmas [defender_race_possessive] ellen, mint harcra kész elvtársak!
+PRAISE_ATTACKED_ENEMY_02   | Enek a háborúnak hamar vége lesz, nagykövet. Még egyagában is, a Szuverenitás könnyedén legyőzné ezeket a vulgáris [defender_race] vadállatokat. De együtt? Együtt a galaxist mindörökre megtisztítjuk a fajuk piszkától!
+PRAISE_ATTACKED_ENEMY_03   | Biztos vagyok benne, hogy csupán a lehetőség cserkészése vezényli cselekedeteit, mert ugyanígy biztos vagyok benne, hogy ön nem ismeri a "becsület" szó jelentését! Engedélyezzük, hogy segítsenek nekünk [defender_race_possessive_prefix_lowercase] ellen, ha nem is más miatt, mint hogy a veszteségeinket a minimálisra csökkentsük!
+
+PRAISE_TRADE_01            | Jobban megkönnyebültem, mint hinné, nagykövet, hogy a nemzete ilyan tiszteletben tartja az üzletet. A Szuverenitás megtiszteli önt és népét, és még a szüntelen kereskedelmi megállapodásunknál is nagyobbra értékeljük a barátságunk!
+PRAISE_TRADE_02            | Sok módja van a becsület bizonyítására, nagykövet. Az üzleti vállalkozások méltányos és jóhiszemű kezelése az egyik legjobb mód rá, hogy ezt megtegyük. A Szuverenitás ezt nagyra értékeli azoknál, akikkel a galaxisban találkozunk.
+
+PRAISE_REBELLING_WITH_01   | Ezek a nyers barbárok a Tanácsban alulbecsülnek minket, nagykövet! Együtt megmutatjuk nekik, hogy valóban mit is jelent a "halálos félrelépés" kifejezés!
+
+ACCEPT_TRADE_01            | A Szuverenitás mindig kedéllyel fogadja [your_empire_relational_prefix_lowercase] folytatott ügyeket. Az [amt] EK éves összege meglehetősen méltanyolható, köszönjük.
+RESPOND_IGNORE_THREAT_01   | Kimerészeled provokálni [my_empire_addressing_prefix_lowercase]? Hordd a gyúnyaidat el innét, mielőtt még szórakoztató jellegük elhalványul.
+RESPOND_STOP_SPYING_01     | A látása pont olyen élesnek bizonyul, mint a miénk, amikor kémek kiszúrásáról van szó. Tekintse a kémkedési erőfeszítéseinket befejezettnek.
+RESPOND_STOP_ATTACKING_01  | Most belátjátok a Szuverenitásunk erejét? Mindaddig, amíg nem felejtitek el a hatalmunkat, nem fogunk zavarni ezekkel a flottákal.
+
+ 

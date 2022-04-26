@@ -1,0 +1,87 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Darlok specific dialogue
+
+CONTACT_AGGRESSIVE         | Üdvözlünk benneteket ezen a napon, csökönyös polgárai a kozmikus világnak. Felkínálunk egy figyelmeztetést is: ne akadályozzátok a kutatásunkat, vagy nem élitek meg, hogy megbánjátok ezt a sorsdöntő találkozót.
+CONTACT_RUTHLESS           | Üdvözlünk titeket, honpolgárai az idegen űrnek. A legjobb az lenne számotokra, ha mindent megtennétek amit tudtok, hogy biztosítsátok együttélésünk... kölcsönös hasznosságát.
+CONTACT_ERRATIC            | Egy esetleges találkozó a csillagok tengerén. Legyetek óvatosak a sötétséggel ebben az égi mélységben, meglátjátok majd, hogy mennyi nem látható dolgot rejt el...
+//
+GREETING_01                | Hasznosnak bizonyultatok az ügyünk számára. Megtesszük ami tőlünk telik, hogy segítsünk a tiétekben.
+GREETING_04                | Beszéljetek.
+GREETING_07                | Nem tudjátok micsoda arcátlanságot jelent, mikor a segítségünket kéritek. Csaknem szórakoztatónak találjuk.
+//
+DECLAREWAR_HATE_01         | Sokat el kellett tűrnünk amíg célunk felé törekedtünk, de hálásak vagyunk azért, hogy a ti jelenléteteket nem kell tovább elviselnünk, [your_race_possessive].
+DECLAREWAR_HATE_02         | Végeláthatatlan szerencsétlenség! Nem fogunk tovább szenvedni a bolondságotok miatt! Akár felkészültek a csapataitok, akár nem, éppúgy találkoztok majd a véggel!
+DECLAREWAR_HATE_03         | Ellenfelek! Nincs értelme fajunknak itt felvirágozni csak azért, hogy megosszuk a galaxist a fajtátokkal. Készüljetek fel! Kivetünk benneteket ebből az űrből még akkor is, ha ebbe az utolsó emberünk is belepusztul.
+DECLAREWAR_ERRATIC_01      | Népünk gyakori mondása, hogy az a kés amelyik a harcmezőn öl, éppoly könnyedén öl a sötétben is. A fajtátok hamarosan megtudja, hogy miért.
+DECLAREWAR_ERRATIC_02      | Bámultátok valaha a csillagokat azt kívánva, bárcsak tudnátok mi rejtőzik a sötétben a fények között? Nem ismeritek a bölcsességet ami arra int, hogy legyetek óvatossak azzal, hogy mit kívántok?
+DECLAREWAR_ERRATIC_03      | Nagy bizonytalanságok idején rájöhettek, hogy a legvalószínűtlenebb lények mégis képesek bevinni a végzetes ütést.
+DECLAREWAR_MILITARY_01     | Még mindig nem találtuk meg a dolgot amire a leginkább vágyunk, így hát elvesszük tőletek a helyeket amiket még nem láttak szemeink. Adjátok át világaitokat vagy essetek el védelmük során.
+DECLAREWAR_MILITARY_02     | Létezik a lehetősége, hogy a válaszok melyeket keresünk, egy bolygón rejtőznek a birodalmatokban, tehát elvesszük mindüket. Tudjátok, hogy ez nem személyes,[your_race_possessive], de elkeseredett idők elkeseredett döntéseket követelnek.
+DECLAREWAR_MILITARY_03     | Ha nem tudjuk elérni a rejtély megoldását, nincs értelme folytatnunk azt! Ha a válasz egyik világotokban rejtőzik, akármit odaadunk amit muszáj, hogy megszerezzük!
+DECLAREWAR_ALLIANCE_01     | Bolondok! Ellenséget csináltatok a szövetségesünkből és ezáltal ellenséget csináltatok belőlünk is! Gyorsan le fogunk csapni benneteket: nincs vesztegetni való időnk a baklövéseitekre és az ostobaságotokra!
+DECLAREWAR_ALLIANCE_02     | Ritka mikor közvetlenül beavatkozunk mások ügyeibe. De amikor egy szövetségesünk, aki támogatta a küldetésünket könyörög a támogatásunkért, meg fogjuk tenni amit tudunk, hogy segítsünk neki.
+DECLAREWAR_ALLIANCE_03     | Elégedetten nézzük, hogy birodalmaitok egymás közt harcolnak, de ismerjük a fenyegetést amit jelentetek számunkra. Örömmel támogatjuk [defender_race_prefix_lowercase] népet, hogy eltávolítsuk az akadályt amit a létetek támaszt.
+DECLAREWAR_SPYING_01       | Szórakoztató, hogy ilyen tettekre törekedtek olyanok ellen, akik mesterei a titoktartásnak. A kudarcért járó büntetés viszont jelentősen kisebb lesz.
+DECLAREWAR_SPYING_02       | Csodálatra méltó megpróbálni és túljárni az eszünkön a titoktartás kérdéseiben, kíváncsiak vagyunk, hogy katonai erőtök is olyan dícséretes-e, mint a vakmerőségetek?
+DECLAREWAR_SPYING_03       | Hittétek, hogy ez az ostoba kétbalkezes elmenekülhet éber figyelmünk elől? Ha vagytok olyan arrogánsak, hogy azt higyjétek, kémkedésetek észrevétlen maradhatott, elég arrogánsak vagyok számunkra, hogy eltiporjunk benneteket a csatában.
+DECLAREWAR_ATTACK_01       | Arcátlanság! Ilyen nyíltan megtámadni bennünket csupán azt jelentheti, hogy totális megsemmisülést kívántok!
+DECLAREWAR_ATTACK_02       | Elviselhetetlen fajankók! Hamarosan megtudjuk, hogy az önbizalom ami ez ellenünk csapásotokból fakad, annak megfelelő erővel társul-e!
+DECLAREWAR_ATTACK_03       | Veszedelem! Gazemberek! Nem fogjuk megadni magunkat nektek vagy bárki másnak ameddig nagyszerű munkánk bevégezzük! Készüljetek a büntetésetekre!
+DECLAREWAR_OPPORTUNITY_01  | A politika pusztán a lehetőségek játszmája. Úgy találjuk, hogy aki a leginkább kiaknázza a lehetőségeit, az emelkedik ki győztesként. Ez mindig is így volt, és mindig is így lesz.
+DECLAREWAR_ASSASSIN_01     | Felháborító, elintézni egy nagykövetet, aki fegyvertelenül érkezik hozzátok! Titkaitokat ezennel megtartjuk magunknak és népetek testét szétszórjuk mint hamut a napszeleken!
+
+OFFER_PEACE_01             | Ez elég, egy háborús nagykövet megöléséért. Biztosan, egyetlen népünk sem engedheti meg magának, hogy akaratlanul ennyi életet elpazaroljon. A konfliktus azonnali lezárását javasoljuk, mindannyiunk jövője érdekében.
+OFFER_TRADE_01             | Amíg a direkt megközelítések olykor a legjobbak, a birodalom számára nem ezek jelentik az egyetlen utat a céljai fejlesztésére. Van idő jó hiszemben kereskedni és azt hisszük, hogy ez az idő most van. Kezdetnek mondjuk... [amt] EK évente?
+OFFER_PACT_01              | Ez a végtelen kiterjedés ismeretlen veszélyeket tartogat azok számára, akik a felfedezése mellett döntenek. A megnemtámadási egyezmény a népeink között eggyel csökkenti a kockázatát a galaxisban történő terjeszkedésnek.
+OFFER_ALLIANCE_01          | Vannak azok, akik ránknéznek és megengedik a félelmüknek, hogy elhomályosítsák az ítélőképességüket. Nem hisszük, hogy a fajtátok közéjük tartozik. Formáljunk szövetséget [my_race_possessive_prefix_lowercase] és [my_race_possessive_prefix_lowercase] között és használjuk mások félelmét birodalmaink előnyére.
+
+WARN_TRESPASSING_01        | Ezúttal nem kívánunk háborúzni veletek, de a jelenléteteket [system] rendszerben nehéz nem területsértésként értelmezni. Távozzatok tüstént és bizonyítsátok, hogy félelmünk alaptalan.
+WARN_EXPANSION_01          | Nem vagyunk vakok a szükségre, amit területeitek növelése kielégít. Azonban nem ülhetünk csak tétlenül, engedve, hogy minden világot ellopjatok magatoknak. Figyelmeztetve lettetek, követei [your_empire_giving_prefix_lowercase].
+WARN_BUILDUP_01            | Tervezitek az erőteljes flotta bevetését annak érdekében, hogy a körülöttetek lévők félelemmel behódoljanak nektek? Tudjátok: ha folytatjátok a kérkedést efféle katonai erővel, meglehet, hogy a többi birodalom reakcióját kevéssé fogjátok mondjuk... szolgálatkésznek találni, mint azt reméltétek.
+WARN_SKIRMISH_01           | Mit szóltok a csetepatéhoz [system] rendszerben? Az érdeketekben azt reméljük, hogy összetévesztettetek bennünket egy másik birodalommal. Máskülönben, a következmények irtózatosak lehetnek. Tényleg, nagyon irtózatosak.
+WARN_ATTACKED_01           | Támadást merészeltél indítani népünk ellen, nagykövet?! Tartsátok magatokat szerencsésnek azért, mert figyelmünket más vonja el: legközelebb vakmerőségetek nem marad válasz nélkül!
+WARN_INVADED_01            | 
+Úgy jöttetek be a területünkre, mintha csak a tiétek volna. Vakmerő csel, de tudjátok, hogy mi előre láttuk az érkezéseteket és engedtük, hogy így manőverezzetek... egyelőre.
+WARN_ESPIONAGE_01          | Küszködő kísérletetek a kémkedésre igen humorosnak bizonyult számunkra. Ezúttal megengedjük a kémeteknek, hogy visszatérjen hozzátok, de tudjátok, hogy a további próbálkozásokat sokkal kevésbé fogjuk szórakoztatónak találni. [framed] 
+WARN_SABOTAGE_01           | Szóval [spy_empire_prefix_lowercase] szabotálna? Az igyekezetetek messze túl jelentéktelen, hogy kikényszerítse a megtorlásunkat, de amennyiben újra megpróbálkoztok ezzel, úgy kezelünk majd titeket, mint kártevőket, amelyek kitartóan lenni akartok! [forced] 
+WARN_BIOWEAPON_01          | Csúnya egy dolog ez a fegyver. Mégcsúnyább az, amit tehetetlen civileken használnak. Halálsikolyaik évszázadokig fognak visszhangozni az űrön át és mi csatlakozni fogunk a lendületes refrénhez, ami átkozza megvetett neveteket.
+WARN_GENOCIDE_01           | A fajirtás fenyegetése nem ismeretlen a népünk számára, de látni ennyire alkalomszerűen megvalósulni... oly módokon undorítotok bennünket, hogy kételkedünk a valaha történő megbocsátásban, nagykövet.
+WARN_FINAL_WAR_01          | Amint béke pirkad a galaxisra, mindenki aki a része, meg kell találja amit keres. Amennyiben ti, [rebel_race_possessive_prefix_lowercase] fenyegetitek ezt a békét, fenyegetitek a végső célunkat és mindent el fogunk követni, hogy száműzzünk benneteket a galaxis sötét bugyraiba.
+WARN_COUNCIL_VOTE_01       | Nem mintha hiányozna belőlünk a finom politikai manőverek méltánylása, csupán akkor válunk a legelégedetlenebbé, ha ezek a manőverek ellenünk dolgoznak. Óvatosan lépjetek, nagykövet: meglehet, hogy nem adjuk meg nektek a lehetőséget újra az efféle manőverezésre.
+WARN_OATHBREAKER_01        | Felelőtlen gyávák! Sajnos a népünknek viselnie kell az egész galaxis bizalmatlanságát, amíg ti olyan szégyentelenül bizonyítjátok, hogy ti vagytok azok, akik ilyen ellenségeskedést érdemeltek! [spiesCaught]
+WARN_ATTACKED_ALLY_01      |Még egyszer figyelmeztetünk, nagykövet. Tartsd féken az agressziódat [defender_race_relational_prefix_lowercase] szemben: ők velünk vannak, és mi velük.
+WARN_REBELLING_AGAINST_01  | El meritek bitorolni tőlünk, jogos mestereitől a legmagasabb helyet a tanácsban? A népetek meg fogja élni, hogy megbánja ezt a napot, nagykövet.
+//
+PRAISE_COUNCIL_VOTE_01     | Az ügyünk sokat kíván, nagykövet, és örökké hálásak leszünk, hogy támaszkodhatunk [voter_empire_lean_prefix_lowercase] a tanácsban. Biztosak lehettek benne, hogy nem feleltjük el amikor legközelebb felkeresitek a népünket.  
+PRAISE_COUNCIL_VOTE_02     | Szép volt tőletek, hogy a bizalmatokat ma belénk helyeztétek, nagykövet. Tudjátok, hogy emlékezünk azokra, akik a segítségünkre vannak végső célunk elérésében. 
+PRAISE_COUNCIL_VOTE_03     | 
+Természetesen a népeteknek hátsó szándéka van azzal, hogy hangot ad a támogatásunknak. Mi még mindig a legkörültekintőbbek vagyunk veletek és a fajtátokkal, de ennek ellenére méltánylóak is.   
+
+PRAISE_ATTACKED_ENEMY_01   | Tudtuk, hogy meg fogtok bennünket segíteni ebben a háborúban, nagykövet! Közös elszántságunkkal még [defender_race_possessive_prefix_lowercase] sem állhatnak velünk szemben sokáig! 
+PRAISE_ATTACKED_ENEMY_02   | 
+Jó látni másokat csatlakozni a harchoz a megvetendő [defender_race_relational_] szemben. Dolgozzunk együtt, hogy gyorsan véget vessünk ennek és visszatérhessünk sokkal fontosabb dolgaink folytatásához.
+PRAISE_ATTACKED_ENEMY_03   | Ha a népem csodálatát akarjátok kivívni, tudjátok, hogy a feladatot szinte lehetetlennek fogjátok találni. De [defender_race_possessive_prefix_lowercase] megtámadása egy csodálandó első lépés, attól függetlenül.
+
+PRAISE_TRADE_01            | Nem lenyűgöző, hogy egy olyan egyszerű dolog, mint a kereskedelem hány ajtót képes megnyitni a résztvevő felek között? Népünk valóban a legelégedettebb és reméljük a tieitek éppúgy azok.
+PRAISE_TRADE_02            | A köztünk történő őszinte kereskedelem folyamatos áldásnak bizonyul népeink számára. Reméljük, nagykövet, hogy továbbra is támaszkodhatunk egymásra ilyen módon.
+PRAISE_REBELLING_WITH_01   | A bolondok a tanácsban tévesen lettek megválasztva, ahogy tudtuk, hogy lesznek. Helyesen cselekedtek, hogy harcoltok ellenük és mi jól tesszük, hogy csatlakozunk a lázadásotokhoz.
+
+ACCEPT_TRADE_01            | Nagyszerűen segítitek a küldetésünket ezzel a kereskedelmi megállapodással [your_race_possessive]. [amt] EK évente többet fog nekünk segíteni, mint hinnétek.
+RESPOND_IGNORE_THREAT_01   | Legyetek óvatosak azzal, kit fenyegettek. Az árnyékban rejlő választ a legkellemetlenebbnek találhatjátok.
+RESPOND_STOP_SPYING_01     | Hogyan lehet, hogy TI jöttetek, hogy elkapjátok az egyik kémünket?
+Nem számít, küldjétek vissza azonnal és innentől megszüntetjük tevékenységünket.
+RESPOND_STOP_ATTACKING_01  | 
+Most visszahívjuk a flottáinkat az érdeketekben, de emlékezzetek, a legveszélyesebb erő amelyik észrevétlen marad.

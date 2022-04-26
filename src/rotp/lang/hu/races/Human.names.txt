@@ -1,0 +1,21 @@
+// all possible names
+name: Ember, Terrán, Tellán, Primán, Midgárd
+
+desc1: Tiszteletreméltó Diplomaták
+desc2: Szakértő Kereskedők és Káprázatos Diplomaták
+desc3: Az ezüstnyelvű Emberek mesterei mások meggyőzésének a saját érdekeikről
+
+// possible home system names
+home: Föld, Terra, Tellus, Prima, Midgárd 
+title:     Triumvirátus tagja
+fulltitle: Triumvirátus tagja
+
+// possible leader names
+leader: Alexander, II. Bladrov, IV. Duras, III. Johan, Lacitus, Stráder
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Őrszem, Felmérő, Futár, Felfedező, Kereső, Hírvivő, Őrző
+ship2: Fregatt, Korvett, Lövedékes, Harcos, Brigád, Kém, Kommandó
+ship3: Cirkáló, Kísérő, Hadihajó, Védekező, Szállító, Előörs, Kopó
+ship4: Rettenethozó, Csatahajó, Iszonycsillag, Semmisítő, Csatacirkáló, Bosszúálló, Pusztító
+

@@ -1,0 +1,237 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Klackon specific dialogue
+
+CONTACT_AGGRESSIVE         | 
+Én [my_name] vagyok, te pedig [your_name]? Furcsa név egy hozzám hasonlónak, de azt mondod, hogy nem vagy olyan, mint én? Ez egy nagyon... bosszantó találkozás.
+CONTACT_RUTHLESS           | 
+Engem [my_name] néven ismernek. Te vagy [your_name]? Mi az a [your_name]? Nemigen van szükségem olyan fajtára, aki ilyen csavarral boldogul!
+CONTACT_XENOPHOBIC         | Tudtam, amikor megkezdtem az utamat, hogy kell lennie még hozzám hasonlónak, de te egyáltalán nem vagy olyan, mint én... Más vagy... idegen... és veszélyes.
+//
+GREETING_01                | Barátom! Örülök, hogy eljöttél! Remélem, meg tudom adni, bármit is keresel.
+GREETING_04                | A furcsa [your_name] hív engem. Mit kívánsz, furcsa [your_name]?
+GREETING_07                | Furcsán viselkedsz, és ez nem tetszik nekem. Csak mondd, amit mondani jöttél és távozz.
+//
+
+DECLAREWAR_HATE_01         | Túl sokáig vártam, keresnem kell egy másikat, aki olyan, mint én! Továbbra is az utamban állsz és egy pillanatig sem várok tovább, hogy megszabaduljak tőled.
+DECLAREWAR_HATE_02         | Ha rád gondolok, olyan undort kelt bennem, amit soha nem is tudtam, hogy érezhetek. Mindent megadok amit muszáj, hogy egyszer, s mindenkorra elpusztítva lássalak!
+DECLAREWAR_HATE_03         | Nem! Nem lehet, hogy csak azért indultam útnak, hogy találjak valami olyasmit, mint te ebben a galaxisban! Nem élek tovább veled szomszédomként! Vagy te pusztulsz el, vagy én!
+
+DECLAREWAR_ERRATIC_01      | Nem verhetsz át a trükkjeiddel! Tudom, hogy akkor sújtasz rám, amikor neked a legjobban megfelel! De megöllek, mielőtt ez megtörténne!
+DECLAREWAR_ERRATIC_02      | A viselkedésed furcsa és kiszámíthatatlan. A bizonytalanság, amitől éreztetsz, nagyon idegesít, és nem értem, miért kellene tovább szenvednem. Készülj fel a felejtésre!
+DECLAREWAR_ERRATIC_03      | Miért csinálod, amit csinálsz? Mi hajt téged? És ez arra késztet, hogy egy napon háborút hozz rám? Alig várom, hogy lássam, mit teszel ezután: a jövőmért azonnal hadat kell viselnem ellened!
+DECLAREWAR_MILITARY_01     | Még mindig nem találtam meg, aki olyan, mint én. Tudom, hogy létezniük kell, és minden egyes világodban keresem majd őket, ha egyszer elveszem őket tőled!
+DECLAREWAR_MILITARY_02     |Mit titkolsz előlem [your_name]? Nem tudhatom biztosan amíg meg nem vizsgálom mindegyik világodat, és most elveszem őket tőled, hogy megtehessem!
+DECLAREWAR_MILITARY_03     | Nem engedem tovább, hogy rejtegesd a keresésem tárgyát! Tudom, hogy akit keresek, az az egyik világotokon van. Nem nyugszom, amíg át nem adod őket nekem!
+DECLAREWAR_ALLIANCE_01     | [other_name] nevű barátom többet segített a küldetésemben, mint azt sejthette. Örömmel törlesztek azzal, hogy megszabadulok tőled!
+DECLAREWAR_ALLIANCE_02     | Azokat, akik segítenek a keresésemben, örökké értékelni fogom és tiszteletem jeléül boldogan megadom amit tudok [other_name] barátomnak. Készülj a halálra, [yout_name]!
+DECLAREWAR_ALLIANCE_03     | Mindenkire nyomást gyakorolsz a galaxisban, mert azt hiszed, senki sem merne szembeszállni az akaratoddal. Ha [other_name] harcot hoz majd neked, akkor én is úgy teszek majd!
+DECLAREWAR_SPYING_01       | Egyik világomon sem történik olyan dolog, ami elkerülné a figyelmemet. Mivel ragaszkodsz ahhoz, hogy ilyen aljas módon viselkedj, nem hagysz nekem más választást, mint hogy elpusztítsalak.
+DECLAREWAR_SPYING_02       | Ostoba [your_name], elegem van a játékaidból! Nem lesz időd ilyen aljas cselszövésekre, ha vissza kell verned a seregeimet! Készülj a háborúra!
+DECLAREWAR_SPYING_03       | Mit reméltél nyerni azzal, ha így ellenem mozdulsz? Most nincs más választásom, mint megküzdeni veled, bármilyen különbség is legyen a seregeink között!
+DECLAREWAR_ATTACK_01       | Mi ez, [your_name]? Meg akartad akadályozni a kutatásomat azzal, hogy megtámadod az egyik világomat? Feltételezem, hogy elpusztításod mulattató lesz és ha rövid is, figyelemelterelés.
+DECLAREWAR_ATTACK_02       | Ez az, amit háborús cselekménynek neveznek? Azt akarod, hogy seregeid és flottád harcoljanak az enyéim ellen? Menjünk hát a háborúba: alig várom, hogy többet tanuljak!
+DECLAREWAR_ATTACK_03       | Hogy merészelsz ilyen csapást indítani ellenem?! Megakadályoznád, hogy véghez vigyem a keresést, de ehelyett most teljes dühömet ismered meg!
+DECLAREWAR_OPPORTUNITY_01  | Ha valami akadálynak bizonyul, a legjobb módja annak, hogy megszabaduljunk tőle, ha teljesen megszüntetjük. Nem ismerem a diplomácia minden módját, de azt tudom, hogy téged nevetségesen egyszerű dolog lesz eltüntetni az utamból.
+DECLAREWAR_ASSASSIN_01     | Megtámadni az egyik testemet, felér az összes testem megtámadásával. Mivel úgy döntöttél, hogy megölsz egyet közülem, cserébe mindnyájatokat megöllek!
+
+OFFER_PEACE_01             | Nem szeretem ezt a dolgot, amit háborúnak hívsz. Irgalmatlan és kegyetlen, és mindkettőnknek van fontosabb dolgunk, mint folytatni ezt a szüntelen gyilkolást. Vessünk véget ennek békében, [your_name].
+OFFER_TRADE_01             | Mindketten a saját céljainkkal indultunk a galaxisba, [your_name]. Miért nem segítjük egymást ambícióink megvalósításában? [amt] EK-ről kötött éves kereskedelmi megállapodás pontosan ezt tenné, igaz?
+OFFER_PACT_01              | Sok furcsa lénnyel találkoztam az űrön át tartó utamon, sok közülük veszekedő és erőszakos természetű. Úgy tűnik, Te egyik sem vagy, ezért engedd meg, hogy egy megnemtámadási egyezménnyel előzzük meg a félreértéseket. 
+OFFER_ALLIANCE_01          | Kapcsolatunk rendkívül hasznos volt mindkettőnk számára, [your_name]. Legyünk szövetségesek szóban és kötelékben, hogy a galaxisban mindenki tudja, hogy egyként állunk!
+
+WARN_TRESPASSING_01        | Az, hogy [system] területén tartózkodsz, nagyon nyugtalanít. [your_name], távolítsd el a flottát onnan, különben megtorlásra kényszerülök.  
+WARN_EXPANSION_01          | Nem fogom engedni, hogy megakadályozd, hogy véghez vigyem a kutatást azzal, hogy minden olyan világot magadénak követelsz, amelyre pillantásod ráveted. Azonnal fejezd be, vagy készülj a háborúra!
+WARN_BUILDUP_01            | Lenyűgöző méretűre növelted a flottádat, [your_name]. Légy azonban óvatos, hogyan használod, amíg az én flottám jelen van.
+WARN_SKIRMISH_01           | Az incidens, ami[system] rendszernél történt nyugtalanít. Ez csak félreértés volt a részedről? Győződj meg róla, hogy ez nem fordul elő újra: nem akarok harcolni ellened, [your_name] ha nem muszáj.
+WARN_ATTACKED_01           | Mit nyerhetsz azzal, ha így megtámadsz? Azonnal vess véget az agressziónak, különben arra kényszerítesz, hogy százszorosan fizessem vissza!
+WARN_INVADED_01            | Miért támadtad meg a területemet [rendszer] rendszerben?! Konfliktust szándékozol kirobbantani, vagy egyszerűen elvesztetted az uralmat a tested felett? 
+WARN_ESPIONAGE_01          | Nem értelek, [spy_name]. Úgy teszel, mintha nem akarnál konfliktust, de megpróbálod ellopni a titkaimat? Ha ragaszkodsz ahhoz, hogy így folytasd, megígérem, hogy bánni fogod! [framed]
+WARN_SABOTAGE_01           | Gúnyt űzöl belőlem ezzel a szabotázs akcióval! Az én küldetésem elsőbbséget élvez minden mással szemben, de ha ez újra megtörténik, felfüggesztem a kutatást, hogy személyesen foglalkozzam veled! [forced]
+WARN_BIOWEAPON_01          | Ez a fegyvered abszolút borzasztó. Ha egyáltalán használod, az arról beszél, ami valójában vagy, de ha egy másik élőlény testén használod, az végképp elkeserítő!
+WARN_GENOCIDE_01           | Milyen érzéketlen! Soha nem számítottam arra, hogy odáig fajulsz, hogy teljesen megsemmisítsd [victim_name] néven ismertet. Soha nem felejtem el azt a barbárságot amit ma tanúsítottál. 
+WARN_FINAL_WAR_01          | Most már látom, hogy ahhoz, hogy megvalósíthassam álmomat, a galaxisnak békében kell lennie. De amíg létezel, a béke soha nem valósulhat meg. A válasz nyilvánvaló: [rebel_name] lázadót meg kell semmisíteni! 
+WARN_COUNCIL_VOTE_01       | Bevallom, hogy nem ismerem az általad "politikai manőverezésnek" nevezett nüanszokat. De tudom, hogy azzal, hogy [other_name] nevűre szavaztál, ellenem léptél fel, és én nem felejtem el azokat, akik megakadályoznak valamiben.
+WARN_OATHBREAKER_01        | 
+Tehát így működsz, [your_name]? Azért kötsz megállapodást, hogy akkor bontsd fel, amikor jónak látod? Tudtam, hogy nem olyan vagy, mint én, és a tetteid ezt minden kétséget kizáróan igazolják! [SpyesCaught] 
+WARN_ATTACKED_ALLY_01      | Miért támadod [defender_name] barátomat, [your_name]? Találj más módot a nézeteltérések megoldására: nem fogom szeretni, ha közbelépésre kényszerítenek! 
+WARN_REBELLING_AGAINST_01  | Nem kedvellek [your_name], és még kevésbé szeretem, hogy téged választottak a tanács vezetőjévé! Át kell gondolnom, mi történt ma és neked is el kell gondolkodnod azon, hogyan lehetek hamarosan kénytelen reagálni! 
+
+PRAISE_COUNCIL_VOTE_01     | [voter_name]! Ne gondold, hogy természetesnek veszem a szavazatodat a Tanácsban! Bár te és én nagyon különbözőek vagyunk, nagyon boldog vagyok, hogy egy ilyen csodálatos baráttal találkozhattam utam során, mint te. 
+PRAISE_COUNCIL_VOTE_02     | Hosszú fennállásom során soha nem volt szükségem "politikára", de amit tettél, az a hasznomra válik, igaz? Hamarosan beszéljünk újra, hogy jobban megtanulhassuk, hogyan hozzunk hasznot egymásnak. 
+PRAISE_COUNCIL_VOTE_03     | A tanácsban rám adott szavazatod csak egy kísérlet arra nézve, hogy újragondoljam a rólad alkotott véleményemet. Azonban úgy gondolom, hogy erre kényszerülhetek, ha a tetteid továbbra is hasznomra válnak.  
+PRAISE_ATTACKED_ENEMY_01   | Igen! Megtámadtak és a barátom a segítségemre siet! Ez az aljas [defender_name], mutassuk meg neki, hogy együtt harcolunk, elszakíthatatlan kötelékben! 
+PRAISE_ATTACKED_ENEMY_02   | Köszönjük [attacker_name]! Jó látni, hogy van másvalaki is, aki felismeri, milyen fenyegetést jelent akit „[defender_name]” néven ismernek. Gyere! Együtt fogjuk megtámadni, amíg nem marad belőle semmi! 
+PRAISE_ATTACKED_ENEMY_03   |Nem tudom [attacker_name], mit remélsz [defender_name]megtámadásától. Tévelygő vagy, akiben nem lehet megbízni, de ennek ellenére emlékezni fogok minderre.
+PRAISE_TRADE_01            | Csak úgy sikerült eljutnunk idáig, hogy közösen dolgoztunk a kölcsönös előnyök érdekében. Tartson ki a kereskedéseinkből szerzett jólét, amíg mindketten megtaláljuk, amit keresünk!   
+PRAISE_TRADE_02            | 
+Megelégedettséggel tölt el, hogy a kereskedelmi megállapodásunk  mindkettőnknek segít. Te is örülsz ennek, ugye [your_name]?  
+PRAISE_REBELLING_WITH_01   | 
+[your_name] segítséget kér! Csatlakozom hozzád, és fegyvert fogok e nevetséges tanács ellen! A barátom vagy, és ez azt jelenti, hogy soha nem fogsz egyedül harcolni!
+
+DIPLO_TECH_REQUEST_MENU_01   | Milyen típusú technológia érdekel?
+DIPLO_TECH_COUNTER_MENU_01   | Mit cserélnél el érte?
+DIPLO_TRADE_MENU_01          | Kereskedelmi megállapodást ajánlasz ezért:
+DIPLO_TREATY_MENU_01         | Egyezséget ajánlasz 
+DIPLO_DECLARE_WAR_MENU_01    | Biztos vagy benne, hogy háborút akarsz indítani?
+DIPLO_SUGGEST_WAR_MENU_01    | Kivel szemben kéne háborút kiáltanom?
+DIPLO_BREAK_ALLIANCE_MENU_01 | Melyik szövetséget szakítsam meg? 
+DIPLO_THREATEN_MENU_01       | Az akcióid:
+
+DECLINE_OFFER_01           | Visszautasítom.
+DECLINE_OFFER_02           | Megfontoltam az ajánlatodat, és visszautasítom azt.
+DECLINE_OFFER_03           | Tiszteletteljesen visszautasítom az ajánlatodat.
+DECLINE_OFFER_04           | Ez alkalommal, nem érdeklődöm.
+DECLINE_OFFER_05           | Az ajánlatodat nem tartom tisztességesnek.
+DECLINE_OFFER_06           | Ajánlatodat ez alkalommal nem tekintem érdekemben állónak elfogadni.
+DECLINE_OFFER_07           | Talán összekevertél egy hiszékeny bolonddal. Visszautasítom az ajánlatodat.
+DECLINE_OFFER_08           | Az ajánlatod nem tűnik tisztességesnek számomra.
+DECLINE_OFFER_09           | Attól tartok vissza kell utasítanom.
+
+DECLINE_ENEMY_ALLY_01      | Soha nem kötnék egyezséget a gyűlölt [other_name] szövetségeseivel.
+
+DECLINE_ANNOYED_01         | [your_name], a sok hűhó semmiért élőlénye. Belefáradtam a fecsegésedbe.
+DECLINE_ANNOYED_01         | [your_name], kikezded a türelmemet. Talán később kellene újra megszólalnod.
+DECLINE_ANNOYED_01         | Eleget hallottam. Később újra beszélünk.
+DECLINE_ANNOYED_02         | Belefáradtam a diplomáciai alkudozásokba. Egy későbbi időben folytathatjuk a megbeszéléseket.
+DECLINE_ANNOYED_02         | Ezek a beszélgetések nem visznek minket sehová. Távoznom kell.
+DECLINE_ANNOYED_02         | Most megyek.
+DECLINE_ANNOYED_03         | Ezer bocsánat,[your_name], de más kötelezettségek szólítanak.
+DECLINE_ANNOYED_03         | Elnézést kérek, de az időnk a végéhez ért.
+DECLINE_ANNOYED_03         | Kevés időm van és sok teendőm. Talán később újra beszélhetünk.
+
+
+DECLINE_OATHBREAKER_01     | Ezúttal nem vagyok hajlandó egyezséget kötni, mivel már szegtél meg egyezségeket a múltban.
+DECLINE_OATHBREAKER_01     | Nem tisztelted a múltbéli egyezségeket. Kevés okát látom, hogy most megbízzak benned.
+DECLINE_OATHBREAKER_01     | Miért bízzak benned most, mikor annyi múltbéli egyezményt megszegtél?
+DECLINE_OATHBREAKER_01     | Nem látok okot egyetérteni valakivel, aki nem ért fel múltbéli ígéreteihez.
+DECLINE_OATHBREAKER_01     | Nem kötök egyezséget veled, [your_name], akinek nincs tisztessége.
+
+DECLINE_ESPIONAGE_01       | Te lopós kutya, ellopod a kutatásom gyümölcsét.Megtagadom a kérésedet.
+DECLINE_ESPIONAGE_01       | A technológiám egyedül értem van. Nincs jogod ellopni. Beszélni fogok, amint befejezed a lopást.
+DECLINE_ESPIONAGE_01       | Miért is kéne bármit is adnom neked? A kémeid már mindent elloptak, amire szükséged van!
+DECLINE_ESPIONAGE_01       | Hogy várhatod el a beleegyezésemet amikor a kémeid ellopják a technológiámat? 
+DECLINE_ESPIONAGE_01       | Távolítsd el a kémeidet, és majd beszélünk.
+
+DECLINE_SABOTAGE_01        | Nem felejtettem el az utolsó szabotázs akciódat. Amíg nem bizonyulsz jobban megbízhatónak, addig nem egyezkedem veled.
+DECLINE_SABOTAGE_01        | Szenvedtem a szabotázsod miatt. Nem kötök egyezséged veled amíg nem szűnik meg.
+DECLINE_SABOTAGE_01        | Micsoda! Azt várod tőlem, hogy egyetértsek veled amíg szabotálod [target]?
+DECLINE_SABOTAGE_01        | [target] az enyém volt és elpusztítottad. Miért kellene egyezkednem veled?
+DECLINE_SABOTAGE_01        | Amikor befejezed [target] szabotázsát, továbbgondolom az ügyet.
+
+DECLINE_BUILDUP_01         | Nem beszélek róla amíg hajókat halmozol fel a határaim közelében.
+DECLINE_BUILDUP_01         | Távolítsd el a hajóidat a határaim mellől és meggondolom, hogy elfogadjam. addig, nem vagyok érdekelt.
+DECLINE_BUILDUP_01         | A hajóid a határaimon nem jelentenek számomra fenyegetést. Ám visszautasítom az egyezséget amíg ott maradnak.
+DECLINE_BUILDUP_01         | Ha azt kívánod, hogy egyezséget kössünk, küldd a hajóidat, hogy másokat fenyegessenek, ne engem.
+
+DECLINE_ENCROACH_01        | A flottád betolakodik a területemre. Távolítsd el őket, és akkor beszélhetünk.
+
+DECLINE_SKIRMISH_01        | Provokáció nélkül megtámadod a hajóimat és a beleegyezésemet várod? Megtagadom az egyezségkötést. 
+DECLINE_SKIRMISH_01        | Nem fogadhatok el ajánlatot olyasvalakitől, aki megtámadja a flottáimat.
+DECLINE_SKIRMISH_01        | Amint a flottáid befejezték az enyémek támadását, beszélhetünk.
+DECLINE_SKIRMISH_01        | Ha egyezséget kívánsz velem kötni, hagyd békén a flottáimat.
+DECLINE_SKIRMISH_01        | Nem értékelem, hogy elpuszítod a flottáimat. Nem fogadom el.
+
+DECLINE_ATTACK_01          | Indokolatlan támadásod [system] ellen kevés teret ad neked az alkudozásra.
+DECLINE_ATTACK_01          | Nem felejtettem el [system] gyarmata elleni támadást. Szó sem lehet róla, hogy elfogadjam.
+
+DECLINE_INVASION_01        | Nem kívánok egyezséget kötni [system] mészárosaival. Előbb tegyél a kártalanításról.
+DECLINE_INVASION_01        | A vérem [system] rendszerben bemocskolja a szavaidat. Nem tudom elfogadni az ajánlatodat.
+DECLINE_INVASION_01        | [system] béli veszteségem büntetésért kiált. A fájdalom amit érzek hangosabb az ajánlatodnál.
+
+DECLINE_BIOWEAPONS_01      | Nem kötök egyezséget senkivel, aki biológiai fegyvereket használna.
+DECLINE_BIOWEAPONS_01      | Nem tudok egyezséget kötni senkivel, aki elég elkeseredett ahhoz, hogy biológiai fegyverekhez folyamodjon.
+DECLINE_BIOWEAPONS_01      | Olyan fegyvereket használsz, amelyek kimondhatatlan borzalmakat okoznak nekem. Nem vagyok hajlandó ilyen őrültséggel foglalkozni.
+
+Community Verified icon
+DECLINE_BIOWEAPONS_01      | Az istenek utálják azokat, akik biológiai fegyverekkel pusztítanának el bolygókat. Nem engedhetem meg.
+DECLINE_BIOWEAPONS_01      | A fájdalom, amit a biológiai fegyvereid okoznak, megtölti a fülem. Nem hallom meg az ajánlatát.
+DECLINE_TECH_TRADE_01      | Nincs olyan technológiád, ami érdekelne engem.
+DECLINE_TECH_TRADE_01      | Nincs szükségem a játékaidra.
+DECLINE_TECH_TRADE_01      | Primitív találmányaid nem tartanak számot az érdeklődésemre.
+DECLINE_TECH_TRADE_01      | Messze túlvagyok a te technológiádon.
+DECLINE_TECH_TRADE_01      | [your_name], vajmi kevés szükségem van arra, amit ajánlasz nekem.
+DECLINE_TECH_TRADE_01      | Kevés érdeklődést látok a technológiádra.
+
+DECLINE_NO_WAR_ON_ALLY_01  | Nem fogok háborúba egy szövetségessel.
+DECLINE_PEACE_TREATY_01    | Nem fogom megszegni a békemegállapodásomat [other_name_5].
+
+OFFER_TECH_EXCHANGE_01     | Nagy szükségem van a te [tech] technológiádra. Talán hajlandó vagy elcserélni az enyémek valamelyikével.
+OFFER_TECH_EXCHANGE_01     | Tudom, hogy kiismerted [tech] titkait. Felajánlhatom cserébe valamelyiket az enyémek közül?
+OFFER_TECH_EXCHANGE_01     | Kívánom megismerni [tech]technológia titkait. Hajlandó lennél elcserélni valamire az én fejlesztéseim közül?
+OFFER_TECH_EXCHANGE_01     | Lenyűgöznek [tech] tudományos csodái. Mit ajánlhatok neked a titkáért cserébe?
+
+ACCEPT_TECH_EXCHANGE_01    | Hát jó. Beleegyezem, hogy elcseréljem [techGiven] csodás titkait [techReceived] technológiájáért.
+ACCEPT_FINANCIAL_AID_01    | Elfogadom [amt] EK értékű ajándékodat.
+ACCEPT_TECHNOLOGY_AID_01   | Elfogadom [tech] ajándékodat.
+
+BREAK_TRADE_01             | További kívánságaim vannak a kereskedelmi javaidból,[your_name].
+ANNOUNCE_TRADE_01          | Hatékony év,[year], én és [your_name] megegyezünk évi [amt] EK kereskedelmében.
+ACCEPT_TRADE_01            | Az [amt] EK értékű megállapodás elfogadható.
+ACCEPT_TRADE_01            | Kíváncsian várom a jóféle árukat, amelyeket kínálsz [your_name]. Elfogadom az évi [amt] EK értékre vonatkozó megállapodást.
+ACCEPT_TRADE_01            | Beleegyezem évi [amt] EK kereskedelmébe.
+ACCEPT_TRADE_01            | Nos, [your_name], az évi [amt] EK értékű ajánlatodat tisztességesnek és igazságosnak találom.
+ANNOUNCE_PEACE_01          | [year] évben, [your_name] és én megegyezünk hogy megszüntetünk minden ellenségeskedést.
+ANNOUNCE_PEACE_01          | Ezennel elrendelem minden ellenségeskedés befejezését közted és köztem.
+ACCEPT_PEACE_01            | Egyetértek azzal, hogy eljött az idő, hogy véget vessünk kicsinyes civakodásunknak.
+ACCEPT_PEACE_01            | Elfogadom a békeajánlatodat. Szüntess tüzet felém, és abbahagyom az erőid támadását.
+
+
+ACCEPT_PEACE_01            | Belefáradtam ebbe az értelmetlen pusztításba. Elfogadom a békeajánlatot.
+
+
+BREAK_PACT_01              | [your_name], figyelmeztetés tőlem, neked: a megnemtámadási egyezségünk felbomlott!
+ANNOUNCE_PACT_01           | [year] évben, Ígérem, hogy csatlakozom a megnemtámadási egyezményhez, és nem támadom meg a flottákat, hacsak nem keringenek valamelyik gyarmatom körül.
+
+ACCEPT_PACT_01             | Elfogadom a megnemtámadási egyezményt. Egyik sem támadja meg a másik flottáját, hacsak nem lép be egy ellentétes gyarmat keringési pályájára.
+
+ACCEPT_PACT_01             | Ha beleegyezel abba, hogy nem küldesz hajókat egyik gyarmatomra sem, megfogadom, hogy nem támadom meg a hajóidat.
+ACCEPT_PACT_01             | Egyetértek az általad javasolt megnemtámadási egyezménnyel. Így van megírva, így kell tenni!
+ACCEPT_PACT_01             | Akkor megegyeztünk. Amíg nem támadod meg a gyarmataimat, betartom a megnemtámadási egyezményt.
+
+BREAK_ALLIANCE_01          | A továbbiakban nem tartom fenn a szövetséget veled,[your_name].
+ANNOUNCE_ALLIANCE_01       | [year] évben [your_name] és én megállapodunk abban, hogy szövetséget kötünk, amennyiben egyikünk sem támadja meg a másik flottáját vagy gyarmatát.
+ANNOUNCE_ALLIANCE_01       | Tehát a Szövetségünk összekovácsolódott. Hajóid tetszés szerint látogathatják gyarmataimat, és üzemanyagot kaphatnak a bázisaimról.
+ACCEPT_ALLIANCE_01         | Üdvözlöm a Szövetséget [your_name], jó barátom.
+ACCEPT_ALLIANCE_01         |[your_name] és én ma Szövetséget kovácsolunk. Halál az ellenségeinkre!
+ACCEPT_ALLIANCE_01         | Látom a bölcsességet a Szövetségünkben, [your_name]. Tehát legyen!
+
+ACCEPT_BREAK_ALLIANCE_01   | Egyetértek azzal, hogy [other_name] többé nem megbíztható, ezért felbontottam vele a szövetségemet.
+ACCEPT_BREAK_ALLIANCE_01   | Bár fájdalmas nekem, hogy hátat fordítottunk [other_name], megtettem.
+ACCEPT_BREAK_ALLIANCE_01   | [other_name] többé nem a szövetségesem.
+ACCEPT_BREAK_ALLIANCE_01   | A Szövetségünk [other_name], mostanra darabokban fekszik a lábaink alatt. 
+ACCEPT_BREAK_ALLIANCE_01   | Ahogy kívánod: [other_name] többé nem tekintendő a szövetségesemnek.
+
+ACCEPT_JOINT_WAR_01        | [other_name] el kell hulljon a te, [your_name] és az én egyesített erőnk előtt.
+ACCEPT_JOINT_WAR_01        | Kettőnk szövetségében, [your_name], [other_name] nem tart majd ki sokáig.
+ACCEPT_JOINT_WAR_01        | [year] évben, te [your_name] és én egyesítjük erőinket, hogy megszabadítsuk a galaxist [other_name] fenyegetésétől.
+
+RESPOND_CLOSE_EMBASSY_01   | Hát legyen. Nem lesz több megbeszélés közted [your_name] és köztem.
+
+RESPOND_BREAK_TRADE_01     | Emlékezni fogok erre.
+RESPOND_BREAK_TRADE_01     | Nos, [your_name], nem tudod tartani a szavad. Nem fogom ezt elfelejteni.
+
+RESPOND_BREAK_PACT_01      | Fel fogom írni felbomlott egyezségünk szavait a sírkövedre,[your_name].
+RESPOND_BREAK_PACT_01      | [your_name], darabjaidra fogsz hullani saját törött ígéreteid súlya alatt.
+RESPOND_BREAK_ALLIANCE_01  | Megbecstelenítetted az egyezséget. A szövetség felbomlott.
+RESPOND_BREAK_ALLIANCE_01  | Nos. Kimutattad megbízhatatlan szándékaidat. A szövetség felbomlott.
+RESPOND_BREAK_ALLIANCE_01  | Kevéssé van szükségem egyezményekre amelyeket nem tartanak tiszteletben. Az egyezség felbomlott.
+RESPOND_BREAK_ALLIANCE_01  | Legyen hát. A szövetség felbomlott.
+
+ACCEPT_TRADE_01            | Kereskedni akarsz velem? Mennyi is volt? [amt] EK évente? Igen... igen, azt gondolom el tudok fogadni egy ilyen megállapodást tőled,[your_name].
+RESPOND_IGNORE_THREAT_01   | Ne fenyegess engem, ostoba [your_name]. Olyan sokan vagyok, hogy soha nem remélhetnéd, hogy nyerhetnél, ha háborút vívnánk. Menj innen!
+RESPOND_STOP_SPYING_01     | Csak próbáltam látni, hogy vagy [your_name], amikor egyedül vagy magatok között. Nem teszem ezt többé. Kérlek, visszaküldenéd most nekem a kémemet?
+RESPOND_STOP_ATTACKING_01  | Haha! Lásd milyen erős vagyok! Te, [your_name] nem vagy összevethető velem! Ne feledd ezt, miután hazaküldöm a flottáimat.
+

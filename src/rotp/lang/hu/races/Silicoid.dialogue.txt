@@ -1,0 +1,88 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Silicoid specific dialogue
+
+CONTACT_XENOPHOBIC         | [my_empire] méltóképpen elismerte a jelenlétedet [your_name] [your_race] fajból. Igényeink szerint felvesszük veled a kapcsolatot.
+CONTACT_RUTHLESS           | Rajtad van a Birodalom tekintete, [your_race]. A te érdekedben és mindazok kedvéért, akiket nagyra tartasz, imádkozz, hogy [my_title] kedvezően viszonyuljon hozzád.
+CONTACT_AGGRESSIVE         |Mi vagyunk [my_race_possessive_prefix_lowecase], csekélyke [your_race]. Területünk hatalmas, erőnk pedig páratlan. Figyelmeztetlek, hogy ne próbáld meg haragunkat, különben megtanulod a halálos megtorlás jelentését.
+
+//
+GREETING_01                | Üdvözlet nagykövet. Mondd el, mit kérsz, és ha [my_title] érdemesnek talál téged, szüneteltetjük szent háborúnkat, hogy segítsünk neked.
+GREETING_04                | Légy rövid, nagykövet: [my_title] a semmiért tartóztatja fel hadjáratunkat.
+GREETING_07                | Nyomorult [your_race]! Szent háborúnkat megszakítani annyi, mint haragunkat magatokra hívni!
+//
+DECLAREWAR_HATE_01         | Világosabb most, mint valaha, hogy a te néped a régóta keresett Qaralon Gyermekei! A legnagyobb örömünkre szolgál eltávolítani a fajtádat ebből a galaxisból, mint egy csapást!
+DECLAREWAR_HATE_02         | Végre eljött a említett idő! Készüljetek fel, Qaralon ivadékai! Mert függetlenül attól, hogy ki nyer, hadjáratunk hamarosan véget ér!
+DECLAREWAR_HATE_03         | Végre rátok találtunk, Qaralon ivadékai! És most a csatáink egyesülni fognak! Az erőtök jelentéktelen: bennünket Diamodus ereje vezet majd át!
+DECLAREWAR_ERRATIC_01      | Az első találkozásunk óta [my_title] azon töprengett, hogy ti vagytok-e a leggyűlöltebb ellenségeink vagy sem. Folytatjuk majd, miután véget vetünk a fajotok létének.
+DECLAREWAR_ERRATIC_02      | Égi szomszédként eltöltött időnk elég barátságos volt, de ha a legkisebb esély is van arra, hogy népetek Qaralon Gyermekei legyenek, már elég ahhoz, hogy háborút üzenjünk.
+DECLAREWAR_ERRATIC_03      | Még a legkisebb gonoszság kockázata is meghaladja azt, amit hajlandók vagyunk elfogadni. Megtisztítjuk a mocskot a galaxistól vagy belehalunk a kísérletbe.
+DECLAREWAR_MILITARY_01     | Ilyen módon merészelsz behatolni a területünkre? Ám legyen! Hamarosan meg fogod ismerni a haragunkat, [your_race], és ennek során megtanulod ostobaságod mélységeit.
+DECLAREWAR_MILITARY_02     | 
+Emlékezz erre, szánalmas [your_race]: ebben a galaxisban minden világ a [my_empire_approaching_prefix_lowercase] tartozik isteni jogon, és mi olyan dühvel fogunk harcolni értük, amely megrázza még magukat a csillagokat is!
+DECLAREWAR_MILITARY_03     | Nem fogjuk megengedni, hogy akárcsak egy sziklára is igényt tarts azokon a világokon, amelyek a miénk vagy csak azok lesznek! A hadsereged ereje a mi meggyőződésünk erejével szemben áll. Lássuk, melyik kerül ki győztesként!
+DECLAREWAR_ALLIANCE_01     | Megfontolatlan döntés volt háborút hirdetni a Birodalom szövetségesével szemben. Imádkozz, hogy irgalmat találj isteneidnél, mert nálunk nem találsz majd.
+DECLAREWAR_ALLIANCE_02     | Szövetségesünk tudatja velünk, hogy úgy döntöttél, hogy háborút indítasz ellenük: ezzel ellenünk is hadat üzentél. Készülj fel!
+Nem törődünk [other_race_possessive_prefix_lowercase] sorsával, de kihasználjuk ezt a lehetőséget, hogy megszabadítsuk a galaxist a fajtádtól, hogy folytathassuk szent hadjáratunkat. 
+DECLAREWAR_SPYING_01       | Szánalmas [your_race]! Ezen a napon megtanulod mekkora ostobaság a birodalmi titkok ellopása!
+DECLAREWAR_SPYING_02       | Annyira szeretnéd megtudni a titkainkat? Akkor elmondom a legfontosabbat: nem bocsátunk meg és nem felejtünk. Készülj fel a háborúra!
+DECLAREWAR_SPYING_03       | Úgy gondolod, hogy abban a helyzetben vagy, hogy következmények nélkül elveheted a titkainkat? Hamarosan megtanulod egy ilyen arrogáns döntés ostobaságát.
+DECLAREWAR_ATTACK_01       | Végül kitettetek magatokért, Qaralon Gyermekei! A leggyűlöltebb ellenségünk ivadékain kívül senki sem lehet elég ostoba ahhoz, hogy ilyen merészen kihívjon minket! Készülj fel a végső csatára!
+DECLAREWAR_ATTACK_02       | Régóta gyanítottuk, hogy ősi ellenségünk ivadékai vagytok! Ezzel a sztrájkkal örökre megerősítettétek ezt a tényt! Végre beteljesedik a próféciánk!
+DECLAREWAR_ATTACK_03       | Gazember! Csapás! A legsötétebb óránkban ilyen támadást indítasz ellenünk?! Most, hogy örök ellenségünkként ismertetted el magad, semmiféle erőnk különbsége nem akadályozhat meg bennünket abban, hogy megsemmisítsünk!
+DECLAREWAR_OPPORTUNITY_01  | Ahogy folytatjuk utunkat a galaxison keresztül a szent hadjáratunkon, minden lehetőséget meg kell ragadnunk, hogy növeljük előnyünket. Ez az idő most eljött, és lehetőség nyílik arra, hogy eltöröljük a fajtádat. Viszlát, szánalmas [your_race].
+DECLAREWAR_ASSASSIN_01     | Hogy merészeled megölni a Birodalom nagykövetét!? Csak valaki, Qaralon Ivadékai közül képes ilyen gonosz elmével cselekedni! Készítsd fel flottáidat a háborúra!
+OFFER_PEACE_01             | 
+Azt mondják, ahhoz, hogy valakit megismerjünk, először meg kell küzdenünk ellene. Harcoltunk, és látjuk, hogy nem vagytok a Qaralon fenevad gyermekei. Most békét kötnénk veletek, hogy figyelmünket azokra összpontosíthassuk, akik megérdemlik, hogy érezzék haragunkat. 
+OFFER_TRADE_01             | A világűr mélységeinek felfedezése költséges vállalkozás. A Birodalom nyílt kereskedelmet javasol. [amt] EK évente egyaránt finanszírozza a szent hadjáratunkat, és több vagyont halmoz fel a népednek. Mit mondasz?
+OFFER_PACT_01              | Egyedül Qaralon és a hozzá hasonlóak elpusztítására törekszünk. Amíg hisszük, hogy a néped nem egy közülük, addig nincs kétségünk irányodban. Megnemtámadási egyezménnyel bizonyítanánk szándékunkat. A te döntésed, hogy aláírod-e.
+OFFER_ALLIANCE_01          | Számos furcsa és aljas lénnyel találkoztunk a galaxis megtisztítására irányuló szent háborúnk során. Azok közül, akikkel találkoztunk, úgy gondoljuk, hogy a legkevésbé valószínű, hogy te a nyomorult ellenségünk lennél. Csatlakozz hozzánk, [your_race], és szerezd meg [my_title] áldását!
+WARN_TRESPASSING_01        | 
+Hívatlan jelenléteddel beszennyezed a [system] megszentelt terét! Azonnal vonulj vissza, különben jogos tűzzel űzünk ki!
+WARN_EXPANSION_01          | Azt hiszed, hogy a galaxis a tiéd, és egyedül a tiéd? Azonnal állítsd le ezt a vakmerő terjeszkedést, vagy nézz szembe az egész Birodalom haragjával!
+WARN_BUILDUP_01            | Csak a Birodalom birtokolhatja a legerősebb flottákat a galaxisban, mert csak a Birodalom tud megfelelő ítéletet mondani a gonoszok felett. A saját kockázataid tudatában támadd meg ezt a diktátumot, [your_race].
+WARN_SKIRMISH_01           | Mit akarsz ezzel mondani, nagykövet? Egy puszta összecsapás, amely felett csak egyszer hunyunk szemet: ne engedd, hogy ez még egyszer megtörténjen!
+WARN_ATTACKED_01           | Őrület! Meg mered támadni a birodalmat! [defender_title_prefix_uppercase] bölcsen elrendelte, hogy maradjunk a megtorlásunknál, hogy lássa, mit fogsz tenni ezután. Valóban te vagy a régóta keresett ellenségünk?!
+WARN_INVADED_01            | Minden bizonnyal [attacker_race_prefix_lowercase] elkeseredett cselekedete, hogy területet lopjanak el a Birodalomtól. Tudd, hogy [system] rendszer jelentéktelen volt számunkra, de ha továbbra is elveszed azt, ami a Birodalomé, az csak a végzetedet jelentheti! 
+WARN_ESPIONAGE_01          | A döntés, hogy ellopd a titkainkat, súlyos mérlegelési hiba volt, nagykövet. Óvatosságot kérek: ha a próbálkozása nem lenne annyira nevetséges, minden bizonnyal szörnyűbb visszhangot váltott volna ki! [framed]
+WARN_SABOTAGE_01           | Micsoda trükk ez? A szabotázs elítélendő akció, amely csak gyávákhoz és gazemberekhez méltó! Felfeded hát magad, mint a próféciáink aljas ellensége? [victim_title_prefix_uppercase] eldönti majd... [forced]
+WARN_BIOWEAPON_01          | Elképzelhetetlen! A hús elég gyenge a hagyományos fegyverekkel szemben is, de a biológiai fegyverekkel szemben esélytelen. És a civilek ellen is?! Bizonyára Qaralon sötét vére folyik keresztül a fajtád ereiben!
+WARN_GENOCIDE_01           | Mondd el, miért követtél el népirtást [victim_race_prefix_lowercase] faj ellen. Gondosan válogasd meg a szavaidat: válaszod határozza meg, miként lépünk tovább innen!
+WARN_FINAL_WAR_01          | Csak szövetségek kötése révén tudjuk befejezni szent hadjáratunkat! Mi egyesült népekként állunk együtt, ti mégis egyedül vagytok, mint a káosz és a háború hangja. A prófécia mozgásban van: valóban Qaralon ivadéka vagy!
+WARN_COUNCIL_VOTE_01       | Minden bizonnyal jobb lenne, ha ezt a tanácsot feloszlatnák, és a Birodalomnak adnák a galaktikus ügyek kizárólagos irányítását. Akkor a néped kiérdemelné az ellenségességünket, mikor így felszólaltok ellenünk!
+WARN_OATHBREAKER_01        | Milyen zavarba ejtő, ha valaki megszegi a szavát, az olyan, mint megtörni a bizalmát. Kétségtelen, hogy csak a próféciák ellensége merne így cselekedni! [SpyesCaught]
+WARN_ATTACKED_ALLY_01      | [defender_race_possessive_prefix_uppercase] viselik a Birodalommal való közösség megtiszteltetését! Vedd figyelembe a támadásra válaszul adott figyelmeztetésünket: biztosíthatunk, hogy csak egyszer kapod meg!
+WARN_REBELLING_AGAINST_01  | Hadjáratunk nem késik! Sem a tanács együgyűségei, sem temiattad! Készülj fel, nagykövet: hamarosan elér a szent vihar!
+
+PRAISE_COUNCIL_VOTE_01     | Megbízható szövetségesünk ismét kiérdemli a dicséretünket! Ha józanul beszélsz a tanáccsal, hadjáratunk soha nem fog megingatni! Hálát érdemeltél ma a Birodalomtól, [voter_race]. 
+PRAISE_COUNCIL_VOTE_02     | Fajtád még nem bizonyult ártatlannak, nagykövet. Továbbra is támogasd az ügyünket a tanácsban, és bizonyítsd magad hadjáratunk szövetségesének. 
+PRAISE_COUNCIL_VOTE_03     | 
+Ne gondold, hogy egyetlen szavazat a birodalmi tanácsban megtisztít a gyanútól! A fajtádnak még sok mindent kell bizonyítania, mielőtt kétségeink eloszlanak!
+
+PRAISE_ATTACKED_ENEMY_01   | Még nem tudjuk, hogy [defender_race_possessive_prefix_lowercase] Qaralon leggyalázatosabb Gyermekei-e, de látni, hogy szövetségeseink oly készen csatlakoznak hozzánk, az megerősíti a szellemünket ebben a háborúban! Tovább! Az igazságosságért! A Birodalomért!  
+PRAISE_ATTACKED_ENEMY_02   | Szeretnél csatlakozni [defender_race_possessive_prefix_lowercase] elleni harcunkhoz? Akkor előre hát, és mutasd meg nekünk, hogyan viselkedsz a csatatéren. A győzelem magasabb rangot hoz a császári udvarban, de a vereség csak halált!
+PRAISE_ATTACKED_ENEMY_03   | 
+Biztosan nem tartottál minket annyira ostobának, hogy csak azért elhisszük az ártatlanságodat, mert csatlakoztál [defender_race_possessive_prefix_lowercase] elleni harcunkhoz? A prófécia ellensége pontosan azt tenné, hogy elfedi kilétét. Menjünk most! Mutasd meg, hogyan harcolsz, és mi meg fogjuk ítélni, milyen tiszta vagy valójában!
+
+PRAISE_TRADE_01            | A Birodalom jobbulást kíván, hadjárat barátja! Kereskedelmi megállapodásunk számtalan csatát finanszírozott Qaralon Ivadékainak keresése során. A Birodalom reméli, hogy a népeitek is egyenlőképpen profitáltak ebből.
+PRAISE_TRADE_02            | Bár nem állíthatjuk, hogy gyanún felül állónak tartunk titeket, azt elmondhatjuk, hogy szent háborúnk közvetlen finanszírozása kereskedelem révén megerősítette a belétek vetett hitünket. Lássátok, hogy folytatódik, nagykövet! 
+PRAISE_REBELLING_WITH_01   | Our enemy has been found! The hideous spawn of Quaralon has usurped the galactic throne! Onward to battle: [my_race] and [your_race] fleets will join together and purge this filth from the galaxy!
+ 
+ACCEPT_TRADE_01            | 
+A Birodalom elfogadja az ajánlatodat, [your_race]. Minden évben kereskedünk veled [amt] EK értékben, hogy elősegíthessük szent hadjáratunkat.
+RESPOND_IGNORE_THREAT_01   | Hadjáratunkat nem fogják visszatartani a tétlen fenyegetéseid. Keress valakit, aki zavarja vagy megkockáztatja a haragunkat!
+RESPOND_STOP_SPYING_01     | Csupán meg akartuk határozni Qaralon gonosz ivadékainak kilétét. Meg vagyunk elégedve azzal, hogy a néped nem a mi álruhás halálos ellenségünk.
+RESPOND_STOP_ATTACKING_01  | Flottáink a Birodalom ellenségeit keresték. Ha nem vagy az ellenségünk, nincs tovább szükségük arra, hogy ott maradjanak, ahol vannak.
+

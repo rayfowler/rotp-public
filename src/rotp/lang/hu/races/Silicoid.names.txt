@@ -1,0 +1,21 @@
+// all possible names
+name: Krizlon, Ingeon, Sedimod, Graniton, Magmon
+
+desc1: Xenofób terjeszkedők
+desc2: Immúnis az ellenséges közegekre
+desc3: A titokzatos és kőevő Krizlonok kutatják a galaxist örök ellenségük után.
+
+// possible home system names
+home: Krüzlon, Geóda, Karst, Tűzelde, Szilikán
+
+title:     Császár
+fulltitle: Kristálycsászár
+
+// possible leader names
+leader: Karnáx, Kristályusz, Geodár, Gránid, Szikránt, Szedimón
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Üledék, Kavics, Kő, Szikla, Kristály, Ásvány, Homok
+ship2: Gránit, Márvány, Pala, Kvarc, Habkő, Gabbró, Obszidián
+ship3: Magma, Láva, Földpátok, Rhyolit, Csillám, Bazalt, Dácit
+ship4: Gyémánt, Zafír, Smaragd, Rubin, Ametiszt, Topáz, Gránát

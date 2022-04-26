@@ -1,0 +1,21 @@
+// all possible names
+name: Mentara, Mentalon, Psychón, Cerebron, Neuralon
+
+desc1: Pacifista technológusok
+desc2: Kitűnő kutatási technikák
+desc3: A Mentarán Köztársaság békés és felvilágosult együttélésre törekszik más fajokkal.
+
+// possible home system names
+home: Mentár, Kognitár, Pszilár, Metrika, Neura
+
+title:     Tanácsos
+fulltitle: Főtanácsos
+
+// possible leader names
+leader: Dynalon, Kelván, Mezón, Kvarkel, Tachaon, Zygót
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Elektron, Neutrínó, Kvark, Neutron, Proton, Atom, Molekula
+ship2: Szigma, Prím, Sugár, Hipotenúza, Algebra, Érintő, Logaritmus
+ship3: arallaxis, Ellipszis, Tengely, Szinuszhullám, Fraktál, Kalkulus, Levezetés
+ship4: Naptűz, Csillagkép, Nóva, Kvazár, Galaxis, Köd, Korona

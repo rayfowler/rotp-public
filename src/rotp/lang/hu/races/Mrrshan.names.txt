@@ -1,0 +1,22 @@
+// all possible names
+name: Vadkán, Purzsán, Mjúcsán, Karomkán, Dorombozsán
+
+desc1: Könyörtelen militaristák
+desc2: Kiváló ágyúsok
+desc3: A Vadkán hordák harci trófeákat keresnek, miközben szétterjednek a galaxisban.
+
+// possible home system names
+home: Vadiasz, Maurina, Miamara, Miriana, Yailaria
+
+title:     Kán
+fulltitle: Kán
+
+// possible leader names
+leader: Jaszána, Miamár, Mirána, Purzsa, Sandra, Yalara
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Rozsomák, Vadállat, Görény, Borz, Macska, Egerész, Kalikó
+ship2: Hiúz, Hegyimacs, Oncilla, Vadmacska, Karakál, Hosszúfarok, Szervál
+ship3: Párduc, Leopárd, Hadimacs, Gepárd, Vörösmacs, Ocelot, Jaguarundi
+ship4: Kardfog, Puma, Tigris, Oroszlán, Jaguár, Liger, Predátor
+
