@@ -49,5 +49,5 @@ GAME_OVER_COUNCIL_MILITARY_WIN2   | Your best laid plans have finally succeeded.
 GAME_OVER_COUNCIL_MILITARY_LOSS2  | Your best laid plans have been permanently foiled.#Of all the blunders to make as Master of the New Republic, it is difficult to say whether the largest one was overestimating your allies or underestimating your enemies. The existence of the rebellion was of little surprise: it is a given that there will always be those who violently oppose change no matter what form it takes. The speed and cunning at which they overwhelmed the New Republic forces was what truly took you by surprise. Outmatched and outgunned, you could do little more than await an inevitable end.#The rebellion is victorious, and the Triumvirate and its allies will die along with the New Republic itself. The spoils of war now belong to the rebels, and it is they who will decide the direction that the galaxy will move towards from this day forward. If you are to be remembered at all, it will only be in your inglorious defeat. Had you been better suited to war, perhaps this galaxy could have known peace and been spared this most unwholesome of wars...
 
 // This text is the %8 variable in some of the game over text... when this race wins the game
-GAME_OVER_ALLIANCE_WIN3           | the masterful diplomacy of the Earthlings
-GAME_OVER_REBELLION_LOSS3         | the nefarious scheming of the Earthlings' grips
+GAME_OVER_ALLIANCE_WIN3           | the masterful diplomacy of the Humans
+GAME_OVER_REBELLION_LOSS3         | the nefarious scheming of the Humans' grips
