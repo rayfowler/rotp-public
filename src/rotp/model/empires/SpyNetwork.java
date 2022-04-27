@@ -109,8 +109,14 @@ public final class SpyNetwork implements Base, Serializable {
     
     public int maxSpies()            { return maxSpies; }
     public void maxSpies(int n)      { maxSpies = max(0,n); }
-    public void increaseMaxSpies()   { maxSpies++; }
-    public void decreaseMaxSpies()   { maxSpies = max(0, maxSpies-1); }
+    public void increaseMaxSpies()   { 
+        maxSpies++; 
+        view().owner().flagColoniesToRecalcSpending();
+    }
+    public void decreaseMaxSpies()   { 
+        maxSpies = max(0, maxSpies-1);
+        view().owner().flagColoniesToRecalcSpending();
+    }
     
     public void heedEviction()        { threatened = THREAT_EVICT; }
     public void heedThreat()          { threatened = THREAT_HIDE; }
