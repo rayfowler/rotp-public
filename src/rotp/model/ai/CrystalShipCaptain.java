@@ -28,7 +28,6 @@ public class CrystalShipCaptain implements Base, ShipCaptain {
     public StarSystem retreatSystem(StarSystem fr) { return null; }
     @Override
     public boolean wantToRetreat(CombatStack stack) { return false; }
-    @Override
     public boolean facingOverwhelmingForce(CombatStack stack) { return false; }
     @Override
     public void performTurn(CombatStack stack)  {
