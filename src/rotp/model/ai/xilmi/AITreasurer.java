@@ -99,7 +99,7 @@ public class AITreasurer implements Base, Treasurer {
         
         // sort remaining colonies from smallest to largest
         // assist in prod to build factories on smaller colonies
-        if (empire.totalReserve() > reserveGoal) {
+        if (!needToSolveEvent) {
             List<StarSystem> remainingSystems = new ArrayList<>(systems);
             Collections.sort(remainingSystems,StarSystem.CAPACITY);
             for (StarSystem sys : remainingSystems) {
@@ -109,8 +109,11 @@ public class AITreasurer implements Base, Treasurer {
                 float max = col.industry().maxSpendingNeeded();
                 float curr = col.maxProduction();
                 int rsvNeeded = (int) max(0, min(col.maxReserveUseable(), max-curr));
-                //if we somehow have more than twice what we should keep as reserve, we'll spend it even on planets that are finished developing
-                if(empire.totalReserve() > 2 * reserveGoal)
+                //since I recently learned that artifact-worlds always benefit from reserve:
+                if(sys.planet().researchAdj() > 1)
+                    rsvNeeded = (int)col.maxReserveUseable();
+                //if we somehow have more than what we should keep as reserve, we'll spend it even on planets that are finished developing or have no research-bonus
+                if(empire.totalReserve() > reserveGoal)
                     rsvNeeded = (int)col.maxReserveUseable();
                 if (rsvNeeded > 0) {
                     empire.allocateReserve(col,rsvNeeded);
@@ -118,8 +121,6 @@ public class AITreasurer implements Base, Treasurer {
                     col.lowerECOToCleanIfEcoComplete();
                     systems.remove(sys);
                 }
-                if(empire.totalReserve() < reserveGoal)
-                    break;
             }
         }
         //We only gather tax when we need to deal with a nova/plague

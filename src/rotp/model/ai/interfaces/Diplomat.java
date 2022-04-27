@@ -133,4 +133,7 @@ public interface Diplomat {
     default boolean readyForWar(EmpireView v, boolean considerBestVictim) { return true; }
     default boolean wantToDeclareWarOfDesperation(EmpireView v) { return false; }
     default boolean techIsAdequateForWar() { return true; }
+    default boolean willingToTradeTech(Tech t, Empire tradeParnet) { return true; }
+    default boolean wantsToReviewCounterOffers() { return false; }
+    default boolean minWarTechsAvailable() { return true; }
 }

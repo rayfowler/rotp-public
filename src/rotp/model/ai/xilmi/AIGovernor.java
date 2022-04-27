@@ -241,6 +241,7 @@ public class AIGovernor implements Base, Governor {
         float prodScore = productionScore(col.starSystem());
         float factoriesNeeded = max(0, col.maxUseableFactories() + col.normalPopGrowth() * empire.maxRobotControls() - col.industry().factories());
         float workerGoal = max(0, col.industry().factories() / empire.maxRobotControls() - col.workingPopulation() - col.normalPopGrowth());
+        boolean needRefit = col.industry().effectiveRobotControls() < empire.maxRobotControls() && !empire.race().ignoresFactoryRefit;
         if(popGrowthROI > workerROI && !needToMilitarize)
             workerGoal = col.maxSize() - col.workingPopulation();
         
@@ -317,9 +318,11 @@ public class AIGovernor implements Base, Governor {
         // prod spending gets up to 100% of planet's remaining net prod
         if((col.industry().factories() < col.maxUseableFactories() + (col.normalPopGrowth() + empire.transportsInTransit(col.starSystem())) * empire.maxRobotControls())
             && enemyBombardPower == 0
-            && !needToMilitarize)
+            && !needToMilitarize
+            && ((col.ecology().terraformCompleted() && needRefit)
+                || col.industry().effectiveRobotControls() * (col.population() + col.normalPopGrowth() + empire.transportsInTransit(col.starSystem())) > col.industry().factories()))
         {
-            float prodCost = min(netProd, col.industry().maxSpendingNeeded(), factoriesNeeded * empire.tech().newFactoryCost(col.industry().robotControls()));
+            float prodCost = min(netProd, col.industry().maxSpendingNeeded(), factoriesNeeded * empire.tech().newFactoryCost(col.industry().robotControls()) / col.planet().productionAdj());
             int alloc = (int)Math.ceil(prodCost/totalProd*MAX_TICKS);
             alloc = min(alloc, col.allocationRemaining());
             col.allocation(INDUSTRY, alloc);
@@ -405,7 +408,9 @@ public class AIGovernor implements Base, Governor {
             bomberCost += lab.design(i).cost() * counts[i] * empire.shipDesignerAI().bombingAdapted(lab.design(i));
         }
         //ail: No use to build any ships if they won't do damage anyways. Better tech up.
-        boolean viableForShipProduction = prodScore >= 1 || needToMilitarize;
+        boolean allInShipProducer = col.planet().productionAdj() >= 1 && col.planet().researchAdj() <= 1;
+        boolean allIn = allInShipProducer && empire.diplomatAI().techIsAdequateForWar();
+        boolean viableForShipProduction = prodScore >= 1 || needToMilitarize || allIn;
         float turnsBeforeColonyDestroyed = Float.MAX_VALUE;
         if(popLoss > 0)
             turnsBeforeColonyDestroyed = col.population() / popLoss;
@@ -576,20 +581,6 @@ public class AIGovernor implements Base, Governor {
     @Override
     public float targetPopPct(int sysId) {
         SystemView sv = empire.sv.view(sysId);
-        //too risky during war
-        if(!empire.warEnemies().isEmpty())
-        {
-            for(Empire warEnemy : empire.warEnemies())
-            {
-                if(warEnemy.sv.inShipRange(sysId))
-                    return 0;
-            }
-        }
-        for(ShipFleet fl : sv.system().orbitingFleets())
-        {
-            if(fl.isArmed() && empire.enemies().contains(fl.empire()))
-                return 0;
-        }
         if(empire.generalAI().totalEmpirePopulationCapacity(empire) > 0)
         {
             float tgtPercentage = empire.totalEmpirePopulation() / empire.generalAI().totalEmpirePopulationCapacity(empire);
@@ -602,6 +593,23 @@ public class AIGovernor implements Base, Governor {
                 tgtPercentage = min(0.9f, tgtPercentage);
             else
                 tgtPercentage = 1;
+            //we don't want to bolster systems in a war-zone but also not send their pop away
+            float currentPercentage = tgtPercentage;
+            if(sv.system().colony() != null)
+                currentPercentage = sv.system().colony().populationPct();
+            if(!empire.warEnemies().isEmpty())
+            {
+                for(Empire warEnemy : empire.warEnemies())
+                {
+                    if(warEnemy.sv.inShipRange(sysId))
+                        return currentPercentage;
+                }
+            }
+            for(ShipFleet fl : sv.system().orbitingFleets())
+            {
+                if(fl.isArmed() && empire.enemies().contains(fl.empire()))
+                    return currentPercentage;
+            }
             return tgtPercentage;
         }
         return 0;
@@ -633,7 +641,7 @@ public class AIGovernor implements Base, Governor {
     @Override
     public float productionScore(StarSystem sys)
     {
-        float Score = sqrt(max(0, sys.colony().totalIncome()));
+        float Score = sqrt(max(0, sys.colony().totalProductionIncome()));
         Score *= sys.planet().productionAdj();
         Score /= sys.planet().researchAdj();
         float avgScore = 0;
