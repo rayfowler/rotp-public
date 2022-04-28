@@ -128,4 +128,8 @@ public interface Scientist {
     float baseValue(TechSubspaceInterdictor t);
     float baseValue(TechTeleporter t);
     float baseValue(TechTorpedoWeapon t);
+    
+    //Xilmi-AI
+    default boolean isImportant(Tech t) { return true; }
+    default boolean isOptional(Tech t) { return false; }
 }

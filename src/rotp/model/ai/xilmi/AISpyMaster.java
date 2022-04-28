@@ -98,7 +98,7 @@ public class AISpyMaster implements Base, SpyMaster {
         else if (emb.atPeace())
             maxSpiesNeeded = 1;
         else if (emb.alliance()) 
-            maxSpiesNeeded = 1;
+            maxSpiesNeeded = 0;
         
         if (spies.numActiveSpies() >= spies.maxSpies())
             spies.allocation(0);
@@ -131,7 +131,7 @@ public class AISpyMaster implements Base, SpyMaster {
         // they are our allies
         if (emb.alliance() || emb.unity()) {
             spies.beginHide();
-            spies.maxSpies(1);
+            spies.maxSpies(0);
             return;
         }
 

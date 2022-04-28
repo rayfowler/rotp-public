@@ -253,6 +253,15 @@ public class Tech implements Base {
             return Base.compare(pr2, pr1);
         }
     };
+    public Comparator<Tech> OBJECT_TRADE_PRIORITY = (Tech o1, Tech o2) -> {
+        float pr1 = this.level() - o1.level();
+        if(pr1 < 0)
+            pr1 = o1.level() - this.level();
+        float pr2 = this.level() - o2.level();
+        if(pr2 < 0)
+            pr2 = o2.level() - this.level();
+        return Base.compare(pr2, pr1);
+    };
     public static Comparator<Tech> TRADE_PRIORITY = (Tech o1, Tech o2) -> {
         float pr1 = o1.level;
         float pr2 = o2.level;

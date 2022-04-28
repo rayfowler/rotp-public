@@ -917,6 +917,7 @@ public class ShipCombatManager implements Base {
             if (stack.destroyed())
                 continue;
             if (stack.isColony() && !stack.isArmed()) {
+                stack.beginTurn();
                 stack.endTurn();
                 continue;
             }

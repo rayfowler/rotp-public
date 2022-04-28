@@ -79,10 +79,10 @@ public class AI implements Base {
                 captain =        new rotp.model.ai.xilmi.AIShipCaptain(empire);
                 governor =       new rotp.model.ai.xilmi.AIGovernor(empire);
                 scientist =      new rotp.model.ai.xilmi.AIScientist(empire);
-                diplomat =       new rotp.model.ai.base.AIDiplomat(empire);
+                diplomat =       new rotp.model.ai.xilmi.AIDiplomat(empire);
                 shipDesigner =   new rotp.model.ai.xilmi.AIShipDesigner(empire);
                 fleetCommander = new rotp.model.ai.xilmi.AIFleetCommander(empire);
-                spyMaster =      new rotp.model.ai.base.AISpyMaster(empire);
+                spyMaster =      new rotp.model.ai.xilmi.AISpyMaster(empire);
                 treasurer =      new rotp.model.ai.xilmi.AITreasurer(empire);
                 break;
             case BASE:
@@ -174,7 +174,10 @@ public class AI implements Base {
                 if(giver.colony.transport().size() > 0)
                     continue;
                 allGiversBusy = false;
-                if ((giver.maxPopToGive >= minTransportSize) && (giver.transportPriority < needer.transportPriority)) {
+                float allowableTurns = (float) (1 + Math.min(7, Math.floor(22 / empire.tech().topSpeed())));
+                float travelTime = giver.colony.transport().travelTime(needer.colony.starSystem());
+                if ((giver.maxPopToGive >= minTransportSize) && (giver.transportPriority < needer.transportPriority)
+                        && travelTime <= allowableTurns) {
                     float needed = needer.popNeeded - ((int) (Math.ceil(giver.transportTimeTo(needer))) * needer.growth);
                     int trPop = (int) min(needed, giver.maxPopToGive);
                     if (trPop >= minTransportSize) {

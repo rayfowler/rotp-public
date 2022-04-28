@@ -70,7 +70,7 @@ public final class TechControlEnvironment extends Tech {
             return c.tech().knowsTechForHostility(hostilityAllowed);
         
         TechControlEnvironment topTech = c.tech().topControlEnvironmentTech();        
-        return (topTech != null) && (topTech.environment() >= environment()) ;
+        return (topTech != null) && (topTech.environment() > environment()) ;
     }
     @Override
     public float baseValue(Empire c) { return c.ai().scientist().baseValue(this); }
