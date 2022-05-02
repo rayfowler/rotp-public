@@ -41,9 +41,10 @@ public class RandomEventRebellion implements Base, Serializable, RandomEvent {
     @Override
     public void trigger(Empire emp) {
         // find a random colony that is not the homeworld and not already in rebellion
+        // and is not uncolonizable by the owning empire (e.g. if the env has degraded)
         List<StarSystem> systems = new ArrayList<>();
         for (StarSystem sys : emp.allColonizedSystems()) {
-            if (!emp.isCapital(sys) && !sys.colony().inRebellion())
+            if (!emp.isCapital(sys) && emp.canColonize(sys) && !sys.colony().inRebellion())
                 systems.add(sys);
         }
         if (systems.isEmpty())

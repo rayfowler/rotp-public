@@ -23,6 +23,7 @@ import rotp.util.Base;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import rotp.model.planet.PlanetType;
 
 public class RandomEventIndustrialAccident implements Base, Serializable, RandomEvent {
     private static final long serialVersionUID = 1L;
@@ -41,11 +42,13 @@ public class RandomEventIndustrialAccident implements Base, Serializable, Random
     }
     @Override
     public void trigger(Empire emp) {
+        // do not trigger accident in rebelling colonies if the owner cannot colonize irradiated systems
+        boolean allowRebellingColonies = emp.canColonize(PlanetType.keyed(PlanetType.RADIATED));
         // find a random colony that has at least 30 factories
         List<StarSystem> systems = new ArrayList<>();
         for (StarSystem sys : emp.allColonizedSystems()) {
             Colony col = sys.colony();
-            if (col.industry().factories() >= 30)
+            if ((col.industry().factories() >= 30) && (allowRebellingColonies || !col.inRebellion()))
                 systems.add(sys);
         }
         if (systems.isEmpty())
