@@ -183,6 +183,7 @@ public final class ShipDesign extends Design {
         seq = d.seq();
         lab(d.lab());
         iconKey(d.iconKey());
+        shipColor(d.shipColor());
         size(d.size());
         //name(d.name());
         computer(d.computer());
