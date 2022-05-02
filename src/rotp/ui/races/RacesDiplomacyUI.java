@@ -101,8 +101,10 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
     public void drawTexture(Graphics g)      { }
     @Override
     public String textureName()     { return TEXTURE_BROWN; }
-    public void init()              {  setValues();   }
+    public void init()              { setValues(); }
     public void changedEmpire()     { setValues(); }
+    @Override
+    public void open()              { setValues(); }
     private void setValues() {
         incidentY = 0;
         relationsY = 0;

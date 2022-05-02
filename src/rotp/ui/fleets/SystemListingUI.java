@@ -117,6 +117,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
     protected Color selectedRedC()  { return selectedRedC; }
     protected Color unselectedRedC(){ return unselectedRedC; }
     protected int dataFontSize()    { return 20; }
+    @Override
     public void open() { 
         int rowH = rowHeight();
         int listH = getHeight()-rowH;

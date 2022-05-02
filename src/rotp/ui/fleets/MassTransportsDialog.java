@@ -131,6 +131,7 @@ public class MassTransportsDialog extends BasePanel {
         int uiH = s100+s30+(listSize*listingUI.rowHeight());
         setBoundsH(uiH);
     }
+    @Override
     public void open() {
         initSystems();
         listingUI.open();
