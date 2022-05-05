@@ -537,12 +537,12 @@ public class AIGovernor implements Base, Governor {
             }
         }
         //System.out.print("\n"+empire.name()+" "+col.name()+" expected bombard-Damage: "+enemyBombardDamage+" Bc: "+enemyBc);
-        if(enemyBc > 0 && enemyBombardDamage == 0)
+        if(enemyBc > 0 && enemyBombardDamage == 0 || col.defense().shieldLevel() > 0)
             allowBases = true;
         if (sys == null)  // this can happen at startup
             col.defense().maxBases(0);
         else if (allowBases)
-            col.defense().maxBases(max(currBases, 1));
+            col.defense().maxBases(max(currBases, 1, (int)(prod / col.defense().missileBase().cost(empire))));
         /*
         else if (empire.sv.isBorderSystem(sys.id))
             col.defense().maxBases(max(currBases, (int)(col.production()/40))); // modnar: reduce base count*/
