@@ -452,7 +452,7 @@ public class RacesUI extends BasePanel {
             return null;
         return player().viewForEmpire(selectedEmpire);
     }
-    public void selectDiplomacyTab()  { titlePanel.selectTab(DIPLOMACY_PANEL); }
+    public void selectDiplomacyTab()  { diploPanel.init(); titlePanel.selectTab(DIPLOMACY_PANEL); }
     public void selectIntelligenceTab()  { titlePanel.selectTab(INTELLIGENCE_PANEL); }
     public BufferedImage raceIconBackImg() {
         if (raceIconBackImg == null) {
@@ -782,12 +782,20 @@ public class RacesUI extends BasePanel {
             }
         }
         private void selectTab(String panel) {
-            if (!panel.equals(selectedPanel)) {
-                softClick();
-                selectedPanel = panel;
-                cardLayout.show(cardPanel, panel);
-                instance.repaint();
+            if (panel.equals(selectedPanel))
+                return;
+
+            softClick();
+            selectedPanel = panel;
+            cardLayout.show(cardPanel, panel);
+
+            switch(panel) {
+                case DIPLOMACY_PANEL: diploPanel.open(); break;
+                case INTELLIGENCE_PANEL: intelPanel.open(); break;
+                case MILITARY_PANEL: militaryPanel.open(); break;
+                case STATUS_PANEL: statusPanel.open(); break;
             }
+            instance.repaint();
         }
         @Override
         public void mouseClicked(MouseEvent e) {}

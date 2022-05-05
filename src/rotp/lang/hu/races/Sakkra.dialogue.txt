@@ -1,0 +1,88 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Sakkra specific dialogue
+
+CONTACT_AGGRESSIVE         | Helló! Mi mint [my_race_whose_prefix_lowercase] faj vagyunk ismerve, de ez nem is fontos. Ami azonban fontos, az az, hogy tudjátok, hogy a galaxis minden bolygójának ökológiáját a rendelkezésünkre álló minden szükséges eszközzel tökéletesítjük, oké? Na, viszlát!
+CONTACT_RUTHLESS           | Helló! Mi vagyunk [my_race_possessive_prefix_lowercase]! Reméljük, hogy nem bántatok rosszul bolygóitok ökoszisztémáival. Máskülönben azonnal helyre kellene pofoznunk, és ez valószínűleg nem lenne túl szórakoztató számotokra, igaz?
+CONTACT_ERRATIC            | Hú, egy új faj! Mi vagyunk [my_race_possessive_prefix_lowercase], és ti? [your_race_possessive]? Elképesztő! Csak hogy tudd, tisztán kell tartanod a bolygóidat, oké? Gondoskodni fogunk róla, mivel nagyon-nagyon odafigyeljünk rád.
+//
+GREETING_01                | Szia nagykövet! Mindig örülök, ha egy hozzád hasonló baráttól hallok! Segítségre van szükséged valamiben?
+GREETING_04                | Ez ő, [your_empire_prefix_uppercase] nagykövete! Éppen néhány bolygó-ökoszisztéma finomhangolásával vagyunk elfoglalva, de meghallgatjuk, amit mondani szeretnél.
+GREETING_07                | Ó, te vagy az. Mit akarsz? Ugye tudod, hogy nem igazán szeretünk olyan piszkos fajokkal társulni, mint a tiéd?
+//
+DECLAREWAR_HATE_01         | Úgy tűnik, a néped nem tudja abbahagyni minden irányítása alá kerülő bolygó beszennyezését, mi? Kevesebb idő alatt töröljük le a mocskotokat a galaxisról, mint amennyi egy biodóm felépítéséhez szükséges!
+DECLAREWAR_HATE_02         | Amióta megismerkedtünk veletek, a legelképzelhetetlenebb módon rontjátok el az ökoszisztémáitokat! Kiiktatjuk mindannyiótokat, mielőtt többet tudnátok ártanni ezeknek a bolygóknak!
+DECLAREWAR_HATE_03         | Nem bírjuk tovább nézni, hogy megrontjátok a világaitokat! Ez sokba fog kerülni nekünk, de néha a cél többet ér, mint az eszköz!
+//
+DECLAREWAR_ERRATIC_01      | Hú, a népetek aztán jó piszkos. Segíthetnénk megtisztítani a világaitokat, de sokkal gyorsabb lenne megszabadulni tőletek és magunk helyreállítani a rendet.
+DECLAREWAR_ERRATIC_02      | Szia! Készen álltok a háborúra? Nem?! Hát, ez nagy kár! Ám, látunk néhány világot, amelyek csak úgy könyörögnek, hogy optimalizálva legyenek. Csupán a markunkba kell jutniunk!
+DECLAREWAR_ERRATIC_03      | Halihó! Tudtátok, hogy nemrég egy még energiahatékonyabb biodómot terveztünk? Szeretnénk tesztelni őket néhány rendkívül mocskos bolygón, szóval ha nem bánjátok, mi megtisztítunk néhányat a tieitek közül.
+//
+DECLAREWAR_MILITARY_01     | Ugye tudjátok, hogy a Konklávé tökéletesíteni fogja a galaxis minden bolygójának környezetét? Nos, most kezdenénk el dolgozni a ti világaitokon. Eljött az ideje elhagynotok őket. Húzzatok el mihamarabb: nincs lehetőségetek legyőzni minket, ha harcolni próbálnátok!
+DECLAREWAR_MILITARY_02     | A makulátlan [my_title] szerint most el kell távolítanunk a népeteket a bolygóitokról, hogy elkezdhessük helyreállítani őket. Békében elhagyjátok otthonaitokat? Nem? Hát ennek rossz vége lesz!
+DECLAREWAR_MILITARY_03     | A területeiteken található valamennyi a megoldandó legcsodálatosabb ökológiai rejtvények közül, és ti úgy bántok velük, mintha ott sem lennének! Ezt nem bírjuk tovább! Mindegy, mi lesz, mi most elvesszük tőletek mindet!
+//
+DECLAREWAR_ALLIANCE_01     | Hallottuk, hogy ti és [other_race_possessive_prefix_lowercase] veszekedtek valamin. Biztosak vagyunk benne, hogy hülyeség és lényegtelen, de ez a legjobb lehetőség arra, hogy magunknak sajátítsuk a gyarmataitokat és végre helyrehozhassuk az általatok okozott károkat!
+DECLAREWAR_ALLIANCE_02     | Határozottan nem tagadhatom, hogy [other_race_possessive_prefix_lowercase] egy szutykos nép. Viszont ti sokkal mocskosabbak vagytok, mint ők, így ha hajlandóak harcolni ellened, szívesen csatlakozunk az ügyhöz.
+DECLAREWAR_ALLIANCE_03     | Ezúttal határozottan megcsúsztál, nagykövet! Tudnod kellett volna, hogy csatlakozunk egy szövetségesheinkhez, akik háborúzni indulnak ellenetek, még akkor is, ha e szövetségesek a piszkos[other_race_possessive]! Várj, te ezt nem tudtad? Jaj nekem...
+//
+DECLAREWAR_SPYING_01       | Mit gondolsz, pontosan mit csinálsz? Egy olyan mocskos nép, mint ti, soha nem tudna kémkedni a Konklávé ellen anélkül, hogy hulladéknyomot hagyna maga mögött, aminek bűzét könnyedén lekövetünk.
+DECLAREWAR_SPYING_02       | A tény, hogy ilyen rejtett módon lépsz fel a Konklávé ellen, feldühít minket. Viszont a tény, hogy undorító jelenléteddel beszennyezted bolygónkat, vég náékül febőszít minket!
+DECLAREWAR_SPYING_03       | Elkövettétek azt a hibát, hogy azt hittétek, nem fogunk visszavágni, amikor kémkedésünk mellett döntöttetek. Attól, hogy a hadseregetek egy kicsit nagyobb, mint a miénk, nem jelenti azt, hogy nem vagyunk hajlandóak háborúzni veletek, szennyterjesztők!
+//
+DECLAREWAR_ATTACK_01       | Mit művelsz?! Hogyan merészel egy olyan mocskos puhány, mint te, károsítani értékes bolygóinkat? Ezért elégetjük a néped, mint a szemetet!
+DECLAREWAR_ATTACK_02       | Háborút akarsz vívni ellenünk, mi? Ne aggódj, egyenként lőjjük ki gyarmataitokat és szabadítjuk meg bolygóitokat a szörnyű beszennyezőiktől!
+DECLAREWAR_ATTACK_03       | Piszkos! Piszkos! Piszkos! Borzalmas vérszomjasságotokkal beszennyeztétek a bolygónkat! A Konklávé minden erejét beveti, hogy visszavessen a salakgödörbe, ahonnét kimásztatok!
+//
+DECLAREWAR_OPPORTUNITY_01  | A makulátlan [my_title] mostanában a te népedre gondolt. Arra a következtetésre jutott, hogy az lesz a legjobb, ha megakadályozzuk, hogy előbb-utóbb elterjedjen a galaxisban. Miután kiiktattunk titeket, nem kell mand megannyi világot megtisztítanunk!
+DECLAREWAR_ASSASSIN_01     | Mit tettetek?! Tudtam, hogy a fajtátokban nem lehet megbízni! Ha képesek voltatok megölni egy fegyvertelen nagykövetet, beleborzongok, ha belegondolok, mit tennétek az ökoszisztémáitokkal! Készüljetek fel a háborúra, mocskos [your_race_possessive].
+
+
+OFFER_PEACE_01             | Azok a szegény bolygók! Egyszerűen nem tudjuk elviselni, hogy további sebeket ejtsen rajtuk ez az ostoba háború! Vessünk véget a harcoknak most, nagykövet, és kezdjük el meggyógyítani ezeket a világokat, amelyekben ekkora károkat tettünk!
+OFFER_TRADE_01             | Nahát, olyan sok összetett környezet létezik mindezeken a világokon! Szeretnénk gazdaságunkat stabilabbá tenni, hogy finanszírozhassuk ezeket a projekteket, és a veletek való kereskedés nagy segítség lenne! [amt] EK minden évben rendben lesz, ugye?
+OFFER_PACT_01              | Úgy tűnik, elég jól vigyáztok a bolygóitokra, a háborúk pedig olyan csúnya dolgokat művelnek a világokkal, amelyeken végigsöpörnek. Szeretnétek megnemtámadási szerződést kötni velünk? Így egyik gyönyörű ökoszisztémánknak sem lesz mitől félnie!
+OFFER_ALLIANCE_01          | Hú, le vagyunk nyűgözve! Ahogy törődtök a bolygóitokkal szinte olyan, mintha magatok is Ssslaurák lennétek! Kössetek velünk szövetséget, nagykövet! Együtt fogjuk megvédeni egymás világait: senki sem fog fenyegetni minket, amíg egyként állunk!
+ 
+WARN_TRESPASSING_01        | Hé! Hé! Hé! Ez a rendszer, [system], a Konklávé védelme alatt áll! Nem tartoztok ide, ugye tudjátok? Kifelé! Most! Mire vártok? Hess!
+WARN_EXPANSION_01          | Sokkal többre tartjátok magatokat, mint kellene, nagykövet! Nem vagytok elég fejlettek ahhoz, hogy gondoskodjatok ezekről a világokról, és mi nem fogjuk hagyni, hogy elpazaroljátok ezeket az ökológiai rejtvényeket! Lassítsátok a terjeszkedéseteket, amúgy bajok lesznek!
+WARN_BUILDUP_01            | Elég sok hajótok van ott! Ha továbbra is halmozzátok őket, egyes birodalmak idegessé válhatnak. Lehet, hogy elkezdik irányotokba állítani a fegyvereiket. Még egy-két lövést is leadhatnak! Ha továbbra is csak halmozzátok a hajóitokat ott, mármint.
+WARN_SKIRMISH_01           | Nem tudom elhinni, hogy összeütközés történt a patyolátlan [system] rendszerben! Mit képzeltetek, nagykövet? Ezúttal túl fogunk nézni rajta, mivel nem bántottatok egyetlen bolygót sem, de ezentúl jobban figyeljetek oda a flottáitokra, hülye [your_race]!
+WARN_ATTACKED_01           | Mit gondoltok, mit műveltek?! Hagyjátok abba a hülyéskedést! Nagyon elfoglaltak vagyunk azzal, hogy tökéletesítsük a rejtelmes [system] rendszer ökológiáját s nincs szükségünk arra, hogy a hajóitok körberepüljék és még nagyobb kihívást teremtsenek!
+WARN_INVADED_01            | Elment az eszetek?! Vagy az ügyefogyott [your_race_giving] ilyen kevés esze van?! Évekbe fog telni, amíg helyrehozzuk az általatok okozott károkat! Ezek a tréfák már nem viccesek! Hagyjátok abba a játszadozást, különben megbánjátok!
+WARN_ESPIONAGE_01          | Azt hittétek, kémkedhettek utánunk és azt sikeresen titokban tudjátok tartani? Vicces vagy, nagykövet. De miután ez már kevésbé lesz ilyen mulatságos, akkor valószínűleg csak egyszerűen megölünk, oké? [framed]
+WARN_SABOTAGE_01           | Mit tettetek?! Széttörtétek a biodómát! Azok az értékes minták, az összes kísérlet, mind tönkrementek! Túl messzire mentetek: ha ez így folytatódik, feleletre számítsatok tőlünk, dzsuvás [your_race_possessive]! [forced]
+WARN_BIOWEAPON_01          | Most aztán eltúloztátok! Biofegyver?! Biofegyver!! Gondoljatok a mérhetetlen károkra, amelyeket abban a védtelen bolygónak az ökológiájában okoztatok! Abszolút szörnyetegek vagytok: ezt keservesen meg fogjátok bánni!
+WARN_GENOCIDE_01           | Eltávolítottátok [victim_race_regarding_prefix_lowercase], ugye? Jó, kezdtek az idegeinkre menni. Természetesen nekünk adjátok a világaikat az ökológiai helyreállításhoz. Nem fogjátok? Értem...
+WARN_FINAL_WAR_01          | Ugye tudjétok, hogy mindannyian úgy döntöttünk, hogy összefogunk minden világ javára? Miért akartok szembeszállni egységünkkel, nagykövet? Gondolom, hamarosan nem is lesz jelentősége. De ne aggódj! Gondosan vigyázunk bolygóitokra, miután eltűntetek.
+WARN_COUNCIL_VOTE_01       | Nem volt túl szép dolog, amit a tanácsban műveltél. Azt hittem, egyetértünk, nagykövet? Hogy mindig is [candidate_race_possessive_prefix_lowercase] akarata a helyes döntés? Ne botránkozz meg mégegyszer, retkes [your_race]!
+WARN_OATHBREAKER_01        | Mindig is úgy tartottam, hogy fizikailag undorító vagy, furcsa testeddel és kellemetlen szagoddal. De most látom, hogy a tetteid megegyeznek e képpel! Tűnj el a szemem elől, nagykövet: kezdem magam nagyon rosszul érezni. [spiesCaught]
+WARN_ATTACKED_ALLY_01      | Nézd, mi nem igazán vagyunk [defender_race_possessive_prefix_lowercase] rajongói, még akkor sem, ha technikailag szövetségesek vagyunk. Hagydjátok abba ezt az ostoba civakodást, különben be kell avatkoznunk.
+WARN_REBELLING_AGAINST_01  | Hogy tehette ezt velünk a Tanács?! Hogyan választhattak az összes faj közül TITEKET ennek a galaxisnak a vezetésére? Ezt nem hagyhatjuk... Ti egyszerűen... Olyan... MOCSKOSAK VAGYTOK!
+
+PRAISE_COUNCIL_VOTE_01     | Helló, nagykövet! Köszönöm, hogy ilyen megbízható voltál a Tanácsban. A többi faj olyan gusztustalan, de az olyan népek támogatása, mint a tied? Nos, úgy érezzük, hogy valamit jól csinálunk. Csak szólj, ha kell valami, oké?
+PRAISE_COUNCIL_VOTE_02     | Nagyon jól szerepeltél ma a tanácsteremben. Nagyon örülök, hogy látjátok a bölcsességet az utunkban. Remélem, hogy a ti bolygótok is annyit profitál a te bölcsességedből, mint a Konklávé!
+PRAISE_COUNCIL_VOTE_03     | Hmm, mit tervezel, hogy a jó kedvünkben járj azzal, hogy ránk szavazol a tanácsülésen? Nos, mindegy, biztos vagyok benne, hogy hamarosan megtudjuk, miről van szó, ha fontos. Amúgy köszi a támogatást, te mocsoklény.
+PRAISE_ATTACKED_ENEMY_01   | Hallottad azoknak a világoknak hívását, ugye, nagykövet? A lehető leghamarabb fel kell szabadítani őket [defender_race_whose_prefix_lowercase] elnyomás alól. Kezdettől fogva tudtam, hogy szívetekben olyanok vagytok, mint mi! És most a Konklávé többi tagja is tudni fogja!
+PRAISE_ATTACKED_ENEMY_02   |Haha, igen! Ez a helyes út! Kergessétek csak azokat a piszkos [defender_race_regarding], amíg már nincs hová futniuk! Csak próbáljátok minél kevesebb kárt tenni a bolygókban, oké? Szükségünk lesz rájuk, miután ennek vége.
+PRAISE_ATTACKED_ENEMY_03   | Ti is [defender_race_possessive_prefix_lowercase] ellen harcoltok, mocsoklények? A bűz miatt teszitek, ugye? Áthat mindent, amit körülvesz. Csak maradjatok távol tőlünk miután végeztetek! Biztos vagyok benne, hogy titeket is megfertőz!
+PRAISE_TRADE_01            | Nagyon jó ez a kereskedelmi megállapodás! Nagyon sok projekthez tudtunk támogatást generálni belőle. Őszintén köszönöm, és [my_empire_prefix_lowercase] világai örök dicséretet zengetnek a nevednek!
+PRAISE_TRADE_02            |  Áh, itt vagy! A makulátlan [my_title] azt akarta, hogy gratuláljak a Konklávéval kötött hibátlan kereskedelmi megállapodás fenntartásához. Reméli, hogy meglátjátok a bölcsességet annak folytatásában, mivel sok projektünk vár még megvalósításra! Ez minden. Viszlát!
+PRAISE_REBELLING_WITH_01   | A Tanács megőrült, hogy azokat az undorító [leader_race_regarding] a trónra ültesse. A visszataszító bűzük máris megbetegíti népünket. Hadd segítsünk megbuktatni őket, nagykövet!
+ 
+ACCEPT_TRADE_01            | Kereskedelmi idő! Kereskedelmi idő! [amt] EK minden évben nagyban hozzájárulna bioszféráink felállításához! Köszönöm, barátom!
+RESPOND_IGNORE_THREAT_01   | Hú, te aztán tényleg dühös vagy, mi? Na jó, nem mintha bármit is tehetnél, még ha az is lennél! Menj el, kérlek, ma nagyon el vagyok foglalva ezekkel a növénymintákkal.
+RESPOND_STOP_SPYING_01     | Kémet fogtatok, igaz? Nos, ne aggódjatok, csak ellenőriztük, hogy kedvesen bántok-e a bolygóitokkal. Úgy tűnik, hogy igen, szóval adjátok vissza megfigyelőnket és nem kell újat küldenünk!
+RESPOND_STOP_ATTACKING_01  | Nézd meg jól, hány hajónk van. És mindenkinek van nagy, félelmetes fegyvere! Ha valaha is megtudjuk, hogy visszaéltek a bolygóitok természetközegeivel, kénytelenek leszünk visszaküldeni őket, és ezt szerintem egyikünk sem akarja! Na, viszlát!
+

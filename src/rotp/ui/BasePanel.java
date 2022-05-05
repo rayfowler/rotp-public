@@ -132,6 +132,7 @@ public class BasePanel extends JPanel implements Base {
         enableGlassPane(err);
     }
     public void cancel()   { }
+    public void open()     { }
     public void handleNextTurn()    { }
     @Override
     public void paint(Graphics g) {

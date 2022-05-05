@@ -1,0 +1,22 @@
+// all possible names
+name: Koldan, Klakant, Klokan, Artropon, Koleopteron
+
+desc1: Xenofób Indusztrialisták
+desc2: Kaptár elme és megemelt munkásteljesítmény 
+desc3: Egy faj egyetlen irányító aggyal, a szorgalmas [race] a kívülállók számára kifürkészhetetlen.
+
+// possible home system names
+home: Koldan, Klakant, Klokan, Artropon, Koleopteron
+
+title: A/Az
+fulltitle: A/Az
+
+// possible leader names
+leader: Ixitix, Kaxal, Kikitik, Klaquan, Kalak, Xantak
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Dongó, Szöcske, Sáska, Bogár, Hangya, Pók, Légy
+ship2: Lódarázs, Méreg, Bögöly, Szitakötő, Fullánk, Kérész, Darázs
+ship3: Tarantula, Vipera, Kobra, Áspiskígyó, Gyík, Csörgőkígyó, Skorpió
+ship4: Királykobra, Feketeözvegy, Halálfejes Szender, Sárkány, Anakonda, Piton, Fekete Mamba
+

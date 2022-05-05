@@ -1,0 +1,86 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Mrrshan specific dialogue
+
+CONTACT_AGGRESSIVE         | Üdvözöllek, te furcsa lény. Én [my_race_approaching_prefix_lowercase] tartozom és az Arany Kánt szolgálom. Remélem, hogy erős vagy, [your_race], nemcsak a néped, hanem a legdrágább kincseitek érdekében is!
+CONTACT_RUTHLESS           | Mi vagyunk [my_race_possessive_prefix_lowercase], [your_race], és egyetlen hitünkhöz ragaszkodunk: az erős kap, a gyenge ad! Ha még nem értenéd e filozófia bölcsességét, akkor mi hamarosan megtanítjuk.
+CONTACT_XENOPHOBIC         | Imádkozz, hogy az Arany Kán méltónak tartson téged, [your_race]! Keltsd fel a haragját és nem nem lesz rest [my_race_possessive_prefix_lowercase] flottáit rád zúdítani!
+//
+GREETING_01                | Újra és újra bizonyítottatok nekünk. Megtiszteltetés számunkra, hogy minden tőlünk telhetőt megtegyünk annak érdekében, hogy ezt viszonozhassunk nektek.
+GREETING_04                | Meghallgatom a szavaid, nagykövet, de nem vagyok köteles megadni bármit is, amit kívánsz.
+GREETING_07                | Van vakmerőséged így a Kán szolgálójához merészkedni! Mondd ki, amit mondanod kell, és készülj fel a menekvésre, ha csupán az időmet pazarlod.
+//
+DECLAREWAR_HATE_01         | Az ereklyéid kárba vesznek, ha rajtad múlik! Csontjaiddal és kincseiddel feldíszítjük a termeinket a csodálatos [my_home] szülőbolygónkon és mire végzünk, annyi lesz az összes, ami megmarad a népedből!
+DECLAREWAR_HATE_02         | Elég ebből! A puszta portyák nem elégítik ki a fajtáddal szembeni ellenségeskedésünket: ti [your_race_possessive] sokkal nagyobb méretű csapást érdemeltek!
+DECLAREWAR_HATE_03         | A puszta tudat, hogy egy olyan gyenge faj, mint a tiéd, befolyást gyakorol erre az univerzumra, elég ahhoz, hogy lebetegedjünk. Az esélyektől függetlenül megígérem, hogy mindent megteszünk azért, hogy megtanítsuk: hol a helyed.
+//
+DECLAREWAR_ERRATIC_01      | A Kánság karmai élesítésre szorulnak, nagykövet. A néped biztosítani fogja számunkra az edzést, amelyre szükségünk van, hogy készületben tartsuk magunkat a méltóbb ellenségekre.
+DECLAREWAR_ERRATIC_02      | Valóban a te népedé a legszebb kincsek valamennyije, [your_race]. Kíváncsian várjuk, milyen hevesen fogtok küzdeni, hogy megtarthassátok őket!
+DECLAREWAR_ERRATIC_03      | Túl régen volt már, amikor utoljára hoztunk vissza vajmi legendás zsákmányt. A néped jól küzd, de meg tudja-e akadályozni, hogy elvigyük a megannyi csillogó trófeáitok, amikor már szinte a mancsainkban vannak?
+//
+DECLAREWAR_MILITARY_01     | Az erős kap és a gyenge ad: az univerzum merev törvénye. Hamarosan látni fogod, hogy ez nem csak a kincseitekre vonatkozik, hanem a bolygóitokra is!
+DECLAREWAR_MILITARY_02     | Bár ritkán csillog, mint az arany, a földbirtok gyakran önmagában is méltó jutalom... És minden jó nyereményért érdemes megküzdeni, nem igaz, nagykövet?
+DECLAREWAR_MILITARY_03     | A Kánság szükségletei felülmúlják [your_race_whose_prefix_lowercase] faj igényeit. Lehet, hogy lenyűgöző technológiával rendelkeztek, de kétlem, hogy meglenne a hozzáillő vehemens eltökéltségetek is!
+//
+DECLAREWAR_ALLIANCE_01     | Veszélyes játékot játszottatok, hogy ellenséget csináltatok a Kánság szövetségeséből. Ez a játék hamarosan gyors és véres véget fog érni!
+DECLAREWAR_ALLIANCE_02     | Szövetségesünk, [other_race_possessive_prefix_lowercase] tiszteletre méltó, de gyenge nép. Lehet, hogy nyertetek volna, ha ez a háború csupán a kettőtök birodalma között zajlik le, de mivel mi is az ő oldalukon állunk, esélyetek sincs a győzelemre!
+DECLAREWAR_ALLIANCE_03     | Jobban szerettük volna azt a megtiszteltetést, hogy magunk igázzuk le birodalmatokat. Úgy tűnik, ezúttal meg kell osztanunk a dicsőséget és a zsákmányt [other_race_relational_prefix_lowercase].
+//
+DECLAREWAR_SPYING_01       | Gyáva, aki inkább titkolódzik, mintsem hogy becsülettel harcoljon! A tetteid megegyeznek a gyengeségeddel és most megfizeted az árát!
+DECLAREWAR_SPYING_02       | Milyen érzés, [your_race]? Ennyit kockáztatni csak azért, hogy végül csupán háborút nyerj a népednek?
+DECLAREWAR_SPYING_03       | Mondd el [your_nameTitle] [your_name] vezérednek: a titoktartás a pipogya hitványok színháza! Az, hogy ilyen gyáva módon cselekedtetek azt jelenti, hogy a vadságunk egyedül elég lesz a győzelemhez!
+//
+DECLAREWAR_ATTACK_01       | Ha! Gyáva puhányoknak tartottunk titeket, de úgy tűnik mégis van bennetek némi harciasság! Kár, hogy nem maradtok fenn elég sokáig ahhoz, hogy megünnepelhessétek ezt a csekély győzelmet!
+DECLAREWAR_ATTACK_02       | Szívességet tettetek azzal, hogy a küszöbünkhöz hoztátok a harcot! Viszonzásul gondoskodunk arról, hogy népetek igazi harcosokként pusztuljanak meg a csatatéren!
+DECLAREWAR_ATTACK_03       | A helyedben elkerülném az arroganciát, nagykövet. Harcosaink dühét soha nem fogja legyőzni a technológia, akármilyen fejlett is!
+//
+DECLAREWAR_OPPORTUNITY_01  | A fajtád már régen hasztalanná vált. De biztosak lehettek benne, hogy megfelelő sportágat fogtok biztosítani a legfiatalabb és legtapasztalatlanabb harcosainknak, amelyben fejleszthetik a képességeiket.
+DECLAREWAR_ASSASSIN_01     | A legkevésbé sem vagyok megdöbbenve, hogy a fajtád ilyen gerinctelenül viselkedik. Egy nagykövet meggyilkolása a legsúlyosabb szégyen, amit magadra vállalhatsz, és haláltusájukban néped átkozni fogja a nevedet, amiért kiadtad e parancsot!
+
+
+OFFER_PEACE_01             | Mindennek eljön az ideje, nagykövet, és most eljött az idő, amikor véget vetünk ellenségeskedésünknek. Őrizd meg az ereklyéidet, mi békét kívánunk most tőletek!
+OFFER_TRADE_01             | Kétségtelen, hogy a trófeák megszerzésének leggyorsabb módja elvenni őket azoktól, akik túl gyengék, hogy megállítsanak! De a kereskedés elfogadható módja lehet annak, hogy két birodalom nyerjen egymástól. Kezdjük évny [amt] EK-tel, hogy meglássuk mennyit tudunk... nyerni egymástól.
+OFFER_PACT_01              | Ennyire egyenrangú birodalmaknak nincs szükségük egymás között harcolni, amikor rengeteg gyengébb fajt lehet kifosztani és felégetni. Kössünk egy hivatalos megnemtámadási szerződést, hogy az energiáinkat azokra szervezzük át, akiknek könnyebben elsajátítható kincsük van!
+OFFER_ALLIANCE_01          | Azért jöttem ma, hogy hivatalos szövetséget javasoljak a Kánság és [your_empire_prefix_lowercase] között. Bízom benne, hogy nem vesztegeted az időt e szerződés aláírására? Ne felejtsd: a szövetségben való egyenlő részesedés egyenlő részesedést jelent a hadizsákmányból is!
+ 
+WARN_TRESPASSING_01        | Hacsak nem azért vannak a hajóitok a háborított [system] rendszerben, hogy hűbért fizessenek, azt javasolnám, hogy a lehető mihamarabbi visszafordulásra rendeld őket.
+WARN_EXPANSION_01          | Bár előnyben részesítjük azokat az értékeket, amelyekkel feldíszíthetjük szentélyeink falait, nem vagyunk annyira vakok, hogy figyelmen kívül hagyjuk a gazdátlan földbirtok kincsét. Ellenőrizd a terjeszkedéseteket, vagy kockáztasd a népem dühét, nagykövet.
+WARN_BUILDUP_01            | Ha azért építitek a flottákat, hogy lerohanjatok egy másik fajt, akkor tőlünk nem fogtok kifogásokat hallani! Viszont amíg nem kapunk biztosítékot erről, feltételeznünk kell, hogy a flottáitok minket fognak célba venni. Nem fogunk habozni ezt megelőzőn cselekedni.
+WARN_SKIRMISH_01           | Ez egy mulatságos kis csetepaté volt, nemde? Ennek ellenére ezek a kis csaták unalmasak és jutalommentesek: ha ragaszkodtok a folytatásukhoz, örömmel benyújtunk egy hivatalos hadüzenetet!
+WARN_ATTACKED_01           | Háhh! Komoly kísérlet volt ez arra, hogy kiprovokálj minket, nagykövet? A te néped gyenge, a kincseitek pedig ócskák! Hagyd abba ezt az ostoba játszmát, mielőtt még rákényszerítesz minket, hogy véget vessünk neked és népednek!
+WARN_INVADED_01            | Biztosan csak tréfáltok minket ezzel a szerény kis invázióval? Szerencsétek, hogy kevés hasznunk volt az elkobzott [system] rendszerből, de ha értékesebb rendszereket vennétek célpontul, biztosítjuk, hogy soha többé ne vehessetek el senkitől semmit!
+WARN_ESPIONAGE_01          | Milyen alattomos játékokat játszik a néped! Ennél sokkal több erőfeszítést kell kifejtenetek, ha meg akarjátok szerezni a Kánság titkait! Hordd el magaddal a kémeteket és távozzatok, mielőtt e játék megszűnik szórakoztatónak tűnni. [framed]
+WARN_SABOTAGE_01           | Veszélyes trükkök ezek, nagykövet. Ha a lerombolni kívánt épületben nagy értékek lettek volna, mostanra kétségtelenül a néped vérét mosnánk fel szülővilágod utcáiról. Erősen ajánlom, hogy ne fontolgassatok újabb szabotázst. [forced]WARN_BIOWEAPON_01          | A trófeákat becsületes harcban kell megnyerni, nem pedig azok csontjai mellől ellopni, akik élve is védtelenek voltak! Ha még egyszer ilyen aljas fegyvereket használatok, biztosíthatom, hogy az lesz az utolsó alkalom!
+WARN_GENOCIDE_01           | Nem rossz döntés az egész [victim_race_whose_lowercase] fajt kiírtani és minden kincsüket sajátnak tekinteni... Bár kétlem, hogy elég balgák lennétek ahhoz, hogy hasonlóval próbálkozzatok velünk szemben, a képességeitek ettől még mindig eléggé aggasztóak.
+WARN_FINAL_WAR_01          | Hülye [your_race]! A tanács döntésének akaratával szembeszállni egyenlő ellene menni [my_race_possessive_prefix_lowercase] akaratának! Elvisszük a trófeáitokat és a legkisebb csecsebecséig elégetjük! Semmi sem marad a fajtádból mire végzünk!
+WARN_COUNCIL_VOTE_01       | A Kánságnak sokkal fontosabb ügyei vannak, mint politikai játszmák lebonyolítása a tanácstermekben. Jobb lenne nekünk, ha egyszerűen engednétek a kívánságainknak. És számodra is jobb lenne, ha elég világos vagyok.
+WARN_OATHBREAKER_01        | Szissz! Csak a kétségbeesettek szegik meg a szavuk kötelékét. De nem is számít! Mostantól egyszerűen veletek is csak úgy foglalkozunk, ahogy mindenki mással is, aki túlságosan kétszínű ahhoz, hogy megbízhatóak legyenek. [spiesCaught]
+WARN_ATTACKED_ALLY_01      | Nem mondhatom, hogy nem értem, miért támadnátok meg [defender_race_regarding_prefix_lowercase]. Imádnivalók a kincseik... De azok mind a mieink lesznek, ha majd el akarjuk venni: nem a tieitek!
+WARN_REBELLING_AGAINST_01  |A Tanács által képviselt békét a népünk soha nem fagadná el. Egy dologra és csak egy dologra vágyunk: elvenni a kincseket a gyengéktől és a miénkké tenni!
+
+PRAISE_COUNCIL_VOTE_01     | A Tanácsban nyújtott támogatásod mindig is nagyra értékeltük, nagykövet. Maga az Arany Kán kívánta, hogy tudd, hogy a te néped a Kánság becses értékének számít, és ha meg akarod látogatni a szeretett [candidate_home] szülőbolygónk, lakomát csapunk a nevedben!
+PRAISE_COUNCIL_VOTE_02     | Láttad annak [rival_race_whose_prefix_lowercase] képviselő mogorva arcát? Háhh! Hadd vigyorogjanak! Amíg a hozzád hasonló bölcsek továbbra is elismerik hatalmunkat, addig a Kánságnak nincs mitől félnie!
+PRAISE_COUNCIL_VOTE_03     | Félsz a portyáinktól, nagykövet? Abban reménykedsz, hogy a tanácsban való vágyaink teljesítése visszatartja kincskeresőinket a világaitoktól? Hm-hm-hm-hmm... Annyi biztos, hogy ezzel nem rontottál az esélyeiteken, nemde?
+PRAISE_ATTACKED_ENEMY_01   | A mai nap nagyszerű lesz mindkét népünk számára, [attacker_race]! [defender_race_possessive_prefix_uppercase] hiába imádkoznak egyesített erőink ellen! Rengeteg kincs van mindkettőnknek: a legnagyobb harcosoknak jut a legnagyobb zsákmány!
+PRAISE_ATTACKED_ENEMY_02   | Reméled, hogy ma esélyed lesz valami kincsre bukkanni, nagykövet? Rendben, kötök veled egy alkut: segítsetek nekünk megszabadulni ezektől [defender_race_whose_prefix_lowercase] kártevőktől, és gondoskodunk róla, hogy igazságos jutalmat kapjatok.
+PRAISE_ATTACKED_ENEMY_03   | Nyilvánvaló, hogy ebben a háborúban csak a gazdagságért harcoltok. De ezeknek [defender_race_giving_prefix_lowercase] szánalmas ereklyéik vannak, úgyhogy azt hiszem, ha segítetek nekünk, akkor meghagyunk nektek mindent, amit mi magunk nem akarunk elhurcolni.
+PRAISE_TRADE_01            | Emlékszel, amikor indítványoztam a kereskedelmi megállapodásunkat? Mondtam, hogy meglátjuk, mennyi hasznot nyerünk egymástól, és örülök, hogy a megszerzett értékek kölcsönösen előnyösek.
+PRAISE_TRADE_02            | Mindig szórakoztatóbb a gazdagságért küzdeni és a győzelem zsákmányával megrakott hajókkal hazaindulni! Nos, azt hiszem, ez a kereskedelmi megállapodás legalább egy kicsit jövedelmezőbb, amikor figyelembe vesszük a költségeket. Ügyelj arra, hogy ez így is maradjon, nagykövet!
+PRAISE_REBELLING_WITH_01   | Na ez már valami! Semmi sem ér fel egy jó harccal, mi? És megannyi megkaparintható zsákmány... Remélem nem veszed zokon, hogy a Kánság szeretné, ha csatlakoznál a mulatsághoz!
+
+ACCEPT_TRADE_01            | Azt hiszem, nem tudunk kifosztani minden civilizációt, amellyel találkozunk. Mennyit EK-et szeretnél, ha kereskednék évente? [amt]? Rendben...
+RESPOND_IGNORE_THREAT_01   | Bocsáss meg, hogy kinevettelek, a fenyegetéseid komikusan üresek. Eredj most, mielőtt a portyázóink úgy döntenek, hogy a gyarmataitokon élesítik a karmaikat.
+RESPOND_STOP_SPYING_01     | Találtatok egy kémet, akiről azt mondod, hogy a miénk? Biztosan nem. Álmunkban sem gondolnánk, hogy a magasztos [your_empire] után kémkedjünk. Csináljatok, amit akartok a kémmel, számunkra ennek semmi jelentősége.
+RESPOND_STOP_ATTACKING_01  | Aggódsz egy rajtaütés miatt, [your_race]? Ne aggódj, minket nem érdekel az, amivel rendelkezel. Áthelyezzük őket azonnal. Végül is nincs szándékunkban megijeszteni.

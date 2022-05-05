@@ -1,0 +1,90 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Bulrathi specific dialogue
+
+CONTACT_AGGRESSIVE         | Én [my_empire_prefix_lowercase] nagykövete vagyok. Azt tanácsolom, hogy maradjatok [my_title_prefix_lowercase] jó oldalán, kis [your_race_possessive]. Mert neki csupán egy szavába kerül és a fajtátok oly harag nyomán tűnik el amit el sem lehetséges képzelnetek.
+CONTACT_RUTHLESS           | Milyen apró lények vagytok! Mindössze két dolgot szükséges tudnotok: először is, bennünket "[my_race_giving]" hívnak, másodszor, hogy a hadjáratunkkal szembeszegülni csak a pusztulásotokat garantálja!
+CONTACT_ERRATIC            | Mi,[my_empire_prefix_lowercase] üdvözlünk benneteket, apróságok. A sorsunk valahol ezek között az elszórt világok és égő csillagok között rejlik. Érdekes lesz látni hova illetek majd be a nagy elképzelésünkbe.
+//
+GREETING_01                | Lám becsülettel cselekedtetek, tehát mi is becsülettel viseltetünk felétek. Mondjátok el mire van szükségetek, kis barátaink. 
+GREETING_04                | Beszéljetek gyorsan, kis [your__race_possessive]. Ne tegyétek próbára a haragunkat hamis ígéretekkel és egyoldalú ajánlatokkal.
+GREETING_07                | Eljönni és beszélni hozzánk nagy bátorságról tesz bizonyságot ilyen apróságokhoz képest. Ez a bátorság egyelőre kivívja a biztonságotokat.
+
+DECLAREWAR_HATE_01         | Az apró [your_race_possessive] az apró világaikban a mégapróbb sémáikkal. [my_title_prefix_uppercase] belefárad az állandó beavatkozásotokba. Nem fogjátok túlélni a végzetet amit rátok hozunk!
+DECLAREWAR_HATE_02         | Elég ebből! Népünk sorsa a csillagokban van megírva. Nem tűrjük tovább, hogy olyan pöttömkék, mint ti, ellenálljanak nekünk!
+DECLAREWAR_HATE_03         | 
+Készüljetek fel a harcra, kis [your_race_possessive]! Meg fogjuk mutatni nektek, hogy a vadság az egyetlen erő ami győzelmet hoz a harcmezőn!
+DECLAREWAR_ERRATIC_01      | A filozófusok bölcsessége összezavarhatja azokat, akik nem képesek megérteni azt. Mikor legkiválóbb elméink azt mondják nekünk, hogy támadjunk, harcosaink természetesen engedelmeskedni fognak.
+DECLAREWAR_ERRATIC_02      | Minden dolognak megvan az ideje és a helye az univerzumban. Háború és béke, élet és halál, uralkodás és alávetettség. Számunkra eljött az idő a rajtaütésre míg nektek itt az idő a védekezésre. 
+DECLAREWAR_ERRATIC_03      | Rácsodálkoztál valaha a sorsra, nagykövet? Tréfás módon teszi lehetségessé ami lehetetlennek tűnik. Tegyük próbára a sorsot együtt, kis [your_race], és lássuk mit tartogat. 
+DECLAREWAR_MILITARY_01     | A zsákmány az erősebbhez kerül. [_race_possessive_prefix_uppercase] erősek, és ezért zsákmányt kell szereznünk, függetlenül attól, hogy az kihez tartozik.  
+DECLAREWAR_MILITARY_02     | Apróságotokhoz képest jól harcol a népetek, nagykövet. Derítsük ki, hogy milyen jól fognak közdeni [my_race_possessive_prefix_lowercase] rájuk törő hatalma alatt!
+DECLAREWAR_MILITARY_03     | Ez a galaxis a hatalmasaké, és nem fogjuk engedni, hogy a tietek beárnyékolja a mi hatalmunkat. Védjétek a világaitokat jól, máskülönben elvesszük őket tőletek!
+DECLAREWAR_ALLIANCE_01     | A Birodalom egyik szövetségese a segítségünket kérte! Meg fogjuk mutatni nektek és [defender_race_giving_prefix_lowercase] is, az elszabadult [my_race] igaz erejét! 
+DECLAREWAR_ALLIANCE_02     | Háborúban álltok a szövetségesünkkel, kétségtelenül tudatán kívül annak, hogy ezáltal velünk is háborúban álltok. Ez egy olyan harc amiből a népetek nem emelkedhet ki diadalmasan, nagykövet. Számoljatok vele.
+DECLAREWAR_ALLIANCE_03     | Még minden hatalmatok dacára sincs esélyetek [defender_race_relational_prefix_lowercase] szemben, ha [my_race_possessive_prefix_lowercase] csatlakoznak hozzájuk! Készüljetek fel parányi [your_race_possessive]!
+DECLAREWAR_SPYING_01       | Minő árulás! Bár amikor muszáj ilyen csöppnyi testben léteznetek, kevés más választásotok adódik: nyilvánvalóan nincs esélyetek a harcmezőn, amint ezt mindjárt könnyedén bebizonyítjuk.
+DECLAREWAR_SPYING_02       | Röhej azt látni, hogy ilyen apró lények nem sikeresek eme rejtett műveletek véghezvitelében. Akasszátok magasra a kémeiteket a világaitoknak, hogy jól láthassák; az életetekkel fogtok fizetni a baklövéseikért!
+DECLAREWAR_SPYING_03       | Azt hiszitek túl gyengék vagyunk, hogy válaszoljunk ilyen elbénázott akciókra, paránykák? Meg fogjuk mutatni, hogy mennyire végzetesen tévesen ítéltetek meg!
+DECLAREWAR_ATTACK_01       | Ha ennyire nagyon kívántok harcolni, csupán kérnetek kell, kis [your_race_possessive]. A szemetek láttára fogunk mindent eltaposni ami kedves nektek, egyetlen csapással!
+DECLAREWAR_ATTACK_02       | Ilyen szégyentelenül megtámadni bennünket, mintha sokkal erősebbek lennétek annál, amilyenek vagytok. Dícséretes, de elhibázott végeredményben.
+DECLAREWAR_ATTACK_03       | Ám legyen! Igaz lehet, hogy fegyverhátrányban vagyunk, de akkor is meg fogjátok látni, hogy egyértelműen le vagytok körözve!
+DECLAREWAR_OPPORTUNITY_01  | 
+A mi népünk mindig keresi a lehetőségeket, hogy csiszolja harci képességeit, és a népetek talán méltó lesz e kihívásra. Biztosítsatok egy jó mérkőzést, hogy a fajtátokról kedvesen regéljünk a krónikáinkban.
+DECLAREWAR_ASSASSIN_01     | Nem vártunk semmi kevesebbet: egy faj annyival alávalóbb fizikailag, hogy képes megölni egy fegyvertelen nagykövetet a törekvései érdekében. Imádkozzatok az akármilyen isteneitekhez, kis [your_race_possessive], hogy biztosak lehessünk benne, hogy ez lesz a legutolsó harcotok.
+
+OFFER_PEACE_01             | A népetek jól küzdött, parányiak, de több volt, mint elég a vérontásból ebben a háborúban. Felkészültünk, hogy vitáinkat hátrahagyjuk a múltban és a béke irányába mozduljunk, ha ti is elég bátrak vagytok ahhoz, hogy így tegyetek.
+OFFER_TRADE_01             | Amit méretben hiányoltok, úgy tűnik találékonysággal kompenzáljátok. A népünk kereskedést ajánl [amt] EK értékben minden évben, abban a reményben, hogy a kereskedés mindannyiunk számára hasznosabbnak bizonyul, mint a konfliktus.
+OFFER_PACT_01              | Nekünk [my_race_giving] megoszlik a véleményünk a számos fajról akikkel kapcsolatba kerültünk. A fajtátok kifejezetten szórakoztatja [my_title_addressing_prefix_lowercase], aki azt kívánja tőlünk, hogy írjátok velünk alá a megnemtámadási egyezményt annak érdekében, hogy bármely vitát megelőzzünk a jövőben.
+OFFER_ALLIANCE_01          | 
+Bár a harcban nem vagyunk egyenlőek, nem vagyunk olyan barbárok, hogy eldobnánk a kapcsolatainkat egy olyan fajjal, mint a tiétek csak azért, hogy átérezhessük a győzelem izgalmát. Parányi nagykövet, engedd meg, hogy szövetséget alkossunk és inkább mint barátok találkozzunk a harcmezőn, senem mint ellenségek.
+//
+WARN_TRESPASSING_01        | [system] rendszerben észleltük a jelenléteteket és ez kezd zavarni bennünket. Bölcsebb volna elmennetek mielőtt tovább feszítitek a haragunkat.
+WARN_EXPANSION_01          | A területek elvétele a legerősebb birodalmak joga. Figyelmeztetünk benneteket minden további terjeszkedés ellen, parányiak, hacsak nem kívánjátok tőlünk, hogy megvédjük a jövendő [my_race] területet mielőtt formálisan is a mienk lesz.
+WARN_BUILDUP_01            | 
+Az űr a gyávák színháza: az igazi bátorság csak egy bolygó felszínén bizonyítható. Bár a flottátok óriásira nő, nem használhatjátok arra, hogy elrejtőzzetek a haragunk elől amit folytatnotok kellene még nagyobbra növeszteni. 
+WARN_SKIRMISH_01           | A csatározás [system] miatt szinte semmiség számunkra. Ne zargassatok bennünket többé, különben eltaposunk titeket mint egy megátalkodott kártevőt! 
+WARN_ATTACKED_01           | Szánalmas bemutató egy egyenlően szánalmas fajtól! Számolgathatjátok az áldásaitokat, hogy [defender_title_giving_prefix_lowercase] fontosabb teendői vannak a ti csekély erőfitogtatásotoknál, de tudjátok, hogy ha háborút szeretnétek, mi örömmel engedelmeskedünk nektek, apróságok.
+WARN_INVADED_01            | Hah! Minő bátorság ilyen aprócska lényektől. Hagyjátok el most a területünket, parányiak, mielőtt olyasmit tesztek amit aztán bizonyosan hamar megbántok. 
+WARN_ESPIONAGE_01          | Gyávák! Settenkedtek [race_victim_possessive_prefix_lowercase] között mint vajmi csimoták, mikor menekülnek az alagútjaikból. Legyetek hálásak amiért nem tiportuk el a kémeteket, és ne kényszerítsetek bennünket rá, hogy ismét ilyen gerinctelenségre feleljünk! [framed] 
+WARN_SABOTAGE_01           | Miért nem álltok ki ellenünk a harcban, apróságok? Épp eléggé untat bennünket, hogy egy olyan gyáva fajjal küzdünk ami szabotázsra támaszkodik, de ha ezt újra megteszitek, talán újra elviseljük ezt az unalmat, csak hogy megszabadulhassunk tőletek! [forced] 
+WARN_BIOWEAPON_01          | A gyávaság legaljasabb tette biológiai fegyvert használni azokkal szemben akik nem is képesek megvédeni magukat! A népetek viselni fogja ezt a szégyent a birodalmatok végső elestéig, parányiak: semmilyen tett nem lesz elég ahhoz, hogy ezt tisztára mossa. 
+WARN_GENOCIDE_01           | [_victim_race_possessive_prefix_uppercase] gyengék voltak és törékenyek, nem jelentenek nagy veszteséget a galaxisnak. De, hogy kihalásukért egy oly jelentéktelen nép legyen felelős, mint a tiétek, ezt találjuk a legzavarbaejtőbbnek.  
+WARN_FINAL_WAR_01          | Csodáljuk a bátorságát azoknak, akik a szembeszegülést keresik  a galaxissal, miközben az a békében való egyesülést választja? Fel fogjuk jegyezni a merészségeteket a történeteinkben, parányiak, miután letiportunk benneteket a legutolsó gyermekig! 
+WARN_COUNCIL_VOTE_01       | Ez a tanács vigyorgó bolondok gyülekezete, akik inkább megtárgyalnák a sérelmeiket mint harcosokként rendeznék őket! Ám csak azért, mert mi olyannyira megvetjük ezeket az eljárásokat nem jelenti azt, hogy készek vagyunk megbocsátani a szembeszegüléseteket alattuk!
+WARN_OATHBREAKER_01        | Apróságok! Megszegni a szavatokat a legnagyobb szégyen! Tudjuk, hogy a fajtátok testében gyenge, de hogy szavakban is gyengének lenni még bennünket is meglep! [spiesCaught] 
+WARN_ATTACKED_ALLY_01      | Az apró [defender_race_possessive] a védelmünk alatt állnak! Hagyjatok fel a háborúval és kártalanítsátok őket, különben a kezeink által fogtok meghalni mielőtt rájönnétek mi ütött meg!
+WARN_REBELLING_AGAINST_01    | A Nagy Hierarcha az egyetlen aki alkalmas arra, hogy a Galaktikus Tanács trónján üljön! Soha sem fogjuk elfogadni a hitvány bitorlásotokat!
+//
+PRAISE_COUNCIL_VOTE_01     | Hah! Amint mellénk álltatok, az arckifejezésük igazán szórakoztatónak bizonyul. De mostmár tudják, hogy hol rejlik az igazi hatalom, és mi megköszönjük kis barátainknak, hogy segítettek nekik tanulni!
+PRAISE_COUNCIL_VOTE_02     | Meglehetősen unalmas arra kényszerülni, hogy elviseljük a motyogó szenilis fazonokat ezeken a találkozókon. Akár azért támogattatok bennünket hogy hamarabb véget vessünk ennek vagy mert tudatában vagytok a hatalmunknak, mi elsimerjük amit ma tettetek.
+PRAISE_COUNCIL_VOTE_03     | Kíváncsivá tesztek minket, apróságok. De jó, hogy a népetek elismerte a hatalmunkat ezen a napon. A ti érdeketekben, remélem, hogy ez továbbra is így marad. 
+
+PRAISE_ATTACKED_ENEMY_01   | Haha! Jó látni ma benneteket a harcmezőn, kis barátaink! Tiporjuk hát el együtt a szánalmas [defender_race_regarding]! Folyjon a vérük a világaikon át amíg egyetlen egy sem marad!
+PRAISE_ATTACKED_ENEMY_02   | Mily dicsőséges csatát vívunk meg ma, apróságok! Mutassátok meg, hogyan harcoltok [defender_race_possessive_prefix_lowercase] ellen, és talán megadjuk nektek a megfelelő tiszteletet e naptól fogva!
+PRAISE_ATTACKED_ENEMY_03   | Fájdalmasan nyilvánvaló, hogy csupán azért harcoltok [defender_race_possessive_prefix_lowercase] ellen, amiért mi is ezt tesszük. Mégis, nem tántorodtok el a küzdelemtől teljesen... meglehet, hogy végeredményben tévesen ítéltünk meg benneteket.
+
+PRAISE_TRADE_01            | A kereskedelmi megállapodásunk jövedelmező volt fajaink számára, kis barátaink. De a bizalom a legértékesebb érme, és mi addig bízunk bennetek ameddig megfelelően viselkedtek.
+PRAISE_TRADE_02            | Míg a háború a legizgalmasabb mód a haladásra, nem az egyetlen mód, amint kereskedelmi megállapodásunk is bizonyítja. Hosszan folytatódjon, hogy népeink felvirágozzanak!
+
+PRAISE_REBELLING_WITH_01   | Haha! Szóval azt hiszitek, hogy van esélyetek a galaxis ellen egymagatokban? Azt gondoltátok, hogy visszahőkölünk egy ilyen dicsőséges csatától? Húzzátok ki magatokat,[my_empire_prefix_lowercase] mellettetek áll!
+
+ACCEPT_TRADE_01            | Bölcsességetek az alkukötéshez kiegyenlíti a méretetekből fakadó hiányt, kis [your_race_possessive]! A Birodalom mostantól örömmel kereskedik veletek évi [amt] EK értékben.
+RESPOND_IGNORE_THREAT_01   | Hahaha, és miért kéne meghallgatnunk ilyen parányi lények fenyegetéseit? Menjetek most és tartsátok szerencsésnek magatokat, hogy ma ilyen megbocsátó a hangulatunk! 
+RESPOND_STOP_SPYING_01     | A kis csimotákat akiket kémkedésre használunk elfogták, igaz? Ejj, hozzátok vissza őket és a kémeinket is sértetlenül, és teszünk róla, hogy többé ne okozzanak nektek bonyodalmat.
+RESPOND_STOP_ATTACKING_01  | Rettenetőek a Birodalom csapatai, ugye? Ne féljetek apróságok, a bemutatónk elérte kívánt hatását és most visszahívjuk őket.
+
+
+

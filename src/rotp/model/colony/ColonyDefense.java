@@ -44,7 +44,8 @@ public class ColonyDefense extends ColonySpendingCategory {
     public void destroyBases(int i)               { bases -= i; }
     @Override
     public boolean isCompleted() {
-        return (missileBase == colony().tech().bestMissileBase()) &&  missileBasesCompleted() && shieldAtMaxLevel();
+        boolean missilesDone = (maxBases == 0) || ((missileBase == colony().tech().bestMissileBase()) &&  missileBasesCompleted());
+        return missilesDone && shieldAtMaxLevel();
     }
     public boolean shieldAtMaxLevel() {
         return colony().starSystem().inNebula() || (shield >= maxShieldLevel());

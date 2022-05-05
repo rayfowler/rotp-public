@@ -1,0 +1,90 @@
+// race-specific variables (must start with _)
+_empire                           | Krizlon Birodalom, Ingeon Birodalom, Sedimod Birodalom, Graniton Birodalom, Magmon Birodalom
+_empire_prefix_lowercase                           | a Krizlon Birodalom, az Ingeon Birodalom, a Sedimod Birodalom, a Graniton Birodalom, a Magmon Birodalom
+_empire_prefix_uppercase                           | A Krizlon Birodalom, Az Ingeon Birodalom, A Sedimod Birodalom, A Graniton Birodalom, A Magmon Birodalom
+_empire_originating_prefix_lowercase                           | a Krizlon Birodalomból, az Ingeon Birodalomból, a Sedimod Birodalomból, a Graniton Birodalomból, a Magmon Birodalomból
+_empire_taking_prefix_lowercase                           | a Krizlon Birodalomtól, az Ingeon Birodalomtól, a Sedimod Birodalomtól, a Graniton Birodalomtól, a Magmon Birodalomtól
+_empire_relational                           | Krizlon Birodalommal, Ingeon Birodalommal, Sedimod Birodalommal, Graniton Birodalommal, Magmon Birodalommal
+_empire_relational_prefix_lowercase                           | a Krizlon Birodalommal, az Ingeon Birodalommal, a Sedimod Birodalommal, a Graniton Birodalommal, a Magmon Birodalommal
+_empire_giving_prefix_lowercase                           | a Krizlon Birodalomnak, az Ingeon Birodalomnak, a Sedimod Birodalomnak, a Graniton Birodalomnak, a Magmon Birodalomnak
+_empire_giving_prefix_uppercase                           | A Krizlon Birodalomnak, Az Ingeon Birodalomnak, A Sedimod Birodalomnak, A Graniton Birodalomnak, A Magmon Birodalomnak
+_empire_addressing_prefix_lowercase                           | a Krizlon Birodalmat, az Ingeon Birodalmat, a Sedimod Birodalmat, a Graniton Birodalmat, a Magmon Birodalmat
+_empire_approaching_prefix_lowercase                           | a Krizlon Birodalomhoz, az Ingeon Birodalomhoz, a Sedimod Birodalomhoz, a Graniton Birodalomhoz, a Magmon Birodalomhoz
+_empire_lean_prefix_lowercase                           | a Krizlon Birodalomra, az Ingeon Birodalomra, a Sedimod Birodalomra, a Graniton Birodalomra, a Magmon Birodalomra
+_empire_containing_prefix_lowercase                           | a Krizlon Birodalomban, az Ingeon Birodalomban, a Sedimod Birodalomban, a Graniton Birodalomban, a Magmon Birodalomban
+_empire_within_prefix_lowercase                           | a Krizlon Birodalmon, az Ingeon Birodalmon, a Sedimod Birodalmon, a Graniton Birodalmon, a Magmon Birodalmon
+
+_race                           | Krizlon, Ingeon, Sedimod, Graniton, Magmon
+_race_prefix_lowercase                           | a Krizlon, az Ingeon, a Sedimod, a Graniton, a Magmon
+_race_prefix_uppercase                           | A Krizlon, Az Ingeon, A Sedimod, A Graniton, A Magmon
+_race_whose_lowercase                           | krizloni, ingeoni, sedimodi, granitoni, magmoni
+_race_whose_uppercase                           | Krizloni, Ingeoni, Sedimodi, Granitoni, Magmoni
+_race_whose_prefix_lowercase                           | a krizloni, az ingeoni, a sedimodi, a granitoni, a magmoni
+_race_whose_prefix_uppercase                           | A krizloni, Az ingeoni, A sedimodi, A granitoni, A magmoni
+_race_possessive                           | Krizlonok, Ingeonok, Sedimodok, Granitonok, Magmonok
+_race_possessive_prefix_lowercase                           | a Krizlonok, az Ingeonok, a Sedimodok, a Granitonok, a Magmonok
+_race_possessive_prefix_uppercase                           | A Krizlonok, Az Ingeonok, A Sedimodok, A Granitonok, A Magmonok
+_race_relational                           | Krizlonokkal, Ingeonokkal, Sedimodokkal, Granitonokkal, Magmonokkal
+_race_relational_prefix_lowercase                           | a Krizlonokkal, az Ingeonokkal, a Sedimodokkal, a Granitonokkal, Magmonokkal
+_race_giving                           | Krizlonoknak, Ingeonoknak, Sedimodoknak, Granitonoknak, Magmonoknak
+_race_giving_prefix_lowercase                           | a Krizlonoknak, az Ingeonoknak, a Sedimodoknak, a Granitonoknak, a Magmonoknak
+_race_regarding                           | Krizlonokat, Ingeonokat, Sedimodokat, Granitonokat, Magmonokat
+_race_regarding_prefix_lowercase                           | a Krizlonokat, az Ingeonokat, a Sedimodokat, a Granitonokat, a Magmonokat
+_race_taking_prefix_lowercase                           | a Krizlonoktól, az Ingeonoktól, a Sedimodoktól, a Granitonoktól, a Magmonoktól
+_race_approaching_prefix_lowercase                           | a Krizlonokhoz, az Ingeonokhoz, a Sedimodokhoz, a Granitonokhoz, a Magmonokhoz
+
+_title                            | Kristálycsászár
+_nameTitle                        | Kristálycsászár
+
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Advisor text
+MAIN_ADVISOR_TITLE         | Krizlon Tanácsadó
+MAIN_ADVISOR_BUTTON_OK     | Rendben
+MAIN_ADVISOR_SCOUT         | Isten-császár, a felderítőid készen állnak arra, hogy elkísérjék az első gyarmathajót bármely olyan világba, amelyre vágysz! Add ki a parancsot, és lásd teljesülni az akaratodat!
+MAIN_ADVISOR_TRANSPORT     |  %1 gyarmatot megalapították a nevedben, hatalmas császár! Ha azt szeretnéd, hogy több szállítmányt küldjünk új uralmad támogatására, szólj és mi eleget teszünk!
+MAIN_ADVISOR_DIPLOMACY     | Isten-császár! Egy idegen birodalom képviselője jelenik meg a trón előtt! Lehet akár örök ellenségünk lelepleződése! Kellő körültekintéssel járunk el!
+MAIN_ADVISOR_SHIP_ENGINE   | Tudósaid tökéletesítették az új űrhajó meghajtó-terveket! Módosítaniuk kell a flottáidat, amint arra méltóztatod utasítani őket!
+MAIN_ADVISOR_RALLY_POINTS  | Végre! Megkezdődik a szent háborúnk, Isten-császár! Parancsold meg a flottáidnak, hogy gyülekezzenek az általad irányított bármely világban, és hozzanak gyors halált a gyűlölt ellenségünkre!
+MAIN_ADVISOR_MISSILE_BASES | A tábornokaid úgy vélik, hogy védelmi rakétabázisokat építeni legsebezhetőbb gyarmatainkon körültekintő vállalkozás lenne! Ha egyetértesz, Isten-császár, az építkezés azonnal megkezdődik!
+MAIN_ADVISOR_SHIP_WEAPON   | Isten-császár! Tudósaid bemutatják legújabb fejlesztésüket a fegyvertechnológia terén! Felszereljük flottáinkat ezekkel a harci eszközökkel, amint parancsot adsz!
+MAIN_ADVISOR_COUNCIL       | Hamarosan itt lesz a Galaktikus Tanács néven ismert urak találkozója! Ősi ellenségünk el kell legyen rejtve az ott gyülekezők között! Le kell lepleznünk őket, hogy nemes hadjáratunk valóban elkezdődhessen!
+MAIN_ADVISOR_REBELLION     | Hatalmas császár! Megtörténik az elképzelhetetlen. Népeink, akiket kétségtelenül megfertőzött aljas Ősi Ellenségünk, fellázadtak ellened  %1 gyarmaton. Ennek a korrupciónak azonnal véget kell vetnünk!
+MAIN_ADVISOR_RESIST_COUNCIL   | Ezeknek az ostobáknak a kegyetlensége! Isten-császár, flottáink készen állnak! Vezess minket győzelemre ebben a sorsdöntő csatában!
+MAIN_ADVISOR_COUNCIL_RESISTED | Természetesen ellenségünk gyermekei nem tudták elfogadni a [my_race_possessive_prefix_lowercase] dominanciáját! Népünk őrjöng: végre beteljesedik a jóslat!
+
+// text for endings... '#' represents a paragraph break
+// variables: %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 is special race-specific text described below
+GAME_OVER_MILITARY_LOSS2          | 
+Szent hadjáratod szomorú véget ért.#A hosszú életű Krizlon Birodalmon belül minden világot meghódítottak, vagy ami még rosszabb, furcsa és idegen lények. Te voltál a Kristálycsászár, aki megígérte, hogy elvezeti népét legősibb és legszentebb próféciájának beteljesüléséhez: végleg megszabadítja a galaxist Qaralon aljas ivadékaitól. Ehelyett csak a pusztulásba vezetted őket, és ahogy a nap felkel az utolsó krizlon gyarmat felett, hogy kitartson az idegen seregekkel szemben, a kudarc mértékét hamarosan megérzik az ebben a galaxisban maradt birodalmak.#A birodalmat örökre kiirtották, és miután a néped elment, kétségtelen, hogy Qaralon aljas utódai vitathatatlanul uralkodnak ezen a galaxison, mostantól kezdve az idők végezetéig...
+GAME_OVER_MILITARY_WIN2           | 
+Szent hadjáratod a legfőbb győzelemmel végződött!#Nem tudtad megerősíteni legősibb ellenséged kilétét, ezért az egyetlen elérhető lehetőséget választottad: kímélet nélkül lemészárolsz mindenkit, aki ebben a galaxisban lakik. Egyetlen faj sem volt képes felülmúlni fékezhetetlen buzgalmmadat és lankadatlan erődet. Mindegyik sorra elesett, és a világukat mostanra megtisztították Qaralon szennyének minden lehetséges befolyásától. És annak biztosítására, hogy tiszták maradjanak, a Birodalom minden bolygót behoz a karámba, benépesíti és őrzi őket az idők végezetéig.#A birodalmad most kétségtelenül fennmarad a létezés legvégéig, és soha senki sem fog újra szembeszállni veled, mert valójában senki sem maradt, hogy megtehesse! Éljen a Kristálycsászár! Éljen soká a Birodalom!
+GAME_OVER_MILITARY_ALLIANCE_WIN2  | Szent hadjáratod végre beteljesedett.#Miközben nem tudtál megbizonyosodni Qaralon Gyermekeinek valódi kilétéről, a galaxis lakói közül néhányan bebizonyították, hogy nem valószínű, hogy a leggyűlöltebb ellenséged szülöttei. Azok, akik ezt nem tudták megtenni, végzetükkel a ti törhetetlen légióitok kezében találkoztak. Most már csak te maradtál, és azok, akik hűségesnek és tiszta szívűnek bizonyultak. A galaxis a tiéd, hogy azt tégy vele amit akarsz. Lehet, hogy a hadjáratot egy napon újra kell kezdeni...
+GAME_OVER_COUNCIL_LOSS2           | Szent hadjáratod szomorú véget ért.#A galaxison átvezető utazásod során háborúkat vívtál, világokat hódítottál meg, és számos idegen civilizációval kötöttél szövetséget. Mégis, minden erőfeszítésed ellenére sem tudtad meggyőzni a kozmoszt fenyegető birodalmakat Qaralon ivadékai által rájuk jelentett fenyegetésről, és nem voltál képes olyan katonai erőt felmutatni, amely elég erős ahhoz, hogy arra kényszerítse őket, hogy megfeleljenek a hadjárat diktátumainak. Most a nyomorult [leader_race] fajt választották, hogy a jövőbe vezesse őket.#
+Bár azt remélik, hogy a jövő virágzó és békés lesz, csak te tudod, mi vár mindazokra, akiket nem tántorított el a te ügyed. Talán a jövőben egy másik Kristálycsászárnak sikerülni fog ott, ahol kudarcot te vallottál, és egy napon ismét fellobbanhat a szent háború tüze...
+GAME_OVER_REBELLION_LOSS2         | Szent hadjáratod szomorú véget ért.#A gonosz [leader_race] faj által vezetett Galaktikus Tanács alatt egy új köztársaság megalakulásával az egyetlen lehetséges választásod egy balszerencsés lázadás volt, abban a reményben, hogy biztosíthatod az igazlelkűek háborújának fennmaradását. Bár a választott pályán soha nem volt bőséges a remény, mégis ott voltál, és ha bölcsebben választottad volna meg a döntéseidet, talán még a győzelem fényében is megfürödhettél volna.#De nem marad fény sem számodra, sem a Birodalom számára, és mivel %8 a galaxis, az utolsó gondolataid Qaralonon és gyermekein járnak, a kudarcodon, hogy megtaláld és elpusztítsd őket. A brutális sorsra, amely most erre a galaxisra vár népeddel együtt, akik többé nincsenek ott, hogy megvédjék azt...
+GAME_OVER_REBELLION_WIN2          | 
+Szent hadjáratod a legfőbb győzelemmel ért véget!#A galaxis szánalmas birodalmai a legostobább döntéseket hozták. A nyomorult [leader_race] faj zászlaja alatt egyesülve, és elfordulva a hadjáratod követeléseitől, úgy döntöttek, hogy megpecsételik a saját, valamint a galaxis többi részének sorsát. De te, a Kristálycsászár, tudtad, hogy ezt nem lehet elviselni, és csak a leglegendásabb hősök képességeivel vezetted győzelemre népedet egy lehetetlen háborúban a galaxis egésze ellen!#Ha a bolondok hallgattak volna figyelmeztetéseidre, talán megélték volna, hogy milyen tévedésben jártak. De most végre a galaxis elviselheti az egyetlen igazi békét, amit valaha is ismerhetett. Éljen a győzelem, Kristálycsászár! Éltessük a Krizlon Birodalom erejét!
+GAME_OVER_REBEL_ALLIANCE_WIN2     | Szent hadjáratod beteljesedett.#Ahogy az utolsó ellenséged is lehull előtted, átérzed a hadjárat kezdete óta elért haladás izgalmát. Hiba volt az ebben a galaxisban élő szánalmas fajok részéről, hogy [leader_race] fajt választották, hogy elvezesse őket a hadjárat hívásától. Amikor elfordultak bölcsességedtől, dacoltak veled és Krizlon próféciájával is: ezt a tettet nem lehetett elviselni, és kétségtelenül megbánták volna, ha éltek volna elég sokáig hozzá.#Csak azok, akik elég bölcsek ahhoz, hogy megfogadják figyelmeztetéseidet, és segítsenek a háborúban, most már csak azok gyönyörködhetnek a galaxisban megszületett békében, amely Qaralon veszélyének végleg megszűntével ajándékozott meg. Persze amennyiben ők maguk is Qaralon álruhás gyerekeinek bizonyulnának...
+GAME_OVER_COUNCIL_ALLIANCE_WIN2   | Kereszteshadjáratod váratlan véget ért.#A Krizlon Birodalom sokat tett a galaxisban folytatott küldetése során. Vezetésed alatt néped számos idegen civilizációval találkozott. E fajok közül sok ellenségnek és Qaralon aljas vérének potenciális hordozójának bizonyultak. Mégis, váratlanul néhányan az ősi birodalmad barátainak bizonyultak. Most, az Új Köztársaság létrejöttének előestéjén [leader_empire_empire_lean_prefix_lowercase] adtad le a voksodat, lehetővé téve számukra, hogy uralkodjanak a béke új korszakán a galaxisban.#Miközben arra készülsz, hogy átengedd a jövőt %8 számára, csak abban reménykedhedsz, hogy erejük és bölcsességük elegendő lesz ahhoz, hogy megvédjék a galaxist az ősi jóslatok legnagyobb gonoszságától. Mert ha rosszul választottál, a szövetség megkötésével ígért béke valóban rövid életű lesz...
+GAME_OVER_COUNCIL_WIN2            | A szent hadjáratod végre beteljesedett.#Egykor a Krizlon Birodalom Kristálycsászára voltál, most a Galaktikus Tanács különböző birodalmai által alkotott Új Köztársaság mestereként állsz. Egyetlen faj sem mert kifogást emelni ez ellen az elrendelt sors ellen, kétségtelenül belátva, hogy energiáikat jobban teszik, ha a te ügyeid segítésére fordítják. Mert a Birodalom ellenségei ma már a galaxis ellenségei, és ez csak Qaralon Gyermekei végzetét jelentheti.
+#Ha megtalálnád őket a galaxisban lapulva, minden faj egyesülni fog a zászlód alatt és teljesen kipuszítja őket. Ha elrejtőzve találnád őket a tanács fajai között, jaj azoknak, akik olyan sokáig mertek rejtőzködni előled...
+GAME_OVER_COUNCIL_MILITARY_WIN2   | Szent hadjáratod végre beteljesedett.#Miután felemelkedtél a tanács trónjára és megkezdődött az Új Köztársaság szabályosan megválasztott uralma, kezdetét vette a hadjárat új fejezete, hogy megtisztítsd Qaralon ivadékainak szennyétől a galaxist. Az ellened való lázadás kezdettől rosszul volt eltervezve és kudarcra volt ítélve. A leverése miatt elvesztett életek viszont nem mentek kárba: a parancsnoki képességeid bizonyításával nem csupán azért erősítetted meg magad uralkodóként, hogy tiszteljenek, hanem hogy féljenek is téged.#Az Új Köztársaság teljes hadserege a zászlód mögött áll készen arra, hogy bármit megtegyen, amit a hadjárat megkövetel. Ősi ellenségednek nem lesz hova elbújnia, és ha Qaralonhoz hasonlóak vannak azok között, akik fölött most uralkodsz, akkor a galaxis teljes ereje ellenük lesz gyors megtorlásként. Csak meg kell találnod, hol rejtőzik ellenséged, hogy elindítsd az utolsó háborút és örökre békét hozz a galaxisba...
+GAME_OVER_COUNCIL_MILITARY_LOSS2  | 
+Szent hadjáratod szomorú véget ért.#Az Új Köztársaság mestereként álltál, készen arra, hogy légiókat vezess harcba a prófécia ellensége ellen. Az ellened támadt lázadás azonban váratlan volt és sajnos messze túl sok ahhoz, hogy megbirkózz vele. Akár a kérelmezőid gyávasága, akár a parancsnokként elkövetett katonai hibák miatt, a Krizlon Birodalom nincs többé, és az alsóbbrendű fajok most megszállják világaidat.#A Birodalom bukásával és a rövid életű Új Köztársaság halálával már senki sem tudja megtalálni Qaralon ivadékait, nem beszélve arról, hogy legyőzze őket és békét teremtsen a galaxisban. Talán, ha alkalmasabb lettél volna a seregeid irányítására a prófécia beteljesedett volna és elkerülhető lett volna a katasztrófa. Most a vereségeddel ez a prófécia az idők homokjába temetve áll, és soha többé nem teljesedik be, sőt soha nem is lesz megismerhető...
+
+// This text is the %8 variable in some of the game over text... when this race wins the game
+GAME_OVER_ALLIANCE_WIN3           | a krizlonok hajthatatlan fanatizmusa
+GAME_OVER_REBELLION_LOSS3         | elnyel a krizlonok fanatikus buzgalma

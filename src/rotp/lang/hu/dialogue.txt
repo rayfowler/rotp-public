@@ -1,0 +1,140 @@
+//
+// Dialogue that is not race-specific
+//
+
+DIPLO_TECH_REQUEST_MENU_01   | Milyen típusú technológiák érdekelnek?
+DIPLO_TECH_COUNTER_MENU_01   | Mit kínáltok cserébe?
+DIPLO_TRADE_MENU_01          | Kereskedelmi megállapodást javaslsz a következőért:
+DIPLO_TREATY_MENU_01         | Mit szeretnél csinálni?
+DIPLO_THREATEN_MENU_01       | Mit fenyegetsz?
+DIPLO_DECLARE_WAR_MENU_01    | Biztosan szeretnél háborút indítani?
+DIPLO_JOINT_WAR_MENU_01      | Kinek hirdessünk háborút?
+DIPLO_BREAK_ALLIANCE_MENU_01 | Melyik szövetségnek vessünk véget?
+DIPLO_OFFER_AID_MENU_01      | Mit szeretnél adományozni?
+DIPLO_OFFER_TECH_MENU_01     | Mit szeretnél ajándékozni?
+
+DECLINE_OFFER_01           | [my_nameTitle] [my_name] visszautasítja az ajánlatot.
+DECLINE_OFFER_02           | [my_race_possessive_prefix_uppercase] megfontolták az ajánlatot, és elutasították.
+DECLINE_OFFER_03           | Tisztelettel utasítjuk vissza az ajánlatot.
+DECLINE_OFFER_04           | Jelen pillanatban nem tartunk erre igényt.
+DECLINE_OFFER_05           | [my_race_possessive_prefix_uppercase] nem tartják tisztességesnek az ajánlatot.
+DECLINE_OFFER_06           | Nem a legjobb érdekünket szolgálná, ha elfogadnánk e ajánlatot.
+DECLINE_OFFER_07           | Talán hiszékeny bolondoknak néztek minket? Az ajánlatot elutasítjuk.
+DECLINE_OFFER_08           | Eme ajánlat nem tűnik tisztességesnek számunkra.
+DECLINE_OFFER_09           | Attól tartunk, hogy az ajánlatot vissza kell utasítanunk.
+
+DECLINE_ENEMY_ALLY_01      | [my__race_possessive_prefix_uppercase] soha nem alkudoznának a gyűlölt [other_race_possessive] szövetségeseivel!
+DECLINE_ALREADY_ALLIED_01  | [my_race_possessive_prefix_uppercase] és a szövetségeseink nem vehetjük figyelembe e kérést mindaddig, amíg ti más birodalmakkal vagytok szövetségben.
+DECLINE_NO_WAR_ON_ALLY_01  | Nem fogunk hadat üzenni a szövetségeseinknek.
+DECLINE_PEACE_TREATY_01    | Nem fogjuk megtörni [other_race_relational_prefix_lowercase] kötött békeszerződésünket.
+
+DECLINE_ANNOYED_01         | [your_race_prefix_uppercase] lények tettei nem érnek fel hencegésükkel. Elegünk van a csacsogásotokból.
+DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], ön próbára teszi a türelmünket. Talán csak később kellene újra megszólalnia.
+DECLINE_ANNOYED_01         | [my_nameTitle] [my_name] császár eleget hallott. Később újra beszélünk.
+DECLINE_ANNOYED_02         | Belefáradtunk a diplomáciai tárgyalásokba. A megbeszéléseket folytathatjuk később.
+DECLINE_ANNOYED_02         | Sehová sem jutunk ezekkel a beszélgetésekkel. Most el kell búcsúznunk.
+DECLINE_ANNOYED_02         | Mi most elmegyünk.
+DECLINE_ANNOYED_03         | Ezer bocsánat, [your_nameTitle] [your_name], de kötelességek másutt kívánják a jelenlétünk.
+DECLINE_ANNOYED_03         | Elnézést, de az időnk lejárt.
+DECLINE_ANNOYED_03         | Kevés az időnk és sok a tennivalónk. Talán később tudunk beszélni.
+
+DECLINE_OATHBREAKER_01     | Jelenleg nem vagyunk hajandóak egyezményt kötni, mivel a múltban már felbontottatok hasonlókat.
+DECLINE_OATHBREAKER_01     | Megállapodásaitokat már korábban sem tiszteltétek. Kevés okot látunk arra, hogy most megbízzunk bennetek.
+DECLINE_OATHBREAKER_01     | Miért bíznánk bennetek most, amikor a múltban annyi egyezményt felbontottatok?
+DECLINE_OATHBREAKER_01     | Kevés okot látunk egy olyasvalakikkel egyetérteni, akik eddig nem tartották be az igéreteiket.
+DECLINE_OATHBREAKER_01     | Elutasítjuk, hogy [your_race_relational_prefix_lowercase] egyezzünk, akiknek leheletnyi becsületük sincs.
+
+DECLINE_ESPIONAGE_01       | Ti semmirekellő svihákok, kutatásunk gyümölcseinek tolvajai! Megtagadjuk a kérésetek.
+DECLINE_ESPIONAGE_01       | A mi technológiánk [my_race_belonging_prefix_lowercase] tartozik. Nincs jogotok ellopni azt! Majd akkor beszélünk, amikor abbahagyjátok a lopkodást.
+DECLINE_ESPIONAGE_01       | Miért is adnánk nektek bármit? A kémeitek úgy is ellopnak mindent, amire szükségetek van!
+DECLINE_ESPIONAGE_01       | Hogyan is számíthattok arra, hogy elfogadjuk az ajánlatotokat, amikor a kémeitek ellesik a technológiáink?
+DECLINE_ESPIONAGE_01       | Távolítsátok el a kémeiteket és utána beszélhetünk.
+
+DECLINE_SABOTAGE_01        | Még nem felejtettük el legutóbbi szabotázsotok incidensét. Amíg nem bizonyítotok megbízhatóságotok felől, nem áll szándékunkban veletek foglalkozni.
+DECLINE_SABOTAGE_01        | A népeink megszenvedték a szabotázsaitokat. Nem foglalkozunk veletek, amíg abba nem hagyjátok a kínzásunk.
+DECLINE_SABOTAGE_01        | Micsoda?! Azt várjátok tőlünk, hogy egyetértsünk, miközben a [target] a szabotázsotok célponjtai?
+DECLINE_SABOTAGE_01        | A [target], amelyek hozzánk tartoznak, lerombolódnak általatok. Miért akarnánk együttműködni veletek?
+DECLINE_SABOTAGE_01        | Miután abbahagytátok a [target] szabotálását, továbbfontolhatjuk az ügyet.
+
+DECLINE_BUILDUP_01         | Szó sem lehet róla míg határaink mentén halmozzátok a hajóitokat.
+DECLINE_BUILDUP_01         | Távolítsátok el hajóitokat a határaink mellől és megfontoljuk. Addig az ügy nem tart igényt a figyelmünkre.
+DECLINE_BUILDUP_01         | A határaink mentén tartozkodó hajóitok nem képviselnek fenyegetést, viszont megtagadjuk a további együttműködést amíg ott időznek.
+DECLINE_BUILDUP_01         | Ha [my__empire_relational_prefix_lowercase] szeretnétek tárgyalni, akkor a hajóitokkal másokat fenyegessetek, ne minket.
+
+DECLINE_ENCROACH_01        | Flottáitok behatoltak [_race_possessive_prefix_lowercase] űrtelüretére. Távolítsátok el őket és utána beszélünk.
+
+DECLINE_SKIRMISH_01        | Provokáció nélkül megtámadjátok a hajóink és elvárjátok, hogy elfogadjuk az ajánlatot? Elutasítjuk az alkudozást.
+DECLINE_SKIRMISH_01        | Nem fogadhatunk el ajánlatot olyanoktól, akik megtámadják a flottáinkat.
+DECLINE_SKIRMISH_01        | Miután flottáitok abbahagyták a támadást, beszélhetünk.
+DECLINE_SKIRMISH_01        | Ha [my_empire_relational_prefix_lowercase] szeretne alkudozni, akkor hagyjátok békén a flottáinkat.
+DECLINE_SKIRMISH_01        | [my_nameTitle] [my_name] nem értékeli a flottáink pusztítását. Nem fogadjuk el.
+
+DECLINE_ATTACK_01          | [system] indokolatlan megtámadásával kicsiny teret hagytatok az alkudozásra.
+DECLINE_ATTACK_01          | [system] gyarmatra mért támadást nem felejtettük el . Esélytelen, hogy elfogadjuk.
+
+DECLINE_INVASION_01        | Népünk nem akar alkudozni [system] lemészárlóival. Először tegyétek jóvá a kárt.
+DECLINE_INVASION_01        | [system] vére foltozza szavaitok. Nem fogadhatjuk el az ajánlatot.
+DECLINE_INVASION_01        | [system] halottai megtorlásért sóhajoznak. Bőgésük hangosabb, mint az ajánlatotok.
+
+DECLINE_BIOWEAPONS_01      | [my_race_possessive_prefix_uppercase] semmilyen alkura nem hajlandók egy olyan fajjal, amely biológiai fegyverekhez folyamul.
+DECLINE_BIOWEAPONS_01      |  Nem alkudozhatunk olyanokkal, akik kétségbeesésükben biológiai fegyvereket használnak.
+DECLINE_BIOWEAPONS_01      | Ti olyan fegyvereket vettek be, amelyek kimondhatatlan borzalmakat szabadítanak ártatlan lakosságokra. Visszautasítjuk, hogy bármilyen részt vagyünk eme őrületben.
+DECLINE_BIOWEAPONS_01      | Az istenek gyűlölettel díjazzák azokat, akik teljes bolygókat pusztítanának biológiai fegyvereikkel. [my_race_possessive_prefix_uppercase] ezt nem engedhetik meg.
+DECLINE_BIOWEAPONS_01      | Azok halálsikolyai visszhangoznak hallószerveinkben, akiket biológiai fegyvereitekkel nyírtatok ki. Így nem halljuk az ajánlatotokat.
+
+DECLINE_TECH_TRADE_01      | Nincs olyan technológiátok, amely érdekelne minket.
+DECLINE_TECH_TRADE_01      | Nincs szükségünk [your_race] játékokra.
+DECLINE_TECH_TRADE_01      | A primitív találmányaitok nem érdekelnek minket.
+DECLINE_TECH_TRADE_01      | [_race_possessive_prefix_uppercase] messze felülmúlják a technológiátokat.
+DECLINE_TECH_TRADE_01      | [your_nameTitle] [your_name], kevés igényünk van arra, amit a tudósai kínálnak nekünk.
+DECLINE_TECH_TRADE_01      | [my_nameTitle] [my_name] kevés érdekfeszítőt lát a technológiátokban.
+
+OFFER_TECH_EXCHANGE_01     | [your_empire_giving_prefix_uppercase] nagy szüksége van [tech] technológiára. Talán hajlandóak lennétek cserélni azt néhány saját technológiánkért?
+OFFER_TECH_EXCHANGE_01     | [your_empire_prefix_uppercase] tudja, hogy megtanultátok a hasznos [tech] titkait. Kínálhatunk-e érte valamit a saját technológiáinkból cserébe?
+OFFER_TECH_EXCHANGE_01     | [your_nameTitle] [your_name], [your_empire_originating_prefix_lowercase] uralkodója tudja, hogy [tech] technológiátok van és annak titkát kívánja. Cserélnéték-e azt az egyik saját fejleményünkért?
+OFFER_TECH_EXCHANGE_01     | [your_race_possessive_prefix_uppercase] áhitattal csodálják a kiemelkedő [tech] tudományos csodáját. Mit kínálhatunk cserébe a titkaiért?
+
+ACCEPT_TECH_EXCHANGE_01    | Rendben. [my_nameTitle] [my_name] egyetért azzal, hogy átadja [my_race_possessive_prefix_lowercase] csodálatos [techGiven] titkait, cserébe a ti [techReceived] technológiátokért.
+ACCEPT_FINANCIAL_AID_01    | [my_nameTitle] [my_name] elfogadja az ajándékot, [amt] EK értékben.
+ACCEPT_TECHNOLOGY_AID_01   | [my_nameTitle] [my_name] elfogadja a szívesen látott [tech] technológiát.
+
+BREAK_TRADE_01             | [my_race_prefix_uppercase] állampolgároknak nincs további vágya [your_race_relational_prefix_lowercase] kereskedni.
+ANNOUNCE_TRADE_01          | [year]. évvel kezdve, [my_empire_prefix_lowercase] és [your_empire_prefix_lowercase] megegyeznek, hogy [amt] EK-nyi értéket cserélnek évente.
+
+ANNOUNCE_PEACE_01          | [year]. évben [my_race_prefix_lowercase] és [your_race_prefix_lowercase] birodalmak beleegyeznek abba, hogy megszüntetik az összes egymás közti ellenségességet.
+ANNOUNCE_PEACE_01          | [my_nameTitle] [my_name] ezennel megszünteti a birodalmaink közötti minden ellenségeskedést.
+ACCEPT_PEACE_01            | Egyetértünk abban, hogy a kicsinyes civakodásunk megszüntetésének eljött az ideje.
+ACCEPT_PEACE_01            | Elfogadjuk a béke ajánlatát. Parancsoljatok tűzszünetet a [my_race_prefix_lowercase] haderőkre, és mi is abbahagyjuk a támadást.
+ACCEPT_PEACE_01            | Kezdünk belefáradni eme értelmetlen megsemmisítésbe. [my_empire_prefix_uppercase] elfogadja a béke ajánlatát.
+
+BREAK_PACT_01              | Mi, [my_race_possessive_prefix_lowercase] figyelmeztetjük [your_empire_addressing_prefix_lowercase]: a megnemtámadási szerződésünk fel van bontva!
+ANNOUNCE_PACT_01           | [year]. évben [my_empire_prefix_lowercase] megfogadja, hogy tartja magát a megnemtámadási szerződéshez és nem harcol [your_race_relational_prefix_lowercase], hacsak nem keringenek az egyik gyarmatunk körül.
+ACCEPT_PACT_01             | [my_empire_prefix_uppercase] beleegyezik a megnemtámadási szerződés megkötésébe. Egyik oldal sem fogja támadni a másik flottáit, hacsak nem lépnek be a másik egyik gyarmatának pályájára.
+ACCEPT_PACT_01             | Ha vállaljátok, hogy nem küldtök hajókat a gyarmatainkra, [my_race_possessive_prefix_lowercase] megfogadják, hogy nem támadják a hajóitokat.
+ACCEPT_PACT_01             | [my_nametitle] [my_name] egyetért a javasolt megnemtámadási szerződéssel. Tehát meg van írva, ezért meg kell tenni!
+ACCEPT_PACT_01             | Megállapodtunk, akkor. Mindaddig, amíg nem támadjátok meg a gyarmatainkat, [my_empire_prefix_lowercase] tartja magát a megnemtámadási szerződést.
+
+BREAK_ALLIANCE_01          | [my_empire_prefix_uppercase] már nem tarthatja fenn Szövetségét [your_empire_relational_prefix_lowercase].
+ANNOUNCE_ALLIANCE_01       | [year]. évben [my_empire_prefix_lowercase] és [your_empire_prefix_lowercase] egyetértenek abban, hogy Szövetséget alkotnak, amelyben egyik fél sem támadja meg a műsik flottáit avagy gyarmatait.
+ANNOUNCE_ALLIANCE_01       | Tehát Szövetségünk össze lett kovácsolva. Hajóitok meglátogathatják a gyarmatainkat ahogy kívánják és üzemanyagot kaphatnak a bázisainkból.
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] üdvözli jómagam és barátom, [your_nameTitle] [your_name], között kötött Szövetséget.
+ACCEPT_ALLIANCE_01         | [my_empire_prefix_uppercase] és [your_empire_prefix_lowercase] ma köttetik meg a Szövetséget a népeink között. Halál az ellenségeinknek!
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] látja a bölcsességet [your_empire_relational_prefix_lowercase] kötött Szövetségeben. Úgy legyen!
+
+OFFER_JOINT_WAR_01         | Eljött az ifeje, hogy [your_empire_prefix_lowercase] háborúban csatlakozzon [my_empire_approaching_prefix_lowercase] [other_race_possessive_prefix_lowercase] ellen.
+ACCEPT_JOINT_WAR_01        | [other_empire_giving_prefix_uppercase] el kell buknia [my_empire_prefix_lowercase] és [your_empire_prefix_lowercase] egyesített hatalma előtt.
+ACCEPT_JOINT_WAR_01        | [my_race_possessive_prefix_uppercase] és [your_race_possessive_prefix_lowercase] Szövetségével szemben [other_race_giving_prefix_lowercase] nem sok idejük maradt hátra.
+ACCEPT_JOINT_WAR_01        | [year]. évben, [my_empire_prefix_lowercase] és [your_empire_prefix_lowercase] összefognak, hogy megszabadítsák a galaxist [other_race_possessive_prefix_lowercase] fenyegetésétől.
+COUNTER_JOINT_WAR_01       | Csatlakozunk [other_empire_prefix_lowercase] ellen vívott háborútokhoz, az alábbi kompenzációért:
+RESPOND_CLOSE_EMBASSY_01   | Úgy legyen. Nem folytatunk további megbeszéléseket a birodalmaink között.
+
+RESPOND_BREAK_TRADE_01     | Erre emlékezni fogunk.
+RESPOND_BREAK_TRADE_01     | Tehát, [your_nameTitle] [your_name] nem tudja megtartani szavát. Ezt nem fogjuk elfelejteni.
+
+RESPOND_BREAK_PACT_01      | Felrúgott egyezményeid sírkövedre írjuk, [your_nameTitle] [your_name].
+RESPOND_BREAK_PACT_01      | [your_empire_prefix_uppercase] saját törött ígéreteinek súlya alatt fog összeromlani.
+
+RESPOND_BREAK_ALLIANCE_01  | Megbecstelenítettétek az egyezményünket. A Szövetségünk megtört.
+RESPOND_BREAK_ALLIANCE_01  | Rendben. A megbízhatatlan szándékaitok megmutatkoztak. A Szövetségnek vége.
+RESPOND_BREAK_ALLIANCE_01  | Nincs szükségünk olyan egyezményekre, amelyek nincsenek tiszteletben tartca. A Szövetség megszakadt.
+RESPOND_BREAK_ALLIANCE_01  | Úgy legyen. A Szövetségünknek ezennel vége.

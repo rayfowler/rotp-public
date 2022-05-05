@@ -1,0 +1,1982 @@
+// This is the label text file for Remnants of the Precursors
+// comment lines should start with '/'  they are ignored
+//  
+// the format for each line is   key | label
+//    where 'key' is the code used by the game to retrieve the label
+//    You cannot create new keys! The game will not use them
+//    You can only use keys that the game is looking for.
+//
+// Large number formatting
+NUM_FORMAT_THOUSANDS              | %1K
+NUM_FORMAT_MILLIONS               | %1M
+NUM_FORMAT_BILLIONS               | %1E
+
+// Star descriptions
+RED_STAR_DESCRIPTION              | A piros csillagok régi és homályos csillagok, amelyek általában rossz bolygókkal rendelkeznek.
+YELLOW_STAR_DESCRIPTION           | A sárga csillagok a legjobb esélyt kínálják a földszerű és azalatti minőségű bolygók felfedezésére.
+ORANGE_STAR_DESCRIPTION           | A narancssárga csillagok mérsékelten fényesek és a bolygó típusok széles választékával rendelkeznek.
+BLUE_STAR_DESCRIPTION             | A kék csillagok viszonylag fiatal égitestek, körülvéve ásványban gazdag, élettelen bolygókkal.
+WHITE_STAR_DESCRIPTION            | A fehér csillagok hihetetlenül forrón izzanak, körülöttük általában zord közegű bolygók keringenek.
+PURPLE_STAR_DESCRIPTION           | A neutroncsillagok ritkák és a legnagyobb esélyt kínálják a gazdag bolygók megtalálására.
+
+// Planet Types
+PLANET_ARID                       | Száraz
+PLANET_BARREN                     | Sivár
+PLANET_DEAD                       | Halott
+PLANET_DESERT                     | Sivatag
+PLANET_INFERNO                    | Pokol
+PLANET_JUNGLE                     | Dzsungel
+PLANET_MINIMAL                    | Minimális
+PLANET_NONE                       | Bolygómentes
+PLANET_OCEAN                      | Óceán
+PLANET_RADIATED                   | Besugárzott
+PLANET_STEPPE                     | Sztyeppe
+PLANET_TERRAN                     | Földszerű
+PLANET_TOXIC                      | Toxikus
+PLANET_TUNDRA                     | Tundra
+
+// Spy Missions
+SPY_HIDE                          | Rejtőzés
+SPY_ESPIONAGE                     | Kémkedés
+SPY_SABOTAGE                      | Szabotázs
+SPY_CAUGHT                        | [A kémeinket elkapták.]
+SPY_FRAMED                        | [Tőrbe lettünk csalva.]
+SPY_FORCED_CONFESSION             | [Ki lett erőszakolva egy hamis vallomás.]
+SPY_WARNING                       | [Figyelmeztetve lettünk.]
+
+ARID_DESC_BIOLOGICAL              | A Száraz bolygók szikkadt, szárazföldi világok, korlátozott növényzettel és legfeljebb 40%-os vízfelülettel.
+BARREN_DESC_BIOLOGICAL            | A Sivár bolygók száraz, poros világok gyér légkörrel és felszíni víz nélkül.
+DEAD_DESC_BIOLOGICAL              | A Halott bolygók hideg, régen kihalt szárazföldi világok gyér légkörrel és felszíni víz nélkül.
+DESERT_DESC_BIOLOGICAL            | A Sivatag bolygók szikkadt szárazföldi világok, nagyon ritka növényzettel és legfeljebb 20%-os vízfelülettel.
+INFERNO_DESC_BIOLOGICAL           | A Pokol bolygók irgalmatlanul forró világok, sűrű légkörrel és erőszakos viharokkal.
+JUNGLE_DESC_BIOLOGICAL            | A Dzsungel bolygók buja, trópusi világok, vastag facsoportokkal, őserdőkkel és mocsarakkal.
+MINIMAL_DESC_BIOLOGICAL           | A Minimális bolygók kiszáradt, kietlen szárazföldi világok a lakhatóság peremén.
+NONE_DESC_BIOLOGICAL              | Sziklás bolygók híján, ezek az aszteroidákkal telített rendszerek dacolnak az összes bolygóképződési elméletettel.
+OCEAN_DESC_BIOLOGICAL             | Az Óceán bolygók felszinét szinte teljesen víz borítja, így az erőforrásokhoz való hozzáférés gyakran nehézkes.
+RADIATED_DESC_BIOLOGICAL          | A Besugárzott bolygók levegőtlen, élettelen világok, míg a közeli csillagok radioaktívan ragyognak rájuk.
+STEPPE_DESC_BIOLOGICAL            | A Sztyeppe bolygók hűvösebb szárazföldi világok, amelyeken kemény telek és a sarkvidéki környezetek uralkodnak.
+TERRAN_DESC_BIOLOGICAL            | A Földszerű bolygók szárazföldi paradicsomok, ahol a tágas, mérsékelt égövek sokféle ökoszisztémát támogatnak.
+TOXIC_DESC_BIOLOGICAL             | A Toxikus bolygók jeges, metánalapú ökoszisztémákkal ellepett, fagyott világok.
+TUNDRA_DESC_BIOLOGICAL            | A Tundra bolygók szunnyadó szárazföldi világok, amelyek jégkorszaki szakaszba vannak dermedve.
+
+// Planet Specials
+PLANET_ARTIFACTS                  | Műalkotott
+PLANET_ULTRA_POOR                 | Ultra szegény
+PLANET_POOR                       | Szegény
+PLANET_RICH                       | Gazdag
+PLANET_ULTRA_RICH                 | Ultra gazdag
+PLANET_HOSTILE                    | Zord közegű
+PLANET_FERTILE                    | Termékeny
+PLANET_GAIA                       | Gaia
+
+// Planet Descriptors for Race
+PLANET_HOMEWORLD                  | [alien_race] Anyavilág
+PLANET_WORLD                      | [alien_race] Világ
+PLANET_COLONY                     | [alien_race] Gyarmat
+PLANET_ORION                      | Orion
+PLANET_ORION_GUARDIAN             | Oltalmazó
+
+// Nebula names  ("starName" Nebula)
+NEBULA_NAME                       | %1 Csillagköd
+NEBULA_ID                         | NGC %1
+
+// %2 is the leader's actual name
+TITLE_LEADERNAME                  | [alien_nameTitle] %2
+
+// Extended Colony Name prefix when we run out of names
+COLONY_NAME_2                     | Új %1
+COLONY_NAME_3                     | Külső %1
+COLONY_NAME_4                     | Messzi %1
+COLONY_NAME_5                     | Távoli %1
+
+// Space Monster Names
+SPACE_AMOEBA                      | Űramőba
+SPACE_CRYSTAL                     | Űrkristály
+ORION_GUARDIAN                    | Orion Oltalmazó
+
+// Personality types (adjective)
+LEADER_ERRATIC                    | Szeszélyes
+LEADER_PACIFIST                   | Pacifista
+LEADER_HONORABLE                  | Tiszteletreméltó
+LEADER_RUTHLESS                   | Könyörtelen
+LEADER_AGGRESSIVE                 | Agresszív
+LEADER_XENOPHOBIC                 | Idegengyűlölő
+
+// Leader Objective Types (noun)
+LEADER_DIPLOMAT                   | Diplomata
+LEADER_MILITARIST                 | Militarista
+LEADER_ECOLOGIST                  | Ökológus
+LEADER_INDUSTRIALIST              | Iparos
+LEADER_EXPANSIONIST               | Terjeszkedő
+LEADER_TECHNOLOGIST               | Technológus
+// Leader Personality & Objective displayed together
+LEADER_PERSONALITY_FORMAT         | %1 %2
+
+// Technology names and descriptions 
+TECH_COMPUTERS                    | Számítógépek
+TECH_CONSTRUCTION                 | Építkezés
+TECH_FORCE_FIELDS                 | Erőtér
+TECH_PLANETOLOGY                  | Planetológia
+TECH_PROPULSION                   | Meghajtás
+TECH_WEAPONS                      | Fegyverek
+
+// Random Events
+EVENT_ACCIDENT                    | Egy súlyos ipari baleset szennyezi [target_race_prefix_lowercase] [system] rendszer világát ipari hulladékkal, károkat okozva a környezetében és a tartósan besugározván a bolygót.
+EVENT_ASSASSINATION               | Egy terrorista [assassin_empire_originating_prefix_lowercase] meggyilkolta [victim_race_prefix_lowercase] diplomatát és ezzel a két birodalmat a háború szélére sodorta.
+EVENT_COMET                       | Egy hatalmas üstökös észlelhető a pillanatnyilag veszélyben forgó [system] rendszerben, és ütköző pályán áll [target_race_prefix_lowercase] világgal [years] éven belül. A katatszrófát csak egy nagy űrhajó flotta kibocsátásával lehet elkerülni.
+EVENT_COMET_2                     | Egy hatalmas üstökös várhatóan [years] éven belül elpusztít minden életet a [target_race_prefix_lowercase] világon a pillanatnyilag veszélyben forgó [rendszer] rendszerben. További felfegyverzett űrhajókra van szükség a katasztrófa elkerüléséhez.
+EVENT_COMET_3                     | [target_race_prefix_uppercase] flotta erőfeszítéseinek köszönhetően az üstökös az említett [system] rendszerben meg lett semmisítve.
+EVENT_COMET_4                     | [target_race_prefix_uppercase] világot megsemmisítette a halálos üstökös a sérült [system] rendszerben.
+EVENT_DONATION                    | Egy, az okot támogatni hajlandó gazdag kereskedő jelentős, [amt] EK összegű adományt küld [target_race_prefix_lowercase] Bolygótartalékba.
+EVENT_DEPLETED                    | [target_race_prefix_uppercase], [system] rendszer világa kimerítette nehézfém lerakódásait, így a bolygó ásványban szegénnyé vált.
+EVENT_DERELICT                    | [target_empire_prefix_uppercase] flottája felfedezett egy ősi, elhagyatott hajót. [target_race_prefix_uppercase] tudósok azóta több erőtér és fegyver technológiát arattak le a leletből.
+EVENT_EARTHQUAKE                  | Egy pusztító földrengés söpört végig [target_race_prefix_lowercase] világon az érintett [system] rendszerben, kiírtván [amt] millió gyarmatost és károsítván a helyi ipari tevékenység jelentős területeit.
+EVENT_ENRICHED                    | Egy mély bányászati feltárás [target_race_prefix_lowercase] [system] rendszere világán feltárt egy hatalmas, korábban nem észlelt nehézfém lerakódást, így  átsorolván a bolygót ásványi anyagokban gazdaggá.
+EVENT_FERTILE                     | [target_race_prefix_uppercase] [system] rendszer bolygójának hirtelen tengelyeltolódása termékenyebbé változtatta a környezetét. A népességnövekedés 50%-kal nő.
+EVENT_PIRACY                      | A kalózok megkezdték [target_race_prefix_lowercase] rendszerek közötti kereskedelmek szabotálását,  [amt]%-kal csökkentve a kereskedelmi bevételeket. Fegyveres hajókra van szükség a veszélyben forgó [system] rendszerben, hogy szétcsaphassuk a kalóztevékenységeik bázisát.
+EVENT_PIRACY_2                    | [system] rendszerben alapuló kalózok továbbra is zavarokat okoznak [target_race_prefix_lowercase] kereskedelmi tevékenységeiben, becsült [amt]%-kal csökkentve az általános kereskedelmi szinteket.
+EVENT_PIRACY_3                    | [target_race_prefix_uppercase] flotta megsemmisítette a korábban az érintett [system] rendszerben alapuló fő kalózbázist. Az általános kereskedelmi szintek visszatértek az elvártra.
+EVENT_PLAGUE                      | Halálos járvány tarol [target_race_possessive_prefix_lowercase] [system] rendszerében lelhető világán. A rendszer karanténba került és várhatóan milliók el fognak pusztulni minden évben, amíg a tudósok nem találnak gyógyírt a kórra.
+EVENT_PLAGUE_2                    | A halálos pestise továbbra is fennáll az érintett [system] rendszerben. A tudósok becslése szerint egy további [amt] KÉ-re van szükség a gyógyszer feltalálásához.
+EVENT_PLAGUE_3                    | [target_race_possessive_prefix_uppercase] tudósai feltalálták gyógyírt a halálos járványra! A súlytott [system] rendszerről felemelték a karantént.
+EVENT_REBELLION                   | [target_race_prefix_uppercase] [system] rendszer világa fellázadt és megszüntette a bolygó összes termelését. A lázadás addig folytatódik, amíg az katonailag le nincs törve.
+EVENT_SUPERNOVA                   | [target_race_prefix_uppercase] tudósok azt jósolják, hogy az idősödő [system] rendszer csillagát [years] éven belül szupernóva-robbanás fenyegeti. Azt tanácsolják, hogy a rendszer összes kutatása a megoldás ügyére legyen átállítva.
+EVENT_SUPERNOVA_2                 | A szupernóva [years] éven belül továbbra is fenyegeti a veszélyben forgó [system] rendszer csillagát. A tudósok becslése szerint további [amt] KÉ-et elegendő lehet ahhoz, hogy megakadályozzák ezt a katasztrófát.
+EVENT_SUPERNOVA_3                 | [target_race_prefix_uppercase] [system] rendszer fizikusai megtalálták a módját, hogy a szupernóvát elhalasszák a messzi jövőbe.
+EVENT_SUPERNOVA_4                 | Az féltett [system] rendszer csillaga szupernóvába robbant, besugározván az ott keringő [target_race] világot. A katasztrófa következémnyeként a bolygó környezete elpusztult és milliók életüket vesztették.
+EVENT_VIRUS                       | [target_race] kutatóközpontok egy rendkívül veszedelmes számítógépes vírus áldozatai lettek, elpusztítva a többéves [technology] kutatást.
+EVENT_SPACE_AMOEBA                | Egy óriási, "Űramőbának" becézett biológiai létformát figyeltek meg, ahogy [victim_race_prefix_lowercase] [system] rendszerhez közelít. A gyarmatosok és flottáik a legrosszabbra készülnek.
+EVENT_SPACE_AMOEBA_1              | A rettenetes, "Űramőbának" becézett biológiai létforma a gyarmatosítatlan [system] rendszer felé közelít.
+EVENT_SPACE_AMOEBA_2              | Az Űramőba teljességében elfogyasztotta [victim_race_prefix_lowercase] [system] rendszer gyarmatát.
+EVENT_SPACE_AMOEBA_3              | Az Űramőbát elpusztították [victim_race_prefix_lowercase] [system] rendszer védekezői.
+EVENT_SPACE_CRYSTAL               | Egy gigantikus, "Űrkristálynak" becézett, kristályszerű entitást figyeltek meg, ahogy közeledik [victim_race_prefix_lowercase] [system] rendszer felé. A gyarmatosok és flottáik a legrosszabbra készülnek.
+EVENT_SPACE_CRYSTAL_1             | A hatalmas, "Űrkristálynak" becézett kristályszerű létforma a gyarmatosítatlan [system] rendszer felé közelít.
+EVENT_SPACE_CRYSTAL_2             | Az Űrkristály teljességében elpusztította [victim_race_prefix_lowercase] [system] rendszer gyarmaton lelhető összes életet.
+EVENT_SPACE_CRYSTAL_3             | Az Űrkristályt elpusztították [victim_race_prefix_lowercase] [system] rendszer védekezői.
+
+SYSEVENT_HOMEWORLD                | [alien_race_possessive_prefix_uppercase] anyavilága.
+SYSEVENT_SCOUTED                  | [alien_race_possessive_prefix_uppercase] derítették fel először.
+SYSEVENT_COLONIZED                | [alien_race_possessive_prefix_uppercase] gyarmata.
+SYSEVENT_CAPTURED                 | Foglyul tartott [alien_race_prefix_lowercase]
+ erők által.
+SYSEVENT_ABANDONED                | Elhagyatott [alien_race_possessive_prefix_lowercase]
+ által.
+SYSEVENT_DESTROYED                | Megsemmisített a keringő [alien_race] erők által.
+SYSEVENT_DESTROYED_MONSTER        | %1 faj semmisítette meg.
+SYSEVENT_DESTROYED_UNKNOWN        | Megsemmisült.
+SYSEVENT_ATMOSPHERE_TERRAFORMED   | A bolygó légköre terraformált.
+SYSEVENT_SOIL_ENRICHED            | A bolygó talaja dúsított, így termékeny.
+SYSEVENT_GAIA_TERRAFORMING        | A bolygót egy Gaia világgá alakították át.
+SYSEVENT_REBELLION                | A gyarmat fellázadt.
+SYSEVENT_COMET                    | Egy üstökös belecsapott a bolygóba.
+SYSEVENT_PLAGUE                   | Egy halálos járvány söpört végig a bolygón.
+SYSEVENT_PLAGUE_ENDED             | A bolygót sújtó járvány véget ért.
+SYSEVENT_ENRICHED                 | Gazdag ércek hatalmas lerakódásait fedezték fel a bolygón.
+SYSEVENT_DEPLETED                 | A bolygó érc lerakódásai kimerültek.
+SYSEVENT_ACCIDENT                 | Egy jelentős ipari baleset sugározta be a bolygót.
+SYSEVENT_SUPERNOVA                | A bolygót egy szupernóna besugárzta be.
+
+
+// Diplomatic Incident titles & descriptions
+INC_ASSASSINATION_TITLE           | Merénylet
+INC_ASSASSINATION_DESC            | Egy terrorista [assassin_empire_originating_prefix_lowercase] meggyilkolta [victim_race_prefix_lowercase] diplomatát.
+INC_ATTACKED_ALLY_TITLE           | Megtámadt szövetséges
+INC_ATTACKED_ALLY_DESC            | [attacker_empire_prefix_uppercase] megtámadta a [defender_empire_prefix_lowercase], [my_empire_prefix_lowercase] szövetségesét.
+INC_ATTACKED_ENEMY_TITLE          | Megtámadt ellenség
+INC_ATTACKED_ENEMY_DESC           | [attacker_empire_prefix_uppercase] megtámadta a [defender_empire_prefix_lowercase], [my_empire_prefix_lowercase] ellenségét.
+INC_USED_BIOWEAPONS_TITLE         | Használt biológiai fegyverek
+INC_USED_BIOWEAPONS_DESC          | [attacker_empire_prefix_uppercase] biológiai fegyvereket használt [victim_empire_prefix_lowercase] [system] rendszerében-ben.
+INC_KILLED_MONSTER_TITLE          | %1
+INC_KILLED_MONSTER_DESC           | [your_empire_prefix_uppercase] megsemmisítette a hírhedt [monster], így felszámolván a minden birodalomra kiterjedő galaktikus veszélyt.
+INC_KILLED_GUARDIAN_TITLE         | Orion Oltalmazó
+INC_KILLED_GUARDIAN_DESC          | [your_empire_prefix_uppercase] elpusztította az Orion Oltalmazó hajóját, ezzel felfedvén az elődök titkait.
+INC_NO_RELATIONS_TITLE            | Nincs diplomáciai kapcsolat
+INC_NO_RELATIONS_DESC             |Jelenleg nincs diplomáciai kapcsolat [your_empire_prefix_lowercase] és [my_empire_prefix_lowercase] között.
+INC_ALLIED_WITH_ENEMY_TITLE       | Az ellenséggel szövetséges
+INC_ALLIED_WITH_ENEMY_DESC        | [my_empire_prefix_uppercase] tiltakozik az ellen, hogy a gyűlölt [other_empire_relational] szövetkeztek.
+INC_AT_WAR_WITH_ALLY_TITLE        | Szövetségessel háborúzik
+INC_AT_WAR_WITH_ALLY_DESC         | Háborúban vagyunk [other_empire_relational_prefix_lowercase], [my_empire_prefix_lowercase] szövetségesével.
+INC_CLOSED_EMBASSY_TITLE          | Visszahívott nagykövet
+INC_CLOSED_EMBASSY_DESC           | [your_empire_prefix_uppercase] megszüntette a diplomáciai kapcsolatokat [my_empire_prefix_lowercase].
+INC_EVICTED_SPIES_TITLE           | Kivetett diplomaták
+INC_EVICTED_SPIES_DESC            | [your_empire_prefix_uppercase] kivetette [my_empire_prefix_lowercase] összes nélkülözhető diplomatáját.
+INC_BROKE_ALLIANCE_TITLE          | Felbontott Szövetség
+INC_BROKE_ALLIANCE_DESC           | [your_empire_prefix_uppercase] felbontotta szövetségét [my_empire_relational_prefix_lowercase]. [spiesCaught]
+INC_BROKE_PACT_TITLE              | Felbontott megnemtámadási szerződés
+INC_BROKE_PACT_DESC               | [your_empire_prefix_uppercase] felbontotta a megnemtámadási szerződését [my_empire_relational_prefix_lowercase]. [spiesCaught]
+INC_BROKE_TRADE_TITLE             | Felbontott békeszerződés
+INC_BROKE_TRADE_DESC              | [your_empire_prefix_uppercase] felbontotta a békeszerződését [my_empire_relational_prefix_lowercase].
+INC_ATTACKED_COLONY_TITLE         | Gyarmat támadás alatt
+INC_ATTACKED_COLONY_DESC          | [attacker_empire_prefix_lowercase] flottája megtámadta [defender_race_prefix_lowercase] [system] rendszerben keringő világát. [amt] millió polgár vesztette életét.
+INC_CAPTURED_COLONY_TITLE         | Elzsákmányolt gyarmat
+INC_CAPTURED_COLONY_DESC          | [attacker_empire_prefix_uppercase] csapatai behatoltak és elfoglalták [defender_race_prefix_lowercase] [system] rendszerben keringő világot. [amt] millió polgár veszett el.
+INC_DESTROYED_COLONY_TITLE        | Megsemmisített gyarmat
+INC_DESTROYED_COLONY_DESC         | [attacker_empire_prefix_uppercase] flottája teljesen megsemmisítette [defender_race_prefix_lowercase] [system]rendszerben keringő világot. [amt] millió polgár pusztult el.
+INC_FIRST_CONTACT_TITLE           | Első kapcsolatfelvétel
+INC_FIRST_CONTACT_DESC            | Létrejött az első kapcsolatfelvétel [your_empire_relational_prefix_lowercase]. Óvatosság ajánlott.
+INC_INVADED_COLONY_TITLE          | Lerohant gyarmat
+INC_INVADED_COLONY_DESC           | [attacker_race_prefix_uppercase] hadosztagai megrohamozták, de nem sikerült megkaparintaniuk [defender_race_prefix_lowercase] [system] rendszerben keringő világot. [amt] millió polgár vesztette életét.
+INC_COUNCIL_VOTE_TITLE            | A Tanács szavazata
+INC_COUNCIL_VOTE_FOR_DESC         |[candidate_name], [candidate_race_possessive_prefix_lowercase] vezetője megkapta [voter_race_possessive_prefix_lowercase] szavazatát.
+INC_COUNCIL_VOTE_AGAINST_DESC     | [voter_race_possessive_prefix_uppercase] [candidate_name] ellen szavaztak, aki [candidate_race_possessive_prefix_lowercase] vezetője.
+INC_COUNCIL_ABSTAIN_DESC          | [voter_race_possessive_prefix_uppercase] tartózkodtak a Galaktikus Tanács megválasztása során, megtagadván szavazatukat [candidate_name], [candidate_race_possessive_prefix_lowercase] vezetőjétől.
+INC_DECLARED_WAR_TITLE            | Hadüzenet
+INC_DECLARED_WAR_DESC             | [aggressor_empire_prefix_uppercase] hadat üzent [victim_giving_prefix_lowercase].
+INC_ERRATIC_WAR_TITLE             | Kiszámíthatatlan viselkedés
+INC_ERRATIC_WAR_DESC              | [aggressor_race_possessive_prefix_uppercase] felzaklatódtak és hadat üzentek [victim_empire_giving_prefix_lowercase], bár senki sem igazán biztos abban, hogy miért.
+INC_DEMANDED_TRIBUTE_TITLE        | Sarc követelése
+INC_ENCROACHING_TITLE             | Behatolás
+INC_ENCROACHING_DESC              | [your_empire_prefix_uppercase] gyarmatosította az érintett [system] rendszert, betolakodván [my_empire_prefix_lowercase] területére.
+INC_TECH_STOLEN_TITLE             | Ellopott technológia
+INC_TECH_STOLEN_DESC              | [spy_race_possessive_prefix_uppercase] kémei ellopták a féltett [tech] titkait [victim_race_taking_prefix_lowercase].
+INC_TECH_FRAMED_DESC              | Unknown spies stole technological secrets from the [victim_race]. (you were framed)
+INC_TECH_EXCHANGE_TITLE           | Technológia csere
+INC_TECH_EXCHANGE_DESC            | [my_empire_prefix_uppercase] átadta a hasznos [techGiven] technológiát [your_empire_giving_prefix_lowercase] cserébe az általuk áhított [techReceived] titkaiért.
+INC_FINANCIAL_AID_TITLE           | Pénzügyi segély
+INC_FINANCIAL_AID_DESC            | [your_empire_prefix_uppercase] önszántukból küldtek [amt] EK-et [my_empire_giving_prefix_lowercase].
+INC_TECHNOLOGY_AID_TITLE          | Technológiai segély
+INC_TECHNOLOGY_AID_DESC           | [your_empire_prefix_uppercase] önszántukból megosztották a hasznos [tech] titkait [my_empire_relational_prefix_lowercase].
+INC_TECHNOLOGY_AID_DESC_MULT      | [your_empire_prefix_uppercase] önszántukból megosztották [my_empire_giving_prefix_lowercase] a következő technológiák titkait: [techs].
+INC_TECHNOLOGY_TECH_LIST_COMMA    | , 
+INC_ENEMY_AID_TITLE               | Segély az ellenségnek 
+INC_ENEMY_AID_MONEY_DESC          | [your_empire_prefix_lowercase] [amt] EK-nyi támogatást küldött [enemy_empire_giving_prefix_lowercase], [my_empire_prefix_lowercase] ellenségeinek.
+INC_ENEMY_AID_TECH_DESC           | [your_empire_prefix_lowercase] megosztotta a hasznos [tech] tikait [enemy_empire_relational_prefix_lowercase], [my_empire_prefix_lowercase] ellenségeivel.
+INC_PARANOIA_TITLE                | Paranoia
+INC_PARANOIA_DESC1                | [my_empire_prefix_uppercase] radikális összeesküvés-teoretikusai szánalmasan abban hisznek, hogy [your_race_possessive_prefix_lowercase] egzisztenciális fenyegetést jelentenek fajukra nézve. [your_empire_prefix_uppercase] most már [num], eredetileg [my_empire_prefix_lowercase] által alapított rendszert foglal el.
+INC_PARANOIA_DESC2                | [my_empire_prefix_uppercase] egyik marginális frakciója úgy véli, hogy [your_race_possessive_prefix_lowercase] egzisztenciális fenyegetést jelentenek a fajukra nézve. [your_empire_prefix_uppercase] most már [num], eredetileg [my_empire_prefix_lowercase] által alapított rendszert foglal el.
+INC_PARANOIA_DESC3                | [my_empire_prefix_uppercase] egyik vokálisabb kisebbsége aggodalmát fejezi ki amiatt, hogy [your_race_possessive_prefix_lowercase] valóban egzisztenciális fenyegetést jelentenek a fajukra nézve. [your_empire_prefix_uppercase] most már [num], eredetileg [my_empire_prefix_lowercase] által alapított rendszert foglal el.
+INC_PARANOIA_DESC4                | [my_empire_prefix_uppercase] jelentős társadalmi rétege a növekvő félelmeik iránti fellépésre szólít fel, ugyanis [your_race_possessive_prefix_lowercase] valóban egzisztenciális veszélyt jelenthetnek a fajukra nézve. [your_empire_prefix_uppercase] most már [num], eredetileg [my_empire_prefix_lowercase] által alapított rendszert foglal el.
+INC_PARANOIA_DESC5                | Tömeges pánik ragadta el [my_empire_addressing_prefix_lowercase] annak a felismerésnek fényében, hogy [your_race_possessive_prefix_lowercase] egyértelműen egzisztenciális fenyegetést jelentenek a fajukra nézve. [your_empire_prefix_uppercase] most már [num], eredetileg [my_empire_prefix_lowercase] által alapított rendszert foglal el.
+INC_EXPANSION_TITLE               | Terjeszkedés
+INC_EXPANSION_DESC                | [num] rendszer vezérlésével [your_empire_prefix_lowercase] túl nagyra terjeszkedett.
+INC_GENOCIDE_TITLE                | Fajirtás
+INC_GENOCIDE_DESC                 | [attacker_empire_prefix_uppercase] teljességében kiírtotta [victim_race_prefix_lowercase] fajt.
+INC_FINAL_WAR_TITLE               | Végső háború!
+INC_FINAL_WAR_DESC                | [rebel_empire_prefix_uppercase] fellázadt a Galaktikus Tanács rendelete ellen, eredményképp a teljes felszámolásukra hívván fel a galaxis hátralevő szövetséges erőit.
+INC_MILITARY_BUILDUP_TITLE        | Katonai épitkezés
+INC_MILITARY_BUILDUP_DESC         | [your_empire_prefix_uppercase] [system] rendszerében [your_race_possessive_prefix_lowercase] egy felfegyverkezett flotta összeszerelésén dolgoznak.
+INC_OATHBREAKER_TITLE             | Esküszegés
+INC_DESTROYED_BASES_TITLE         | Megsemmisített rakétabázisok
+INC_DESTROYED_BASES_DESC          | [spy_empire_giving_prefix_uppercase] dolgozó szabotőrök megsemmisítettek [amt] védelmi rakétabázist az érintett [system] rendszerben.
+INC_DESTROYED_FACTORIES_TITLE     | Megsemmisített gyárak
+INC_DESTROYED_FACTORIES_DESC      | [spy_empire_giving_prefix_uppercase] dolgozó szabotőrök megsemmisítettek [amt] gyárat az érintett [system] rendszerben.
+INC_INCITED_REBELLION_TITLE       | Felbújtott lázadás
+INC_INCITED_REBELLION_DESC        | [spy_empire_giving_prefix_uppercase] dolgozó uszítók [amt] millió lázadót bujtottak fel az érintett [system] rendszerben.
+INC_SIGNED_ALLIANCE_TITLE         | Szövetség
+INC_SIGNED_ALLIANCE_DESC          | [my_empire_prefix_uppercase] Szövetséget kötött [your_empire_relational_prefix_lowercase], megígérvén, hogy megvédik egymást a külső fenyegetésektől.
+INC_JOINT_WAR_TITLE               | Hadüzenet
+INC_LEFT_ALLIANCE_TITLE           | Felbontott Szövetség
+INC_SIGNED_PACT_TITLE             | Megnemtámadási szerződés
+INC_SIGNED_PACT_DESC              | [my_empire_prefix_uppercase] megnemtámadási szerződést kötött [your_empire_relational_prefix_lowercase], kerülvén az űrhajó konfliktusokat a semleges rendszerkeben.
+INC_SIGNED_PEACE_TITLE            | Békeszerződés
+INC_SIGNED_PEACE_DESC             | [my_empire_prefix_uppercase] békeszerződést írt alá [your_empire_relational_prefix_lowercase], felfüggesztvén minden ellenségeskedést [endYear]-ig.
+INC_SIGNED_TRADE_TITLE            | Kereskedelmi megállapodás
+INC_SIGNED_TRADE_DESC             | [my_empire_prefix_uppercase] és [your_empire_prefix_lowercase] megállapodtak egy, évi legfeljebb [amt] EK összegű kereskedelmi megállapodásban.
+INC_SKIRMISH_TITLE                | Csatározás
+INC_SKIRMISH_DESC                 | [my_race_prefix_uppercase] és [your_race] flották harcba szálltak az csatától izzó [system] rendszerben.
+INC_SPY_CONFESSION_TITLE          | Kémvallomás
+INC_SPY_CONFESS_ESPIONAGE_DESC    | Elkaptak egy [spy_empire_giving_prefix_lowercase] munkálkodó kémet, aki vallomást tett a tervezett, [victim_empire] ellen irányuló hosszútávú kémtevékenységekről.
+INC_SPY_CONFESS_SABOTAGE_DESC     | Elkaptak egy [spy_empire_giving_prefix_lowercase] kémkedő kémet, aki vallomást tett a tervezett, [victim_empire] ellen irányuló hosszútávú szabotáló tevékenységekről.
+INC_SPY_CAPTURED_DESC             | Elkaptak egy [spy_empire_giving_prefix_lowercase] kémkedő kémet és vallomásra kényszerítették a tervezett, [victim_empire] ellen irányuló hosszútávú szabotáló tevékenységekről.
+INC_TRADE_INCOME_TITLE            | Kereskedelmi nyereség
+INC_TRADE_INCOME_DESC             | [your_empire_prefix_uppercase] és [my_empire_prefix_lowercase] közötti kereskedelem évi [amt] EK hasznot hozott.
+INC_TRESPASSING_TITLE             | Területsértés
+INC_TRESPASSING_DESC              | [your_empire_prefix_uppercase] flottái területet sértenek [my_empire_prefix_lowercase] [system] rendszerében.
+
+// generic click to skip or continue messages
+CLICK_SKIP                        | Escape or Click to Skip Animation
+CLICK_CONTINUE                    | Click or Escape to Continue...
+CLICK_EXIT                        | Click or Escape to Exit...
+BUTTON_EXIT                       | Exit
+
+// GAME/SETUP UI 
+GAME_TITLE_LINE_1                 | Az
+GAME_TITLE_LINE_2                 | ELŐDÖK
+GAME_TITLE_LINE_3                 | MARADVÁNYAI
+GAME_DISCUSS_ONLINE               | Online eszmecsere
+GAME_MENU_CONTINUE                | Játék folytatása
+GAME_MENU_NEW_GAME                | Új játék
+GAME_MENU_LOAD_GAME               | Játék töltése
+GAME_MENU_SAVE_GAME               | Játék mentése
+GAME_MENU_SETTINGS                | Beállítások
+GAME_MENU_OPEN_MANUAL             | Kézikönyv megnyitása
+GAME_MENU_EXIT                    | Kilépés
+GAME_MENU_RESTART                 | Újraindítás
+GAME_VERSION                      | Verzió: %1
+GAME_SHRINK                       | Zsugorítás -
+GAME_ENLARGE                      | Nagyítás
+
+// Game Settings UI
+GAME_SETTINGS_TITLE               | Játékbeállítások
+GAME_SETTINGS_DESCRIPTION         | Kattintással váltható minden játékbeállítás.
+GAME_SETTINGS_EXIT                | Kilépés
+GAME_SETTINGS_DEFAULT             | Alapértelmezett beállítások visszaállítása
+GAME_SETTINGS_DISPLAY_MODE        | Megjelenítési mód: %1
+GAME_SETTINGS_WINDOWED            | Ablakozott
+GAME_SETTINGS_BORDERLESS          | Szegélymentes
+GAME_SETTINGS_FULLSCREEN          | Teljes képernyő
+GAME_SETTINGS_DISPLAY_MODE_DESC   | Újraindításra van szükség. Az ablakos megjelenítés rögzített arányú és méretezhető. A szegélymentes mód egy maximalizált ablakot nyit meg. A teljes képernyő pedig egy kizárólagos maximalizált ablakot nyit meg.
+GAME_SETTINGS_GRAPHICS            | Grafikai szint: %1
+GAME_SETTINGS_GRAPHICS_LOW        | Alacsony
+GAME_SETTINGS_GRAPHICS_MED        | Közepes
+GAME_SETTINGS_GRAPHICS_HIGH       | Magas
+GAME_SETTINGS_GRAPHICS_DESC       | A játék grafikai minőségének beállítása. Közepes: a képek anti-aliasing-ja ki van kapcsolva. Alacsony: az animációk ki vannak kapcsolva.
+GAME_SETTINGS_TEXTURES            | Textúrák: %1
+GAME_SETTINGS_TEXTURES_NO         | Nem
+GAME_SETTINGS_TEXTURES_INTERFACE  | Felhasználói felület
+GAME_SETTINGS_TEXTURES_MAP        | Galaktikus térkép
+GAME_SETTINGS_TEXTURES_BOTH       | Felhasználói felület és térkép
+GAME_SETTINGS_TEXTURES_DESC       | A texúrák használata a galaktikus térképen és egyébb kijelzőkön váltogatható a játék folyama alatt.
+GAME_SETTINGS_SENSITIVITY         | Egérérzékenység: %1
+GAME_SETTINGS_SENSITIVITY_HIGH    | Magas
+GAME_SETTINGS_SENSITIVITY_MEDIUM  | Közepes
+GAME_SETTINGS_SENSITIVITY_LOW     | Alacsony
+GAME_SETTINGS_SENSITIVITY_DESC    | Az egér mozgásának reakcióideje  Galaxis térképen, miközben a kijelzőpanel frissül.
+GAME_SETTINGS_MEMORY              | Memóriahasználat kimutatása: %1
+GAME_SETTINGS_MEMORY_YES          | Igen
+GAME_SETTINGS_MEMORY_NO           | Nem
+GAME_SETTINGS_MEMORY_DESC         | A memóriahasználat statisztikájának be- és kikapcsolása a játék jobb alsó sarokában. Memóriahasználat monitorozásához hasznos.
+GAME_SETTINGS_SOUNDS              | Hanghatások: %1
+GAME_SETTINGS_SOUNDS_OFF          | Elnémítva
+GAME_SETTINGS_SOUNDS_ON           | %1/10
+GAME_SETTINGS_SOUNDS_DESC         | Kattintással be- és kikapcsolhatók a játékon belüli hanghatások. Egérgörgővel növelhető vagy csökkenthető a hangerő.
+GAME_SETTINGS_SOUNDS_DISABLED     | Kikapcsolva
+GAME_SETTINGS_SOUNDS_ERR_DESC     | A hanghatások ki vannak kapcsolva a következő hiba miatt: %1
+GAME_SETTINGS_MUSIC               | Zene: %1
+GAME_SETTINGS_MUSIC_OFF           | Elnémítva
+GAME_SETTINGS_MUSIC_ON            | %1/10
+GAME_SETTINGS_MUSIC_DESC          | Kattintással be- és kikapcsolható a játék zenéje. Egérgörgővel növelhető vagy csökkenthető a hangerő.
+GAME_SETTINGS_AUTOCOLONIZE        | Gyarmatosítás: %1
+GAME_SETTINGS_AUTOCOLONIZE_YES    | Automatikus
+GAME_SETTINGS_AUTOCOLONIZE_NO     | Mindig kérdezzen
+GAME_SETTINGS_AUTOCOLONIZE_DESC   | Ezzel beállítható az automatikus gyarmatosítás és bolygó megnevezés azonnal a gyarmatosító hajó érkezése után. Ez időmegtakarítással járhat méretesebb térképeken.
+GAME_SETTINGS_AUTOBOMBARD         | Bombázás: %1
+GAME_SETTINGS_AUTOBOMBARD_NO      | Mindig kérdezzen
+GAME_SETTINGS_AUTOBOMBARD_NEVER   | Soha
+GAME_SETTINGS_AUTOBOMBARD_YES     | Mindig
+GAME_SETTINGS_AUTOBOMBARD_WAR     | Csak háború idején
+GAME_SETTINGS_AUTOBOMBARD_INVADE  | Csak háború idején és invázió híján
+GAME_SETTINGS_AUTOBOMBARD_DESC    | Ezzel beállítható, hogy a játék mindig megkérdezze a játékost a teendőről; hogy soha ne legyen bombázás; mindig legyen bombázás; csak akkor legyen automatikus bombázás, amikor a játékos hadviszonyban áll; vagy csak akkor legyen automatikus bombázás, amikor a játékos hadviszonyban áll és nincsenek úton invazív csapatai.
+GAME_SETTINGS_BACKUP_OFF          | Kikapcsolva
+GAME_SETTINGS_BACKUP_ON           | Minden %1 fordulóban
+GAME_SETTINGS_BACKUP              | Biztonsági mentés: %1
+GAME_SETTINGS_BACKUP_DESC         | Engedélyezi, hogy a jelenlegi játék időszakosan mentve legyen egy egyedi névvel rendelkező biztonsági mentés mappájába, amely lehetővé teszi a korábbi fordulók újratöltését.
+GAME_SETTINGS_SAVEDIR             | Mentési mappa: %1
+GAME_SETTINGS_SAVEDIR_DEFAULT     | Alapértelmezett
+GAME_SETTINGS_SAVEDIR_CUSTOM      | Egyéni
+GAME_SETTINGS_SAVEDIR_DESC1       | A mentési mappa jelenleg ugyanabban a mappában található, mint maga a játék.
+GAME_SETTINGS_SAVEDIR_DESC2       | A mentési mappa jelenleg itt talállható: %1
+
+// Load Game UI
+LOAD_GAME_TITLE                   | Játék töltése
+LOAD_GAME_AUTOSAVE                | Legfrissebb automatikus mentés
+LOAD_GAME_BACKUP_DIR              | Biztonsági mentős mappában van: %1 fájl
+LOAD_GAME_SAVE_DIR                | Mentés mappában van: %1 fájl
+LOAD_GAME_FILENAME                | Fájlnév szerinti rendezés
+LOAD_GAME_DATE                    | Dátum szerint
+LOAD_GAME_SIZE                    | Méret szerint
+LOAD_GAME_LOADING                 | Betöltés...
+LOAD_GAME_BAD_VERSION             | Nem lehet betölteni a következő mentett játékfájlt: %1. Ennek az oka lehet az, hogy a fálj korrupt vagy elavult.
+LOAD_GAME_CANCEL                  | Mégsem
+LOAD_GAME_OK                      | Töltés
+LOAD_GAME_TOO_LONG                | ...
+
+// Save Game UI
+SAVE_GAME_TITLE                   | Játék mentése
+SAVE_GAME_FILENAME                | Fájlnév szerinti rendezés
+SAVE_GAME_DATE                    | Dátum szerint
+SAVE_GAME_SIZE                    | Méret szerint
+SAVE_GAME_SAVING                  | Mentés...
+SAVE_GAME_CANCEL                  | Mégsem
+SAVE_GAME_OK                      | Mentés
+
+// Intro UI
+INTRO_BEGIN                       | Indítás
+
+// MAIN UI - Bottom Navigation options
+MAIN_NAVIGATION_GAME              | Játék
+MAIN_NAVIGATION_DESIGN            | Tervrajzok
+MAIN_NAVIGATION_FLEETS            | Flották
+MAIN_NAVIGATION_SYSTEMS           | Rendszerek
+MAIN_NAVIGATION_RACES             | Fajok
+MAIN_NAVIGATION_COLONIES          | Gyarmatok
+MAIN_NAVIGATION_TECH              | Technológia
+MAIN_NAVIGATION_NEXT_TURN         | Következő forduló
+MAIN_NAVIGATION_NEXT_YEAR         | Következő év
+MAIN_YEAR_DISPLAY                 | %1. év
+MAIN_TURN_DISPLAY                 | %1. forduló
+MAIN_SPY_REPORT                   | Kém
+MAIN_TECH_NONE                    | Nincs kutatás
+MAIN_TECH_COMPLETED               | Kutatás befejezve
+MAIN_TECH_RP_REMAINING            | %1 KÉ maradt hátra
+MAIN_TECH_RP_DISCOVERY            | Felfedezés várható
+MAIN_TECH_RESERVE_BC              | %1 EK
+MAIN_TECH_RESERVE_TAX_ALL         | A termelés %1%-a minden gyarmaton adóztatás alatt
+MAIN_TECH_RESERVE_TAX             | A termelés %1%-a fejlett gyarmaton adóztatás alatt
+MAIN_TECH_RESERVE_TAX_NONE        | A gyarmatok termelései nincsnek megadóztatva
+MAIN_HELP_ALL                     | Segítség - erre kattintva átfuttatható az adott kijelző segítségi információja. Az Escape gombbal megszakítható.
+MAIN_HELP_1A                      | Minden csillagrendszer öt területre osztja termelését. A szürkés sávok azt mutatják, hogy a termelést kimutató sáv zárva van és nem fog változni. A névre kattintva zárható és feloldható.
+MAIN_HELP_1B                      | Hajógyár - megépíti a kiválasztott hajó-tervrajzot. A nagy hajók több fordulót is igénybe vehetnek.
+MAIN_HELP_1C                      | Védelmi rendszerek - kiépíti és felminősíti a rakétabázisokat a megadott határértékig és a bolygópajzsokat, amikor azok rendelkezésre állnak.
+MAIN_HELP_1D                      | Ipar - gyárakat épít, amelyek növelik a gyarmatok általános termelését.
+MAIN_HELP_1E                      | Ökológia - Tisztítja az ipari hulladékot, terraformálja a bolygót, és megsegítheti a népességnövekedést.
+MAIN_HELP_1F                      | Technológia - hozzáad a birodalom általános kutatásához.
+MAIN_HELP_1G                      | Az arány-sávok lebontva mutatják egy bolygó termelését. Minden egyes sáv költése egérgögővel állítható, a sávra kattintva, vagy a minden sáv melletti bal és jobb nyílakra kattintva.
+MAIN_HELP_1H                      | Egy terület költésének elvárható eredménye minden sáv jobb oldalán jelenik meg. A többletterhelés a birodalom kincstári tartalékába nyúl.
+MAIN_HELP_2A                      | A gyarmat bolygópajzs-szintje. Pajzsokat nem lehet csillagködben építeni.
+MAIN_HELP_2B                      | Rakétabázisok száma és e bolygón maximálisan kívánt mennyisége. Kattintással vagy egérgörgővel változtathatő a maximum.
+MAIN_HELP_2C                      | A bolygó teljes ipari és lakossági termelése.
+MAIN_HELP_2D                      | Tényleges termelés, a teljes birodalom kereskedelmi bevételéhez, kém és biztonsági költségekhez, valamint a rakétabázisok és hajók karbantartásához igazítva.
+MAIN_HELP_2E                      | Hajó-tervrajz változtatása a bolygó körül keringő hajógyárban. A befejezetlen űrhajókból felhelmazódott termelés felgyorsítja az újabb hajók építését 50%-kal, amíg ki nem fogy. Kattintással vagy egérgörgővel változtathatő a tervrajz.
+MAIN_HELP_2F                      | Gyülekezőpont átrakása egy másik gyarmatra, ahová az újonnan épített űrhajók automatikusan elrepülnek.
+MAIN_HELP_2G                      | Lakosság szállítása, hogy megerősítsenek egy másik gyarmatot vagy seregeket küldjön egy ellenséges bolygó leigázására. A gyarmat egy egyszeri szállítására szánt termelési költséget magára von.
+MAIN_HELP_2H                      | A bolygó teljes elhagyása az egész lakosság áthelyezésével egy másik gyarmatra.
+MAIN_HELP_2I                      | A bolygó jelenlegi és a maximális lakossága. Egy 100-as egy telített, terraformálatlan bolygót jelképez.
+MAIN_HELP_2J                      | A jelenlegi és a maximálisan megengedett gyárak száma. A gyárak maximuma a népességen és robotvezérlők technológiáján alapul.
+MAIN_HELP_2K                      | A rendszer megjelölhető egy zászlóval, amely segítségével az jobban kitűnik a galaxis térképen.
+MAIN_HELP_2L                      | A birodalmi kincstár tartalékának összege.
+MAIN_HELP_2M                      | A kutatás jelenlegi állapota  mind a hat technológiai területen.
+MAIN_HELP_3A                      | Játék - visszaküld a nyitómenübe. Lehetővé teszi a beállítások szerkesztését, játékállapot mentését vagy töltését és új játékok indítását.
+MAIN_HELP_3B                      | Rendszerek - a galaxis térkép, amely a rendszerek állapotát mutatja különböző kritériumok alapján.
+MAIN_HELP_3C                      | Flották - lehetővé teszi a flották és a hajógyártás nagyszabású irányítását a birodalmon belül.
+MAIN_HELP_3D                      | Tervrajzok - űrhajó tervrajzkok létrehozása a flotta tágítására az elérhető legújabb technológia segítségével. A felesleges tervrajzokat itt lehet selejtezni.
+MAIN_HELP_3E                      | Fajok - részletes információk és diplomáciai lehetőségek bármely eddig kontaktált idegen fajjal kapcsolatban.
+MAIN_HELP_3F                      | Gyarmatok - részletes és rendezhető gyarmatlista. Továbbá itt találhatók a birodalom bevételei és költségei.
+MAIN_HELP_3G                      | Technológia - megmutatja a rendelkezésre álló technológiákat. Lehetővé teszi a kutatások összpontosítását vagy egyensúlyozását legfeljebb hat technológia között.
+MAIN_HELP_3H                      | Következő év - a következő évbe helyezi a játékot.
+MAIN_HELP_3I                      | Jelenlegi forduló - megjeleníti a játék aktuális fordulóját vagy a birodalom jelenlegi évét. Kattintással váltható.
+MAIN_HELP_3J                      | Térképszabályozás - Kattintással válthatók a galaxis térkép különböző megjelenítési beállításai.
+
+MAIN_SYSTEM_DETAIL_PFB            | Nép %1  Gyár %2  Bázis %3
+MAIN_SYSTEM_DETAIL_PF             | Nép %1  Gyár %2
+MAIN_SYSTEM_DETAIL_NO_DATA        | Nincs adat
+MAIN_UNEXPLORED_SYSTEM            | Kivizsgálatlan
+MAIN_ALLIED_COLONY                | Szövetséges Gyarmat
+MAIN_SYSTEM_RANGE                 | %1 fényév
+MAIN_OUT_OF_RANGE_DESC            | Hatótávolságon kívül
+MAIN_SCOUT_RANGE_DESC             | Tartalék üzemanyagtartályok szükségesek
+MAIN_IN_RANGE_DESC                | Hatótávolságban
+MAIN_NO_PLANETS                   | Nincs gyarmatosítható bolygó
+MAIN_NO_COLONIES                  | Gyarmatosítatlan
+MAIN_UNSCOUTED                    | Felderítetlen
+MAIN_ABANDONED                    | Elhagyatott
+MAIN_ALIEN_COLONY                 | %1 Gyarmat
+MAIN_UNKNOWN_COLONY               | Idegen gyarmat
+MAIN_NEBULA_DESC                  | Az űrhajók sebessége csillagködökön keresztül warp 1-re van korlátozva.
+MAIN_PLANET_SIZE                  | Méret %1
+MAIN_PLANET_SIZE+                 | Méret %1+
+MAIN_PLANET_POP                   | Nép %1
+MAIN_PLANET_POP_SIZE              | Nép %1/%2
+MAIN_PLANET_REBELLION             | Lázadásban
+MAIN_PLANET_QUARANTINE            | Karanténban
+MAIN_PLANET_EVENT_COMET           | Üstökös
+MAIN_PLANET_EVENT_PIRACY          | Kalózkodás
+MAIN_PLANET_EVENT_PLAGUE          | Járvány
+MAIN_PLANET_EVENT_SUPERNOVA       | Szupernóva
+MAIN_PLANET_EVENT_AMOEBA          | Űramőba
+MAIN_PLANET_EVENT_CRYSTAL         | Űrkristály
+MAIN_ADVANCING_YEAR               | Ugrás a kovetkező évbe: %1...
+MAIN_ADVANCING_TURN               | Ugrás a kovetkező fordulóba: %1...
+TURN_SAVING                       | Játékmentés
+TURN_LAUNCHING_FLEETS             | Flottakilövés
+TURN_SHIP_COMBAT                  | Űrhajó harc
+TURN_BOMBARDMENT                  | Bolygóbombázás
+TURN_TRANSPORTS                   | Szállítók
+TURN_COLONIES                     | Gyarmatosítás
+TURN_SPIES                        | Kémtevékenységek
+TURN_REBELLION                    | Lázadások 
+TURN_COUNCIL                      | A tanács státusza
+TURN_RESEARCH                     | Kutatás
+TURN_ASSESS                       | Belsők befejezése
+TURN_DIPLOMACY                    | Diplomácia
+TURN_ACQUIRE_TECHS                | Cserélt technológiák tanulása
+TURN_MAKE_DECISIONS               | Döntéshozatal
+TURN_RECALC_DISTANCES             | Rendszerek közötti távolságok újraszámolása
+TURN_REFRESHING                   | Nézetek frissítése
+TURN_SCRAP_SHIPS                  | Űrhajók selejtezése
+TURN_FLEET_PLANS                  | Flotta tervrajzok
+TURN_DEPLOY_FLEETS                | Űrhajók kiküldése
+TURN_DEPLOY_FLEET_X               | Űrhajók kiküldése (%1/%2 befejezve)
+TURN_RETREAT_FLEETS               | Visszavonuló flották
+TURN_DESIGN_SHIPS                 | Űrhajók tervezése
+TURN_COLONY_SPENDING              | Gyarmat juttatások
+
+// Fleet labels
+MAIN_FLEET_TITLE                  | [fleet_race] Flotta
+MAIN_FLEET_TITLE_UNKNOWN          | Ismeretlen flotta
+MAIN_FLEET_IN_ORBIT               | Körpályán
+MAIN_FLEET_DEPLOYED               | Hadrendbe állítva
+MAIN_FLEET_IN_TRANSIT             | Úton
+MAIN_FLEET_RETREATING             | Visszavonuló
+MAIN_FLEET_LOCATION               | ennyivel: %1
+MAIN_FLEET_ORIGIN                 | %1-tól
+MAIN_FLEET_DESTINATION            | %1-ig
+MAIN_FLEET_DEST_UNSCOUTED         | a Kivizsgálatlanig
+MAIN_FLEET_ALLY                   | Szövetséges
+MAIN_FLEET_ENEMY                  | Ellenség
+MAIN_FLEET_DEPLOYMENT             | Flották kiküldése
+MAIN_FLEET_DISPLAY                | Flották kijelzése
+MAIN_FLEET_CHOOSE_DEST            | Úticél és küldendő hajók számának kiválasztása.
+MAIN_FLEET_OUT_OF_RANGE_DESC      | Az úticél a flotta hatótávolságán kívülre esik, %1 fényévnyi messzeségre a legközelebbi gyarmattól.
+MAIN_FLEET_INVALID_RETREAT        | A visszavonuló flottákat csak barátságos gyarmatokhoz lehet küldeni.
+MAIN_FLEET_ETA_UNNAMED            | Várható érkezési idő: %1 Years 
+MAIN_FLEET_ETA_NAMED              | %1 - várható érkezési idő: %2 Years 
+MAIN_FLEET_SET_RALLY              | Gyülekezés
+MAIN_FLEET_AUTO_RETREAT           | Automatikus visszavonulás érkezéskor
+MAIN_FLEET_ETA_UNKNOWN            | A fürkészőegység nem tudja meghatározni a rendeltetési helyet
+MAIN_FLEET_THROUGH_NEBULA         | A csillagköd warp 1-re korlátozza a maximális sebességet
+
+MAIN_FLEET_CANCEL                 | Mégsem
+MAIN_FLEET_OUT_OF_RANGE           | Hatótávolságon kívül
+MAIN_FLEET_DEPLOY_FLEET           | Flották kiküldése
+MAIN_FLEET_UNDEPLOY_FLEET         | Flották visszahívása
+MAIN_FLEET_INVALID_RETREAT        | Érvénytelen visszahívás
+MAIN_FLEET_INVALID_DESTINATION    | A flottát nem lehet elküldeni ide: %1
+MAIN_FLEET_INVALID_DESTINATION2   | A flottát nem lehet elküldeni ebbe a rendszerbe
+
+// Rally Point labels
+MAIN_RALLY_TITLE                  | Gyülekezőpont kiválasztása
+MAIN_RALLY_PROMPT                 | Újonnan épített hajók kiküldési célpontjának kiválasztása egy irányítás alatt álló rendszerbe.
+MAIN_RALLY_FORWARD                | Bejövő gyűlések továbbítása
+MAIN_RALLY_TRAVEL_TIME            | %1 - várható érkezési idő: %2 év
+MAIN_RALLY_INSTANT_TIME           | %1 - várható érkezési idő: azonnali
+MAIN_RALLY_WILL_CANCEL            | Ennek a célpotnak a kiválasztása törli a meglévő gyülekezőpontot.
+MAIN_RALLY_ERROR                  | Egy irányítás alatt álló rendszert kell kiválasztani.
+MAIN_RALLY_NO_SELECTION           | Semmi sincs kiválasztva
+MAIN_RALLY_CANCEL                 | Mégsem
+MAIN_RALLY_START                  | Gyülekezés indítása
+MAIN_RALLY_STOP                   | Gyülekezés megállítása
+
+// Transport labels
+MAIN_TRANSPORTS_EMPIRE            | [empire_race_possessive_prefix_uppercase] szállítói
+MAIN_TRANSPORTS_COUNT             | Szállítók száma: %1
+MAIN_TRANSPORTS_CANCEL            | Mégsem
+MAIN_TRANSPORTS_SHOW_DEST         | %1 - várható érkezési idő: %2 év
+MAIN_TRANSPORT_TITLE              | Szállítók küldése
+MAIN_TRANSPORT_ABANDON_TITLE      | Rendszer elhagyása
+MAIN_TRANSPORT_PROMPT             | Civil vagy katonai szállítóhajók kiküldési célpontjának kiválasztása egy gyarmatosított rendszerbe.
+MAIN_TRANSPORT_ABANDON_PROMPT     | Az összes civil szállítóhajó evakuálási célpontjának kiválasztása egy gyarmatosított rendszerbe.
+MAIN_TRANSPORT_SELECT_POP         | Küldendő civil lakosság kiválasztása (a %1 rendszer lakosságának legfeljebb fele).
+MAIN_TRANSPORT_SELECT_TROOPS      | Küldendő katonai egységek kiválasztása (a %1 rendszer legfeljebb legfeljebb fele).
+MAIN_TRANSPORT_POP_LABEL          | Népesség
+MAIN_TRANSPORT_TOTAL_POP_LABEL    | Teljes népesség: %1
+MAIN_TRANSPORT_ETA                | %1 - várható érkezési idő: %2 év
+MAIN_TRANSPORT_ERROR              | Egy gyarmatosított rendszert kell kiválasztani.
+MAIN_TRANSPORT_ABANDON_ERROR      | A következő típusu rendszert kell kiválasztani: %1.
+MAIN_TRANSPORT_OUT_OF_RANGE       | Ez a rendszer a katonai szállítók hatótávolságán kívülre esik.
+MAIN_TRANSPORT_UNSCOUTED          | Kivizsgálaltan rendszerekbe nem lehet szállítokat küldeni.
+MAIN_TRANSPORT_HOSTILE            | Ilyen környezetben való landoláshoz nincs megfelelelő technológiánk.
+MAIN_TRANSPORT_NO_ROOM            | Figyelmeztetés - a célzott bolygó elérte a maximális lakosságát!
+MAIN_TRANSPORT_SIZE_WARNING       | Figyelmeztetés - a célzott bolygó csak %1 millió lakost tud eltartani!
+MAIN_TRANSPORT_NO_SELECTION       | Semmi sincs kiválasztva
+MAIN_TRANSPORT_CANCEL             | Mégsem
+MAIN_TRANSPORT_SEND               | Szállítók küldése
+MAIN_TRANSPORT_ABANDON            | Elhagyás
+MAIN_TRANSPORT_CLEAR              | Szállítók ürítése
+MAIN_TRANSPORT_SURRENDER          | Automatikus megadás érkezéskor
+
+// Colony labels
+MAIN_COLONY_HOMEWORLD             | %1 Anyavilág
+MAIN_COLONY_FOUNDED               | %1 Gyarmat
+MAIN_COLONY_POPULATION            | Népesség
+MAIN_COLONY_FACTORIES             | GYárak
+MAIN_COLONY_VALUE+                | %1+
+MAIN_COLONY_SHIELD                | Pajzsszint
+MAIN_COLONY_BASES                 | Bázisok
+MAIN_COLONY_PRODUCTION            | Termelés - nettó (bruttó)
+MAIN_COLONY_SHIP                  | Űrhajó
+MAIN_COLONY_DEFENSE               | Véd
+MAIN_COLONY_INDUSTRY              | Ipar
+MAIN_COLONY_ECOLOGY               | Öko
+MAIN_COLONY_TECHNOLOGY            | Tech
+MAIN_COLONY_ALLOCATE_SPENDING     | Költés beosztása
+MAIN_COLONY_SPENDING_NONE         | Semennyi
+MAIN_COLONY_SPENDING_RESERVE      | Tartalék
+MAIN_COLONY_SPENDING_TECH         | Tech
+MAIN_COLONY_SPENDING_CONVERT      | Átalakítás
+MAIN_COLONY_SPENDING_REFIT        | Felújítás
+MAIN_COLONY_SPENDING_MAX_FACT     | Max
+MAIN_COLONY_SPENDING_WASTE        | Pazarlás
+MAIN_COLONY_SPENDING_ECO_GROWTH   | Növekedés %1
+MAIN_COLONY_SPENDING_ATMOSPHERE   | Atmo
+MAIN_COLONY_SPENDING_ENRICH_SOIL  | Talaj
+MAIN_COLONY_SPENDING_TERRAFORM    | T-forma
+MAIN_COLONY_SPENDING_CLEANUP      | Tisztítás
+MAIN_COLONY_SPENDING_GROWTH       | Növekedés
+MAIN_COLONY_SPENDING_SHIELD       | Pajzs
+MAIN_COLONY_SPENDING_UPG_BASES    | Felminősítés
+MAIN_COLONY_SPENDING_PLAGUE       | Járvány
+MAIN_COLONY_SPENDING_SUPERNOVA    | Szupernóva
+MAIN_COLONY_SPENDING_RP           | %1 KÉ
+MAIN_COLONY_COMPLETION_YEAR       | 1 év
+MAIN_COLONY_COMPLETION_YEARS      | %1 év
+MAIN_COLONY_COMPLETION_CENTURY    | %1 év
+MAIN_COLONY_COMPLETION_PER_YEAR   | %1/év
+MAIN_COLONY_SHIPYARD_COMPLETED    | Befejezve: %1
+MAIN_COLONY_SHIPYARD_LIMIT        | Építkezési limit:
+MAIN_COLONY_SHIPYARD_LIMIT_NONE   | Nincs
+MAIN_COLONY_SHIPYARD_CONSTRUCTION | Hajóépítési várólista
+MAIN_COLONY_RELOCATE_LABEL        | Gyülekezőpont kiválasztása
+MAIN_COLONY_TRANSPORTS_LABEL      | Szállítók küldése
+MAIN_COLONY_ABANDON_LABEL         | Elhagyás
+MAIN_COLONY_SHIP_SCRAPPED         | Selejtezve
+MAIN_COLONY_NO_SHIELD             | Csillagköd
+
+// System Scouted Notification
+MAIN_SCOUT_TITLE                  | A tudósok egy új csillagrendszert katagolizáltak
+MAIN_SCOUT_SUBTITLE_1             | A hajóink kivizsgálták ezt a rendszert
+MAIN_SCOUT_SUBTITLE_2             | A csillagászaink begyüjtötték ezeket az adatokat
+MAIN_SCOUT_SUBTITLE_3             | A szövetségeseink megosztották ezeket az adatokat
+MAIN_SCOUT_TYPE                   | Besorolás: %1      Méret: %2
+MAIN_SCOUT_NO_PLANET              | Nem találhatók lakható bolygók
+MAIN_SCOUT_HOSTILE_DESC           | Környezet: zord közegű - a népesség növekedése meg van felezve.
+MAIN_SCOUT_FERTILE_DESC           | Környezet: termékeny - a népesség növekedése +50%-os.
+MAIN_SCOUT_GAIA_DESC              | Környezet: gaia - a népesség növekedése +100%-os.
+MAIN_SCOUT_ARTIFACTS_DESC         | Ősi romok: kutatásból nyert technológia pontok meg vannak duplázva.
+MAIN_SCOUT_ANCIENTS_DESC          | Ősi anyavilág: Ősi romok: kutatásból nyert technológia pontok meg vannak nyégyszerezve.
+MAIN_SCOUT_ULTRA_POOR_DESC        | Források: ultra szegény - az ipari termelés egyharmadára csökken.
+MAIN_SCOUT_POOR_DESC              | Források: szegény - az ipari termelés meg van felezve.
+MAIN_SCOUT_RICH_DESC              | Források: gazdag - az ipari termelés meg van duplázva.
+MAIN_SCOUT_ULTRA_RICH_DESC        | Források: ultra gazdag - az ipari termelés háromszorosára gyarapodik.
+
+// Colonization prompt
+MAIN_COLONIZE_TITLE               | A gyarmatosaink %1 körül keringenek, amely egy gyarmatosítatlan rendszer.
+MAIN_COLONIZE_PROMPT              | Új gyarmat építése?
+MAIN_COLONIZE_YES                 | Igen
+MAIN_COLONIZE_NO                  | Nem
+MAIN_COLONIZE_ANIMATION_TITLE     | %1 évben [player_empire_prefix_uppercase] egy új gyarmatot alapít.
+MAIN_COLONIZE_NAME_PROMPT         | GYarmat neve
+MAIN_COLONIZE_NAME_OK             | Rendben
+
+// Reasons to ask player to reallocate a system (during next turn)
+MAIN_ALLOCATE_TITLE               | Költségek szabályozása
+MAIN_ALLOCATE_DESIGN_SCRAPPED     | Az építés alatt álló hajóterv le lett selejtezve, itt: %1.
+MAIN_ALLOCATE_COLONIZED           | • %1 gyarmatosítva lett.
+MAIN_ALLOCATE_STARGATE_COMPLETE   | • %1 befejezte egy csillagkapu építését.
+MAIN_ALLOCATE_SHIPS_COMPLETE      | • %1 befejezte a kért %2 példánnyi űrhajó építését.
+MAIN_ALLOCATE_SHIELD_COMPLETE     | • %1 befejezte a következő építését: %2.
+MAIN_ALLOCATE_BASES_COMPLETE      | • %1 befejezte a következő számú rakétabázisok építését: %2.
+MAIN_ALLOCATE_BASES_UPGRADED      | • %1 befejezte a rakétabázisai felminősítését.
+MAIN_ALLOCATE_MAX_FACTORIES       | • %1 elérte az ipari teljesítménye maximumát, ami %2 kiépíthető gyár.
+MAIN_ALLOCATE_MAX_POPULATION      | • %1 elérte a népessége maximumát, ami %2 gyarmatos.
+MAIN_ALLOCATE_TERRAFORM_COMPLETE  | • %1 befejezte a környezeti terraformációt.
+MAIN_ALLOCATE_ATMOSPHERE_COMPLETE | • %1 egy élhető környezetté lett terraformálva és most szokásos növekedési szinttel rendelkezik.
+MAIN_ALLOCATE_FERTILE_COMPLETE    | • %1 egy termékeny környezetté lett terraformálva és most 150%-os növekedési szinttel rendelkezik.
+MAIN_ALLOCATE_GAIA_COMPLETE       | • %1 egy gaia környezetté lett terraformálva, így a növekedési szintje meg van duplázva.
+MAIN_ALLOCATE_SABOTAGE_BASES      | • [spy_race_possessive_prefix_uppercase] szabotőrjei %1 következő mennyiségű rakétabázisát pusztíttoták el: %2
+MAIN_ALLOCATE_SABOTAGE_FACTORIES  | • [spy_race_possessive_prefix_uppercase] szabotőrjei %1 következő mennyiségű gyárát pusztíttoták el: %2
+MAIN_ALLOCATE_COLONY_CAPTURED     | • %1 a közelmúltban %2 sereg által lett elfoglalva.
+MAIN_ALLOCATE_ECO_LOCKED_WASTE    | • %1 ökológiai költési szintje kézileg le lett zárva, amely nem elegendő a szennyeződés tisztításához.
+MAIN_ALLOCATE_PROJECT_ENDED       | • %1 már nem kutatja a kovetkező speciális projektet:: %2
+MAIN_ALLOCATE_CHANGE_SPENDING     | A rendszer költségei pillanatnyilag szabályozhatók.
+MAIN_ALLOCATE_NOTICE_NUMBER       | Figyelem, ennyi: %1 / ennyiből: %2
+MAIN_ALLOCATE_BRIEF_NUMBER        | Ennyi: %1 / ennyiből: %2
+MAIN_ALLOCATE_PREV_SYSTEM         | Előző
+MAIN_ALLOCATE_NEXT_SYSTEM         | Következő
+MAIN_ALLOCATE_CLOSE               | Bezárás
+
+// Fleet Production display (during next turn)
+MAIN_FLEET_PRODUCTION_TITLE       | A flotta termelésének összefoglalója
+MAIN_FLEET_SHIP_COUNT             | %1/%2
+
+// 32-bit Java Warning
+MAIN_JAVA_32BIT_TITLE             | Figyelem! 32-bites Java használa érzékelt!
+MAIN_JAVA_32BIT_DESC              | Ezt a játékot pillanatnyilag a Java 32-bites verziója futtatja. Ez jelentős mértékben csökkentheti a rendelkezésre álló memóriát és a játék teljesítményét.
+MAIN_JAVA_32BIT_DESC_2            | Bár Az Elődök Maradványai ebben a módban is működik, a 64-bites Java használata javítja a játékmenet élményét.
+MAIN_JAVA_32BIT_DESC_3            | Ha segítségre van szüksége a Java frissítésében, kérjük, látogasson el ide: www.reddit.com/r/rotp és kérjen segítséget (angol nyelvű fórum).
+MAIN_JAVA_32BIT_OK                | Rendben
+
+// Memory Low Warning
+MAIN_MEMORY_LOW_TITLE             | Figyelem! A játékmemória alacsony!
+MAIN_MEMORY_LOW_DESC              | A játék rendelkezésére álló memória alacsony. Ennek oka lehet hosszabb játékidő vagy ha eleve nem volt elegendő szabad memória a játék kezdedtén.
+MAIN_MEMORY_LOW_DESC_2            | Nyomja meg az "Újrakezdés" gombot a játék újraindításához - a játék ugyanott folytatódik, ahol most van. Az újraindítás nélküli továbbjátszás kiszámíthatatlan fejleményeket okozhat, beleértve a játék mentett állapotainak elvesztését is.
+MAIN_MEMORY_LOW_DESC_3            | Ha ismételten jön elő ez az üzenet, más alkalmazások bezárásával az játék újraindítása előtt lehet elkerülhető a probléma.
+MAIN_MEMORY_LOW_RESTART           | Újrakezdés
+MAIN_MEMORY_LOW_SKIP              | Kihagyás
+
+// Autosave Failed Warning
+MAIN_AUTOSAVE_FAILED_TITLE        | Figyelem! Az automatikus mentés sikertelen!
+MAIN_AUTOSAVE_FAILED_DESC         | Az automatikus mentés funkció, amely a "Következő forduló" megnyomásával indul, sikertelen. Ez lehet egy pillanatnyi hiba a mátrixban, de ajánlott a folytatás előtt manuálisan menteni a játékot.
+MAIN_AUTOSAVE_FAILED_DESC_2       | A játékhoz mellékelt üzenet ehhez a hibához: %1
+MAIN_AUTOSAVE_FAILED_DESC_3       | Ha gyakran jön elő ez az üzenet, kérjük, hogy a www.reddit.com/r/rotp weboldalon küldje el a képernyőképet erről az ablakról.
+MAIN_AUTOSAVE_FAILED_OK           | Rendben
+
+// Alerts
+MAIN_ALERT_TITLE                  | Figyelem 
+MAIN_ALERT_TITLE_COUNT            | Figyelem - ennyi: %1 / ennyiből: %2
+MAIN_ALERT_SPY_REPORT             | A hírszerző irodánk új jelentést nyújtott be a közelmúltbeli kémkedési tevékenységről.
+MAIN_ALERT_TECH_STOLEN            | A belső biztonság felfedezett kémkedési tevékenységeket [alien_race_possessive_prefix_lowercase] kémei által.
+MAIN_ALERT_FACTORIES_DESTROYED    | [alien_empire_prefix_uppercase] ügynökei megsemmisítettek %1 gyárat az érintett %2 rendszerben.
+MAIN_ALERT_BASES_DESTROYED        | [alien_empire_prefix_uppercase] ügynökei megsemmisítettek %2 rendszert védelmező %1 rakétabázist.
+MAIN_ALERT_FACTORIES_DESTROYED2   | Ismeretlen szabotőrök megsemmisítettek %1 gyárat az érintett %2 rendszerben.
+MAIN_ALERT_BASES_DESTROYED2       | Ismeretlen szabotőrök megsemmisítettek %2 rendszert védelmező %1 rakétabázist.
+MAIN_ALERT_TRANSPORTS_PERISHED    | %1 rendszer gyarmata megsemmisült. Az oda leszálni törekedő szállítóink mind kipusztultak.
+MAIN_ALERT_TRANSPORTS_CAPTURED    | %1 rendszerbe érkező %2 szállítónk megadta magát [alien_race_possessive_prefix_lowercase] erőinek.
+MAIN_ALERT_TRANSPORTS_KILLED      | %1 rendszerbe igyekvő %2 szállítónk meg lett semmisítve a védekező [alien_race_possessive] erői által.
+MAIN_ALERT_INVADERS_CAPTURED      | %1 rendszerbe érkező %2 [alien_race] szállító megadta magát a védelmi erőinknek.
+MAIN_ALERT_INVADERS_KILLED        | %1 rendszert lerohanni igyekvő %2 [alien_race] szállítót maradéktalanul elpusztították a védelmi erőink.
+MAIN_ALERT_TRESPASSING1           | [alien_race_possessive_prefix_uppercase] űrhajóik területet sértenek az érintett %1 rendszer gyarmata közelében.
+MAIN_ALERT_TRESPASSING2           | [alien_race_possessive_prefix_uppercase] nagykövete tiltakozik a területet sértő űrhajóink ellen az érintett %1 rendszerben.
+MAIN_ALERT_TRADE_MATURED          | Kereskedelmi megállapodásunk [alien_empire_relational_prefix_lowercase] elérte a maximális %2 EK értékét.
+MAIN_ALERT_ALLIANCE_WEAKENING     | Szövetségünk [alien_empire_relational_prefix_lowercase] gyengül.
+MAIN_ALERT_ALLIANCE_BREAKING      | Szövetségünk [alien_empire_relational_prefix_lowercase] az összeomlás szélén van!
+
+// Colony Listing UI
+PLANETS_TITLE                     | [player_race_possessive_prefix_uppercase] Gyarmatai
+PLANETS_VIEW_ECOLOGY              | Ökológiai nézet
+PLANETS_VIEW_INDUSTRY             | Ipari nézet
+PLANETS_VIEW_MILITARY             | Hadi nézet
+PLANETS_SPENDING_COSTS            | Birodalmi költések
+PLANETS_COSTS_DESC                | Minden gyarmat a termelésének bizonyos százalékával támogatja a birodalom költéseit.
+PLANETS_COSTS_SHIPS               | Űrhajó karbantartás
+PLANETS_COSTS_BASES               | Rakétabázisok
+PLANETS_COSTS_STARGATES           | Csillagkapuk
+PLANETS_COSTS_SPYING              | Kémkedés
+PLANETS_COSTS_SECURITY            | Biztonság
+PLANETS_TOTAL_INCOME              | Éves jövedelem
+PLANETS_INCOME_TRADE              | Kereskedelmi jövedelem
+PLANETS_INCOME_PLANETS            | Gyarmatok termelése
+PLANETS_INCOME_TOTAL              | Teljes összeg
+PLANETS_TREASURY                  | Birodalmi kincstár
+PLANETS_TREASURY_FUNDS            | Kincstári pénzeszközök
+PLANETS_TAX_DESC                  | Gyarmatok megadóztatása, hogy hozzájáruljanak a birodalom kincstárához.
+PLANETS_RESERVE_TAX               | Tartalékadó
+PLANETS_RESERVE_INCREASE          | +%1 EK/évente
+PLANETS_RESERVE_NO_TAX            | Adómentesség
+PLANETS_RESERVE_ONLY_DEVELOPED    | Csak a teljesen kifejlesztett gyarmatok megadóztatása
+PLANETS_BUTTON_TRANSFER           | ÁTUTALÁS
+PLANETS_BUTTON_EXIT               | KIJÁRAT
+PLANETS_AMT_PCT                   | %1%
+PLANETS_AMT_BC                    | %1 EK
+PLANETS_TRANSFER_DESC             | Birodalmi pénzeszközök átutalása ide: %1
+PLANETS_TRANSFER_CANCEL           | Mégsem
+PLANETS_TRANSFER_ACCEPT           | Átutalás
+PLANETS_COLONY_TRANSFER_TITLE     | Pénzeszközök átutalása
+PLANETS_COLONY_TRANSFER_DETAIL    | Pénzeszközök átutalása a birodalmi kincstárából e gyarmat termelésének szaporítása érdekében.
+PLANETS_COLONY_TRANSFER_BUTTON    | Pénzeszközök átutalása a birodalmi kincstárából
+PLANETS_LIST_NUM                  | 
+PLANETS_LIST_NAME                 | Név
+PLANETS_LIST_POPULATION           | Népesség
+PLANETS_LIST_POP                  | Nép.
+PLANETS_LIST_SIZE                 | Méret
+PLANETS_LIST_TYPE                 | Típus
+PLANETS_LIST_FACTORIES            | Gyárak
+PLANETS_LIST_WASTE                | Pazarlás
+PLANETS_LIST_BASES                | Bázisok
+PLANETS_LIST_SHIELD               | Pajzs
+PLANETS_LIST_PRODUCTION           | Term.
+PLANETS_LIST_CAPACITY             | Kapacitás
+PLANETS_LIST_RESERVE              | Tartalék
+PLANETS_LIST_SHIPYARD             | Hajógyár
+PLANETS_LIST_NOTES                | Jegyzetek
+PLANETS_LIST_TURNS                | Fordulók
+PLANETS_LIST_YEARS                | Évek
+PLANETS_LIST_TRANSPORTS           | Szállítók
+PLANETS_LIST_RESOURCES            | Erőforrások
+PLANETS_MULTI_SYSTEMS             | %1 rendszerek
+PLANETS_AGGREGATE_VALUES          | Összesített értékek
+PLANETS_SPENDING_0                | Nincs %1 költés
+PLANETS_SPENDING_25               | 25% %1 költés
+PLANETS_SPENDING_50               | 50% %1 költés
+PLANETS_SPENDING_75               | 75% %1 költés
+PLANETS_SPENDING_MAX              | Maximális %1 költés
+PLANETS_HELP_ALL                  | ÁTTEKINTÉS - Ez a képernyő mutatja a birodalom gazdasági adatait, valamint a gyarmatok listáját, amelyet különböző változók szerint lehet rendezni.
+PLANETS_HELP_1A                   | Ökológia - erre a fülre kattintva megjeleníthetők a gyarmatok ökológiai adatai.
+PLANETS_HELP_1B                   | Ipar - erre a fülre kattintva megjeleníthetők a gyarmatok ipari adati.
+PLANETS_HELP_1C                   | Hadsereg - erre a fülre kattintva megjeleníthetők a gyarmatok hadi adati.
+PLANETS_HELP_1D                   | A gyarmatok költései ugyanúgy állíthatók, mint a fő képernyőn.
+PLANETS_HELP_1E                   | Növelje a gyarmat termelését akár 50%-kal a birodalmi kincstár pénzeszközeinek átutalásával.
+PLANETS_HELP_1F                   | A birodalom teljes jövedelme.
+PLANETS_HELP_1G                   | A birodalom teljes költése jövedelmi szálaékban kifejezve.
+PLANETS_HELP_1H                   | Gyarmatok megadóztatása a birodalmi kincstár gyarapítása érdekében. Opcionálisan, az adóztatás korlátozható csupán azokra a gyarmatokra, amelyek befejezték ökológiai, ipari és védelmi költéseiket.
+PLANETS_HELP_2A                   | Név - a rendszer neve. Szerkeszthető.
+PLANETS_HELP_2B                   | Népesség - jelenlegi populáció, beleértve az előző forduló vátozásait.
+PLANETS_HELP_2C                   | Típus - a bolygó közegtípusa. A zöld szín a termékeny bolygókat jelöli.
+PLANETS_HELP_2D                   | Erőforrások - a gazdag, szegény és műalkotott bolygók.
+PLANETS_HELP_2E                   | Méret - A bolygó aktuális mérete.
+PLANETS_HELP_2F                   | Hulladék - ipari hulladékok szintje a bolygón.
+PLANETS_HELP_2G                   | Megjegyzések - a játékos megjegyzései a rendszerről. Szerkeszthető.
+PLANETS_HELP_3A                   | Név - a rendszer neve. Szerkeszthető.
+PLANETS_HELP_3B                   | Népesség - jelenlegi populáció, beleértve az előző forduló vátozásait.
+PLANETS_HELP_3C                   | Erőforrások - a gazdag, szegény és műalkotott bolygók.
+PLANETS_HELP_3D                   | Gyárak - gyárak száma, beleértve az előző forduló vátozásait.
+PLANETS_HELP_3E                   | Termelés - a gyarmat teljes termelése.
+PLANETS_HELP_3F                   | Tartalék - a gyarmaton jelenleg tárolt teljes tartalék.
+PLANETS_HELP_3G                   | Megjegyzések - a játékos megjegyzései a rendszerről. Szerkeszthető.
+PLANETS_HELP_3H                   | Kapacitás - a maximális lehetséges termelés százaléka.
+PLANETS_HELP_4A                   | Név - a rendszer neve. Szerkeszthető.
+PLANETS_HELP_4B                   | Népesség - jelenlegi populáció, beleértve az előző forduló vátozásait.
+PLANETS_HELP_4C                   | Erőforrások - a gazdag, szegény és műalkotott bolygók.
+PLANETS_HELP_4D                   | Termelés - a gyarmat teljes termelése.
+PLANETS_HELP_4E                   | Pajzs - a bolygó pajzsszintje.
+PLANETS_HELP_4F                   | Bázisok - rakétabázisok a bolygón. a piros szín jelöli az, ha a technológia elavult.
+PLANETS_HELP_4G                   | Hajógyár - építés alatti hajótervek.
+PLANETS_HELP_4H                   | Megjegyzések - a játékos megjegyzései a rendszerről. Szerkeszthető.
+PLANETS_HELP_4I                   | Zászló - felhasználó által kiválasztott rendszer zászlója.
+
+// Bombardment prompt
+MAIN_BOMBARDED_TITLE             | %1 le lett bombázva [alien_race_possessive_prefix_lowercase] erői által.
+MAIN_BOMBARD_TITLE               | Erőink egy ellenséges [alien_race] gyarmat körül keringenek.
+MAIN_BOMBARD_TROOPS              | %1 [alien_race] erő vagy úton van vagy kering e gyarmat körül.
+MAIN_BOMBARD_PROMPT              | Bolygó lebombázása?
+MAIN_BOMBARD_YES                 | Igen
+MAIN_BOMBARD_NO                  | Nem
+MAIN_BOMBARD_POPULATION          | Népesség: %1
+MAIN_BOMBARD_FACTORIES           | Gyárak: %1
+MAIN_BOMBARD_BASES               | Bázisok: %1
+MAIN_BOMBARD_SHIELD              | Pajzsszint: %1
+MAIN_BOMBARD_COMPLETE            | A bombázás befejeződött.
+MAIN_BOMBARD_DESTROYED           | A gyarmat megsemmisült
+MAIN_BOMBARD_DMG                 | (%1)
+MAIN_BOMBARD_NAME_PROMPT         | Gyarmat neve
+
+
+// Fleet listing UI
+FLEETS_TITLE                      | Flották
+FLEETS_SELECT_SYSTEMS             | Rendszerek kiválasztása
+FLEETS_SELECT_FLEETS              | Flották kiválasztása
+FLEETS_SELECT_ALL                 | Összes kiválasztása
+FLEETS_DESELECT_ALL               | Választási jelölések ejtése
+FLEETS_FILTER_BY                  | Szűrés a következő alapján:
+FLEETS_CONSTRUCTING_DESIGN        | Építés szerint:
+FLEETS_INCLUDES_SHIP_TYPE         | Űrhajók kiküldése a követekző típus alapján:
+FLEETS_SELECTED_SHIPS             | Kiküldésre kiválasztva
+FLEETS_BUILDING_DESIGN            | %1
+FLEETS_HAS_STARGATE               | A rendszer egy csillagkapuval rendelkezik
+FLEETS_HAS_NO_STARGATE            | A rendszer nem rendelkezik csillagkapuval
+FLEETS_HAS_RALLY_POINT            | A rendszerben van egy gyülekezőpont
+FLEETS_HAS_NO_RALLY_POINT         | A rendszerben nincs gyülekezőpont
+FLEETS_SENDING_TRANSPORTS         | A rendszer szállítókat küld ki
+FLEETS_NOT_SENDING_TRANSPORTS     | A rendszer nem küld szállítókat
+FLEETS_IS_RICH                    | A rendszer gazdag vagy ultra gazdag
+FLEETS_IS_ULTRA_RICH              | A rendszer ultra gazdag
+FLEETS_IS_POOR                    | A rendszer szegény vagy ultra szegény
+FLEETS_IS_ULTRA_POOR              | A rendszer ultra szegény
+FLEETS_IS_STANDARD                | A rendszernek szokásos erőforrásai vannak
+FLEETS_SYSTEMS_SELECTED           | %1  kiválasztott rendszer
+FLEETS_FLEETS_SELECTED            | %1  kiválasztott flotta
+FLEETS_MULTIPLE_DESIGNS           | Többféle
+FLEETS_RELOCATE_LABEL             | Gyülekezőpontok kijelölése
+FLEETS_TRANSPORTS_LABEL           | Szállítók küldése
+FLEETS_SPENDING_LABEL             | Hajó költségvetésének beállítása
+FLEETS_HAS_ORDERS                 | A flotta úton van
+FLEETS_HAS_NO_ORDERS              | A flotta pályán kering
+FLEETS_IS_RALLYING                | A flotta gyülekezik
+FLEETS_DESIGN_COUNT               | %1 %2
+FLEETS_DEPLOY_FLEETS              | Flották kiküldése
+FLEETS_SET_RALLY_POINTS           | Gyülekezőpontok kijelölése
+FLEETS_STOP_RALLIES_DESC          | %1 kijelölt rendszer már rendelkezik gyülekezőponttal
+FLEETS_STOP_RALLIES               | Gyülekezők feloszlatása
+FLEETS_SETTING_RALLY_POINTS       | Kiinduló gyülekezőpontok
+FLEETS_START_RALLIES_DESC         | Egy irányítás alatt lévő rendszer kiválasztása, ahová az az összes kiválasztott rendszer újonnan épített űrhajója küldendő.
+FLEETS_START_RALLIES              | Gyülekezők kezdeményezése
+FLEETS_SEND_TRANSPORTS            | Szállítók küldése
+FLEETS_ADJUST_SPENDING_SELECT     | Rendszer kiválasztása, ahol az űrhajók költései állíthatók
+FLEETS_ADJUST_SPENDING_DESC       | Űrhajók költéseinek szintszabályozása a kiválasztott %1 rendszerekben.
+FLEETS_ADJUST_SPENDING_DESC2      | Egyéb költési kategóriák automatikusan be lesznek állítva.
+FLEETS_ADJUST_SPENDING_DESC3      | Az ökológia megtartja a minimális anyagi ráfordítást, amely a szennyezés tiszításához szükséges.
+FLEETS_ADJUST_SPENDING            | Űrhajók költéseinek állíása
+FLEETS_SPENDING_0                 | Nincs hajó költés
+FLEETS_SPENDING_25                | 25%-os hajó költés
+FLEETS_SPENDING_50                | 50%-os hajó költés
+FLEETS_SPENDING_75                | 75%-os hajó költés
+FLEETS_SPENDING_MAX               | Maximális hajó költés
+FLEETS_SPENDING_CANCEL            | Mégsem
+FLEETS_CANCEL_TRANSPORTS_DESC     | %1 kijelölt rendszernek már van menetrendbe tervezett szállítója
+FLEETS_CANCEL_TRANSPORTS          | Szállítások visszavonása
+FLEETS_DEPLOYING_TRANSPORTS_DESC  | Egy hatókörön belüli rendszer kiválasztása, ahová a gyarmati szállítók vagy katonai csapatok küldendők.
+FLEETS_DEPLOY_TRANSPORTS          | Szállítók kiküldése
+FLEETS_FLEET_DEPLOYMENT           | Flották kiküldése
+FLEETS_UNDEPLOYING_FLEETS         | %1 kiválasztott flotta már kiküldéshez van rendelve.
+FLEETS_CANCEL_DEPLOYMENTS         | Kiküldések visszavonása
+FLEETS_DEPLOYING_FLEETS           | Kiküldendő flották
+FLEETS_DEPLOYING_FLEETS_DESC      | Egy hatókörön belüli rendszer kiválasztása, ahová a kiválasztott flották küldendők.
+FLEETS_DEPLOY_FLEETS              | Flották kiküldése
+FLEETS_TRANSPORTS_TITLE           | Szállítók küldése innét:
+FLEETS_TRANSPORTS_SEND            | %1 szállító küldése
+FLEETS_TRANSPORTS_SYNCH           | Szinkronizálás
+FLEETS_TRANSPORTS_UNSYNCH         | Deszinkronizálás
+FLEETS_TRANSPORT_NO_ROOM          | Figyelem - a célbe vett bolygó elérte a maximális lakosságát!
+FLEETS_TRANSPORT_SIZE_WARNING     | Figyelem - a célbe vett bolygó csupán %1 milliónyi lakost tud eltartani!
+FLEETS_TRANSPORT_TIME             | Tervezett érkezési idő: %1 év
+FLEETS_TRANSPORT_TIME_RANGE       | Tervezett érkezési idő: %1 és %2 év között
+FLEETS_CANNOT_SEND_TRANSPORTS     | %1 képtelen szállítókat küldeni
+FLEETS_EXISTING_TRANSPORT         | %1 szállítók küldése ide: %2
+FLEETS_EXISTING_STOP              | Megállítás
+FLEETS_CANCEL                     | Mégsem
+FLEETS_HELP_ALL                   | ÁTTEKINTÉS - Ez a képernyő lehetővé teszi a flották, a szállítók és a hajógyártás nagy léptékű kezelését. Általában, egy csoport flotta vagy rendszer kiválasztásával azok szabályozhatók, kisebb szeletekre szűrhetők és a kívánt műveletek alkalmazhatók rajtuk.
+FLEETS_HELP_1A                    | Rendszerek kiválasztása - háromféleképpen lehet rendszereket kiválasztani: 1) a térképen lévő rendszerekre kattintva, 2) jobb gombos húzással a térképen és 3) az "Összes kiválasztása" és a "Választási jelölések ejtése" gombok használatával.
+FLEETS_HELP_1B                    | Szűrés - a kiválasztott rendszerek listájának jelölőnégyzeteket általi szűkítése. A szűrőkre kattintva válthatóak a kapcsolódó opciók.
+FLEETS_HELP_1C                    | Építés szerint - a rendszerek szűrése építés alatti hajóterveknek megfelelően.
+FLEETS_HELP_1D                    | Hajótervezés - hajóterv kicserélése, amely a kiválasztott rendszerekben épül. Az üres kép azt jelenti, hogy a kiválasztott rendszerek jelenleg különböző terveket építenek. Vigyázat! Ehhez a művelethez nem jár külön megerősítő felszólítás.
+FLEETS_HELP_1E                    | Szállítók küldése - szállítók küldése a kiválasztott rendszerekből a célrendszerbe.
+FLEETS_HELP_1F                    | Gyülekezőpontok beállítása - gyülekezőpontok beállítsa a kiválasztott rendszerekből a célrendszerbe.
+FLEETS_HELP_2A                    | Flották kiválasztása - háromféleképpen lehet kiválasztani a flottákat: 1) a térképen lévő rendszerekre kattintva, 2) jobb gombos húzással a térképen és 3) az "Összes kiválasztása" és a "Választási jelölések ejtése" gombok használatával.
+FLEETS_HELP_2B                    | Szűrés - a kiválasztott flották listájának jelölőnégyzeteket általi szűkítése. A szűrőkre kattintva válthatóak a kapcsolódó opciók.
+FLEETS_HELP_2C                    | Csak egy bizonyos típusú hajó kiküldése - korlátozhatók a flottákból kiküldeni kívánt hajók típusai.
+FLEETS_HELP_2D                    | Kiküldésre kiválasztva - kiküldendő űrhajók típus szerinti száma.
+FLEETS_HELP_2E                    | Flották kiküldése - hajók küldése a célrendszerbe.
+
+// Select Next Tech to Research UI
+TECH_RESEARCH_COMPUTER            | A következő számítógépes technológia kiválasztása, amelyre a kutatóink koncentrálni fognak.
+TECH_RESEARCH_CONSTRUCTION        | A következő építkezési technológia kiválasztása, amelyre a kutatóink koncentrálni fognak.
+TECH_RESEARCH_FORCE_FIELD         | A következő erőtér technológia kiválasztása, amelyre a kutatóink koncentrálni fognak.
+TECH_RESEARCH_PLANETOLOGY         | A következő planetológiai technológia kiválasztása, amelyre a kutatóink koncentrálni fognak.
+TECH_RESEARCH_PROPULSION          | A következő meghajtási technológia kiválasztása, amelyre a kutatóink koncentrálni fognak.
+TECH_RESEARCH_WEAPON              | A következő fegyvertechnológia kiválasztása, amelyre a kutatóink koncentrálni fognak.
+TECH_TOP_TIER_DETAIL              | E kutatás befejezése előrehaladottabb technológiákat fog elérhetővé tenni.
+TECH_OBSOLETE_DETAIL              | Ez a technológia elavult.
+TECH_CAN_CHANGE                   | Ez a választás megváltoztatható a technológiai képernyőn a következő forduló előtt.
+TECH_CHOOSE_RESEARCH_COST         | %1 KÉ
+TECH_CHOOSE_RESEARCH_TIER         | Szint %1
+TECH_TRADE_TIER_COST_INFO         | (Szint %1 - %2 KÉ)
+TECH_CONFIRM_CHOICE               | Kiválasztás
+TECH_DISCOVERY_TITLE              | [player_race_possessive_prefix_uppercase] tudósai elérték a következő áttörést: %1
+TECH_SCOUTED_TITLE                | A misztikus %1 romok felderítői felfedeztek valamit
+TECH_STOLEN_TITLE                 | Kémeink beszivárogtak [alien_race_possessive_prefix_lowercase] %2 rendszer kutatóközpontjába.
+TECH_TRADED_TITLE                 | [player_race_possessive_prefix_uppercase] tudósai technológiát szereznek [alien_race_taking_prefix_lowercase]
+TECH_PLUNDERED_TITLE              | Katonák fosztogatnak az érintett %1 romoknál
+TECH_DERELICT_TITLE               | [player_race_possessive_prefix_uppercase] felderítői egy ősi technológiát fosztogatnak
+TECH_GUARDIAN_TITLE               | [player_race_possessive_prefix_uppercase] katonái megmentenek egy ősi fegyvert
+TECH_ALLOCATE_SHIELD              | Növeljük-e a védelmi arányokat minden gyarmatunkon, hogy felépülhessen az új planetáris pajzs?
+TECH_ALLOCATE_MISSILE_BASES       | Növeljük-e a védelmi arányokat minden gyarmatunkon, hogy felminősüljenek a rakétabázisaink?
+TECH_ALLOCATE_FACTORIES           | Növeljük-e a védelmi arányokat minden gyarmatunkon, hogy felminősüljenek a gyári vezérlőink?
+TECH_ALLOCATE_CLEAN_WASTE         | Csökkentsük-e az ökológiai arányokat minden gyarmatunkon a tisztántartáshoz szükséges minimura?
+TECH_ALLOCATE_ENRICH_SOIL         | Növeljük-e az ökológiai arányokat minden szokásos közeggel rendelkező gyarmatunkon, hogy belekezdhessünk bolygóink terraformálásába?
+TECH_ALLOCATE_ATMOSPHERE          | Növeljük-e az ökológiai arányokat minden ellenséges közeggel rendelkező gyarmatunkon, hogy belekezdhessünk bolygóink terraformálásába?
+TECH_ALLOCATE_TERRAFORM           | Növeljük-e az ökológiai arányokat az összes gyarmatunkon, hogy belekezdhessünk bolygóink terraformálásába?
+TECH_ALLOCATE_NO                  | Nem
+TECH_ALLOCATE_PCT                 | +%1%
+TECH_COMPLETED_TITLE              | A kutatás befejeződött!
+TECH_COMPLETED_COMPUTER           | Elvégeztük a számítógépes technológia összes lehetséges kutatását! Nincs további kutatás ezen a területen.
+TECH_COMPLETED_CONSTRUCTION       | Elvégeztük az összes lehetséges kutatást az építkezési technológiában! Nincs további kutatás ezen a területen.
+TECH_COMPLETED_FORCE_FIELD        | Elvégeztük az erőtér technológia összes lehetséges kutatását! Nincs további kutatás ezen a területen.
+TECH_COMPLETED_PLANETOLOGY        | Elvégeztük a planetológiai technológia összes lehetséges kutatását! Nincs további kutatás ezen a területen.
+TECH_COMPLETED_PROPULSION         | Elvégeztük az összes lehetséges kutatást a meghajtási technológiában! Nincs további kutatás ezen a területen.
+TECH_COMPLETED_WEAPON             | Befejeztük az összes lehetséges kutatást fegyvertechnológiában! Nincs további kutatás ezen a területen.
+TECH_COMPLETED_ALL                | Elvégeztük az összes lehetséges tudományos kutatást. A tanulmányi időszaknak vége. Minden jövőbeni kutatás finanszírozása a birodalmi kincstárba kerül.
+TECH_COMPLETED_VERIFY             | Ellenőrzés: a fennmaradó kutatási területek kiadási elosztásai megfelelően vannak-e beállítva?
+
+// prompt for espionage
+NOTICE_ESPIONAGE_TITLE            | A kémeink infiltrálták [alien_race_possessive_prefix_lowercase] egyik bázisát.
+NOTICE_ESPIONAGE_SUBTITLE         | Ellpoandó technológia típusának kiválasztása.
+NOTICE_ESPIONAGE_NO_TECH          | Nincs elérhető technológia
+NOTICE_ESPIONAGE_MANY_TECHS       | %1 elérhető technológiák
+NOTICE_ESPIONAGE_FOOTER           | Észlelés esetén ez diplomáciai incidenst okozhat.
+NOTICE_ESPIONAGE_FRAME_TITLE      | A kémeink sikeresen megvádoltak egy másik fajt a lopással.
+NOTICE_ESPIONAGE_FRAME_SUBTITLE   | Áldozat faj kiválasztása:
+
+// Spy Capture display (during next turn)
+NOTICE_SPIES_TITLE                | Jelenlegi kémjelentés
+NOTICE_SPIES_NO_ACTIVITY          | Nincs megfigyelés semmilyen értelmes kémtevékenységről.
+NOTICE_SPIES_ACTIVITY             | Jelenlegi tevékenység:
+NOTICE_SPIES_LOST_DESC            | • [alien_empire_prefix_uppercase] kiiktatatta %1 kémhálózatunkat.
+NOTICE_SPIES_LOST_CONFESSED       | A kémeink bevallották a folyamatos szabotázs tevékenységüket.
+NOTICE_SPIES_LOST_CONFESSED2      | A kémeink bevallották a folyamatos kémkedés tevékenységüket.
+NOTICE_SPIES_LOST_CONFESSED3      | A kémeink kényszer alatt bevallották a folyamatos szabotázs tevékenységüket.
+NOTICE_SPIES_CAUGHT_DESC          | • A belső biztonsági erőink kiiktatták  [alien_empire_prefix_uppercase] %1 kémhálózatát.
+NOTICE_SPIES_CAUGHT_CONFESSED     | A kémeik bevallották a folyamatos szabotázs tevékenységüket.
+NOTICE_SPIES_CAUGHT_CONFESSED2    | A kémeik bevallották a folyamatos kémkedés tevékenységüket.
+NOTICE_SPIES_FRAMED               | • [alien_empire_prefix_uppercase] elleni kémkedéssel lettünk megvádolva.
+NOTICE_SPIES_ESPIONAGE            | • A kémeink ellopták a csodálatos %1 titkát [alien_empire_taking_prefix_lowercase].
+NOTICE_SPIES_ESPIONAGE_FRAME      | Sikeresen megvádoltuk [framed_empire_addressing_prefix_lowercase] e lopással.
+NOTICE_SPIES_SABOTAGE_FACTORIES   | • A kémeink sikeresen megsemmisítettek %1 gyárat az infiltrált %2 rendszerben.
+NOTICE_SPIES_SABOTAGE_BASES       | • A kémeink sikeresen megsemmisítettek %1 rakétabázist az eddig jobban védett %2 rendszerben.
+NOTICE_SPIES_SABOTAGE_REBELS      | • A kémeink sikeresen uszítottak fel lázadókat a megzavart %2 rendszerben.
+NOTICE_SPIES_SABOTAGE_REBELLION   | • A kémeink sikeresen indítottak el egy lázadást a zavargó %2 rendszerben.
+NOTICE_SPIES_LEARNED_TECH         | • A kémeink jelentése szerint [alien_empire_prefix_lowercase] nemrég elsajátította a következő, számunkra ismeretlen technológiá(ka)t: 1%
+// this just details how to concatenate a list of multiple technology (English uses ,)
+NOTICE_SPIES_MULTIPLE_TECHS       | %1, %2
+NOTICE_SPIES_THREATEN             | Fenyegetés
+NOTICE_SPIES_MANAGE               | Kémek kezelése
+NOTICE_SPIES_CLOSE                | Bezárás
+
+// Ground Combat UI
+INVASION_BATTLE                   | %1. évben [attacker_race_possessive_prefix_lowercase] és [defender_race_possessive_prefix_lowercase] hadakoznak a következőért: %2.
+INVASION_BATTLE_REBELS            |%1. évben [attacker_race_possessive_prefix_lowercase] és a lázadók hadakoznak a következőért: %2.
+INVASION_TROOPS_LANDED            | [attacker_race_possessive_prefix_uppercase] %1 csapata leszállt.
+INVASION_SOME_TROOPS_LANDED       | [attacker_race_possessive_prefix_uppercase] %1 csapatából %2 leszállt.
+INVASION_WIN                      | [attacker_race_possessive_prefix_uppercase] szállítói elfoglalják a következőt: %2.
+INVASION_LOSS                     | [defender_race_possessive_prefix_uppercase]csapatai sikeresen védelmezik a következőt: %2.
+INVASION_ATTACKERS_TITLE          | [attacker_race_possessive] %1 csapata
+INVASION_DEFENDERS_TITLE          | [defender_race_possessive] %1 csapata
+INVASION_REBELS_TITLE             | [defender_race_possessive] %1 lázadója
+INVASION_TROOP_ARMOR_DESC         | %1 %2
+
+// GNN Text
+GNN_TITLE                         | The [player_race] Galactic News Network reports:
+GNN_EMPIRE_RANKING                | %1. [empire_race_possessive]
+GNN_EXTINCTION_KNOWN_VICTIM       | [victim_race_possessive_prefix_uppercase]
+GNN_EXTINCTION_KNOWN_KILLER       | [killer_race_possessive_prefix_lowercase]
+GNN_EXTINCTION_UNKNOWN_VICTIM     | Egy ismeretlen civilizáció
+GNN_EXTINCTION_UNKNOWN_KILLER     | egy ismeretlen birodalom
+GNN_EXTINCTION                    | %2 teljesen megsemmisítette a következőt: %1.
+GNN_EXTINCTION_NO_KILLER          | %1 teljesen megsemmisült.
+GNN_EXPANSION_1                   | [expanding_empire_prefix_uppercase] jelenleg %1 csillagrendszeren át terjeszkedik, felülmúlván az összes többi fajt.
+GNN_EXPANSION_2                   | [expanding_empire_prefix_uppercase] most %1 csillagrendszert vezérel. Ha a terjeszkedésük nincs feltartóztatva, hamarosan az egész galaxist irányítani foglyák.
+GNN_EXPANSION_3                   | [expanding_empire_prefix_uppercase] szinte a galaxis többségét irányítása alá vette. A vezetők már felkészültek arra, hogy csatlakozzanak a hatalmas birodalomhoz.
+GNN_ALLIANCE_FORMED               | [expanding_empire_prefix_uppercase] szövetséget alakított ki [second_empire_relational_prefix_lowercase].
+GNN_ALLIANCE_BROKEN               | A szövetség [airst_empire_originating_prefix_lowercase] és [second_empire_originating_prefix_lowercase] között felbomlott.
+GNN_FLEETS_RANKING                | Az űrflotta erőinek jelenlegi rangsorolása:
+GNN_CENSUS_RANKING                | A birodalmi népszámlálás eredménye:
+GNN_PRODUCTION_RANKING            | A birodalmi termelés jelenlegi rangsorolása:
+GNN_TECHNOLOGY_RANKING            | A fejlett technológia jelenlegi vezetői:
+GNN_PLAYER_REBELLION              | %1 fellázadt és nem hajlandó hozzájárulni a [rebelling_empire_approaching_prefix_lowercase]. Legalább %2 millió lázadó irányítja a gyarmatot. Hadsereget kell küldeni a felkelés leküzdésére.
+GNN_ALIEN_REBELLION               | %1 fellázadt és nem volt hajlandó hozzájárulni a [rebelling_empire_approaching_prefix_lowercase]. Legalább %2 millió lázadó irányítja a gyarmatot.
+GNN_PLAYER_REBELLION_SPREAD       | A lázadás továbbra is terjed [rebelling_empire_containing_prefix_lowercase]. Pillanatnyilag legalább %2 millió lázadó szabályozza a feldúlt %1 gyarmatot.
+GNN_OVERTHROW                     | Egy új vezető emelkedett hatalomra [alien_empire_within_prefix_lowercase] belül. A pletykák szerint az új császár egy %1. A kapcsolat velük semlegessé vált, míg a kereskedelem megszakadt.
+GNN_END_COUNCIL                   | Így, hogy csak két birodalom maradt fenn, véget értek mindazon törkevések, hogy a galaxis egyesüljön egy Galaktikus Tanács alatt. Sok vezető pillanatnyilag arról vitázik, hogy milyen féle végső megoldás hozhatna tartós békét.
+GNN_FORM_COUNCIL                  | A békére való törekvés nevében minden faj képviselője hamarosan összeül, hogy a két legnépesebb birodalom vezetőiböl az egyiket Galaktikus Császárrá válasszák meg.
+GNN_ALLY_AT_WAR                   | A szövetségesünk, [ally_empire_prefix_uppercase] háborúba lépett [other_empire_relational_prefix_lowercase].
+
+// Error UI text
+ERROR_TITLE                       | Valami hiba történt  :(
+ERROR_MESSAGE                     | Ha szeretné segíteni e hiba megoldását, kérjük, küldjön egy képernyőképet erről a felhasználói ferületről és a 'recent.rotp' mentett játék fájlt Ray Fowler-nek, vagy hívja fel Ray figyelmét a problémára Az Elődök Maradványai subredditen.
+ERROR_EMAIL                       | Email: rayfowler@fastmail.com
+ERROR_REDDIT                      | Reddit: www.reddit.com/r/rotp
+
+// Setup UI
+SETUP_SELECT_RACE                 | Faj kiválasztása
+SETUP_SELECT_OPPONENTS            | Ellenfelek kiválasztása
+SETUP_SELECT_GALAXY               | Galaxis kiválasztása
+SETUP_SELECT_GALAXY_OPTIONS       | Beállztások kiválasztása
+SETUP_GALAXY_RULESET_LABEL        | Szabálykészlet
+SETUP_INSUFFICIENT_MEMORY         | Nincs elegendő meória
+SETUP_CREATING_GALAXY             | Galaxis létrehozása...
+SETUP_RULESET_ORION               | Orion
+SETUP_RULESET_ANTARES             | Antares
+SETUP_RULESET_SIRIUS              | Sirius
+SETUP_GALAXY_SIZE_LABEL           | Méret
+SETUP_RACE_MULTIPLIER             | x%1
+SETUP_GALAXY_SHAPE_LABEL          | Alak
+SETUP_GALAXY_SIZE_TINY            | Apró
+SETUP_GALAXY_SIZE_SMALL           | Kicsi
+SETUP_GALAXY_SIZE_SMALL2          | Kicsi
+SETUP_GALAXY_SIZE_AVERAGE         | Átlagos
+SETUP_GALAXY_SIZE_AVERAGE2        | Átlagos
+SETUP_GALAXY_SIZE_LARGE           | Nagy
+SETUP_GALAXY_SIZE_LARGE2          | Nagy
+SETUP_GALAXY_SIZE_HUGE            | Hatalmas
+SETUP_GALAXY_SIZE_HUGE2           | Hatalmas
+SETUP_GALAXY_SIZE_MASSIVE         | Óriási
+SETUP_GALAXY_SIZE_MASSIVE2        | Óriási
+SETUP_GALAXY_SIZE_MASSIVE3        | Óriási
+SETUP_GALAXY_SIZE_MASSIVE4        | Óriási
+SETUP_GALAXY_SIZE_MASSIVE5        | Óriási
+SETUP_GALAXY_SIZE_INSANE          | Őrületes
+SETUP_GALAXY_SIZE_LUDICROUS       | Fergeteges
+SETUP_GALAXY_SIZE_MAXIMUM         | Maximális
+SETUP_GALAXY_SHAPE_RECTANGLE      | Csillagmező
+SETUP_GALAXY_SHAPE_CIRCULAR       | Körkörös
+SETUP_GALAXY_SHAPE_RING           | Gyűrűs
+SETUP_GALAXY_SHAPE_ELLIPSE        | Elliptikus
+SETUP_GALAXY_SHAPE_SPIRAL         | Spirál
+SETUP_GALAXY_SHAPE_STAR           | Csillag
+SETUP_GALAXY_SHAPE_BARSPIRAL      | Küllős spirál
+SETUP_GALAXY_SHAPE_TEXT           | Szöveg
+SETUP_GALAXY_SHAPE_CLUSTER        | Halmaz
+SETUP_GALAXY_SHAPE_SWIRLCLUSTERS  | Örvényhalmaz
+SETUP_GALAXY_SHAPE_GRID           | Rács
+SETUP_GALAXY_SHAPE_SPIRALARMS     | Spirálkar
+SETUP_GALAXY_SHAPE_MAZE           | Útvesztő
+SETUP_GALAXY_SHAPE_VOID           | Üresség
+SETUP_GALAXY_SHAPE_SHURIKEN       | Suriken
+SETUP_GALAXY_SHAPE_BULLSEYE       | Célpont
+SETUP_GALAXY_SHAPE_LORENZ         | Lorenz
+SETUP_GALAXY_SHAPE_LORENZ2        | Lorenz 2
+SETUP_GALAXY_SHAPE_FRACTAL        | Fraktál
+SETUP_GALAXY_SHAPE_CHAOSGAME      | Káoszjáték
+SETUP_GALAXY_MAP_OPTION_LABEL     | Választási lehetőség
+SETUP_GALAXY_MAP_OPTION_A         | "A" lehetőség
+SETUP_GALAXY_MAP_OPTION_B         | "B" lehetőség
+SETUP_GALAXY_MAP_OPTION_C         | "C" lehetőség
+SETUP_GALAXY_AGE_NORMAL           | Normális
+SETUP_GALAXY_AGE_YOUNG            | Fiatal
+SETUP_GALAXY_AGE_OLD              | Régi
+SETUP_RANDOM_EVENTS_ON            | Bekapcsolva
+SETUP_RANDOM_EVENTS_OFF           | Kikapcsolva
+SETUP_RANDOM_EVENTS_NO_MONSTERS   | Szörnyek nélkül
+SETUP_GALAXY_NUMBER_EMPIRES       | Összes birodalom: %1
+SETUP_GALAXY_NUMBER_SYSTEMS       | Összes rendszer: %1
+SETUP_GALAXY_MAX_OPPONENTS        | Maximális ellenfél: %1
+SETUP_OPPONENTS_HEADER_1          | %1 vs.
+SETUP_OPPONENTS_HEADER_2          | Rivális birodalmak
+SETUP_OPPONENT_RANDOM             | ???
+SETUP_OPPONENT_AI                 | Játék a következő ellen:
+SETUP_OPPONENT_AI_BASE            | Intelligencia: alap
+SETUP_OPPONENT_AI_MODNAR          | Intelligencia: Modnar
+SETUP_OPPONENT_AI_XILMI           | Intelligencia: Xilmi
+SETUP_OPPONENT_AI_SELECT          | Intelligencia: választható
+SETUP_AUTOPLAY_OFF                | Kikapcsolva
+SETUP_AUTOPLAY_AI_BASE            | Intelligencia: alap
+SETUP_AUTOPLAY_AI_MODNAR          | Intelligencia: Modnar
+SETUP_AUTOPLAY_AI_XILMI           | Intelligencia: Xilmi
+SETUP_GAME_DIFFICULTY_LABEL       | Nehézség
+SETUP_DIFFICULTY_EASIEST          | Legkönnyebb
+SETUP_DIFFICULTY_EASIER           | Könnyebb
+SETUP_DIFFICULTY_EASY             | Könnyű
+SETUP_DIFFICULTY_NORMAL           | Átlagos
+SETUP_DIFFICULTY_HARD             | Nehéz
+SETUP_DIFFICULTY_HARDER           | Nehezebb
+SETUP_DIFFICULTY_HARDEST          | Legnehezebb
+SETUP_RESEARCH_RATE_NORMAL        | Átlagos
+SETUP_RESEARCH_RATE_SLOW          | Lassú
+SETUP_RESEARCH_RATE_SLOWER        | Lassabb
+SETUP_RESEARCH_RATE_SLOWEST       | Leglassabb
+SETUP_TECH_TRADING_YES            | Igen
+SETUP_TECH_TRADING_ALLIES         | Csak szövetségesek
+SETUP_TECH_TRADING_NO             | Nem
+SETUP_WARP_SPEED_NORMAL           | Átlagos
+SETUP_WARP_SPEED_FAST             | Gyors
+SETUP_NEBULA_NONE                 | Egyik sem
+SETUP_NEBULA_RARE                 | Ritka
+SETUP_NEBULA_UNCOMMON             | Gyér
+SETUP_NEBULA_NORMAL               | Átlagos
+SETUP_NEBULA_COMMON               | Gyakori
+SETUP_NEBULA_FREQUENT             | Elterjedt
+SETUP_COUNCIL_NONE                | Nincs Tanács
+SETUP_COUNCIL_IMMEDIATE           | Azonnali
+SETUP_COUNCIL_REBELS              | Lázadók engedélyezése
+SETUP_STAR_DENSITY_LOWEST         | Legalacsonyabb
+SETUP_STAR_DENSITY_LOWER          | Acsonyabb
+SETUP_STAR_DENSITY_LOW            | Alacsony
+SETUP_STAR_DENSITY_NORMAL         | Átlagos
+SETUP_STAR_DENSITY_HIGH           | Magas
+SETUP_STAR_DENSITY_HIGHER         | Magasabb
+SETUP_STAR_DENSITY_HIGHEST        | Legmagasabb
+SETUP_AI_HOSTILITY_LOWEST         | Legkedvesebb
+SETUP_AI_HOSTILITY_LOWER          | Kedvesebb
+SETUP_AI_HOSTILITY_LOW            | Kedves
+SETUP_AI_HOSTILITY_NORMAL         | Átlagos
+SETUP_AI_HOSTILITY_HIGH           | Haragos
+SETUP_AI_HOSTILITY_HIGHER         | Haragosabb
+SETUP_AI_HOSTILITY_HIGHEST        | Legharagosabb
+SETUP_GAME_NUMBER_OPPONENTS       | Ellenfelek
+SETUP_PLANET_QUALITY_POOR         | Szegény
+SETUP_PLANET_QUALITY_MEDIOCRE     | Hátrányos
+SETUP_PLANET_QUALITY_NORMAL       | Átlagos
+SETUP_PLANET_QUALITY_GOOD         | Jó
+SETUP_PLANET_QUALITY_GREAT        | Kiváló
+SETUP_TERRAFORMING_NORMAL         | Átlagos
+SETUP_TERRAFORMING_REDUCED        | Csökkentet
+SETUP_TERRAFORMING_NONE           | Egyik sem
+SETUP_COLONIZING_NORMAL           | Átlagos
+SETUP_COLONIZING_RESTRICTED       | Korlátozott
+SETUP_FUEL_RANGE_NORMAL           | Átlagos
+SETUP_FUEL_RANGE_HIGH             | Magas
+SETUP_FUEL_RANGE_HIGHER           | Magasabb
+SETUP_FUEL_RANGE_HIGHEST          | Legmagasabb
+SETUP_RANDOMIZE_AI_NONE           | Egyik sem
+SETUP_RANDOMIZE_AI_PERSONALITY    | Személyiség
+SETUP_RANDOMIZE_AI_ABILITY        | Képesség
+SETUP_RANDOMIZE_AI_BOTH           | Mindkettő
+SETUP_RACE_LABEL                  | Elérhető fajok
+SETUP_RACE_COLOR                  | Birodalmi szín:
+SETUP_HOMEWORLD_NAME_LABEL        | Anyavilág:
+SETUP_LEADER_NAME_LABEL           | Vezető:
+SETUP_FLAG_LABEL                  | Lobogó
+SETUP_BUTTON_CANCEL               | Mégsem
+SETUP_BUTTON_BACK                 | Vissza
+SETUP_BUTTON_NEXT                 | Következő
+SETUP_BUTTON_START                | indítás
+SETUP_BUTTON_SETTINGS             | Haladó beállítások
+
+SETUP_SPIRAL_2_ARMS               | Két kar
+SETUP_SPIRAL_3_ARMS               | Három kar
+SETUP_SPIRAL_4_ARMS               | Négy kar
+SETUP_SPIRAL_5_ARMS               | Öt kar
+SETUP_SPIRAL_6_ARMS               | Hat kar
+SETUP_SPIRAL_7_ARMS               | Hét kar
+SETUP_SPIRAL_8_ARMS               | Nyolc kar
+SETUP_SPIRAL_ROTATION_0           | Forgásmentes
+SETUP_SPIRAL_ROTATION_1           | Forgás 1
+SETUP_SPIRAL_ROTATION_2           | Forgás 2
+SETUP_SPIRAL_ROTATION_3           | Forgás 3
+SETUP_SPIRAL_ROTATION_4           | Forgás 4
+SETUP_SPIRAL_ROTATION_5           | Forgás 5
+SETUP_SPIRAL_ROTATION_6           | Forgás 6
+SETUP_ELLIPSE_0                   | Körkörös
+SETUP_ELLIPSE_1                   | Elliptikus 1
+SETUP_ELLIPSE_2                   | Elliptikus 2
+SETUP_ELLIPSE_3                   | Elliptikus 3
+SETUP_ELLIPSE_4                   | Elliptikus 4
+SETUP_VOID_0                      | Ürességmentes
+SETUP_VOID_1                      | Üresség 1
+SETUP_VOID_2                      | Üresség 2
+SETUP_VOID_3                      | Üresség 3
+SETUP_VOID_4                      | Üresség 4
+
+
+// Advanced Settings
+SETTINGS_TITLE                    | Haladó játékbeállítások
+SETTINGS_DESCRIPTION              | Kattintással állíthatóak a játékbeállítások.
+SETTINGS_EXIT                     | Kilépés
+SETTINGS_DEFAULT                  | Alapbeállítások visszaállítása
+SETTINGS_STAR_DENSITY             | Csillagok sűrűsége: %1
+SETTINGS_RANDOM_EVENTS            | Véletlenszerű események: %1
+SETTINGS_RESEARCH_RATE            | Kutatási sebesség: %1
+SETTINGS_COUNCIL_WIN              | Tanács általi győzelem: %1
+SETTINGS_RANDOMIZE_AI             | A intelligencia véletlenszerűsítése: %1
+SETTINGS_AUTOPLAY                 | Automata játék: %1
+SETTINGS_TECH_TRADING             | Technológia kereskedelem: %1
+SETTINGS_GALAXY_AGE               | Galaxis kora: %1
+SETTINGS_WARP_SPEED               | Warp sebessége: %1
+SETTINGS_NEBULAE                  | Csillagködök: %1
+SETTINGS_PLANET_QUALITY           | Bolygók minősége: %1
+SETTINGS_TERRAFORMING             | Ellenséges terraformálás: %1
+SETTINGS_COLONIZING               | Gyarmatosítás: %1
+SETTINGS_FUEL_RANGE               | Üzemanyag futamidő: %1
+SETTINGS_AI_HOSTILITY             | Viszály: %1
+SETTINGS_RANDOM_EVENTS_DESC       | Az űrszörnyek véletlenszerűen bekövetkező események, amelyek a játék középidején jelennek meg és jelentős fenyegetést jelentenek. Itt kikapcsolhatók az űrszörnyek megjelenése vagy az összes véletlenszerű esemény.
+SETTINGS_WARP_SPEED_DESC          | Növeli a fejletebb warp technológiák kutatási sebességét. Ez nagy térképeken kívánatos beállítás lehet.
+SETTINGS_GALAXY_AGE_DESC          | Összehasonlítva a normál galaxisokkal a fiatal galaxisoknak több fehér és kék csillaga van, míg a régi galaxisoknak több vörös és neutroncsillaga.
+SETTINGS_TECH_TRADING_DESC        | Az összes technológiai kereskedelem kikapcsolása vagy ezen kereskedelmek korlátozása a szövetségesekkel szemben.
+SETTINGS_STAR_DENSITY_DESC        | Ezt érdemes magasra állítani annak elkerülése érdekében, hogy a birodalmak zátonyra fussanak a játék elején.
+SETTINGS_RESEARCH_RATE_DESC       | Az új kutatások sebességének lelassításával meghosszabbítható a jelenlegi technológiák használati élettartama.
+SETTINGS_NEBULAE_DESC             | A csillagködök lelassítják az űrhajók haladását és haszontalanná teszik a pajzsokat. Gyakoriságuk itt állítható.
+SETTINGS_PLANET_QUALITY_DESC      | A magasabb minőségű bolygók gyakorisága itt állítható.
+SETTINGS_TERRAFORMING_DESC        | A továbbfejlesztett terraformáló technológiák előnyeinek csökkentése vagy megszüntetése az ellenséges közegű bolygókon.
+SETTINGS_COLONIZING_DESC          | Rendszerek gyarmatosításának korlátozása azokra, amelyekre a szükséges technológiák már el lettek sajátítva.
+SETTINGS_COUNCIL_DESC             | A tanács általi győzelemfeltétel kikapcsolása, vagy az ellenséges birodalmak játékos nyereség elleni lázadásának engedélyezése.
+SETTINGS_RANDOMIZE_AI_DESC        | A mesterséges intelligencia személyiségeinek, faji képességeinek vagy mindkettő véletlenszerűsítése.
+SETTINGS_AUTOPLAY_DESC            | A játékmenet teljes automatizálása azáltal, hogy a mesterséges intelligencia játszik a játékos helyében (is). Ez a mesterséges intelligencia működésének megfigyelésére hasznos.
+SETTINGS_AUTOPLAY_WARNING         | Figyelem! Az automata játék jelenleg engedélyezve van, ami megakadályozza a felhasználó beleszólását a játékmenetbe. Kikapcsolható a Haladó játékbeállításokban.
+SETTINGS_FUEL_RANGE_DESC          | Az üzemanyag futamidő technológiák hosszabbítása, ami csökkenti az üzemanyagtartályok használatát.
+SETTINGS_AI_HOSTILITY_DESC        | Az idegen fajok közötti ellenséges kedélyszint állítása.
+
+// Tech UI labels
+TECH_RESEARCH                     | Technológia kutatás
+TECH_RESEARCH_POINTS              | Kutatási értékpont
+TECH_EMPIRE_SPENDING              | Technológiára szánt birodalmi kiadások.
+TECH_EMPIRE_SPENDING_DESC         | Az összes gyarmat kiadásainak összege.
+TECH_EMPIRE_TECH_RESERVE_OPT      | A gyarmati kiadások feleslegének átirányítása a birodalmi kincstárból kutatásra.
+TECH_EMPIRE_BALANCED_DESC         | A kiegyensúlyozott kiadáskezelés növeli a kutatási értékpontok általános mértékét.
+TECH_EMPIRE_DETAIL_1              | %1 EK ezért: 
+TECH_EMPIRE_DETAIL_2              | %2 KÉ / évente
+TECH_TOTAL_RP                     | %1 KÉ
+TECH_DISCOVERY_PCT                | %1%
+TECH_CHANGE_RESEARCH              | Kattintással e technológia kutatásra kerül
+TECH_NEXT_TIER_TITLE              | Egyelőre nem elérhető.
+TECH_FIRST_TIER_DESC              | A feloldáshoz kutatási értékpontokat kell költeni ebben a kategóriában.
+TECH_NEXT_TIER_DESC               | A feloldáshoz az előző szinten kell technológiát elsajátítani.
+TECH_FUTURE_TIER_DESC             | LA feloldáshoz el kell sajátítani az előző szint összes technológiáját.
+TECH_ALLOCATE_POINTS              | Kutatási értékpontok szétosztása
+TECH_EQUALIZE                     | Szétosztások kiegyenlítése
+TECH_RESEARCH_COMPLETED           | Kutatás befejezve
+TECH_RESEARCHING                  | Kutatás alatt:
+TECH_NONE_RESEARCHED              | Semmi
+TECH_PLANETARY_SHIELDS            | Bolygópajzsok
+TECH_PLANETARY_SHIELDS_NONE       | Semmi
+TECH_PLANETARY_SHIELDS_CLASS      | Osztály %1
+TECH_GROUND_COMBAT                | Talajharc
+TECH_GROUND_COMBAT_NO_BONUS       | Nincs bónusz
+TECH_GROUND_COMBAT_BONUS          | +%1%
+TECH_TERRAFORM                    | Terraformálás
+TECH_TERRAFORM_NO_BONUS           | Nincs bónusz
+TECH_TERRAFORM_BONUS              | +%1 Maximális Nép.
+TECH_FACTORY_CONTROLS             | Gyári vezérlők
+TECH_FACTORY_CONTROLS_BONUS       | %1 gyarmatosként
+TECH_PLANET_SCANNER               | Fürkészőegység hatótere
+TECH_PLANET_SCANNER_NONE          | Semennyi
+TECH_PLANET_SCANNER_RANGE         | %1 fényév
+TECH_WASTE_REDUCTION              | Hulladékcsökkentés
+TECH_WASTE_REDUCTION_NONE         | Semennyi
+TECH_WASTE_REDUCTION_AMT          | -%1%
+TECH_WASTE_CLEANUP                | Hulladéktisztítás
+TECH_WASTE_CLEANUP_BONUS          | %1 hulladék/EK
+TECH_SHIP_RANGE                   | Űrhajó utazási távolság
+TECH_SHIP_RANGE_AMT               | %1 fényév
+TECH_SHIP_SPEED                   | Csúcssebesség
+TECH_SHIP_SPEED_AMT               | Warp %1
+TECH_BUTTON_EXIT                  | KILÉPÉS
+
+// Tech UI help
+TECH_HELP_1A                      | ÁTTEKINTÉS - Ez a képernyő lehetővé teszi mind a hat kutatási terület kiadásainak beállítását. Áttekinthetőek azon technológiák, amelyek már el vanna sajátítva (zöld), jelenleg kutatás alatt vannak (sárga), vagy a jövőben kutathatóak (barna).
+TECH_HELP_1B                      | Kattintással vagy az egérgörgő használatával végigtekinthetők az egyes kutatási terület technológiái. 
+TECH_HELP_1C                      | Kitöltődik, amikor valamelyik területre kutatási értékpontok (KÉ) költődnek. Ha egyszer tele lett, a technológia minden körben egyre nagyobb eséllyel sajátítható el.
+TECH_HELP_1D                      | A pillanatnyilag kutatás alatt álló technológia. Az előnyei a leírásban olvashatók.
+TECH_HELP_1E                      | Általános előnyök, amelyeket ezen a területen már elsajátított technológiák biztosítják.
+TECH_HELP_1F                      | Az össztermelés (EK) a kutatásra és az ebből származó összes kutatási pontra (KÉ) alkalmazva.
+TECH_HELP_1G                      | A gyarmatok túlcsorduló kiadásai a kutatásra is irányíthatók a birodalmi kincstár helyett.
+TECH_HELP_1H                      | Minden technológiai területnek van egy kiadási sávja. A nevekre kattintva lezárhatóak az egyes sávok. A sáv első 1/6 kiadására 25% kutatási nyereség jár.
+TECH_HELP_1I                      | Az összes feloldott sáv kiadási szétosztásainak kiegyenlítése.
+
+// =========================================================================
+//   ALPHA 4
+// =========================================================================
+
+// Ship Design UI
+SHIP_DESIGN_TITLE                 | Űrhajó tervrajzok
+SHIP_DESIGN_SLOTS                 | Tervezőhely
+SHIP_DESIGN_AVAILABLE             | Elérhető
+SHIP_DESIGN_AVAILABLE_DESC        | E tervezőhely kiválasztásával megkezdhető egy új űrhajó tervezése.
+SHIP_DESIGN_AVAILABLE_DESC2       | E terv építkzési engedélyezése a gyarmatokon.
+SHIP_DESIGN_PROTOTYPE             | Prototípus
+SHIP_DESIGN_PROTOTYPE_DESC        | Az engedélyezéshez nincs elérhető tervezőhely
+SHIP_DESIGN_SLOT_DESC             | Összesen a flottában:
+SHIP_DESIGN_SLOT_DESC2            | Keringési pályán:
+SHIP_DESIGN_SLOT_DESC3            | Úton:
+SHIP_DESIGN_SLOT_DESC4            | Gyarmatok amelyek építenek:
+SHIP_DESIGN_NEW                   | Új hajóterv
+SHIP_DESIGN_PROTOTYPE_TITLE       | Hajóterv prototípus
+SHIP_DESIGN_SIZE_SMALL            | Kicsi
+SHIP_DESIGN_SIZE_MEDIUM           | Közepes
+SHIP_DESIGN_SIZE_LARGE            | Nagy
+SHIP_DESIGN_SIZE_HUGE             | Hatalmas
+SHIP_DESIGN_SIZE_LABEL            | Méret
+SHIP_DESIGN_TYPE_LABEL            | Típus
+SHIP_DESIGN_COUNT_LABEL           | Szám
+SHIP_DESIGN_DAMAGE_LABEL          | Károkozás
+SHIP_DESIGN_POWER_LABEL           | Erő
+SHIP_DESIGN_RANGE_LABEL           | Hatótávolság
+SHIP_DESIGN_SPEED_LABEL           | Sebesség
+SHIP_DESIGN_COST_LABEL            | Ár
+SHIP_DESIGN_DESCRIPTION_LABEL     | Leírás
+SHIP_DESIGN_RANGE_VALUE           | %1 fényév
+SHIP_DESIGN_RANGE_UNLIMITED       | Korlátlan
+SHIP_DESIGN_SPEED_VALUE           | Warp %1
+SHIP_DESIGN_COST_VALUE            | %1 EK
+SHIP_DESIGN_TOTAL_SPACE_LABEL     | Teljes tér
+SHIP_DESIGN_AVAIL_SPACE_LABEL     | Elérhető tér
+SHIP_DESIGN_COLORS                | Szín
+SHIP_DESIGN_COMBAT_STATS_TITLE    | Harci statisztikák
+SHIP_DESIGN_HIT_POINTS_LABEL      | Állékonyságpontok
+SHIP_DESIGN_MISSILE_DEF_LABEL     | Rakétavédelem
+SHIP_DESIGN_BEAM_DEF_LABEL        | Sugárvédelem
+SHIP_DESIGN_ATTACK_LEVEL_LABEL    | Támadási szint
+SHIP_DESIGN_COMBAT_SPEED_LABEL    | Harci sebesség
+SHIP_DESIGN_COMBAT_SPEED_VALUE    | %1 négyzet
+SHIP_DESIGN_ENGINES_TITLE         | Meghajtók
+SHIP_DESIGN_ENGINES_DESC          | Energiával táplálja a hajót és az összetevőit.
+SHIP_DESIGN_ENGINE_TYPE           | Típus
+SHIP_DESIGN_ENGINE_SPEED          | Sebesség
+SHIP_DESIGN_ENGINE_COST1          | Meghajtókénti ár
+SHIP_DESIGN_ENGINE_SIZE1          | Meghajtókénti méret
+SHIP_DESIGN_ENGINE_POWER1         | Meghajtókénti energia
+SHIP_DESIGN_POWER_REQUIREMENTS    | Energiakövetelmények
+SHIP_DESIGN_ENGINES_REQUIRED      | Szükséges meghajtók
+SHIP_DESIGN_ENGINES_SIZE          | Meghajtó teljes mérete
+SHIP_DESIGN_ENGINES_COST          | Meghajtó teljes ára
+SHIP_DESIGN_COPY_BUTTON           | Másolás
+SHIP_DESIGN_CLEAR_BUTTON          | Törlés
+SHIP_DESIGN_RENAME_BUTTON         | Átnevezés
+SHIP_DESIGN_DEPLOY_BUTTON         | Tervrajz engedélyezése
+SHIP_DESIGN_DEPLOY_DESC           | Miután engedélyezett, e hajó építhető a gyarmatokon, míg maga a tervrajz csak átnevezhetővé vagy selejtezhetővé válik.
+SHIP_DESIGN_SCRAP_BUTTON          | Tervrajz selejtezése
+SHIP_DESIGN_SCRAP_CONFIRM1        | Biztos benne, hogy le akarja selejtezni a %1 tervrajzot?
+SHIP_DESIGN_SCRAP_CONFIRM2        | Ez elpusztít %1 hajót a flottából, és %2 EK-et helyez a bolygó tartalékba.
+SHIP_DESIGN_SCRAP_CONFIRM3        | E tervrajz alapján még nem épült űrhajó.
+SHIP_DESIGN_SCRAP_CANCEL          | Mégsem
+SHIP_DESIGN_SCRAP_OK              | Selejtezés
+SHIP_DESIGN_RENAME_CONFIRM        | Űrhajó tervrajz átnevezése
+SHIP_DESIGN_DEPLOY_CONFIRM        | Új űrhajó tervrajz elnevezése
+SHIP_DESIGN_DEPLOY_CANCEL         | Mégsem
+SHIP_DESIGN_DEPLOY_OK             | Engedélyezés
+SHIP_DESIGN_RENAME_OK             | Átnevezés
+SHIP_DESIGN_UNNAMED_DESIGN        | Névtelen
+SHIP_DESIGN_COMPONENT_NONE        | Semmi
+
+
+// ship design selection dialogs
+SHIP_DESIGN_STARGATE_NAME         | Csillagkapu
+SHIP_DESIGN_1ST_SCOUT_NAME        | Felderítő
+SHIP_DESIGN_1ST_FIGHTER_NAME      | Harcos
+SHIP_DESIGN_1ST_DESTROYER_NAME    | Pusztító
+SHIP_DESIGN_1ST_BOMBER_NAME       | Bombázó
+SHIP_DESIGN_1ST_COLONY_NAME       | Gyarmathajó
+SHIP_DESIGN_COMPUTER_TITLE        | Számítógépek
+SHIP_DESIGN_COMPUTER_TYPE         | Típus
+SHIP_DESIGN_COMPUTER_COST         | Ár
+SHIP_DESIGN_COMPUTER_SIZE         | Méret
+SHIP_DESIGN_COMPUTER_POWER        | Teljesítőképesség
+SHIP_DESIGN_COMPUTER_SPACE        | Tér
+SHIP_DESIGN_SHIELD_TITLE          | Pajzsok
+SHIP_DESIGN_SHIELD_TYPE           | Típus
+SHIP_DESIGN_SHIELD_COST           | Ár
+SHIP_DESIGN_SHIELD_SIZE           | Méret
+SHIP_DESIGN_SHIELD_POWER          | Teljesítőképesség
+SHIP_DESIGN_SHIELD_SPACE          | Tér
+SHIP_DESIGN_ECM_TITLE             | EEI Zavaró
+SHIP_DESIGN_ECM_TYPE              | Típus
+SHIP_DESIGN_ECM_COST              | Ár
+SHIP_DESIGN_ECM_SIZE              | Méret
+SHIP_DESIGN_ECM_POWER             | Teljesítőképesség
+SHIP_DESIGN_ECM_SPACE             | Tér
+SHIP_DESIGN_ARMOR_TITLE           | Pajzs
+SHIP_DESIGN_ARMOR_TYPE            | Típus
+SHIP_DESIGN_ARMOR_COST            | Ár
+SHIP_DESIGN_ARMOR_SIZE            | Méret
+SHIP_DESIGN_ENGINE_TITLE          | Meghajtók
+SHIP_DESIGN_ENGINE_TYPE           | Típus
+SHIP_DESIGN_ENGINE_NUM            | Meghajtók száma
+SHIP_DESIGN_ENGINE_SPACE          | Tér
+SHIP_DESIGN_ENGINE_COST           | Ár
+SHIP_DESIGN_ENGINE_SIZE           | Méret
+SHIP_DESIGN_ENGINE_POWER          | Teljesítőképesség
+SHIP_DESIGN_MANEUVER_TITLE        | Manőver
+SHIP_DESIGN_MANEUVER_TYPE         | Típus
+SHIP_DESIGN_MANEUVER_SPEED        | Sebesség
+SHIP_DESIGN_MANEUVER_COST         | Ár
+SHIP_DESIGN_MANEUVER_POWER        | Teljesítőképesség
+SHIP_DESIGN_MANEUVER_SPACE        | Tér
+SHIP_DESIGN_WEAPON_TITLE          | Fegyverek
+SHIP_DESIGN_WEAPON_MAX            | Max
+SHIP_DESIGN_WEAPON_TYPE           | Típus
+SHIP_DESIGN_WEAPON_DESCRIPTION    | Leírás
+SHIP_DESIGN_WEAPON_DAMAGE         | Károkozás
+SHIP_DESIGN_WEAPON_DMG_RANGE      | %1-%2
+SHIP_DESIGN_WEAPON_COST           | Ár
+SHIP_DESIGN_WEAPON_SIZE           | Méret
+SHIP_DESIGN_WEAPON_POWER          | Teljesítőképesség
+SHIP_DESIGN_WEAPON_SPACE          | Tér
+SHIP_DESIGN_SPECIAL_TITLE         | Különleges alkatrészek
+SHIP_DESIGN_SPECIAL_TYPE          | Típus
+SHIP_DESIGN_SPECIAL_DESCRIPTION   | Leírás
+SHIP_DESIGN_SPECIAL_COST          | Ár
+SHIP_DESIGN_SPECIAL_SIZE          | Méret
+SHIP_DESIGN_SPECIAL_POWER         | Teljesítőképesség
+SHIP_DESIGN_SPECIAL_SPACE         | Tér
+
+// Ship Design help
+SHIP_DESIGN_HELP_ALL              | ÁTTEKINTÉS - minden birodalomnak legfeljebb hat aktív űrhajó tervrajza lehet. Minden tervrajzban kiválasztható a hajótest mérete, amiután kitölthetőek a különböző alkatrészek, mint páncél, pajzs és fegyverek. Minden alkatrésznek megvan a saját mérete, teljesítménye és ára. Az alkatrészekhez szükséges hely egyenlő az alkatrész méretével plusz a táplálásához szükséges meghajtók számának a méretével. Az engedélyezés után a hajóterv bármelyik gyarmaton felépíthető.
+SHIP_DESIGN_HELP_1A               | Méret - nagyobb hajótestméretek növelik a költségeket, de több helyet is biztosítanak.
+SHIP_DESIGN_HELP_1B               | Hatótávolság - milyen messzire utazhat az űrhajó a rendszerekből.
+SHIP_DESIGN_HELP_1C               | Sebesség - utazási sebesség a csillagok közötti űrben.
+SHIP_DESIGN_HELP_1D               | Ár - a hajó felépítéséhez szükséges összegezett költség.
+SHIP_DESIGN_HELP_1E               | Teljes tér - az alkatrészek által igénybe vett összes hely ezen a hajóterven.
+SHIP_DESIGN_HELP_1F               | Rendelkezésre álló tér - fel nem használt hely ezen a hajóterven.
+SHIP_DESIGN_HELP_1G               | Állékonyságpont - A hajó elpusztításához szükséges harci károkozás.
+SHIP_DESIGN_HELP_1H               | Rakétavédelem - védelmi szint vs. rakétafegyverek harcban.
+SHIP_DESIGN_HELP_1I               | Sugárvédelem - védelmi szint vs. sugárfegyverek harcban.
+SHIP_DESIGN_HELP_1J               | Támadásszint - a fegyverek harcbéli támadási szintje.
+SHIP_DESIGN_HELP_1K               | Harci sebesség - a távolság amelyet az űrhajó megtehet harcban, fordulókként.
+SHIP_DESIGN_HELP_1L               | Szín - megváltoztatja az űrhajó színét.
+SHIP_DESIGN_HELP_2A               | Meghajtó típusa - a meghajtó típusa amely táplálja e tervarz űrhajóját.
+SHIP_DESIGN_HELP_2B               | Sebesség - a meghajtó által biztosított utazási sebesség.
+SHIP_DESIGN_HELP_2C               | Ár - minden energiához szükséges meghajtó ára.
+SHIP_DESIGN_HELP_2D               | Méret - meghajtóként elfoglalt hajótest tér.
+SHIP_DESIGN_HELP_2E               | Teljesítmény - meghajtókénti teljesítmény.
+SHIP_DESIGN_HELP_2F               | Teljesítményigény - Az összes hajóalkatrészhez szükséges összegzet teljesítmény.
+SHIP_DESIGN_HELP_2G               | Meghajtó előfeltétel - A teljesítményigény kielégítéséhez szükséges meghajtók száma.
+SHIP_DESIGN_HELP_2H               | Teljes méret - az összes meghajtóhoz szükséges tér a hajótestben.
+SHIP_DESIGN_HELP_2I               | Teljes ár - az összes meghajtó teljes építési költsége.
+SHIP_DESIGN_HELP_2J               | A kiválasztott űrhajó tervrajzhoz rendelt kép. Mind a négy hajótest méretnek hat különböző képe van. Új tervrajz készítésekor kattintással végeignézhetőek a lehetőségek.
+SHIP_DESIGN_HELP_2K               | Az űrhajó tervrajzának a neve.
+SHIP_DESIGN_HELP_3A               | Számítógépek - befolyásolják az űrhajó támadási szintjét harcban.
+SHIP_DESIGN_HELP_3B               | Páncél - befolyásolja a hajó állékonyságpontjait. A nehéz páncélzat növeli azokat 50%-kal.
+SHIP_DESIGN_HELP_3C               | Pajzsok - csökkenti a bejövő támadások okozta károkat.
+SHIP_DESIGN_HELP_3D               | EEI Zavaró - az elektronikus ellenintézkedések fokozzák a rakétavédelem hatékonyságát.
+SHIP_DESIGN_HELP_3E               | Manőver - fokozza a harci sebességet és a hajó védelmi rendszerét.
+SHIP_DESIGN_HELP_3F               | Fegyverek - kárt okozhatnak ellenséges űrhajókban és a gyarmatokon. Legfeljebb négy különböző típusú fegyver adható egy tervrajzhoz.
+SHIP_DESIGN_HELP_3G               | Különlegességek - olyan készülékek, amelyek egyedi képességekkel látják el az űrhajót. Legfeljebb három különleges alkatrész adható egy tervrajzhoz.
+SHIP_DESIGN_HELP_4A               | Átnevezés - lehetővé teszi egy meglévő tervrajz átnevezését.
+SHIP_DESIGN_HELP_4B               | Tervrajz selejtezése - egy meglévő tervrajz elvetését. A leselejtezett hajók építőipari értékének 25%-a visszatér a kincstárba.
+SHIP_DESIGN_HELP_4C               | Az engedélyezett hajótervek felépíthetőek bármelyik gyarmaton.
+SHIP_DESIGN_HELP_4D               | Az elérhető tervhelyek kiválasztásával létrehozható egy új tervrajz.
+SHIP_DESIGN_HELP_4E               | Másolás - egy meglévő tervrjaz másolása, amely kiindulási pontként szolgálhat az új hajótervezéshez.
+SHIP_DESIGN_HELP_4F               | Törlés - visszaállítja az összes kiválasztott alkatrészt.
+SHIP_DESIGN_HELP_4G               | Tervrajz engedélyezése - ha az új terv elkészült, az engedélyezésével elnevezhető és felépíthetővé teszi.
+
+
+// Ship Combat UI
+SHIP_COMBAT_TITLE_SYSTEM          | Űrhajó küzdelem itt: %1!
+SHIP_COMBAT_TITLE_UNSCOUTED       | Űrhajó küzdelem egy kivizsgálatlan rendszerben!
+SHIP_COMBAT_TITLE_DESC            | Erőink egy ellenséges [alien_race] flottával futnak össze.
+SHIP_COMBAT_TITLE_MONSTER_DESC    | Erőink a következő ellenséggel futnak össze: %1
+SHIP_COMBAT_BASES                 | %1 rakétabázis
+SHIP_COMBAT_SHIELD                | %1 szintű bojgópajzs
+SHIP_COMBAT_POPULATION            | %1 népesség
+SHIP_COMBAT_FACTORIES             | %1 gyár
+SHIP_COMBAT_ENTER_BATTLE          | Csatába lépés
+SHIP_COMBAT_MISS                  | Elvétés
+SHIP_COMBAT_DEFLECTED             | Eltérítés
+SHIP_COMBAT_DESTROYED             | Megsemmisítve!
+SHIP_COMBAT_STASIS                | Erőegyensúly
+SHIP_COMBAT_TITLE                 | Harc itt: %1
+SHIP_COMBAT_TITLE_UNNAMED         | Harc egy kivizsgálatlan rendszerben
+SHIP_COMBAT_SYSTEM_POP            | Népesség
+SHIP_COMBAT_SYSTEM_FACT           | Gyárak
+SHIP_COMBAT_SYSTEM_BASE           | Bázisok
+SHIP_COMBAT_TITLE_VICTORIOUS      | GYŐZTES
+SHIP_COMBAT_SHIP_TOTALS           | %1 🡒 %2
+SHIP_COMBAT_RESULTS_RETREATED     | VISSZAVONULT
+SHIP_COMBAT_RESULTS_DESTROYED     | MEGSEMMISÜLT
+SHIP_COMBAT_RETREAT_ALL           | Összes visszavonása
+SHIP_COMBAT_NEXT                  | Következő hajó
+SHIP_COMBAT_AUTO_RESOLVE          | Az ütközet automatikus intézése
+SHIP_COMBAT_AUTO_RESOLVING        | A küzdelem elhatározása...
+SHIP_COMBAT_PLAY_BATTLE           | Az ütközet automatikus lejátszása
+SHIP_COMBAT_PAUSE_BATTLE          | Játék szüneteltetése
+SHIP_COMBAT_STATS_ON              | Harci statisztika: Be
+SHIP_COMBAT_STATS_OFF             | Harci statisztika: Ki
+SHIP_COMBAT_EXIT                  | Kilépés
+SHIP_COMBAT_COUNT_NAME            | %1  %2
+SHIP_COMBAT_MONSTER_TARGET        | Űrszörny célba véve.
+SHIP_COMBAT_ENEMY_TARGET          | Ellenséges flotta célba véve.
+SHIP_COMBAT_ALLY_TARGET           | Barátságos flotta célba véve.
+SHIP_COMBAT_ENEMY_COLONY          | Ellenséges bolygó célba véve.
+SHIP_COMBAT_ALLY_COLONY           | Barátságos bolygó célba véve.
+SHIP_COMBAT_CURRENT_TARGET        | Jelenlegi flotta célba véve.
+SHIP_COMBAT_SELECT_ACTION         | Művelet kiválasztása.
+SHIP_COMBAT_SELECT_WEAPON         | Fegyver vagy készülék kiválasztása.
+SHIP_COMBAT_FIRE_WEAPON           | Fegyverlövés.
+SHIP_COMBAT_ACTION_NEXT_SHIP      | Következő hajó
+SHIP_COMBAT_ACTION_TURN_DONE      | Forduló befejezése
+SHIP_COMBAT_ACTION_RETREAT        | Visszavonulás
+SHIP_COMBAT_ACTION_FIRE_ALL       | Minden fegyver kilövése.
+SHIP_COMBAT_ACTION_CLOAK          | Lepel
+SHIP_COMBAT_ACTION_MOVE           | Áthelyezés ide
+SHIP_COMBAT_ACTION_TELEPORT       | Teleportálás ide
+SHIP_COMBAT_ACTION_RANGE          | Hatótávolságon kívül
+SHIP_COMBAT_ACTION_NO_MISSILES    | Nincs több rakéta
+SHIP_COMBAT_ACTION_NO_BOMBS       | Nincs több bomba
+SHIP_COMBAT_ACTION_FIRED          | Már tüzelt
+SHIP_COMBAT_ACTION_USED           | Már használt
+SHIP_COMBAT_ACTION_BAD_TARGET     | Érvénytelen célpont
+SHIP_COMBAT_ACTION_WPN_COUNT      | %1 x%2
+SHIP_COMBAT_ACTION_WPN_COUNT_SHOTS| %1 x%2 x%3
+SHIP_COMBAT_INFO_LABEL            | Információ a hajóról
+SHIP_COMBAT_SCAN_LABEL            | Kifürkészett információ a hajóról
+SHIP_COMBAT_SCAN_HIT_POINTS       | Állékonyságpontok
+SHIP_COMBAT_SCAN_MISSILE_DEF      | Rakétavédelem
+SHIP_COMBAT_SCAN_BEAM_DEF         | Sugárvédelem
+SHIP_COMBAT_SCAN_SHIELD_CLASS     | Pajzscsoport
+SHIP_COMBAT_SCAN_ATTACK_LEVEL     | Támadásszint
+SHIP_COMBAT_SCAN_SPEED            | Sebesség
+SHIP_COMBAT_SCAN_WEAPONS          | Fegyverek
+SHIP_COMBAT_SCAN_DEVICES          | Készülékek
+SHIP_COMBAT_SCAN_HITS_VALUE       | %1/%2
+SHIP_COMBAT_SCAN_WEAPON_CNT       | %1 x %2
+SHIP_COMBAT_SCAN_UNSCANNED_VALUE  | ???
+SHIP_COMBAT_COLONY_LABEL          | Információ a gyarmatról
+SHIP_COMBAT_COLONY_SCAN_LABEL     | Kifürkészett információ a gyarmatról
+SHIP_COMBAT_COLONY_POPULATION     | Népesség
+SHIP_COMBAT_COLONY_SHIELD         | Pajzs
+SHIP_COMBAT_COLONY_FACTORIES      | Gyárak
+SHIP_COMBAT_COLONY_BASES          | Rakétabázisok
+SHIP_COMBAT_COLONY_BASE_HITS      | A rakétabázis állékonyságpontjai
+SHIP_COMBAT_COLONY_BASE_ATTACK    | A rakétatámadás szintje
+SHIP_COMBAT_ACTION_FMT            | %1 - %2
+
+RELATIONS_FEUD                    | Ellenségeskedés
+RELATIONS_HATE                    | Gyűlölet
+RELATIONS_DISCORD                 | Viszály
+RELATIONS_TROUBLED                | Nyugtalan
+RELATIONS_TENSE                   | Feszült
+RELATIONS_RESTLESS                | Zaklatott
+RELATIONS_WARY                    | Óvatos
+RELATIONS_UNEASE                  | Kényelmetlenség
+RELATIONS_NEUTRAL                 | Semleges
+RELATIONS_RELAXED                 | Fesztelen
+RELATIONS_AMIABLE                 | Kedves
+RELATIONS_CALM                    | Nyugodt
+RELATIONS_AFFABLE                 | Nyájas
+RELATIONS_PEACEFUL                | Békés
+RELATIONS_FRIENDLY                | Barátságos
+RELATIONS_UNITY                   | Egység
+RELATIONS_HARMONY                 | Harmónia
+
+RACES_TITLE                       | Faji jelentések
+RACES_SELECTOR_TITLE              | Birodalomválasztó
+RACES_TAB_DIPLOMACY               | Diplomácia
+RACES_TAB_INTELLIGENCE            | Intelligencia
+RACES_TAB_MILITARY                | Katonaság
+RACES_TAB_STATUS                  | Állapot
+RACES_KNOWN_EMPIRES               | %1 ismert birodalom
+RACES_RECALLED_DIPLOMATS          | %1 visszavont diplomata
+RACES_NO_TREATY                   | Nincs diplomáciai szerződés
+RACES_AT_FINAL_WAR                | Végső háború
+RACES_AT_WAR                      | Háborús állapot
+RACES_PEACE                       | Békeszerződés
+RACES_PACT                        | Megnemtámadási szerződés
+RACES_ALLY                        | Szövetség
+RACES_UNITY                       | Egység
+RACES_OUT_OF_RANGE                | A hajó hatótávolságán kívül
+RACES_TRADE_LEVEL                 | %1 EK-nyi kereskedelmi megállapodás
+RACES_TRADE_NONE                  | Nincs kereskedelmi megállapodás
+RACES_DIPLOMAT_RECALLED           | [alien_race_possessive_prefix_uppercase] diplomatája visszavonva
+RACES_DIPLOMATS_RECALLED          | Diplomaták visszavonva
+
+RACES_DIPLOMACY_HOMEWORLD         | Anyavilág
+RACES_DIPLOMACY_LEADER            | Vezető
+RACES_DIPLOMACY_CURRENT_TRADE     | Aktuális kereskedelmi jövedelem
+RACES_DIPLOMACY_TOTAL_TRADE       | Az összes kereskedelmi megállapodás
+RACES_DIPLOMACY_TRADE_AMT         | %1 EK
+RACES_DIPLOMACY_CHARACTER         | Karakter
+RACES_DIPLOMACY_STATUS            | Állapot
+RACES_DIPLOMACY_RELATIONS_METER   | Viszonymérő
+RACES_DIPLOMACY_RELATIONS_UNKNOWN | [alien_empire_prefix_uppercase] hangulata és motívumai kifürkészhetetlenek a nagyköveteink és kémeink számára.
+RACES_DIPLOMACY_BUREAU            | Diplomáciai iroda
+RACES_DIPLOMACY_BUREAU_DESC1      | Kapcsolatfelvétel idegen birodalmakkal vagy a diplomaták visszahívása, ami megakadályozza más birodalmak kapcsolatfelvételét velünk.
+RACES_DIPLOMACY_BUREAU_DESC       | Kapcsolatfelvétel [alien_race_possessive_prefix_lowercase] nagykövetével, meghallgatás vagy - ha a diplomatáink vissza lettek vonva - kapcsolatteremtés érdekében.
+RACES_DIPLOMACY_BUREAU_DESC_RANGE | Az űrhajóink hatótávolságán kívüli birodalmakkal lehetetlen diplomáciai kapcsolatot létrehozni.
+RACES_DIPLOMACY_BUREAU_DESC_FINAL | A végső háborút vívjuk az Új Köztársasággal. A diplomácia már nincs a lehetőségeink között.
+RACES_DIPLOMACY_KNOWN_EMPIRES     | Ismert idegen birodalmak
+RACES_DIPLOMACY_RECALLED_DIPLOMAT | Visszavont nagykövetek
+RACES_DIPLOMACY_MANAGE_DIPLOMATS  | Nagykövetek kezelése
+RACES_DIPLOMACY_AUDIENCE          | Meghallgatás
+RACES_DIPLOMACY_CONTACT           | Kapcsolatfelvétel
+RACES_DIPLOMACY_TRADE_SUMMARY     | Kereskedelmi összegzés
+RACES_DIPLOMACY_TRADE_DESC        | Kapcsolatfelvétel [alien_race_possessive_prefix_lowercase] nagykövetével kereskedelmi megállapodás tárgyalása érdekében. Egy kereskedelmi hálózat létrehozása időt és pénzt igényel, de ha egyszer mégérett, pénzt hoz a birodalom kincstárába.
+RACES_DIPLOMACY_TRADE_DESC_RANGE  | Az űrhajóink hatótávolságán kívüli birodalmakkal lehetetlen kereskedelmi hálózatot kialakítani.
+RACES_DIPLOMACY_TRADE_DESC_FINAL  | A végső háborút vívjuk az Új Köztársasággal. Kereskedni már nem lehetséges.
+RACES_DIPLOMACY_TRADE_TREATY      | Kereskedelmi megállapodás
+RACES_DIPLOMACY_FOREIGN_RELATIONS | Külkapcsolatok
+RACES_DIPLOMACY_FOREIGN_RANGE     | Nem tudunk külkapcsolatot létesíteni [alien_empire_relational_prefix_lowercase], amíg nem létesítünk velük diplomáciai kapcsolatot.
+RACES_DIPLOMACY_FOREIGN_DESC      | [alien_race_possessive_prefix_uppercase] érintkezésben vannak a következő fajokkal:
+RACES_DIPLOMACY_COUNTER_BUREAU    | Kémelhárítási iroda
+RACES_DIPLOMACY_COUNTER_DESC      | A biztonsági kiadások egyértelműen hozzáadnak az általános kiadásokhoz, de esélyesebbé teszik az idegen kémek felfedezését.
+RACES_DIPLOMACY_COUNTER_DESC2     | Gyarmatok adóztatása a biztonsági kiadások növelése érdekében.
+RACES_DIPLOMACY_EVENT_YEAR        | Év
+RACES_DIPLOMACY_EVENT_TURN        | Forduló
+RACES_DIPLOMACY_EVENT_RACE        | Faj
+RACES_DIPLOMACY_EVENT_TITLE       | Diplomáciai incidens
+RACES_DIPLOMACY_EVENT_EFFECT      | Hatás
+RACES_MANAGE_DIALOG_OK            | Rendben
+RACES_MANAGE_REINSTATE_DIPLOMAT   | Nagykövet visszaállítása
+RACES_MANAGE_RECALL_DIPLOMAT      | Nagykövet visszavonása
+RACES_MANAGE_OUR_RECALLED         | A nagykövetünk vissza lett hívva
+RACES_MANAGE_THEIR_RECALLED       | Az idegen nagykövet vissza lett hívva
+RACES_MANAGE_BOTH_RECALLED        | Mind a kettő nagykövet vissza lett hívva
+
+RACES_INTEL_TITLE                 | [alien_race] hírszerzési beszámoló
+RACES_COUNTER_INTEL_TITLE         | Kémelhárítási beszámoló
+RACES_INTEL_SECURITY_BONUS        | Biztonsági bónusz
+RACES_INTEL_TOTAL_SPENDING        | Összes kiadás
+RACES_INTEL_SECURITY_TAX          | Biztonsági adó
+RACES_INTEL_TAX_DESC              | Gyarmatok megadóztatásával a külföldi kémek felfedezésének esélye növekszik.
+RACES_INTEL_TAX_OUT_OF_RANGE      | A kiadások az idegen fajok hatótávolságán belül kezdődnek.
+RACES_INTEL_SECURITY_BONUS_AMT    | +%1%
+RACES_INTEL_SECURITY_BONUS_NONE   | Egyik sem
+RACES_INTEL_REPORT_AGE            | Kor jelentése
+RACES_INTEL_SPY_NETWORK           | Kémhálózatok
+RACES_INTEL_SPENDING              | Kiadások
+RACES_INTEL_SPENDING_DESC         | A kiadások növelésével a kémhálózathoz idővel további kémek adhatók.
+RACES_INTEL_SPENDING_DESC_UNITY   | A kémhálózatok feleslegesek, mivel a technológia szabadon osztozik az Új Köztársaság tagjai között. 
+RACES_INTEL_SPENDING_CAPPED       | A birodalom kémtevékenységekre szánt kiadásai elérték a végső korlátot. A kémhálózatok finanszírozása %1%-kal csökkent.
+RACES_INTEL_SPENDING_RANGE        | Kémhálózatokat nem lehet létrehozni az űrhajóink hatolságán kívülre eső birodalmakban.
+RACES_INTEL_PERCENT_AMT           | %1%
+RACES_INTEL_YEARS                 | %1 év
+RACES_INTEL_NO_SPIES              | Nincsenek kémek
+RACES_INTEL_1_SPY                 | 1 kém
+RACES_INTEL_N_SPIES               | %1 kémek
+RACES_INTEL_SPIES                 | %1 / %2
+RACES_INTEL_SPENDING_ANNUAL       | %1 EK/évente
+RACES_INTEL_CURRENT               | Jelenlegi
+RACES_INTEL_NO_DATA               | Nincs adat
+RACES_INTEL_SPENDING_NONE         | Egyik sem
+RACES_INTEL_COMPLETION_YEARS      | %1 év
+RACES_INTEL_COMPLETION_PER_YEAR   | %1/évente
+RACES_INTEL_BUREAU_TITLE          | Hírszerző iroda
+RACES_INTEL_BUREAU_DESC           | Kémeket hozzárendelésével titkok elrejthetők és -lophatók, vagy idegen gyarmatok szaboltálahtók.
+RACES_INTEL_BUREAU_SPIES          | Összes kém
+RACES_INTEL_BUREAU_MANAGE         | Kémek kezelése
+RACES_INTEL_BUREAU_SPENDING       | Összes kiadás
+RACES_INTEL_SPY_ORDERS            | KÉmek parancsai
+RACES_INTEL_SPY_ORDERS_DESC       | Kémeket hozzárendelésével titkok elrejthetők és -lophatók, vagy [alien_race] gyarmatok szaboltálahtók. Minél nagyobb a kémhálózat, annál esélyesebb a siker, mindaddig, amíg a kémek egyikét sem kapják el és vallatják (sikeresen) ki.
+RACES_INTEL_SPY_WARNING           | Felfedezés esetén ez a küldetés felbontja a szerződésünnket [alien_race_relational_prefix_lowercase].
+RACES_INTEL_SPY_WARNING_WAR       | Felfedezés esetén ez a küldetés háborút indíthat [alien_race_possessive_prefix_lowercase] ellen.
+RACES_INTEL_KNOWN_TECHNOLOGY      | Ismert [alien_race] technológia
+RACES_INTEL_KNOWN_TECH_DESC       | Kémeink jelentése szerint [alien_race_possessive_prefix_lowercase] a következő technológiákat már elsajátították. Minden számunkra ismeretlen technológia ki van emelve.
+RACES_INTEL_UNKNOWN_TECHNOLOGY    | Ismeretlen technológia jelentés
+RACES_INTEL_UNKNOWN_TECH_DESC     | Kémeink jelentése szerint az idegen fajok a következő technológiákat sajátították el.
+
+RACES_MILITARY_TITLE              | [alien_race] Űrhajó flotta
+RACES_MILITARY_SUBTITLE           | Hajók hajótest méret szerint
+RACES_MILITARY_UNSCANNED          | ??
+RACES_MILITARY_UNSCANNED_LONG     | Leolvasatlan
+RACES_MILITARY_SMALL              | Kicsi
+RACES_MILITARY_MEDIUM             | Közepes
+RACES_MILITARY_LARGE              | Nagy
+RACES_MILITARY_HUGE               | Hatalmas
+RACES_MILITARY_REPORT_CURRENT     | A flotta jelentés naprakész.
+RACES_MILITARY_DEFENSE            | Védelmi rendszerek
+RACES_MILITARY_DEF_PLANET_SHIELD  | Bolygópajzsok
+RACES_MILITARY_DEF_DEFL_SHIELD    | Terelőpajzsok
+RACES_MILITARY_DEF_ARMOR          | Páncél
+RACES_MILITARY_TROOP_BONUS        | Talajcsapatok bónusza
+RACES_MILITARY_DEF_MISSILE        | Rakétabázis
+RACES_MILITARY_DEF_MISSILE_MAX    | Gyarmatonkénti rakétabázisok alapértelmezett maximuma
+RACES_MILITARY_NO_SHIELD          | Egyik sem
+RACES_MILITARY_REPORT_NONE        | Nincs adat. További kémekre van szükség a beszivárgáshoz.
+RACES_MILITARY_REPORT_OLD         | A flotta jelentés kora: %1 év.
+RACES_MILITARY_NO_SHIPS           | Nincs észlelt hajó
+RACES_MILITARY_HULL               | Hajótest
+RACES_MILITARY_ARMOR              | Páncél
+RACES_MILITARY_ATTACK_LEVEL       | Támadási szint
+RACES_MILITARY_MISSILE_DEFENSE    | Rakétavédelem
+RACES_MILITARY_BEAM_DEFENSE       | Sugárvédelem
+RACES_MILITARY_SHIELD             | Pajzs osztály
+RACES_MILITARY_COMBAT_SPEED       | Harci sebesség
+RACES_MILITARY_TRAVEL_SPEED       | Utazási sebesség
+RACES_MILITARY_WEAPON_CNT         | %2 x%1
+RACES_MILITARY_NO_WEAPONS         | Nincs fegyver
+RACES_MILITARY_NO_SPECIALS        | Nincs különlegesség
+RACES_MILITARY_ACTIVE             | Aktív
+RACES_MILITARY_INACTIVE           | Inaktív
+RACES_MILITARY_LAST_SEEN          | Utoljára látva
+RACES_MILITARY_SCAN_AGE           | %1 év
+RACES_MILITARY_TACTICAL           | Taktikai információ
+RACES_MILITARY_WEAPONS            | Fegyverek
+RACES_MILITARY_SPECIALS           | Különleges eszközök
+
+RACES_STATUS_THE_EMPIRE           | [alien_empire_prefix_uppercase]
+RACES_STATUS_VS                   | vs.
+RACES_STATUS_KNOWN_EMPIRES        | %1 ismert birodalom
+RACES_STATUS_HISTORY              | [alien_race_possessive_prefix_uppercase] történelmének kimutatása
+RACES_STATUS_NO_DATA              | Nincs adat
+RACES_STATUS_OLD_DATA             | Régi adatok
+RACES_STATUS_FLEET_STRENGTH       | Flotta ereje
+RACES_STATUS_POPULATION           | Népesség
+RACES_STATUS_TECHNOLOGY           | Technológia
+RACES_STATUS_PLANETS              | Bolygók
+RACES_STATUS_PRODUCTION           | Termelés
+RACES_STATUS_TOTAL_POWER          | Teljes hatalom
+RACES_UNKNOWN_DATA                | ???
+
+RACES_SET_COLOR_TITLE             | [alien_empire_prefix_uppercase] új színének kiválasztása
+RACES_SET_COLOR_DESC              | Ha a kiválasztott színt és formát már egy másik birodalom használ, a színek átváltanak.
+
+// Races UI help
+RACES_HELP_0A                     | ÁTTEKINTÉS: Ez a képernyő részletes információt nyújt az egyes idegen fajokról, amelyekkel már telálkoztunk.
+RACES_HELP_0B                     | Diplomácia - diplomáciai tárgyalások vezetése a kiválasztott birodalommal.
+RACES_HELP_0C                     | Hírszerzés - idegen fajok technológiáinak kimutatása és a kémhálózat kezelése.
+RACES_HELP_0D                     | Katonaság - flotta és hajóterv kijelzése.
+RACES_HELP_0E                     | Helyzetfelmérés - összehasonlítás több kategória között.
+RACES_HELP_0F                     | A saját birodalom kiválasztásával kezelhető minden kapcsolatban lévő faj adata.
+RACES_HELP_0G                     | Egy idegen birodalom kiválasztásával megtekinthető minden kapcsolatban lévő faj adata.
+RACES_HELP_1A                     | Általános információk a kiválasztott birodalomról.
+RACES_HELP_1B                     | Közvetlen hozzáférést biztosít minden kapcsolatba lépett birodalomban tartózkodó a nagykövettel.
+RACES_HELP_1C                     | A biztonságadó emelésével az ellenséges kémek meghiúsításának esélye növekszik.
+RACES_HELP_1D                     | Közvetlen hozzáférést biztosít a kémek kezeléséhez minden kapcsolatban lévő birodalomban.
+RACES_HELP_1E                     | Diplomáciai incidensek, amelyek befolyásolják más birodalmak reakcióit felénk. Ezek a hatások idővel a nulla irányába csökkennek.
+RACES_HELP_1F                     | Ide kattintva megváltoztatható a térképen kijelzett valamennyi faj színe.
+RACES_HELP_2A                     | Általános információk a kiválasztott birodalomról.
+RACES_HELP_2B                     | Audenciát ad a kiválasztott birodalom nagykövetéhez.
+RACES_HELP_2C                     | A kiválasztott birodalommal aláírt kereskedelmi megállapodások adatai.
+RACES_HELP_2D                     | Más birodalmak, amelyekkel a kiválasztott birodalom felvette a kapcsolatot.
+RACES_HELP_2E                     | Diplomáciai incidensek, amelyek befolyásolják a kiválasztott birodalom reakcióit felénk. Ezek a hatások idővel a nulla irányába csökkennek.
+RACES_HELP_2F                     | A kiválasztott birodalommal való jelenlegei viszonyok mértéke.
+RACES_HELP_3A                     | A biztonságadó emelésével az ellenséges kémek meghiúsításának esélye növekszik.
+RACES_HELP_3B                     | Közvetlen hozzáférést biztosít a kémek kezeléséhez minden kapcsolatban lévő birodalomban.
+RACES_HELP_3C                     | Minden más birodalom által ismert technológia, amit a kémeink gyűjtöttek. A számunkra ismeretlen technológiák sárga színnel vannak kiemelve.
+RACES_HELP_4A                     | A kívánt számú kémhálózat létrehozása a kiválasztott birodalomban, és az erre szánt évnyi összeg meghatározása.
+RACES_HELP_4B                     | A kiválasztott birodalomba szivárgó kémek utasításainak elrendelése. Rejtőzés - adatgyűjtés. Kémkedés - technológialopási kísérlet. Szabotázs - lázadások ösztönzése vagy gyárak és rakétabázisok tönkretevése.
+RACES_HELP_4C                     | A kiválasztott birodalom által ismert összes technológia. A számunkra ismeretlen technológiák sárga színnel vannak kiemelve.
+RACES_HELP_5A                     | A hajók ismert száma a kiválasztott faj flottájában, hajótest méret szerint. Ez az információ naprakész marad mindaddig, amíg van aktív kémhálózatunk a kiválasztott birodalomban.
+RACES_HELP_5B                     | A hajótervekben található ismert képességek. A régebbi tervek lehet le vannak selejtezve. Ez az információ elsősorban harc során gyülemlik.
+RACES_HELP_5C                     | A kiválasztott birodalom ismert védelmi képességei. 
+RACES_HELP_6A                     | Ez a képernyő különböző kategóriákban rangsorolja a saját birodalmunkat a többi ismerthez képest. Ezeket az adatokat az adott birodalmakon belüli kémhálózatok táplálják.
+RACES_HELP_6A2                    | Ez a képernyő történelmileg hasonlítja össze saját birodalmunkat a kiválaszotttal, különböző kategóriákban. Ezeket az adatokat az adott birodalmakon belüli kémhálózatok táplálják.
+RACES_HELP_6B                     | Flottaerő - egyesíti a hajók számát és méretét.
+RACES_HELP_6C                     | Népesség - minden gyarmatosított rendszer teljes népessége.
+RACES_HELP_6D                     | Technológia - a technológia átlagos szintje a kutatás minden területén.
+RACES_HELP_6E                     | Bolygók - a gyarmatosított rendszerek száma.
+RACES_HELP_6F                     | Termelés - a birodalom teljes ipari termelése.
+RACES_HELP_6G                     | Teljes hatalom - a flotta erejének, a technológia és a termelés szintjének kombinációja.
+
+// Sabotage UI
+SABOTAGE_TITLE                    | A kémeink beszivárogtak [alien_race_possessive_prefix_lowercase] gyarmataira és készen állnak, hogy végrehajtsák a parancsaikat.
+SABOTAGE_PROMPT                   | [alien_empire_prefix_uppercase] ellen elkövetett szabotázs formájának kiválasztása a célpontba vett %1 rendszerben.
+SABOTAGE_WARNING                  | Figyelem! Bármilyen szabotázstett [alien_empire_relational_prefix_lowercase] kötött szerződésünk felbontását fogja eredményezni.
+SABOTAGE_SELECT_TARGET            | Célpont kiválasztása
+SABOTAGE_BUTTON_FACTORIES         | Gyárak tönkretevése
+SABOTAGE_BUTTON_BASES             | Rakétabázisok tönkretevése
+SABOTAGE_BUTTON_REBELLION         | Lázadás uszítása
+SABOTAGE_BUTTON_NO_ACTION         | Semmi intézkedés
+SABOTAGE_FACTORIES_RESULT         | A kémeink %1 gyárat tettek tönkre.
+SABOTAGE_BASES_RESULT             | A kémeink %1 rakétabázist tettek tönkre.
+SABOTAGE_REBELS_TOTAL             | A kémeink %1 lázadótt bátorítottak a tettek mezejére. A nyugtalanság pillanatnyi szintje: %2%.
+SABOTAGE_REBELS_REVOLT            | A kémeink felkelést indítottak!
+SABOTAGE_BASES                    | rakétabázisok
+SABOTAGE_FACTORIES                | gyárak
+NOTICE_SPYING_MISSION_HIDE        | Beszivárgás
+NOTICE_SPYING_MISSION_ESPIONAGE   | Kémkedés
+NOTICE_SPYING_MISSION_SABOTAGE    | Szabotázs
+
+// History UI
+HISTORY_TITLE                     | Ismert galaktikus történelem
+HISTORY_TITLE_ALL                 | Teljes galaktikus történelem
+HISTORY_TURN_DESC                 | Forduló %1 / %2
+HISTORY_FORWARD                   | Előre
+HISTORY_BACK                      | Vissza
+HISTORY_PLAY                      | Lejátszás
+HISTORY_PAUSE                     | Megállás
+HISTORY_RESET                     | Visszaállítás
+HISTORY_EXIT                      | Kilépés
+HISTORY_EXTINCT                   | Kihalt
+HISTORY_SYSTEMS                   | Rendszerek
+HISTORY_EMPIRE                    | Birodalom
+
+
+
+// Council UIs
+COUNCIL_CONVENE_TITLE             | A Nagy Tanács gyülekezik
+COUNCIL_CONVENE                   | A Nagy Tanács gyülekezést tart, hogy megválasszon egy vezetőt a Galaxis Uralkodójaként.
+COUNCIL_CONVENE2                  | Minden birodalom szavazataránya a népesség számával egyenlő. A jelöltnek meg kell gyűjteni legalább kétharmadának igen szavazattal választják. A jelöltek a szavazatok lagalább kétharmadát kell összegyűjtenie, hogy meg legyen szavazva. A jelöltek a két legnépesebb birodalom vezetői: [first_name] [first_empire_originating_prefix_lowercase] és [second_name] [second_empire_originating_prefix_lowercase].
+COUNCIL_ADJOURN_TITLE             | A Nagy Tanács befejezi ülését
+COUNCIL_ADJOURN                   | A szavazás befejeződött és egyik jelöltnek sem sikerült összegyűjtenie a szavazatok kétharmadát. Ezáltal nincs kinevezett uralkodó. A Nagy Tanács következő gyűlésére 25 éven belül kerül sor.
+COUNCIL_SUMMARY_TITLE             | Szavazói összefoglaló
+COUNCIL_SUMMARY                   | A szavazás sorrendjét a népesség száma dönti el. %1 szavazat kell a választások megnyeréséhez.
+COUNCIL_BEGIN_VOTING              | Szavazás megkezdése
+COUNCIL_SHOW_VOTING               | Szavazás folytatása
+COUNCIL_SKIP_TO_PLAYER            | Ugrás [player_race_possessive_prefix_lowercase] szavazásához
+COUNCIL_COMPLETE_VOTING           | Minden szavazás befejezése
+COUNCIL_SHOW_RESULTS              | Eredmények megjelenítése
+COUNCIL_VIEW_SUMMARY              | Szavazói összefoglaló megjelenítése
+COUNCIL_VOTES_REQUIRED            | %1 szavazat kell a választások megnyeréséhez.
+COUNCIL_CAST_PROMPT               | Meg kell adnunk az előírt %1 szavazatot.
+COUNCIL_CAST_PROMPT_TITLE         | Jelölt kiválasztása.
+COUNCIL_CHOICE_ABSTAIN            | Tartózkodás
+COUNCIL_CAST_VOTE                 | [candidate_name] %1 szavazatot kapott [voter_empire_taking_prefix_lowercase]!
+COUNCIL_CAST_ABSTAIN              | [voter_empire_prefix_uppercase] tartózkodik (%1 szavazat)
+COUNCIL_CHOICE_ABSTAIN            | Tartózkodás
+COUNCIL_VOTE_COUNT                | %1 szavazat
+COUNCIL_VOTE_CAST                 | %1 szavazat - [alien_race_giving_prefix_lowercase]
+COUNCIL_VOTE_ABSTAINED            | %1 szavazat - tartózkodva
+COUNCIL_TREATY_CANDIDATE          | [alien_race]: Jelölt
+COUNCIL_TREATY_ALLIANCE           | [alien_race]: Szövetség
+COUNCIL_TREATY_PACT               | [alien_race]: Megnemtámadási szerződés
+COUNCIL_TREATY_NONE               | [alien_race]: Nincs szerződés
+COUNCIL_TREATY_WAR                | [alien_race]: Háborúban
+COUNCIL_CONTINUE                  | Folytatás
+COUNCIL_ELECTED_TITLE             | A Galaxis Uralkodója meg lett választva!
+COUNCIL_ACCEPT_RULING             | Szabály elfogadása
+COUNCIL_REJECT_RULING             | Szabály elutasítása
+
+
+// Credit text
+CREDITS_DEVELOPER                 | Ray Fowler, Fejlesztő
+CREDITS_ILLUSTRATOR               | Petar Penev, Illusztrátor
+CREDITS_GRAPHIC_DESIGN            | Kaitlin Lindsay, Grafikus tervező
+CREDITS_MUSIC                     | Efe Tozan, Zene
+CREDITS_WRITER                    | Jeff Colucci, Író
+CREDITS_SOUND                     | Remi Agullo, Hangmérnök
+CREDITS_TRANSLATOR                | Ivan Milovanov és Fanni Hédi, Magyar fordítás
+
+// Systems UI
+SYSTEMS_TITLE                     | Rendszerek
+SYSTEMS_TAB_EXPLORE               | Felderítés
+SYSTEMS_TAB_EXPAND                | Terjeszkedés
+SYSTEMS_TAB_EXPLOIT               | Hasznosítás
+SYSTEMS_TAB_EXTERMINATE           | Kiírtás
+SYSTEMS_RANGE                     | %1 f.é.
+SYSTEMS_ENVIRONMENT_SIZE          | %1 %2
+SYSTEMS_ENVIRONMENT_TYPE          | %1 %2
+SYSTEMS_SHIELD                    | Pajzs %1
+SYSTEMS_BASES                     | Bázisok %1
+SYSTEMS_ENTER_NOTES               | Jegyzetek a rendszerről.
+SYSTEMS_ALERT                     | Rendszerriadó
+SYSTEMS_NO_ALERTS                 | Jelenleg nincs riadó.
+SYSTEMS_HISTORY                   | Rendszertörtélem
+SYSTEMS_UNSCOUTED                 | System is unscouted but is within reach of our scout ships.
+SYSTEMS_UNSCOUTED_NEED_TECH       | A rendszer nincs felderítve és elérhető miután a következő kutatás be lett fejezve: %1.
+SYSTEMS_UNSCOUTED_COLONIZED       | A rendszer nincs felderítve és egy szövetségen kívüli birodalom hatalma alatt van.
+SYSTEMS_UNSCOUTED_ENEMY           | A rendszer nincs felderítve és egy ellenséges birodalom hatalma alatt van.
+SYSTEMS_UNSCOUTED_GUARDED         | A rendszert nem lehet felderíteni, amíg védelem alatt áll
+SYSTEMS_UNSCOUTED_UNREACHABLE     | A rendszer nincs felderítve és pillanatnyilag elérhetetlen.
+SYSTEMS_CAN_COLONIZE              | A rendszer elérhető és a pillanantyi technológiánkkal gyarmatosítható.
+SYSTEMS_CAN_COLONIZE_EN_ROUTE     | Egy gyarmathajó úton van e rendszer felé. Tervezett érkezési idő: %1 forduló.
+SYSTEMS_CAN_COLONIZE_ENEMY        | A rendszer elérhető és gyarmatosítható, de egy rosszindulatú [alien_race] flotta köröz körülötte.
+SYSTEMS_UNCOLONIZED_NEED_TECH     | A rendszer gyarmatosítható miután a következő kutatás be lett fejezve: %1.
+SYSTEMS_UNCOLONIZED_NEED_TECHS    | A rendszer gyarmatosítható miután a következő kutatások be lettek fejezve: %1 és %2.
+SYSTEMS_UNCOLONIZEABLE            | A rendszer nem gyarmatosítható.
+SYSTEMS_EXPLOIT_PCT               | A gyarmat %1%-os teljes termelési kapacitáson van.
+SYSTEMS_EXPLOIT_WASTE             | A gyarmat ipari hulladékot termel.
+SYSTEMS_EXPLOIT_COMPLETE          | A gyarmat elérte a maximális termelési kapacitását.
+SYSTEMS_EXPLOIT_TRANSPORTS        | %1 szállítmány úton van.
+SYSTEMS_EXT_ENEMY                 | Ellenséges gyarmat.
+SYSTEMS_EXT_ENEMY_FLEET           | Egy ellenséges flotta keringőpályán van.
+SYSTEMS_EXT_ENEMY_FLEET_PLAYER    | Egy ellenséges flotta a gyarmatunk körül kering.
+SYSTEMS_EXT_ENEMY_FLEET_ALLY      | Egy ellenséges flotta egy szövetséges gyarmat körül kering.
+SYSTEMS_EXT_INC_FLEET_PLAYER      | Egy ellenséges flotta úton van a gyarmatunk irányába.
+SYSTEMS_EXT_INC_FLEET_ALLY        | Egy ellenséges flotta úton van egy szövetséges gyarmat irányába.
+SYSTEMS_EXT_NEED_DEFENSE          | E gyarmat védelmi rendszerei nincsenek teljesen felminősítve.
+SYSTEMS_EXT_INC_TRANSPORTS        | %1 [player_race] csapat úton van.
+SYSTEMS_HELP_1A                   | ÁTTEKINTÉS - Ennek a képernyőnek a célja, hogy kiemelje a galaxis azon rendszereit, amelyek a játékos figyelmét igénylik. A sürgősséget vagy a veszélyt különböző színek jelölik: a villogó piros a legmagasabb, a zöld pedig a legalacsonyabb.
+SYSTEMS_HELP_1B                   | Felderítés - kimutatja a felderítők hatótávolságán belüli, vagy az esetlegesen felfedezetlen technológiák által elérhető ismeretlen rendszereket.
+SYSTEMS_HELP_1C                   | Terjeszkedés - kimutatja a hajók hatótávolságán belüli, vagy az esetlegesen felfedezetlen technológiák által gyarmatosítható rendszereket.
+SYSTEMS_HELP_1D                   | Hasznosítás - kimutatja a gazdasági fejlődésben hiányos gyarmatokat. Szintén kimutatja az erőforrásokkal rendelkező, gyarmatosítatlan rendszereket.
+SYSTEMS_HELP_1E                   | Kiírtás - kimutatja a gyarmatokat, amelyek támadás alatt állnak, vagy bejövő ellenséges flották célpontjai.
+SYSTEMS_HELP_1F                   | Rendszerriadó - részletezi a rendszerriadó, ha van ilyen, a kiválasztott rendszerben
+SYSTEMS_HELP_1G                   | Jegyzetek a rendszerről - szövegmező, ahová a játékos jegyzetelhet.
+SYSTEMS_HELP_1H                   | Rendszertörtélem - A rendszerben bekövetkezett jelentős események kronológiai listája.
+
+SYSTEMS_STATUS_REBELLION          | A kolónia lázadásban van.
+SYSTEMS_STATUS_COMET              | Egy üstökös csapódik e bolygóba %1 éven belül.
+SYSTEMS_STATUS_SUPERNOVA          | A rendszer csillaga szupernóvává robban %1 éven belül. A fizikusoknak szüksége van %2 KÉ-ra, hogy elkerülhetővé tegyék ezt a katasztrófát.
+SYSTEMS_STATUS_PLAGUE             | A gyarmat olyan globális járvány áldozata, amely %1 KÉ-ot igényel a gyógyításhoz.
+SYSTEMS_STATUS_PIRACY             | Kalózok befolyásolják a kereskedelmi útvonalakat ebben a rendszerben.
+SYSTEMS_STATUS_SPACE_AMOEBA       | Egy óriási űramőba e rendszer felé halad.
+SYSTEMS_STATUS_SPACE_CRYSTAL      | Egy gigantikus űrkristály e rendszer felé halad.
+
+
+DIPLOMACY_RECEIVING               | A bejövő üzenet fordítása...
+DIPLOMACY_MENU_CONTINUE           | Folytatás
+DIPLOMACY_MENU_ACKNOWLEDGE        | Elismerés
+DIPLOMACY_MENU_ACCEPT             | Elfogadás
+DIPLOMACY_MENU_ACCEPT_NEED_BC     | Elfogadás (nincs elég tőke)
+DIPLOMACY_MENU_FORGET_IT          | Elfelejtés
+DIPLOMACY_TRADE_LEVEL             | %1 EK / évente
+DIPLOMACY_MENU_TREATIES           | Szerződési ajánlattevés
+DIPLOMACY_MENU_TRADE              | Kereskedelmi megállapodás
+DIPLOMACY_MENU_TECHNOLOGY         | Technológiacsere
+DIPLOMACY_MENU_OFFER_AID          | Támogatási ajánlat
+DIPLOMACY_MENU_AMT                | %1 EK
+DIPLOMACY_MENU_OFFER_TECHS        | Technológia ajánlat
+DIPLOMACY_MENU_THREATEN           | Fenyegetés
+DIPLOMACY_MENU_DECLARE_WAR        | Hadüzenés
+DIPLOMACY_MENU_EVICT_SPIES        | Minden kém visszahívása (rontja a viszonyokat)
+DIPLOMACY_MENU_STOP_SPYING        | Kémtevékenységek megállítása
+DIPLOMACY_MENU_STOP_ATTACKING     | Támadás megszüntetése
+DIPLOMACY_MENU_GOODBYE            | Viszontlátásra
+DIPLOMACY_MENU_PACT               | Megnemtámadási szerződés felajánlása
+DIPLOMACY_MENU_ALLIANCE           | Szövetség felajánlása
+DIPLOMACY_MENU_PEACE              | Békeszerződés felajánlása
+DIPLOMACY_MENU_TRADE              | Kereskedelmi megállapodás felajánlása
+DIPLOMACY_MENU_JOINT_WAR          | Közös hadüzenés egy másik faj ellen
+DIPLOMACY_MENU_PROPOSE_BREAK_ALLY | Szövetség felbontása egy másik fajjal
+DIPLOMACY_MENU_BREAK_TRADE        | Kereskedelmi megállapodás felbontása
+DIPLOMACY_MENU_BREAK_PACT         | Megnemtámadási szerződés felbontása
+DIPLOMACY_MENU_BREAK_ALLIANCE     | Szövetség felbontása
+DIPLOMACY_TRADE_MENU_BREAK        | Kereskedelmi megállapodás felbontása
+DIPLOMACY_THREATEN_MENU_0         | Nagykövet visszahívása
+DIPLOMACY_THREATEN_MENU_1         | Hűbér követelése
+DIPLOMACY_THREATEN_MENU_2         | Megnemtámadási szerződés felbontása
+DIPLOMACY_THREATEN_MENU_3         | Szövetség felbontása
+DIPLOMACY_THREATEN_MENU_BR        | Kereskedelmi megállapodás felbontása
+DIPLOMACY_THREATEN_MENU_5         | Hadüzenés
+DIPLOMACY_ACCEPT_OFFER            | Elfogadás
+DIPLOMACY_ACCEPT_JOIN_WAR         | Elfogadás (csatlakozás a háborúhoz)
+DIPLOMACY_ACCEPT_END_WAR          | Elfogadás (háború befejezése, hadierők visszahívása)
+DIPLOMACY_ACCEPT_FORM_PACT        | Elfogadás (szerződéskötés)
+DIPLOMACY_ACCEPT_FORM_ALLIANCE    | Elfogadás (szövetségkötés)
+DIPLOMACY_ACCEPT_ESTABLISH_TRADE  | Elfogadás (kereskedelem megalapítása)
+DIPLOMACY_DECLINE_OFFER           | Elutasítás
+DIPLOMACY_DECLINE_BREAK_ALLIANCE  | Elutasítás (szövetségtörés)
+DIPLOMACY_IGNORE_THREAT           | Fenyegetés figyelmen kívül hagyása
+DIPLOMACY_SHUTDOWN_SPIES          | Az összes kémhálózat lekapcsolása [alien_empire_containing_prefix_lowercase]
+DIPLOMACY_HIDE_SPIES              | Minden kém rejtőzésre parancsolása [alien_empire_containing_prefix_lowercase]
+DIPLOMACY_RETREAT_SHIPS           | Az összes [alien_race] rendszerben keringő vagy odatartó hajó visszavonulásra parancsolása
+
+// types of endings
+GAME_OVER_OVERTHROWN_LOSS         | Bukási veszteség
+GAME_OVER_MILITARY_LOSS           | Katonai veszteség
+GAME_OVER_DIPLOMATIC_LOSS         | Diplomáciai veszteség
+GAME_OVER_NEW_REPUBLIC_LOSS       | Új Köztársasági veszteség
+GAME_OVER_REBELLION_LOSS          | Lázadási veszteség
+GAME_OVER_DIPLOMATIC_WIN          | Diplomáciai győzelem
+GAME_OVER_MILITARY_WIN            | Katonai győzelem
+GAME_OVER_MILITARY_ALLIANCE_WIN   | Katonai szövetség győzelem
+GAME_OVER_NEW_REPUBLIC_WIN        | Új Köztársasági győzelem
+GAME_OVER_REBELLION_WIN           | Lázadási győzelem
+GAME_OVER_REBEL_ALLIANCE_WIN      | Lázadási szövetség győzelem
+GAME_OVER_ALLIANCE_WIN            | Szövetséges győzelem
+GAME_OVER_NO_COLONIES_LOSS        | Társadalmi öszseomlás veszteség
+
+GAME_OVER_EXIT                    | Kilépés
+GAME_OVER_REPLAY                  | Újrajátszás
+
+// text for race-generic endings
+// %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 special text
+GAME_OVER_NO_COLONIES_LOSS2       | %2 uralma birodalmi inkompetencia által ért véget.#Civilizált világok hiányában amelyekre biztonságosan landolhatnának, az esetleges [player_race] túlélők képtelenek fenntartani a tásradalmunk által elért technológiai fejleményeket.#A barbárság a társadalmak természetes állapota. A civilizáció természetellenes. Körülmények szeszélye. Így végül is a barbárságnak kell győzedelmeskednie.

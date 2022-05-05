@@ -1,0 +1,21 @@
+// all possible names
+name: Meklonár, Mechanár, Kibernár, Digitár, Technár
+
+desc1: Kiismerhetetlen iparosok
+desc2: Továbbfejlesztett gyári vezérlők
+desc3: A Meklonár Domínium polgárai a technológia általi tökéletességet és halhatatlanságot keresik.
+
+// possible home system names
+home: Meklon, Kollosszon, Kalkulon, Bender, Optimusz
+
+title:     Császár
+fulltitle: Legfelsőbb Felügyelő
+
+// possible leader names
+leader: CB-715, INT-986, MS-35, QX-537, TVC-15, TX-1138
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Byte, Tranzisztor, Kapcsoló, Komponens, Áramkör, Számjegy, Logika
+ship2: Processzor, Számológép, Számítógép, Algoritmus, Hálózat, Kalkulus
+ship3: Dinamó, Elem, Ajax, Tornádó, Nexus, Fosztogató, Drahma
+ship4: Nemeszisz, Pusztító, Megsemmisítő, Betolakodó, Hyperion, Behatoló, Kínzó

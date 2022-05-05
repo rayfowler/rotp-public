@@ -1,0 +1,21 @@
+// all possible names
+name: Ursinati, Medve, Burlati, Nagy Mancs, Grizzlati
+
+desc1: Agresszív Ökológusok
+desc2: Félelmetes Földi Harcosok
+desc3: Az elszántan hűséges [race] erejét és a bölcsességét is értékeli filozófus-királyának.
+
+// possible home system names
+home: Ursa, Canis, Grizzla, Pandara, Brummin
+
+title:     Nagy Hierarcha
+fulltitle: Nagy Hierarcha
+
+// possible leader names
+leader: Bullux, Drupp, Grunk, Krungo, Moncs, Szmurcs
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Mancs, Járőr, Karom, Agyar, Fog, Bocs, Bunda
+ship2: Vadász, Gladiátor, Őrszem, Halász, Nyomkövető, Húsevő, Panda
+ship3: Harcos, Vérmes, Ragadozó, Félelmes, Gyilkos, Őrző, Védő
+ship4: Grizli, Büntető, Vezér, Merész, Romboló, Cerberusz, Marcangoló

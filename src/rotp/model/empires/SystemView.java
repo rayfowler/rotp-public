@@ -410,6 +410,11 @@ public class SystemView implements IMappedObject, Base, Serializable {
             return false;
         if (colony().isCapital())
             return false;
+        // we cannot incite a rebellion in an enemy system that the enemy cannot
+        // currently colonize (to send transports to stop rebellion). This can
+        // occur if, for example, the system is degraded with a random event
+        if (!empire().canColonize(system()))
+            return false;
         // special case: we cannot incite rebellion against a final war enemy 
         // if we are rebelling against the New Republic
         Empire leader = galaxy().council().leader();

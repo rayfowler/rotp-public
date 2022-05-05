@@ -1,0 +1,22 @@
+// all possible names
+name: Ssslaura, Reptarán, Saurán, Raptorán, Tyrranán
+
+desc1: Agresszív terjeszkedők
+desc2: Fokozott népességnövekedés
+desc3: A Ssslaura Konklávé fanatikusai arra törekszenek, hogy tökéletesítsék az általuk meghódított világokat.
+
+// possible home system names
+home: Sssla, Repta, Saur, Raptor, Tyrann
+
+title:     Magister
+fulltitle: Prím Magister
+
+// possible leader names
+leader: Guanár, Hissa, Kryssta, Saurak, Sauron, Tyranid
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Gekkó, Kaméleon, Gyík, Iguána, Vakondgyík, Anóla, Futógyík
+ship2: Tegu, Varanus, Kajmán, Alligátor, Krokodil, Gaviál, Baziliszkusz
+ship3: Dinoszaurusz, Raptor, Pteroszaurusz, Theropoda, Ceratops, Predátor, Plezioszaurusz
+ship4: Titán, Kolosszus, Sárkány, Godzilla, Kraken, Gorgon, Tyrannosaurus
+

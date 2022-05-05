@@ -1,0 +1,126 @@
+// race-specific variables (must start with _)
+_empire                           | Koldan Kaptár, Klakant Kaptár, Klokan Kaptár, Artropon Kaptár, Koleopteron Kaptár
+_empire_prefix_lowercase                           | a Koldan Kaptár, a Klakant Kaptár, a Klokan Kaptár, az Artropon Kaptár, a Koleopteron Kaptár
+_empire_prefix_uppercase                           | A Koldan Kaptár, A Klakant Kaptár, A Klokan Kaptár, Az Artropon Kaptár, A Koleopteron Kaptár
+_empire_originating_prefix_lowercase                           | a Koldan Kaptárból, a Klakant Kaptárból, a Klokan Kaptárból, az Artropon Kaptárból, a Koleopteron Kaptárból
+_empire_taking_prefix_lowercase                           | a Koldan Kaptártól, a Klakant Kaptártól, a Klokan Kaptártól, az Artropon Kaptártól, a Koleopteron Kaptártól
+_empire_relational                           | Koldan Kaptárral, Klakant Kaptárral, Klokan Kaptárral, Artropon Kaptárral, Koleopteron Kaptárral
+_empire_relational_prefix_lowercase                           | a Koldan Kaptárral, a Klakant Kaptárral, a Klokan Kaptárral, az Artropon Kaptárral, a Koleopteron Kaptárral
+_empire_giving_prefix_lowercase                           | a Koldan Kaptárnak, a Klakant Kaptárnak, a Klokan Kaptárnak, az Artropon Kaptárnak, a Koleopteron Kaptárnak
+_empire_giving_prefix_uppercase                           | A Koldan Kaptárnak, A Klakant Kaptárnak, A Klokan Kaptárnak, Az Artropon Kaptárnak, A Koleopteron Kaptárnak
+_empire_addressing_prefix_lowercase                           | a Koldan Kaptárt, a Klakant Kaptárt, a Klokan Kaptárt, az Artropon Kaptárt, a Koleopteron Kaptárt
+_empire_approaching_prefix_lowercase                           | a Koldan Kaptárhoz, a Klakant Kaptárhoz, a Klokan Kaptárhoz, az Artropon Kaptárhoz, a Koleopteron Kaptárhoz
+_empire_lean_prefix_lowercase                           | a Koldan Kaptárra, a Klakant Kaptárra, a Klokan Kaptárra, az Artropon Kaptárra, a Koleopteron Kaptárra
+_empire_containing_prefix_lowercase                           | a Koldan Kaptárban, a Klakant Kaptárban, a Klokan Kaptárban, az Artropon Kaptárban, a Koleopteron Kaptárban
+_empire_within_prefix_lowercase                           | a Koldan Kaptáron, a Klakant Kaptáron, a Klokan Kaptáron, az Artropon Kaptáron, a Koleopteron Kaptáron
+
+_race                           | Koldan, Klakant, Klokan, Artropon, Koleopteron
+_race_prefix_lowercase                           | a Koldan, a Klakant, a Klokan, az Artropon, a Koleopteron
+_race_prefix_uppercase                           | A Koldan, Aa Klakant, A Klokan, Az Artropon, A Koleopteron
+_race_whose_lowercase                           | koldani, klakanti, klokani, artroponi, koleopteroni
+_race_whose_uppercase                           | Koldani, Klakanti, Klokani, Artroponi, Koleopteroni
+_race_whose_prefix_lowercase                           | a koldani, a klakanti, a klokani, az artroponi, a koleopteroni
+_race_whose_prefix_uppercase                           | A koldani, A klakanti, A klokani, Az artroponi, A koleopteroni
+_race_possessive                           | Koldanok, Klakantok, Klokanok, Artroponok, Koleopteronok
+_race_possessive_prefix_lowercase                           | a  Koldanok, a Klakantok, a Klokanok, az Artroponok, a Koleopteronok
+_race_possessive_prefix_uppercase                           | A  Koldanok, A Klakantok, A Klokanok, Az Artroponok, A Koleopteronok
+_race_relational                           | Koldanokkal, Klakantokkal, Klokanokkal, Artroponokkal, Koleopteronokkal
+_race_relational_prefix_lowercase                           | a Koldanokkal, a Klakantokkal, a Klokanokkal, az Artroponokkal, a Koleopteronokkal
+_race_giving                           | Koldanoknak, Klakantoknak, Klokanoknak, Artroponoknak, Koleopteronoknak
+_race_giving_prefix_lowercase                           | a Koldanoknak, a Klakantoknak, a Klokanoknak, az Artroponoknak, a Koleopteronoknak
+_race_regarding                           | Koldanokat, Klakantokat, Klokanokat, Artroponokat, Koleopteronokat
+_race_regarding_prefix_lowercase                           | a Koldanokat, a Klakantokat, a Klokanokat, az Artroponokat, a Koleopteronokat
+_race_taking_prefix_lowercase                           | a Koldanoktól, a Klakantoktól, a Klokanoktól, az Artroponoktól, a Koleopteronoktól
+_race_approaching_prefix_lowercase                           | a Koldanokhoz, a Klakantokhoz, a Klokanokhoz, az Artroponokhoz, a Koleopteronokhoz
+
+_title                            | uralkodó
+_nameTitle                        | 
+
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Advisor text
+MAIN_ADVISOR_TITLE                | [player_name]
+MAIN_ADVISOR_BUTTON_OK            | Rendben
+MAIN_ADVISOR_SCOUT                | Végre elkészültek a hajóim. Használnom kell a felderítőimet, hogy új világokat találjak a gyarmatosító hajómnak, amelyen leszállhatok.
+MAIN_ADVISOR_TRANSPORT            | Megalapoztam magam ebben az új világban, és többet kell küldenem a hazámból, hogy terjeszkedhessek. Itt nincs új élet, így a keresésem folytatódik.
+MAIN_ADVISOR_DIPLOMACY            | Végre új élet! Milyen furcsa életforma ami zajokkal és gesztusokkal kommunikál. A következő lépésem előtt át kell gondolnom a róluk ismert diplomáciai és hírszerzési információkat.
+
+MAIN_ADVISOR_SHIP_ENGINE          | Folytatom a fejlesztést az űrhajóim meghajtóinak finomításán. Újra meg kell néznem a hajóterveimet, hogy integráljam őket a flottámba.
+MAIN_ADVISOR_RALLY_POINTS         | Miért támadnak meg engem? Nem értem. Ki kell választanom egy gyülekező pontot a hajóim számára, hogy megvédjem magam, miközben megpróbálom megérteni, miért történt ez.
+MAIN_ADVISOR_MISSILE_BASES        | Most már látom, hogy nem minden élet tanulta meg az együttműködés áldását. Meg kell erősítenem külső világaimat rakétabázisokkal, hogy biztonságban tartsam a szerzeményeimet.
+MAIN_ADVISOR_SHIP_WEAPON          | Folyamatosan fejlődöm, és az új fegyvertechnológiám több erőt fog adni, amint integrálom őket a hajóterveimbe.
+MAIN_ADVISOR_COUNCIL              | Izgalom! Hamarosan sok faj találkozására kerül sor. Milyen életformák gyűlnek össze ott? Ha jobb megvilágításba helyezem magamat azok között, akiket ismerek, talán megkönnyítik a bemutatkozásomat bármely új fajnak.
+MAIN_ADVISOR_REBELLION            | Mi ez? Elvesztettem az uralmat magam felett %1 gyarmaton. Nem számít, egyszerűen oda kell mennem, és meg kell mutatnom nekik, hogy én vagyok a főnök.
+MAIN_ADVISOR_RESIST_COUNCIL       | Lehetetlen! Azt a másikat választották ki, hogy uralkodjon ezeken a vigyorgó tökfilkókon, miközben az én bölcsességemet figyelmen kívül hagyják! De sebaj: azonnal véget vetek mindegyiknek! 
+MAIN_ADVISOR_COUNCIL_RESISTED     | Miért olyan kellemetlenek ezek a bolondok? A tanács az enyém, a galaxis az enyém, és most megtanulják a helyüket az én uradalmamban!
+
+MAIN_SCOUT_TITLE                  | Felfedezek egy Új Csillagrendszert
+MAIN_COLONIZE_TITLE               | %1 körül keringek, ami egy gyarmatosítatlan rendszer.
+MAIN_COLONIZE_ANIMATION_TITLE     | %1 évben, egy új kolóniát hozok létre.
+MAIN_ALERT_SPY_CAPTURED           | Elkaptam egy kémet [alien_empire_originating_prefix_lowercase], vallomásra kényszerítve %2 tevékenységről.
+MAIN_ALERT_TRANSPORTS_KILLED      | Kísérleteim 1% elérésére abbamaradtak [alien_race] erőinek kivédése miatt.
+MAIN_ALERT_INVADERS_KILLED        | %2 [alien_race] szállítói, akik megkísérelték %1 gyarmat elfoglalását, teljesen el lettek pusztítva általam.
+MAIN_BOMBARD_TITLE                | [alien_race] ellenséges kolóniája körül keringek.
+TECH_RESEARCH_COMPUTER            | Ki kell választanom a következő számítástechnikai technológiát, amelyre koncentrálok.
+TECH_RESEARCH_CONSTRUCTION        | Ki kell választanom a következő építési technológiát, amelyre koncentrálok.
+
+
+TECH_RESEARCH_FORCE_FIELD         | Ki kell választanom a következő erőtér technológiát, amelyre koncentrálok.
+TECH_RESEARCH_PLANETOLOGY         | Ki kell választanom a következő planetológiai technológiát, amelyre fókuszálok.
+TECH_RESEARCH_PROPULSION          | Ki kell választanom a következő meghajtási technológiát, amelyre fókuszálok.
+TECH_RESEARCH_WEAPON              | Ki kell választanom a következő fegyvertechnológiát, amelyre koncenrálni fogok.
+TECH_DISCOVERY_TITLE              | Elérem az áttörést a következővel: 1%. I Achieve a %1 Breakthrough
+TECH_SCOUTED_TITLE                | Amíg felfedezem 1% romjait, felfedezek egy új technológiát.
+TECH_STOLEN_TITLE                 | Beszivárogtam az [alien_race] kutatóközpontba itt: %2.
+TECH_TRADED_TITLE                 | Technológiát igénylek [alien_race] tudósaitól.
+TECH_PLUNDERED_TITLE              | %1 romjainak kifosztása közben új technológiát fedezek fel.
+TECH_ALLOCATE_SHIELD              | Növelnem kellene az összes gyarmatom védelmi arányát az új bolygópajzsok megépítéséhez?
+TECH_ALLOCATE_MISSILE_BASES       | Növelnem kellene az összes gyarmatom védelmi arányát a rakétabázisaim fejlesztéséhez?
+TECH_ALLOCATE_FACTORIES           | Növelnem kellene az összes telepem ipari arányát a gyári vezérlőelemek fejlesztéséhez?
+TECH_ALLOCATE_CLEAN_WASTE         | Csökkentenem kellene az összes gyarmatom ökológiai arányát a tisztán tartáshoz szükséges minimális mennyiségre?
+TECH_ALLOCATE_ENRICH_SOIL         | Növelnem kellene a gyarmataim ökológiai arányát szabványos környezetekkel, hogy elkezdhessem a bolygóim terraformálását?
+TECH_ALLOCATE_ATMOSPHERE          | Növelnem kellene az ellenséges környezetű gyarmataim ökológiai arányát, hogy elkezdhessem a bolygóim terraformálását?
+TECH_ALLOCATE_TERRAFORM           | Növelnem kellene az összes gyarmatom ökológiai arányát, hogy elkezdhessem a bolygóim terraformálását?
+
+NOTICE_ESPIONAGE_TITLE            | Beszivárogtam [alien_race] bázisára.
+NOTICE_ESPIONAGE_FRAME_TITLE      | Sikerült hamisan meggyanúsítanom egy másik fajt a lopással.
+
+SHIP_COMBAT_TITLE_DESC            | Találkozom  az ellenséges [alien_race] faj flottájával.
+
+SABOTAGE_FACTORIES_RESULT         | Elpusztítottam %1 gyárakat.
+SABOTAGE_BASES_RESULT             | Elpusztítottam %1 rakétavetőket.
+SABOTAGE_REBELS_RESULT            | Felbujtottam %1 lázadókat.
+SABOTAGE_REBELS_TOTAL             | Felbujtottam %1 lázadókat. Most nyugtalanság van itt: %2%.
+SABOTAGE_REBELS_REVOLT            | Lázadást váltottam ki!
+
+COUNCIL_CAST_PROMPT               | Választanom kell (%1 szavazatok)...
+
+// text for endings... '#' represents a paragraph break
+// variables: %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 is special race-specific text described below
+GAME_OVER_MILITARY_LOSS2          | Szörnyű sorsra jutottál.#Az ismeretlenbe vezető utazásod elején az űrbe törtél, abban a reményben, hogy találsz egy másik olyan egyedi életformát, mint a tied. Sajnos az álmod megvalósítatlan maradt egészen a halálod napjáig. A többi intelligens életforma, akiket találtál, nemcsak bebizonyította, hogy teljesen eltér tőled, hanem erőszakosnak és intoleránsnak is mutatkozott a küldetéseddel szemben.Ez az erőszak lett a reményed megsemmisülése, és mostanra minden világod azoknak a kezében van, akik az első találkozásotok pillanatától kezdve gyűlöltek téged.#Mindegyik tested összetörve és élettelenül fekszik ott, ahol meggyilkolták őket, a szülővilágodtól a a legtávolabban fekvő volt gyarmataidig.. Ahogy a fény elhagyja utolsó megmaradt, halandó porhüvelyed szemét, felvillan benned, hogy az univerzum mindjárt örökre elveszíti a legkülönlegesebb életformáját...
+GAME_OVER_MILITARY_WIN2           | Keresésed véget ért... egyelőre.#Nagy reményekkel mertél álmodni arról, hogy egy másik, a tiedhez hasonló tudatot talál valahol a világűr mélyén. Noha találkoztál a magasabb intelligencia sok más formájával, nyilvánvalóvá vált, hogy egyik sem hasonlít ahhoz az egyediséghez, amellyel egyedül rendelkezel. És ami még rosszabb: attól tartva, amit nem értenek, megtámadtak téged, és szörnyű válaszokat váltottak ki belőled és a számtalan testedből, amelyben élsz. Nehéz szívvel iktatod ki őket, és e nehezebb szívvel most egyedüli intelligenciaként találod magad ebben a galaxisban.#De még nincs veszve minden. Noha ezek az idegen fajok sajátos énformáikkal nem elégítették ki a keresést, most ráébredsz, hogy egy egész univerzum van, amit felfedezhetsz. Már csak az van hátra, hogy kiterjedj ennek a galaxisnak minden sarkába, és előlröl kezdd a kutatást...
+GAME_OVER_MILITARY_ALLIANCE_WIN2  | Keresésed véget ért... egyelőre.#Mértéktelen szomorúság tölt el a tettek miatt, amelyekre kényszerítettek. A galaxis bolygói közötti rokonság keresése során ehelyett kizárólag egy csomó tudatlan lénnyel találkoztál, akik szidalmaztak téged, hogy mennyire különbözöl tőlük. Amikor szavaik erőszakos cselekedetté váltak, lecsaptad őket, hogy megvédd magad és az érdekeidet, miközben mindvégig abban reménykedtél, hogy felismerik módszereik tévességét, és akként a különleges életformaként látnak téged, amilyen vagy. Reményeid végül szertefoszlottak, és mindazok, akik erőszakkal közeledtek feléd, örökre elhallgattak.#De örülj, ősi lény! Bár nem találtál a sajátodhoz hasonló tudatot, képes voltál megbízható szövetségesekre szert tenni, mielőtt az utazásod véget ért. Az biztos, hogy furcsa, legalább ugyanolyan barátsággal tekintenek rád, mint te rájuk. Ha újra támad a vágyad, hogy megtudd, valóban egyedülálló vagy-e az univerzumban, bármikor elindulhatsz más galaxisokba. Egyelőre azonban lazíthatsz, élvezheted ezt a társasági érzést amit megtaláltál és minden előnyét, amelyet kétségtelenül hozni fog.
+GAME_OVER_COUNCIL_LOSS2           | Keresésed véget ért... egyelőre.#Ez nem az a végkifejlet volt, amit a csillagok tengerén keresztüli rokonságban bízva elérni akartál. Bár sok furcsa és csodálatos néppel találkoztál a keresés során, sok aljas és rosszindulatú kultúrával is összekerültél. Sajnos a legelviselhetetlenebb, akivel találkoztál, most az Új Köztársaság mestereként trónol. Kételkedsz abban, hogy ez az új vezető kedves lesz hozzád, és minden bizonyíték, ami alátámasztja ezt a félelmedet, olyan múltbeli ügyletekből származik, amelyeket ezzel az idegen vezetővel folytattál.#Csak arra vágytál, hogy találj egy másikat, aki olyan egyedi, mint te. Most alárendelve vársz egy nagyobb hatalom sarka nyomában. Csak imádkozz, hogy [leader_name] hagyjon békében, mert ha úgy döntenek, a galaxis teljes ereje ellened száll...
+GAME_OVER_COUNCIL_ALLIANCE_WIN2   | Keresésed véget ért... egyelőre.#A Koldan új korszaka kezdődik és megbízható barátaid, [leader_name], készen állnak arra, hogy az Új Köztársaságot egy dicsőséges jövő felé vezessék. Bár sok tekintetben tőled eltérően, a barátaid érdeklődéssel és együttérzéssel tekintenek rád, és bizalmadat beléjük veted, hogy az új szövetségen végzett munka után folytathasd a küldetést. Sok kell ahhoz, hogy az ilyen különböző fajok harmonikus együttélést érjenek el, de tudod, hogy %8 ezt meg fogja tenni.#Csak elégedettséget érezhetsz ettől az eredménytől. Különben sem törődtél sokat a politikai manőverezések bonyodalmaival és örülsz, hogy barátod örökre levesz egy ilyen terhet a válladról. Csak arra vágytál, hogy találj egy olyan lelket mint a tied, valahol ebben a galaxisban. Meglehet, hogy egy napon így is lesz...
+GAME_OVER_REBELLION_LOSS2         | Szörnyű sorsra jutottál.#Egyedül voltál az elején, és a végén még mindig egyedül vagy. Nem sikerült elérned küldetésed végső célját, így egyik furcsa civilizációval való találkozástól a másikra sodródtál, mígnem a náladnál nagyobb belátással rendelkezők megalakították az Új Köztársaságot. Érezted, hogy küldetésed idő előtt véget ér, amikor [leader_name] átvette a vezetői palástot, úgy döntöttél, hogy harcolsz e sors ellen, ahelyett, hogy alázatosan alávetnéd magad. Nem ez volt az első hiba, amit elkövettél utazásod során, de sajnos az utolsónak bizonyult.#Most, amint %8 uralja a galaxist, csendben azon töprengsz magadban az utolsó pillanatokban, hogy a halálban legalább aggodalmaid véget érnek. Ha találtál volna egy hozzád hasonlót, vagy legalább egy olyat, aki megérti, ki és mi vagy, talán megváltozott volna a sorsod, hiszen mindketten fegyvert fogtatok volna...
+GAME_OVER_REBELLION_WIN2          | Keresésed véget ért... egyelőre.#A legmélyebb kívánságaid ellenére a galaxis szembeszállt veled, és arra kényszerített, hogy te hasonlóképp cselekedj. Képtelen voltál elfogadni az idegengyűlölő [leader_name] döntését, egyedül fogtál fegyvert, hogy megvédd magad és a küldetésed a szörnyű uralmuk ellen. Tudtad, hogy azok, akiket ezek a kétszínű zsarnokok manipuláltak, valószínűleg ellened fognak állni, de küldetésed folytatása semmilyen körülmények között sem kerülhetett veszélybe. Szomorúsággal a szívedben tehát eltiportál mindenkit, aki ellen akart állni neked.#Ha ezen fajok egyike nem adta volna meg magát az ismeretlentől való félelemnek és gyűlöletnek, talán képesek lettek volna veled a békés együttélésre. Ám mindez nem egy kizárólag szomorú állapot, mert legalább lesz egy megrázó történeted, amit megoszthatsz a keresésed tárgyával, ha sikerül megtalálnod...
+GAME_OVER_REBEL_ALLIANCE_WIN2     | Keresésed véget ért... egyelőre.#A Galaktikus Tanács első ülése óta tudtad, hogy ez meg fog történni. Annak ellenére, hogy figyelmeztetted a galaxist benépesítő többi birodalmat, az áruló és aljas [leader_name] sikerrel átvette az Új Köztársaság vezetését, és azzal fenyegetőzött, hogy megfertőzi a galaxist aljas idegengyűlöletével. Bátran harcoltál ellenük, és bár a galaxisban sokan úgy döntöttek, hogy ellened mennek, végül sikeresen meg tudtad védeni az érdekeidet.#A legörömtelibb dolog talán a barátaidtól kapott támogatás volt ebben az utolsó háborúban. Elég bölcsek voltak, hogy lássák a veszélyt, és elég együttérzőek ahhoz, hogy segítsenek neked: és te boldog voltál, hogy nem maradtál egyedül ebben a harcban. Most valóban békés együttélést érhettek el, és osztozhattok e galaxis bőségében. Egy napon hamarosan még mélyebb űrbe juthatsz, és elhagyhatod a galaxist abban a reményben, hogy találkozz azzal, akit oly nagyon-nagyon régóta keresel...
+GAME_OVER_COUNCIL_WIN2            | Keresésed váratlan véget ért.#Sok mindent felfedeztél, mióta először elindultál ősi szülővilágodból egy másik, a sajátjához hasonló tudat keresése érdekében. Noha ezt az álmot még be kell teljesítened, az a tudás és barátság, amelyet azoktól kaptál, akikkel találkoztál, valóban édes ajándéknak bizonyult. A szövetségeseid nemcsak legyőzték az egyediségedtől való félelmüket, de úgy döntöttek, hogy téged választanak meg az Új Köztársaság mesterévé. Egy olyan jövő áll előtted, amelyet soha nem gondoltál volna, és új barátaidat azzal a türelemmel és bizalommal fogod belevezetni, amit ők mutattak irányodban.#Talán egy napon újra nekivágsz a keresésnek, hogy találj valaki mást, aki úgy létezik, mint te. Egyelőre azonban sok feladat vár rád és a küldetésnek várnia kell, amíg ez a munka elkészül. Amikorra a végére érsz, ama ősi vágyakozásod jelentősen csökkenhet. Hiszen hosszú életedben először, nem vagy egyedül.
+GAME_OVER_COUNCIL_MILITARY_WIN2   | Keresésed váratlan véget ért.#Végre befejeződtek a csatáid. Miután elfoglaltad az Új Köztársaság mesterének pozícióját, sikerült az élet minden magasabb formáját összehoznod ebben a galaxisban, hogy együtt üljenek le a barátság asztalához. Legalábbis addig, amíg egy szánalmasan felkészületlen lázadás nem alakult ki ellened. Az idegengyűlöletből és a tőled való félelemből fakadóan azok, akik meg akartak buktatni téged, nem tudták felfogni sem eltökélt erőd mélységeit, sem szövetségeseid dühét a köztársaság védelmében. Ők el lettek tiporva és a béke vízként fog átáramlani a galaxison azon számos világ óceánjaiba, amelyeket most a sajátodnak nevezel.#Mivel a lázadók területei megoszlanak közted és szövetségeseid között, elméd rövid időre elmereng a küldetésen, amiért olyan nagyon régen elküldtek az otthonodból. Igaz, soha nem találtad meg a kutatás tárgyát és sok tekintetben egyedül maradsz az univerzumban. De boldogan ráébredsz, hogy az utazásod során szerzett szövetségesekkel soha többé nem leszel igazán egyedül.
+GAME_OVER_COUNCIL_MILITARY_LOSS2  | Szörnyű sorsra jutottál.#Senki sem hibáztathat, amiért az Új Köztársaság mestereként azt remélted, hogy a galaxist békébe vezetheted. Senki sem hibáztathat, amiért minden tőled telhetőt megtettél, hogy oly sok egymástól eltérő civilizációt összekapcsolj. De minden erőfeszítésed ellenére az ellened feltámadt lázadás nem csak a felbujtásra volt képes, de meg is fosztott vezetői pozíciódtól, és az Új Köztársaságot minden erejével eltiporta. A szövetségeseid, akik már régen halottak, talán megbánták, hogy téged választottak vezetésükre mielőtt birodalmaik hamuvá váltak volna a szemük előtt. Legalább már nem hallod a siránkozásukat, mivel a hangjukat örökre elhallgattatták.#Az utolsó testeid ellenségeid elől menekülve várják, hogy sorsukkal találkozzanak a maguknak ásott búvóhelyeken. Élelmiszer és víz hiányában az idejük hamarosan lejár. Ha találtál volna egy hozzád hasonlót, aki igazán megértett volna és ugyanolyan kitartással harcolt volna melletted, mint te érte, másképp végződtek volna a dolgok? Talán. Sajnos azonban ezt már soha nem tudhatod meg biztosan...
+
+// This text is the %8 variable in some of the game over text... when this race wins the game
+GAME_OVER_ALLIANCE_WIN3           | A Koldan tévedhetetlen eltökéltsége
+GAME_OVER_REBELLION_LOSS3         | Koldan lelketlen hordái uralkodnak

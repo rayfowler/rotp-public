@@ -1,0 +1,1197 @@
+
+
+//
+// Armor techs
+// 
+ARMOR_0_NAME     | Titánpáncél
+ARMOR_0_ITEM     | Titán
+ARMOR_0_BRIEF    | Állékonyságpontok %1
+ARMOR_0_DETAIL   | Kezdeti páncél technológia. Nincs bónusz a hajópáncélzatra vagy a tereptámadásokra.
+
+ARMOR_1_NAME     | Strapaötvözet-páncél
+ARMOR_1_ITEM     | Strapaötvözet
+ARMOR_1_BRIEF    | Állékonyságpontok %1
+ARMOR_1_DETAIL   | 50%-kal növeli a hajók és a szállítók állékonyságpontjait. A személyes harci páncél is javul, 5-öt hozzáadva minden tereptámadáshoz.
+
+ARMOR_2_NAME     | Zortritpáncél
+ARMOR_2_ITEM     | Zortrit
+ARMOR_2_BRIEF    | Állékonyságpontok %1
+ARMOR_2_DETAIL   | 100%-kal növeli a hajók és a szállítók állékonyságpontjait. A személyes harci páncél is javul, 10-et hozzáadva minden tereptámadáshoz.
+
+ARMOR_3_NAME     | Andrinpáncél
+ARMOR_3_ITEM     | Andrin
+ARMOR_3_BRIEF    | Állékonyságpontok %1
+ARMOR_3_DETAIL   | 150%-kal növeli a hajók és a szállítók állékonyságpontjait. A személyes harci páncél is javul, 15-öt hozzáadva minden tereptámadáshoz.
+
+ARMOR_4_NAME     | Tritánpáncél
+ARMOR_4_ITEM     | Tritan
+ARMOR_4_BRIEF    | Állékonyságpontok %1
+ARMOR_4_DETAIL   | 200%-kal növeli a hajók és a szállítók állékonyságpontjait. A személyes harci páncél is javul, 20-at hozzáadva minden tereptámadáshoz.
+
+ARMOR_5_NAME     | Adamántpáncél
+ARMOR_5_ITEM     | Adamánt
+ARMOR_5_BRIEF    | Állékonyságpontok %1
+ARMOR_5_DETAIL   | 250%-kal növeli a hajók és a szállítók állékonyságpontjait. A személyes harci páncél is javul, 25-öt hozzáadva minden tereptámadáshoz.
+
+ARMOR_6_NAME     | Neutronitpáncél
+ARMOR_6_ITEM     | Neutronit
+ARMOR_6_BRIEF    | Állékonyságpontok %1
+ARMOR_6_DETAIL   | 300%-kal növeli a hajók és a szállítók állékonyságpontjait. A személyes harci páncél is javul, 30-at hozzáadva minden tereptámadáshoz.
+
+
+//
+// Atmospheric Terraforming techs
+// 
+ATMOSPHERE_0_NAME      | Légköri terraformálás
+ATMOSPHERE_0_DETAIL    | Az ellenséges közeget normális közeggé alakítja át 150 EK-ért.
+
+//
+// Automated Repair techs
+// 
+AUTOREPAIR_0_NAME      | Automatizált javítási rendszer
+AUTOREPAIR_0_BRIEF     | 15%-kal javítja a hajók állékonyságát
+AUTOREPAIR_0_DETAIL    | A hajók, amelyek nem lettek elpusztítva, minden forduló végén az állékonyságpontjaik maximumának akár 15%-át visszanyerhetik.
+
+AUTOREPAIR_1_NAME      | Fejlett kárelhárítási szabályozó
+AUTOREPAIR_1_BRIEF     | 30%-kal javítja a hajók állékonyságát
+AUTOREPAIR_1_DETAIL    | A hajók, amelyek nem lettek elpusztítva, minden forduló végén az állékonyságpontjaik maximumának akár 30%-át visszanyerhetik.
+
+
+//
+// Battle Computer techs
+// 
+// this is the Ship Design entry for selecting no battle computer
+COMPUTER_0_NAME    | 
+COMPUTER_0_ITEM    |  
+COMPUTER_0_BRIEF   | Támadásszint 0
+COMPUTER_0_DETAIL  |
+
+COMPUTER_1_NAME    | Harci számítógép Szint I
+COMPUTER_1_ITEM    | Szint I
+COMPUTER_1_BRIEF   | Támadásszint I
+COMPUTER_1_DETAIL  | Az 1. szintre növeli a fegyver pontosságát.
+
+COMPUTER_2_NAME    | Harci számítógép Szint II
+COMPUTER_2_ITEM    | Szint II
+COMPUTER_2_BRIEF   | Támadásszint II
+COMPUTER_2_DETAIL  | A 2. szintre növeli a fegyver pontosságát.
+
+COMPUTER_3_NAME    | Harci számítógép Szint III
+COMPUTER_3_ITEM    | Szint III
+COMPUTER_3_BRIEF   | Támadásszint III
+COMPUTER_3_DETAIL  | A 3. szintre növeli a fegyver pontosságát.
+
+COMPUTER_4_NAME    | Harci számítógép Szint IV
+COMPUTER_4_ITEM    | Szint IV
+COMPUTER_4_BRIEF   | Támadásszint IV
+COMPUTER_4_DETAIL  | A 4. szintre növeli a fegyver pontosságát.
+
+COMPUTER_5_NAME    | Harci számítógép Szint V
+COMPUTER_5_ITEM    | Szint V
+COMPUTER_5_BRIEF   | Támadásszint V
+COMPUTER_5_DETAIL  | Az 5. szintre növeli a fegyver pontosságát.
+
+COMPUTER_6_NAME    | Harci számítógép Szint VI
+COMPUTER_6_ITEM    | Szint VI
+COMPUTER_6_BRIEF   | Támadásszint VI
+COMPUTER_6_DETAIL  | A 6. szintre növeli a fegyver pontosságát.
+
+COMPUTER_7_NAME    | Harci számítógép Szint VII
+COMPUTER_7_ITEM    | Szint VII
+COMPUTER_7_BRIEF   | Támadásszint VII
+COMPUTER_7_DETAIL  | A 7. szintre növeli a fegyver pontosságát.
+
+COMPUTER_8_NAME    | Harci számítógép Szint VIII
+COMPUTER_8_ITEM    | Szint VIII
+COMPUTER_8_BRIEF   | Támadásszint VIII
+COMPUTER_8_DETAIL  | A 8. szintre növeli a fegyver pontosságát.
+
+COMPUTER_9_NAME    | Harci számítógép Szint IX
+COMPUTER_9_ITEM    | Szint IX
+COMPUTER_9_BRIEF   | Támadásszint IX
+COMPUTER_9_DETAIL  | A 9. szintre növeli a fegyver pontosságát.
+
+COMPUTER_10_NAME   | Harci számítógép Szint X
+COMPUTER_10_ITEM   | Szint X
+COMPUTER_10_BRIEF  | Támadásszint X
+COMPUTER_10_DETAIL | A 10. szintre növeli a fegyver pontosságát.
+
+COMPUTER_11_NAME   | Harci számítógép Szint XI
+COMPUTER_11_ITEM   | Szint XI
+COMPUTER_11_BRIEF  | Támadásszint XI
+COMPUTER_11_DETAIL | A 11. szintre növeli a fegyver pontosságát.
+
+
+//
+// Battle Suit techs for ground combat
+// 
+// this is for default, no-bonus armor that player starts with
+BATTLESUIT_0_NAME    | Páncél
+BATTLESUIT_0_DETAIL  |
+
+BATTLESUIT_1_NAME    | Harci öltözet
+BATTLESUIT_1_DETAIL  | Páncél, amely nem csak véd, hanem az erőt is növeli. 10-et ad minden terepharci gurításhoz.
+
+BATTLESUIT_2_NAME    | Páncélosított külső váz
+BATTLESUIT_2_DETAIL  | Előrehaladottabb mobilitást nyújtó öltözetek, amelyek nemcsak az erőt és a védelmet növelik, hanem korlátozott repülési képességeket is kínálnak a terepen mozgó csapatoknak. 20-at ad minden terepharci gurításhoz.
+
+BATTLESUIT_3_NAME    | Erőtáplált páncél
+BATTLESUIT_3_DETAIL  | Ötvözi a magas mobilitást, antigravitációs repülést és a nehézpáncél bevonatot, ami a terepharci csapatok számára elérhető legfejlettebb páncélt nyújtja. 30-at ad minden terepharci gurításhoz.
+
+
+//
+// Energy Focus techs for beam weapons
+// 
+BEAMFOCUS_0_NAME    | Magas energiafókusz
+BEAMFOCUS_0_BRIEF   | Hozzáad +3-at az energiafegyver hatótávolságához
+BEAMFOCUS_0_DETAIL  | Az összes energiafegyver hatótávolságát hárommal növeli.
+
+BEAMFOCUS_1_NAME    | Orákulum kezelőfelület
+BEAMFOCUS_1_BRIEF   | Összpontosítja a sugárfegyvereket, az ellenség pajzsát a felére csökkenti
+BEAMFOCUS_1_DETAIL  | Összpontosítja az összes sugárfegyvert egy egyidejű, összpontosított tűzkitörésbe, felére csökkentve az ellenség pajzsának erejét.
+
+
+//
+// Biological antidote techs 
+// 
+BIOANTIDOTE_0_NAME    | Biotoxin ellenméreg
+BIOANTIDOTE_0_DETAIL  | Támadásonként 1M-val csökkenti a biológiai fegyverekből származó veszteségeket.
+
+BIOANTIDOTE_1_NAME    | Univerzális ellenméreg
+BIOANTIDOTE_1_DETAIL  | Támadásonként 2M-val csökkenti a biológiai fegyverekből származó veszteségeket.
+
+
+//
+// Biological weapon techs 
+// 
+BIOWEAPON_0_NAME     | Halálspórák
+BIOWEAPON_0_BRIEF    | Biológiai fegyver
+BIOWEAPON_0_DETAIL   | Szörnyű biológiai fegyver, amely támadásonként képes egy bolygó maximális népességét 1M-val csökkenteni.
+
+BIOWEAPON_1_NAME     | Végzetvírus
+BIOWEAPON_1_BRIEF    | Biológiai fegyver
+BIOWEAPON_1_DETAIL   | Rettenetes biológiai fegyver, amely támadásonként képes egy bolygó maximális népességét 2M-val csökkenteni.
+
+BIOWEAPON_2_NAME     | Bio Terminator
+BIOWEAPON_2_BRIEF    | Biológiai fegyver
+BIOWEAPON_2_DETAIL   | Gyalázatos biológiai fegyver, amely támadásonként képes egy bolygó maximális népességét 3M-val csökkenteni.
+
+//
+// Black Hole Generator tech
+//
+BLACKHOLE_0_NAME     | Fekete lyuk generátor
+BLACKHOLE_0_DETAIL   | Létrehoz egy altér mezőt, amely elgörbíti a normál teret, létrehozva egy fekete lyukat, amely megsemmisíti az ellenséges hajókat vagy rakétabázisokat 25%-tól 100%-ig, pajzsszintekként ennyivel kevesebb: 2%.
+
+
+//
+// Bomb weapon tech
+//
+BOMB_0_NAME     | Atombomba
+BOMB_0_BRIEF    | Csak tereptámadásokra
+BOMB_0_DETAIL   | Bombák, amelyek robbanása 3-12 pontértékű kárt okoz, de csak terepen.
+
+BOMB_1_NAME     | Hidrogénbomba
+BOMB_1_BRIEF    | Csak tereptámadásokra
+BOMB_1_DETAIL   | Bombák, amelyek robbanása 5-20 pontértékű kárt okoz, de csak terepen.
+
+BOMB_2_NAME     | Antianyag-bomba
+BOMB_2_BRIEF    | Csak tereptámadásokra
+BOMB_2_DETAIL   | Bombák, amelyek robbanása 10-40 pontértékű kárt okoz, de csak terepen.
+
+BOMB_3_NAME     | Omega-V bomba
+BOMB_3_BRIEF    | Csak tereptámadásokra
+BOMB_3_DETAIL   | Bombák, amelyek robbanása 20-50 pontértékű kárt okoz, de csak terepen.
+
+BOMB_4_NAME     | Neutrinbomba
+BOMB_4_BRIEF    | Csak tereptámadásokra
+BOMB_4_DETAIL   | Bombák, amelyek robbanása 40-70 pontértékű kárt okoz, de csak terepen.
+
+
+//
+// Cloaking tech
+//
+CLOAK_0_NAME     | Álcaeszköz
+CLOAK_0_BRIEF    | A hajókat szinte láthatatlanná teszi
+CLOAK_0_DETAIL   | A hajókat szinte láthatatlanná teszi s amíg nem támadnak, a védelmüket +5-tel javítja. A hajóknak fel kell fedniük magukat, hogy támadhassanak, és automatikusan újraálcázzák magukat minden fordulóban, amelyben nem támadnak.
+
+
+//
+// Cloning tech
+//
+CLONE_0_NAME     | Klónozás
+CLONE_0_DETAIL   | Lehetővé teszi a biotervezett gyarmatosok 1M / 10 EK iramú termesztését.
+
+CLONE_1_NAME     | Fejlett klónozás
+CLONE_1_DETAIL   | Lehetővé teszi a biotervezett gyarmatosok 1M / 5 EK iramú termesztését.
+
+
+//
+// Combat Transporter tech
+//
+COMBATTRANSPORT_0_NAME     | Harci szállítók
+COMBATTRANSPORT_0_DETAIL   | Az ezekkel az eszközökkel felszerelt szállítóknak 50%-os esélye van az ellenséges terepekre sugározniuk az utasaikat mielőtt az ellenséges hajók és a rakétabázisok megtámadhatnák őket.
+
+
+//
+// Control Environment tech
+//
+CONTROLENV_0_NAME    | Irányított normál közeg
+CONTROLENV_0_ITEM    | Szabványos gyarmatbázis
+CONTROLENV_0_BRIEF   | Lehetővé teszi a leszállásokat normál bolygókra
+CONTROLENV_0_DETAIL  | Lehetővé teszi a szabványos bolygók gyarmatosítását.
+
+CONTROLENV_1_NAME    | Irányított sivár közeg
+CONTROLENV_1_ITEM    | Sivár gyarmatbázis
+CONTROLENV_1_BRIEF   | Lehetővé teszi a leszállásokat sivár bolygókra
+CONTROLENV_1_DETAIL  | Lehetővé teszi a sivár és kevésbé ellenséges bolygók gyarmatosítását.
+
+CONTROLENV_2_NAME    | Irányított tundrás közeg
+CONTROLENV_2_ITEM    | Tundra gyarmatbázis
+CONTROLENV_2_BRIEF   | Lehetővé teszi a leszállásokat tundra bolygókra
+CONTROLENV_2_DETAIL  | Lehetővé teszi a tundra és kevésbé ellenséges bolygók gyarmatosítását.
+
+CONTROLENV_3_NAME    | Irányított halott közeg
+CONTROLENV_3_ITEM    | Halott gyarmatbázis
+CONTROLENV_3_BRIEF   | Lehetővé teszi a leszállásokat halott bolygókra
+CONTROLENV_3_DETAIL  | Lehetővé teszi a halott és kevésbé ellenséges bolygók gyarmatosítását.
+
+CONTROLENV_4_NAME    | Irányított pokoli közeg
+CONTROLENV_4_ITEM    | Pokol gyarmatbázis
+CONTROLENV_4_BRIEF   | Lehetővé teszi a leszállásokat pokol bolygókra
+CONTROLENV_4_DETAIL  | Lehetővé teszi a pokol és kevésbé ellenséges bolygók gyarmatosítását.
+
+CONTROLENV_5_NAME    | Irányított toxikus közeg
+CONTROLENV_5_ITEM    | Toxikus gyarmatbázis
+CONTROLENV_5_BRIEF   | Lehetővé teszi a leszállásokat toxikus bolygókra
+CONTROLENV_5_DETAIL  | Lehetővé teszi a toxikus és kevésbé ellenséges bolygók gyarmatosítását.
+
+CONTROLENV_6_NAME    | Irányított besugárzott közeg
+CONTROLENV_6_ITEM    | Besugárzott gyarmatbázis
+CONTROLENV_6_BRIEF   | Lehetővé teszi a leszállásokat besugárzott bolygókra
+CONTROLENV_6_DETAIL  | Lehetővé teszi a besugárzott és kevésbé ellenséges bolygók gyarmatosítását.
+
+
+//
+// Deflector Shield tech
+//
+// this is the entry on Ship Design for selecting no deflector shield
+DEFLECTOR_0_NAME      | 
+DEFLECTOR_0_ITEM      |   
+DEFLECTOR_0_BRIEF     |  
+DEFLECTOR_0_DETAIL    | 
+
+DEFLECTOR_1_NAME      | I. osztályú terelőpajzsok
+DEFLECTOR_1_ITEM      | I. osztály
+DEFLECTOR_1_BRIEF     | Elnyel 1 találatot
+DEFLECTOR_1_DETAIL    | Elnyeli az összes támadás 1 pontját.
+
+DEFLECTOR_2_NAME      | II. osztályú terelőpajzsok
+DEFLECTOR_2_ITEM      | II. osztály
+DEFLECTOR_2_BRIEF     | Elnyel 2 találatot
+DEFLECTOR_2_DETAIL    | Elnyeli az összes támadás 2 pontját.
+
+DEFLECTOR_3_NAME      | III. osztályú terelőpajzsok
+DEFLECTOR_3_ITEM      | III. osztály
+DEFLECTOR_3_BRIEF     | Elnyel 3 találatot
+DEFLECTOR_3_DETAIL    | Elnyeli az összes támadás 3 pontját.
+
+DEFLECTOR_4_NAME      | IV. osztályú terelőpajzsok
+DEFLECTOR_4_ITEM      | IV. osztály
+DEFLECTOR_4_BRIEF     | Elnyel 4 találatot
+DEFLECTOR_4_DETAIL    | Elnyeli az összes támadás 4 pontját.
+
+DEFLECTOR_5_NAME      | V. osztályú terelőpajzsok
+DEFLECTOR_5_ITEM      | V. osztály
+DEFLECTOR_5_BRIEF     | Elnyel 5 találatot
+DEFLECTOR_5_DETAIL    | Elnyeli az összes támadás 5 pontját.
+
+DEFLECTOR_6_NAME      | VI. osztályú terelőpajzsok
+DEFLECTOR_6_ITEM      | VI. osztály
+DEFLECTOR_6_BRIEF     | Elnyel 6 találatot
+DEFLECTOR_6_DETAIL    | Elnyeli az összes támadás 6 pontját.
+
+DEFLECTOR_7_NAME      | VII. osztályú terelőpajzsok
+DEFLECTOR_7_ITEM      | VII. osztály
+DEFLECTOR_7_BRIEF     | Elnyel 7 találatot
+DEFLECTOR_7_DETAIL    | Elnyeli az összes támadás 7 pontját.
+
+DEFLECTOR_8_NAME      | IX. osztályú terelőpajzsok
+DEFLECTOR_8_ITEM      | IX. osztály
+DEFLECTOR_8_BRIEF     | Elnyel 9 találatot
+DEFLECTOR_8_DETAIL    | Elnyeli az összes támadás 9 pontját.
+
+DEFLECTOR_9_NAME      | XI. osztályú terelőpajzsok
+DEFLECTOR_9_ITEM      | XI. osztály
+DEFLECTOR_9_BRIEF     | Elnyel 11 találatot
+DEFLECTOR_9_DETAIL    | Elnyeli az összes támadás 11 pontját.
+
+DEFLECTOR_10_NAME     | XIII. osztályú terelőpajzsok
+DEFLECTOR_10_ITEM     | XIII. osztály
+DEFLECTOR_10_BRIEF    | Elnyel 13 találatot
+DEFLECTOR_10_DETAIL   | Elnyeli az összes támadás 13 pontját.
+
+DEFLECTOR_11_NAME     | XV. osztályú terelőpajzsok
+DEFLECTOR_11_ITEM     | XV. osztály
+DEFLECTOR_11_BRIEF    | Elnyel 15 találatot
+DEFLECTOR_11_DETAIL   | Elnyeli az összes támadás 15 pontját.
+
+
+//
+// Displacement tech
+//
+DISPLACEMENT_0_NAME   | Elmozdítóeszköz
+DISPLACEMENT_0_BRIEF  | Az összes ellenséges támadásnak az egyharmada mellélő.
+DISPLACEMENT_0_DETAIL | A felszerelt hajókat véletlenszerűen helyezi ki és be a normál térből, lehetővé téve számukra, hogy elkerüljék az összes nem-területi fegyver támadásának egyharmadát.
+
+
+//
+// ECM Jammer tech
+//
+// this is the entry on Ship Design for selecting no ECM Jammer
+ECMJAMMER_0_NAME      | 
+ECMJAMMER_0_ITEM      | 
+ECMJAMMER_0_BRIEF     | Rakétavédelem 0
+ECMJAMMER_0_DETAIL    | 
+
+ECMJAMMER_1_NAME      | EEI Zavaró Szint I
+ECMJAMMER_1_ITEM      | Zavaró I
+ECMJAMMER_1_BRIEF     | Rakétavédelem 1
+ECMJAMMER_1_DETAIL    | 1 szintet ad hozzá az ellenséges rakétatámadások elleni védelemhez.
+
+ECMJAMMER_2_NAME      | EEI Zavaró Szint II
+ECMJAMMER_2_ITEM      | Zavaró II
+ECMJAMMER_2_BRIEF     | Rakétavédelem 2
+ECMJAMMER_2_DETAIL    | 2 szintet ad hozzá az ellenséges rakétatámadások elleni védelemhez.
+
+ECMJAMMER_3_NAME      | EEI Zavaró Szint III
+ECMJAMMER_3_ITEM      | Zavaró III
+ECMJAMMER_3_BRIEF     | Rakétavédelem 3
+ECMJAMMER_3_DETAIL    | 3 szintet ad hozzá az ellenséges rakétatámadások elleni védelemhez.
+
+ECMJAMMER_4_NAME      | EEI Zavaró Szint IV
+ECMJAMMER_4_ITEM      | Zavaró IV
+ECMJAMMER_4_BRIEF     | Rakétavédelem 4
+ECMJAMMER_4_DETAIL    | 4 szintet ad hozzá az ellenséges rakétatámadások elleni védelemhez.
+
+ECMJAMMER_5_NAME      | EEI Zavaró Szint V
+ECMJAMMER_5_ITEM      | Zavaró V
+ECMJAMMER_5_BRIEF     | Rakétavédelem 5
+ECMJAMMER_5_DETAIL    | 5 szintet ad hozzá az ellenséges rakétatámadások elleni védelemhez.
+
+ECMJAMMER_6_NAME      | EEI Zavaró Szint VI
+ECMJAMMER_6_ITEM      | Zavaró VI
+ECMJAMMER_6_BRIEF     | Rakétavédelem 6
+ECMJAMMER_6_DETAIL    | 6 szintet ad hozzá az ellenséges rakétatámadások elleni védelemhez.
+
+ECMJAMMER_7_NAME      | EEI Zavaró Szint VII
+ECMJAMMER_7_ITEM      | Zavaró VII
+ECMJAMMER_7_BRIEF     | Rakétavédelem 7
+ECMJAMMER_7_DETAIL    | 7 szintet ad hozzá az ellenséges rakétatámadások elleni védelemhez.
+
+ECMJAMMER_8_NAME      | EEI Zavaró Szint VIII
+ECMJAMMER_8_ITEM      | Zavaró VIII
+ECMJAMMER_8_BRIEF     | Rakétavédelem 8
+ECMJAMMER_8_DETAIL    | 8 szintet ad hozzá az ellenséges rakétatámadások elleni védelemhez.
+
+ECMJAMMER_9_NAME      | EEI Zavaró Szint IX
+ECMJAMMER_9_ITEM      | Zavaró IX
+ECMJAMMER_9_BRIEF     | Rakétavédelem 9
+ECMJAMMER_9_DETAIL    | 9 szintet ad hozzá az ellenséges rakétatámadások elleni védelemhez.
+
+ECMJAMMER_10_NAME     | EEI Zavaró Szint X
+ECMJAMMER_10_ITEM     | Zavaró X
+ECMJAMMER_10_BRIEF    | Rakétavédelem 10
+ECMJAMMER_10_DETAIL   | 10 szintet ad hozzá az ellenséges rakétatámadások elleni védelemhez.
+
+
+//
+// Ecological Restoration techs
+//
+ECORESTORATION_0_NAME   | Ökológiai rehabilitáció
+ECORESTORATION_0_DETAIL | Eltávolítja az ipari hulladék 2 egységét 1 EK-ért.
+
+ECORESTORATION_1_NAME   | Tökéletesített ökológiai rehabilitáció
+ECORESTORATION_1_DETAIL | Eltávolítja az ipari hulladék 3 egységét 1 EK-ért.
+
+ECORESTORATION_2_NAME   | Továbbfejlesztett ökológiai rehabilitáció
+ECORESTORATION_2_DETAIL | Eltávolítja az ipari hulladék 5 egységét 1 EK-ért.
+
+ECORESTORATION_3_NAME   | Fejlett ökológiai rehabilitáció
+ECORESTORATION_3_DETAIL | Eltávolítja az ipari hulladék 10 egységét 1 EK-ért.
+
+ECORESTORATION_4_NAME   | Teljes ökológiai rehabilitáció
+ECORESTORATION_4_DETAIL | Eltávolítja az ipari hulladék 20 egységét 1 EK-ért.
+
+
+//
+// Energy Pulsar techs
+//
+PULSAR_0_NAME     | Energiapulzár
+PULSAR_0_BRIEF    | Kibővül, hogy 1-5 értékű kárt okozzon
+PULSAR_0_DETAIL   | Egy jelentős meghajtó módosítás, amely hirtelen egy gömb alakú energiamezőt generál, az összes szomszédos hajóban legfeljebb 5 értékű kárt okozván, +1 minden második hajóért.
+
+PULSAR_1_NAME     | Ionpulzár
+PULSAR_1_BRIEF    | Kibővül, hogy 2-10 értékű kárt okozzon
+PULSAR_1_DETAIL   | Egy erőteljes meghajtó módosítás, amely képes egy gömb alakú energiamező létrehozására, az összes szomszédos hajóban legfeljebb 10 értékű kárt okozván, +1 minden támadó hajóért.
+
+
+//
+// Engine techs
+//
+ENGINE_0_NAME    | Retromeghajtók
+ENGINE_0_DETAIL  | A hajókat a következő Warp gyorsasággal futtatja: %1, és lehetővé teszi az I. osztályú maximális irányíthatóságot a harcban.
+ENGINE_0_ITEM    | Retrók
+ENGINE_0_ITEM2   | 1. osztály
+ENGINE_0_BRIEF   | Warp 1  Véd %1
+ENGINE_0_BRIEF2  | Harci sebesség %1
+
+ENGINE_1_NAME    | Nukleáris meghajtók
+ENGINE_1_DETAIL  | A hajókat a következő Warp gyorsasággal futtatja: %1, és lehetővé teszi az II. osztályú maximális irányíthatóságot a harcban.
+ENGINE_1_ITEM    | Nukleáris
+ENGINE_1_ITEM2   | 2. osztály
+ENGINE_1_BRIEF   | Warp 2  Véd %1
+ENGINE_1_BRIEF2  | Harci sebesség %1
+
+ENGINE_2_NAME    | SzubFény meghajtók
+ENGINE_2_DETAIL  | A hajókat a következő Warp gyorsasággal futtatja: %1, és lehetővé teszi az III. osztályú maximális irányíthatóságot a harcban.
+ENGINE_2_ITEM    | SzubFény
+ENGINE_2_ITEM2   | 3. osztály
+ENGINE_2_BRIEF   | Warp 3  Véd %1
+ENGINE_2_BRIEF2  | Harci sebesség %1
+
+ENGINE_3_NAME    | Fúziós meghajtók
+ENGINE_3_DETAIL  | A hajókat a következő Warp gyorsasággal futtatja: %1, és lehetővé teszi az IV. osztályú maximális irányíthatóságot a harcban.
+ENGINE_3_ITEM    | Fúzió
+ENGINE_3_ITEM2   | 4. osztály
+ENGINE_3_BRIEF   | Warp 4  Véd %1
+ENGINE_3_BRIEF2  | Harci sebesség %1
+
+ENGINE_4_NAME    | Impulzusmeghajtók 
+ENGINE_4_DETAIL  | A hajókat a következő Warp gyorsasággal futtatja: %1, és lehetővé teszi az V. osztályú maximális irányíthatóságot a harcban.
+ENGINE_4_ITEM    | Impulzus
+ENGINE_4_ITEM2   | 5. osztály
+ENGINE_4_BRIEF   | Warp 5  Véd %1
+ENGINE_4_BRIEF2  | Harci sebesség %1
+
+ENGINE_5_NAME    | Ionmeghajtók
+ENGINE_5_DETAIL  | A hajókat a következő Warp gyorsasággal futtatja: %1, és lehetővé teszi az VI. osztályú maximális irányíthatóságot a harcban.
+ENGINE_5_ITEM    | Ion
+ENGINE_5_ITEM2   | 6. osztály
+ENGINE_5_BRIEF   | Warp 6  Véd %1
+ENGINE_5_BRIEF2  | Harci sebesség %1
+
+ENGINE_6_NAME    | Antianyag-meghajtók
+ENGINE_6_DETAIL  | A hajókat a következő Warp gyorsasággal futtatja: %1, és lehetővé teszi az VII. osztályú maximális irányíthatóságot a harcban.
+ENGINE_6_ITEM    | Antianyag
+ENGINE_6_ITEM2   | 7. osztály
+ENGINE_6_BRIEF   | Warp 7  Véd %1
+ENGINE_6_BRIEF2  | Harci sebesség %1
+
+ENGINE_7_NAME    | Térválasztó meghajtók
+ENGINE_7_DETAIL  | A hajókat a következő Warp gyorsasággal futtatja: %1, és lehetővé teszi az VIII. osztályú maximális irányíthatóságot a harcban.
+ENGINE_7_ITEM    | Térválasztó
+ENGINE_7_ITEM2   | 8. osztály
+ENGINE_7_BRIEF   | Warp 8  Véd %1
+ENGINE_7_BRIEF2  | Harci sebesség %1
+
+ENGINE_8_NAME    | Hipermeghajtók
+ENGINE_8_DETAIL  | A hajókat a következő Warp gyorsasággal futtatja: %1, és lehetővé teszi az IX. osztályú maximális irányíthatóságot a harcban.
+ENGINE_8_ITEM    | Hiper
+ENGINE_8_ITEM2   | 9. osztály
+ENGINE_8_BRIEF   | Warp 9  Véd %1
+ENGINE_8_BRIEF2  | Harci sebesség %1
+
+
+//
+// Fuel Range techs
+//
+FUELRANGE_0_NAME   | Üzemanyagcellák
+FUELRANGE_0_DETAIL | Az üzemanyagtartalékok lehetővé teszik a hajók számára, hogy akár %1 fényévet is eltávolodjanak a gyarmatbolygóktól.
+
+FUELRANGE_1_NAME   | Hidrogén üzemanyagcellák
+FUELRANGE_1_DETAIL | Az üzemanyagtartalékok lehetővé teszik a hajók számára, hogy akár %1 fényévet is eltávolodjanak a gyarmatbolygóktól.
+
+FUELRANGE_2_NAME   | Deutérium üzemanyagcellák
+FUELRANGE_2_DETAIL | Az üzemanyagtartalékok lehetővé teszik a hajók számára, hogy akár %1 fényévet is eltávolodjanak a gyarmatbolygóktól.
+
+FUELRANGE_3_NAME   | Irídium üzemanyagcellák
+FUELRANGE_3_DETAIL | Az üzemanyagtartalékok lehetővé teszik a hajók számára, hogy akár %1 fényévet is eltávolodjanak a gyarmatbolygóktól.
+
+FUELRANGE_4_NAME   | Dotomitkristályok
+FUELRANGE_4_DETAIL | Az üzemanyagtartalékok lehetővé teszik a hajók számára, hogy akár %1 fényévet is eltávolodjanak a gyarmatbolygóktól.
+
+FUELRANGE_5_NAME   | Urídium üzemanyagcellák
+FUELRANGE_5_DETAIL | Az üzemanyagtartalékok lehetővé teszik a hajók számára, hogy akár %1 fényévet is eltávolodjanak a gyarmatbolygóktól.
+
+FUELRANGE_6_NAME   | Reajax II üzemanyagcellák
+FUELRANGE_6_DETAIL | Az üzemanyagtartalékok lehetővé teszik a hajók számára, hogy akár %1 fényévet is eltávolodjanak a gyarmatbolygóktól.
+
+FUELRANGE_7_NAME   | Trilítumkristályok
+FUELRANGE_7_DETAIL | Az üzemanyagtartalékok lehetővé teszik a hajók számára, hogy akár %1 fényévet is eltávolodjanak a gyarmatbolygóktól.
+
+FUELRANGE_8_NAME   | Tóriumcellák
+FUELRANGE_8_DETAIL | Az üzemanyagtartalékok lehetővé teszik a hajók számára, hogy akármekkora távolsára eltávolodjanak a gyarmatbolygóktól.
+
+
+//
+// Future Computer techs
+//
+FUTURECOMP_0_NAME    | A jövő számítógépe I
+FUTURECOMP_0_DETAIL  | Általános számítógéptechnikai fejlesztések.
+
+FUTURECOMP_1_NAME    | A jövő számítógépe II
+FUTURECOMP_1_DETAIL  | Általános számítógéptechnikai fejlesztések.
+
+FUTURECOMP_2_NAME    | A jövő számítógépe III
+FUTURECOMP_2_DETAIL  | Általános számítógéptechnikai fejlesztések.
+
+FUTURECOMP_3_NAME    | A jövő számítógépe IV
+FUTURECOMP_3_DETAIL  | Általános számítógéptechnikai fejlesztések.
+
+FUTURECOMP_4_NAME    | A jövő számítógépe V
+FUTURECOMP_4_DETAIL  | Általános számítógéptechnikai fejlesztések.
+
+FUTURECOMP_5_NAME    | A jövő számítógépe VI
+FUTURECOMP_5_DETAIL  | Általános számítógéptechnikai fejlesztések.
+
+FUTURECOMP_6_NAME    | A jövő számítógépe VII
+FUTURECOMP_6_DETAIL  | Általános számítógéptechnikai fejlesztések.
+
+FUTURECOMP_7_NAME    | A jövő számítógépe VIII
+FUTURECOMP_7_DETAIL  | Általános számítógéptechnikai fejlesztések.
+
+FUTURECOMP_8_NAME    | A jövő számítógépe IX
+FUTURECOMP_8_DETAIL  | Általános számítógéptechnikai fejlesztések.
+
+FUTURECOMP_9_NAME    | A jövő számítógépe X
+FUTURECOMP_9_DETAIL  | Általános számítógéptechnikai fejlesztések.
+
+
+//
+// Future Construction techs
+//
+FUTURECONST_0_NAME    | Jövőbeli építészet I
+FUTURECONST_0_DETAIL  | Általános építészettechnikai fejlesztések.
+
+FUTURECONST_1_NAME    | Jövőbeli építészet II
+FUTURECONST_1_DETAIL  | Általános építészettechnikai fejlesztések.
+
+FUTURECONST_2_NAME    | Jövőbeli építészet III
+FUTURECONST_2_DETAIL  | Általános építészettechnikai fejlesztések.
+
+FUTURECONST_3_NAME    | Jövőbeli építészet IV
+FUTURECONST_3_DETAIL  | Általános építészettechnikai fejlesztések.
+
+FUTURECONST_4_NAME    | Jövőbeli építészet V
+FUTURECONST_4_DETAIL  | Általános építészettechnikai fejlesztések.
+
+FUTURECONST_5_NAME    | Jövőbeli építészet VI
+FUTURECONST_5_DETAIL  | Általános építészettechnikai fejlesztések.
+
+FUTURECONST_6_NAME    | Jövőbeli építészet VII
+FUTURECONST_6_DETAIL  | Általános építészettechnikai fejlesztések.
+
+FUTURECONST_7_NAME    | Jövőbeli építészet VIII
+FUTURECONST_7_DETAIL  | Általános építészettechnikai fejlesztések.
+
+FUTURECONST_8_NAME    | Jövőbeli építészet IX
+FUTURECONST_8_DETAIL  | Általános építészettechnikai fejlesztések.
+
+FUTURECONST_9_NAME    | Jövőbeli építészet X
+FUTURECONST_9_DETAIL  | Általános építészettechnikai fejlesztések. 
+
+
+//
+// Future Force Field techs
+//
+FUTUREFORCE_0_NAME    | Jövőbeli erőtér I
+FUTUREFORCE_0_DETAIL  | Általános erőtér-technológiai fejlesztések.
+
+FUTUREFORCE_1_NAME    | Jövőbeli erőtér II
+FUTUREFORCE_1_DETAIL  | Általános erőtér-technológiai fejlesztések.
+
+FUTUREFORCE_2_NAME    | Jövőbeli erőtér III
+FUTUREFORCE_2_DETAIL  | Általános erőtér-technológiai fejlesztések.
+
+FUTUREFORCE_3_NAME    | Jövőbeli erőtér IV
+FUTUREFORCE_3_DETAIL  | Általános erőtér-technológiai fejlesztések.
+
+FUTUREFORCE_4_NAME    | Jövőbeli erőtér V
+FUTUREFORCE_4_DETAIL  | Általános erőtér-technológiai fejlesztések.
+
+FUTUREFORCE_5_NAME    | Jövőbeli erőtér VI
+FUTUREFORCE_5_DETAIL  | Általános erőtér-technológiai fejlesztések.
+
+FUTUREFORCE_6_NAME    | Jövőbeli erőtér VII
+FUTUREFORCE_6_DETAIL  | Általános erőtér-technológiai fejlesztések.
+
+FUTUREFORCE_7_NAME    | Jövőbeli erőtér VIII
+FUTUREFORCE_7_DETAIL  | Általános erőtér-technológiai fejlesztések.
+
+FUTUREFORCE_8_NAME    | Jövőbeli erőtér IX
+FUTUREFORCE_8_DETAIL  | Általános erőtér-technológiai fejlesztések.
+
+FUTUREFORCE_9_NAME    | Jövőbeli erőtér X
+FUTUREFORCE_9_DETAIL  | Általános erőtér-technológiai fejlesztések.
+
+
+//
+// Future Planetology techs
+//
+FUTUREPLANET_0_NAME    | Jövőbeli planetológia I
+FUTUREPLANET_0_DETAIL  | Általános planetotechnológiai fejlesztések.
+
+FUTUREPLANET_1_NAME    | Jövőbeli planetológia II
+FUTUREPLANET_1_DETAIL  | Általános planetotechnológiai fejlesztések.
+
+FUTUREPLANET_2_NAME    | Jövőbeli planetológia III
+FUTUREPLANET_2_DETAIL  | Általános planetotechnológiai fejlesztések.
+
+FUTUREPLANET_3_NAME    | Jövőbeli planetológia IV
+FUTUREPLANET_3_DETAIL  | Általános planetotechnológiai fejlesztések.
+
+FUTUREPLANET_4_NAME    | Jövőbeli planetológia V
+FUTUREPLANET_4_DETAIL  | Általános planetotechnológiai fejlesztések.
+
+FUTUREPLANET_5_NAME    | Jövőbeli planetológia VI
+FUTUREPLANET_5_DETAIL  | Általános planetotechnológiai fejlesztések.
+
+FUTUREPLANET_6_NAME    | Jövőbeli planetológia VII
+FUTUREPLANET_6_DETAIL  | Általános planetotechnológiai fejlesztések.
+
+FUTUREPLANET_7_NAME    | Jövőbeli planetológia VIII
+FUTUREPLANET_7_DETAIL  | Általános planetotechnológiai fejlesztések.
+
+FUTUREPLANET_8_NAME    | Jövőbeli planetológia IX
+FUTUREPLANET_8_DETAIL  | Általános planetotechnológiai fejlesztések.
+
+FUTUREPLANET_9_NAME    | Jövőbeli planetológia X
+FUTUREPLANET_9_DETAIL  | Általános planetotechnológiai fejlesztések.
+
+
+//
+// Future Propulsion techs
+//
+FUTUREPROP_0_NAME    | Jövőbeli meghajtó I
+FUTUREPROP_0_DETAIL  | Általános meghajtótechnikai fejlesztések.
+
+FUTUREPROP_1_NAME    | Jövőbeli meghajtó II
+FUTUREPROP_1_DETAIL  | Általános meghajtótechnikai fejlesztések.
+
+FUTUREPROP_2_NAME    | Jövőbeli meghajtó III
+FUTUREPROP_2_DETAIL  | Általános meghajtótechnikai fejlesztések.
+
+FUTUREPROP_3_NAME    | Jövőbeli meghajtó IV
+FUTUREPROP_3_DETAIL  | Általános meghajtótechnikai fejlesztések.
+
+FUTUREPROP_4_NAME    | Jövőbeli meghajtó V
+FUTUREPROP_4_DETAIL  | Általános meghajtótechnikai fejlesztések.
+
+FUTUREPROP_5_NAME    | Jövőbeli meghajtó VI
+FUTUREPROP_5_DETAIL  | Általános meghajtótechnikai fejlesztések.
+
+FUTUREPROP_6_NAME    | Jövőbeli meghajtó VII
+FUTUREPROP_6_DETAIL  | Általános meghajtótechnikai fejlesztések.
+
+FUTUREPROP_7_NAME    | Jövőbeli meghajtó VIII
+FUTUREPROP_7_DETAIL  | Általános meghajtótechnikai fejlesztések.
+
+FUTUREPROP_8_NAME    | Jövőbeli meghajtó IX
+FUTUREPROP_8_DETAIL  | Általános meghajtótechnikai fejlesztések.
+
+FUTUREPROP_9_NAME    | Jövőbeli meghajtó X
+FUTUREPROP_9_DETAIL  | Általános meghajtótechnikai fejlesztések.
+
+
+//
+// Future Weapon techs
+//
+FUTUREWEAPON_0_NAME    | Jövőbeli fegyver I
+FUTUREWEAPON_0_DETAIL  | Általános fegyvertechnológiai fejlesztések.
+
+FUTUREWEAPON_1_NAME    | Jövőbeli fegyver II
+FUTUREWEAPON_1_DETAIL  | Általános fegyvertechnológiai fejlesztések.
+
+FUTUREWEAPON_2_NAME    | Jövőbeli fegyver III
+FUTUREWEAPON_2_DETAIL  | Általános fegyvertechnológiai fejlesztések.
+
+FUTUREWEAPON_3_NAME    | Jövőbeli fegyver IV
+FUTUREWEAPON_3_DETAIL  | Általános fegyvertechnológiai fejlesztések.
+
+FUTUREWEAPON_4_NAME    | Jövőbeli fegyver V
+FUTUREWEAPON_4_DETAIL  | Általános fegyvertechnológiai fejlesztések.
+
+FUTUREWEAPON_5_NAME    | Jövőbeli fegyver VI
+FUTUREWEAPON_5_DETAIL  | Általános fegyvertechnológiai fejlesztések.
+
+FUTUREWEAPON_6_NAME    | Jövőbeli fegyver VII
+FUTUREWEAPON_6_DETAIL  | Általános fegyvertechnológiai fejlesztések.
+
+FUTUREWEAPON_7_NAME    | Jövőbeli fegyver VIII
+FUTUREWEAPON_7_DETAIL  | Általános fegyvertechnológiai fejlesztések.
+
+FUTUREWEAPON_8_NAME    | Jövőbeli fegyver IX
+FUTUREWEAPON_8_DETAIL  | Általános fegyvertechnológiai fejlesztések.
+
+FUTUREWEAPON_9_NAME    | Jövőbeli fegyver X
+FUTUREWEAPON_9_DETAIL  | Általános fegyvertechnológiai fejlesztések. 
+
+
+//
+// Hand Weapon techs
+//
+HANDWEAPON_0_NAME      | 
+HANDWEAPON_0_DETAIL    | 
+
+HANDWEAPON_1_NAME      | Kézilézerek
+HANDWEAPON_1_DETAIL    | Személyes lézerek, amelyek 5-öt adnak hozzá a terepharci gurításokhoz.
+
+HANDWEAPON_2_NAME      | Ionpuska
+HANDWEAPON_2_DETAIL    | Személyes sugárfegyverek, amelyek 10-et adnak hozzá a terepharci gurításokhoz.
+
+HANDWEAPON_3_NAME      | Fúziópuska
+HANDWEAPON_3_DETAIL    |  Pontatlan, de hihetetlenül erős sugárfegyverek, amelyek 20-at adnak hozzá a terepharci gurításokhoz.
+
+HANDWEAPON_4_NAME      | Kézi halálhullám
+HANDWEAPON_4_DETAIL    | Erőteljes, kézi energiafegyverek, amelyek képesek az ellenfelet az összetevő atomjaira zúzni. 25-öt adnak hozzá a terepharci gurításokhoz.
+
+HANDWEAPON_5_NAME      | Plazmapuska
+HANDWEAPON_5_DETAIL    | A legpusztítóbb elérhető kézifegyver. 30-at ad hozzá a tereptámadásokhoz.
+
+
+//
+// Hyperspace Communication tech
+//
+HYPERSPACE_0_NAME      | Hyperspace Communications
+HYPERSPACE_0_DETAIL    | Lehetővé teszi a hipertérben tartokzodó hajókkal való kommunikációt és a célállomásaik módosítását miközben még úton vannak.
+
+
+//
+// Improved Industrial techs
+//
+IMPRINDUSTRY_0_NAME     | Javított ipartechnológia 9
+IMPRINDUSTRY_0_DETAIL   | Csökkenti a gyárépítési költségeket 9 EK-tel gyárakként.
+
+IMPRINDUSTRY_1_NAME     | Javított ipartechnológia 8
+IMPRINDUSTRY_1_DETAIL   | Csökkenti a gyárépítési költségeket 8 EK-tel gyárakként.
+
+IMPRINDUSTRY_2_NAME     | Javított ipartechnológia 7
+IMPRINDUSTRY_2_DETAIL   | Csökkenti a gyárépítési költségeket 7 EK-tel gyárakként.
+
+IMPRINDUSTRY_3_NAME     | Javított ipartechnológia 6
+IMPRINDUSTRY_3_DETAIL   | Csökkenti a gyárépítési költségeket 6 EK-tel gyárakként.
+
+IMPRINDUSTRY_4_NAME     | Javított ipartechnológia 5
+IMPRINDUSTRY_4_DETAIL   | Csökkenti a gyárépítési költségeket 5 EK-tel gyárakként.
+
+IMPRINDUSTRY_5_NAME     | Javított ipartechnológia 4
+IMPRINDUSTRY_5_DETAIL   | Csökkenti a gyárépítési költségeket 4 EK-tel gyárakként.
+
+IMPRINDUSTRY_6_NAME     | Javított ipartechnológia 3
+IMPRINDUSTRY_6_DETAIL   | Csökkenti a gyárépítési költségeket 3 EK-tel gyárakként.
+
+IMPRINDUSTRY_7_NAME     | Javított ipartechnológia 2
+IMPRINDUSTRY_7_DETAIL   | Csökkenti a gyárépítési költségeket 2 EK-tel gyárakként.
+
+
+//
+// Improved Terraforming techs
+//
+IMPRTFORM_0_NAME        | Továbbfejlesztett terraformálás +10
+IMPRTFORM_0_DETAIL      | Növeli a bolygók lakossági kapacitását 10M-ra, ami 5 EK-be kerül minden millió lakosért.
+
+IMPRTFORM_1_NAME        | Továbbfejlesztett terraformálás +20
+IMPRTFORM_1_DETAIL      | Növeli a bolygók lakossági kapacitását 20M-ra, ami 5 EK-be kerül minden millió lakosért.
+
+IMPRTFORM_2_NAME        | Továbbfejlesztett terraformálás +30
+IMPRTFORM_2_DETAIL      | Növeli a bolygók lakossági kapacitását 30M-ra, ami 4 EK-be kerül minden millió lakosért.
+
+IMPRTFORM_3_NAME        | Továbbfejlesztett terraformálás +40
+IMPRTFORM_3_DETAIL      | Növeli a bolygók lakossági kapacitását 40M-ra, ami 4 EK-be kerül minden millió lakosért.
+
+IMPRTFORM_4_NAME        | Továbbfejlesztett terraformálás +50
+IMPRTFORM_4_DETAIL      | Növeli a bolygók lakossági kapacitását 50M-ra, ami 3 EK-be kerül minden millió lakosért.
+
+IMPRTFORM_5_NAME        | Továbbfejlesztett terraformálás +60
+IMPRTFORM_5_DETAIL      | Növeli a bolygók lakossági kapacitását 60M-ra, ami 3 EK-be kerül minden millió lakosért.
+
+IMPRTFORM_6_NAME        | Továbbfejlesztett terraformálás +80
+IMPRTFORM_6_DETAIL      | Növeli a bolygók lakossági kapacitását 80M-ra, ami 2 EK-be kerül minden millió lakosért.
+
+IMPRTFORM_7_NAME        | Továbbfejlesztett terraformálás +100
+IMPRTFORM_7_DETAIL      | Növeli a bolygók lakossági kapacitását 100M-ra, ami 2 EK-be kerül minden millió lakosért.
+
+IMPRTFORM_8_NAME        | Complete Terraforming
+IMPRTFORM_8_DETAIL      | Növeli a bolygók lakossági kapacitását 120M-ra, ami 2 EK-be kerül minden millió lakosért.
+
+
+//
+// Industrial Waste techs
+//
+INDWASTE_0_NAME         | 80%-kal csökkentett ipari hulladék
+INDWASTE_0_DETAIL       | Csökkenti a gyári szennyezés szintjét a normál arány 80%-ára.
+
+INDWASTE_1_NAME         | 60%-kal csökkentett ipari hulladék
+INDWASTE_1_DETAIL       | Csökkenti a gyári szennyezés szintjét a normál arány 60%-ára.
+
+INDWASTE_2_NAME         | 40%-kal csökkentett ipari hulladék
+INDWASTE_2_DETAIL       | Csökkenti a gyári szennyezés szintjét a normál arány 40%-ára.
+
+INDWASTE_3_NAME         | 20%-kal csökkentett ipari hulladék
+INDWASTE_3_DETAIL       | Csökkenti a gyári szennyezés szintjét a normál arány 20%-ára.
+
+INDWASTE_4_NAME         | Ipari hulladék megszüntetése
+INDWASTE_4_DETAIL       | A gyárak teljesen megszüntetik a szennyezést.
+
+
+//
+// Missile Defense techs
+//
+MISSDEF_0_NAME      | Lövedékelhárító rakéták
+MISSDEF_0_BRIEF     | 40%-os esély rakéták megsemmisítésére
+MISSDEF_0_DETAIL    | Fénysebességen felül repülő rakéták, amelyek képesek elpusztítani a bejövő ellenséges lövedékeket az esetek 40%-ában, -1% per rakétatechnológiai szint.
+
+MISSDEF_1_NAME      | Zyropajzs
+MISSDEF_1_BRIEF     | 75% esély rakéták megsemmisítésére
+MISSDEF_1_DETAIL    | Olyan energiamező, amely elpusztítja a bejövő ellenséges lövedékeket az esetek 75%-ában, -1% per rakétatechnológiai szint.
+
+MISSDEF_2_NAME      | Villámpajzs
+MISSDEF_2_BRIEF     | 100% esély rakéták megsemmisítésére
+MISSDEF_2_DETAIL    | Olyan energiamező, amely elpusztítja a bejövő ellenséges lövedékeket az esetek 100%-ában, -1% per rakétatechnológiai szint.
+
+
+//
+// Missile Weapon techs
+//
+MISSWPN_0_NAME      | Nukleáris rakéta
+MISSWPN_0_BRIEF     | 2 lövés, +1 sebesség
+MISSWPN_0_BRIEF2    | 5 lövés
+MISSWPN_0_DETAIL    | Nukleáris robbanófejekkel felszerelt rakéták, amelyek 4 értékű károsodást okoznak és 2-es sebességgel mozognak.
+
+MISSWPN_1_NAME      | Hiper-V rakéták
+MISSWPN_1_BRIEF     | 2 lövés, +1 sebesség
+MISSWPN_1_BRIEF2    | 5 lövés
+MISSWPN_1_DETAIL    | Gyors rakéták, amelyek 6 értékű károsodást okoznak és 2.5-ös sebességgel mozognak.
+
+MISSWPN_2_NAME      | Hiper-X rakéták
+MISSWPN_2_BRIEF     | 2 lövés, +1 a találathoz
+MISSWPN_2_BRIEF2    | 5 lövés, +1 a találathoz
+MISSWPN_2_DETAIL    | Nagy energiájú robbanófejekkel felszerelt rakéták, amelyek robbanáskor 8 értékű károsodást okoznak, 2.5-ös sebességgel mozognak és egy +1 szintű célzószámítógép vezérli őket.
+
+MISSWPN_3_NAME      | Szétszóródó Küldemény V rakéták
+MISSWPN_3_BRIEF     | 2 lövés, +1 sebesség
+MISSWPN_3_BRIEF2    | 5 lövés
+MISSWPN_3_DETAIL    | A Hiper-V rakéták MIRV változatai, amelyek 5 különálló robbanófejre oszlanak, amiből mindegyik 6 értékű károsodást okoz és 2.5-ös sebességgel mozog.
+
+MISSWPN_4_NAME      | Merkulitrakéták
+MISSWPN_4_BRIEF     | 2 lövés, +2 a találathoz
+MISSWPN_4_BRIEF2    | 5 lövés, +2 a találathoz
+MISSWPN_4_DETAIL    | Erőteljes, gyors rakéták, amelyek robbanáskor 10 értékű károsodást okoznak, 3-as sebességgel mozognak és egy +2 szintű célzószámítógép vezérli őket.
+
+MISSWPN_5_NAME      | Fullánkrakéták
+MISSWPN_5_BRIEF     | 2 lövés, +3 a találathoz
+MISSWPN_5_BRIEF2    | 5 lövés, +3 a találathoz
+MISSWPN_5_DETAIL    | Lassú, hiperpontos rakéták, amelyek 15 értékű károsodást okoznak, 3.5-ös sebességgel mozognak és egy +3 szintű célzószámítógép vezérli őket.
+
+MISSWPN_6_NAME      | Szétszóródó Küldemény VII rakéták
+MISSWPN_6_BRIEF     | 2 lövés, MIRV-ek 7-re
+MISSWPN_6_BRIEF2    | 5 lövés, MIRV-ek 7-re
+MISSWPN_6_DETAIL    | A Hiper-X rakéták MIRV változatai, amelyek 7 különálló robbanófejre oszlanak, amiből mindegyik 10 értékű károsodást okoz, 3-as sebességgel mozog és egy +2 szintű célzószámítógép vezérli őket.
+
+MISSWPN_7_NAME      | Pulzonrakéták
+MISSWPN_7_BRIEF     | 2 lövés, +4 a találathoz
+MISSWPN_7_BRIEF2    | 5 lövés, +4 ta találathoz
+MISSWPN_7_DETAIL    | Erőteljes antianyag robbanófejekkel ellátott rakéták, amelyek 20 értékű károsodást okoznak, 4-es sebességgel mozognak és egy +4 szintű célzószámítógép vezérli őket.
+
+MISSWPN_8_NAME      | Herkuláris rakéták
+MISSWPN_8_BRIEF     | 2 lövés, +5 a találathoz
+MISSWPN_8_BRIEF2    | 5 lövés, +5 a találathoz
+MISSWPN_8_DETAIL    | Rendkívül fejlett rakéta, amely 25 értékű károsodást okoz. A herkuláris rakéták 4.5-ös sebességgel mozognak és egy +5 szintű célzószámítógép vezérli őket.
+
+MISSWPN_9_NAME      | Zeonrakéták
+MISSWPN_9_BRIEF     | 2 lövés, +6 a találathoz
+MISSWPN_9_BRIEF2    | 5 lövés, +6 a találathoz
+MISSWPN_9_DETAIL    | Az elérhető legfejlettebb rakéta. Képes 30 értékű károsodást okozni az ellenséges hajókban és 5-ös sebességgel mozogni. A rakétát +6 szintű célzószámítógép irányítja.
+
+MISSWPN_10_NAME      | Szétszóródó Küldemény X rakéták
+MISSWPN_10_BRIEF     | 2 lövés, MIRV-ek 10-re
+MISSWPN_10_BRIEF2    | 5 lövés, MIRV-ek 10-re
+MISSWPN_10_DETAIL    | A fullánkrakéták MIRV változatai, amelyek 10 különálló robbanófejre oszlanak, amiből robbanáskor mindegyik 15 értékű károsodást okoz, 3.5-ös sebességgel mozog és egy +3 szintű célzószámítógép vezérli őket.
+
+
+//
+// Personal Shield techs for ground combat
+//
+// default "no shield" tech that each player starts with
+PERSSHIELD_0_NAME     | 
+PERSSHIELD_0_DETAIL   | 
+
+PERSSHIELD_1_NAME     | Személyes terelőpajzs
+PERSSHIELD_1_DETAIL   | Irányított erőtérrel védi az egyéni terepcsapatokat. +10-et ad minden terepharci csatához.
+
+PERSSHIELD_2_NAME     | Személyes abszorpciós pajzs
+PERSSHIELD_2_DETAIL   | Elnyeli a különböző kézifegyverek okozta károsodást. +20-at ad minden terepharci csatához.
+
+PERSSHIELD_3_NAME     | Személyes burokpajzs
+PERSSHIELD_3_DETAIL   | Teljesen körbevonja a katonát egy szinte áthatolhatatlan erőtérrel. +30-at ad minden terepharci gurításhoz.
+
+
+//
+// Planetary Shield techs 
+//
+PLANETSHIELD_0_NAME    | V. osztályú bolygópajzsok
+PLANETSHIELD_0_DETAIL  | 5 értékű károsodást nyel el minden bolygófelszín elleni támadásból, kiegészítve a rakétabázis terelőpajzsait.
+
+PLANETSHIELD_1_NAME    | X. osztályú bolygópajzsok
+PLANETSHIELD_1_DETAIL  | 10 értékű károsodást nyel el minden bolygófelszín elleni támadásból, kiegészítve a rakétabázis terelőpajzsait.
+
+PLANETSHIELD_2_NAME    | XV. osztályú bolygópajzsok
+PLANETSHIELD_2_DETAIL  | 15 értékű károsodást nyel el minden bolygófelszín elleni támadásból, kiegészítve a rakétabázis terelőpajzsait.
+
+PLANETSHIELD_3_NAME    | XX. osztályú bolygópajzsok
+PLANETSHIELD_3_DETAIL  | 20 értékű károsodást nyel el minden bolygófelszín elleni támadásból, kiegészítve a rakétabázis terelőpajzsait.
+
+
+//
+// Repulsor tech 
+//
+REPULSOR_0_NAME    | Visszaverősugár
+REPULSOR_0_BRIEF   | Az ellenséges hajókat 1 mezővel hátrébb helyezi
+REPULSOR_0_DETAIL  | Az ellenséges hajókat egy mezővel távolabb taszítja a védekező hajótól. Ennek a különleges fegyvernek egy mezőnyi hatótávolsága van.
+
+
+//
+// Reserve Fuel tech 
+//
+RSRVFUEL_0_NAME    | Tartalék üzemanyagtartályok
+RSRVFUEL_0_BRIEF   | %1 fényévvel kiterjeszti a hajó hatótávolságát
+RSRVFUEL_0_DETAIL  | A tartalék üzemanyagtartályok növelik a hajó hatótávolságát.
+
+
+//
+// Robotic Controls techs 
+//
+ROBOTCTRL_0_NAME     | Továbbfejlesztett robotvezérlés III
+ROBOTCTRL_0_DETAIL   | Lakosságonként 3 gyár működtetését teszi lehetővé. Az újraalakítás költsége fele az egyes gyárak szokásos költségének.
+
+ROBOTCTRL_1_NAME     | Továbbfejlesztett robotvezérlés IV
+ROBOTCTRL_1_DETAIL   | Lakosságonként 4 gyár működtetését teszi lehetővé. Az újraalakítás költsége az egyes gyárak teljes szokásos költségének felel meg.
+
+ROBOTCTRL_2_NAME     | Továbbfejlesztett robotvezérlés V
+ROBOTCTRL_2_DETAIL   | Lakosságonként 5 gyár működtetését teszi lehetővé. Az újraalakítás költsége másfele az egyes gyárak szokásos költségének.
+
+ROBOTCTRL_3_NAME     | Továbbfejlesztett robotvezérlés VI
+ROBOTCTRL_3_DETAIL   | Lakosságonként 6 gyár működtetését teszi lehetővé. Az újraalakítás költsége kétszerese az egyes gyárak szokásos költségének.
+
+ROBOTCTRL_4_NAME     | Továbbfejlesztett robotvezérlés VII
+ROBOTCTRL_4_DETAIL   | Lakosságonként 7 gyár működtetését teszi lehetővé. Az újraalakítás költsége két és félszerese az egyes gyárak szokásos költségének.
+
+
+//
+// Scanner techs 
+//
+SCANNER_0_NAME       | Csata-fürkészőegység
+SCANNER_0_BRIEF      | Ellenséges hajókat vizsgál harc közben
+SCANNER_0_DETAIL     | Felfedi a harcban lévő ellenséges űrhajók műszaki specifikációit.
+
+SCANNER_1_NAME       | Mélyűri-fürkészőegység
+SCANNER_1_BRIEF      | Akár 5 fényévnyi távolságból is észleli a hajókat
+SCANNER_1_DETAIL     | Érzékeli az ellenséges hajókat 5 fényévnyire a gyarmatainktól és 1 fényévnyire a saját hajóinktól.
+
+SCANNER_2_NAME       | Továbbfejlesztett űr-fürkészőegység
+SCANNER_2_BRIEF      | Akár 7 fényévnyi távolságból is érzékeli a hajókat és célállomásokat
+SCANNER_2_DETAIL     | Érzékeli az ellenséges hajókat akár 7 fényévnyire a gyarmatainktól és 2 fényévnyire a saját hajóinktól. Az ellenséges céllállomások is meghatározhatóak.
+
+SCANNER_3_NAME       | Fejlett űr-fürkészőegység
+SCANNER_3_BRIEF      | Allows exploration of planets up to 9 light-years away 
+SCANNER_3_DETAIL     | Lehetővé teszi a bolygók kivizsgálását akár 9 fényévnyire a gyarmatbázisoktól és észleli az ellenséges hajókat akár 3 fényévnyire a hajóinktól.
+
+
+//
+// Ship Inertial techs 
+//
+SHIPINERTIAL_0_NAME     | Inerciális stabilizátor
+SHIPINERTIAL_0_BRIEF    | +2-őt ad a manőverezhetőséghez
+SHIPINERTIAL_0_DETAIL   | Csökkenti a hajók tehetetlenségét és 2 harcmanőverezési osztályt ad hozzájuk (+2 védelem és +1 harci sebesség).
+
+SHIPINERTIAL_1_NAME     | Inerciális lenullázó
+SHIPINERTIAL_1_BRIEF    | +4-et ad a manőverezhetőséghez
+SHIPINERTIAL_1_DETAIL   | Ellentételezi a hajók tehetetlenségét és 4 harcmanőverezési osztályt ad hozzájuk. Szintén -30%-kal csökkenti a Fekete Lyuk támadások hatását.
+
+
+//
+// Ship Inertial techs 
+//
+SHIPNULLIFIER_0_NAME     | Technológia lenullázó
+SHIPNULLIFIER_0_BRIEF    | Elpusztítja az ellenséges számítógépeket
+SHIPNULLIFIER_0_DETAIL   | Összezavarja az ellenséges harci számítógépeket és az EEI-eket, támadásonként 2-6 szinttel csökkentve őket. Hatótávolsága meghaladja a legtöbb hajó fegyverét.
+
+SHIPNULLIFIER_1_NAME     | Warposzlató
+SHIPNULLIFIER_1_BRIEF    | Csökkenti az ellenséges hajók sebességét
+SHIPNULLIFIER_1_DETAIL   | A warposzlatók nagy hatótávolságú fegyverek, amelyek megzavarják az ellenséges csillaghajók hajtóműveit és minden támadással csökkentik a sebességüket.
+
+
+//
+// Ship Weapon techs 
+//
+SHIPWPN_0_NAME         | Lézer
+SHIPWPN_0_ITEM2        | Nehézlézer
+SHIPWPN_0_DETAIL       | Közvetlen tüzelésű sugárfegyver, mely 1-4 értékű károsodást okoz. A nehézlézerek hatótávolsága két mezőnyi és 1-7 károsítanak.
+
+SHIPWPN_1_NAME         | Gatlinglézer
+SHIPWPN_1_BRIEF        | 4-szer tüzel fordulókként
+SHIPWPN_1_DETAIL       | Egy fejlett típusú lézer, amely fordulókként akár négyszer is lő, 1-4 értékű károsodást okozván minden egyes találattal.
+
+SHIPWPN_2_NAME         | Neutronsörét-pisztoly
+SHIPWPN_2_BRIEF        | Felezi a pajzsok hatékonyságát
+SHIPWPN_2_DETAIL       | Nehéz részecske alapú áramlatfegyver, amely felére csökkenti az ellenséges terelőpajzsok hatékonyságát és 2-5 értékű károsodást okoz.
+
+SHIPWPN_3_NAME         | Ionágyú
+SHIPWPN_3_ITEM2        | Nehéz-ionágyú
+SHIPWPN_3_DETAIL       | Nagy intenzitású sugárfegyverek, amelyek képesek 3-8 értékű károsodást okozni. A nehéz-ionágyúk 3-15 kárt tesznek és két mezőnyi hatótávolságúak.
+
+SHIPWPN_4_NAME         | Tömeghajtó
+SHIPWPN_4_BRIEF        | Felezi a pajzsok hatékonyságát
+SHIPWPN_4_DETAIL       | Lineáris gyorsító, amely felére csökkenti az ellenséges terelőpajzsok hatékonyságát és 5-8 értékű károsodást okoz.
+
+SHIPWPN_5_NAME         | Neutronüvöltő
+SHIPWPN_5_ITEM2        | Heavy Neutron Blaster
+SHIPWPN_5_DETAIL       | Nagy teljesítményű sugárfegyverek, amelyek 3-12 értékű károsodást képesek okozni. A nehéz-neutronüvöltők 3-24 kárt tesznek és 2 mezőnyi hatótávolságúak.
+
+SHIPWPN_6_NAME         | Gravitonsugár
+SHIPWPN_6_BRIEF        | Áramlattámadás
+SHIPWPN_6_DETAIL       | Vontató-taszító-sugár, amely képes a hajók darabokra tépésére. 1-15 értékű károsodást okoz, és a folyamatos áramlathatás lehetővé teszi, hogy a többlet károkozás átterjedjen más hajókra.
+
+SHIPWPN_7_NAME         | Keménysugár
+SHIPWPN_7_BRIEF        | Felezi a pajzsok hatékonyságát
+SHIPWPN_7_DETAIL       | Egy energiából-anyag sugárfegyver, amely felére csökkenti az ellenséges terelőpajzsok hatékonyságát és 8-12 értékű károsodást okoz.
+
+SHIPWPN_8_NAME         | Fúziósugár
+SHIPWPN_8_ITEM2        | Nehéz-fúziósugár
+SHIPWPN_8_DETAIL       | Nagy intenzitású sugárfegyver, amely 4-16 értékű károsításra képes. A nehéz-fúziósugarak 4-30 kárt tesznek és 2 mezőnyi hatótávolságúak.
+
+SHIPWPN_9_NAME         | Mega-villámágyú
+SHIPWPN_9_BRIEF        | +3 szint a találathoz
+SHIPWPN_9_DETAIL       | Számos színtiszta energianyaláb szabadul fel egy széles mezőben. +30% bónusz esélye van a találathoz, és 2-20 értékű kárt tesz.
+
+SHIPWPN_10_NAME        | Halálhullám
+SHIPWPN_10_ITEM2       | Nehéz-halálhullám
+SHIPWPN_10_DETAIL      | Fázisos energiájú sugarak, amelyek 5-20 értékű károsodást képesek okozni. A nehéz-halálhullámok 5-40 értékű kárt okoznak és két mezőnyi hatótávolságuk van.
+
+SHIPWPN_11_NAME        | Automata üvöltő
+SHIPWPN_11_BRIEF       | 3-szor tüzel fordulókként
+SHIPWPN_11_DETAIL      | Fejlett neutronrobbantó, amely fordulónként akár háromszor is lő, találatonként 4-16 értékű kárt okozván.
+
+SHIPWPN_12_NAME        | Tachionsugár
+SHIPWPN_12_BRIEF       | Áramlattámadás
+SHIPWPN_12_DETAIL      | Tachion részecskék intenzív folyamát lövi ki, amely 1-25 károsodást okoz az ellenséges hajókban. A folyamatos áramlathatás lehetővé teszi, hogy a többlet károkozás átterjedjen más hajókra.
+
+SHIPWPN_13_NAME        | Automata gausságyú
+SHIPWPN_13_BRIEF       | 1/2 pajzs, 4x tüzel
+SHIPWPN_13_DETAIL      | Fejlett lineáris gyorsító, amely fordulókként 4 robbanó lövést képes leadni, amelyek mindegyike 7-10 értékű károsodást okoz. Ezek a lövedékek felére csökkentik az ellenséges pajzsok hatékonyságát is.
+
+SHIPWPN_14_NAME        | Részecskesugár
+SHIPWPN_14_BRIEF       | Felezi a pajzsok hatékonyságát
+SHIPWPN_14_DETAIL      | Nagy intenzitású részecskegyorsítók, amelyek képesek 10-20 értékű kárt okozni az ellenséges hajókban és a felére csökkentik a terelőpajzsok hatékonyságát.
+
+SHIPWPN_15_NAME        | Plazmaágyú
+SHIPWPN_15_DETAIL      | Intenzív energianyalábokat bocsát ki, amelyek 6-30 értékű kárt okoznak 1 mezőn belül.
+
+SHIPWPN_16_NAME        | Halálsugár
+SHIPWPN_16_DETAIL      | Egy hihetetlen pusztító erejű ősi fegyver, amely 200-1000 értékű kárt okoz és egy mezőnyi hatótávolsággal rendelkezik.
+
+SHIPWPN_17_NAME        | Elemszaggató
+SHIPWPN_17_DETAIL      | Hatalmas, tiszta energiát szabadít fel, amely akár két mezővel távolabb lévő ellenséges célpontokat is eltalálhat 10-40 értékű kárt okozván.
+
+SHIPWPN_18_NAME        | Pulzus halálhullám
+SHIPWPN_18_BRIEF       | 3-szor tüzel fordulókként
+SHIPWPN_18_DETAIL      | Egy fejlett típusú halálhullám, amely forulónként 3 sorozatot képes kilőni 5-20 értékű károsodást okozván minden egyes találattal.
+
+SHIPWPN_19_NAME        | Háromfókuszú plazmaágyú
+SHIPWPN_19_DETAIL      | Három, nagy intenzitású plazmasugarat lő ki, amelyek 20-50 értékű kárt képesek okozni.
+
+SHIPWPN_20_NAME        | Csillagátalakító
+SHIPWPN_20_BRIEF       | Mind a négy pajzsot eltalálja
+SHIPWPN_20_DETAIL      | Egy endkívül erős, anyagból-energia konverziós mezővel veszi körül a célpontot, négy 10-35 értékű károsodást okozva. 3 mezőnyi hatótávolsággal rendelkezik.
+
+SHIPWPN_21_NAME        | Buzogánykészülék
+SHIPWPN_21_DETAIL      | Hatalmas mennyiségű összpontosított energiát szabadít fel az ellenséges célpontokra, 20-100 értékű károsodást okozva.
+
+SHIPWPN_22_NAME        | Az amőba áramlat
+SHIPWPN_22_DETAIL      | Egy áramlat, ami 250-1000 értékű károsodást okoz és 3 mezőnyi hatótávolsággal rendelkezik. A folyamatos áramlathatás lehetővé teszi, hogy a többlet károkozást az egyik hajóról a másikra vigye át.
+
+SHIPWPN_23_NAME        | A kristálysugár
+SHIPWPN_23_DETAIL      | Egy sugár, amely körülveszi a célpont pajzsait és 4 támadást ad le 100-300 értéknyi kárral. 3 mezőnyi hatótávolsággal rendelkezik.
+
+
+//
+// Soil Enrichment techs
+//
+SOILENRICH_0_NAME     | Talajdúsítás
+SOILENRICH_0_DETAIL   | A szabványos bolygókat termékeny közeggé gazdagítja, ami 50%-kal növeli a népességnövekedést és +25%-kal növeli az alapbolygó méretét egy egyszeri 150 EK-nyi kiadásért.
+
+SOILENRICH_1_NAME     | Fejlett talajdúsítás
+SOILENRICH_1_DETAIL   | Átalakítja a szabványos és termékeny bolygókat gaiákká, megkétszerezi a népességnövekedést és +50%-kal növeli a bolygó alapméretét egy egyszeri 300 EK-nyi kiadásért.
+
+
+//
+// Stargate tech
+//
+STARGATE_0_NAME      | Intergalaktikus csillagkapuk
+STARGATE_0_DETAIL    | Lehetővé teszi, hogy hajóink egyetlen fordulóban mozogjanak bármely két csillagkapuval felszerelt bolygó között. A kiépítése 3000 EK-be kerül.
+
+
+//
+// Stasis Field tech
+//
+STASIS_0_NAME      | Pangásmező
+STASIS_0_BRIEF     | Az ellenség 1 fordulóra le van fagyasztva
+STASIS_0_DETAIL    | Egy fordulóra leállítja az ellenséges hajók egy csoportját, legfeljebb egy mezőnyi távolságon belül és egy fordulón át. A pangó hajók nem támadhatnak és nem támadhatók meg.
+
+
+//
+// Stream Weapon techs
+//
+STREAMWPN_0_NAME    | Ionáramlat projektor
+STREAMWPN_0_BRIEF   | 20%-kal csökkenti az ellenséges páncélt
+STREAMWPN_0_DETAIL  | Intenzív ionlövést tüzel, csökkentvén az ellenfél csoportjában lévő összes célpont páncélzatát 20%-kal plusz 1%-kal minden tüzelő hajónként. Ez a bónusz támadásonként legfeljebb a kezdő állékonyságpontok 50%-áig növekedhet.
+
+STREAMWPN_1_NAME    | Neutron Stream Projector
+STREAMWPN_1_BRIEF   | 40%-kal csökkenti az ellenséges páncélt
+STREAMWPN_1_DETAIL  | Koncentrált neutrínók robbanását lövi ki, csökkentvén az ellenfél csoportjában lévő összes célpont páncélzatát 40%-kal plusz 1%-kal minden tüzelő hajónként. Ez a bónusz támadásonként legfeljebb a kezdő állékonyságpontok 75%-áig növekedhet.
+
+
+//
+// Subspace Interdictor tech
+//
+SUBSPACEINT_0_NAME    | Altér-zavaró
+SUBSPACEINT_0_DETAIL  | Megakadályozza az ellenséges altér teleporterek és harci szállítók használatát. Az eszköz automatikusan hozzáadódik a rakétabázisokhoz.
+
+
+//
+// Subspace Teleporter tech
+//
+SUBSPACETEL_0_NAME    | Altér Teleporter
+SUBSPACETEL_0_BRIEF   | Harcba teleportálja a hajót
+SUBSPACETEL_0_DETAIL  | Teleportálja a hajókat a harci térképen lévő tetszőleges helyre, mielőtt még a harci sorrend szabványosan meg lenne határozva.
+
+
+//
+// Ship Torpedo Weapon techs
+//
+TORPEDO_0_NAME        | Antianyag-torpedók
+TORPEDO_0_BRIEF       | 2 fordulónként egyet tüzel
+TORPEDO_0_DETAIL      | Nagy energiájú nyomkövető torpedók, amelyek 30 értékű károsodást okoznak, de csak minden második fordulóban lőhetők ki. Minden torpedó +4 szintű célzószámítógéppel van felszerelve.
+
+TORPEDO_1_NAME        | Pokoltűz-torpedók
+TORPEDO_1_BRIEF       | Mind a négy pajzsot eltalálja
+TORPEDO_1_DETAIL      | Beburkoló energiatorpedók, amelyek egyszerre csapnak le minden pajzsra. 5-ös sebességgel mozognak, egy +6 szintű célzószámítógép vezérli őket és négy 25 értékű támadásnak megfelelő kárt okoznak.
+
+TORPEDO_2_NAME        | Protontorpedók
+TORPEDO_2_BRIEF       | 2 fordulónként egyet tüzel
+TORPEDO_2_DETAIL      | Nagy energiahozamú torpedók, amelyek 75 értékben károsítanak, de csak minden második fordulóban lőhetők ki. Minden torpedó +6 szintű célzószámítógéppel van felszerelve.
+
+TORPEDO_3_NAME        | Plazmatorpedók
+TORPEDO_3_BRIEF       | 15 károsításpotenciált veszít mezőnként
+TORPEDO_3_DETAIL      | Tiszta energiájú torpedók, amelyek 150 értékű kárt okoznak és 6-os sebességgel mozognak, de megtett mezőnként 15 károkozási potenciált veszítenek. Az kilövő minden második fordulóban tüzel és egy +7 szintű célzószámítógéppel van felszerelve.
+
