@@ -47,7 +47,7 @@ public final class TechBattleSuit extends Tech {
     }
     @Override
     public float baseValue(Empire c) {
-        return c.tech().topBattleSuitTech() == null ? level : level - c.tech().topBattleSuitTech().level;
+        return c.ai().scientist().baseValue(this);
     }
     @Override
     public void provideBenefits(Empire c) {
