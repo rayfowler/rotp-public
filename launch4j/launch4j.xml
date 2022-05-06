@@ -2,8 +2,8 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>C:\Users\RayGame\Documents\NB\Remnants\dist\Remnants.jar</jar>
-  <outfile>C:\Users\RayGame\Documents\NB\Remnants\launch4j\Remnants\Remnants.exe</outfile>
+  <jar>D:\JavaProjects\Remnants\dist\Remnants.jar</jar>
+  <outfile>D:\JavaProjects\Remnants\launch4j\Remnants\Remnants.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
@@ -13,7 +13,7 @@
   <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
-  <icon>C:\Users\RayGame\Documents\NB\Remnants\launch4j\rotp.ico</icon>
+  <icon>D:\JavaProjects\Remnants\launch4j\rotp.ico</icon>
   <jre>
     <path>jre</path>
     <bundledJre64Bit>true</bundledJre64Bit>
@@ -26,7 +26,7 @@
     <maxHeapSize>3500</maxHeapSize>
   </jre>
   <splash>
-    <file>C:\Users\RayGame\Documents\NB\Remnants\launch4j\rotp_splash.bmp</file>
+    <file>D:\JavaProjects\Remnants\launch4j\rotp_splash.bmp</file>
     <waitForWindow>false</waitForWindow>
     <timeout>15</timeout>
     <timeoutErr>false</timeoutErr>
