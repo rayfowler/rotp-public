@@ -804,7 +804,6 @@ public final class SabotageUI extends BasePanel implements MouseListener {
                     repaint();
                 animationIndex++;
                 if (animationIndex >= animationFrames.size()) {
-                    player().sv.refreshSpyScan(systemToDisplay().id);
                     advanceToNextState();
                     return;
                 }
