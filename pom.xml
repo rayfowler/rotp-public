@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>rayfowler</groupId>
+    <artifactId>rotp-public</artifactId>
+    <version>1.0</version>
+
+    <!-- using properties to centralize versions of dependencies -->
+    <properties>
+        <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <jpackage-maven-plugin.version>1.5.1</jpackage-maven-plugin.version>
+    </properties>
+
+    <build>
+        <!-- set the source directory to src rather than main/java/src -->
+        <sourceDirectory>src</sourceDirectory>
+        <!-- set the resource directory to also be src, but exclude any java files as being "resources" so that
+             everything gets properly copied over into the jar -->
+        <resources>
+            <resource>
+                <directory>src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <release>17</release>
+                </configuration>
+            </plugin>
+
+            <!-- use the plain old maven-jar-plugin since there isn't any fancy dependency management -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>rotp.Rotp</mainClass>
+                        </manifest>
+                    </archive>
+                    <finalName>${project.artifactId}</finalName>
+                    <outputDirectory>target/dist</outputDirectory>
+                </configuration>
+            </plugin>
+
+            <!--
+                Makes use of 'jpackage' which was made official as of JDK16. Oracle introduced 'jpackage' as the
+                standard way of creating self-contained executables on Windows, dmg files on macOS, and rpm/deb files
+                on Linux. By self-contained, this means that the user will not have to download the JRE, and that we
+                can be in full control of exactly what runtime environment the game runs in.
+
+                This does not allow for cross-compilation though, so each executable format will need to be built on
+                the target platform (e.g. dmg files can only be built on macOS, exe/msi only on Windows). This plugin
+                is part of the package execution step, but must be manually invoked since it depends on certain non-JDK
+                things being present on the packager's system (see links below).
+
+                To invoke this step from the pom.xml directory:
+                    `mvn clean package jpackage:jpackage`
+
+                Overview of jpackage: https://docs.oracle.com/en/java/javase/14/jpackage/packaging-overview.html
+                See also: https://docs.oracle.com/en/java/javase/14/docs/specs/man/jpackage.html
+            -->
+            <plugin>
+                <groupId>org.panteleyev</groupId>
+                <artifactId>jpackage-maven-plugin</artifactId>
+                <version>${jpackage-maven-plugin.version}</version>
+                <configuration>
+                    <name>Remnants of the Precursor</name>
+                    <input>target/dist</input>
+                    <appVersion>${version}</appVersion>
+                    <mainJar>${project.artifactId}.jar</mainJar>
+                    <destination>target</destination>
+                    <javaOptions>
+                        <option>-Dfile.encoding=UTF-8</option>
+                    </javaOptions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- Make use of profiles to set OS specific things, such as icons. -->
+    <profiles>
+        <profile>
+            <id>win</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.panteleyev</groupId>
+                        <artifactId>jpackage-maven-plugin</artifactId>
+                        <version>${jpackage-maven-plugin.version}</version>
+                        <configuration>
+                            <icon>launch4j/rotp.ico</icon>
+                            <winMenu>true</winMenu>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>mac</id>
+            <activation>
+                <os>
+                    <family>mac</family>
+                </os>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.panteleyev</groupId>
+                        <artifactId>jpackage-maven-plugin</artifactId>
+                        <version>${jpackage-maven-plugin.version}</version>
+                        <configuration>
+                            <icon>launch4j/rotp.icns</icon>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>
