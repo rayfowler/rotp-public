@@ -31,7 +31,7 @@ PLANET_NONE                       | Aucun
 PLANET_OCEAN                      | Océanique
 PLANET_RADIATED                   | Irradiée
 PLANET_STEPPE                     | Steppe
-PLANET_TERRAN                     | Terriene
+PLANET_TERRAN                     | Terrienne
 PLANET_TOXIC                      | Toxique
 PLANET_TUNDRA                     | Toundra
 
@@ -40,7 +40,7 @@ SPY_HIDE                          | Cacher
 SPY_ESPIONAGE                     | Espionnage
 SPY_SABOTAGE                      | Sabotage
 SPY_CAUGHT                        | [Vos espions ont été pris.]
-SPY_FRAMED                        | [Vous aves été piégé]
+SPY_FRAMED                        | [Vous avez été piégé]
 SPY_FORCED_CONFESSION             | [Un faux aveu a été forcé.]
 SPY_WARNING                       | [Vous avez été averti.]
 
@@ -77,7 +77,7 @@ PLANET_ORION                      | Orion
 PLANET_ORION_GUARDIAN             | Gardien
 
 // Nebula names  ("starName" Nebula)
-NEBULA_NAME                       | Nebula %1
+NEBULA_NAME                       | Nébuleuse %1
 NEBULA_ID                         | NGC %1
 
 // %2 is the leader's actual name
@@ -108,7 +108,7 @@ LEADER_MILITARIST                 | Militariste
 LEADER_ECOLOGIST                  | Écologiste
 LEADER_INDUSTRIALIST              | Industriel
 LEADER_EXPANSIONIST               | Expansionniste
-LEADER_TECHNOLOGIST               | Technologue
+LEADER_TECHNOLOGIST               | Technologiste
 // Leader Personality & Objective displayed together
 LEADER_PERSONALITY_FORMAT         | %1 %2
 
@@ -288,12 +288,12 @@ CLICK_EXIT                        | Cliquez ou Échappez pour Quitter ...
 BUTTON_EXIT                       | Quitter
 
 // GAME/SETUP UI 
-GAME_TITLE_LINE_1                 | DES RESTES
+GAME_TITLE_LINE_1                 | VESTIGES
 GAME_TITLE_LINE_2                 | des
 GAME_TITLE_LINE_3                 | PRÉCURSEURS
-GAME_DISCUSS_ONLINE               | Discutez en ligne
-GAME_MENU_CONTINUE                | Continuez le jeu
-GAME_MENU_NEW_GAME                | Nouveau Jeu
+GAME_DISCUSS_ONLINE               | Discuter en ligne
+GAME_MENU_CONTINUE                | Continuer la Partie
+GAME_MENU_NEW_GAME                | Nouvelle Partie
 GAME_MENU_LOAD_GAME               | Charger la Partie
 GAME_MENU_SAVE_GAME               | Enregistrer la Partie
 GAME_MENU_SETTINGS                | Paramètres
@@ -311,7 +311,7 @@ GAME_SETTINGS_EXIT                | Quitter
 GAME_SETTINGS_DEFAULT             | Définir par défaut
 GAME_SETTINGS_DISPLAY_MODE        | Mode d'Affichage: %1
 GAME_SETTINGS_WINDOWED            | Fenêtré
-GAME_SETTINGS_BORDERLESS          | Sans Frontières
+GAME_SETTINGS_BORDERLESS          | Sans Bordures
 GAME_SETTINGS_FULLSCREEN          | Plein Écran
 GAME_SETTINGS_DISPLAY_MODE_DESC   | Nécessite un redémarrage. Fenêtré est un rapport fixe et redimensionnable. Sans Frontières est une fenêtre maximisée. Le plein écran est une fenêtre maximisée exclusive. 
 GAME_SETTINGS_GRAPHICS            | Niveau Graphique: %1
@@ -403,8 +403,8 @@ MAIN_NAVIGATION_NEXT_TURN         | Tour Suivant
 MAIN_NAVIGATION_NEXT_YEAR         | L'année Suivante
 MAIN_YEAR_DISPLAY                 | Année  %1
 MAIN_TURN_DISPLAY                 | Tour  %1
-MAIN_SPY_REPORT                   | Spion
-MAIN_TECH_NONE                    | Aucune Aecherche
+MAIN_SPY_REPORT                   | Espion
+MAIN_TECH_NONE                    | Aucune Recherche
 MAIN_TECH_COMPLETED               | Recherche Terminée
 MAIN_TECH_RP_REMAINING            | %1 RP Restant(s)
 MAIN_TECH_RP_DISCOVERY            | Découverte Imminente
@@ -460,7 +460,7 @@ MAIN_UNSCOUTED                    | Inconnue
 MAIN_ABANDONED                    | Abandonné
 MAIN_ALIEN_COLONY                 | %1 Colonie
 MAIN_UNKNOWN_COLONY               | Colonie Extraterrestre
-MAIN_NEBULA_DESC                  | La vitesse de déplacement des vaisseaux à travers les nébuleuses est limitée à Warp 1
+MAIN_NEBULA_DESC                  | La vitesse de déplacement des vaisseaux à travers les nébuleuses est limitée à Distorsion 1
 MAIN_PLANET_SIZE                  | Taille %1
 MAIN_PLANET_SIZE+                 | Taille %1+
 MAIN_PLANET_POP                   | Pop %1
@@ -488,7 +488,7 @@ TURN_RESEARCH                     | Recherche
 TURN_ASSESS                       | Achèvement Interne
 TURN_DIPLOMACY                    | Diplomatie
 TURN_ACQUIRE_TECHS                | Apprentissage des Technologies Échangées
-TURN_MAKE_DECISIONS               | Faire des Décisions
+TURN_MAKE_DECISIONS               | Prendre des Décisions
 TURN_RECALC_DISTANCES             | Recalcul des Distances Système
 TURN_REFRESHING                   | Actualisation des Vues
 TURN_SCRAP_SHIPS                  | Démolir des Navires
@@ -522,7 +522,7 @@ MAIN_FLEET_ETA_NAMED              | heure d'arrivée estimée jusqu'à  %1 : %2 
 MAIN_FLEET_SET_RALLY              | Ralliement
 MAIN_FLEET_AUTO_RETREAT           | Se retirer automatiquement à l'arrivée
 MAIN_FLEET_ETA_UNKNOWN            | Les scanners ne peuvent pas déterminer la destination
-MAIN_FLEET_THROUGH_NEBULA         | Vitesse maximale limitée à Distorsion 1 par nebula
+MAIN_FLEET_THROUGH_NEBULA         | Vitesse maximale limitée à Distorsion 1 dans la nébuleuse
 
 MAIN_FLEET_CANCEL                 | Annuler
 MAIN_FLEET_OUT_OF_RANGE           | Hors de Portée
@@ -670,7 +670,7 @@ MAIN_ALLOCATE_CHANGE_SPENDING     | Les allocations de dépenses du système peu
 MAIN_ALLOCATE_NOTICE_NUMBER       | Avis %1 sur %2
 MAIN_ALLOCATE_BRIEF_NUMBER        | %1 sur %2
 MAIN_ALLOCATE_PREV_SYSTEM         | Précédent
-MAIN_ALLOCATE_NEXT_SYSTEM         | Prochain
+MAIN_ALLOCATE_NEXT_SYSTEM         | Suivant
 MAIN_ALLOCATE_CLOSE               | Fermer
 
 // Fleet Production display (during next turn)
@@ -694,7 +694,7 @@ MAIN_MEMORY_LOW_SKIP              | Ignorer
 
 // Autosave Failed Warning
 MAIN_AUTOSAVE_FAILED_TITLE        | Avertissement! Échec de la sauvegarde automatique
-MAIN_AUTOSAVE_FAILED_DESC         | La fonction de sauvegarde automatique automatique qui se déclenche lorsque vous appuyez sur "Prochain Tour" a échoué. Cela pourrait être un problème momentané dans la matrice, mais veuillez sauvegarder ce jeu manuellement avant de continuer.
+MAIN_AUTOSAVE_FAILED_DESC         | La fonction de sauvegarde automatique automatique qui se déclenche lorsque vous appuyez sur "Tour Suivant" a échoué. Cela pourrait être un problème momentané dans la matrice, mais veuillez sauvegarder ce jeu manuellement avant de continuer.
 MAIN_AUTOSAVE_FAILED_DESC_2       | Le message fourni au jeu pour cette erreur est : %1
 MAIN_AUTOSAVE_FAILED_DESC_3       | Si vous voyez ce message fréquemment, veuillez vous connecter sur www.reddit.com/r/rotp publier cette capture d'écran.
 MAIN_AUTOSAVE_FAILED_OK           | OK
@@ -1500,7 +1500,7 @@ SHIP_COMBAT_SHIP_TOTALS           | %1 🡒 %2
 SHIP_COMBAT_RESULTS_RETREATED     | RECULÉ
 SHIP_COMBAT_RESULTS_DESTROYED     | DÉTRUIT
 SHIP_COMBAT_RETREAT_ALL           | Reculer tout
-SHIP_COMBAT_NEXT                  | Prochain navire
+SHIP_COMBAT_NEXT                  | Navire suivant
 SHIP_COMBAT_AUTO_RESOLVE          | Bataille à résolution automatique
 SHIP_COMBAT_AUTO_RESOLVING        | En train de résoudre le combat...
 SHIP_COMBAT_PLAY_BATTLE           | Bataille en lecture automatique
@@ -1518,7 +1518,7 @@ SHIP_COMBAT_CURRENT_TARGET        | Flotte actuelle ciblée.
 SHIP_COMBAT_SELECT_ACTION         | Sélectionner une action.
 SHIP_COMBAT_SELECT_WEAPON         | Sélectionner une arme ou un appareil.
 SHIP_COMBAT_FIRE_WEAPON           | Tirer
-SHIP_COMBAT_ACTION_NEXT_SHIP      | Prochain vaisseau
+SHIP_COMBAT_ACTION_NEXT_SHIP      | Vaisseau suivant
 SHIP_COMBAT_ACTION_TURN_DONE      | Tour effectué
 SHIP_COMBAT_ACTION_RETREAT        | Battre en retraite
 SHIP_COMBAT_ACTION_FIRE_ALL       | Tirer toutes les armes.
@@ -1601,7 +1601,7 @@ RACES_DIPLOMACY_CURRENT_TRADE     | Revenu commercial courant
 RACES_DIPLOMACY_TOTAL_TRADE       | Total des traités commerciaux
 RACES_DIPLOMACY_TRADE_AMT         | %1 BC
 RACES_DIPLOMACY_CHARACTER         | Personnage
-RACES_DIPLOMACY_STATUS            | Statust
+RACES_DIPLOMACY_STATUS            | Statut
 RACES_DIPLOMACY_RELATIONS_METER   | Compteur de relations
 RACES_DIPLOMACY_RELATIONS_UNKNOWN | L'humeur et les motivations [alien_empireof] sont impénétrables pour nos diplomates et nos espions.
 RACES_DIPLOMACY_BUREAU            | Bureau de la diplomatie
@@ -1646,7 +1646,7 @@ RACES_INTEL_TAX_DESC              | Taxez vos colonies pour augmenter vos chance
 RACES_INTEL_TAX_OUT_OF_RANGE      | Les dépenses commencent lorsque vous êtes à portée de races extraterrestres.
 RACES_INTEL_SECURITY_BONUS_AMT    | +%1%
 RACES_INTEL_SECURITY_BONUS_NONE   | None
-RACES_INTEL_REPORT_AGE            | Signaler l'âge
+RACES_INTEL_REPORT_AGE            | Ancienneté du rapport
 RACES_INTEL_SPY_NETWORK           | Réseaux d'espionnage
 RACES_INTEL_SPENDING              | Dépenses
 RACES_INTEL_SPENDING_DESC         | Augmentez les dépenses pour ajouter des espions au réseau au fil du temps. 
@@ -1656,8 +1656,8 @@ RACES_INTEL_SPENDING_RANGE        | Impossible de créer des réseaux d'espionna
 RACES_INTEL_PERCENT_AMT           | %1%
 RACES_INTEL_YEARS                 | %1 ans
 RACES_INTEL_NO_SPIES              | Pas d'espions
-RACES_INTEL_1_SPY                 | 1 spion
-RACES_INTEL_N_SPIES               | %1 spions
+RACES_INTEL_1_SPY                 | 1 espion
+RACES_INTEL_N_SPIES               | %1 espions
 RACES_INTEL_SPIES                 | %1 / %2
 RACES_INTEL_SPENDING_ANNUAL       | %1 BC/année
 RACES_INTEL_CURRENT               | Courant
@@ -1799,7 +1799,7 @@ HISTORY_TURN_DESC                 | Tournez %1 sur %2
 HISTORY_FORWARD                   | En avant
 HISTORY_BACK                      | Retour
 HISTORY_PLAY                      | Lire
-HISTORY_PAUSE                     | Pauser
+HISTORY_PAUSE                     | Mettre en pause
 HISTORY_RESET                     | Réinitialiser
 HISTORY_EXIT                      | Quitter
 HISTORY_EXTINCT                   | Disparu
