@@ -46,6 +46,22 @@ import rotp.ui.sprites.SystemTransportSprite;
 
 public class TransportDeploymentPanel extends SystemPanel {
     private static final long serialVersionUID = 1L;
+    // NOTE: This use of a public static variable needs rework because it permits an in-game exploit:
+    // - Pick a system and abandon it to any valid target (own) system.
+    // - Select the same source system and click "Send Transports".
+    // - Choose any valid target system (which can include an enemy system).
+    // - Adjust the population to any value greater than half of but below the current full colony size.
+    // - Click the green "Send Transports" button to confirm.
+    // - Next turn the game ships the specified number of transports without abandoning the colony.
+    // This can be used to muster force against an enemy in excess of what should be possible, but
+    // it can also be used defensively or economically to rapidly populate one's own system(s) from
+    // back-line colonies.
+    // The essential nature of the issue is that committing the abandon action sets this global flag
+    // indefinitely until the regular transport action is invoked on some system. The most effective
+    // solution is to make the abandonment (intent) flag transient to the UI action and capture it
+    // elsewhere, perhaps in the transport object itself or in the colony object (latter would require
+    // differentiation from the "abandoned" flag that gets set when the population actually
+    // gets shipped).
     public static boolean enableAbandon = false;
     protected BasePanel topPane;
     protected BasePanel detailPane;
