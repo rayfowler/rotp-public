@@ -161,6 +161,9 @@ public final class Empire implements Base, NamedObject, Serializable {
             ai = new AI(this, options().selectedAI(this));
         return ai;
     }
+    public void resetAi() {
+        ai = null;
+    }
     public Diplomat diplomatAI()                  { return ai().diplomat(); }
     public FleetCommander fleetCommanderAI()      { return ai().fleetCommander(); }
     public ShipCaptain shipCaptainAI()            { return ai().shipCaptain(); }
