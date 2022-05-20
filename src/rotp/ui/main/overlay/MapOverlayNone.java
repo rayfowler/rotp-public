@@ -21,11 +21,13 @@ import java.util.List;
 import rotp.model.Sprite;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
+import rotp.model.game.GameSession;
 import rotp.ui.BasePanel;
 import rotp.ui.RotPUI;
 import rotp.ui.main.GalaxyMapPanel;
 import rotp.ui.main.MainUI;
 import rotp.ui.main.TransportDeploymentPanel;
+import rotp.ui.notifications.GameAlert;
 import rotp.ui.sprites.ShipRelocationSprite;
 import rotp.ui.sprites.SystemTransportSprite;
 
@@ -281,6 +283,18 @@ public class MapOverlayNone extends MapOverlay {
                     parent.map().recenterMapOn(systems.get(index));
                 }
                 parent.repaint();
+                break;
+            case KeyEvent.VK_F4:
+                String newAutoPlayOption = options().nextAutoplayOption();
+                options().selectedAutoplayOption(newAutoPlayOption);
+                galaxy().player().resetAi();
+                String str = text(options().selectedAutoplayOption());
+                GameSession.instance().addAlert(new GameAlert() {
+                    @Override
+                    public String description() {
+                        return "Auto play switched to " + str;
+                    }
+                });
                 break;
             case KeyEvent.VK_F5:
                 systems = player().orderedShipConstructingColonies();
