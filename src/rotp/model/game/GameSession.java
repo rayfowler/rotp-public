@@ -59,7 +59,6 @@ import rotp.ui.UserPreferences;
 import rotp.ui.notifications.GameAlert;
 import rotp.ui.notifications.SabotageNotification;
 import rotp.ui.notifications.ShipConstructionNotification;
-import rotp.ui.notifications.SpyReportAlert;
 import rotp.ui.notifications.StealTechNotification;
 import rotp.ui.notifications.SystemsScoutedNotification;
 import rotp.ui.notifications.TurnNotification;
@@ -391,9 +390,6 @@ public final class GameSession implements Base, Serializable {
                 }
                 if (!systemsToAllocate().isEmpty())
                     RotPUI.instance().allocateSystems();
-
-                if (spyActivity)
-                    SpyReportAlert.create();
 
                 log("Refreshing Player Views");
                 NoticeMessage.resetSubstatus(text("TURN_REFRESHING"));
