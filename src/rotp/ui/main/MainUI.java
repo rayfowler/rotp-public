@@ -85,7 +85,6 @@ public class MainUI extends BasePanel implements IMapHandler {
     MapOverlayMemoryLow overlayMemoryLow;
     MapOverlayJava32Bit overlayJava32Bit;
     MapOverlayAutosaveFailed overlayAutosaveFailed;
-    MapOverlayShipsConstructed overlayShipsConstructed;
     MapOverlaySpies overlaySpies;
     MapOverlayAllocateSystems overlayAllocateSystems;
     MapOverlaySystemsScouted overlaySystemsScouted;
@@ -146,7 +145,6 @@ public class MainUI extends BasePanel implements IMapHandler {
         overlayMemoryLow = new MapOverlayMemoryLow(this);
         overlayJava32Bit = new MapOverlayJava32Bit(this);
         overlayAutosaveFailed = new MapOverlayAutosaveFailed(this);
-        overlayShipsConstructed = new MapOverlayShipsConstructed(this);
         overlaySpies = new MapOverlaySpies(this);
         overlayAllocateSystems = new MapOverlayAllocateSystems(this);
         overlaySystemsScouted = new MapOverlaySystemsScouted(this);
@@ -302,14 +300,6 @@ public class MainUI extends BasePanel implements IMapHandler {
         overlay = overlayEspionageMission;
         overlayEspionageMission.init(esp, empId);
         repaint();
-    }
-    public void showShipsConstructed(HashMap<ShipDesign, Integer> ships) {
-        overlay = overlayShipsConstructed;
-        overlayShipsConstructed.init();
-        if (ships.isEmpty())
-            resumeTurn();
-        else
-            repaint();
     }
     public void showSystemsScouted(HashMap<String, List<StarSystem>> newSystems) {
         overlay = overlaySystemsScouted;

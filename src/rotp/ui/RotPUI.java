@@ -634,13 +634,6 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         selectMainPanel();
         session().waitUntilNextTurnCanProceed();
     }
-    public void showShipConstruction() {
-        session().pauseNextTurnProcessing("Show Ship Construction");
-        log("==MAIN UI==   show ship construction");
-        mainUI().showShipsConstructed(session().shipsConstructed());
-        selectMainPanel();
-        session().waitUntilNextTurnCanProceed();
-    }
     private void initModel() {
         setFocusTraversalKeysEnabled(false);
         setBackground(Color.CYAN);
