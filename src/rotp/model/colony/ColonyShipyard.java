@@ -230,10 +230,6 @@ public class ColonyShipyard extends ColonySpendingCategory {
                 empire().shipLab().recordConstruction(shipDesign, newShips);
                 empire().shipBuildingSystems().add(colony().starSystem());
                 placeNewShipsInOrbit(shipDesign, newShips);
-                if (empire().isPlayerControlled()) {
-                    log(colony().name(), " has constructed: ", str(newShips), " ", design.name());
-                    session().addShipsConstructed(shipDesign,  newShips);
-                }
             }
         }
         prevDesign = design;

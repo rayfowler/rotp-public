@@ -58,7 +58,6 @@ import rotp.ui.RotPUI;
 import rotp.ui.UserPreferences;
 import rotp.ui.notifications.GameAlert;
 import rotp.ui.notifications.SabotageNotification;
-import rotp.ui.notifications.ShipConstructionNotification;
 import rotp.ui.notifications.StealTechNotification;
 import rotp.ui.notifications.SystemsScoutedNotification;
 import rotp.ui.notifications.TurnNotification;
@@ -88,7 +87,6 @@ public final class GameSession implements Base, Serializable {
     private static final List<TurnNotification> notifications = new ArrayList<>();
     private static HashMap<StarSystem, List<String>> systemsToAllocate;
     private static HashMap<String, List<StarSystem>> systemsScouted;
-    private static HashMap<ShipDesign, Integer> shipsConstructed;
     private static final List<GameAlert> alerts = new ArrayList<>();
     private static int viewedAlerts;
 
@@ -111,11 +109,6 @@ public final class GameSession implements Base, Serializable {
     public void resumeNextTurnProcessing()  {
         log("Resuming Next Turn");
         suspendNextTurn = false;
-    }
-    public HashMap<ShipDesign, Integer> shipsConstructed() {
-        if (shipsConstructed == null)
-            shipsConstructed = new HashMap<>();
-        return shipsConstructed;
     }
     public HashMap<StarSystem, List<String>> systemsToAllocate() {
         if (systemsToAllocate == null)
@@ -169,16 +162,6 @@ public final class GameSession implements Base, Serializable {
         int races = options().selectedNumberOpponents()+2;
         float targetRatio = 12.0f;
         return sqrt(stars/races/targetRatio);
-    }
-    public void addShipsConstructed(ShipDesign design, int newCount) {
-        if (!design.active()) 
-            throw new RuntimeException("Constructed an inactive ship design");
-        
-        if (shipsConstructed().isEmpty())
-            addTurnNotification(new ShipConstructionNotification());
-
-        int existingCount = shipsConstructed().containsKey(design) ? shipsConstructed().get(design) : 0;
-        shipsConstructed().put(design, existingCount+newCount);
     }
     public void enableSpyReport() {
         spyActivity = true;
@@ -247,7 +230,6 @@ public final class GameSession implements Base, Serializable {
             status().startGame();
             clearScoutedSystems();
             systemsToAllocate().clear();
-            shipsConstructed().clear();
             spyActivity = false;
             galaxy().startGame();
             saveRecentSession(false);
@@ -321,7 +303,6 @@ public final class GameSession implements Base, Serializable {
                 long startMs = timeMs();
                 systemsToAllocate().clear();
                 clearScoutedSystems();
-                shipsConstructed().clear();
                 spyActivity = false;
                 clearAlerts();
                 RotPUI.instance().repaint();
