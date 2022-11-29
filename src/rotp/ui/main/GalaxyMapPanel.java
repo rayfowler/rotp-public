@@ -553,7 +553,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         Empire pl = player();
         Color normalBorder = emp.shipBorderColor();
         Color extendedBorder = emp.scoutBorderColor();
-        Color normalBackground = emp.empireRangeColor();
         // draw extended range
         List<StarSystem> systems = player().systemsForCiv(emp);
         List<StarSystem> alliedSystems = new ArrayList<>();
@@ -603,10 +602,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             for (StarSystem sv: systems)
                 tmpRangeArea.add(new Area( new Ellipse2D.Float(fMapX(sv.x())-baseR, fMapY(sv.y())-baseR, 2*baseR, 2*baseR) ));       
             shipRangeArea = tmpRangeArea;
-        }       
-        
-        g.setColor(normalBackground);
-        g.fill(tmpRangeArea);
+        }
         g.setColor(normalBorder);
         g.setStroke(stroke2);
         g.draw(tmpRangeArea);   

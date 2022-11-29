@@ -147,7 +147,6 @@ public final class Empire implements Base, NamedObject, Serializable {
     private transient Color reachColor;
     private transient Color shipBorderColor;
     private transient Color scoutBorderColor;
-    private transient Color empireRangeColor;
     private transient float totalEmpireProduction;
     private transient float totalEmpireShipMaintenanceCost;
     private transient float totalEmpireStargateCost;
@@ -264,7 +263,6 @@ public final class Empire implements Base, NamedObject, Serializable {
         reachColor = null;
         shipBorderColor = null;
         scoutBorderColor = null;
-        empireRangeColor = null;
         shipImage = null;
         shipImageLarge = null;
         shipImageHuge = null;
@@ -355,16 +353,6 @@ public final class Empire implements Base, NamedObject, Serializable {
             scoutBorderColor = newColor(cR*4/8,cG*4/8,cB*4/8);
         }
         return scoutBorderColor;
-    }
-    public Color empireRangeColor() {
-        if (empireRangeColor == null) {
-            Color c = color();
-            int cR = c.getRed();
-            int cG = c.getGreen();
-            int cB = c.getBlue();
-            empireRangeColor = newColor(cR*3/12,cG*3/12,cB*3/12);
-        }
-        return empireRangeColor;
     }
     public Color reachColor() {
         if (reachColor == null) {
