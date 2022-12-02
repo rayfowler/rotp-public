@@ -494,7 +494,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     private void drawGrids(Graphics2D g) {
         if (showGridCircular) {
             drawGridCircularDisplayDark(g);
-            //drawGridCircularDisplayLight(g);
         }
     }
     private void drawOwnershipDisplay(Graphics2D g) {
@@ -506,7 +505,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         for (int id=0; id < pl.sv.count(); id++) {
             Empire emp = parent.knownEmpire(id, pl);
             StarSystem sys = gal.system(id);
-            //Shape sysCircle = new Ellipse2D.Float(mapX(sys.x())-ownerR, mapY(sys.y())-ownerR, 2*ownerR, 2*ownerR);
             if ((emp != null) && parent.showOwnership(sys)) {
                 int shape = emp.shape();
                 g.setColor(emp.ownershipColor());
@@ -539,7 +537,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
                     default:
                         g.fillOval(x-r0, y-r0, r0+r0, r0+r0); break;
                 }
-                //g.fill(sysCircle);
             }
         }
     }
@@ -1060,8 +1057,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         
         int clicks = e.getClickCount();
         boolean rightClick = SwingUtilities.isRightMouseButton(e);
-        int x1 = e.getX();
-        int y1 = e.getY();
         Sprite newSelection = hoverSprite;
 
         if (newSelection == null) 
