@@ -540,7 +540,6 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             return;
 
         Empire pl = player();
-        int s7 = BasePanel.s7;
 
         displayed = true;
         int x0 = mapX(map);
@@ -793,8 +792,6 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         g2.setComposite(prev);
     }
     private void drawSelection(Graphics2D g, GalaxyMapPanel map, Empire emp, int x, int y) {
-        int r = map.scale(1.0f);
-
         Stroke prev = g.getStroke();
         int mod = map.animationCount()%15/5;
         switch(mod) {
