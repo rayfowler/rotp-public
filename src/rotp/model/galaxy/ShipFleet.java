@@ -1045,16 +1045,15 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
         else
             g2.drawImage(img, x+w, y, -w, h, map);
 
-        int pad = BasePanel.s8;
-        selectBox().setBounds(x-pad,y-pad,w+pad+pad,h+pad+pad);
+        int boundsPad = BasePanel.s1;
+        selectBox().setBounds(x-boundsPad,y-boundsPad,w+boundsPad*2,h+boundsPad*2);
 
-        int s5 = BasePanel.s5;
-        int s10 = BasePanel.s10;
+        int outlinePad = BasePanel.s2;
         int cnr = BasePanel.s10;
         if (map.parent().isClicked(this))
-            drawSelection(g2, map, x-s5, y-s5, w+s10, h+s10, cnr);
+            drawSelection(g2, map, x-outlinePad, y-outlinePad, w+outlinePad*2, h+outlinePad*2, cnr);
         else if (map.parent().isHovering(this))
-            drawHovering(g2, map, x-s5, y-s5, w+s10, h+s10, cnr);
+            drawHovering(g2, map, x-outlinePad, y-outlinePad, w+outlinePad*2, h+outlinePad*2, cnr);
     }
     private void drawSelection(Graphics2D g, GalaxyMapPanel map, int x, int y, int w, int h, int cnr) {
         if (empire() == null)
