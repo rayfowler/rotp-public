@@ -843,7 +843,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         g.setStroke(prev);
     }
     private void drawHovering(Graphics2D g, GalaxyMapPanel map, int x, int y) {
-        int r = map.scale(0.5f);
+        int r = map.scale(1.0f);
 
         Stroke prev = g.getStroke();
         g.setStroke(BasePanel.stroke1);
