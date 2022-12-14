@@ -497,7 +497,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         }
     }
     private void drawOwnershipDisplay(Graphics2D g) {
-        int r0 = scale(1.0f);
+        int r0 = scale(0.9f);
         int r1 = scale(0.8f);
 
         Galaxy gal = galaxy();
