@@ -51,6 +51,7 @@ import rotp.util.Base;
 
 public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     private static final long serialVersionUID = 1L;
+    private static final float clickRadius = 0.9f;
 	// modnar: change shield colors to color-coded loot rarity
 	// shield-5 --> shield-10 --> shield-15 --> shield-20
 	//    green -->      blue -->    purple --> orange
@@ -719,7 +720,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             return true;
         int spriteX = map.mapX(x());
         int spriteY = map.mapY(y());
-        float clickR = map.scale(map.parent().systemClickRadius());
+        float clickR = map.scale(clickRadius);
         float dist = distance(spriteX, spriteY, mapX, mapY);
         return dist <= max(BasePanel.s2, clickR);
     }
@@ -806,7 +807,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         else
             g.setColor(emp.color());
         
-        int r0 = map.scale(1.0f);
+        int r0 = map.scale(clickRadius);
         int r1 = map.scale(0.8f);
 
         int shape = emp == null ? Empire.SHAPE_CIRCLE : emp.shape();
@@ -840,7 +841,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         g.setStroke(prev);
     }
     private void drawHovering(Graphics2D g, GalaxyMapPanel map, int x, int y) {
-        int r = map.scale(1.0f);
+        int r = map.scale(clickRadius);
 
         Stroke prev = g.getStroke();
         g.setStroke(BasePanel.stroke1);
