@@ -30,7 +30,6 @@ import rotp.model.empires.Race;
 import rotp.model.events.RandomEvents;
 import rotp.model.game.GameSession;
 import rotp.ui.NoticeMessage;
-import rotp.ui.notifications.AdviceNotification;
 import rotp.ui.notifications.BombardSystemNotification;
 import rotp.util.Base;
 
@@ -46,7 +45,6 @@ public class Galaxy implements Base, Serializable {
     private final StarSystem[] starSystems;
     private List<Nebula> nebulas;
     private final Empire[] empires;
-    private final List<String> adviceGiven = new ArrayList<>();
     private final List<Transport> transports = new ArrayList<>();
     private final List<StarSystem> abandonedSystems = new ArrayList<>();
 
@@ -169,46 +167,6 @@ public class Galaxy implements Base, Serializable {
                 systems.add(sys);
         }
         return systems;
-    }
-    private float randomLocation(float max, float leftBuff, float rightBuff) {
-        return leftBuff + (random() * (max-leftBuff-rightBuff));
-    }
-    public void addAdviceGiven(String key) {
-        if (!adviceGiven.contains(key))
-            adviceGiven.add(key);
-    }
-    public boolean adviceAlreadyGiven(String key) {
-        return adviceGiven.contains(key) || options().isAutoPlay();
-    }
-    public void giveAdvice(String key) {
-        if (!adviceAlreadyGiven(key)) {
-            addAdviceGiven(key);
-            AdviceNotification.create(key);
-        }
-    }
-    public void giveAdvice(String key, Empire e1, String s1) {
-        if (!adviceAlreadyGiven(key)) {
-            addAdviceGiven(key);
-            AdviceNotification.create(key, e1, s1);
-        }
-    }
-    public void giveAdvice(String key, String s1) {
-        if (!adviceAlreadyGiven(key)) {
-            addAdviceGiven(key);
-            AdviceNotification.create(key, s1);
-        }
-    }
-    public void giveAdvice(String key, String s1, String s2) {
-        if (!adviceAlreadyGiven(key)) {
-            addAdviceGiven(key);
-            AdviceNotification.create(key, s1, s2);
-        }
-    }
-    public void giveAdvice(String key, String s1, String s2, String s3) {
-        if (!adviceAlreadyGiven(key)) {
-            addAdviceGiven(key);
-            AdviceNotification.create(key, s1, s2, s3);
-        }
     }
     public boolean inNebula(IMappedObject obj) {
         return inNebula(obj.x(), obj.y());
@@ -372,7 +330,6 @@ public class Galaxy implements Base, Serializable {
         return null;
     }
     public void startGame() {
-        giveAdvice("MAIN_ADVISOR_SCOUT");
         session().processNotifications();
     }
     public void moveShipsInTransit() {

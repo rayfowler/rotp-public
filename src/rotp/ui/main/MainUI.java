@@ -93,7 +93,6 @@ public class MainUI extends BasePanel implements IMapHandler {
     MapOverlayBombardPrompt overlayBombardPrompt;
     MapOverlayBombardedNotice overlayBombardedNotice;
     MapOverlayShipCombatPrompt overlayShipCombatPrompt;
-    MapOverlayAdvice overlayAdvice;
     AlertDismissSprite alertDismissSprite;
     HelpSprite helpSprite;
     MapOverlay overlay;
@@ -109,7 +108,6 @@ public class MainUI extends BasePanel implements IMapHandler {
     private float saveScale;
     private float saveX;
     private float saveY;
-    private boolean showAdvice = false;
     private int helpFrame = 0;
     private int numHelpFrames = 0;
 
@@ -124,7 +122,7 @@ public class MainUI extends BasePanel implements IMapHandler {
         displayPanel.setVisible(false); 
     }
     public void showDisplayPanel()           { displayPanel.setVisible(true); }
-    public void clearOverlay()               { overlay = showAdvice ? overlayAdvice : overlayNone; }
+    public void clearOverlay()               { overlay = overlayNone; }
 
     private boolean displayPanelMasks(int x, int y) {
         if (!displayPanel.isVisible())
@@ -153,7 +151,6 @@ public class MainUI extends BasePanel implements IMapHandler {
         overlayBombardPrompt = new MapOverlayBombardPrompt(this);
         overlayBombardedNotice = new MapOverlayBombardedNotice(this);
         overlayShipCombatPrompt = new MapOverlayShipCombatPrompt(this);
-        overlayAdvice = new MapOverlayAdvice(this);
         overlay = overlayNone;
     }
     public void init(boolean pauseNextTurn) {
@@ -204,9 +201,9 @@ public class MainUI extends BasePanel implements IMapHandler {
         return (session().currentAlert() != null) && displayPanel.isVisible();
     }
     @Override
-    public boolean showTreasuryResearchBar()       { return overlay != overlayAdvice; }
+    public boolean showTreasuryResearchBar()       { return true; }
     @Override
-    public boolean showSpyReportIcon()             { return (overlay != overlayAdvice) && session().spyActivity(); }
+    public boolean showSpyReportIcon()             { return session().spyActivity(); }
     @Override
     public boolean showAllCurrentResearch()        { return (overlay == overlayEspionageMission); }
     
@@ -214,18 +211,6 @@ public class MainUI extends BasePanel implements IMapHandler {
         overlay = lay;
     }
     public MapOverlay overlay()   { return overlay; }
-    public void clearAdvice() {
-        if (overlay == overlayAdvice) {
-            showAdvice = false;
-            overlay = overlayNone;
-        }
-    }
-    public void showAdvice(String key, Empire emp1, String var1, String var2, String var3) {
-        overlay = overlayAdvice;
-        overlayAdvice.init(key, emp1, var1, var2, var3);
-        showAdvice = true;
-        repaint();
-    }
     @Override
     public void cancelHelp() {
         helpFrame = 0;

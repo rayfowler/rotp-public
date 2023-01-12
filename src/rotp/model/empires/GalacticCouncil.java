@@ -129,7 +129,6 @@ public class GalacticCouncil implements Base, Serializable {
     }
     private void schedule() {
         if (!options().isAutoPlay()) {
-            galaxy().giveAdvice("MAIN_ADVISOR_COUNCIL");
             GNNNotification.notifyCouncil(text("GNN_FORM_COUNCIL"));
         }
         nextAction = CONVENE;
@@ -232,13 +231,6 @@ public class GalacticCouncil implements Base, Serializable {
                 session().status().loseDiplomatic();
             return;
         }
-
-        // final war: player is rebelling aginst leader, or player
-        // is leader and at least one AI is rebelling
-        if (leader.isPlayerControlled())
-            galaxy().giveAdvice("MAIN_ADVISOR_COUNCIL_RESISTED", leader.raceName());                   
-        else 
-            galaxy().giveAdvice("MAIN_ADVISOR_RESIST_COUNCIL");
 
         // all members of alliance declare final war on player and all rebels
         // everyone gets the incident first. Once Final War is declared, no

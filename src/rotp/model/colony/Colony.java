@@ -421,7 +421,6 @@ public final class Colony implements Base, IMappedObject, Serializable {
         if (empire == pl) {
             message = text(messageKey, sys.name(), rebels);
             message = empire.replaceTokens(message, "rebelling");
-            galaxy().giveAdvice("MAIN_ADVISOR_REBELLION", sys.name());
         }
         else if (empire.hasContact(pl) && pl.sv.isScouted(sys.id)) {
             message = text("GNN_ALIEN_REBELLION", pl.sv.name(sys.id), rebels);
