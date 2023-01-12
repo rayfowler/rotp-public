@@ -249,9 +249,6 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         timer = new Timer(ANIMATION_TIMER, this);
         init();
     }
-    public void clearAdvice() {
-        RotPUI.this.mainUI().clearAdvice();
-    }
     public void processNotifications(List<TurnNotification> notifications) {
         for (TurnNotification tn: notifications) 
             processNotification(tn);
@@ -436,10 +433,6 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         else
             selectPanel(GROUND_BATTLE_PANEL, groundBattleUI);
         session().waitUntilNextTurnCanProceed();
-    }
-    public void showAdvice(String key, Empire emp1, String var1, String var2, String var3) {
-        mainUI().showAdvice(key, emp1, var1, var2, var3);
-        selectMainPanel();
     }
     public void showBombardmentNotice(int sysId, ShipFleet fl) {
         try {

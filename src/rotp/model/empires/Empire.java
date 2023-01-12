@@ -660,15 +660,12 @@ public final class Empire implements Base, NamedObject, Serializable {
         tr.size(0);
     }
     public Colony colonize(String sysName, StarSystem sys) {
-        StarSystem home = galaxy().system(capitalSysId);
         sys.addEvent(new SystemColonizedEvent(id));
         newSystems.add(sys);
         Colony c = sys.becomeColonized(sysName, this);
         addColonizedSystem(sys);
         governorAI().setInitialAllocations(c);
         if (isPlayerControlled()) {
-            int maxTransportPop =(int)(sys.planet().maxSize()-sys.colony().population());
-            galaxy().giveAdvice("MAIN_ADVISOR_TRANSPORT", sysName, str(maxTransportPop), home.name());
             session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_COLONIZED", sysName));
         }
         return c;

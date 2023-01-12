@@ -241,7 +241,6 @@ public final class GameSession implements Base, Serializable {
         smallSphereService = Executors.newSingleThreadExecutor();
     }
     private void stopCurrentGame() {
-        RotPUI.instance().mainUI().clearAdvice();
         vars().clear();
         clearAlerts();
         // shut down any threads running from previous game

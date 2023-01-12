@@ -88,9 +88,6 @@ public final class TechEngineWarp extends Tech {
                 }
             }
         }
-
-        if (c.isPlayerControlled() && (baseWarp > 1))
-            galaxy().giveAdvice("MAIN_ADVISOR_SHIP_ENGINE");
     }
     @Override
     public float baseCost() {

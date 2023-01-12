@@ -72,18 +72,6 @@ public class Race implements Base, Serializable {
     public String mugshotKey;
     public String wideMugshotKey;
     public String setupImageKey;
-    public String advisorFaceKey;
-    public String advisorScoutKey;
-    public String advisorTransportKey;
-    public String advisorDiplomacyKey;
-    public String advisorShipKey;
-    public String advisorRallyKey;
-    public String advisorMissileKey;
-    public String advisorWeaponKey;
-    public String advisorCouncilKey;
-    public String advisorRebellionKey;
-    public String advisorResistCouncilKey;
-    public String advisorCouncilResistedKey;
     public String diplomacyTheme;
     public String spyKey;
     public String gnnKey;
@@ -340,22 +328,9 @@ public class Race implements Base, Serializable {
     public BufferedImage laboratory()         { return currentFrame(laboratoryKey);  }
     public BufferedImage embassy()            { return currentFrame(embassyKey);  }
     public BufferedImage holograph()          { return currentFrame(holographKey);  }
-    public BufferedImage mugshot()            { return currentFrame(mugshotKey);  }
     public BufferedImage setupImage()         { return currentFrame(setupImageKey);  }
     public BufferedImage spyMugshotQuiet()    { return currentFrame(spyFaceKey, notTalking);  }
     public BufferedImage soldierMugshot()     { return currentFrame(soldierFaceKey, notTalking);  }
-    public BufferedImage advisorMugshot()     { return currentFrame(advisorFaceKey, notTalking); }
-    public BufferedImage advisorScout()       { return currentFrame(advisorScoutKey, notTalking); }
-    public BufferedImage advisorTransport()   { return currentFrame(advisorTransportKey, notTalking); }
-    public BufferedImage advisorDiplomacy()   { return currentFrame(advisorDiplomacyKey, notTalking); }
-    public BufferedImage advisorShip()        { return currentFrame(advisorShipKey, notTalking); }
-    public BufferedImage advisorRally()       { return currentFrame(advisorRallyKey, notTalking); }
-    public BufferedImage advisorMissile()     { return currentFrame(advisorMissileKey, notTalking); }
-    public BufferedImage advisorWeapon()      { return currentFrame(advisorWeaponKey, notTalking); }
-    public BufferedImage advisorCouncil()     { return currentFrame(advisorCouncilKey, notTalking); }
-    public BufferedImage advisorRebellion()   { return currentFrame(advisorRebellionKey, notTalking); }
-    public BufferedImage advisorResistCouncil()   { return currentFrame(advisorResistCouncilKey, notTalking); }
-    public BufferedImage advisorCouncilResisted()  { return currentFrame(advisorCouncilResistedKey, notTalking); }
     public BufferedImage diplomatTalking()    { return currentFrame(diplomatKey);  }
     public BufferedImage scientistTalking()   { return currentFrame(scientistKey);  }
     public BufferedImage soldierTalking()     { return currentFrame(soldierKey);  }
