@@ -221,8 +221,6 @@ public enum RaceFactory implements Base {
         if (key.equalsIgnoreCase("relations"))     { parseRaceRelationsMods(r, substrings(value,',')); return; }
         if (key.equalsIgnoreCase("shipdesign"))    { parseShipDesignMods(r, substrings(value,',')); return; }
         if (key.equalsIgnoreCase("available"))     { parseRaceAvailableFlags(r, value); return; }
-
-        err("unknown key->", input);
     }
 
     private int loadRaceLangLine(Race r, String input, String langDir) {
