@@ -19,8 +19,8 @@ import java.awt.Graphics2D;
 import rotp.ui.BasePanel;
 import rotp.ui.main.GalaxyMapPanel;
 
-public class RangeDisplaySprite extends MapControlSprite  {
-    public RangeDisplaySprite(int xOff, int yOff, int w, int h) {
+public class StarDisplaySprite extends MapControlSprite  {
+    public StarDisplaySprite(int xOff, int yOff, int w, int h) {
         xOffset = scaled(xOff);
         yOffset = scaled(yOff);
         width = scaled(w);
@@ -28,7 +28,7 @@ public class RangeDisplaySprite extends MapControlSprite  {
     }
     @Override
     public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
-        map.toggleShipRangesDisplay(rightClick);
+        map.toggleStarDisplay();
     }
     @Override
     public void draw(GalaxyMapPanel map, Graphics2D g2) {
