@@ -532,8 +532,8 @@ public class MainUI extends BasePanel implements IMapHandler {
         repaint();
     }
     @Override
-    public IMappedObject gridOrigin() {
-        if (!map.showGridCircular())
+    public IMappedObject distanceOrigin() {
+        if (!map.showDistance())
             return null;
         Sprite spr = clickedSprite();
         if (spr instanceof IMappedObject) 

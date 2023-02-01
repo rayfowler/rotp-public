@@ -21,10 +21,10 @@ import java.awt.Stroke;
 import rotp.ui.BasePanel;
 import rotp.ui.main.GalaxyMapPanel;
 
-public class GridCircularDisplaySprite extends MapControlSprite  {
+public class DistanceDisplaySprite extends MapControlSprite  {
     Color extColor, normColor;
 
-    public GridCircularDisplaySprite(int xOff, int yOff, int w, int h) {
+    public DistanceDisplaySprite(int xOff, int yOff, int w, int h) {
         xOffset = scaled(xOff);
         yOffset = scaled(yOff);
         width = scaled(w);
@@ -34,7 +34,7 @@ public class GridCircularDisplaySprite extends MapControlSprite  {
     }
     @Override
     public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
-        map.toggleGridCircularDisplay();
+        map.toggleDistanceDisplay();
     }
     @Override
     public void draw(GalaxyMapPanel map, Graphics2D g2) {
@@ -46,7 +46,7 @@ public class GridCircularDisplaySprite extends MapControlSprite  {
 
         Stroke str0 = g2.getStroke();
         g2.setStroke(BasePanel.stroke1);
-        if (map.showGridCircular())
+        if (map.showDistance())
             g2.setColor(GalaxyMapPanel.gridLight);
         else
             g2.setColor(GalaxyMapPanel.gridDark);
