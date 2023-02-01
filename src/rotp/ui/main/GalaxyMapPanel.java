@@ -54,7 +54,7 @@ import rotp.ui.UserPreferences;
 import rotp.ui.map.IMapHandler;
 import rotp.ui.sprites.FlightPathDisplaySprite;
 import rotp.ui.sprites.FlightPathSprite;
-import rotp.ui.sprites.GridCircularDisplaySprite;
+import rotp.ui.sprites.DistanceDisplaySprite;
 import rotp.ui.sprites.RangeDisplaySprite;
 import rotp.ui.sprites.ShipDisplaySprite;
 import rotp.ui.sprites.SpyReportSprite;
@@ -110,7 +110,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     private static int flightPathDisplay = SHOW_IMPORTANT_FLIGHTPATHS;
     private static int shipDisplay = SHOW_ALL_SHIPS;
     private static int showShipRanges = SHOW_STARS_AND_RANGES;
-    private static boolean showGridCircular = false;
+    private static boolean showDistance = false;
 
     private float desiredScale;
     private Image mapBuffer;
@@ -203,8 +203,8 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             }
         }
     }
-    public void toggleGridCircularDisplay()     { showGridCircular = !showGridCircular; }
-    public boolean showGridCircular()           { return showGridCircular; }
+    public void toggleDistanceDisplay()     	{ showDistance = !showDistance; }
+    public boolean showDistance()           	{ return showDistance; }
     public boolean showFleetsOnly()             { return flightPathDisplay == SHOW_NO_FLIGHTPATHS; }
     public boolean showImportantFlightPaths()   { return flightPathDisplay != SHOW_NO_FLIGHTPATHS; }
     public boolean showAllFlightPaths()         { return flightPathDisplay == SHOW_ALL_FLIGHTPATHS; }
@@ -260,13 +260,13 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         flightPathDisplay = parent.defaultFleetDisplay();
         shipDisplay = SHOW_ALL_SHIPS;
         showShipRanges = parent.defaultShipRangesDisplay();
-        showGridCircular = parent.defaultGridCircularDisplay();
+        showDistance = parent.defaultDistanceDisplay();
 
         if (baseControls.isEmpty()) {
             baseControls.add(new ZoomOutWidgetSprite(10,260,30,30));
             baseControls.add(new ZoomInWidgetSprite(10,225,30,30));
             baseControls.add(new RangeDisplaySprite(10,190,30,30));
-            baseControls.add(new GridCircularDisplaySprite(10,155,30,30));
+            baseControls.add(new DistanceDisplaySprite(10,155,30,30));
             baseControls.add(new FlightPathDisplaySprite(10,120,30,30));
             baseControls.add(new ShipDisplaySprite(10,85,30,30));
             baseControls.add(new SystemNameDisplaySprite(10,50,30,30));
@@ -360,7 +360,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         super.paintComponent(g2); //paint background
 
         setScale(scaleY());
-        //log("map scale:", fmt(scaleX(),2), "@", fmt(scaleY(),2), "  center:", fmt(center().x(),2), "@", fmt(center().y(),2), "  x-rng:", fmt(mapMinX()), "-", fmt(mapMaxX(),2), "  y-rng:", fmt(mapMinY()), "-", fmt(mapMaxY(),2));
         drawBackground(g2);
         if (parent.drawBackgroundStars() && showStars()) {
             float alpha = 8/5*sizeX()/scaleX();
@@ -374,8 +373,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         }
         if (UserPreferences.texturesMap())
             drawBackgroundNebula(g2);
-        
-        drawGrids(g2);
 
         drawNebulas(g2);
         drawStarSystems(g2);
@@ -490,12 +487,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             g.drawImage(rangeMapBuffer,0,0,null);
         }
     }
-
-    private void drawGrids(Graphics2D g) {
-        if (showGridCircular) {
-            drawGridCircularDisplayDark(g);
-        }
-    }
     private void drawOwnershipDisplay(Graphics2D g) {
         int r0 = scale(0.9f);
         int r1 = scale(0.8f);
@@ -605,37 +596,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         g.draw(tmpRangeArea);   
         
         g.setTransform(prevXForm);
-    }
-    private void drawGridCircularDisplayDark(Graphics2D g) {
-        Galaxy gal = galaxy();
-        Sprite clicked = parent.clickedSprite();
-        if (clicked == null)
-            return;
-
-        float x = clicked.source().x();
-        float y = clicked.source().y();
-
-        Stroke prevStroke = g.getStroke();
-        g.setStroke(stroke1);
-        g.setColor(gridDark);
-
-        Empire pl = player();
-        float rng1 = pl.shipRange();
-        float rng2 = pl.scoutRange();
-        
-        for (int r=1;r<=gal.width();r++) {
-            int x0 = mapX(x-r);
-            int y0 = mapY(y-r);
-            int diam = Math.abs(x0-mapX(x+r));
-            if ((clicked instanceof StarSystem) && ((r == rng1) || (r == rng2))) {
-                g.setColor(gridLight);
-                g.drawOval(x0, y0, diam, diam);
-                g.setColor(gridDark);
-            }
-            else
-                g.drawOval(x0, y0, diam, diam);
-        }
-        g.setStroke(prevStroke);
     }
     private void drawBackgroundStars(Graphics2D g) {
         int w = sharedStarBackground.getWidth();

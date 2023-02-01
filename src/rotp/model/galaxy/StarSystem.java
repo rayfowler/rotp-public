@@ -703,7 +703,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         }
     }
     private String name2(GalaxyMapPanel map) {
-        IMappedObject obj = map.parent().gridOrigin();
+        IMappedObject obj = map.parent().distanceOrigin();
         if (obj == null)
             return "";
         float dist = (float)Math.ceil(distanceTo(obj)*10)/10;
