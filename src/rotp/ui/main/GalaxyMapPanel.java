@@ -55,7 +55,7 @@ import rotp.ui.map.IMapHandler;
 import rotp.ui.sprites.FlightPathDisplaySprite;
 import rotp.ui.sprites.FlightPathSprite;
 import rotp.ui.sprites.DistanceDisplaySprite;
-import rotp.ui.sprites.RangeDisplaySprite;
+import rotp.ui.sprites.StarDisplaySprite;
 import rotp.ui.sprites.ShipDisplaySprite;
 import rotp.ui.sprites.SpyReportSprite;
 import rotp.ui.sprites.SystemNameDisplaySprite;
@@ -78,11 +78,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public static final int SHOW_ALL_SHIPS = 0;
     public static final int SHOW_NO_UNARMED_SHIPS = 1;
     public static final int SHOW_ONLY_ARMED_SHIPS = 2;
-    
-    public static final int SHOW_RANGES = 0;
-    public static final int SHOW_STARS_AND_RANGES = 1;
-    public static final int SHOW_STARS = 2;
-    public static final int SHOW_NO_STARS_AND_RANGES = 3;
 
     public static final int MAX_FLAG_SCALE = 80;
     public static final int MAX_STARGATE_SCALE = 40;
@@ -109,7 +104,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     private static int systemNameDisplay = SHOW_SYSTEM_DATA;
     private static int flightPathDisplay = SHOW_IMPORTANT_FLIGHTPATHS;
     private static int shipDisplay = SHOW_ALL_SHIPS;
-    private static int showShipRanges = SHOW_STARS_AND_RANGES;
+    private static boolean showStars = true;
     private static boolean showDistance = false;
 
     private float desiredScale;
@@ -185,24 +180,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             }
         }
     }
-    public void toggleShipRangesDisplay(boolean reverse)       {
-        if (reverse) {
-            switch(showShipRanges) {
-                case SHOW_RANGES:              showShipRanges = SHOW_NO_STARS_AND_RANGES; break;
-                case SHOW_STARS_AND_RANGES:    showShipRanges = SHOW_RANGES; break;
-                case SHOW_STARS:               showShipRanges = SHOW_STARS_AND_RANGES; break;
-                case SHOW_NO_STARS_AND_RANGES: showShipRanges = SHOW_STARS; break;
-            }
-        }
-        else {
-            switch(showShipRanges) {
-                case SHOW_RANGES:              showShipRanges = SHOW_STARS_AND_RANGES; break;
-                case SHOW_STARS_AND_RANGES:    showShipRanges = SHOW_STARS; break;
-                case SHOW_STARS:               showShipRanges = SHOW_NO_STARS_AND_RANGES; break;
-                case SHOW_NO_STARS_AND_RANGES: showShipRanges = SHOW_RANGES; break;
-            }
-        }
-    }
+    public void toggleStarDisplay()       {showStars = !showStars;}
     public void toggleDistanceDisplay()     	{ showDistance = !showDistance; }
     public boolean showDistance()           	{ return showDistance; }
     public boolean showFleetsOnly()             { return flightPathDisplay == SHOW_NO_FLIGHTPATHS; }
@@ -214,8 +192,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public boolean hideSystemNames()            { return systemNameDisplay == HIDE_SYSTEM_NAME; }
     public boolean showSystemNames()            { return systemNameDisplay == SHOW_SYSTEM_NAME; }
     public boolean showSystemData()             { return systemNameDisplay == SHOW_SYSTEM_DATA; }
-    public boolean showShipRanges()             { return (showShipRanges == SHOW_RANGES) || (showShipRanges == SHOW_STARS_AND_RANGES); }
-    public boolean showStars()                  { return (showShipRanges == SHOW_STARS)  || (showShipRanges == SHOW_STARS_AND_RANGES); }
+    public boolean showStars()                  { return showStars; }
 
     public void clearHoverSprite()              { hoverSprite = null; }
     public Location currentFocus()        { return parent.mapFocus();  }
@@ -259,13 +236,13 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
 
         flightPathDisplay = parent.defaultFleetDisplay();
         shipDisplay = SHOW_ALL_SHIPS;
-        showShipRanges = parent.defaultShipRangesDisplay();
+        showStars = parent.defaultStarDisplay();
         showDistance = parent.defaultDistanceDisplay();
 
         if (baseControls.isEmpty()) {
             baseControls.add(new ZoomOutWidgetSprite(10,260,30,30));
             baseControls.add(new ZoomInWidgetSprite(10,225,30,30));
-            baseControls.add(new RangeDisplaySprite(10,190,30,30));
+            baseControls.add(new StarDisplaySprite(10,190,30,30));
             baseControls.add(new DistanceDisplaySprite(10,155,30,30));
             baseControls.add(new FlightPathDisplaySprite(10,120,30,30));
             baseControls.add(new ShipDisplaySprite(10,85,30,30));
@@ -473,19 +450,17 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         setScale(parentStartingScale);
     }
     private void drawBackground(Graphics2D g) {
-        if (showShipRanges()) {
-            if (redrawRangeMap) {
-                redrawRangeMap = false;
-                Graphics2D g0 =  (Graphics2D) rangeMapBuffer.getGraphics();
-                setFontHints(g0);
-                g0.setColor(unreachableBackground);
-                g0.fillRect(0,0,getWidth(),getHeight());
-                if (parent.showShipRanges())
-                    drawExtendedRangeDisplay(g0);
-                drawOwnershipDisplay(g0);
-            }
-            g.drawImage(rangeMapBuffer,0,0,null);
+        if (redrawRangeMap) {
+            redrawRangeMap = false;
+            Graphics2D g0 =  (Graphics2D) rangeMapBuffer.getGraphics();
+            setFontHints(g0);
+            g0.setColor(unreachableBackground);
+            g0.fillRect(0,0,getWidth(),getHeight());
+            if (parent.showShipRanges())
+                drawExtendedRangeDisplay(g0);
+            drawOwnershipDisplay(g0);
         }
+        g.drawImage(rangeMapBuffer,0,0,null);
     }
     private void drawOwnershipDisplay(Graphics2D g) {
         int r0 = scale(0.9f);
