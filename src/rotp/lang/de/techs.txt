@@ -48,7 +48,7 @@ ATMOSPHERE_0_DETAIL    | Wandelt feindselige Umgebung in eine normale Umgebung f
 //
 // Automated Repair techs
 // 
-AUTOREPAIR_0_NAME      | Automatisierte Reperatur
+AUTOREPAIR_0_NAME      | Automatisierte Reparatur
 AUTOREPAIR_0_BRIEF     | Heilt 15% der Trefferpunkte eines Schiffs pro Zug
 AUTOREPAIR_0_DETAIL    | Unzerstörte Schiffe können am Ende des Zuges bis zu 15% ihrer Trefferpunkte wiederherstellen.
 
@@ -133,18 +133,18 @@ BATTLESUIT_1_NAME    | Kampfanzüge
 BATTLESUIT_1_DETAIL  | Panzerung, die nicht nur schützt, sondern auch die Stärke erhöht. Verbessert Bodenkampf um 10.
 
 BATTLESUIT_2_NAME    | Gepanzertes Exoskelett
-BATTLESUIT_2_DETAIL  | Weiterentwickelter Kampfanzüge, die neben der Stärke auch den Schutz verbessern und eingeschränkte Flugeigenschaften geben. Verbessert den Bodenkampf um 20.
+BATTLESUIT_2_DETAIL  | Weiterentwickelte Kampfanzüge, die neben der Stärke auch den Schutz verbessern und eingeschränkte Flugeigenschaften geben. Verbessert den Bodenkampf um 20.
 
 BATTLESUIT_3_NAME    | Servorüstung
-BATTLESUIT_3_DETAIL  | Kombiniert hohe Mobilität, Antigrav-Flug, starke Panzerung zur fortgeschrittensten Rüstung für Bodentruppen. Verbessert den Bodenkampf um 30.
+BATTLESUIT_3_DETAIL  | Kombiniert hohe Mobilität, Antigrav-Flug und starke Panzerung zur fortgeschrittensten Rüstung für Bodentruppen. Verbessert den Bodenkampf um 30.
 
 
 //
 // Energy Focus techs for beam weapons
 // 
 BEAMFOCUS_0_NAME    | Hochenergiefokus
-BEAMFOCUS_0_BRIEF   | Reichtweite +3 für Strahlenwaffewaffen
-BEAMFOCUS_0_DETAIL  | Erhöht die Reichweite aller Strahlenwaffenwaffen um 3.
+BEAMFOCUS_0_BRIEF   | Reichtweite +3 für Strahlenwaffen
+BEAMFOCUS_0_DETAIL  | Erhöht die Reichweite aller Strahlenwaffen um 3.
 
 BEAMFOCUS_1_NAME    | Oracle Interface
 BEAMFOCUS_1_BRIEF   | Konzentriert Strahlenwaffen, halbiert gegnerische Schilde
@@ -180,7 +180,7 @@ BIOWEAPON_2_DETAIL   | Abscheuliche biologische Waffe, reduziert Bevölkerung um
 // Black Hole Generator tech
 //
 BLACKHOLE_0_NAME     | Singularitäts-Generator
-BLACKHOLE_0_DETAIL   | Baut ein Subraumfeld auf, dass den Raum krümmt und damit ein Schwarzes Loch erzeugt. Zerstört 25% bis 100% der feindlichen Schiffe oder Raketenbasenof. Minus 2% pro Schildklasse.
+BLACKHOLE_0_DETAIL   | Baut ein Subraumfeld auf, dass den Raum krümmt und damit ein Schwarzes Loch erzeugt. Zerstört 25% bis 100% der feindlichen Schiffe oder Raketenbasen minus 2% pro Schildklasse.
 
 
 //
@@ -212,24 +212,24 @@ BOMB_4_DETAIL   | Bombe, die 40-70 Schadenspunkte an Bodenzielen anrichtet.
 //
 CLOAK_0_NAME     | Tarnvorrichtung
 CLOAK_0_BRIEF    | Macht das Schiff nahezu unsichtbar
-CLOAK_0_DETAIL   | Macht das Schiff nahezu unsichtbar bis sie angreifen. Verbessert Sciffdefensive um +5. Schiffe müssen sich enttarnen zu angreifen und tarnen sich automatisch wieder in dem Zug, in dem sie nicht angreifen.
+CLOAK_0_DETAIL   | Macht das Schiff nahezu unsichtbar bis es angreift. Verbessert Schiffsdefensive um +5. Schiffe müssen sich enttarnen um anzugreifen und tarnen sich automatisch wieder in dem Zug, in dem sie nicht angreifen.
 
 
 //
 // Cloning tech
 //
-CLONE_0_NAME     | Clonen
-CLONE_0_DETAIL   | Erlaubt geclonte Bevölkerungsvermehrung mit einer Rate von 1M pro 10BC.
+CLONE_0_NAME     | Klonen
+CLONE_0_DETAIL   | Erlaubt geklonte Bevölkerungsvermehrung mit einer Rate von 1M pro 10BC.
 
-CLONE_1_NAME     | Fortgeschrittenes Clonen
-CLONE_1_DETAIL   | Erlaubt geclonte Bevölkerungsvermehrung mit einer Rate von 1M pro 5BC.
+CLONE_1_NAME     | Fortgeschrittenes Klonen
+CLONE_1_DETAIL   | Erlaubt geklonte Bevölkerungsvermehrung mit einer Rate von 1M pro 5BC.
 
 
 //
 // Combat Transporter tech
 //
-COMBATTRANSPORT_0_NAME     | Kampftranporter
-COMBATTRANSPORT_0_DETAIL   | Transporte mit dieser Einrichtung haben eine 50%ige Chance, Ihre Ladung vor einem Angriff durch Schiffe auf die Oberfläche zu bringen.
+COMBATTRANSPORT_0_NAME     | Kampftransporter
+COMBATTRANSPORT_0_DETAIL   | Transporte mit dieser Einrichtung haben eine 50%ige Chance ihre Ladung vor einem Angriff durch Schiffe auf die Oberfläche zu bringen.
 
 
 //
@@ -240,7 +240,7 @@ CONTROLENV_0_ITEM    | Koloniebasis, Standard
 CONTROLENV_0_BRIEF   | Erlaubt Landung auf normalen Planeten
 CONTROLENV_0_DETAIL  | Erlaubt Landung auf normalen Planeten
 
-CONTROLENV_1_NAME    | Umgebungskontrolle für Unfruchtbare Planeten
+CONTROLENV_1_NAME    | Umgebungskontrolle für unfruchtbare Planeten
 CONTROLENV_1_ITEM    | Koloniebasis, Unfruchtbar
 CONTROLENV_1_BRIEF   | Erlaubt Landung auf unfruchtbare Planeten
 CONTROLENV_1_DETAIL  | Erlaubt Landung auf unfruchtbare Planeten
@@ -341,7 +341,7 @@ DEFLECTOR_11_DETAIL   | Verhindert 15 Schadenspunkte von jeder Attacke.
 //
 DISPLACEMENT_0_NAME   | Phasendeckung
 DISPLACEMENT_0_BRIEF  | 1/3 aller Angriffe schlägt fehl.
-DISPLACEMENT_0_DETAIL | Das Schiff bewegt sich zufällig in und aus dem normalen Raum, so dass 1/3 der nicht Flächenwaffen fehl schlägt.
+DISPLACEMENT_0_DETAIL | Das Schiff bewegt sich zufällig in und aus dem normalen Raum, so dass 1/3 der Angriffe fehl schlägt (nicht bei Flächenwaffen).
 
 
 //
@@ -356,52 +356,52 @@ ECMJAMMER_0_DETAIL    |
 ECMJAMMER_1_NAME      | ECM Störsender Mark I
 ECMJAMMER_1_ITEM      | Störsender I
 ECMJAMMER_1_BRIEF     | Raketenabwehr 1
-ECMJAMMER_1_DETAIL    | erhöht Raketenabwehr um 1 Level.
+ECMJAMMER_1_DETAIL    | Erhöht Raketenabwehr um 1 Level.
 
 ECMJAMMER_2_NAME      | ECM Störsender Mark II
 ECMJAMMER_2_ITEM      | Störsender II
 ECMJAMMER_2_BRIEF     | Raketenabwehr 2
-ECMJAMMER_2_DETAIL    | erhöht Raketenabwehr um 2 Level.
+ECMJAMMER_2_DETAIL    | Erhöht Raketenabwehr um 2 Level.
 
 ECMJAMMER_3_NAME      | ECM Störsender Mark III
 ECMJAMMER_3_ITEM      | Störsender III
 ECMJAMMER_3_BRIEF     | Raketenabwehr 3
-ECMJAMMER_3_DETAIL    | erhöht Raketenabwehr um 3 Level.
+ECMJAMMER_3_DETAIL    | Erhöht Raketenabwehr um 3 Level.
 
 ECMJAMMER_4_NAME      | ECM Störsender Mark IV
 ECMJAMMER_4_ITEM      | Störsender IV
 ECMJAMMER_4_BRIEF     | Raketenabwehr 4
-ECMJAMMER_4_DETAIL    | erhöht Raketenabwehr um 4 Level.
+ECMJAMMER_4_DETAIL    | Erhöht Raketenabwehr um 4 Level.
 
 ECMJAMMER_5_NAME      | ECM Störsender Mark V
 ECMJAMMER_5_ITEM      | Störsender V
 ECMJAMMER_5_BRIEF     | Raketenabwehr 5
-ECMJAMMER_5_DETAIL    | erhöht Raketenabwehr um 5 Level.
+ECMJAMMER_5_DETAIL    | Erhöht Raketenabwehr um 5 Level.
 
 ECMJAMMER_6_NAME      | ECM Störsender Mark VI
 ECMJAMMER_6_ITEM      | Störsender VI
 ECMJAMMER_6_BRIEF     | Raketenabwehr 6
-ECMJAMMER_6_DETAIL    | erhöht Raketenabwehr um 6 Level.
+ECMJAMMER_6_DETAIL    | Erhöht Raketenabwehr um 6 Level.
 
 ECMJAMMER_7_NAME      | ECM Störsender Mark VII
 ECMJAMMER_7_ITEM      | Störsender VII
 ECMJAMMER_7_BRIEF     | Raketenabwehr 7
-ECMJAMMER_7_DETAIL    | erhöht Raketenabwehr um 7 Level.
+ECMJAMMER_7_DETAIL    | Erhöht Raketenabwehr um 7 Level.
 
 ECMJAMMER_8_NAME      | ECM Störsender Mark VIII
 ECMJAMMER_8_ITEM      | Störsender VIII
 ECMJAMMER_8_BRIEF     | Raketenabwehr 8
-ECMJAMMER_8_DETAIL    | erhöht Raketenabwehr um 8 Level.
+ECMJAMMER_8_DETAIL    | Erhöht Raketenabwehr um 8 Level.
 
 ECMJAMMER_9_NAME      | ECM Störsender Mark IX
 ECMJAMMER_9_ITEM      | Störsender IX
 ECMJAMMER_9_BRIEF     | Raketenabwehr 9
-ECMJAMMER_9_DETAIL    | erhöht Raketenabwehr um 9 Level.
+ECMJAMMER_9_DETAIL    | Erhöht Raketenabwehr um 9 Level.
 
 ECMJAMMER_10_NAME     | ECM Störsender Mark X
 ECMJAMMER_10_ITEM     | Störsender X
 ECMJAMMER_10_BRIEF    | Raketenabwehr 10
-ECMJAMMER_10_DETAIL   | erhöht Raketenabwehr um 10 Level.
+ECMJAMMER_10_DETAIL   | Erhöht Raketenabwehr um 10 Level.
 
 
 //
@@ -452,7 +452,7 @@ ENGINE_1_ITEM2   | Klasse 2
 ENGINE_1_BRIEF   | Warp 2  Def %1
 ENGINE_1_BRIEF2  | Kampfgeschwindigkeit %1
 
-ENGINE_2_NAME    | SubLight Antrieb 
+ENGINE_2_NAME    | SubLight-Antrieb 
 ENGINE_2_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse III im Kampf.
 ENGINE_2_ITEM    | SubLight
 ENGINE_2_ITEM2   | Klasse 3
@@ -487,14 +487,14 @@ ENGINE_6_ITEM2   | Klasse 7
 ENGINE_6_BRIEF   | Warp 7  Def %1
 ENGINE_6_BRIEF2  | Kampfgeschwindigkeit %1
 
-ENGINE_7_NAME    | InterPhasen-Antrieb
+ENGINE_7_NAME    | Inter-Phasen-Antrieb
 ENGINE_7_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse VIII im Kampf.
 ENGINE_7_ITEM    | InterPhase
 ENGINE_7_ITEM2   | Klasse 8
 ENGINE_7_BRIEF   | Warp 8  Def %1
 ENGINE_7_BRIEF2  | Kampfgeschwindigkeit %1
 
-ENGINE_8_NAME    | Hyper Antrieb
+ENGINE_8_NAME    | Hyper-Antrieb
 ENGINE_8_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse IX im Kampf.
 ENGINE_8_ITEM    | Hyper
 ENGINE_8_ITEM2   | Klasse 9
@@ -517,8 +517,8 @@ FUELRANGE_2_DETAIL | Die Deuterium Treibstoffzellen erhöhen die Reichweite um K
 FUELRANGE_3_NAME   | Iridium Treibstoffzellen
 FUELRANGE_3_DETAIL | Die Iridium Treibstoffzellen erhöhen die Reichweite um Kolonien um %1 Lichtjahre.
 
-FUELRANGE_4_NAME   | Dotomitkristalle
-FUELRANGE_4_DETAIL | Die Dotomitkristalle erhöhen die Reichweite um Kolonien um %1 Lichtjahre.
+FUELRANGE_4_NAME   | Dotomit-Kristalle
+FUELRANGE_4_DETAIL | Die Dotomit-Kristalle erhöhen die Reichweite um Kolonien um %1 Lichtjahre.
 
 FUELRANGE_5_NAME   | Uridium Treibstoffzellen
 FUELRANGE_5_DETAIL | Die Uridium Treibstoffzellen erhöhen die Reichweite um Kolonien um %1 Lichtjahre.
@@ -537,102 +537,102 @@ FUELRANGE_8_DETAIL | Unerschöpflicher Treibstoffvorrat, keine Begrenzung bei de
 // Future Computer techs
 //
 FUTURECOMP_0_NAME    | Zukunftscomputer I
-FUTURECOMP_0_DETAIL  | enerelle Verbesserungen in der Computertechnologie.
+FUTURECOMP_0_DETAIL  | Generelle Verbesserung in der Computertechnologie.
 
 FUTURECOMP_1_NAME    | Zukunftscomputer II
-FUTURECOMP_1_DETAIL  | enerelle Verbesserungen in der Computertechnologie.
+FUTURECOMP_1_DETAIL  | Generelle Verbesserung in der Computertechnologie.
 
 FUTURECOMP_2_NAME    | Zukunftscomputer III
-FUTURECOMP_2_DETAIL  | enerelle Verbesserungen in der Computertechnologie.
+FUTURECOMP_2_DETAIL  | Generelle Verbesserung in der Computertechnologie.
 
 FUTURECOMP_3_NAME    | Zukunftscomputer IV
-FUTURECOMP_3_DETAIL  | enerelle Verbesserungen in der Computertechnologie.
+FUTURECOMP_3_DETAIL  | Generelle Verbesserung in der Computertechnologie.
 
 FUTURECOMP_4_NAME    | Zukunftscomputer V
-FUTURECOMP_4_DETAIL  | enerelle Verbesserungen in der Computertechnologie.
+FUTURECOMP_4_DETAIL  | Generelle Verbesserung in der Computertechnologie.
 
 FUTURECOMP_5_NAME    | Zukunftscomputer VI
-FUTURECOMP_5_DETAIL  | enerelle Verbesserungen in der Computertechnologie.
+FUTURECOMP_5_DETAIL  | Generelle Verbesserung in der Computertechnologie.
 
 FUTURECOMP_6_NAME    | Zukunftscomputer VII
-FUTURECOMP_6_DETAIL  | enerelle Verbesserungen in der Computertechnologie.
+FUTURECOMP_6_DETAIL  | Generelle Verbesserung in der Computertechnologie.
 
 FUTURECOMP_7_NAME    | Zukunftscomputer VIII
-FUTURECOMP_7_DETAIL  | enerelle Verbesserungen in der Computertechnologie.
+FUTURECOMP_7_DETAIL  | Generelle Verbesserung in der Computertechnologie.
 
 FUTURECOMP_8_NAME    | Zukunftscomputer IX
-FUTURECOMP_8_DETAIL  | enerelle Verbesserungen in der Computertechnologie.
+FUTURECOMP_8_DETAIL  | Generelle Verbesserung in der Computertechnologie.
 
 FUTURECOMP_9_NAME    | Zukunftscomputer X
-FUTURECOMP_9_DETAIL  | enerelle Verbesserungen in der Computertechnologie.
+FUTURECOMP_9_DETAIL  | Generelle Verbesserung in der Computertechnologie.
 
 
 //
 // Future Construction techs
 //
 FUTURECONST_0_NAME    | Zukunftsbauten I
-FUTURECONST_0_DETAIL  | Generelle Verbesserung in Bauwesentechnologien.
+FUTURECONST_0_DETAIL  | Generelle Verbesserung in der Bauwesentechnologie.
 
 FUTURECONST_1_NAME    | Zukunftsbauten II
-FUTURECONST_1_DETAIL  | Generelle Verbesserung in Bauwesentechnologien.
+FUTURECONST_1_DETAIL  | Generelle Verbesserung in der Bauwesentechnologie.
 
 FUTURECONST_2_NAME    | Zukunftsbauten III
-FUTURECONST_2_DETAIL  | Generelle Verbesserung in Bauwesentechnologien.
+FUTURECONST_2_DETAIL  | Generelle Verbesserung in der Bauwesentechnologie.
 
 FUTURECONST_3_NAME    | Zukunftsbauten IV
-FUTURECONST_3_DETAIL  | Generelle Verbesserung in Bauwesentechnologien.
+FUTURECONST_3_DETAIL  | Generelle Verbesserung in der Bauwesentechnologie.
 
 FUTURECONST_4_NAME    | Zukunftsbauten V
-FUTURECONST_4_DETAIL  | Generelle Verbesserung in Bauwesentechnologien.
+FUTURECONST_4_DETAIL  | Generelle Verbesserung in der Bauwesentechnologie.
 
 FUTURECONST_5_NAME    | Zukunftsbauten VI
-FUTURECONST_5_DETAIL  | Generelle Verbesserung in Bauwesentechnologien.
+FUTURECONST_5_DETAIL  | Generelle Verbesserung in der Bauwesentechnologie.
 
 FUTURECONST_6_NAME    | Zukunftsbauten VII
-FUTURECONST_6_DETAIL  | Generelle Verbesserung in Bauwesentechnologien.
+FUTURECONST_6_DETAIL  | Generelle Verbesserung in der Bauwesentechnologie.
 
 FUTURECONST_7_NAME    | Zukunftsbauten VIII
-FUTURECONST_7_DETAIL  | Generelle Verbesserung in Bauwesentechnologien.
+FUTURECONST_7_DETAIL  | Generelle Verbesserung in der Bauwesentechnologie.
 
 FUTURECONST_8_NAME    | Zukunftsbauten IX
-FUTURECONST_8_DETAIL  | Generelle Verbesserung in Bauwesentechnologien.
+FUTURECONST_8_DETAIL  | Generelle Verbesserung in der Bauwesentechnologie.
 
 FUTURECONST_9_NAME    | Zukunftsbauten X
-FUTURECONST_9_DETAIL  | Generelle Verbesserung in Bauwesentechnologien.
+FUTURECONST_9_DETAIL  | Generelle Verbesserung in der Bauwesentechnologie.
 
 
 //
 // Future Force Field techs
 //
 FUTUREFORCE_0_NAME    | Zukunftskraftfelder I
-FUTUREFORCE_0_DETAIL  | Generelle Verbesserungen in der Kraftfeldtechnologie.
+FUTUREFORCE_0_DETAIL  | Generelle Verbesserung in der Kraftfeldtechnologie.
 
 FUTUREFORCE_1_NAME    | Zukunftskraftfelder II
-FUTUREFORCE_1_DETAIL  | Generelle Verbesserungen in der Kraftfeldtechnologie.
+FUTUREFORCE_1_DETAIL  | Generelle Verbesserung in der Kraftfeldtechnologie.
 
 FUTUREFORCE_2_NAME    | Zukunftskraftfelder III
-FUTUREFORCE_2_DETAIL  | Generelle Verbesserungen in der Kraftfeldtechnologie.
+FUTUREFORCE_2_DETAIL  | Generelle Verbesserung in der Kraftfeldtechnologie.
 
 FUTUREFORCE_3_NAME    | Zukunftskraftfelder IV
-FUTUREFORCE_3_DETAIL  | Generelle Verbesserungen in der Kraftfeldtechnologie.
+FUTUREFORCE_3_DETAIL  | Generelle Verbesserung in der Kraftfeldtechnologie.
 
 FUTUREFORCE_4_NAME    | Zukunftskraftfelder V
-FUTUREFORCE_4_DETAIL  | Generelle Verbesserungen in der Kraftfeldtechnologie.
+FUTUREFORCE_4_DETAIL  | Generelle Verbesserung in der Kraftfeldtechnologie.
 
 FUTUREFORCE_5_NAME    | Zukunftskraftfelder VI
-FUTUREFORCE_5_DETAIL  | Generelle Verbesserungen in der Kraftfeldtechnologie.
+FUTUREFORCE_5_DETAIL  | Generelle Verbesserung in der Kraftfeldtechnologie.
 
 FUTUREFORCE_6_NAME    | Zukunftskraftfelder VII
-FUTUREFORCE_6_DETAIL  | Generelle Verbesserungen in der Kraftfeldtechnologie.
+FUTUREFORCE_6_DETAIL  | Generelle Verbesserung in der Kraftfeldtechnologie.
 
 FUTUREFORCE_7_NAME    | Zukunftskraftfelder VIII
-FUTUREFORCE_7_DETAIL  | Generelle Verbesserungen in der Kraftfeldtechnologie.
+FUTUREFORCE_7_DETAIL  | Generelle Verbesserung in der Kraftfeldtechnologie.
 
 FUTUREFORCE_8_NAME    | Zukunftskraftfelder IX
-FUTUREFORCE_8_DETAIL  | Generelle Verbesserungen in der Kraftfeldtechnologie.
+FUTUREFORCE_8_DETAIL  | Generelle Verbesserung in der Kraftfeldtechnologie.
 
 FUTUREFORCE_9_NAME    | Zukunftskraftfelder X
-FUTUREFORCE_9_DETAIL  | Generelle Verbesserungen in der Kraftfeldtechnologie.
+FUTUREFORCE_9_DETAIL  | Generelle Verbesserung in der Kraftfeldtechnologie.
 
 
 //
@@ -763,7 +763,7 @@ HANDWEAPON_5_DETAIL    | Die zerstörerischste tragbare Waffe. Fügt 30 zum Bode
 // Hyperspace Communication tech
 //
 HYPERSPACE_0_NAME      | Hyperspace Kommunikation
-HYPERSPACE_0_DETAIL    | Erlaubt die Kommunikation im Hyperspace mit Schiffen udn Transporten, um diesen andere Befehle zu geben.
+HYPERSPACE_0_DETAIL    | Erlaubt die Kommunikation im Hyperspace mit Schiffen und Transporten, um diesen andere Befehle zu geben.
 
 
 //
@@ -1003,7 +1003,7 @@ SCANNER_2_BRIEF      | Spürt Schiffe und deren Ziel bis 7 Lichtjahre Umgebung a
 SCANNER_2_DETAIL     | Spürt gegnerische Schiffe bis zu 7 Lichtjahre entfernt um eine Kolonie und bis zu 2 Lichtjahre um eigene Schiffe auf. Kann gegnerische Flugziele bestimmen.
 
 SCANNER_3_NAME       | Sensoren
-SCANNER_3_BRIEF      | Erlaubt die Erkundschaftung fremder Planeten 9 Lichtjahre
+SCANNER_3_BRIEF      | Erlaubt die Erkundschaftung fremder Planeten bis 9 Lichtjahre
 SCANNER_3_DETAIL     | Erlaubt die Erkundschaftung fremder Planeten 9 Lichtjahre um eine Kolonie und spürt gegnerische Schiffe bis zu 3 Lichtjahre um eigene Schiffe entfernt auf.
 
 
@@ -1012,7 +1012,7 @@ SCANNER_3_DETAIL     | Erlaubt die Erkundschaftung fremder Planeten 9 Lichtjahre
 //
 SHIPINERTIAL_0_NAME     | Trägheitsstabilisatoren
 SHIPINERTIAL_0_BRIEF    | Erhöht Manövrierbarkeit um 2
-SHIPINERTIAL_0_DETAIL   | Reduziert die Schiffsträgheit und erhöht die Klasse der Manövrerbarkeit um 2. (+2 Verteidigung und +1 Geschwindigkeit)
+SHIPINERTIAL_0_DETAIL   | Reduziert die Schiffsträgheit und erhöht die Klasse der Manövrierbarkeit um 2. (+2 Verteidigung und +1 Geschwindigkeit)
 
 SHIPINERTIAL_1_NAME     | Trägheitsaufhebung
 SHIPINERTIAL_1_BRIEF    | Erhöht Manövrierbarkeit um 4
@@ -1054,9 +1054,9 @@ SHIPWPN_4_NAME         | Massenkatapult
 SHIPWPN_4_BRIEF        | Halbiert Schildstärke
 SHIPWPN_4_DETAIL       | Ein Linearbeschleuniger, der große Massen mit 5-8 Schadenspunkten gegen die Gegner schleudert. Die Schildeffektivität wird halbiert.
 
-SHIPWPN_5_NAME         | NeutronenBlaster
-SHIPWPN_5_ITEM2        | Schwerer NeutronenBlaster
-SHIPWPN_5_DETAIL       | Hochenergetische Strahlenwaffe, die 3-12 Schadenspunkte anrichtet. Schwere NeutronenBlaster verursachen 3-24 Schadenspunkte bei einer Reichweite von 2 Feldern.
+SHIPWPN_5_NAME         | Neutronen-Blaster
+SHIPWPN_5_ITEM2        | Schwerer Neutronen-Blaster
+SHIPWPN_5_DETAIL       | Hochenergetische Strahlenwaffe, die 3-12 Schadenspunkte anrichtet. Schwere Neutronen-Blaster verursachen 3-24 Schadenspunkte bei einer Reichweite von 2 Feldern.
 
 SHIPWPN_6_NAME         | Gravitonstrahl
 SHIPWPN_6_BRIEF        | Kontinuierliche Attacke
@@ -1080,7 +1080,7 @@ SHIPWPN_10_DETAIL      | Phasenenergiewaffen können 5-20 Schadenspunkte verursa
 
 SHIPWPN_11_NAME        | Autoblaster
 SHIPWPN_11_BRIEF       | Feuert 3 Mal pro Zug
-SHIPWPN_11_DETAIL      | Ein fortgeschrittener NeutronenBlaster, der bis zu 3 Mal pro Zug 4-16 Schadenspunkte pro Treffer verursacht.
+SHIPWPN_11_DETAIL      | Ein fortgeschrittener Neutronen-Blaster, der bis zu 3 Mal pro Zug 4-16 Schadenspunkte pro Treffer verursacht.
 
 SHIPWPN_12_NAME        | Tachyonstrahler
 SHIPWPN_12_BRIEF       | Kontinuierliche Attacke
@@ -1092,7 +1092,7 @@ SHIPWPN_13_DETAIL      | Ein fortgeschrittener Linearbeschleuniger feuert 4 expl
 
 SHIPWPN_14_NAME        | Partikelkanone
 SHIPWPN_14_BRIEF       | Halbiert Schildstärke
-SHIPWPN_14_DETAIL      | Ein hochenergetischer Strahl aus Partikeln verursacht 10-20 Schadenspunkte udn halbiert die Schildeffektivität.
+SHIPWPN_14_DETAIL      | Ein hochenergetischer Strahl aus Partikeln verursacht 10-20 Schadenspunkte und halbiert die Schildeffektivität.
 
 SHIPWPN_15_NAME        | Plasmakanone
 SHIPWPN_15_DETAIL      | Feuert verdichtete Energiepulse, die bei einer Entfernung von 1 einen Schaden von 6-30 Punkten anrichten.
@@ -1117,10 +1117,10 @@ SHIPWPN_20_DETAIL      | Umhüllt das Ziel mit einem extrem kraftvollen Materie-
 SHIPWPN_21_NAME        | Mauler Device
 SHIPWPN_21_DETAIL      | Schleudert eine enorme Menge an fokussierter Energie auf das Ziel. Verursacht 20-100 Schadenspunkte.
 
-SHIPWPN_22_NAME        | Amoebenstrahl
+SHIPWPN_22_NAME        | Amöbenstrahl
 SHIPWPN_22_DETAIL      | Ein Strahl, der 250-1000 Schadenspunkte auf eine Entfernung von 3 Feldern verursacht. Der kontinuierliche Angriff kann weitere Schiffe treffen.
 
-SHIPWPN_23_NAME        | The Kristallstrahl
+SHIPWPN_23_NAME        | Kristallstrahl
 SHIPWPN_23_DETAIL      | Ein Strahl, der das Schild des Ziels umhüllt und 4 Attacken mit je 100-300 Schadenspunkten auf 3 Felder Entfernung verursacht.
 
 
@@ -1131,13 +1131,13 @@ SOILENRICH_0_NAME     | Bodenanreicherung
 SOILENRICH_0_DETAIL   | Verbessert Standardplaneten zu fruchtbarer Umgebung, erhöht das Bevölkerungswachstum um 50% und das Bevölkerungsmaximum um 25% für 150 BC.
 
 SOILENRICH_1_NAME     | Fortgeschrittene Bodenanreicherung
-SOILENRICH_1_DETAIL   | Verbessert Standard- und Fruchtbare Planeten zu Gaia. verdoppelt das Bevölkerungswachstum und erhöht das Bevölkerungsmaximum um 50% für 300 BC.
+SOILENRICH_1_DETAIL   | Verbessert Standard- und fruchtbare Planeten zu Gaia. Verdoppelt das Bevölkerungswachstum und erhöht das Bevölkerungsmaximum um 50% für 300 BC.
 
 
 //
 // Stargate tech
 //
-STARGATE_0_NAME      | Intergalactisches Sternentor
+STARGATE_0_NAME      | Intergalaktisches Sternentor
 STARGATE_0_DETAIL    | Erlaubt Schiffen sich zwischen zwei Planeten mit Sternentor in einem Zug zu bewegen. Kosten liegen bei 3000 BC.
 
 
@@ -1165,7 +1165,7 @@ STREAMWPN_1_DETAIL  | Feuert einen konzentrierten Neutrinostrahl, der die Panzer
 // Subspace Interdictor tech
 //
 SUBSPACEINT_0_NAME    | Subraumauflöser
-SUBSPACEINT_0_DETAIL  | erhindert den Einsatz von gegnerischen Subraumteleportern und Kampftransportern. Die Vorrichtung wird automatisch den Raketenbasen hinzugefügt.
+SUBSPACEINT_0_DETAIL  | Verhindert den Einsatz von gegnerischen Subraumteleportern und Kampftransportern. Die Vorrichtung wird automatisch den Raketenbasen hinzugefügt.
 
 
 //
@@ -1181,17 +1181,17 @@ SUBSPACETEL_0_DETAIL  | Teleportiert Schiffe zu jedem Punkt der Kampfkarte vor d
 //
 TORPEDO_0_NAME        | Anti-Materie Torpedos
 TORPEDO_0_BRIEF       | Kann jeden zweiten Zug feuern
-TORPEDO_0_DETAIL      | Hochenergietorpedos, die 30 Schadenspunkte verursachen, aber nur jeden zweiten Zug abgefeuert werden können.Jeder Torpedo ist mit einem +4 Level Zielcomputer ausgestattet.
+TORPEDO_0_DETAIL      | Hochenergietorpedos, die 30 Schadenspunkte verursachen, aber nur jeden zweiten Zug abgefeuert werden können. Jeder Torpedo ist mit einem +4 Level Zielcomputer ausgestattet.
 
-TORPEDO_1_NAME        | Hellfire Torpedoes
+TORPEDO_1_NAME        | Hellfire Torpedos
 TORPEDO_1_BRIEF       | Trifft alle vier Schilde
 TORPEDO_1_DETAIL      | Einhüllender Energietorpedo der alle Schilde gleichzeitig trifft. Sie haben eine Geschwindigkeit von 5, einen +6 Level Zielcomputer und verursachen Schaden wie vier 25-Punkte Attacken.
 
-TORPEDO_2_NAME        | Proton Torpedoes
+TORPEDO_2_NAME        | Proton Torpedos
 TORPEDO_2_BRIEF       | Kann jeden zweiten Zug feuern
 TORPEDO_2_DETAIL      | Überladener Energietorpedo, der 75 Schadenspunkte verursacht, aber nur jeden 2. Zug abgefeuert werden kann. Jeder Torpedo ist mit einem +6 Level Zielcomputer ausgestattet.
 
-TORPEDO_3_NAME        | Plasma Torpedoes
-TORPEDO_3_BRIEF       | Verliert 15 Schadenspunkte/hex
+TORPEDO_3_NAME        | Plasma Torpedos
+TORPEDO_3_BRIEF       | Verliert 15 Schadenspunkte/Feld
 TORPEDO_3_DETAIL      | Reiner Energietorpedo, der 150 Schadenspunkte verursacht und eine Geschwindigkeit von 6 erreicht. Verliert 15 Schadenspunkte pro zurückgelegtem Feld. Jeder Torpedo ist mit einem +7 Level Zielcomputer ausgestattet und feuert jeden 2. Zug.
 
