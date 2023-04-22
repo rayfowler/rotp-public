@@ -42,7 +42,8 @@ import rotp.util.sound.SoundManager;
 public class GameSettingsUI extends BasePanel implements MouseListener, MouseMotionListener, MouseWheelListener {
     private static final long serialVersionUID = 1L;
     private static final Color backgroundHaze = new Color(0,0,0,160);
-    
+    private static final String headerPaddingRight = "   ";
+
     public static final Color lightBrown = new Color(178,124,87);
     public static final Color brown = new Color(141,101,76);
     public static final Color darkBrown = new Color(112,85,68);
@@ -301,7 +302,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
         g.setPaint(GameUI.settingsSetupBackground(w));
-        g.fillRect(x2+s10, y2-s10, autoBombardText.stringWidth(g)+s30,s30);
+        g.fillRect(x2+s10, y2-s10, autoBombardText.stringWidth(g)+s10,s30);
         autoBombardText.setScaledXY(x2+s20, y2+s7);
         autoBombardText.draw(g);
         desc = text("GAME_SETTINGS_AUTOBOMBARD_DESC");
@@ -318,7 +319,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
         g.setPaint(GameUI.settingsSetupBackground(w));
-        g.fillRect(x2+s10, y2-s10, backupTurnsText.stringWidth(g)+s30,s30);
+        g.fillRect(x2+s10, y2-s10, backupTurnsText.stringWidth(g)+s10,s30);
         backupTurnsText.setScaledXY(x2+s20, y2+s7);
         backupTurnsText.draw(g);
         desc = text("GAME_SETTINGS_BACKUP_DESC");
@@ -335,7 +336,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
         g.setPaint(GameUI.settingsSetupBackground(w));
-        g.fillRect(x2+s10, y2-s10, saveDirText.stringWidth(g)+s30,s30);
+        g.fillRect(x2+s10, y2-s10, saveDirText.stringWidth(g)+s10,s30);
         saveDirText.setScaledXY(x2+s20, y2+s7);
         saveDirText.draw(g);
         String saveDir = UserPreferences.saveDir();
@@ -388,15 +389,15 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
     }
     private String texturesStr() {
         String opt = text(UserPreferences.texturesMode());
-        return text("GAME_SETTINGS_TEXTURES", opt)+"   ";
+        return text("GAME_SETTINGS_TEXTURES", opt)+headerPaddingRight;
     }
     private String mouseStr() {
         String opt = text(UserPreferences.sensitivityMode());
-        return text("GAME_SETTINGS_SENSITIVITY", opt)+"   ";
+        return text("GAME_SETTINGS_SENSITIVITY", opt)+headerPaddingRight;
     }
     private String autoColonizeStr() {
         String val = UserPreferences.autoColonize()?  text("GAME_SETTINGS_AUTOCOLONIZE_YES"): text("GAME_SETTINGS_AUTOCOLONIZE_NO");
-        return text("GAME_SETTINGS_AUTOCOLONIZE", val+"   ");
+        return text("GAME_SETTINGS_AUTOCOLONIZE", val)+headerPaddingRight;
     }
     private String soundsStr() {
         String val;
@@ -407,7 +408,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         else
             val = text("GAME_SETTINGS_SOUNDS_OFF");
         
-        return text("GAME_SETTINGS_SOUNDS", val+"   ");
+        return text("GAME_SETTINGS_SOUNDS", val)+headerPaddingRight;
     }
     private String musicStr() {
         String val;
@@ -416,7 +417,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         else
             val = text("GAME_SETTINGS_MUSIC_OFF");
         
-        return text("GAME_SETTINGS_MUSIC", val+"   ");
+        return text("GAME_SETTINGS_MUSIC", val)+headerPaddingRight;
     }
     private String memoryStr() {
         String val;
@@ -425,19 +426,19 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         else
             val = text("GAME_SETTINGS_MEMORY_NO");
         
-        return text("GAME_SETTINGS_MEMORY", val+"   ");
+        return text("GAME_SETTINGS_MEMORY", val)+headerPaddingRight;
     }
     private String displayModeStr() {
         String opt = text(UserPreferences.displayMode());
-        return text("GAME_SETTINGS_DISPLAY_MODE", opt)+"   ";
+        return text("GAME_SETTINGS_DISPLAY_MODE", opt)+headerPaddingRight;
     }
     private String graphicsStr() {
         String opt = text(UserPreferences.graphicsMode());
-        return text("GAME_SETTINGS_GRAPHICS", opt)+"   ";
+        return text("GAME_SETTINGS_GRAPHICS", opt)+headerPaddingRight;
     }
     private String autoBombardStr() {
         String opt = text(UserPreferences.autoBombardMode());
-        return text("GAME_SETTINGS_AUTOBOMBARD", opt)+"   ";
+        return text("GAME_SETTINGS_AUTOBOMBARD", opt)+headerPaddingRight;
     }
     private String backupTurnsStr() {
         int turns = UserPreferences.backupTurns();
@@ -447,12 +448,12 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         else 
             val = text("GAME_SETTINGS_BACKUP_ON", str(turns));
         
-        return text("GAME_SETTINGS_BACKUP", val+"   ");
+        return text("GAME_SETTINGS_BACKUP", val)+headerPaddingRight;
     }
     private String saveDirStr() {
         String saveDir = UserPreferences.saveDirStr();
         
-        return text("GAME_SETTINGS_SAVEDIR", text(saveDir));
+        return text("GAME_SETTINGS_SAVEDIR", text(saveDir))+headerPaddingRight;
     }
     private void toggleDisplayMode() {
         softClick();
