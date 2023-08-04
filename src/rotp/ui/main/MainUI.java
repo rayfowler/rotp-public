@@ -39,7 +39,6 @@ import rotp.model.galaxy.IMappedObject;
 import rotp.model.galaxy.Location;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
-import rotp.model.ships.ShipDesign;
 import rotp.ui.BasePanel;
 import rotp.ui.RotPUI;
 import rotp.ui.UserPreferences;
@@ -271,9 +270,9 @@ public class MainUI extends BasePanel implements IMapHandler {
         overlayShipCombatPrompt.init(mgr);
         repaint();
     }
-    public void showColonizationPrompt(int sysId, ShipFleet fl, ShipDesign d) {
+    public void showColonizationPrompt(int sysId, ShipFleet fl) {
         overlay = overlayColonizePrompt;
-        overlayColonizePrompt.init(sysId, fl, d);
+        overlayColonizePrompt.init(sysId, fl);
         repaint();
     }
     public void showSpyReport() {
@@ -820,5 +819,10 @@ public class MainUI extends BasePanel implements IMapHandler {
     public void keyPressed(KeyEvent e) {
         if (!overlay.handleKeyPress(e))
             overlayNone.handleKeyPress(e);
+    }
+    @Override
+    public void keyTyped(KeyEvent e) {
+        if (!overlay.handleKeyTyped(e))
+            overlayNone.handleKeyTyped(e);
     }
 }

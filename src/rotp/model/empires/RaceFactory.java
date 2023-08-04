@@ -188,10 +188,7 @@ public enum RaceFactory implements Base {
         if (key.equalsIgnoreCase("transport"))     { r.transportKey = value; return; }
         if (key.equalsIgnoreCase("transportDesc")) { r.parseTransportDesc(value); return; }
         if (key.equalsIgnoreCase("transportOpen")) { r.parseTransportOpen(value); return; }
-        if (key.equalsIgnoreCase("transportW"))    { r.transportW = parseInt(value); return; }
-        if (key.equalsIgnoreCase("transportYOff")) { r.transportYOffset = parseInt(value); return; }
         if (key.equalsIgnoreCase("transportLandingFrames")) { r.transportLandingFrames = parseInt(value); return; }
-        if (key.equalsIgnoreCase("colonistWalk"))  { r.colonistWalk(value); return; }
         if (key.equalsIgnoreCase("labFlagX"))      { r.labFlagX(parseFloat(value)); return; }
         if (key.equalsIgnoreCase("spyFactories"))  { r.spyFactoryFrames(parseInt(value)); return; }
         if (key.equalsIgnoreCase("spyMissiles"))   { r.spyMissileFrames(parseInt(value)); return; }

@@ -40,6 +40,6 @@ public class ColonizeSystemNotification implements TurnNotification, Base {
     public void notifyPlayer() {
         // last minute check to ensure fleet is valid and system is uncolonized
         if (fleet.hasShip(design) && !galaxy().system(sysId).isColonized())
-            RotPUI.instance().promptForColonization(sysId, fleet, design);
+            RotPUI.instance().promptForColonization(sysId, fleet);
     }
 }

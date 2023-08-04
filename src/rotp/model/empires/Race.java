@@ -158,8 +158,7 @@ public class Race implements Base, Serializable {
     private String title;
     private String fullTitle;
     private int homeworldKey;
-    public int transportW, transportYOffset, transportLandingFrames, colonistWalkingFrames;
-    private int colonistDelay, colonistX1, colonistX2, colonistY1, colonistY2;
+    public int transportLandingFrames;
     public int dialogLeftMargin, dialogRightMargin,  dialogTopY;
     public float diploScale, diploOpacity;
     public int diploXOffset, diploYOffset;
@@ -175,11 +174,6 @@ public class Race implements Base, Serializable {
 
     public String defaultHomeworldName()   { return homeSystemNames.get(0); }
 
-    public int colonistDelay()             { return colonistDelay; }
-    public int colonistStartX()            { return colonistX1; }
-    public int colonistStartY()            { return colonistY1; }
-    public int colonistStopX()             { return colonistX2; }
-    public int colonistStopY()             { return colonistY2; }
     public int dialogLeftMargin()          { return dialogLeftMargin; }
     public int dialogRightMargin()         { return dialogRightMargin; }
     public int dialogTopY()                { return dialogTopY; }
@@ -362,8 +356,6 @@ public class Race implements Base, Serializable {
             transportClosedImg = currentFrame(transportDescKey, closed);
         return transportClosedImg;
     }
-    public BufferedImage transportOpening()   { return currentFrame(transportDescKey, open); }
-    
     public List<Image> sabotageFactoryFrames() {
         List<Image> images = new ArrayList<>();
         for (int i=1;i<=spyFactoryFrames;i++) {
@@ -489,33 +481,6 @@ public class Race implements Base, Serializable {
         return null;
     }
     public void addSoundKey(String s)   { soundKeys.add(s); }
-    public void colonistWalk(String s) {
-        List<String> vals = substrings(s, ',');
-        if (vals.size() != 3)
-            err("Invalid colonistWalk string: ", s);
-
-        // The string argument represents the pixel offset from the
-        // top-left of the transport ship for the colonist to walk
-        // from and then to before planting his flag
-        List<String> points = substrings(vals.get(2), '>');
-        if (points.size() != 2)
-            err("Invalid colonistWalk string: ", s);
-
-        List<String> fromXY = substrings(points.get(0),'@');
-        if (fromXY.size() != 2)
-            err("Invalid from point in colonistWalk string:", s);
-
-        List<String> toXY = substrings(points.get(1),'@');
-        if (toXY.size() != 2)
-            err("Invalid to point in colonistWalk string:", s);
-
-        colonistDelay = parseInt(vals.get(0));
-        colonistWalkingFrames = parseInt(vals.get(1));
-        colonistX1 = parseInt(fromXY.get(0));
-        colonistY1 = parseInt(fromXY.get(1));
-        colonistX2 = parseInt(toXY.get(0));
-        colonistY2 = parseInt(toXY.get(1));
-    }
     public void parseFortress(String s) {
         //  f1|f2|f3|f4, spec
         //   reconstructs as this list:

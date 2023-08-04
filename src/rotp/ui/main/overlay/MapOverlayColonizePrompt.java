@@ -28,52 +28,51 @@ import rotp.model.Sprite;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
-import rotp.model.ships.ShipDesign;
 import rotp.ui.BasePanel;
-import rotp.ui.RotPUI;
 import rotp.ui.main.GalaxyMapPanel;
 import rotp.ui.main.MainUI;
 import rotp.ui.main.SystemPanel;
-import rotp.ui.sprites.ClickToContinueSprite;
 import rotp.ui.sprites.ColonizeNoSprite;
 import rotp.ui.sprites.ColonizeYesSprite;
 import rotp.ui.sprites.MapSprite;
 
 public class MapOverlayColonizePrompt extends MapOverlay {
-    Color maskC  = new Color(40,40,40,160);
-    Area mask;
-    BufferedImage planetImg;
-    MainUI parent;
-    float origMapScale;
-    int sysId;
-    ShipFleet fleet;
-    ShipDesign design;
-    ClickToContinueSprite clickSprite;
-    boolean drawSprites = false;
-    ColonizeNoSprite noButton = new ColonizeNoSprite();
-    ColonizeYesSprite yesButton = new ColonizeYesSprite();
-    SystemFlagSprite flagButton = new SystemFlagSprite();
+	private final int nameLengthLimit = 24;
+    private final Color dlgBox = new Color(123,123,123,192);
+	
+    private Color maskC = new Color(40,40,40,160);
+    private Area mask;
+    private BufferedImage planetImg;
+    private MainUI parent;
+    private int sysId;
+    private String sysName;
+    private ShipFleet fleet;
+    private boolean drawSprites = false;
+    private ColonizeNoSprite noButton = new ColonizeNoSprite();
+    private ColonizeYesSprite yesButton = new ColonizeYesSprite();
+    private SystemFlagSprite flagButton = new SystemFlagSprite();
+    
     public MapOverlayColonizePrompt(MainUI p) {
         parent = p;
-        clickSprite = new ClickToContinueSprite(parent);
     }
-    public void init(int systemId, ShipFleet fl, ShipDesign d) {
+    
+    public void init(int systemId, ShipFleet fl) {
         StarSystem sys = galaxy().system(systemId);
         sysId = systemId;
+        sysName = player().sv.name(sysId);
         fleet = fl;
-        design = d;
         noButton.reset();
         yesButton.reset();
         flagButton.reset();
         drawSprites = true;
         parent.hideDisplayPanel();
-        origMapScale = parent.map().scaleY();
         parent.map().setScale(20);
         parent.map().recenterMapOn(sys);
         parent.mapFocus(sys);
         parent.clickedSprite(sys);
         parent.repaint();
     }
+    
     private StarSystem starSystem() {
         return galaxy().system(sysId);
     }
@@ -95,7 +94,11 @@ public class MapOverlayColonizePrompt extends MapOverlay {
             softClick();
             parent.clearOverlay();
             parent.repaintAllImmediately();
-            RotPUI.instance().selectColonizationPanel(sysId, fleet, design);
+            
+            player().sv.name(sysId, sysName);
+            StarSystem system = galaxy().system(sysId);
+            fleet.colonizeSystem(system);
+            advanceMap();
         }
     }
     public void colonizeNo() {
@@ -187,7 +190,6 @@ public class MapOverlayColonizePrompt extends MapOverlay {
         int x0 = boxX+((leftW-sw)/2);
         drawBorderedString(g, yearStr, 2, x0, boxY+boxH1-s20, SystemPanel.textShadowC, SystemPanel.orangeText);
 
-        String sysName = player().sv.name(sysId);
         String scoutStr = text("MAIN_COLONIZE_TITLE", sysName);
         g.setColor(Color.black);
         g.setFont(narrowFont(14));
@@ -319,12 +321,20 @@ public class MapOverlayColonizePrompt extends MapOverlay {
             drawBorderedString(g, s1, 1, x1, y1, Color.black, Color.white);
             y1 -= lineH;
         }
-
-        // planet name
+        
+        // "Text box"
         y1 -= scaled(5);
+        g.setColor(dlgBox);
+        int boxXPad = BasePanel.s4;
+        int boxYTopPad = BasePanel.s4;
+        int boxYBottomPad = BasePanel.s3;
+        g.fillRect(x1 - boxXPad, y1 - s30 - boxYTopPad, 
+        		boxW - s30 + boxXPad * 2, s40 + boxYBottomPad);
+        
+        // planet name
         g.setFont(narrowFont(40));
         drawBorderedString(g, sysName, 1, x1, y1, Color.darkGray, SystemPanel.orangeText);
-        
+
         // planet flag
         parent.addNextTurnControl(flagButton);
         flagButton.init(this, g);
@@ -334,23 +344,21 @@ public class MapOverlayColonizePrompt extends MapOverlay {
     }
     @Override
     public boolean handleKeyPress(KeyEvent e) {
-        boolean shift = e.isShiftDown();
-        switch(e.getKeyCode()) {
-            case KeyEvent.VK_ESCAPE:
-            case KeyEvent.VK_N:
-                colonizeNo();
-                break;
-            case KeyEvent.VK_Y:
-                colonizeYes();
-                break;
-            case KeyEvent.VK_F:
-                toggleFlagColor(shift);
-                break;
-            default:
-                misClick();
-                break;
-        }
         return true;
+    }
+    @Override 
+    public boolean handleKeyTyped(KeyEvent e) { 
+    	char keyChar = e.getKeyChar();
+    	if (Character.isLetterOrDigit(keyChar) || ' ' == keyChar) {
+    		if (sysName.length() < nameLengthLimit) {
+        		sysName += e.getKeyChar();
+    		}
+    	} else if ('\b' == keyChar && sysName.length() != 0) {
+    		sysName = sysName.substring(0, sysName.length()-1);
+    	}
+    	
+    	parent.repaint(); 
+    	return true;
     }
     class SystemFlagSprite extends MapSprite {
         private int mapX, mapY, buttonW, buttonH;
