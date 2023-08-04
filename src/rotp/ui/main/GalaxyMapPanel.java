@@ -55,7 +55,6 @@ import rotp.ui.map.IMapHandler;
 import rotp.ui.sprites.FlightPathDisplaySprite;
 import rotp.ui.sprites.FlightPathSprite;
 import rotp.ui.sprites.DistanceDisplaySprite;
-import rotp.ui.sprites.StarDisplaySprite;
 import rotp.ui.sprites.ShipDisplaySprite;
 import rotp.ui.sprites.SpyReportSprite;
 import rotp.ui.sprites.SystemNameDisplaySprite;
@@ -104,7 +103,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     private static int systemNameDisplay = SHOW_SYSTEM_DATA;
     private static int flightPathDisplay = SHOW_IMPORTANT_FLIGHTPATHS;
     private static int shipDisplay = SHOW_ALL_SHIPS;
-    private static boolean showStars = true;
     private static boolean showDistance = false;
 
     private float desiredScale;
@@ -180,7 +178,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             }
         }
     }
-    public void toggleStarDisplay()       {showStars = !showStars;}
     public void toggleDistanceDisplay()     	{ showDistance = !showDistance; }
     public boolean showDistance()           	{ return showDistance; }
     public boolean showFleetsOnly()             { return flightPathDisplay == SHOW_NO_FLIGHTPATHS; }
@@ -192,7 +189,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public boolean hideSystemNames()            { return systemNameDisplay == HIDE_SYSTEM_NAME; }
     public boolean showSystemNames()            { return systemNameDisplay == SHOW_SYSTEM_NAME; }
     public boolean showSystemData()             { return systemNameDisplay == SHOW_SYSTEM_DATA; }
-    public boolean showStars()                  { return showStars; }
 
     public void clearHoverSprite()              { hoverSprite = null; }
     public Location currentFocus()        { return parent.mapFocus();  }
@@ -236,13 +232,11 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
 
         flightPathDisplay = parent.defaultFleetDisplay();
         shipDisplay = SHOW_ALL_SHIPS;
-        showStars = parent.defaultStarDisplay();
         showDistance = parent.defaultDistanceDisplay();
 
         if (baseControls.isEmpty()) {
-            baseControls.add(new ZoomOutWidgetSprite(10,260,30,30));
-            baseControls.add(new ZoomInWidgetSprite(10,225,30,30));
-            baseControls.add(new StarDisplaySprite(10,190,30,30));
+            baseControls.add(new ZoomOutWidgetSprite(10,225,30,30));
+            baseControls.add(new ZoomInWidgetSprite(10,190,30,30));
             baseControls.add(new DistanceDisplaySprite(10,155,30,30));
             baseControls.add(new FlightPathDisplaySprite(10,120,30,30));
             baseControls.add(new ShipDisplaySprite(10,85,30,30));
@@ -338,7 +332,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
 
         setScale(scaleY());
         drawBackground(g2);
-        if (parent.drawBackgroundStars() && showStars()) {
+        if (parent.drawBackgroundStars()) {
             float alpha = 8/5*sizeX()/scaleX();
             Composite prev = g2.getComposite();
             if (alpha < 1) {
