@@ -148,7 +148,6 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     private static final String GNN_PANEL = "GNN";
     private static final String COUNCIL_PANEL = "GalacticCouncil";
     private static final String GAME_OVER_PANEL = "GameOver,Man,GameOver";
-    private static final String CREDITS_PANEL = "Credits";
     private static final String ERROR_PANEL = "Error";
     private static final String DIALOG_PANEL = "Dialog";
 

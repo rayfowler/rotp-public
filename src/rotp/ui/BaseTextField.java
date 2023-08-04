@@ -30,12 +30,6 @@ public class BaseTextField extends JTextField {
         super("");
         tabNotifier = c;
     }
-    public BaseTextField() {
-        super();
-    }
-    public BaseTextField(int i) {
-        super(i);
-    }
     public BaseTextField(String s) {
         super(s);
     }

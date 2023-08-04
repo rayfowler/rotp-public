@@ -49,9 +49,6 @@ public class ShipDisplaySprite extends MapControlSprite  {
         g2.setColor(player().scoutBorderColor());
         g2.fillRoundRect(startX, startY, width, height, cnr, cnr);
 
-        //g2.setColor(player().scoutBorderColor());
-        //g2.fillOval(startX+width/6, startY+height/6, width*2/3, height*2/3);
-
         g2.setClip(startX, startY, width, height);
 
         if (map.showArmedShips()) {
