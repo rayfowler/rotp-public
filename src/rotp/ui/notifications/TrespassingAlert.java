@@ -20,30 +20,20 @@ import rotp.model.game.GameSession;
 
 public class TrespassingAlert extends GameAlert {
     private final int empHostId;
-    private final int empShipId;
     private final int sysId;
-    public static void create(int emp1, int emp2, int sys) {
-        GameSession.instance().addAlert(new TrespassingAlert(emp1, emp2, sys));
+    public static void create(int empHost, int sys) {
+        GameSession.instance().addAlert(new TrespassingAlert(empHost, sys));
     }
     @Override
     public String description() {
         Empire empHost = galaxy().empire(empHostId);
-        Empire empShip = galaxy().empire(empShipId);
         String sysName = player().sv.name(sysId);
-        String desc;
-        if (empHost.isPlayer()) {
-           desc = text("MAIN_ALERT_TRESPASSING1", sysName);
-           desc = empShip.replaceTokens(desc, "alien");
-        }
-        else {
-           desc = text("MAIN_ALERT_TRESPASSING2", sysName);   
-           desc = empHost.replaceTokens(desc, "alien");
-        }
+        String desc = text("MAIN_ALERT_TRESPASSING2", sysName);   
+        desc = empHost.replaceTokens(desc, "alien");
         return desc;
     }
-    private TrespassingAlert(int emp1, int emp2, int sys) {
-        empHostId = emp1;
-        empShipId = emp2;
+    private TrespassingAlert(int empHost, int sys) {
+        empHostId = empHost;
         sysId = sys;
     }
 }
