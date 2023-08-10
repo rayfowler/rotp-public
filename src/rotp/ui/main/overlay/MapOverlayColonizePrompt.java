@@ -325,11 +325,12 @@ public class MapOverlayColonizePrompt extends MapOverlay {
         // "Text box"
         y1 -= scaled(5);
         g.setColor(dlgBox);
-        int boxXPad = BasePanel.s4;
-        int boxYTopPad = BasePanel.s4;
-        int boxYBottomPad = BasePanel.s3;
-        g.fillRect(x1 - boxXPad, y1 - s30 - boxYTopPad, 
-        		boxW - s30 + boxXPad * 2, s40 + boxYBottomPad);
+        int textXPad = BasePanel.s4;
+        int textTopPad = BasePanel.s4;
+        int textBottomPad = BasePanel.s3;
+        int textWidth = boxW - s15 - flagButton.width();
+        g.fillRect(x1 - textXPad, y1 - s30 - textTopPad, 
+        		textWidth + textXPad * 2, s40 + textBottomPad);
         
         // planet name
         g.setFont(narrowFont(40));
