@@ -583,7 +583,6 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         g.setFont(narrowFont(18));
         String spending = text("RACES_DIPLOMACY_RECALLED_DIPLOMAT");
         drawString(g,spending, x+s20, y2);
-        int amt = (int) 0;
         
         g.setFont(narrowFont(16));
         str2 = str(recalls);

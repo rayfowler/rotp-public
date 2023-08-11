@@ -27,16 +27,11 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import javax.swing.BorderFactory;
-import rotp.Rotp;
 import rotp.model.empires.DiplomaticTreaty;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.TreatyAlliance;
 import rotp.ui.*;
-import static rotp.ui.BasePanel.s10;
-import static rotp.ui.BasePanel.s20;
-import static rotp.ui.BasePanel.s3;
-import static rotp.ui.BasePanel.s5;
 import rotp.ui.game.HelpUI;
 import rotp.ui.main.SystemPanel;
 import rotp.util.AnimationManager;
@@ -462,8 +457,6 @@ public class RacesUI extends BasePanel {
         return raceIconBackImg;
     }
     private void initModel() {
-        int w = scaled(Rotp.IMG_W);
-        int h = scaled(Rotp.IMG_H);
         int rightPaneW = scaled(250);
 
         setBackground(Color.black);
@@ -814,8 +807,6 @@ public class RacesUI extends BasePanel {
         public void mouseReleased(MouseEvent e) {
             if (e.getButton() > 3)
                 return;
-            int x = e.getX();
-            int y = e.getY();
             if (hoverBox == null)
                 misClick();
             else {

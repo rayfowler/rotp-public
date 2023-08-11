@@ -2547,7 +2547,6 @@ public final class Empire implements Base, NamedObject, Serializable {
         return drawShape(g,x,y,w,h,color());
     }
     public Shape drawShape(Graphics2D g, int x, int y, int w, int h, Color c) {
-        Color c1 = new Color(c.getRed(),c.getGreen(),c.getBlue(),192);
         g.setColor(c);
         int m = w/10;
         switch(shape()) {
