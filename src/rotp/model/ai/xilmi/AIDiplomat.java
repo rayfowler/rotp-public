@@ -1959,11 +1959,6 @@ public class AIDiplomat implements Base, Diplomat {
     {
         return 1;
     }
-    @Override
-    public boolean masksDiplomacy()
-    {
-        return true;
-    }
     public void updatePersonality()
     {
         empire.leader().personality = XENOPHOBIC;

@@ -183,7 +183,6 @@ public final class Empire implements Base, NamedObject, Serializable {
         else
             return names.get(i);
     }
-    public boolean masksDiplomacy()               { return race().masksDiplomacy || ai().diplomat().masksDiplomacy(); }
     public List<StarSystem> shipBuildingSystems() { return shipBuildingSystems; }
     public boolean inGalacticAlliance()           { return galacticAlliance; }
     public void joinGalacticAlliance()            { galacticAlliance = true; }

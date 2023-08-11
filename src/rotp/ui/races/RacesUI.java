@@ -1052,8 +1052,7 @@ public class RacesUI extends BasePanel {
                     scaledFont(g, line, scaled(130), 16, 12);
                     drawString(g,line, x1, y1);
                 }
-                if (!emp.masksDiplomacy()) 
-                    drawRelationsBar(g, emp, x1, y0+h0-s25, w0-x1-s10, s10, s10, s5);
+                drawRelationsBar(g, emp, x1, y0+h0-s25, w0-x1-s10, s10, s10, s5);
             }
             
             if (UserPreferences.texturesInterface()) 

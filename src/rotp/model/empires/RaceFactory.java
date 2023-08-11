@@ -280,7 +280,6 @@ public enum RaceFactory implements Base {
         r.internalSecurityAdj = (float) parseInt(vals.get(1)) / 100;
         r.spyInfiltrationAdj = (float) parseInt(vals.get(2)) / 100;
         r.telepathic = parseInt(vals.get(3)) == 1;
-        r.masksDiplomacy = parseInt(vals.get(4)) == 1;
     }
     private void parseRaceProdMods(Race r, List<String> vals) {
         if (vals.size() < 3)

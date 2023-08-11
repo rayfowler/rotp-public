@@ -129,7 +129,6 @@ public interface Diplomat {
     default int facCapRank() { return 1; }
     default int militaryRank(Empire etc, boolean inAttackRange) { return 1; }
     default int popLossToTriggerWar() { return 30; }
-    default boolean masksDiplomacy() { return false; }
     default boolean readyForWar(EmpireView v, boolean considerBestVictim) { return true; }
     default boolean wantToDeclareWarOfDesperation(EmpireView v) { return false; }
     default boolean techIsAdequateForWar() { return true; }

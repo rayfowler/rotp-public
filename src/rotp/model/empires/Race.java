@@ -149,7 +149,6 @@ public class Race implements Base, Serializable {
     public boolean ignoresFactoryRefit = false;
     public boolean availablePlayer = true;
     public boolean availableAI = true;
-    public boolean masksDiplomacy = false;
     private float labFlagX = 0;
     public int espionageX, espionageY;
     private int spyFactoryFrames = 0;

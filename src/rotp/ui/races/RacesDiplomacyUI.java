@@ -336,20 +336,6 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         this.drawShadowedString(g, str, 1,  x0, y0, SystemPanel.blackText, SystemPanel.whiteText);
         int leftW = g.getFontMetrics().stringWidth(str);
         
-        if (emp.masksDiplomacy()) {
-            g.setFont(narrowFont(15));
-            g.setColor(SystemPanel.blackText);
-            String str2 = text("RACES_DIPLOMACY_RELATIONS_UNKNOWN");
-            str2 = emp.replaceTokens(str2, "alien");
-            List<String> lines = this.wrappedLines(g, str2, w-s60-leftW);
-            int x1 = x0+leftW+s40;
-            int y1 = lines.size() == 1 ? y0 : y0-s10;
-            for (String line: lines) {
-                drawString(g,line, x1, y1);
-                y1 += s15;
-            }
-            return;
-        }
         g.setFont(narrowFont(20));
         g.setColor(SystemPanel.blackText);
         float relations = view.otherView().embassy().relations();
@@ -540,18 +526,15 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
                 drawString(g,line, x3+s10, y1);
         }
  
-
         // severity
-        if (!otherEmpire.masksDiplomacy()) {
-            g.setFont(narrowFont(18));
-            sw = g.getFontMetrics().stringWidth(sev);
-            x0 = x4+(w4-sw)/2;
-            if (inc.currentSeverity() < 0)
-                g.setColor(incidentRedC);
-            else
-                g.setColor(incidentGreenC);
-            drawString(g,sev, x0, y0);
-        }
+        g.setFont(narrowFont(18));
+        sw = g.getFontMetrics().stringWidth(sev);
+        x0 = x4+(w4-sw)/2;
+        if (inc.currentSeverity() < 0)
+            g.setColor(incidentRedC);
+        else
+            g.setColor(incidentGreenC);
+        drawString(g,sev, x0, y0);
 
         g.setColor(brownDividerC);
         g.drawLine(x1, y1+s12, x+w-s20, y1+s12);
@@ -985,16 +968,14 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         // severity
         int x2 = x+w-rightM;
         int w2 = s60;
-        if (!parent.selectedEmpire().masksDiplomacy()) {
-            g.setFont(narrowFont(18));
-            int sw = g.getFontMetrics().stringWidth(sev);
-            int x2a = x2+(w2-sw)/2;
-            if (inc.currentSeverity() < 0)
-                g.setColor(incidentRedC);
-            else
-                g.setColor(incidentGreenC);
-            drawString(g,sev, x2a, y0);
-        }
+        g.setFont(narrowFont(18));
+        int sw = g.getFontMetrics().stringWidth(sev);
+        int x2a = x2+(w2-sw)/2;
+        if (inc.currentSeverity() < 0)
+            g.setColor(incidentRedC);
+        else
+            g.setColor(incidentGreenC);
+        drawString(g,sev, x2a, y0);
 
         g.setColor(brownDividerC);
         g.drawLine(x, y1+s8, x+w-s20, y1+s8);
