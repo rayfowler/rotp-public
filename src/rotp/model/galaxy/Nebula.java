@@ -15,7 +15,6 @@
  */
 package rotp.model.galaxy;
 
-import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.geom.Line2D;
@@ -29,7 +28,6 @@ import rotp.util.FastImage;
 
 public class Nebula extends MapSprite implements Base, IMappedObject, Serializable {
     private static final long serialVersionUID = 1L;
-    private static Color labelColor = new Color(255,255,255,64);
     private Rectangle.Float shape;
     private Rectangle.Float innerShape;
     private int sysId = -1;
@@ -41,16 +39,6 @@ public class Nebula extends MapSprite implements Base, IMappedObject, Serializab
     public float width()                  { return width; }
     public float height()                 { return height; }
     public Rectangle.Float shape()        { return shape; }
-    public String name() {
-        if (sysId < 1)
-            return "";
-        
-        String sysName = player().sv.name(sysId);
-        if (sysName.isEmpty())
-            return text("NEBULA_ID", sysId);
-        else
-            return text("NEBULA_NAME", sysName);
-    }
 
     public Nebula copy() {
         Nebula neb = new Nebula();
@@ -176,24 +164,6 @@ public class Nebula extends MapSprite implements Base, IMappedObject, Serializab
     public void draw(GalaxyMapPanel map, Graphics2D g2) {
         Rectangle mShape = mapShape(map);
         g2.drawImage(image(), mShape.x, mShape.y, mShape.x+mShape.width, mShape.y+mShape.height, 0, 0, image().getWidth(), image().getHeight(), map);
-        float scale = map.scaleX();
-        
-        if (map.hideSystemNames())
-            return;
-        
-        // use smaller font when we have the full name
-        int fontSize = sysId <= 0 ? (int) (size*1800/scale) : (int) (size*1200/scale);
-        if (fontSize >= 14) {
-            String name = name();
-            if (!name.isEmpty()) {
-                g2.setFont(narrowFont(fontSize));
-                g2.setColor(labelColor);
-                int sw = g2.getFontMetrics().stringWidth(name);
-                int x0 = mShape.x+((mShape.width-sw)/2);
-                int y0 = mShape.y+((mShape.height-fontSize)/2);
-                drawString(g2, name, x0, y0);
-            }
-        }
     }
     private Rectangle mapShape(GalaxyMapPanel map) {
         int x0 = map.mapX(x);
