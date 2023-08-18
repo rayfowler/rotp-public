@@ -1791,16 +1791,6 @@ public final class Empire implements Base, NamedObject, Serializable {
             ally.sv.refreshAllySharingScan(v.sysId);
         }
     }
-    /*
-    public List<StarSystem> systemsNeedingTransports(int minTransport) {
-        List<StarSystem> systems = new ArrayList<>();
-        for (StarSystem sys: colonizedSystems) {
-            if (sys.colony().inRebellion() || (sv.popNeeded(sys.id) >= minTransport) )
-                systems.add(sys);
-        }
-        return systems;
-    }
-    */
     public List<StarSystem> systemsInShipRange(Empire c) {
         // returns list of systems in ship range
         // if c provided, restricts list to that owner
@@ -1815,16 +1805,6 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
         return systems;
     }
-    /*
-    public List<StarSystem> systemsSparingTransports(int minTransport) {
-        List<StarSystem> systems = new ArrayList<>();
-        for (StarSystem sys: colonizedSystems) {
-            if (!sys.colony().inRebellion() && sv.maxPopToGive(sys.id) >= minTransport )
-                systems.add(sys);
-        }
-        return systems;
-    }
-    */
     public List<StarSystem> allColonizedSystems() {
         return colonizedSystems;
     }
@@ -2770,7 +2750,6 @@ public final class Empire implements Base, NamedObject, Serializable {
         String longName = "XXXXXXXXXX";
         String name = raceName();
         int fontSize = scaledFont(g2,longName,x1-x0,60,12);
-        //int fontSize = max(12, min(40, (int) (50*(x1-x0)/scale)));
         if (fontSize >= 12) {
             if (!name.isEmpty()) {
                 g2.setFont(narrowFont(fontSize));

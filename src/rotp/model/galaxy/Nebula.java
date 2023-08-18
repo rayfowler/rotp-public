@@ -128,8 +128,6 @@ public class Nebula extends MapSprite implements Base, IMappedObject, Serializab
         int nebG = 0;
         int nebB = roll(160,255);
 
-        //int centerX = w/2;
-        //int centerY = h/2;
         FastImage fImg = PlanetImager.current().getTerrainSubImage(w,h);
 
         int floor = 255;
