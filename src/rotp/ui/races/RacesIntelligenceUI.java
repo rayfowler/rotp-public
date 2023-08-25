@@ -298,9 +298,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         String desc;
         
         float spyMod = player().spySpendingModifier();
-        if (view.embassy().unity())
-            desc = text("RACES_INTEL_SPENDING_DESC_UNITY");
-        else if (!view.inEconomicRange())
+        if (!view.inEconomicRange())
             desc = text("RACES_INTEL_SPENDING_RANGE");
         else if (spyMod < 1) {
             int pct = (int) (Math.ceil((1-spyMod)*100));
@@ -336,36 +334,34 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
 
         // draw arrows to incr/decr desired spy networks
         int mgn = s20;
-        if (!view.embassy().unity()) {
-            mgn = s40;
-            int sz = s10;
-            int x1 =x+w-s20;
-            // draw incr button
-            ptX[0]=x1-s3-sz; ptX[1]=ptX[0]+sz; ptX[2]=ptX[0]+sz/2;
-            ptY[0]=y2-s9;  ptY[1]=ptY[0];    ptY[2]=y2-s16;
-            spyMaxIncr.reset();
-            for (int i=0;i<ptX.length;i++) 
-                spyMaxIncr.addPoint(ptX[i], ptY[i]);
-            Color buttonC = hoverShape == spyMaxIncr ? SystemPanel.yellowText :  Color.black;
-            drawShadedPolygon(g, ptX, ptY, buttonC, s1, -s1);
+        mgn = s40;
+        int sz = s10;
+        int x1 =x+w-s20;
+        // draw incr button
+        ptX[0]=x1-s3-sz; ptX[1]=ptX[0]+sz; ptX[2]=ptX[0]+sz/2;
+        ptY[0]=y2-s9;  ptY[1]=ptY[0];    ptY[2]=y2-s16;
+        spyMaxIncr.reset();
+        for (int i=0;i<ptX.length;i++) 
+            spyMaxIncr.addPoint(ptX[i], ptY[i]);
+        Color buttonC = hoverShape == spyMaxIncr ? SystemPanel.yellowText :  Color.black;
+        drawShadedPolygon(g, ptX, ptY, buttonC, s1, -s1);
 
-            // draw lower decr button
-            ptX[0]=x1-s3-sz; ptX[1]=ptX[0]+sz; ptX[2]=ptX[0]+sz/2;
-            ptY[0]=y2-s6;    ptY[1]=ptY[0];    ptY[2]=y2+s1;
-            spyMaxDecr.reset();
-            for (int i=0;i<ptX.length;i++) 
-                spyMaxDecr.addPoint(ptX[i], ptY[i]);
-            buttonC = hoverShape == spyMaxDecr ? SystemPanel.yellowText :  Color.black;
-            drawShadedPolygon(g, ptX, ptY, buttonC, s1, -s1);
+        // draw lower decr button
+        ptX[0]=x1-s3-sz; ptX[1]=ptX[0]+sz; ptX[2]=ptX[0]+sz/2;
+        ptY[0]=y2-s6;    ptY[1]=ptY[0];    ptY[2]=y2+s1;
+        spyMaxDecr.reset();
+        for (int i=0;i<ptX.length;i++) 
+            spyMaxDecr.addPoint(ptX[i], ptY[i]);
+        buttonC = hoverShape == spyMaxDecr ? SystemPanel.yellowText :  Color.black;
+        drawShadedPolygon(g, ptX, ptY, buttonC, s1, -s1);
 
-            maxSpyBox.setBounds(x1-s5-sz, y2-s18, sz+6, s20);
-            if ((hoverShape == maxSpyBox) || (hoverShape == spyMaxDecr) || (hoverShape == spyMaxIncr)) {
-                Stroke prev = g.getStroke();
-                g.setStroke(stroke2);
-                g.setColor(SystemPanel.yellowText);
-                g.draw(maxSpyBox);
-                g.setStroke(prev);
-            }       
+        maxSpyBox.setBounds(x1-s5-sz, y2-s18, sz+6, s20);
+        if ((hoverShape == maxSpyBox) || (hoverShape == spyMaxDecr) || (hoverShape == spyMaxIncr)) {
+            Stroke prev = g.getStroke();
+            g.setStroke(stroke2);
+            g.setColor(SystemPanel.yellowText);
+            g.draw(maxSpyBox);
+            g.setStroke(prev);
         }
         
         // draw num & max of spy networks
@@ -385,11 +381,9 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         sw = g.getFontMetrics().stringWidth(maxWidthStr);
        
         // draw security spending bar
-        if (!view.embassy().unity()) {
-            int sliderW = s90;
-            int sliderH = s16;
-            drawSecuritySliderBar(g,x+w-s50-sw-sliderW, y3-sliderH+s3, sliderW, sliderH);
-        }
+        int sliderW = s90;
+        int sliderH = s16;
+        drawSecuritySliderBar(g,x+w-s50-sw-sliderW, y3-sliderH+s3, sliderW, sliderH);
     }
     private void drawTechnologyTitle(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(SystemPanel.orangeText);
@@ -400,13 +394,6 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         int y1 = y + h - s5;
         int x1 = x+s20;
         drawString(g,title, x1, y1);
-        
-        // don't draw the spy informational message for your New Republic allies
-        if (emp.isAI()) {
-            EmpireView v = player().viewForEmpire(emp);
-            if (v.embassy().unity())
-                return;
-        }
         
         int x2 = x1+sw+s40;
         int w2 = x+w-x2-s40;
@@ -667,10 +654,6 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
     private void drawAISpyOrders(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         Empire pl = player();
         EmpireView view = pl.viewForEmpire(emp);
-        
-        // no spy orders for new republic allies
-        if (view.embassy().unity())
-            return;
         
         boolean treatyBreak = false;
         boolean triggerWar = false;

@@ -97,7 +97,7 @@ public class ManageDiplomatsUI  extends BasePanel implements MouseListener, Mous
         if (maxNameW == 0) { // don't do this every repaint. c'mon man.
             empireViews.clear();
             for (EmpireView v: player().contacts()) {
-                if (!v.embassy().finalWar() && v.inEconomicRange())
+                if (v.inEconomicRange())
                     empireViews.add(v);
             }
             Collections.sort(empireViews, EmpireView.BY_RACENAME);
@@ -113,7 +113,7 @@ public class ManageDiplomatsUI  extends BasePanel implements MouseListener, Mous
                 maxNameW = max(maxNameW, s30+g.getFontMetrics().stringWidth(view.empire().raceName()));       
             g.setFont(narrowFont(18));
             button1W = max(s80, s30+g.getFontMetrics().stringWidth(button1A));
-            button2W = galaxy().council().finalWar() ? 0 : max(s80, s30+g.getFontMetrics().stringWidth(button2A), s20+g.getFontMetrics().stringWidth(button2B));
+            button2W = max(s80, s30+g.getFontMetrics().stringWidth(button2A), s20+g.getFontMetrics().stringWidth(button2B));
             g.setFont(narrowFont(16));
             button1W = max(button1W, g.getFontMetrics().stringWidth(button1B), g.getFontMetrics().stringWidth(button1C), g.getFontMetrics().stringWidth(button1D));
         }

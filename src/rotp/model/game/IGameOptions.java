@@ -87,10 +87,6 @@ public interface IGameOptions {
     public static final String NEBULAE_COMMON    = "SETUP_NEBULA_COMMON";
     public static final String NEBULAE_FREQUENT  = "SETUP_NEBULA_FREQUENT";
     
-    public static final String COUNCIL_IMMEDIATE = "SETUP_COUNCIL_IMMEDIATE";
-    public static final String COUNCIL_REBELS    = "SETUP_COUNCIL_REBELS";
-    public static final String COUNCIL_NONE      = "SETUP_COUNCIL_NONE";
-    
     public static final String STAR_DENSITY_LOWEST   = "SETUP_STAR_DENSITY_LOWEST";
     public static final String STAR_DENSITY_LOWER    = "SETUP_STAR_DENSITY_LOWER";
     public static final String STAR_DENSITY_LOW      = "SETUP_STAR_DENSITY_LOW";
@@ -205,7 +201,6 @@ public interface IGameOptions {
     public List<String> randomEventOptions();
     public List<String> warpSpeedOptions();
     public List<String> nebulaeOptions();
-    public List<String> councilWinOptions();
     public List<String> starDensityOptions();
     public List<String> aiHostilityOptions();
     public List<String> planetQualityOptions();
@@ -238,8 +233,6 @@ public interface IGameOptions {
     public void selectedWarpSpeedOption(String s);
     public String selectedNebulaeOption();
     public void selectedNebulaeOption(String s);
-    public String selectedCouncilWinOption();
-    public void selectedCouncilWinOption(String s);
     public String selectedStarDensityOption();
     public void selectedStarDensityOption(String s);
     public String selectedAIHostilityOption();
@@ -289,8 +282,6 @@ public interface IGameOptions {
     public void selectedOpponentRace(int i, String s);
 
     default void copyOptions(IGameOptions opt) { }
-    default boolean immediateCouncilWin()    { return selectedCouncilWinOption().equals(COUNCIL_IMMEDIATE); }
-    default boolean noGalacticCouncil()      { return selectedCouncilWinOption().equals(COUNCIL_NONE); }
     default float fuelRangeMultiplier() {
         switch(selectedFuelRangeOption()) {
             case FUEL_RANGE_NORMAL: return 1;
@@ -400,11 +391,6 @@ public interface IGameOptions {
     default String nextNebulaeOption() {
         List<String> opts = nebulaeOptions();
         int index = opts.indexOf(selectedNebulaeOption())+1;
-        return index >= opts.size() ? opts.get(0) : opts.get(index);
-    }
-    default String nextCouncilWinOption() {
-        List<String> opts = councilWinOptions();
-        int index = opts.indexOf(selectedCouncilWinOption())+1;
         return index >= opts.size() ? opts.get(0) : opts.get(index);
     }
     default String nextStarDensityOption() {

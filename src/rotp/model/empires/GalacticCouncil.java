@@ -22,9 +22,6 @@ import java.util.List;
 import rotp.model.galaxy.Galaxy;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.incidents.CouncilVoteIncident;
-import rotp.model.incidents.FinalWarIncident;
-import rotp.model.tech.Tech;
-import rotp.ui.diplomacy.DialogueManager;
 import rotp.ui.notifications.CouncilVoteNotification;
 import rotp.ui.notifications.GNNNotification;
 import rotp.util.Base;
@@ -48,8 +45,6 @@ public class GalacticCouncil implements Base, Serializable {
     private int currentStatus = INACTIVE;
     private int actionCountdown = 1;
     private Empire leader;
-    private final List<Empire> rebels = new ArrayList<>();
-    private final List<Empire> allies = new ArrayList<>();
 
     //convention variables - reset when convention starts
     private transient List<Empire> voters, empires;
@@ -60,11 +55,6 @@ public class GalacticCouncil implements Base, Serializable {
 
     public Empire leader()             { return leader; }
     public void leader(Empire e)       { leader = e; }
-    public List<Empire>  allies()      { return allies; }
-    public boolean finalWar()          { return !rebels.isEmpty(); }
-    public void addAlly(Empire e)      { allies.add(e); }
-    public void addRebel(Empire e)     { rebels.add(e); }
-    public boolean isAllied(Empire e)  { return allies.contains(e); }
 
     public List<Empire> voters() {
         if (voters == null) 
@@ -92,9 +82,7 @@ public class GalacticCouncil implements Base, Serializable {
     public void nextTurn() {
         voters = null;
         empires = null;
-        
-        if (options().noGalacticCouncil())
-            return;
+
         if (galaxy().numActiveEmpires() < 3)
             return;
         if (disbanded())
@@ -201,82 +189,14 @@ public class GalacticCouncil implements Base, Serializable {
         if (leader == null)
             return;
         
-        boolean playerWasAllied = player().alliedWith(leader.id);
-
-        boolean electedLeaderIsCrazy = rebels.contains(leader);
-        if (electedLeaderIsCrazy) {
-            Empire crazyEmpire = leader;
-            if (crazyEmpire == candidate1)
-                leader = candidate2;
-            else
-                leader = candidate1;
-            allies.addAll(rebels);
-            allies.remove(crazyEmpire);
-            rebels.clear();
-            rebels.add(crazyEmpire);
-        }
-        
-        // if player won the vote and no rebels, game over
         if (leader.isPlayer()) {
-            if (rebels.isEmpty() || options().immediateCouncilWin()) {
-                session().status().winDiplomatic();
-                return;
-            }
+            session().status().winDiplomatic();
         }
-        // if player accepted ruling, also game over
-        else if (!leader.isPlayer() && allies.contains(player())) {
-            if (playerWasAllied)
-                session().status().winCouncilAlliance();
-            else
-                session().status().loseDiplomatic();
-            return;
-        }
-
-        // all members of alliance declare final war on player and all rebels
-        // everyone gets the incident first. Once Final War is declared, no
-        // more incidents are checked
-        for (Empire rebel: rebels) {
-            for (Empire ally: allies) {
-                FinalWarIncident.create(ally, leader, rebel);
-            }
-        }
-        
-        // all members of alliance declare final war on player and all rebels
-        for (Empire rebel: rebels) {
-            for (Empire ally: allies) {
-                ally.viewForEmpire(rebel).embassy().declareFinalWar();
-            }
-        }
-        
-        // all mmembers of alliance establish unity with each other
-        // this ensures no spying costs and all learned techs traded freely
-        for (Empire ally1: allies) {
-            for (Empire ally2: allies) {
-                if (ally1 != ally2) {
-                    EmpireView v = ally1.viewForEmpire(ally2);
-                    v.embassy().establishUnity();
-                }
-            }
-        }
-        // all members of alliance share techs with leader
-        for (Empire ally: allies) {
-            for (Tech tech : ally.tech().techsUnknownTo(leader))
-                leader.tech().acquireTechThroughTrade(tech.id, ally.id);
-        }
-        // leader then shares all techs with allies
-        for (Empire ally: allies) {
-            for (Tech tech : leader.tech().techsUnknownTo(ally))
-                ally.tech().acquireTechThroughTrade(tech.id, leader.id);
-        }
-        if (leader.isPlayerControlled()) {
-            for (Empire rebel: rebels) 
-                rebel.respond(DialogueManager.WARNING_REBELLING_AGAINST, leader);
+        else if (player().alliedWith(leader.id)) {
+            session().status().winCouncilAlliance();
         }
         else {
-            for (Empire rebel: rebels) {
-                if (!rebel.isPlayerControlled()) 
-                    rebel.respond(DialogueManager.PRAISE_REBELLING_WITH, player(), leader, "leader");
-            }
+            session().status().loseDiplomatic();
         }
     }
     private void openConvention() {
@@ -315,17 +235,13 @@ public class GalacticCouncil implements Base, Serializable {
         else if (votes2 >= minVotes)
             leader = candidate2;
 
-        List<Empire> allVoters = new ArrayList<>(empires);
-        // if leader is elected, ask all empires to accept ruling
+        // if leader is elected, end the game
         if (leader != null) {
-            rebels.addAll(allVoters);
-            for (Empire c : allVoters)
-                c.diplomatAI().acceptCouncilRuling(this);
+        	end();
             return;
         }
         else 
             ensureFullContact();
-
 
         // create incidents between voters and the candidates
         for (Empire voter: empires) {
@@ -337,44 +253,6 @@ public class GalacticCouncil implements Base, Serializable {
         // schedule next council
         nextAction = SCHEDULE;
         actionCountdown = interval;
-    }
-    public void defyRuling(Empire e) {
-        empires.remove(e);
-        if (empires.isEmpty())
-            end();
-    }
-    public void acceptRuling(Empire e) {
-        empires.remove(e);
-        rebels.remove(e);
-        allies.add(e);
-        if (empires.isEmpty())
-            end();
-    }
-
-    public void removeEmpire(Empire deadEmpire) {
-        allies.remove(deadEmpire);
-        rebels.remove(deadEmpire);
-        
-        if (deadEmpire.isPlayer()) {
-            if (leader().isPlayer())
-                // player was leader of alliance and still lost!
-                session().status().loseNewRepublic();
-            else
-                // player was a rebel against alliance and lost
-                session().status().loseRebellion();
-        }
-        else {
-            if (rebels.isEmpty() && leader().isPlayer())
-                // rebellion has been defeated
-                session().status().winNewRepublic();
-            else if (allies.isEmpty() && !leader().isPlayer()) {
-                // New Republic has been defeated
-                if (rebels.size() == 1) 
-                    session().status().winRebellion();
-                else
-                    session().status().winRebellionAlliance();
-            }               
-        }
     }
     private void ensureFullContact() {
         List<Empire> emps = new ArrayList<>(galaxy().activeEmpires());

@@ -46,14 +46,9 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
     private Display displayMode;
 
     public static BufferedImage iconBackImg, raceBackImg, wideBackImg;
-    static final Color yellowText = new Color(216,154,0);
     static final Color raceEdgeColor = new Color(44,48,47);
     static final Color raceCenterColor = new Color(110,118,117);
-    static final Color backDarkC = new Color(34,53,102);
-    static final Color centerC = new Color(79,102,156);
     static final Color maskC  = new Color(40,40,40,160);
-    static final Color redEdgeC = new Color(72,14,14);
-    static final Color redMidC = new Color(126,28,28);
     static final Color greenEdgeC = new Color(44,59,30);
     static final Color greenMidC = new Color(70,93,48);
     static final Color grayEdgeC = new Color(59,59,59);
@@ -67,7 +62,6 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
     private final Rectangle candidate2Box = new Rectangle();
     private final Rectangle abstainBox = new Rectangle();
     private final Rectangle acceptBox = new Rectangle();
-    private final Rectangle rejectBox = new Rectangle();
     private final Rectangle scrollbar = new Rectangle();
     private final Rectangle voterListBox = new Rectangle();
     private Shape hoverTarget;
@@ -110,7 +104,6 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         candidate2Box.setBounds(0,0,0,0);
         abstainBox.setBounds(0,0,0,0);
         acceptBox.setBounds(0,0,0,0);
-        rejectBox.setBounds(0,0,0,0);
 
         if (showVoterSummary)
             paintVoterSummary(g2);
@@ -481,8 +474,6 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         drawBorderedString(g, button4Text, x4b, button4Y + buttonH - s9, SystemPanel.textShadowC, c0);  
     }
     private void paintNoWinnerMessage(Graphics2D g) {
-        GalacticCouncil c = galaxy().council();
-
         int w = getWidth();
         int h = getHeight();
         g.drawImage(background, 0, 0, w, h, null);
@@ -641,18 +632,14 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         
         g.setFont(narrowFont(20));
         String button1Text = text("COUNCIL_ACCEPT_RULING");
-        String button2Text = text("COUNCIL_REJECT_RULING");
         int sw1 = g.getFontMetrics().stringWidth(button1Text);
-        int sw2 = g.getFontMetrics().stringWidth(button2Text);
-        int buttonW = max(sw1,sw2)+s40;
-        int button1X = (w/2)-buttonW-s10;
-        int button2X = (w/2)+s10;
+        int buttonW = sw1+s40;
+        int button1X = (w/2)-buttonW/2;
         int buttonH = s30;
         int buttonY = y1c+s10;
        
         float[] dist = {0.0f, 0.5f, 1.0f};
         Color[] colors = {greenEdgeC, greenMidC, greenEdgeC};
-        Color[] colors2 = {redEdgeC, redMidC, redEdgeC};
         
         acceptBox.setBounds(button1X, buttonY, buttonW, buttonH);
         Point2D ptStart = new Point2D.Float(button1X, 0);
@@ -668,23 +655,7 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         g.drawRoundRect(button1X, buttonY, buttonW, buttonH, s3, s3);
         g.setStroke(prevStr);
         int x2a = button1X + ((buttonW - sw1) / 2);
-        drawBorderedString(g, button1Text, x2a, buttonY + buttonH - s9, SystemPanel.textShadowC, c0);  
-        
-        rejectBox.setBounds(button2X, buttonY, buttonW, buttonH);
-        ptStart = new Point2D.Float(button2X, 0);
-        ptEnd = new Point2D.Float(button2X + buttonW, 0);
-        LinearGradientPaint back2 = new LinearGradientPaint(ptStart, ptEnd, dist, colors2);
-        hovering = hoverTarget == rejectBox;
-        g.setPaint(back2);
-        g.fillRoundRect(button2X, buttonY, buttonW, buttonH, s3, s3);
-        c0 = hovering ? SystemPanel.yellowText : SystemPanel.whiteText;
-        g.setColor(c0);
-        prevStr = g.getStroke();
-        g.setStroke(BasePanel.stroke1);
-        g.drawRoundRect(button2X, buttonY, buttonW, buttonH, s3, s3);
-        g.setStroke(prevStr);
-        int x2b = button2X + ((buttonW - sw2) / 2);
-        drawBorderedString(g, button2Text, x2b, buttonY + buttonH - s9, SystemPanel.textShadowC, c0);       
+        drawBorderedString(g, button1Text, x2a, buttonY + buttonH - s9, SystemPanel.textShadowC, c0);    
     }
     private void paintVoterSummary(Graphics2D g) {
         GalacticCouncil c = galaxy().council();
@@ -1113,11 +1084,8 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
                 return;
             case ACCEPT_RULING:
                 switch(k) {
-                    case KeyEvent.VK_1: c.acceptRuling(player()); break;
-                    case KeyEvent.VK_2: c.defyRuling(player()); break;
-                    default: return; // don't advance screen if no vote
+                    case KeyEvent.VK_1: advanceScreen();
                 }
-                advanceScreen();
                 return;
             default:
                 switch(k) {
@@ -1209,12 +1177,7 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
                 return;
             case ACCEPT_RULING:
                 if (hoverTarget == acceptBox) 
-                    c.acceptRuling(player());
-                else if (hoverTarget == rejectBox)
-                    c.defyRuling(player());
-                else 
-                    return;
-                advanceScreen();
+                    advanceScreen();
                 return;
         }
     }
@@ -1257,9 +1220,7 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         else if (abstainBox.contains(x,y))   
             hoverTarget = abstainBox;      
         else if (acceptBox.contains(x,y))  
-            hoverTarget = acceptBox;      
-        else if (rejectBox.contains(x,y))   
-            hoverTarget = rejectBox;      
+            hoverTarget = acceptBox;
         else if (scrollbar.contains(x,y))
             hoverTarget = scrollbar;
         else if (voterListBox.contains(x,y))

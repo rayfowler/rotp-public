@@ -991,15 +991,12 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         int y0 = y+s25;
         drawShadowedString(g, title, 1, x0, y0, SystemPanel.blackText, SystemPanel.whiteText);
         
-        boolean finalWar = player().viewForEmpire(emp).embassy().finalWar();
         boolean outOfRange = !player().viewForEmpire(emp).inEconomicRange();
         
         g.setColor(SystemPanel.blackText);
         g.setFont(narrowFont(15));
         String desc;
-        if (finalWar)
-            desc = text("RACES_DIPLOMACY_BUREAU_DESC_FINAL");
-        else if (outOfRange)
+        if (outOfRange)
             desc = text("RACES_DIPLOMACY_BUREAU_DESC_RANGE");
         else {
             desc = text("RACES_DIPLOMACY_BUREAU_DESC");
@@ -1014,7 +1011,7 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         }
         
         embassyBox.setBounds(0,0,0,0);
-        if (!finalWar && !outOfRange)
+        if (!outOfRange)
             drawEmbassyButton(g, x+s20,y+h-s38,w-s40,s28);
     }
     private void drawAITradeSummary(Graphics2D g, Empire emp, int x, int y, int w, int h) {
@@ -1028,16 +1025,13 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         int y0 = y+s25;
         drawShadowedString(g, title, 1, x0, y0, SystemPanel.blackText, SystemPanel.whiteText);
         
-        boolean finalWar = player().viewForEmpire(emp).embassy().finalWar();
         boolean outOfRange = !player().viewForEmpire(emp).inEconomicRange();
         
         g.setColor(SystemPanel.blackText);
         g.setFont(narrowFont(15));
         String desc;
         
-        if (finalWar)
-            desc = text("RACES_DIPLOMACY_TRADE_DESC_FINAL");
-        else if (outOfRange)
+        if (outOfRange)
             desc = text("RACES_DIPLOMACY_TRADE_DESC_RANGE");
         else {
             desc = text("RACES_DIPLOMACY_TRADE_DESC");

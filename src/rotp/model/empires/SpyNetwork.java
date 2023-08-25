@@ -211,8 +211,6 @@ public final class SpyNetwork implements Base, Serializable {
     public String newSpiesExpected() {
         if (allocationCostPct() == 0)
             return text(noneText);
-        if (view.embassy().unity())
-            return text(noneText);
         if (!view.inEconomicRange())
             return text(noneText);
 
@@ -245,17 +243,6 @@ public final class SpyNetwork implements Base, Serializable {
 
         if (!view().inEconomicRange())
             return;
-        
-        // auto-update everything at no cost if unity 
-        if (view.embassy().unity()) {
-            lastSpyDate = galaxy().currentYear();
-            view.refreshSystemSpyViews();
-            updateTechList();
-            allocation(0);
-            activeSpies.clear();
-            maxSpies(0);
-            return;
-        }
         
         // data automatically updates for allies
         if (view.embassy().alliance()) {

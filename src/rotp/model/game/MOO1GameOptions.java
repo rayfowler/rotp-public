@@ -56,7 +56,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private String selectedRandomEventOption;
     private String selectedWarpSpeedOption;
     private String selectedNebulaeOption;
-    private String selectedCouncilWinOption;
     private int selectedNumberOpponents;
     private boolean communityAI = false;  // unused
     private boolean disableRandomEvents = false;
@@ -152,10 +151,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     public String selectedNebulaeOption()           { return selectedNebulaeOption == null ? NEBULAE_NORMAL : selectedNebulaeOption; }
     @Override
     public void selectedNebulaeOption(String s)     { selectedNebulaeOption = s; }
-    @Override
-    public String selectedCouncilWinOption()        { return selectedCouncilWinOption == null ? COUNCIL_REBELS : selectedCouncilWinOption; }
-    @Override
-    public void selectedCouncilWinOption(String s)  { selectedCouncilWinOption = s; }
     @Override
     public String selectedStarDensityOption()       { return selectedStarDensityOption == null ? STAR_DENSITY_NORMAL : selectedStarDensityOption; }
     @Override
@@ -269,7 +264,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedRandomEventOption = opt.selectedRandomEventOption;
         selectedWarpSpeedOption = opt.selectedWarpSpeedOption;
         selectedNebulaeOption = opt.selectedNebulaeOption;
-        selectedCouncilWinOption = opt.selectedCouncilWinOption;
         selectedStarDensityOption = opt.selectedStarDensityOption;
         selectedPlanetQualityOption = opt.selectedPlanetQualityOption;
         selectedTerraformingOption = opt.selectedTerraformingOption;
@@ -717,14 +711,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         return list;
     }
     @Override
-    public List<String> councilWinOptions() {
-        List<String> list = new ArrayList<>();
-        list.add(COUNCIL_IMMEDIATE);
-        list.add(COUNCIL_REBELS);
-        list.add(COUNCIL_NONE);
-        return list;
-    }
-    @Override
     public List<String> starDensityOptions() {
         List<String> list = new ArrayList<>();
         list.add(STAR_DENSITY_LOWEST);
@@ -861,7 +847,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedWarpSpeedOption = WARP_SPEED_NORMAL;
         selectedFuelRangeOption = FUEL_RANGE_NORMAL;
         selectedNebulaeOption = NEBULAE_NORMAL;
-        selectedCouncilWinOption = COUNCIL_REBELS;
         selectedStarDensityOption = STAR_DENSITY_NORMAL;
         selectedRandomizeAIOption = RANDOMIZE_AI_NONE;
         selectedAutoplayOption = AUTOPLAY_OFF;

@@ -50,7 +50,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
     BaseText planetQualityText;
     BaseText terraformingText;
     BaseText colonizingText;
-    BaseText councilWinText;
     BaseText randomizeAIText;
     BaseText autoplayText;
     BaseText researchRateText;
@@ -72,7 +71,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         planetQualityText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         terraformingText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         colonizingText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
-        councilWinText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         randomizeAIText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         autoplayText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         researchRateText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
@@ -91,7 +89,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         planetQualityText.displayText(planetQualityStr());
         terraformingText.displayText(terraformingStr());
         colonizingText.displayText(colonizingStr());
-        councilWinText.displayText(councilWinStr());
         randomizeAIText.displayText(randomizeAIStr());
         autoplayText.displayText(autoplayStr());
         fuelRangeText.displayText(fuelRangeStr());
@@ -280,24 +277,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             drawString(g,line, x2+s20, y3);
         }       
        
-
+        // Gap made by Council rebellion removal
         y2 += (h2+s20);
-        g.setColor(SystemPanel.blackText);
-        g.drawRect(x2, y2, w2, h2);
-        g.setPaint(GameUI.settingsSetupBackground(w));
-        g.fillRect(x2+s10, y2-s10, councilWinText.stringWidth(g)+s30,s30);
-        councilWinText.setScaledXY(x2+s20, y2+s7);
-        councilWinText.draw(g);
-        desc = text("SETTINGS_COUNCIL_DESC");
-        g.setColor(SystemPanel.blackText);
-        g.setFont(descFont);
-        lines = this.wrappedLines(g,desc, w2-s30);
-        y3 = y2+s10;
-        for (String line: lines) {
-            y3 += lineH;
-            drawString(g,line, x2+s20, y3);
-        }
- 
         
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
@@ -489,10 +470,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         String opt = text(newGameOptions().selectedColonizingOption());
         return text("SETTINGS_COLONIZING", opt)+"   ";
     }
-    private String councilWinStr() {
-        String opt = text(newGameOptions().selectedCouncilWinOption());
-        return text("SETTINGS_COUNCIL_WIN", opt)+"   ";
-    }
     private String randomizeAIStr() {
         String opt = text(newGameOptions().selectedRandomizeAIOption());
         return text("SETTINGS_RANDOMIZE_AI", opt)+" ";
@@ -561,11 +538,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         newGameOptions().selectedColonizingOption(newGameOptions().nextColonizingOption());
         colonizingText.repaint(colonizingStr());
     }
-    private void toggleCouncilWin(MouseEvent e) {
-        softClick();
-        newGameOptions().selectedCouncilWinOption(newGameOptions().nextCouncilWinOption());
-        councilWinText.repaint(councilWinStr());
-    }
     private void toggleRandomizeAI(MouseEvent e) {
         softClick();
         newGameOptions().selectedRandomizeAIOption(newGameOptions().nextRandomizeAIOption());
@@ -631,8 +603,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             hoverBox = colonizingText.bounds();
         else if (randomEventsText.contains(x,y))
             hoverBox = randomEventsText.bounds();
-        else if (councilWinText.contains(x,y))
-            hoverBox = councilWinText.bounds();
         else if (aiHostilityText.contains(x,y))
             hoverBox = aiHostilityText.bounds();
         else if (randomizeAIText.contains(x,y))
@@ -669,8 +639,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
                 randomEventsText.mouseExit();
             else if (prevHover == aiHostilityText.bounds())
                 aiHostilityText.mouseExit();
-            else if (prevHover == councilWinText.bounds())
-                councilWinText.mouseExit();
             else if (prevHover == randomizeAIText.bounds())
                 randomizeAIText.mouseExit();
             else if (prevHover == autoplayText.bounds())
@@ -699,8 +667,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
                 randomEventsText.mouseEnter();
             else if (hoverBox == aiHostilityText.bounds())
                 aiHostilityText.mouseEnter();
-            else if (hoverBox == councilWinText.bounds())
-                councilWinText.mouseEnter();
             else if (hoverBox == randomizeAIText.bounds())
                 randomizeAIText.mouseEnter();
             else if (hoverBox == autoplayText.bounds())
@@ -747,8 +713,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             toggleRandomEvents();
         else if (hoverBox == aiHostilityText.bounds())
             toggleAIHostility();
-        else if (hoverBox == councilWinText.bounds())
-            toggleCouncilWin(e);
         else if (hoverBox == randomizeAIText.bounds())
             toggleRandomizeAI(e);
         else if (hoverBox == autoplayText.bounds())

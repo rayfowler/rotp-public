@@ -402,8 +402,6 @@ public class BasePanel extends JPanel implements Base {
     public String defaultAmbience(){
         if (galaxy() == null)
             return "IntroAmbience";
-        if (galaxy().council().finalWar())
-            return "FinalWarAmbience"; 
         if (player().atWar())
             return "WarAmbience"; 
         else if (player().hasAnyContact())

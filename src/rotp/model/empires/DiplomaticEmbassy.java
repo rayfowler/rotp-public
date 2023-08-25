@@ -193,12 +193,10 @@ public class DiplomaticEmbassy implements Base, Serializable {
         peaceDuration--;
         treaty.nextTurn(empire());
     }
-    public boolean finalWar()               { return treaty.isFinalWar(); 	}
     public boolean war()                    { return treaty.isWar(); 	}
     public boolean noTreaty()               { return treaty.isNoTreaty(); }
     public boolean pact()                   { return treaty.isPact(); }
     public boolean alliance()               { return treaty.isAlliance(); }
-    public boolean unity()                  { return treaty.isUnity(); }
     public boolean readyForTrade(int level) {
         // trade cooldown timer must be back to zero -AND-
         // new trade level must exceed last requested level by 25% * each consecutive refusal
@@ -312,9 +310,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
         else if (empire().leader().isXenophobic())
             baseTurns *= 2;
 
-        if (finalWar())
-            baseTurns = 9999;
-        else if (war())
+        if (war())
             baseTurns *= 2;
         withdrawAmbassador(baseTurns+1);
     }
@@ -368,7 +364,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
     public void openEmbassy()          { diplomatGoneTimer = 0; }
     public boolean diplomatGone()      { return diplomatGoneTimer > 0;  }
     public boolean wantWar()           { return otherEmbassy().relations() < -50; }
-    public boolean isAlly()            { return (alliance() || unity()); }
+    public boolean isAlly()            { return alliance(); }
     public boolean alliedWithEnemy() {
         List<Empire> myEnemies = owner().warEnemies();
         List<Empire> hisAllies = empire().allies();
@@ -386,7 +382,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
             return true;
         if (pact())
             return (s.hasColonyForEmpire(owner()) || s.hasColonyForEmpire(empire()));
-        if (alliance() || unity())
+        if (alliance())
             return false;
         return !peaceTreatyInEffect();
     }
@@ -397,9 +393,9 @@ public class DiplomaticEmbassy implements Base, Serializable {
         view.setSuggestedAllocations();
         view.otherView().setSuggestedAllocations();
     }
-    public boolean isFriend()    { return pact() || alliance() || unity(); }
+    public boolean isFriend()    { return pact() || alliance(); }
     public boolean isEnemy()     { return anyWar() || onWarFooting(); }
-    public boolean anyWar()      { return war() || finalWar(); }
+    public boolean anyWar()      { return war(); }
     public boolean atPeace()     { return peaceTreatyInEffect(); }
 
     public DiplomaticIncident exchangeTechnology(Tech offeredTech, Tech requestedTech) {
@@ -422,14 +418,6 @@ public class DiplomaticEmbassy implements Base, Serializable {
         addIncident(inc);
         otherEmbassy().addIncident(SignTradeIncident.create(empire(), owner(), level));
         return inc;
-    }
-    public void declareFinalWar() {
-        beginFinalWar();
-        otherEmbassy().beginFinalWar();
-    }
-    public void beginFinalWar() {
-        treaty = new TreatyFinalWar(view.owner(), view.empire());
-        view.trade().stopRoute();
     }
     public DiplomaticIncident demandTribute() {
         DiplomaticIncident inc = DemandTributeIncident.create(owner(), empire(), true);
@@ -495,27 +483,23 @@ public class DiplomaticEmbassy implements Base, Serializable {
         }
         otherEmbassy().addIncident(inc);
 
-        boolean finalWar = galaxy().council().finalWar();
         // if oath broken, then create that incident as well
         switch(oathBreakType) {
             case 1:
-                if (!finalWar)
-                    GNNAllianceBrokenNotice.create(owner(), empire());
+            	GNNAllianceBrokenNotice.create(owner(), empire());
                 OathBreakerIncident.alertBrokenAlliance(owner(),empire(),requestor,false); break;
             case 2: OathBreakerIncident.alertBrokenPact(owner(),empire(),requestor,false); break;
         }
         
         // if the player is one of our allies, let him know
-        if (!finalWar) {
-            for (Empire ally : owner().allies()) {
-                if (ally.isPlayerControlled())
-                    GNNAllyAtWarNotification.create(owner(), empire());
-            }
-            // if the player is one of our enemy's allies, let him know
-            for (Empire ally : empire().allies()) {
-                if (ally.isPlayerControlled())
-                    GNNAllyAtWarNotification.create(empire(), owner());
-            }
+        for (Empire ally : owner().allies()) {
+            if (ally.isPlayerControlled())
+                GNNAllyAtWarNotification.create(owner(), empire());
+        }
+        // if the player is one of our enemy's allies, let him know
+        for (Empire ally : empire().allies()) {
+            if (ally.isPlayerControlled())
+                GNNAllyAtWarNotification.create(empire(), owner());
         }
 
         return inc;
@@ -612,23 +596,6 @@ public class DiplomaticEmbassy implements Base, Serializable {
         otherEmbassy().addIncident(SignBreakAllianceIncident.create(empire(), owner(), target));
         return inc;
     }
-    public void establishUnity() {
-        beginTreaty();
-        setContact();
-        otherEmbassy().setContact();
-        endWarPreparations();
-        setTreaty(new TreatyUnity(view.owner(), view.empire()));
-        owner().setRecalcDistances();
-        empire().setRecalcDistances();
-        owner().joinGalacticAlliance();
-        empire().joinGalacticAlliance();
-        owner().shareSystemInfoWithAlly(empire());
-        
-        // stop spying
-        view.spies().activeSpies().clear();
-        view.spies().maxSpies(0);
-        view.spies().allocation(0);
-    }
     public void setContact() {
         if (!contact()) {
             contactYear = galaxy().currentYear();
@@ -708,16 +675,12 @@ public class DiplomaticEmbassy implements Base, Serializable {
         }
     }
     private int treatyRelationsAdj() {
-        if (this.finalWar())
-            return -200;
-        else if (war())
+        if (war())
             return -10;
         else if (pact())
             return 5;
         else if (alliance())
             return 10;
-        else if (unity())
-            return 200;
         else
             return 0;
     }

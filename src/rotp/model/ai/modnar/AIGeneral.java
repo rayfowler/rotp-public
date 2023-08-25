@@ -348,10 +348,7 @@ public class AIGeneral implements Base, General {
         fp.addShips(empire.shipLab().destroyerDesign(), destroyersNeeded);
         fp.addShips(empire.shipLab().bomberDesign(), bombersNeeded);
         fp.addShips(empire.shipLab().fighterDesign(), fightersNeeded);
-        if (v.embassy().finalWar()) 
-            fp.priority = FleetPlan.INVADE_FINAL_WAR+ invasionPriority(sys)/100;
-        else
-            fp.priority = FleetPlan.INVADE + invasionPriority(sys)/100;
+        fp.priority = FleetPlan.INVADE + invasionPriority(sys)/100;
         fp.stagingPointId = empire.optimalStagingPoint(sys, speed);
     }
     public void launchGroundTroops(EmpireView v, StarSystem target, float mult) {
@@ -507,10 +504,7 @@ public class AIGeneral implements Base, General {
         fp.addShips(empire.shipLab().bomberDesign(), bombersNeeded);
         fp.addShips(empire.shipLab().fighterDesign(), fightersNeeded);
         fp.stagingPointId = empire.optimalStagingPoint(sys, speed);
-        if (v.embassy().finalWar()) 
-            fp.priority = FleetPlan.BOMB_FINAL_WAR+ invasionPriority(sys)/100;
-        else
-            fp.priority = FleetPlan.BOMB_ENEMY+ invasionPriority(sys)/100;
+        fp.priority = FleetPlan.BOMB_ENEMY+ invasionPriority(sys)/100;
     }
     public void orderBombEncroachmentFleet(EmpireView v, StarSystem sys, float fleetSize) {
         // set fleet orders for bombardment...

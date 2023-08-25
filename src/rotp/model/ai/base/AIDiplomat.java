@@ -26,7 +26,6 @@ import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
 import static rotp.model.empires.EmpireStatus.FLEET;
 import rotp.model.empires.EmpireView;
-import rotp.model.empires.GalacticCouncil;
 import rotp.model.empires.Leader;
 import rotp.model.empires.SpyNetwork.Mission;
 import rotp.model.empires.SpyReport;
@@ -355,9 +354,6 @@ public class AIDiplomat implements Base, Diplomat {
     @Override
     public boolean canOfferDiplomaticTreaties(Empire e) {
         if (!empire.inEconomicRange(id(e)))
-            return false;
-        EmpireView view = empire.viewForEmpire(id(e));
-        if (view.embassy().finalWar() || view.embassy().unity())
             return false;
         return true;
     }
@@ -1150,8 +1146,6 @@ public class AIDiplomat implements Base, Diplomat {
     public void makeDiplomaticOffers(EmpireView v) {
         if (v.embassy().contactAge() < 2)
             return;
-        if (v.embassy().unity() || v.embassy().finalWar())
-            return;
 
         if (v.embassy().diplomatGone() || v.otherView().embassy().diplomatGone())
             return;
@@ -1175,9 +1169,6 @@ public class AIDiplomat implements Base, Diplomat {
                 v.embassy().endWarPreparations();
             return;
         }
-
-        if (v.embassy().finalWar() || v.embassy().unity())
-            return;
         
         // we can issue praise even to people we don't like
         if (decidedToIssuePraise(v))
@@ -1269,7 +1260,7 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         // no warnings if at war
         DiplomaticEmbassy emb = view.embassy();
-        if (emb.anyWar() || emb.unity())
+        if (emb.anyWar())
             return false;
         float threshold = 0 - warningThreshold(view);
         log(view+": checkIssueWarning. Threshold: "+ threshold);
@@ -1307,7 +1298,7 @@ public class AIDiplomat implements Base, Diplomat {
     private boolean decidedToDeclareWar(EmpireView view) {
         if (empire.isPlayerControlled())
             return false;
-        if (view.embassy().unity() || view.embassy().anyWar())
+        if (view.embassy().anyWar())
             return false;
         if(!empire.inShipRange(view.empId()))
             return false;
@@ -1531,68 +1522,11 @@ public class AIDiplomat implements Base, Diplomat {
         // return undecided
         return castVoteFor(null);
     }
-    @Override
-    public void acceptCouncilRuling(GalacticCouncil c) {
-        // player will be prompted by UI
-        if (empire.isPlayerControlled())
-            return;
-        
-        // if elected, always accept. Only players are sadomasochists about this
-        if (c.leader() == empire)
-            c.acceptRuling(empire);
-        else if (giveLoyaltyTo(c.leader()))
-            c.acceptRuling(empire);
-        else
-            c.defyRuling(empire);
-    }
-    private boolean giveLoyaltyTo(Empire c) {
-        // modnar: add empire power bonus relative to own power for accepting winner
-        // only what own empire can see (through spies)
-        // more likely to accept more powerful empire, less likely to accept less powerful empire
-        // powerBonus vary from -0.25 to 0.25
-        float powerBonus = 0.5f * (empire.powerLevel(c) / (empire.powerLevel(c) + empire.powerLevel(empire)) - 0.5f);
-        
-        if (empire.lastCouncilVoteEmpId() == c.id)
-            return true;
-
-        if (c.orionCouncilBonus() > 0)
-            return true;
-        
-        EmpireView cv1 = empire.viewForEmpire(c);
-        if (cv1.embassy().alliance())
-            return true;
-        if (empire.leader().isPacifist())
-            return true;
-        if (cv1.embassy().pact() && empire.leader().isHonorable())
-            return true;
-        
-        if (cv1.embassy().anyWar()) {
-            if (empire.leader().isXenophobic())
-                return random() < powerBonus; // modnar: add powerBonus
-            else if (empire.leader().isAggressive())
-                return random() < 0.50f + powerBonus; // modnar: add powerBonus
-            else
-                return random() < 0.75f + powerBonus; // modnar: add powerBonus
-        }
-        
-        if (empire.leader().isXenophobic())
-            return random() < 0.50f + powerBonus; // modnar: add powerBonus
-        else if (empire.leader().isErratic())
-            return random() < 0.75f + powerBonus; // modnar: add powerBonus
-
-        return random() < 0.90f + powerBonus; // modnar: add powerBonus
-    }
     // ----------------------------------------------------------
 // PRIVATE METHODS
 // ----------------------------------------------------------
     private float previousVoteBonus(Empire c) {
         return c.id == empire.lastCouncilVoteEmpId() ? 0.6f : 0;
-    }
-    private Empire conditionallyCastVoteFor(EmpireView ev) {
-        if (ev.embassy().noTreaty() && galaxy().council().nextVoteWouldElect(ev.empire()))
-            return castVoteFor(null);
-        else
-            return castVoteFor(ev.empire());
     }
     private Empire castVoteFor(Empire c) {
         if (c == null)
@@ -1607,9 +1541,6 @@ public class AIDiplomat implements Base, Diplomat {
     @Override
     public void noticeIncident(DiplomaticIncident inc, Empire emp) {
         EmpireView view = empire.viewForEmpire(emp);
-        // incidents don't matter once final war is declared
-        if (view.embassy().finalWar())
-            return;
         
         view.embassy().addIncident(inc);
 
@@ -1686,20 +1617,16 @@ public class AIDiplomat implements Base, Diplomat {
     }
     @Override
     public void noticeAtWarWithAllyIncidents(EmpireView view, List<DiplomaticIncident> events) {
-        if (!view.embassy().finalWar()) {
-            for (Empire ally: empire.allies()) {
-                if (ally.atWarWith(view.empId())) 
-                    events.add(new AtWarWithAllyIncident(view, ally));
-            }
+        for (Empire ally: empire.allies()) {
+            if (ally.atWarWith(view.empId())) 
+                events.add(new AtWarWithAllyIncident(view, ally));
         }
     }
     @Override
     public void noticeAlliedWithEnemyIncidents(EmpireView view, List<DiplomaticIncident> events) {
-        if (!view.embassy().finalWar()) {
-            for (Empire ally: view.empire().allies()) {
-                if (empire.atWarWith(ally.id)) 
-                    events.add(new AlliedWithEnemyIncident(view, ally));
-            }
+        for (Empire ally: view.empire().allies()) {
+            if (empire.atWarWith(ally.id)) 
+                events.add(new AlliedWithEnemyIncident(view, ally));
         }
     }
     @Override
@@ -1776,8 +1703,6 @@ public class AIDiplomat implements Base, Diplomat {
         return -1.0f*lostBC*100/totalIndustry;
     }
    private boolean warWeary(EmpireView v) {
-        if (v.embassy().finalWar())
-            return false;
         if(!empire.inShipRange(v.empId()))
             return true;
         // modnar: scale warWeary by number of our wars vs. number of their wars

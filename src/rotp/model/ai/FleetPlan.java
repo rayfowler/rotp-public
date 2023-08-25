@@ -41,8 +41,6 @@ public class FleetPlan implements Base, Serializable {
 
     // PRIORITY VALUES
     public static final int RETREAT = 9999;  // highest priority since these ships MUST move somewhere else
-    public static final int BOMB_FINAL_WAR = 5500;
-    public static final int INVADE_FINAL_WAR = 5000;
     public static final int QUASH_REBELLION = 2000;
     public static final int REPEL = 1500;   // defending a colony under attack
     public static final int INTERCEPT = 1400;   // defending a colony under attack

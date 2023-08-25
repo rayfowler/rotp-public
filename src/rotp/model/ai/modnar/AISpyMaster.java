@@ -76,7 +76,7 @@ public class AISpyMaster implements Base, SpyMaster {
         SpyNetwork spies = v.spies();
 
         // situations where no spies are ever needed
-        if (!emb.contact() || v.empire().extinct() || !v.inEconomicRange() || emb.unity()) {
+        if (!emb.contact() || v.empire().extinct() || !v.inEconomicRange()) {
             spies.allocation(0);
             return;
         }
@@ -90,9 +90,7 @@ public class AISpyMaster implements Base, SpyMaster {
             
         int maxSpiesNeeded = 0;
 
-        if (emb.finalWar())
-            maxSpiesNeeded = 3;
-        else if (emb.war())
+        if (emb.war())
             maxSpiesNeeded = 2;
         else if (emb.noTreaty()) 
             maxSpiesNeeded = 1;
@@ -127,7 +125,7 @@ public class AISpyMaster implements Base, SpyMaster {
         }
 
         // they are our allies
-        if (emb.alliance() || emb.unity()) {
+        if (emb.alliance()) {
             spies.beginHide();
             return;
         }

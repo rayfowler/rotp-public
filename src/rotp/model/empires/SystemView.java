@@ -415,15 +415,6 @@ public class SystemView implements IMappedObject, Base, Serializable {
         // occur if, for example, the system is degraded with a random event
         if (!empire().canColonize(system()))
             return false;
-        // special case: we cannot incite rebellion against a final war enemy 
-        // if we are rebelling against the New Republic
-        Empire leader = galaxy().council().leader();
-        if (leader != null) {
-            if (owner().viewForEmpire(vEmpire).embassy().finalWar()) {                   
-                if ((vEmpire == leader) || vEmpire.viewForEmpire(leader).embassy().unity())
-                    return false;
-            }
-        }
         return true;
     }
 

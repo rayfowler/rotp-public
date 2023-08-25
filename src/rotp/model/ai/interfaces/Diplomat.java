@@ -19,7 +19,6 @@ import java.util.List;
 import rotp.model.combat.ShipCombatResults;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
-import rotp.model.empires.GalacticCouncil;
 import rotp.model.empires.Leader.Personality;
 import rotp.model.incidents.DiplomaticIncident;
 import rotp.model.incidents.BioweaponIncident;
@@ -49,7 +48,6 @@ public interface Diplomat {
     void noticeIncident(DiplomaticIncident inc, Empire e);
     void makeDiplomaticOffers(EmpireView ev);
     Empire councilVoteFor(Empire emp1, Empire emp2);
-    void acceptCouncilRuling(GalacticCouncil c);
     
     void noticeNoRelationIncident(EmpireView v, List<DiplomaticIncident> incidents);
     void noticeAtWarWithAllyIncidents(EmpireView v, List<DiplomaticIncident> incidents);

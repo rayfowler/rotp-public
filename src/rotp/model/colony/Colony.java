@@ -1041,8 +1041,6 @@ public final class Colony implements Base, IMappedObject, Serializable {
         EmpireView ev = tr.empire().viewForEmpire(empire);
 
         if (ev != null) {
-            if (ev.embassy().unity())
-                return;
             // don't cause war if treaty signed since launch
             if (!ev.embassy().anyWar() && (ev.embassy().treatyDate() >= tr.launchTime()))
                 return;

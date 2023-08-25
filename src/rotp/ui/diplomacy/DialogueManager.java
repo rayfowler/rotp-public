@@ -97,7 +97,6 @@ public class DialogueManager implements Base {
     public static final String PRAISE_COUNCIL_VOTE      = "Praise-CouncilVote";
     public static final String PRAISE_ATTACKED_ENEMY    = "Praise-AttackedEnemy";
     public static final String PRAISE_TRADE             = "Praise-Trade";
-    public static final String PRAISE_REBELLING_WITH    = "Praise-RebellingWith";
     public static final String WARNING_COUNCIL_VOTE     = "Warning-CouncilVote";
     public static final String WARNING_OATHBREAKER      = "Warning-Oathbreaker";
     public static final String WARNING_ATTACKED_ALLY    = "Warning-AttackedAlly";
@@ -111,9 +110,7 @@ public class DialogueManager implements Base {
     public static final String WARNING_COLONY_ATTACKED  = "Warning-ColonyAttacked";
     public static final String WARNING_COLONY_INVADED   = "Warning-ColonyInvaded";
     public static final String WARNING_GENOCIDE         = "Warning-Genocide";
-    public static final String WARNING_FINAL_WAR        = "Warning-FinalWar";
     public static final String WARNING_BIOWEAPON        = "Warning-Bioweapon";
-    public static final String WARNING_REBELLING_AGAINST = "Warning-RebellingAgainst";
     public static final String DECLARE_ASSASSIN_WAR     = "DeclareWar-Assassin";
     public static final String DECLARE_ATTACKED_WAR     = "DeclareWar-Attack";
     public static final String DECLARE_HATE_WAR         = "DeclareWar-Hate";
@@ -241,7 +238,6 @@ public class DialogueManager implements Base {
         addMessage(new TurnNotificationMessage(PRAISE_COUNCIL_VOTE));
         addMessage(new TurnNotificationMessage(PRAISE_ATTACKED_ENEMY));
         addMessage(new TurnNotificationMessage(PRAISE_TRADE));
-        addMessage(new TurnNotificationMessage(PRAISE_REBELLING_WITH));
         addMessage(new TurnNotificationMessage(WARNING_COUNCIL_VOTE));
         addMessage(new TurnNotificationMessage(WARNING_OATHBREAKER));
         addMessage(new TurnNotificationMessage(WARNING_ATTACKED_ALLY));
@@ -255,8 +251,6 @@ public class DialogueManager implements Base {
         addMessage(new ThreatForAttack(WARNING_COLONY_ATTACKED));
         addMessage(new TurnNotificationMessage(WARNING_BIOWEAPON));
         addMessage(new TurnNotificationMessage(WARNING_GENOCIDE));
-        addMessage(new TurnNotificationMessage(WARNING_FINAL_WAR));
-        addMessage(new TurnNotificationMessage(WARNING_REBELLING_AGAINST));
         addMessage(new TurnNotificationMessage(DECLARE_ERRATIC_WAR));
         addMessage(new TurnNotificationMessage(DECLARE_HATE_WAR));
         addMessage(new TurnNotificationMessage(DECLARE_OPPORTUNITY_WAR));

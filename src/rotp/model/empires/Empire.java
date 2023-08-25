@@ -105,7 +105,6 @@ public final class Empire implements Base, NamedObject, Serializable {
     private final List<StarSystem> shipBuildingSystems = new ArrayList<>();
     private final List<StarSystem> colonizedSystems = new ArrayList<>();
     private boolean extinct = false;
-    private boolean galacticAlliance = false;
     private int lastCouncilVoteEmpId = Empire.NULL_ID;
     private Colony.Orders priorityOrders = Colony.Orders.NONE;
     private int bannerColor;
@@ -184,8 +183,6 @@ public final class Empire implements Base, NamedObject, Serializable {
             return names.get(i);
     }
     public List<StarSystem> shipBuildingSystems() { return shipBuildingSystems; }
-    public boolean inGalacticAlliance()           { return galacticAlliance; }
-    public void joinGalacticAlliance()            { galacticAlliance = true; }
     public float planetScanningRange()            { return max(3, planetScanningRange); }  // max() to correct old saves
     public void planetScanningRange(float d)      { planetScanningRange = d; }
     public float shipScanningRange()              { return shipScanningRange; }
@@ -272,7 +269,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         if (canSeeShips == null) {
             canSeeShips = new boolean[galaxy().numEmpires()];
             for (int i=0;i<canSeeShips.length;i++) 
-                canSeeShips[i] = (i == id) || viewForEmpire(i).embassy().unity(); 
+                canSeeShips[i] = (i == id); 
         }
         return canSeeShips[empId];
     }
@@ -1715,14 +1712,13 @@ public final class Empire implements Base, NamedObject, Serializable {
         if (empId == Empire.NULL_ID) return false;
 
         EmpireView v = viewForEmpire(empId);
-        return v == null ? false : v.embassy().alliance() || v.embassy().unity();
+        return v == null ? false : v.embassy().alliance();
     }
     public boolean unityWith(int empId) {
         if (empId == id) return true;
         if (empId == Empire.NULL_ID) return false;
 
-        EmpireView v = viewForEmpire(empId);
-        return v == null ? false : v.embassy().unity();
+        return false;
     }
     public boolean tradingWith(Empire c) {
         if (c == this) return true;
@@ -2073,11 +2069,6 @@ public final class Empire implements Base, NamedObject, Serializable {
         if (newTech && isPlayerControlled()) {
             log("Tech: ", techId, " researched");
             DiscoverTechNotification.create(techId);
-        }
-        // share techs with New Republic allies
-        for (EmpireView v: empireViews) {
-            if ((v != null) && v.embassy().unity())
-                v.empire().tech().acquireTechThroughTrade(techId, id);
         }
     }
     /*
@@ -2475,28 +2466,22 @@ public final class Empire implements Base, NamedObject, Serializable {
             }
         }
 
-        Galaxy g = galaxy();
-        if (g.council().finalWar()) {
-            g.council().removeEmpire(this);
+        List<Empire> activeEmpires = galaxy().activeEmpires();
+        // Player has gone extinct. Determine loss condition
+        if (isPlayer()) {
+            // no one killed us... abandonment suicide
+            if (lastAttacker == null)
+                session().status().loseNoColonies();   
+            else
+                session().status().loseMilitary();                    
         }
-        else { 
-            List<Empire> activeEmpires = galaxy().activeEmpires();
-            // Player has gone extinct. Determine loss condition
-            if (isPlayer()) {
-                // no one killed us... abandonment suicide
-                if (lastAttacker == null)
-                    session().status().loseNoColonies();   
-                else
-                    session().status().loseMilitary();                    
-            }
-            // an AI empire has gone extinct.. see if player win 
-            // if only one empire is left then player must have won
-            else if (activeEmpires.size() == 1) 
-                session().status().winMilitary();
-            // multiple empires, all allied with player.. that's a win
-            else if (galaxy().allAlliedWithPlayer()) 
-                session().status().winMilitaryAlliance();
-        }            
+        // an AI empire has gone extinct.. see if player win 
+        // if only one empire is left then player must have won
+        else if (activeEmpires.size() == 1) 
+            session().status().winMilitary();
+        // multiple empires, all allied with player.. that's a win
+        else if (galaxy().allAlliedWithPlayer()) 
+            session().status().winMilitaryAlliance();            
         status.assessTurn();
     }
     public ShipView shipViewFor(ShipDesign d ) {

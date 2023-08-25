@@ -37,13 +37,11 @@ public class DiplomaticTreaty implements Base, Serializable {
     public void nextTurn(Empire emp)      { }
     public void noticeIncident(DiplomaticIncident inc) { }
     public boolean wantToBreak(Empire e)  { return false; }
-    public boolean isFinalWar()           { return false; }
     public boolean isWar()                { return false; }
     public boolean isNoTreaty()           { return false; }
     public boolean isPact()               { return false; }
     public boolean isAlliance()           { return false; }
     public boolean isTrade()              { return false; }
-    public boolean isUnity()              { return false; }
     public boolean isPeace()              { return false; }
     public int listOrder()                { return 0; }
     public void losePopulation(Empire e, float amt) {  }
