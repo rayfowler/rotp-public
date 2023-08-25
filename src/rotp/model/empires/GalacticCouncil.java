@@ -54,7 +54,6 @@ public class GalacticCouncil implements Base, Serializable {
     private transient Empire candidate1, candidate2, lastVoter, lastVoted;
 
     public Empire leader()             { return leader; }
-    public void leader(Empire e)       { leader = e; }
 
     public List<Empire> voters() {
         if (voters == null) 

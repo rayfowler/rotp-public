@@ -519,28 +519,6 @@ public final class GameSession implements Base, Serializable {
     public void startGNNNotification() {
         (new GNNRankingNoticeCheck()).showRanking();
     }
-    public void randomlyEndGame() {
-        if (galaxy().numberTurns() < 2)
-            return;
-        galaxy().council().leader(random(galaxy().empires()));
-        player().lastAttacker(random(galaxy().empires()));
-
-        int r = roll(0,11);
-        switch(r) {
-            case 0: session().status().loseOverthrown(); break;
-            case 1: session().status().loseMilitary(); break;
-            case 2: session().status().loseDiplomatic(); break;
-            case 3: session().status().loseNewRepublic(); break;
-            case 4: session().status().loseRebellion(); break;
-            case 5: session().status().winDiplomatic(); break;
-            case 6: session().status().winMilitary(); break;
-            case 7: session().status().winMilitaryAlliance(); break;
-            case 8: session().status().winNewRepublic(); break;
-            case 9: session().status().winRebellion(); break;
-            case 10: session().status().winRebellionAlliance(); break;
-            case 11: session().status().wonCouncilAlliance(); break;
-        }
-    }
     public void formAllianceWithRandomContact() {
         int empId = random(player().contactedEmpires()).id;
         if (!player().alliedWith(empId)) {
