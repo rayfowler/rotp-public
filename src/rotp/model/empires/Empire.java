@@ -2071,11 +2071,6 @@ public final class Empire implements Base, NamedObject, Serializable {
             DiscoverTechNotification.create(techId);
         }
     }
-    /*
-    public void acquireTechThroughTrade(String techId, int empId) {
-        tech().acquireTechThroughTrade(techId, empId);
-    }
-*/
     public void plunderTech(Tech t, StarSystem s, Empire emp) {
         boolean newTech = tech().learnTech(t.id);
         if (newTech && isPlayerControlled()) {

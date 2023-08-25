@@ -57,9 +57,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private String selectedWarpSpeedOption;
     private String selectedNebulaeOption;
     private int selectedNumberOpponents;
-    private boolean communityAI = false;  // unused
     private boolean disableRandomEvents = false;
-    private boolean disableColonizePrompt = false; // unused
     private String selectedStarDensityOption;
     private String selectedPlanetQualityOption;
     private String selectedTerraformingOption;

@@ -39,7 +39,6 @@ import java.util.List;
 import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
-import rotp.model.incidents.DiplomaticIncident;
 import rotp.model.tech.Tech;
 import rotp.model.tech.TechCategory;
 import rotp.model.tech.TechTree;
@@ -53,7 +52,6 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
     static Color sliderC = new Color(34,140,142);
     static Color sliderButtonC = new Color(153,0,11);
     static Color sliderButtonHiC = new Color(199,199,11);
-    private static final Color selectedC = new Color(178,124,87);
     private static final Color unselectedC = new Color(112,85,68);
     static final Color sliderBoxBlue = new Color(34,140,142);
 

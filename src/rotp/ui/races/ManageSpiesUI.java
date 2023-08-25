@@ -47,7 +47,6 @@ public class ManageSpiesUI extends BasePanel implements MouseListener, MouseWhee
     private final Color brownDividerC = new Color(136,115,96);
     private static final Color greenEdgeC = new Color(44,59,30);
     private static final Color greenMidC = new Color(71,93,48);
-    private static final Color unselectedC = new Color(112,85,68);
 
     final RacesUI parent;
     private Shape hoverBox, hoverButton;

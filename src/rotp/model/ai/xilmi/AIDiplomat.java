@@ -32,8 +32,6 @@ import static rotp.model.empires.Leader.Objective.EXPANSIONIST;
 import static rotp.model.empires.Leader.Objective.INDUSTRIALIST;
 import static rotp.model.empires.Leader.Objective.MILITARIST;
 import static rotp.model.empires.Leader.Objective.TECHNOLOGIST;
-import static rotp.model.empires.Leader.Personality.AGGRESSIVE;
-import static rotp.model.empires.Leader.Personality.PACIFIST;
 import static rotp.model.empires.Leader.Personality.XENOPHOBIC;
 import rotp.model.empires.TreatyWar;
 import rotp.model.events.StarSystemEvent;

@@ -28,7 +28,6 @@ import rotp.util.Base;
 
 public class TreatyAlliance extends DiplomaticTreaty implements Base {
     private static final long serialVersionUID = 1L;
-    private int standing = 50; // unused
     private int[] standings;
     private boolean[] wantToBreak = new boolean[2];
     public TreatyAlliance(Empire e1, Empire e2) {

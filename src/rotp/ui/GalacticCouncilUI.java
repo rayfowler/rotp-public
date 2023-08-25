@@ -827,9 +827,6 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         g.setStroke(prevStr);
         int x2a = button1X + ((button1W - sw1) / 2);
         drawBorderedString(g, button1Text, x2a, buttonY + buttonH - s9, SystemPanel.textShadowC, c0);          
-
-
-
     }
     private void drawVoterSummaryPane(Graphics2D g, Empire voter, int x, int y, int w, int h) {
         GalacticCouncil c = galaxy().council();
