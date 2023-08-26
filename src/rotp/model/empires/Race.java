@@ -131,7 +131,6 @@ public class Race implements Base, Serializable {
     private int shipDefenseBonus = 0;
     private int shipInitiativeBonus = 0;
     private int groundAttackBonus = 0;
-    public boolean telepathic = false;
     public float spyCostMod = 1;
     public float internalSecurityAdj = 0;
     public float spyInfiltrationAdj = 0;
