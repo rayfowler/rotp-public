@@ -185,7 +185,7 @@ public class SystemInfo implements Serializable, Base {
     public Color empireColor(int id) {
         if (isColonized(id))
             return options().color(empire(id).shipColorId());
-        else if (empire().canColonize(id))
+        else if (isScouted(id) && empire().canColonize(id))
             return Color.white;
         else
             return Color.gray;
