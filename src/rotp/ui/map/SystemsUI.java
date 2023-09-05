@@ -1086,8 +1086,6 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         public void mouseReleased(MouseEvent e) {
             if (e.getButton() > 3)
                 return;
-            int x = e.getX();
-            int y = e.getY();
             if (hoverBox == null)
                 misClick();
             else {

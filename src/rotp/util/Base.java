@@ -671,7 +671,6 @@ public interface Base {
     public default boolean readerExists(String n) {
         String fullString = "../rotp/" +n;
         FileInputStream fis = null;
-        InputStreamReader in = null;
         InputStream zipStream = null;
 
         try {

@@ -48,7 +48,6 @@ public final class TransferReserveUI extends BasePanel implements MouseListener,
     private LinearGradientPaint largeGreenBackC;
 
     private static final Color sliderButtonColor = Color.black;
-    private static final Color sliderHighlightColor = new Color(255,255,255);
     private static final Color sliderBoxBlue = new Color(34,140,142);
     static final int MAX_TICKS = 50;
 
@@ -270,7 +269,6 @@ public final class TransferReserveUI extends BasePanel implements MouseListener,
     }
     private void init(int leftX0, int leftX1, int rightX0, int rightX1) {
         initted = true;
-        int w = getWidth();
         Point2D start1 = new Point2D.Float(leftX0, 0);
         Point2D end1 = new Point2D.Float(leftX1, 0);
         Point2D start2 = new Point2D.Float(rightX0, 0);

@@ -61,7 +61,6 @@ public final class HistoryUI extends BasePanel implements MouseListener {
     static Color uiBackground = new Color(132,98,77);
     static Color dataBackground = new Color(94,71,53);
     static Color titleColor = new Color(114,155,201);
-    private static final Color shadeBorderC = new Color(80,80,80);
     static final Color dataBorders = new Color(160,160,160);
 
     static final Color paneBorderDarker = new Color(61,41,28);
@@ -356,10 +355,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         private final Color grayMidC = new Color(93,93,93);
         private final Color greenEdgeC = new Color(44,59,30);
         private final Color greenMidC = new Color(70,93,48);
-        private final Color redEdgeC = new Color(72,14,14);
-        private final Color redMidC = new Color(126,28,28);
         private LinearGradientPaint greenBackground;
-        private LinearGradientPaint redBackground;
         private LinearGradientPaint grayBackground;
         private final Rectangle prevTurnBox = new Rectangle();
         private final Rectangle nextTurnBox = new Rectangle();
@@ -398,9 +394,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
                 Point2D ptStart = new Point2D.Float(buttonX, 0);
                 Point2D ptEnd = new Point2D.Float(buttonX + buttonW, 0);
                 Color[] greenColors = {greenEdgeC, greenMidC, greenEdgeC};
-                greenBackground = new LinearGradientPaint(ptStart, ptEnd, dist, greenColors);                
-                Color[] redColors = {redEdgeC, redMidC, redEdgeC};
-                redBackground = new LinearGradientPaint(ptStart, ptEnd, dist, redColors);                
+                greenBackground = new LinearGradientPaint(ptStart, ptEnd, dist, greenColors);      
                 Color[] grayColors = {grayEdgeC, grayMidC, grayEdgeC};
                 grayBackground = new LinearGradientPaint(ptStart, ptEnd, dist, grayColors);                
             }

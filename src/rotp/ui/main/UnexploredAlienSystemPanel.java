@@ -33,11 +33,6 @@ import javax.swing.SwingUtilities;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
-import static rotp.ui.BasePanel.s10;
-import static rotp.ui.BasePanel.s15;
-import static rotp.ui.BasePanel.s20;
-import static rotp.ui.BasePanel.s25;
-import static rotp.ui.BasePanel.s70;
 import rotp.ui.RotPUI;
 
 public class UnexploredAlienSystemPanel extends SystemPanel {

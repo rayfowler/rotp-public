@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package rotp.ui.main;
+
 import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
@@ -33,9 +34,6 @@ import javax.swing.SwingUtilities;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
-import static rotp.ui.BasePanel.s10;
-import static rotp.ui.BasePanel.s20;
-import static rotp.ui.BasePanel.s70;
 import rotp.ui.RotPUI;
 
 public class AlienSystemPanel extends SystemPanel {

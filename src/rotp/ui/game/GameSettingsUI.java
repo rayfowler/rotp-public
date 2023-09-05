@@ -31,9 +31,6 @@ import java.io.File;
 import java.util.List;
 import javax.swing.JFileChooser;
 import rotp.ui.BasePanel;
-import static rotp.ui.BasePanel.s100;
-import static rotp.ui.BasePanel.s20;
-import static rotp.ui.BasePanel.s90;
 import rotp.ui.BaseText;
 import rotp.ui.UserPreferences;
 import rotp.ui.main.SystemPanel;
@@ -618,8 +615,6 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
             return;
         if (hoverBox == null)
             return;
-        int x = e.getX();
-        int y = e.getY();
         if (hoverBox == mouseText.bounds())
             toggleSensitivity();
         else if (hoverBox == displayModeText.bounds())
