@@ -90,8 +90,6 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
         summaryPane.toggleFlagColor(rightClick);
     }
     @Override
-    public String subPanelTextureName()    { return TEXTURE_BROWN; }
-    @Override
     public StarSystem systemViewToDisplay() { return selectedSystem(); }
     @Override
     public void animate() { 

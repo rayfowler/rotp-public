@@ -54,10 +54,6 @@ public class ExitButton extends BasePanel implements MouseListener, MouseMotionL
         addMouseMotionListener(this);
     }
     @Override
-    public String textureName()            { return TEXTURE_BROWN; }
-    @Override
-    public Shape textureClip()             { return textureClip; }
-    @Override
     public void paintComponent(Graphics g0) {
         super.paintComponent(g0);
         Graphics2D g = (Graphics2D) g0;

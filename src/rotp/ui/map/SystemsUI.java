@@ -34,7 +34,6 @@ import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.awt.geom.Area;
 import java.awt.geom.Point2D;
-import java.awt.geom.RoundRectangle2D;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -956,7 +955,6 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         }
         Rectangle hoverBox;
         Rectangle helpBox = new Rectangle();
-        Area textureArea;
 
         private void initModel() {
             setOpaque(false);
@@ -964,10 +962,6 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
             addMouseListener(this);
             addMouseMotionListener(this);
         }
-        @Override
-        public Area textureArea()       { return textureArea; }
-        @Override
-        public String textureName()     { return TEXTURE_BROWN; }
         @Override
         public void paintComponent(Graphics g0) {
             super.paintComponent(g0);
@@ -998,22 +992,15 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
 
             x0 += (titleW+titleSpacing);
             drawTab(g,x0,0,tabW,h,dipLabel, exploreBox, selectedTab.equals(exploreTab));
-            textureArea = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
 
             x0 += tabSpacing;
             drawTab(g,x0,0,tabW,h,intLabel, expandBox, selectedTab.equals(expandTab));
-            Area tab2Area = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
-            textureArea.add(tab2Area);
 
             x0 += tabSpacing;
             drawTab(g,x0,0,tabW,h,milLabel, exploitBox, selectedTab.equals(exploitTab));
-            Area tab3Area = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
-            textureArea.add(tab3Area);
 
             x0 += tabSpacing;
             drawTab(g,x0,0,tabW,h,statusLabel, exterminateBox, selectedTab.equals(exterminateTab));
-            Area tab4Area = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
-            textureArea.add(tab4Area);
             
             g.setColor(selectedTabC);
             g.fillRect(s5, h-s5, w-s10, s5);

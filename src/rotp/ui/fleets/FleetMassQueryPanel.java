@@ -64,8 +64,6 @@ public class FleetMassQueryPanel extends BasePanel {
             addMouseListener(this);
         }
         @Override
-        public String textureName()            { return TEXTURE_BROWN; }
-        @Override
         public void paintComponent(Graphics g0) {
             super.paintComponent(g0);
             Graphics2D g = (Graphics2D) g0;
@@ -251,8 +249,6 @@ public class FleetMassQueryPanel extends BasePanel {
             addMouseMotionListener(this);
             addMouseListener(this);
         }
-        @Override
-        public String textureName()            { return TEXTURE_BROWN; }
         @Override
         public void paintComponent(Graphics g0) {
             super.paintComponent(g0);

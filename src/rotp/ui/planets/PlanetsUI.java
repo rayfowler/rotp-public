@@ -37,10 +37,8 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
-import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
-import java.awt.geom.RoundRectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -232,8 +230,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         am.put(DOWN_ACTION, new DownAction());
         am.put(CANCEL_ACTION, new CancelAction());
     }
-    @Override
-    public String subPanelTextureName()    { return TEXTURE_BROWN; }
     @Override
     public boolean drawMemory()            { return true; }
     @Override
@@ -817,7 +813,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         PlanetsUI parent;
         Rectangle hoverBox;
         Rectangle helpBox = new Rectangle();
-        Area textureArea;
         public PlanetViewSelectionPanel(PlanetsUI p) {
             parent = p;
             initModel();
@@ -828,10 +823,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             addMouseListener(this);
             addMouseMotionListener(this);
         }
-        @Override
-        public Area textureArea()       { return textureArea; }
-        @Override
-        public String textureName()     { return instance.subPanelTextureName(); }
         @Override
         public void paintComponent(Graphics g0) {
             super.paintComponent(g0);
@@ -858,17 +849,12 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             drawString(g,title, x0,y0);
             x0 += (tabW+gap);
             drawTab(g,x0,0,tabW,h,ecoLabel, ecologyBox, selectedMode == ECOLOGY_MODE);
-            textureArea = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
 
             x0 += (tabW+gap);
             drawTab(g,x0,0,tabW,h,indLabel, industryBox, selectedMode == INDUSTRY_MODE);
-            Area tab2Area = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
-            textureArea.add(tab2Area);
 
             x0 += (tabW+gap);
             drawTab(g,x0,0,tabW,h,milLabel, militaryBox, selectedMode == MILITARY_MODE);
-            Area tab3Area = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
-            textureArea.add(tab3Area);
         }
         private void drawHelpButton(Graphics2D g) {
             helpBox.setBounds(s10,s10,s20,s25);
@@ -1008,8 +994,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             add(detailPane(), BorderLayout.CENTER);
         }
         @Override
-        public String subPanelTextureName()    { return TEXTURE_BROWN; }
-        @Override
         public StarSystem systemViewToDisplay() { return lastSelectedSystem(); }
         @Override
         public void animate() { graphicPane.animate(); }
@@ -1071,8 +1055,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             add(topPane(), BorderLayout.NORTH);
             add(detailPane(), BorderLayout.CENTER);
         }
-        @Override
-        public String subPanelTextureName()    { return TEXTURE_BROWN; }
         @Override
         public List<StarSystem> systemsToDisplay() { return instance.selectedSystems(); }
         @Override
@@ -1215,8 +1197,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             parent = p;
             init();
         }
-        @Override
-        public String textureName()    { return parent.subPanelTextureName(); }
         private void init() {
             setBackground(unselectedC);
             setPreferredSize(new Dimension(getWidth(), scaled(110)));
@@ -1647,8 +1627,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             addMouseMotionListener(this);
         }
         @Override
-        public String textureName()    { return parent.subPanelTextureName(); }
-        @Override
         public void paintComponent(Graphics g0) {
             super.paintComponent(g0);
             Graphics2D g = (Graphics2D) g0;
@@ -1766,8 +1744,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             setBorder(BorderFactory.createMatteBorder(scaled(3), 0,0,0, selectedC));
         }
         @Override
-        public String textureName()    { return instance.subPanelTextureName(); }
-        @Override
         protected DataView dataView() { return views.get(selectedMode); }
         @Override
         protected List<StarSystem> systems() { return instance.allSystems();  }
@@ -1813,17 +1789,12 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
     }
     class SpendingCostsUI extends BasePanel {
         private static final long serialVersionUID = 1L;
-        Shape textureClip;
         public SpendingCostsUI() {
             init();
         }
         private void init() {
             setOpaque(false);
         }
-        @Override
-        public String textureName()   { return instance.subPanelTextureName(); }
-        @Override
-        public Shape textureClip()    { return textureClip; }
         @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
@@ -1841,8 +1812,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             int y1 = s45; int h1 = h-y1-s10;
             g.setColor(palette.medBack);
             g.fillRect(x1, y1, w1, h1);
-
-            textureClip = new Rectangle(x1,y1,w1,h1);
 
             // DESC
             g.setFont(narrowFont(15));
@@ -1924,7 +1893,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
     }
     class TotalIncomeUI extends BasePanel {
         private static final long serialVersionUID = 1L;
-        Shape textureClip;
         public TotalIncomeUI() {
             initModel();
         }
@@ -1932,10 +1900,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             setPreferredSize(new Dimension(scaled(300),getHeight()));
             setOpaque(false);
         }
-        @Override
-        public String textureName()   { return instance.subPanelTextureName(); }
-        @Override
-        public Shape textureClip()    { return textureClip; }
         @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
@@ -1954,8 +1918,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             int y1 = s45; int h1 = h-y1-s10;
             g.setColor(palette.medBack);
             g.fillRect(x1, y1, w1, h1);
-
-            textureClip = new Rectangle(x1,y1,w1,h1);
 
             int midP = x1 + (w1*3/5);
             int amtP = midP+s90;
@@ -2011,7 +1973,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         private final int leftButtonY[] = new int[3];
         private final int rightButtonX[] = new int[3];
         private final int rightButtonY[] = new int[3];
-        Shape textureClip;
         public ReserveUI() {
             initModel();
         }
@@ -2022,10 +1983,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             addMouseMotionListener(this);
             addMouseWheelListener(this);
         }
-        @Override
-        public String textureName()   { return instance.subPanelTextureName(); }
-        @Override
-        public Shape textureClip()    { return textureClip; }
         @Override
         public void paintComponent(Graphics g0) {
             super.paintComponent(g0);
@@ -2044,8 +2001,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             int y1 = s45; int h1 = h-y1-s10;
             g.setColor(palette.medBack);
             g.fillRect(x1, y1, w1, h1);
-
-            textureClip = new Rectangle(x1,y1,w1,h1);
 
             int midP = x1 + (w1*3/5);
             y1 += s20;

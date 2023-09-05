@@ -88,10 +88,6 @@ public final class TransferReserveUI extends BasePanel implements MouseListener,
         setDefaultAmt(sys);
     }
     @Override
-    public String textureName()     { return TEXTURE_BROWN; }
-    @Override
-    public Shape textureClip()     { return textureClip; }
-    @Override
     public void paintComponent(Graphics g0) {
         Graphics2D g = (Graphics2D) g0;
 

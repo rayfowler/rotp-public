@@ -53,7 +53,6 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
     Rectangle defaultBox = new Rectangle();
     BasePanel parent;
     BaseText displayModeText;
-    BaseText texturesText;
     BaseText mouseText;
     BaseText autoColonizeText;
     BaseText soundsText;
@@ -72,7 +71,6 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         Color textC = SystemPanel.whiteText;
         displayModeText =  new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         graphicsText =     new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
-        texturesText =     new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         mouseText =        new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         soundsText =       new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         memoryText =       new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
@@ -86,7 +84,6 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         addMouseWheelListener(this);
     }
     public void init() {
-        texturesText.displayText(texturesStr());
         mouseText.displayText(mouseStr());
         soundsText.displayText(soundsStr());
         memoryText.displayText(memoryStr());
@@ -188,22 +185,8 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
             drawString(g,line, x2+s20, y3);
         }       
        
+        // Gap made by texture removal
         y2 += (h2+s20);
-        g.setColor(SystemPanel.blackText);
-        g.drawRect(x2, y2, w2, h2);
-        g.setPaint(GameUI.settingsSetupBackground(w));
-        g.fillRect(x2+s10, y2-s10, texturesText.stringWidth(g)+s10,s30);
-        texturesText.setScaledXY(x2+s20, y2+s7);
-        texturesText.draw(g);
-        desc = text("GAME_SETTINGS_TEXTURES_DESC");
-        g.setColor(SystemPanel.blackText);
-        g.setFont(descFont);
-        lines = this.wrappedLines(g,desc, w2-s30);
-        y3 = y2+s10;
-        for (String line: lines) {
-            y3 += lineH;
-            drawString(g,line, x2+s20, y3);
-        }
         
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
@@ -386,10 +369,6 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         g.drawRoundRect(defaultBox.x, defaultBox.y, defaultBox.width, defaultBox.height, cnr, cnr);
         g.setStroke(prev);
     }
-    private String texturesStr() {
-        String opt = text(UserPreferences.texturesMode());
-        return text("GAME_SETTINGS_TEXTURES", opt)+"   ";
-    }
     private String mouseStr() {
         String opt = text(UserPreferences.sensitivityMode());
         return text("GAME_SETTINGS_SENSITIVITY", opt)+"   ";
@@ -459,11 +438,6 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         UserPreferences.toggleDisplayMode();
         displayModeText.repaint(displayModeStr());
     //    repaint();
-    }
-    private void toggleTextures() {
-        softClick();
-        UserPreferences.toggleTexturesMode();
-        texturesText.repaint(texturesStr());
     }
     private void toggleSensitivity() {
         softClick();
@@ -561,9 +535,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         int y = e.getY();
         Rectangle prevHover = hoverBox;
         hoverBox = null;
-        if (texturesText.contains(x,y))
-            hoverBox = texturesText.bounds();
-        else if (mouseText.contains(x,y))
+        if (mouseText.contains(x,y))
             hoverBox = mouseText.bounds();
         else if (autoColonizeText.contains(x,y))
             hoverBox = autoColonizeText.bounds();
@@ -589,9 +561,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
             hoverBox = defaultBox;
 		
         if (hoverBox != prevHover) {
-            if (prevHover == texturesText.bounds())
-                texturesText.mouseExit();
-            else if (prevHover == mouseText.bounds())
+            if (prevHover == mouseText.bounds())
                 mouseText.mouseExit();
             else if (prevHover == displayModeText.bounds())
                 displayModeText.mouseExit();
@@ -611,8 +581,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
                 backupTurnsText.mouseExit();
             else if (prevHover == saveDirText.bounds())
                 saveDirText.mouseExit();
-            if (hoverBox == texturesText.bounds())
-                texturesText.mouseEnter();
+
             if (hoverBox == mouseText.bounds())
                 mouseText.mouseEnter();
             else if (hoverBox == displayModeText.bounds())
@@ -651,9 +620,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
             return;
         int x = e.getX();
         int y = e.getY();
-        if (hoverBox == texturesText.bounds())
-            toggleTextures();
-        else if (hoverBox == mouseText.bounds())
+        if (hoverBox == mouseText.bounds())
             toggleSensitivity();
         else if (hoverBox == displayModeText.bounds())
             toggleDisplayMode();

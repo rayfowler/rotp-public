@@ -70,8 +70,6 @@ public class MultiColonySpendingPane extends BasePanel implements MouseListener,
         borderLo = lo;
         init();
     }
-    @Override
-    public String textureName()            { return parent.subPanelTextureName(); }
     private void init() {
         for (int i=0;i<catBox.length;i++)
             catBox[i] = new Rectangle();

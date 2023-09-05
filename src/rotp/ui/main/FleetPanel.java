@@ -625,7 +625,6 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         private final Rectangle maxBoxH[] = new Rectangle[ShipDesignLab.MAX_DESIGNS];
         private final Rectangle downBoxH[] = new Rectangle[ShipDesignLab.MAX_DESIGNS];
         private final Rectangle upBoxH[] = new Rectangle[ShipDesignLab.MAX_DESIGNS];
-        protected Shape textureClip;
 
         public FleetDetailPane(FleetPanel p) {
             parent = p;
@@ -647,10 +646,6 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             addMouseMotionListener(this);
             addMouseWheelListener(this);
         }
-        @Override
-        public String textureName()            { return TEXTURE_GRAY; }
-        @Override
-        public Shape textureClip()     { return textureClip; }
         @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
@@ -697,7 +692,6 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             }
         }
         private void drawInfo(Graphics2D g, ShipFleet displayFl, int x, int y, int w, int h) {
-            textureClip = new Rectangle2D.Float(x,y,w,h);
             g.setColor(MainUI.paneBackground());
             g.fillRect(x, y, w, h);
 
@@ -1224,8 +1218,6 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             parent = p;
             init();
         }
-        @Override
-        public String textureName()            { return TEXTURE_GRAY; }
 
         private void init() {
             addMouseListener(this);

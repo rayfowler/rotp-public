@@ -87,8 +87,6 @@ public class SpriteDisplayPanel extends BasePanel implements SystemViewer, Mouse
     @Override
     public void handleNextTurn()   { currentPanel.handleNextTurn(); }
     @Override
-    public String subPanelTextureName()    { return TEXTURE_GRAY; }
-    @Override
     public StarSystem systemViewToDisplay() {
         Sprite sprite = spriteToDisplay();
         if (sprite instanceof StarSystem)

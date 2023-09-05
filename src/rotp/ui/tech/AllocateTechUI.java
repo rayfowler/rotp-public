@@ -133,12 +133,6 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         return totalPlanetaryResearch;
     }
     @Override
-    public String textureName()     { return TEXTURE_BROWN; }
-    @Override
-    public void drawTexture(Graphics g0) {
-        // this UI will manually override
-    }
-    @Override
     public void cancelHelp() {
         RotPUI.helpUI().close();
     }
@@ -430,7 +424,6 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         int x9 = eqX+((eqW-sw9)/2);
         int y9 = eqY+eqH-s8;
         drawShadowedString(g, eqText, 1, x9, y9, Color.black, c9);
-        drawTexture(g, subPanelX, subPanelY,subPanelW, subPanelH);
         g.dispose();
     }
     private void drawHelpButton(Graphics2D g) {
@@ -558,7 +551,6 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         int h1 = h-s10-titleH;
         treeBox.setBounds(x1,y1,w1,h1);
         
-        drawTexture(g, x,y,w,h);
         paintTree(g);
     }
     private void drawClosedTechCategory(Graphics2D g, int catNum, int x, int y, int w, int h) {
@@ -579,7 +571,6 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             g.drawRect(x,y,w,h);
             g.setStroke(prev);
         }
-        drawTexture(g, x,y,w,h);
     }
     private void drawCategorySummary(Graphics2D g, int catNum, int x, int y, int w, int h) {
         TechCategory cat = player().tech().category(catNum);

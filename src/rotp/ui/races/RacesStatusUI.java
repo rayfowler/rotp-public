@@ -39,7 +39,6 @@ import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireStatus;
 import rotp.ui.BasePanel;
 import rotp.ui.RotPUI;
-import rotp.ui.UserPreferences;
 import rotp.ui.main.SystemPanel;
 
 public final class RacesStatusUI extends BasePanel implements MouseListener, MouseMotionListener, MouseWheelListener {
@@ -73,10 +72,6 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         for (int i=0; i<dataY.length; i++)
             dataY[i] = 0;
     }
-    @Override
-    public void drawTexture(Graphics g)      { }
-    @Override
-    public String textureName()     { return TEXTURE_BROWN; }
     public void changedEmpire()     { init(); }
     @Override
     public void paintComponent(Graphics g0) {
@@ -129,8 +124,6 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         drawHistoryButton(g, player(), playerHistoryButton, s55, buttonTopY, s210, s25);
         aiHistoryButton.setBounds(0,0,0,0);
         drawAllRankingsLists(g, emp, s55, rankingTopY, w-s55-s55, h-rankingTopY-s10);
-        if (UserPreferences.texturesInterface()) 
-            drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawOpponentIcon(g, null, w-s60-s200, s30, s200, s200);
         drawPlayerTitle(g, emp, titleLeftX, s30, s370, s50);
@@ -153,8 +146,6 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         drawHistoryButton(g, player(), playerHistoryButton, s55, buttonTopY, s210, s25);
         drawHistoryButton(g, emp, aiHistoryButton, w-s65-s200, buttonTopY, s210, s25);
         drawVsRankingsLists(g, emp, s55, rankingTopY, w-s55-s55, h-rankingTopY-s10);
-        if (UserPreferences.texturesInterface()) 
-            drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawOpponentIcon(g, emp, w-s60-s200, s30, s200, s200);
         drawPlayerTitle(g, emp, titleLeftX, s30, s370, s50);

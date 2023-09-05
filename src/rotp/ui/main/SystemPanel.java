@@ -22,9 +22,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Shape;
 import java.awt.Stroke;
-import java.awt.geom.Rectangle2D;
 import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
@@ -448,7 +446,6 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
     protected class SystemRangePane extends BasePanel {
         private static final long serialVersionUID = 1L;
         SystemPanel parent;
-        private Shape textureClip;
         public SystemRangePane(SystemPanel p) {
             parent = p;
             init();
@@ -457,10 +454,6 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
             setOpaque(false);
             setPreferredSize(new Dimension(getWidth(),s40));
         }
-        @Override
-        public String textureName()            { return TEXTURE_GRAY; }
-        @Override
-        public Shape textureClip()    { return textureClip; }
         @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
@@ -526,7 +519,6 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
             g.setStroke(stroke1);
             g.drawRect(0, y0, w-s1, h-y0-s1);
             g.setStroke(prev);
-            textureClip = new Rectangle2D.Float(0, y0, w-s1, h-y0-s1);
         }
     }
 }

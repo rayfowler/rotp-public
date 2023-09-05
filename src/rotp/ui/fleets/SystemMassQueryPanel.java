@@ -32,8 +32,6 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
-import java.awt.geom.Area;
-import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.List;
 import rotp.model.empires.Empire;
@@ -80,8 +78,6 @@ public class SystemMassQueryPanel extends BasePanel {
         private FleetUI.SystemStargateFilter stargateFilter()  { return topParent.stargateFilter; }
         private FleetUI.SystemTransportsFilter transportsFilter()  { return topParent.transportsFilter; }
         private FleetUI.SystemResourcesFilter resourceFilter() { return topParent.resourceFilter; }
-        @Override
-        public String textureName()            { return TEXTURE_BROWN; }
         @Override
         public void paintComponent(Graphics g0) {
             super.paintComponent(g0);
@@ -295,7 +291,6 @@ public class SystemMassQueryPanel extends BasePanel {
         private final Polygon prevDesign = new Polygon();
         private final Polygon nextDesign = new Polygon();
         private Shape hoverBox;
-        Area textureArea;
 
         public SystemAction() {
             initModel();
@@ -306,10 +301,6 @@ public class SystemMassQueryPanel extends BasePanel {
             addMouseMotionListener(this);
             addMouseWheelListener(this);
         }
-        @Override
-        public String textureName()            { return TEXTURE_BROWN; }
-        @Override
-        public Area textureArea()             { return textureArea; }
         @Override
         public void paintComponent(Graphics g0) {
             super.paintComponent(g0);
@@ -326,7 +317,6 @@ public class SystemMassQueryPanel extends BasePanel {
                 drawRallyPointButton(g,midMargin+s5,h-s93,w-s15-midMargin,s25);
                 drawShipSpendingButton(g,0,h-s67,w,s35);
                 drawTransportButton(g,0,h-s35,w,s35);
-                textureArea = null;
             }
             else if (topParent.showingRallyPanel())
                 drawRallyPointHeader(g,w,h);
@@ -352,7 +342,6 @@ public class SystemMassQueryPanel extends BasePanel {
                 if (pl.sv.hasRallyPoint(sys.id))
                     rallyCount++;
             }
-            textureArea = new Area(new Rectangle2D.Float(0,0,w,h-s70));
 
             stopRalliesBox.setBounds(0,0,0,0);
             if (rallyCount == 0)
@@ -368,8 +357,6 @@ public class SystemMassQueryPanel extends BasePanel {
             }
 
             topParent.drawRedButton(g, text("FLEETS_STOP_RALLIES"), stopRalliesBox, hoverBox, h-s30);
-            Area buttonArea = new Area(new Rectangle2D.Float(s3, h-s30, topParent.SIDE_PANE_W-s18, s27));
-            textureArea.add(buttonArea);
         }
         private void drawTransportHeader(Graphics2D g, int w, int h) {
             g.setFont(narrowFont(25));
@@ -389,7 +376,6 @@ public class SystemMassQueryPanel extends BasePanel {
                     transportCount++;
             }
 
-            textureArea = new Area(new Rectangle2D.Float(0,0,w,h-s70));
             stopTransportsBox.setBounds(0,0,0,0);
             if (transportCount == 0)
                 return;
@@ -404,8 +390,6 @@ public class SystemMassQueryPanel extends BasePanel {
             }
 
             topParent.drawRedButton(g, text("FLEETS_CANCEL_TRANSPORTS"), stopTransportsBox, hoverBox, h-s30);
-            Area buttonArea = new Area(new Rectangle2D.Float(s3, h-s30, topParent.SIDE_PANE_W-s18, s27));
-            textureArea.add(buttonArea);
         }
         private void drawShipSpendingHeader(Graphics2D g, int w, int h) {
             g.setFont(narrowFont(25));
@@ -425,8 +409,6 @@ public class SystemMassQueryPanel extends BasePanel {
                 drawString(g,line, s10, y0);
                 y0 += s16;
             }
-
-            textureArea = new Area(new Rectangle2D.Float(0,0,w,h-s70));
         }
         private void drawShipIcon(Graphics2D g, int x, int y, int w, int h) {
             g.setColor(Color.black);

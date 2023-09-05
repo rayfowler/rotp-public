@@ -27,7 +27,6 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
-import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.List;
 import javax.swing.SwingUtilities;
@@ -61,7 +60,6 @@ public class AlienSystemPanel extends SystemPanel {
     private class DetailPane extends BasePanel implements MouseMotionListener, MouseListener, MouseWheelListener {
         private static final long serialVersionUID = 1L;
         SystemPanel parent;
-        Shape textureClip;
         Empire displayEmp;
         Rectangle nameBox = new Rectangle();
         Rectangle flagBox = new Rectangle();
@@ -77,10 +75,6 @@ public class AlienSystemPanel extends SystemPanel {
             addMouseListener(this);
             addMouseWheelListener(this);
         }
-        @Override
-        public String textureName()            { return TEXTURE_GRAY; }
-        @Override
-        public Shape textureClip()      { return textureClip; }
         @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
@@ -113,8 +107,6 @@ public class AlienSystemPanel extends SystemPanel {
             g.setPaint(null);
             g.setColor(MainUI.shadeBorderC());
             g.fillRect(0, topH-s5, w, s6);
-
-            textureClip = new Rectangle2D.Float(0,0,w,topH-s5);
 
             //  colony name
             g.setFont(narrowFont(24));

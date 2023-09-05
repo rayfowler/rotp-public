@@ -69,8 +69,6 @@ public class EmpireSystemPanel extends SystemPanel {
         initModel();
     }
     @Override
-    public String subPanelTextureName()    { return TEXTURE_GRAY; }
-    @Override
     protected void showDefaultDetail()  { detailLayout.show(detailCardPane, EMPIRE_DETAIL);  }
     @Override
     protected void showStarDetail()     { detailLayout.show(detailCardPane, STAR_DETAIL); }
@@ -232,8 +230,6 @@ public class EmpireSystemPanel extends SystemPanel {
             addMouseMotionListener(this);
             addMouseWheelListener(this);
         }
-        @Override
-        public String textureName()            { return TEXTURE_GRAY; }
         @Override
         public void paintComponent(Graphics g0) {
             super.paintComponent(g0);

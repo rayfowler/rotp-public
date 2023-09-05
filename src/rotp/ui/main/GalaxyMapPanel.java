@@ -109,7 +109,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     private Image mapBuffer;
     private Image rangeMapBuffer;
     public static BufferedImage sharedStarBackground;
-    public static BufferedImage sharedNebulaBackground;
     private final float zoomBase = 1.1f;
     boolean dragSelecting = false;
     private int selectX0, selectY0, selectX1, selectY1;
@@ -342,8 +341,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             drawBackgroundStars(g2);
             g2.setComposite(prev);
         }
-        if (UserPreferences.texturesMap())
-            drawBackgroundNebula(g2);
 
         drawNebulas(g2);
         drawStarSystems(g2);
@@ -372,10 +369,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         if (sharedStarBackground == null) {
             sharedStarBackground = new BufferedImage(RotPUI.instance().getWidth(), RotPUI.instance().getHeight(), BufferedImage.TYPE_INT_ARGB);
             drawBackgroundStars(sharedStarBackground, this);
-        }
-        if (sharedNebulaBackground == null) {
-            sharedNebulaBackground = new BufferedImage(RotPUI.instance().getWidth(), RotPUI.instance().getHeight(), BufferedImage.TYPE_INT_ARGB);
-            drawBackgroundNebula(sharedNebulaBackground);
         }
     }
     public void init() {
@@ -592,35 +585,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         }
         
         BufferedImage botRight = sharedStarBackground.getSubimage(0,0,w-x, h-y);
-        g.drawImage(botRight,x,y,null);
-    }
-    private void drawBackgroundNebula(Graphics2D g) {
-        int w = sharedNebulaBackground.getWidth();
-        int h = sharedNebulaBackground.getHeight();
-        
-        // java modulo does not handle negative numbers properly
-        int x0 = backOffsetX;
-        while (x0<0)   x0+=w;
-        int y0 = backOffsetY;
-        while (y0<0)  y0 +=h;
-        
-        int x = x0 % w;
-        int y = y0 % h;
-        
-        if ((x > 0) && (y > 0)) {
-            BufferedImage topL = sharedNebulaBackground.getSubimage(w-x,h-y,x, y);
-            g.drawImage(topL,0,0, null);
-        }
-        if (y > 0) {
-            BufferedImage topR = sharedNebulaBackground.getSubimage(0,h-y,w-x, y);
-            g.drawImage(topR,x,0, null);
-        }
-        if (x > 0) {
-            BufferedImage botL = sharedNebulaBackground.getSubimage(w-x,0,x, h-y);
-            g.drawImage(botL,0,y, null);
-        }
-        
-        BufferedImage botRight = sharedNebulaBackground.getSubimage(0,0,w-x, h-y);
         g.drawImage(botRight,x,y,null);
     }
     public void drawNebulas(Graphics2D g) {

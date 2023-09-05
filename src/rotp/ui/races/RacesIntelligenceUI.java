@@ -43,7 +43,6 @@ import rotp.model.tech.Tech;
 import rotp.model.tech.TechCategory;
 import rotp.model.tech.TechTree;
 import rotp.ui.BasePanel;
-import rotp.ui.UserPreferences;
 import rotp.ui.main.MainUI;
 import rotp.ui.main.SystemPanel;
 
@@ -95,10 +94,6 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
     public void init() {
         setValues();
     }
-    @Override
-    public void drawTexture(Graphics g)      { }
-    @Override
-    public String textureName()     { return TEXTURE_BROWN; }
     public void changedEmpire()     { setValues(); }
     @Override
     public void paintComponent(Graphics g0) {
@@ -153,8 +148,6 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         drawUnknownTechnologyLists(g, emp, s20, s310, w-s40, h-s310-s10);
         drawPlayerIntelligenceBureau(g, emp, w-scaled(299), s30, scaled(279), s200);
         drawTechnologyTitle(g, emp, s80, s260, w-s80-s90, s40);
-        if (UserPreferences.texturesInterface()) 
-            drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawCounterIntelTitle(g, emp, s260, s30, s370, s50);
     }
@@ -173,8 +166,6 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         drawTechnologyLists(g, emp, s20, s310, w-s40, h-s310-s10);
         drawAISpyOrders(g, emp, w-scaled(299), s30, scaled(279), s200);
         drawTechnologyTitle(g, emp, s80, s260, w-s80-s90, s40);
-        if (UserPreferences.texturesInterface()) 
-            drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawIntelTitle(g, emp, s260, s30, s370, s50);
     }

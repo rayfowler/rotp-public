@@ -30,8 +30,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
-import java.awt.geom.RoundRectangle2D;
 import java.util.List;
 import rotp.model.Sprite;
 import rotp.model.galaxy.StarSystem;
@@ -218,7 +216,6 @@ public class RallyPointPanel extends SystemPanel {
         private Shape hoverBox;
         private final Rectangle retreatBox = new Rectangle();
         Shape arrow;
-        Shape textureClip;
         public FromSystemDetailPane() {
             initModel();
         }
@@ -228,10 +225,6 @@ public class RallyPointPanel extends SystemPanel {
             addMouseListener(this);
             addMouseMotionListener(this);
         }
-        @Override
-        public String textureName()            { return TEXTURE_GRAY; }
-        @Override
-        public Shape textureClip()          { return textureClip; }
         @Override
         public boolean hasStarBackground()  { return true; }
         @Override
@@ -245,8 +238,6 @@ public class RallyPointPanel extends SystemPanel {
             g.fill(arrow());
             g.setColor(MainUI.paneBackground());
             g.fillRect(0, s5, w, s100+s5);
-
-            textureClip = new Rectangle2D.Float(0,s5,w,s100+s5);
 
             int leftM = s5;
             String title = text("MAIN_RALLY_TITLE");
@@ -353,8 +344,6 @@ public class RallyPointPanel extends SystemPanel {
             setBackground(MainUI.paneBackground);
         }
         @Override
-        public String textureName()            { return TEXTURE_GRAY; }
-        @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
             super.paintComponent(g);
@@ -431,7 +420,6 @@ public class RallyPointPanel extends SystemPanel {
         private final Rectangle cancelBox = new Rectangle();
         private final Rectangle startBox = new Rectangle();
         private final Rectangle stopBox = new Rectangle();
-        Shape textureClip;
         public RallyPointButtonPane (RallyPointPanel p) {
             parent = p;
             initModel();
@@ -442,10 +430,6 @@ public class RallyPointPanel extends SystemPanel {
             addMouseMotionListener(this);
         }
         @Override
-        public String textureName()            { return TEXTURE_GRAY; }
-        @Override
-        public Shape textureClip()         { return textureClip; }
-        @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
             super.paintComponent(g);
@@ -454,7 +438,6 @@ public class RallyPointPanel extends SystemPanel {
                 init();
             clearButtons();
 
-            textureClip = new RoundRectangle2D.Float(leftM,s4,rightM-leftM,getHeight()-s7,s10,s10);
             if (parent.isCancellingRally()) {
                 drawLargeUndeployButton(g);
                 drawSmallCancelButton(g);

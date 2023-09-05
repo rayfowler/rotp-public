@@ -61,8 +61,6 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         addMouseListener(this);
     }
     @Override
-    public String textureName()            { return parent.subPanelTextureName(); }
-    @Override
     public void paintComponent(Graphics g0) {
         Graphics2D g = (Graphics2D) g0;
         super.paintComponent(g);

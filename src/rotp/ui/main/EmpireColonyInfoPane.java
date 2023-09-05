@@ -194,8 +194,6 @@ public class EmpireColonyInfoPane extends BasePanel {
     class EmpirePopPane extends EmpireDataPane {
         private static final long serialVersionUID = 1L;
         @Override
-        public String textureName()            { return parentUI.subPanelTextureName(); }
-        @Override
         protected String titleString()      { return text("MAIN_COLONY_POPULATION"); }
         @Override
         protected int value(List<Colony> colonies) { 
@@ -214,8 +212,6 @@ public class EmpireColonyInfoPane extends BasePanel {
     }
     class EmpireFactoriesPane extends EmpireDataPane {
         private static final long serialVersionUID = 1L;
-        @Override
-        public String textureName()            { return parentUI.subPanelTextureName(); }
         @Override
         protected String titleString()   { return text("MAIN_COLONY_FACTORIES"); }
         @Override
@@ -245,8 +241,6 @@ public class EmpireColonyInfoPane extends BasePanel {
     }
     class EmpireShieldPane extends EmpireDataPane {
         private static final long serialVersionUID = 1L;
-        @Override
-        public String textureName()            { return parentUI.subPanelTextureName(); }
         @Override
         protected String titleString()   { return text("MAIN_COLONY_SHIELD"); }
         @Override
@@ -316,8 +310,6 @@ public class EmpireColonyInfoPane extends BasePanel {
             softClick();
             repaint();
         }
-        @Override
-        public String textureName()      { return parentUI.subPanelTextureName(); }
         @Override
         protected int rightMargin()      { return allowAdjust ? s20 : s5; }
         @Override
@@ -462,8 +454,6 @@ public class EmpireColonyInfoPane extends BasePanel {
             setBackground(backC);
             setOpaque(true);
         }
-        @Override
-        public String textureName()            { return parentUI.subPanelTextureName(); }
         @Override
         public void paintComponent(Graphics g) {
             List<StarSystem> systems = parentUI.systemsToDisplay();

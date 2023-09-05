@@ -17,9 +17,7 @@ package rotp.ui.races;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.geom.Area;
 import java.awt.geom.Point2D;
-import java.awt.geom.RoundRectangle2D;
 import javax.swing.border.Border;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -659,7 +657,6 @@ public class RacesUI extends BasePanel {
         }
         Rectangle hoverBox;
         Rectangle helpBox = new Rectangle();
-        Area textureArea;
 
         private void initModel() {
             setOpaque(false);
@@ -667,10 +664,6 @@ public class RacesUI extends BasePanel {
             addMouseListener(this);
             addMouseMotionListener(this);
         }
-        @Override
-        public Area textureArea()       { return textureArea; }
-        @Override
-        public String textureName()     { return TEXTURE_BROWN; }
         @Override
         public void paintComponent(Graphics g0) {
             super.paintComponent(g0);
@@ -700,22 +693,15 @@ public class RacesUI extends BasePanel {
 
             x0 += (titleW+titleSpacing);
             drawTab(g,x0,0,tabW,h,dipLabel, diplomacyBox, selectedPanel.equals(DIPLOMACY_PANEL));
-            textureArea = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
 
             x0 += (tabW+gap);
             drawTab(g,x0,0,tabW,h,intLabel, intelligenceBox, selectedPanel.equals(INTELLIGENCE_PANEL));
-            Area tab2Area = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
-            textureArea.add(tab2Area);
 
             x0 += (tabW+gap);
             drawTab(g,x0,0,tabW,h,milLabel, militaryBox, selectedPanel.equals(MILITARY_PANEL));
-            Area tab3Area = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
-            textureArea.add(tab3Area);
 
             x0 += (tabW+gap);
             drawTab(g,x0,0,tabW,h,statusLabel, statusBox, selectedPanel.equals(STATUS_PANEL));
-            Area tab4Area = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
-            textureArea.add(tab4Area);
         }
         private void drawHelpButton(Graphics2D g) {
             helpBox.setBounds(s10,s10,s20,s25);
@@ -887,10 +873,6 @@ public class RacesUI extends BasePanel {
             contactH = s100;
         }
         @Override
-        public String textureName()            { return TEXTURE_BROWN; }
-        @Override
-        public void drawTexture(Graphics g0) {  }
-        @Override
         public void paintComponent(Graphics g0) {
             super.paintComponent(g0);
             Graphics2D g = (Graphics2D) g0;
@@ -905,8 +887,6 @@ public class RacesUI extends BasePanel {
             int w1 = w;
             int h1 = h-y1-s10;
             g.fillRect(0,0,w,h);
-            if (UserPreferences.texturesInterface()) 
-                drawTexture(g,0,0,w,h);
             for (Rectangle r: contactBoxes.values())
                 r.setBounds(0,0,0,0);
 
@@ -1045,9 +1025,7 @@ public class RacesUI extends BasePanel {
                 }
                 drawRelationsBar(g, emp, x1, y0+h0-s25, w0-x1-s10, s10, s10, s5);
             }
-            
-            if (UserPreferences.texturesInterface()) 
-                drawTextureWithExistingClip(g, x0,y0,w0,h0);
+
             drawRaceImage(g, emp, back, x0, y0, h0, inRange);
         }
         public void drawRaceImage(Graphics2D g, Empire emp, BufferedImage back, int x, int y, int h, boolean inRange) {

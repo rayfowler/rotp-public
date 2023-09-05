@@ -28,9 +28,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
-import java.awt.geom.Area;
 import java.awt.geom.Point2D;
-import java.awt.geom.RoundRectangle2D;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -209,8 +207,6 @@ public class MassTransportsDialog extends BasePanel {
             sysIds = new int[MAX_ROWS];
         }
         @Override
-        public String textureName()           { return TEXTURE_BROWN; }
-        @Override
         protected DataView dataView()         { return view; }
         @Override
         protected List<StarSystem> systems()  { return sourceSystems;  }
@@ -280,7 +276,6 @@ public class MassTransportsDialog extends BasePanel {
         Rectangle sendButton = new Rectangle();
         Rectangle cancelButton = new Rectangle();
         Rectangle hoverBox;
-        Area textureArea;
 
         public TransportTargetFooterUI() {
             initModel();
@@ -292,10 +287,6 @@ public class MassTransportsDialog extends BasePanel {
             sendBackC = null;
             cancelBackC = null;
         }
-        @Override
-        public String textureName()            { return TEXTURE_BROWN; }
-        @Override
-        public Area textureArea()              { return textureArea; }
         @Override
         public void paintComponent(Graphics g0) {
             super.paintComponent(g0);
@@ -393,8 +384,6 @@ public class MassTransportsDialog extends BasePanel {
             int text1X = x1+((buttonW1 - sw1) / 2);
             drawShadowedString(g0, acceptText, 3, text1X, buttonY+buttonH-s10, SystemPanel.textShadowC, c1);
 
-            textureArea = new Area(new RoundRectangle2D.Float(x1, buttonY, buttonW1, buttonH, cnr, cnr));
-
             // cancel button
             cancelButton.setBounds(x2, buttonY, buttonW2, buttonH);
             g.setColor(SystemPanel.textShadowC);
@@ -412,9 +401,6 @@ public class MassTransportsDialog extends BasePanel {
             Color c2 = hoverBox == cancelButton ? Color.yellow : SystemPanel.whiteText;
             int text2X = x2+ ((buttonW2 - sw2) / 2);
             drawShadowedString(g0, cancelText, 3, text2X, buttonY+buttonH-s10, SystemPanel.textShadowC, c2);
-
-            Area buttonArea = new Area(new RoundRectangle2D.Float(x2, buttonY, buttonW2, buttonH, cnr, cnr));
-            textureArea.add(buttonArea);
         }
         private void initModel() {
             setPreferredSize(new Dimension(getWidth(),s60));

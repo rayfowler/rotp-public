@@ -43,7 +43,6 @@ import rotp.model.empires.SpyNetwork;
 import rotp.model.ships.ShipDesign;
 import rotp.model.tech.TechTree;
 import rotp.ui.BasePanel;
-import rotp.ui.UserPreferences;
 import rotp.ui.main.SystemPanel;
 
 public final class RacesMilitaryUI extends BasePanel implements MouseListener, MouseMotionListener, MouseWheelListener {
@@ -74,10 +73,6 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         renameShipUI = new RacesShipRenameUI();
         initModel();
     }
-    @Override
-    public void drawTexture(Graphics g)      { }
-    @Override
-    public String textureName()     { return TEXTURE_BROWN; }
     public void changedEmpire()     { 
         renameBoxes.clear();      
         ships = null;
@@ -148,8 +143,6 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         drawPlayerDefenseInfo(g, emp, defX, s80, defW, scaled(140));
         drawShipDesignTitle(g, emp, s20, s220, w-s20-s20, s40);
         drawShipDesignListing(g, emp, s20, s265, w-s20-s20, h-s265-s10);
-        if (UserPreferences.texturesInterface()) 
-            drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawFleetTitle(g, emp, s260, s30, baseW, s50);
         drawDefenseTitle(g, emp, defX, s30, defW, s50);
@@ -172,8 +165,6 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         drawAIDefenseInfo(g, emp, defX, s80, defW, scaled(140));
         drawShipDesignTitle(g, emp, s20, s220, w-s20-s20, s40);
         drawShipDesignListing(g, emp, s20, s265, w-s20-s20, h-s265-s10);
-        if (UserPreferences.texturesInterface()) 
-            drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawFleetTitle(g, emp, s260, s30, baseW, s50);
         drawDefenseTitle(g, emp, defX, s30, defW, s50);

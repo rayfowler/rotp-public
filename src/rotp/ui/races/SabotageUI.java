@@ -32,7 +32,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
@@ -334,16 +333,11 @@ public final class SabotageUI extends BasePanel implements MouseListener {
     final class SpyDetailPane extends BasePanel {
         private static final long serialVersionUID = 1L;
         SystemPanel parent;
-        Shape textureClip;
 
         SpyDetailPane(SystemPanel p) {
             parent = p;
             setOpaque(false);
         }
-        @Override
-        public String textureName()            { return TEXTURE_GRAY; }
-        @Override
-        public Shape textureClip()      { return textureClip; }
         @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
@@ -374,8 +368,6 @@ public final class SabotageUI extends BasePanel implements MouseListener {
             g.setPaint(null);
             g.setColor(MainUI.shadeBorderC());
             g.fillRect(0, topH-s5, w, s6);
-
-            textureClip = new Rectangle2D.Float(0,0,w,topH-s5);
 
             //  colony name
             g.setFont(narrowFont(24));
@@ -463,7 +455,6 @@ public final class SabotageUI extends BasePanel implements MouseListener {
         private final Rectangle rebellionBox = new Rectangle();
         private final Rectangle noActionBox = new Rectangle();
         private Shape hoverTarget;
-        Shape textureClip;
         
         public SabotageButtonsPanel() {
             init();
@@ -476,18 +467,12 @@ public final class SabotageUI extends BasePanel implements MouseListener {
             addMouseMotionListener(this);
         }
         @Override
-        public String textureName()            { return TEXTURE_GRAY; }
-        @Override
-        public Shape textureClip()             { return textureClip; }
-        @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
             super.paintComponent(g);
 
             int w = getWidth();
             int h = getHeight();
-            
-            textureClip = new Rectangle2D.Float(0, 0, w, h);
 
             int messageH = s60;
 

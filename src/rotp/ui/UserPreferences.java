@@ -43,10 +43,6 @@ public class UserPreferences {
     private static final String AUTOBOMBARD_YES = "GAME_SETTINGS_AUTOBOMBARD_YES";
     private static final String AUTOBOMBARD_WAR = "GAME_SETTINGS_AUTOBOMBARD_WAR";
     private static final String AUTOBOMBARD_INVADE = "GAME_SETTINGS_AUTOBOMBARD_INVADE";
-    private static final String TEXTURES_NO = "GAME_SETTINGS_TEXTURES_NO";
-    private static final String TEXTURES_INTERFACE = "GAME_SETTINGS_TEXTURES_INTERFACE";
-    private static final String TEXTURES_MAP = "GAME_SETTINGS_TEXTURES_MAP";
-    private static final String TEXTURES_BOTH = "GAME_SETTINGS_TEXTURES_BOTH";
     private static final String SAVEDIR_DEFAULT = "GAME_SETTINGS_SAVEDIR_DEFAULT";
     private static final String SAVEDIR_CUSTOM = "GAME_SETTINGS_SAVEDIR_CUSTOM";
     private static final String SENSITIVITY_HIGH = "GAME_SETTINGS_SENSITIVITY_HIGH";
@@ -70,10 +66,8 @@ public class UserPreferences {
     private static String autoBombardMode = AUTOBOMBARD_NO;
     private static String displayMode = WINDOW_MODE;
     private static String graphicsMode = GRAPHICS_HIGH;
-    private static String texturesMode = TEXTURES_BOTH;
     private static String sensitivityMode = SENSITIVITY_MEDIUM;
     private static String saveDir = "";
-    private static float uiTexturePct = 0.20f;
     private static int screenSizePct = 93;
     private static int backupTurns = 0;
 
@@ -82,12 +76,10 @@ public class UserPreferences {
         autoBombardMode = AUTOBOMBARD_NO;
         displayMode = WINDOW_MODE;
         graphicsMode = GRAPHICS_HIGH;
-        texturesMode = TEXTURES_BOTH;
         sensitivityMode = SENSITIVITY_MEDIUM;
         screenSizePct = 93;
         backupTurns = 0;
         saveDir = "";
-        uiTexturePct = 0.20f;
         showMemory = false;
         if (!playMusic) 
             SoundManager.current().toggleMusic();
@@ -130,20 +122,6 @@ public class UserPreferences {
         }
         save();
     }
-    public static void toggleTexturesMode()   { 
-        switch(texturesMode) {
-            case TEXTURES_NO:        texturesMode = TEXTURES_INTERFACE; break;
-            case TEXTURES_INTERFACE: texturesMode = TEXTURES_MAP; break;
-            case TEXTURES_MAP:       texturesMode = TEXTURES_BOTH; break;
-            case TEXTURES_BOTH:      texturesMode = TEXTURES_NO; break;
-            default :                texturesMode = TEXTURES_BOTH; break;
-        }
-        save();
-    }
-    public static String texturesMode()     { return texturesMode; }
-    public static boolean texturesInterface() { return texturesMode.equals(TEXTURES_INTERFACE) || texturesMode.equals(TEXTURES_BOTH); }
-    public static boolean texturesMap()       { return texturesMode.equals(TEXTURES_MAP) || texturesMode.equals(TEXTURES_BOTH); }
-    
     public static void toggleSensitivityMode()   { 
         switch(sensitivityMode) {
             case SENSITIVITY_LOW:       sensitivityMode = SENSITIVITY_MEDIUM; break;
@@ -224,8 +202,6 @@ public class UserPreferences {
     public static int defaultMaxBases()    { return defaultMaxBases; }
     public static boolean divertColonyExcessToResearch()  { return divertColonyExcessToResearch; }
     public static boolean xilmiRoleplayMode() { return xilmiRoleplayMode; }
-    public static void uiTexturePct(int i)    { uiTexturePct = i / 100.0f; }
-    public static float uiTexturePct()        { return uiTexturePct; }
 
     
     public static void loadAndSave() {
@@ -265,7 +241,6 @@ public class UserPreferences {
             out.println(keyFormat("BACKUP_TURNS")+ backupTurns);
             out.println(keyFormat("AUTOCOLONIZE")+ yesOrNo(autoColonize));
             out.println(keyFormat("AUTOBOMBARD")+autoBombardToSettingName(autoBombardMode));
-            out.println(keyFormat("TEXTURES")+texturesToSettingName(texturesMode));
             out.println(keyFormat("SENSITIVITY")+sensitivityToSettingName(sensitivityMode));
             out.println(keyFormat("SHOW_MEMORY")+ yesOrNo(showMemory));
             out.println(keyFormat("DISPLAY_YEAR")+ yesOrNo(displayYear));
@@ -273,7 +248,6 @@ public class UserPreferences {
             out.println(keyFormat("DIVERT_COLONY_EXCESS_TO_RESEARCH")+ yesOrNo(divertColonyExcessToResearch));
             out.println(keyFormat("XILMI_ROLEPLAY_MODE") + yesOrNo(xilmiRoleplayMode));
             out.println(keyFormat("SCREEN_SIZE_PCT")+ screenSizePct());
-            out.println(keyFormat("UI_TEXTURE_LEVEL")+(int) (uiTexturePct()*100));
             out.println(keyFormat("LANGUAGE")+ languageDir());
             return 0;
         }
@@ -314,7 +288,6 @@ public class UserPreferences {
             case "BACKUP_TURNS": backupTurns  = Integer.valueOf(val); return;
             case "AUTOCOLONIZE": autoColonize = yesOrNo(val); return;
             case "AUTOBOMBARD":  autoBombardMode = autoBombardFromSettingName(val); return;
-            case "TEXTURES":     texturesMode = texturesFromSettingName(val); return;
             case "SENSITIVITY":  sensitivityMode = sensitivityFromSettingName(val); return;
             case "SHOW_MEMORY":  showMemory = yesOrNo(val); return;
             case "DISPLAY_YEAR": displayYear = yesOrNo(val); return;
@@ -322,7 +295,6 @@ public class UserPreferences {
             case "DIVERT_COLONY_EXCESS_TO_RESEARCH": divertColonyExcessToResearch = yesOrNo(val); return;
             case "XILMI_ROLEPLAY_MODE": xilmiRoleplayMode = yesOrNo(val); return;
             case "SCREEN_SIZE_PCT": screenSizePct(Integer.valueOf(val)); return;
-            case "UI_TEXTURE_LEVEL": uiTexturePct(Integer.valueOf(val)); return;
             case "LANGUAGE":     selectLanguage(val); return;
             default:
                 break;
@@ -412,24 +384,6 @@ public class UserPreferences {
             case "Invade": return AUTOBOMBARD_INVADE;
         }
         return AUTOBOMBARD_NO;
-    }
-    public static String texturesToSettingName(String s) {
-        switch(s) {
-            case TEXTURES_NO:         return "No";
-            case TEXTURES_INTERFACE: return "Interface";
-            case TEXTURES_MAP:       return "Map";
-            case TEXTURES_BOTH:      return "Both";
-        }
-        return "Both";
-    }
-    public static String texturesFromSettingName(String s) {
-        switch(s) {
-            case "No":        return TEXTURES_NO;
-            case "Interface": return TEXTURES_INTERFACE;
-            case "Map":       return TEXTURES_MAP;
-            case "Both":      return TEXTURES_BOTH;
-        }
-        return TEXTURES_BOTH;
     }
     public static String sensitivityToSettingName(String s) {
         switch(s) {

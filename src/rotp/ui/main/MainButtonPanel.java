@@ -96,8 +96,6 @@ public final class MainButtonPanel extends BasePanel implements MouseListener, M
         nextTurnHoverBackground = new GradientPaint(midM,0,nextTurnLightC,rightM,0,hoverC);
         nextTurnDepressedBackground = new GradientPaint(midM,0,nextTurnLightC,rightM,0,depressedC);        
     }
-    @Override
-    public String textureName()            { return TEXTURE_GRAY; }
     public void init() {
         allowNextTurn = false;
         new Thread(slowEnableNextTurn()).start();

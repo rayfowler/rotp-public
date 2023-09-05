@@ -25,11 +25,9 @@ import java.awt.Graphics2D;
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsEnvironment;
 import java.awt.Image;
-import java.awt.Shape;
 import java.awt.Stroke;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.awt.geom.Area;
 import java.awt.image.BufferedImage;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -45,8 +43,6 @@ import rotp.util.ThickBevelBorder;
 
 public class BasePanel extends JPanel implements Base {
     private static final long serialVersionUID = 1L;
-    public static final String TEXTURE_GRAY = "TEXTURE_GRAY";
-    public static final String TEXTURE_BROWN = "TEXTURE_BROWN";
 
     protected static GraphicsConfiguration gc;
     public static final Color hoverC = Color.yellow;
@@ -60,8 +56,6 @@ public class BasePanel extends JPanel implements Base {
     private static Border buttonBevelBorder;
     static final Color greenText = Color.green;
     static final Color greenBackground = new Color(0, 128, 0, 128);
-
-    static Image textureGray, textureBrown;
 
     static Color borderLight0 = new Color(169,127,99);
     static Color borderLight1 = new Color(151,112,90);
@@ -84,11 +78,7 @@ public class BasePanel extends JPanel implements Base {
     public void advanceHelp()              { }
     
     public boolean hasStarBackground()     { return false; }
-    public final boolean hasTexture()      { return textureName() != null; }
     public boolean isAlpha()               { return false; }
-    public String textureName()            { return null; }
-    public Shape textureClip()             { return null; }
-    public Area textureArea()              { return null; }
     public boolean drawMemory()            { return false; }
     public int minStarDist()               { return 50; }
     public int varStarDist()               { return 100; }
@@ -137,8 +127,6 @@ public class BasePanel extends JPanel implements Base {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        if (hasTexture())
-            drawTexture(g);
         if (drawMemory())
             drawMemory(g);
     }
@@ -296,54 +284,6 @@ public class BasePanel extends JPanel implements Base {
             s = concat(s, " T:", str(threads));
         int sw = g.getFontMetrics().stringWidth(s);
         drawString(g, s, getWidth()-sw-s5, getHeight()-s5);
-    }
-    public void drawTexture(Graphics g0) {
-        drawTexture(g0, 0, 0, getWidth(), getHeight());
-    }
-    
-    public void drawTextureWithExistingClip(Graphics g0, int x, int y, int w, int h) {
-       if (!UserPreferences.texturesInterface())
-            return;
-        float pct = UserPreferences.uiTexturePct();
-        if (pct <= 0)
-            return;
-        if (pct > 1)
-            pct = 1;
-        Graphics2D g = (Graphics2D) g0;
-        Image texture = null;
-        switch(textureName()) {
-            case TEXTURE_BROWN:
-                if (textureBrown == null)
-                    textureBrown = image(TEXTURE_BROWN);
-                texture = textureBrown;
-                break;
-            case TEXTURE_GRAY:
-                if (textureGray == null)
-                    textureGray = image(TEXTURE_GRAY);
-                texture = textureGray;
-        }
-        if (texture == null)
-            return;
-
-        int imgW = texture.getWidth(null);
-        int imgH = texture.getHeight(null);
-
-        Composite prevComposite = g.getComposite();
-        AlphaComposite ac = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, pct);
-        g.setComposite(ac);
-        g.drawImage(texture, x, y, x+w, y+h, 0, 0, min(x+w,imgW), min(imgH,y+h), this);
-        g.setComposite(prevComposite);        
-    }
-    public void drawTexture(Graphics g0, int x, int y, int w, int h) {
-        Shape clip = (textureArea() != null) ? textureArea() : textureClip(); 
-        g0.setClip(clip);
-        drawTextureWithExistingClip(g0, x,y,w,h);
-        g0.setClip(null);
-    }
-    public void drawTexture(Graphics g0, Shape clip, int x, int y, int w, int h) {
-        g0.setClip(clip);
-        drawTextureWithExistingClip(g0, x,y,w,h);
-        g0.setClip(null);
     }
 
     public static int  s1,  s2,  s3,  s4,  s5,  s6,  s7,  s8,  s9, s10;

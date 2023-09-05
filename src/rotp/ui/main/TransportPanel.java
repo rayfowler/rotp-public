@@ -306,7 +306,6 @@ public class TransportPanel extends BasePanel {
 
         private Shape hoverBox;
         private final Rectangle destBox = new Rectangle();
-        private Shape textureClip;
         public TransportButtonPane(TransportPanel p) {
             parent = p;
             init();
@@ -333,10 +332,6 @@ public class TransportPanel extends BasePanel {
 
             fullGrayBackC = new LinearGradientPaint(start, end, dist, grayColors);
         }
-        @Override
-        public String textureName()            { return TEXTURE_GRAY; }
-        @Override
-        public Shape textureClip()     { return textureClip; }
         @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
@@ -378,8 +373,6 @@ public class TransportPanel extends BasePanel {
 
             g.setPaint(gradient);
             g.fillRoundRect(x1,y,w,h,s10,s10);
-
-            textureClip = new RoundRectangle2D.Float(x1,y,w,h,s10,s10);
 
             boolean hovering = (actionBox != null) && (actionBox == hoverBox);
             Color c0 = hovering ? SystemPanel.yellowText : SystemPanel.whiteText;

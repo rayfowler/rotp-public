@@ -30,7 +30,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -368,7 +367,6 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         private final Rectangle exitBox = new Rectangle();
         private final Rectangle sliderBox = new Rectangle();
         private Shape hoverTarget;
-        Shape textureClip;
         int sliderX, sliderW;
         
         public HistoryButtonsPanel() {
@@ -381,18 +379,12 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             addMouseMotionListener(this);
         }
         @Override
-        public String textureName()            { return TEXTURE_GRAY; }
-        @Override
-        public Shape textureClip()             { return textureClip; }
-        @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
             super.paintComponent(g);
 
             int w = getWidth();
             int h = getHeight();
-            
-            textureClip = new Rectangle2D.Float(0, 0, w, h);
 
             int numButtons = 4;
             int buttonW = s90;

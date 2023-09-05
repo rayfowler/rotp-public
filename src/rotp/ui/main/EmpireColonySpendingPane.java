@@ -62,8 +62,6 @@ public class EmpireColonySpendingPane extends BasePanel {
         init();
     }
     public void mapListener(GalaxyMapPanel map)  { mapListener = map; }
-    @Override
-    public String textureName()            { return parent.subPanelTextureName(); }
     private void init() {
         shipSlider     = new EmpireSliderPane(this, Colony.SHIP);
         defSlider      = new EmpireSliderPane(this, Colony.DEFENSE);

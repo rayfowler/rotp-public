@@ -771,10 +771,6 @@ public class DesignUI extends BasePanel {
             addMouseMotionListener(this);
         }
         @Override
-        public String textureName()     { return TEXTURE_BROWN; }
-        @Override
-        public Rectangle textureClip()  { return prototypeBox; }
-        @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
             super.paintComponent(g);
@@ -898,8 +894,6 @@ public class DesignUI extends BasePanel {
         public void animate() {
             repaint();
         }
-        @Override
-        public String textureName()     { return TEXTURE_BROWN; }
         @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
@@ -1157,10 +1151,6 @@ public class DesignUI extends BasePanel {
             repaintShip();
         }
         @Override
-        public void drawTexture(Graphics g)     {  }
-        @Override
-        public String textureName()     { return TEXTURE_BROWN; }
-        @Override
         public void paintComponent(Graphics g0) {
             super.paintComponent(g0);
             Graphics2D g = (Graphics2D) g0;
@@ -1174,8 +1164,6 @@ public class DesignUI extends BasePanel {
             }
             g.setPaint(configGradient);
             g.fillRect(0, 0, getWidth(), getHeight());
-            if (UserPreferences.texturesInterface()) 
-                drawTexture(g0,0, 0, getWidth(), getHeight());
 
             ShipDesign des = shipDesign();
             int sect1H = scaled(255);
@@ -1219,9 +1207,7 @@ public class DesignUI extends BasePanel {
             Shape rect = new RoundRectangle2D.Float(x,y,w,h,w/8, h/8);
             g2.setClip(rect);
             g2.fill(rect);  
-            
-            if (UserPreferences.texturesInterface()) 
-                drawTexture(g0, rect, x,y,w,h);       
+               
             g2.setClip(null);
         }
         private void drawShip(Graphics g0, int x, int y, int w, int h) {
@@ -1345,9 +1331,6 @@ public class DesignUI extends BasePanel {
             String title = text("SHIP_DESIGN_COMBAT_STATS_TITLE");
             this.scaledFont(g, title, (w*45/100)-s10, 22, 16);
             drawShadowedString(g, title,3,x2+s5,y1,SystemPanel.textShadowC, SystemPanel.whiteText);
-
-            if (UserPreferences.texturesInterface()) 
-                drawTexture(g,x, y0+s10, w, h-s85);
 
             // draw left side values
             int boxW=s90;
@@ -1708,9 +1691,6 @@ public class DesignUI extends BasePanel {
             int y9 = y8 + s17;
             drawString(g,text("SHIP_DESIGN_ENGINES_COST"), x0, y9);
 
-           if (UserPreferences.texturesInterface()) 
-                drawTexture(g,x, y,w,h);
-
             // draw right side values
             int x3 = x + w - s20;
             int boxW = s100;
@@ -1880,9 +1860,6 @@ public class DesignUI extends BasePanel {
             String title3 = text("SHIP_DESIGN_SHIELD_TITLE");
             g.setFont(narrowFont(20));
             drawShadowedString(g, title3, 3, x1, y4, SystemPanel.textShadowC, SystemPanel.whiteText);
-
-            if (UserPreferences.texturesInterface()) 
-                drawTexture(g,x, y+s25, w0, h-s25);
 
             // computer field
             ShipComputer comp = des.computer();
@@ -2155,9 +2132,6 @@ public class DesignUI extends BasePanel {
             g.setFont(narrowFont(20));
             drawShadowedString(g, title2, 3, x1, y3, SystemPanel.textShadowC, SystemPanel.whiteText);
 
-            if (UserPreferences.texturesInterface()) 
-                drawTexture(g,x, y+s25, w0, h-s25);
-
             // ecm field
             ShipECM ecm = des.ecm();
             String ecmDesc = ecm.desc(des);
@@ -2355,9 +2329,6 @@ public class DesignUI extends BasePanel {
             g.setFont(narrowFont(20));
             drawShadowedString(g, title1, 3, x1, y2, SystemPanel.textShadowC, SystemPanel.whiteText);
 
-            if (UserPreferences.texturesInterface()) 
-                drawTexture(g,x, y+s25, w0, h-s25);
-
             List<ShipWeapon> comps = player().shipLab().weapons();
             ShipWeapon first = comps.get(0);
             ShipWeapon last = comps.get(comps.size()-1);
@@ -2513,9 +2484,6 @@ public class DesignUI extends BasePanel {
             String title1 = text("SHIP_DESIGN_SPECIAL_TITLE");
             g.setFont(narrowFont(20));
             drawShadowedString(g, title1, 3, x1, y2, SystemPanel.textShadowC, SystemPanel.whiteText);
-
-           if (UserPreferences.texturesInterface()) 
-                drawTexture(g,x, y+s25, w0, h-s25);
 
             for (int i=0;i<ShipDesign.maxSpecials;i++) {
                 ShipSpecial wpn = des.special(i);

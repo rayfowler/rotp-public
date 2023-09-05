@@ -25,7 +25,6 @@ import java.awt.Shape;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.awt.geom.Rectangle2D;
 import java.util.List;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
@@ -134,7 +133,6 @@ public class SystemMassTransportPanel  extends SystemPanel {
         private Rectangle hoverBox;
         private final Rectangle cancelBox = new Rectangle();
         private final Rectangle startBox = new Rectangle();
-        Shape textureClip;
         public SystemTransportFooterPane() {
             initModel();
         }
@@ -144,10 +142,6 @@ public class SystemMassTransportPanel  extends SystemPanel {
             addMouseListener(this);
             addMouseMotionListener(this);
         }
-        @Override
-        public String textureName()         { return  TEXTURE_BROWN; }
-        @Override
-        public Shape textureClip()          { return textureClip; }
         @Override
         public void paintComponent(Graphics g0) {
             super.paintComponent(g0);
@@ -166,7 +160,6 @@ public class SystemMassTransportPanel  extends SystemPanel {
                 topParent.drawGrayButton(g,text("FLEETS_DEPLOY_TRANSPORTS"), null, hoverBox, h-s65);
 
             topParent.drawBrownButton(g, text("FLEETS_CANCEL"), cancelBox, hoverBox, h-s32);
-            textureClip = new Rectangle2D.Float(s3, h-s65, topParent.SIDE_PANE_W-s18, s60);
         }
         private void clearButtons() {
             cancelBox.setBounds(0,0,0,0);

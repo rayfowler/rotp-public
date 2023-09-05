@@ -33,8 +33,6 @@ import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
-import java.awt.geom.RoundRectangle2D;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.SwingUtilities;
@@ -313,7 +311,6 @@ public class TransportDeploymentPanel extends SystemPanel {
         private final Polygon rightArrow = new Polygon();
         private final Rectangle sliderBox = new Rectangle();
         private Shape hoverBox;
-        Shape textureClip;
 
         public FromSystemDetailPane() {
             init();
@@ -325,10 +322,6 @@ public class TransportDeploymentPanel extends SystemPanel {
             addMouseMotionListener(this);
             addMouseWheelListener(this);
         }
-        @Override
-        public String textureName()            { return TEXTURE_GRAY; }
-        @Override
-        public Shape textureClip()          { return textureClip; }
         @Override
         public boolean hasStarBackground()  { return true; }
         @Override
@@ -392,15 +385,6 @@ public class TransportDeploymentPanel extends SystemPanel {
                 drawString(g,line, leftM, y0);
             }
 
-
-            // fall out if we can't send transports
-            if (!pl.canSendTransportsTo(dest)) {
-                textureClip = new Rectangle2D.Float(0,s8,w,s72);
-                return;
-            }
-
-            textureClip = new Rectangle2D.Float(0,s8,w,scaled(108));
-            //int maxDestSize = pl.sv.maxTransportsToReceive(dest.id);
             maxSendingSize = enableAbandon? pl.sv.population(from.id): pl.sv.maxTransportsToSend(from.id);
             int turns = (int) Math.ceil(from.transportTimeTo(dest));
 
@@ -576,8 +560,7 @@ public class TransportDeploymentPanel extends SystemPanel {
             addMouseMotionListener(this);
             addMouseListener(this);
         }
-        @Override
-        public String textureName()            { return TEXTURE_GRAY; }
+
         @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
@@ -774,7 +757,6 @@ public class TransportDeploymentPanel extends SystemPanel {
         private final Rectangle cancelBox = new Rectangle();
         private final Rectangle sendBox = new Rectangle();
         private final Rectangle clearBox = new Rectangle();
-        Shape textureClip;
         public TransportButtonPane(TransportDeploymentPanel p) {
             parent = p;
             init();
@@ -815,10 +797,6 @@ public class TransportDeploymentPanel extends SystemPanel {
             largeRedBackC = new LinearGradientPaint(start, mid1, dist, redColors);
         }
         @Override
-        public String textureName()        { return TEXTURE_GRAY; }
-        @Override
-        public Shape textureClip()         { return textureClip; }
-        @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
             super.paintComponent(g);
@@ -828,7 +806,6 @@ public class TransportDeploymentPanel extends SystemPanel {
 
             clearButtons();
 
-            textureClip = new RoundRectangle2D.Float(leftM,s4,rightM-leftM,getHeight()-s7,s10,s10);
             if (!player().canSendTransportsTo(destination()))
                 drawFullCancelButton(g);
             else if (system() == destination())
