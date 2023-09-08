@@ -129,8 +129,6 @@ public class MainUI extends BasePanel implements IMapHandler {
         return displayPanel.getBounds().contains(x,y);
     }
     @Override
-    public boolean drawMemory()              { return true; }
-    @Override
     public GalaxyMapPanel map()              { return map; }
 
     public MainUI() {

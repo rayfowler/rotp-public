@@ -231,8 +231,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         am.put(CANCEL_ACTION, new CancelAction());
     }
     @Override
-    public boolean drawMemory()            { return true; }
-    @Override
     public boolean hasStarBackground()     { return true; }
     @Override
     public void animate() {

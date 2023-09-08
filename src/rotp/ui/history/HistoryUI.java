@@ -99,8 +99,6 @@ public final class HistoryUI extends BasePanel implements MouseListener {
     float[] ySum;
     List<Empire> sortedEmpires = new ArrayList<>();
 
-    @Override
-    public boolean drawMemory()            { return true; }
     public void init(int empId, boolean all) {
         exited = false;
         backGradient = null;

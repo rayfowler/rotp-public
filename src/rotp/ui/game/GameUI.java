@@ -456,8 +456,6 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             repaint();
     }
     @Override
-    public boolean drawMemory()       { return true; }
-    @Override
     public String ambienceSoundKey() { return canContinue() ? super.ambienceSoundKey() : AMBIENCE_KEY; }
     @Override
     public void paintComponent(Graphics g0) {

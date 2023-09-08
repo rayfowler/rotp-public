@@ -79,7 +79,6 @@ public class BasePanel extends JPanel implements Base {
     
     public boolean hasStarBackground()     { return false; }
     public boolean isAlpha()               { return false; }
-    public boolean drawMemory()            { return false; }
     public int minStarDist()               { return 50; }
     public int varStarDist()               { return 100; }
 
@@ -124,12 +123,6 @@ public class BasePanel extends JPanel implements Base {
     public void cancel()   { }
     public void open()     { }
     public void handleNextTurn()    { }
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        if (drawMemory())
-            drawMemory(g);
-    }
     protected void jPanelPaintComponent(Graphics g) {
         setFontHints(g);
         super.paintComponent(g);
@@ -261,29 +254,6 @@ public class BasePanel extends JPanel implements Base {
     }
     public void redrawMemory() {
         repaint(getWidth()-s100,getHeight()-s50,s100,s50);
-    }
-    public boolean displayMemory() {
-        return UserPreferences.showMemory();
-    }
-    public void drawMemory(Graphics g) {
-        if (!displayMemory())
-            return;
-        long max = Runtime.getRuntime().maxMemory() / 1048576;
-        long total = Runtime.getRuntime().totalMemory() / 1048576;
-        long free = Runtime.getRuntime().freeMemory() / 1048576;
-        long used = total - free;
-        if (used > Rotp.maxUsedMemory)
-            Rotp.maxUsedMemory = used;
-
-        int threads = Thread.activeCount();
-
-        g.setColor(Color.white);
-        g.setFont(narrowFont(14));
-        String s = concat(str(total-free), "M / ", str(total), "M / ", str(max), "M  (", str(Rotp.maxUsedMemory), ")");
-        if (threads >= 15)
-            s = concat(s, " T:", str(threads));
-        int sw = g.getFontMetrics().stringWidth(s);
-        drawString(g, s, getWidth()-sw-s5, getHeight()-s5);
     }
 
     public static int  s1,  s2,  s3,  s4,  s5,  s6,  s7,  s8,  s9, s10;

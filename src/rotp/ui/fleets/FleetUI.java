@@ -566,8 +566,6 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
     @Override
     public Color lightC()                          { return rallyBorderC; }
     @Override
-    public boolean drawMemory()            { return true; }
-    @Override
     public GalaxyMapPanel map()         { return map; }
     private void initModel() {
         int w, h;

@@ -53,7 +53,6 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
     BaseText mouseText;
     BaseText autoColonizeText;
     BaseText soundsText;
-    BaseText memoryText;
     BaseText musicText;
     BaseText graphicsText;
     BaseText autoBombardText;
@@ -70,7 +69,6 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         graphicsText =     new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         mouseText =        new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         soundsText =       new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
-        memoryText =       new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         autoColonizeText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         musicText =        new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         autoBombardText =  new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
@@ -83,7 +81,6 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
     public void init() {
         mouseText.displayText(mouseStr());
         soundsText.displayText(soundsStr());
-        memoryText.displayText(memoryStr());
         displayModeText.displayText(displayModeStr());
         autoColonizeText.displayText(autoColonizeStr());
         musicText.displayText(musicStr());
@@ -239,22 +236,8 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
             drawString(g,line, x2+s20, y3);
         }
         
+        // Gap made by memory usage removal
         y2 += (h2+s20);
-        g.setColor(SystemPanel.blackText);
-        g.drawRect(x2, y2, w2, h2);
-        g.setPaint(GameUI.settingsSetupBackground(w));
-        g.fillRect(x2+s10, y2-s10, memoryText.stringWidth(g)+s10,s30);
-        memoryText.setScaledXY(x2+s20, y2+s7);
-        memoryText.draw(g);
-        desc = text("GAME_SETTINGS_MEMORY_DESC");
-        g.setColor(SystemPanel.blackText);
-        g.setFont(descFont);
-        lines = this.wrappedLines(g,desc, w2-s30);
-        y3 = y2+s10;
-        for (String line: lines) {
-            y3 += lineH;
-            drawString(g,line, x2+s20, y3);
-        }
           
         // right side
         y2 = scaled(200);
@@ -394,15 +377,6 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         
         return text("GAME_SETTINGS_MUSIC", val+"   ");
     }
-    private String memoryStr() {
-        String val;
-        if (UserPreferences.showMemory())
-            val = text("GAME_SETTINGS_MEMORY_YES");
-        else
-            val = text("GAME_SETTINGS_MEMORY_NO");
-        
-        return text("GAME_SETTINGS_MEMORY", val+"   ");
-    }
     private String displayModeStr() {
         String opt = text(UserPreferences.displayMode());
         return text("GAME_SETTINGS_DISPLAY_MODE", opt)+"   ";
@@ -440,12 +414,6 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         softClick();
         UserPreferences.toggleSensitivityMode();
         mouseText.repaint(mouseStr());
-    }
-    private void toggleMemory() {
-        softClick();
-        UserPreferences.toggleMemory();
-        memoryText.repaint(memoryStr());
-        repaint();
     }
     private void scrollSounds(boolean up) {
         if (up)
@@ -542,8 +510,6 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
             hoverBox = displayModeText.bounds();
         else if (soundsText.contains(x,y))
             hoverBox = soundsText.bounds();
-        else if (memoryText.contains(x,y))
-            hoverBox = memoryText.bounds();
         else if (musicText.contains(x,y))
             hoverBox = musicText.bounds();
         else if (graphicsText.contains(x,y))
@@ -568,8 +534,6 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
                 autoBombardText.mouseExit();
             else if (prevHover == soundsText.bounds())
                 soundsText.mouseExit();
-            else if (prevHover == memoryText.bounds())
-                memoryText.mouseExit();
             else if (prevHover == musicText.bounds())
                 musicText.mouseExit();
             else if (prevHover == graphicsText.bounds())
@@ -589,8 +553,6 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
                 autoBombardText.mouseEnter();
             else if (hoverBox == soundsText.bounds())
                 soundsText.mouseEnter();
-            else if (hoverBox == memoryText.bounds())
-                memoryText.mouseEnter();
             else if (hoverBox == musicText.bounds())
                 musicText.mouseEnter();
             else if (hoverBox == graphicsText.bounds())
@@ -625,8 +587,6 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
             toggleAutoBombard();
         else if (hoverBox == soundsText.bounds())
             toggleSounds();
-        else if (hoverBox == memoryText.bounds())
-            toggleMemory();
         else if (hoverBox == musicText.bounds())
             toggleMusic();
         else if (hoverBox == graphicsText.bounds())

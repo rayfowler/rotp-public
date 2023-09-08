@@ -53,7 +53,6 @@ public class UserPreferences {
     private static final String PREFERENCES_FILE = "Remnants.cfg";
     private static final int MAX_BACKUP_TURNS = 10;
     private static final String keyFormat = "%-20s: ";
-    private static boolean showMemory = false;
     private static boolean playMusic = true;
     private static boolean playSounds = true;
     private static int musicVolume = 10;
@@ -80,7 +79,6 @@ public class UserPreferences {
         screenSizePct = 93;
         backupTurns = 0;
         saveDir = "";
-        showMemory = false;
         if (!playMusic) 
             SoundManager.current().toggleMusic();
         if (!playSounds) 
@@ -97,8 +95,6 @@ public class UserPreferences {
     }
     public static int musicVolume()         { return musicVolume; }
     public static int soundVolume()         { return soundVolume; }
-    public static boolean showMemory()      { return showMemory; }
-    public static void toggleMemory()       { showMemory = !showMemory; save(); }
     public static boolean fullScreen()      { return displayMode.equals(FULLSCREEN_MODE); }
     public static boolean windowed()        { return displayMode.equals(WINDOW_MODE); }
     public static boolean borderless()      { return displayMode.equals(BORDERLESS_MODE); }
@@ -242,7 +238,6 @@ public class UserPreferences {
             out.println(keyFormat("AUTOCOLONIZE")+ yesOrNo(autoColonize));
             out.println(keyFormat("AUTOBOMBARD")+autoBombardToSettingName(autoBombardMode));
             out.println(keyFormat("SENSITIVITY")+sensitivityToSettingName(sensitivityMode));
-            out.println(keyFormat("SHOW_MEMORY")+ yesOrNo(showMemory));
             out.println(keyFormat("DISPLAY_YEAR")+ yesOrNo(displayYear));
             out.println(keyFormat("DEFAULT_MAX_BASES") + defaultMaxBases);
             out.println(keyFormat("DIVERT_COLONY_EXCESS_TO_RESEARCH")+ yesOrNo(divertColonyExcessToResearch));
@@ -289,7 +284,6 @@ public class UserPreferences {
             case "AUTOCOLONIZE": autoColonize = yesOrNo(val); return;
             case "AUTOBOMBARD":  autoBombardMode = autoBombardFromSettingName(val); return;
             case "SENSITIVITY":  sensitivityMode = sensitivityFromSettingName(val); return;
-            case "SHOW_MEMORY":  showMemory = yesOrNo(val); return;
             case "DISPLAY_YEAR": displayYear = yesOrNo(val); return;
             case "DEFAULT_MAX_BASES": defaultMaxBases = Integer.valueOf(val); return;
             case "DIVERT_COLONY_EXCESS_TO_RESEARCH": divertColonyExcessToResearch = yesOrNo(val); return;

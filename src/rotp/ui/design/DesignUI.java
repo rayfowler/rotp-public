@@ -187,8 +187,6 @@ public class DesignUI extends BasePanel {
         }
     }
     @Override
-    public boolean drawMemory()            { return true; }
-    @Override
     public void animate() {
         if (!AnimationManager.current().playAnimations())
             return;

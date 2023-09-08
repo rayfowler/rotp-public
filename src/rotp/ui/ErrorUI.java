@@ -89,9 +89,23 @@ public class ErrorUI extends BasePanel implements MouseListener, MouseMotionList
         drawMemory(g);
         drawSkipText(g, true);
     }
-    @Override
-    public boolean displayMemory() {
-        return true;
+    private void drawMemory(Graphics g) {
+        long max = Runtime.getRuntime().maxMemory() / 1048576;
+        long total = Runtime.getRuntime().totalMemory() / 1048576;
+        long free = Runtime.getRuntime().freeMemory() / 1048576;
+        long used = total - free;
+        if (used > Rotp.maxUsedMemory)
+            Rotp.maxUsedMemory = used;
+
+        int threads = Thread.activeCount();
+
+        g.setColor(Color.white);
+        g.setFont(narrowFont(14));
+        String s = concat(str(total-free), "M / ", str(total), "M / ", str(max), "M  (", str(Rotp.maxUsedMemory), ")");
+        if (threads >= 15)
+            s = concat(s, " T:", str(threads));
+        int sw = g.getFontMetrics().stringWidth(s);
+        drawString(g, s, getWidth()-sw-s5, getHeight()-s5);
     }
     private void advanceMode() {
         RotPUI.instance().selectGamePanel();

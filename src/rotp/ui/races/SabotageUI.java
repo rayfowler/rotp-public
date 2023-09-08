@@ -102,8 +102,6 @@ public final class SabotageUI extends BasePanel implements MouseListener {
     SoundClip audioClip = null;
     int repaintCount = 0;
 
-    @Override
-    public boolean drawMemory()            { return true; }
     public void init(SabotageMission sm, int sysId)       {
         mission = sm;
         exited = false;

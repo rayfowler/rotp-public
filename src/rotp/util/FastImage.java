@@ -23,7 +23,6 @@ import java.awt.image.DataBufferInt;
 import java.awt.image.PixelGrabber;
 import java.awt.image.Raster;
 import rotp.model.planet.PlanetHeightMap;
-import rotp.ui.UserPreferences;
 
 public class FastImage {
     private static final BufferedImage PROTOTYPE = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
@@ -227,23 +226,16 @@ public class FastImage {
         return (y * w0) + x;
     }
     private FastImage(Image img) {
-        logImage(img.getWidth(null),img.getHeight(null));
         image(img);
     }
     private FastImage(int w0, int h0) {
-        logImage(w0,h0);
         w = w0;
         h = h0;
         pixels = new int[w*h];
     }
     private FastImage(int[] px, int w0, int h0) {
-        logImage(w0,h0);
         w = w0;
         h = h0;
         pixels = px;
-    }
-    private static void logImage(int w, int h) {
-        if (!UserPreferences.showMemory())
-            return;
     }
 }

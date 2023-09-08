@@ -83,8 +83,6 @@ public class RacesUI extends BasePanel {
         initRelationsColors();
     }
     @Override
-    public boolean drawMemory()            { return true; }
-    @Override
     public void animate() {
         if (!AnimationManager.current().playAnimations())
             return;
