@@ -61,7 +61,6 @@ public class UserPreferences {
     private static boolean displayYear = true;
     private static boolean autoColonize = false;
     private static boolean divertColonyExcessToResearch = false;
-    private static boolean xilmiRoleplayMode = false;
     private static String autoBombardMode = AUTOBOMBARD_NO;
     private static String displayMode = WINDOW_MODE;
     private static String graphicsMode = GRAPHICS_HIGH;
@@ -197,7 +196,6 @@ public class UserPreferences {
     public static boolean displayYear()       { return displayYear; }
     public static int defaultMaxBases()    { return defaultMaxBases; }
     public static boolean divertColonyExcessToResearch()  { return divertColonyExcessToResearch; }
-    public static boolean xilmiRoleplayMode() { return xilmiRoleplayMode; }
 
     
     public static void loadAndSave() {
@@ -241,7 +239,6 @@ public class UserPreferences {
             out.println(keyFormat("DISPLAY_YEAR")+ yesOrNo(displayYear));
             out.println(keyFormat("DEFAULT_MAX_BASES") + defaultMaxBases);
             out.println(keyFormat("DIVERT_COLONY_EXCESS_TO_RESEARCH")+ yesOrNo(divertColonyExcessToResearch));
-            out.println(keyFormat("XILMI_ROLEPLAY_MODE") + yesOrNo(xilmiRoleplayMode));
             out.println(keyFormat("SCREEN_SIZE_PCT")+ screenSizePct());
             out.println(keyFormat("LANGUAGE")+ languageDir());
             return 0;
@@ -287,7 +284,6 @@ public class UserPreferences {
             case "DISPLAY_YEAR": displayYear = yesOrNo(val); return;
             case "DEFAULT_MAX_BASES": defaultMaxBases = Integer.valueOf(val); return;
             case "DIVERT_COLONY_EXCESS_TO_RESEARCH": divertColonyExcessToResearch = yesOrNo(val); return;
-            case "XILMI_ROLEPLAY_MODE": xilmiRoleplayMode = yesOrNo(val); return;
             case "SCREEN_SIZE_PCT": screenSizePct(Integer.valueOf(val)); return;
             case "LANGUAGE":     selectLanguage(val); return;
             default:
