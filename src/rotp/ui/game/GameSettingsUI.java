@@ -178,9 +178,6 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
             y3 += lineH;
             drawString(g,line, x2+s20, y3);
         }       
-       
-        // Gap made by texture removal
-        y2 += (h2+s20);
         
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
@@ -198,6 +195,9 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
             y3 += lineH;
             drawString(g,line, x2+s20, y3);
         }
+        
+        // Gap for future settings (if any)
+        y2 += (h2+s20);
         
         // middle column
         y2 = scaled(200);
@@ -236,8 +236,23 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
             drawString(g,line, x2+s20, y3);
         }
         
-        // Gap made by memory usage removal
         y2 += (h2+s20);
+        g.setColor(SystemPanel.blackText);
+        g.drawRect(x2, y2, w2, h2);
+        g.setPaint(GameUI.settingsSetupBackground(w));
+        g.fillRect(x2+s10, y2-s10, saveDirText.stringWidth(g)+s30,s30);
+        saveDirText.setScaledXY(x2+s20, y2+s7);
+        saveDirText.draw(g);
+        String saveDir = UserPreferences.saveDir();
+        desc = saveDir.isEmpty() ? text("GAME_SETTINGS_SAVEDIR_DESC1") : text("GAME_SETTINGS_SAVEDIR_DESC2", saveDir);
+        g.setColor(SystemPanel.blackText);
+        g.setFont(descFont);
+        lines = this.wrappedLines(g,desc, w2-s30);
+        y3 = y2+s10;
+        for (String line: lines) {
+            y3 += lineH;
+            drawString(g,line, x2+s20, y3);
+        }
           
         // right side
         y2 = scaled(200);
@@ -294,23 +309,8 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
             drawString(g,line, x2+s20, y3);
         }
         
+        // Gap for future settings (if any)
         y2 += (h2+s20);
-        g.setColor(SystemPanel.blackText);
-        g.drawRect(x2, y2, w2, h2);
-        g.setPaint(GameUI.settingsSetupBackground(w));
-        g.fillRect(x2+s10, y2-s10, saveDirText.stringWidth(g)+s30,s30);
-        saveDirText.setScaledXY(x2+s20, y2+s7);
-        saveDirText.draw(g);
-        String saveDir = UserPreferences.saveDir();
-        desc = saveDir.isEmpty() ? text("GAME_SETTINGS_SAVEDIR_DESC1") : text("GAME_SETTINGS_SAVEDIR_DESC2", saveDir);
-        g.setColor(SystemPanel.blackText);
-        g.setFont(descFont);
-        lines = this.wrappedLines(g,desc, w2-s30);
-        y3 = y2+s10;
-        for (String line: lines) {
-            y3 += lineH;
-            drawString(g,line, x2+s20, y3);
-        }
         
         g.setStroke(prev);
 
@@ -408,7 +408,6 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         softClick();
         UserPreferences.toggleDisplayMode();
         displayModeText.repaint(displayModeStr());
-    //    repaint();
     }
     private void toggleSensitivity() {
         softClick();
