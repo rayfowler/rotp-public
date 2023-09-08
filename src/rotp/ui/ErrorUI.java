@@ -43,7 +43,6 @@ public class ErrorUI extends BasePanel implements MouseListener, MouseMotionList
     public void paint(Graphics g) {
         super.paint(g);
         int w = getWidth();
-        int h = getHeight();
 
         g.setColor(Color.lightGray);
 

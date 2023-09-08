@@ -65,7 +65,6 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     public static String gameName = "";
     
     private static final Color langShade[] = { new Color(0,0,0,128), new Color(128,0,0,96) };
-    private static final Color menuHover[] = {  new Color(255,220,181), new Color(255,255,210) };
     private static final Color menuDepressed[] = { new Color(156,96,77), new Color(110,110,110) };
     private static final Color menuEnabled[] = { new Color(255,203,133), new Color(197,197,197) };
     private static final Color menuDisabled[] = { new Color(156,96,77), new Color(110,110,110) };
@@ -314,7 +313,6 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         return buttonBorder;
     }
 
-    private static int opt = -1;
     private static final String[] backImgKeys = { 
         "LANDSCAPE_RUINS_ORION", "LANDSCAPE_RUINS_ANTARAN", 
         "AlkCouncil", "AlkWin", "AlkLoss", "AlkSab01", "AlkSab02",
@@ -346,8 +344,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         Color hoverC = logoFore[1];
         Color depressedC = menuDepressed[1];
         Color shadedC = menuShade[1];
-        
-        int w = getWidth();
+
         shrinkText      = new BaseText(this, false,20,   10,24,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         enlargeText     = new BaseText(this, false,20,    0,24,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         enlargeText.preceder(shrinkText);

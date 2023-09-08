@@ -23,7 +23,6 @@ import javax.swing.border.Border;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
-import rotp.Rotp;
 import rotp.model.galaxy.Ships;
 import rotp.model.ships.*;
 import rotp.ui.*;
@@ -197,8 +196,6 @@ public class DesignUI extends BasePanel {
         configPanel.animate();
     }
     private void initModel() {
-        int w = scaled(Rotp.IMG_W);
-        int h = scaled(Rotp.IMG_H);
         int rightPaneW = scaled(250);
 
         setBackground(Color.black);
@@ -1207,7 +1204,6 @@ public class DesignUI extends BasePanel {
             g2.setClip(null);
         }
         private void drawShip(Graphics g0, int x, int y, int w, int h) {
-            Graphics2D g2 = (Graphics2D) g0;
             ShipDesign des = shipDesign();
             
             shipImageArea.setBounds(0,0,0,0);
@@ -1251,9 +1247,6 @@ public class DesignUI extends BasePanel {
 
             if (des.shipColor() > 0) 
                 img = Base.colorizer.makeColor(des.shipColor(), img);
-            
-            int w1 = img.getWidth();
-            int h1 = img.getHeight();
 
             g.drawImage(img, 0, 0, this);
 

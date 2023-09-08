@@ -1086,8 +1086,6 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         public void mouseReleased(MouseEvent e) {
             if (e.getButton() > 3)
                 return;
-            int x = e.getX();
-            int y = e.getY();
             if (hoverBox == null)
                 misClick();
             else {

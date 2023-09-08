@@ -29,9 +29,6 @@ import java.util.ArrayList;
 import java.util.List;
 import rotp.model.empires.Empire;
 import rotp.ui.BasePanel;
-import static rotp.ui.BasePanel.s15;
-import static rotp.ui.BasePanel.s30;
-import static rotp.ui.BasePanel.s70;
 import rotp.ui.main.SystemPanel;
 
 public class RacesSetColorUI extends BasePanel implements MouseListener, MouseMotionListener  {
@@ -42,7 +39,6 @@ public class RacesSetColorUI extends BasePanel implements MouseListener, MouseMo
 
     Shape textureClip;
     private int hoverIndex = -1;
-    private Shape hoverBox;
     private RacesUI parent;
     private final List<Shape> hoverShapes = new ArrayList<>();
 
@@ -144,7 +140,6 @@ public class RacesSetColorUI extends BasePanel implements MouseListener, MouseMo
         drawString(g,exit, x3, y3);
     }
     private void exit() {
-        hoverBox = null;
         hoverIndex = -1;
         hoverShapes.clear();
         softClick();

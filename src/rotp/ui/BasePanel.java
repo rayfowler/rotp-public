@@ -33,7 +33,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
-import rotp.Rotp;
 import rotp.model.Sprite;
 import rotp.model.galaxy.StarType;
 import rotp.ui.main.MainUI;
