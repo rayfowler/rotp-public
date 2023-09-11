@@ -322,17 +322,14 @@ public class FleetMassQueryPanel extends BasePanel {
             g.fillRect(x+s2,y+s5, w-s3, h-s7);
             g.setColor(FleetUI.backLoC);
             g.fillRect(x+s3,y+s6, w-s5, h-s9);
-            if (topParent.filteredFleets.isEmpty())
-                g.setColor(SystemPanel.grayText);
-            else if (hoverBox == deployBox)
+            if (hoverBox == deployBox)
                 g.setColor(SystemPanel.yellowText);
             else
                 g.setColor(SystemPanel.whiteText);
             g.setFont(narrowFont(20));
             String s = text("FLEETS_DEPLOY_FLEETS");
             drawString(g,s, x+s10, y+s25);
-            if ((hoverBox == deployBox)
-            && player().canSendTransports()) {
+            if (hoverBox == deployBox) {
                 Stroke prevStroke = g.getStroke();
                 g.setStroke(stroke2);
                 g.setColor(SystemPanel.yellowText);
