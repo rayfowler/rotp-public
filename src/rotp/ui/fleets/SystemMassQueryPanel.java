@@ -536,17 +536,14 @@ public class SystemMassQueryPanel extends BasePanel {
             g.fillRect(x+s2,y+s5, w-s3, h-s7);
             g.setColor(FleetUI.backLoC);
             g.fillRect(x+s3,y+s6, w-s5, h-s9);
-            if (!player().canSendTransports())
-                g.setColor(SystemPanel.grayText);
-            else if (hoverBox == transportBox)
+            if (hoverBox == transportBox)
                 g.setColor(SystemPanel.yellowText);
             else
                 g.setColor(SystemPanel.whiteText);
             g.setFont(narrowFont(20));
             String s = text("FLEETS_TRANSPORTS_LABEL");
             drawString(g,s, x+s10, y+s25);
-            if ((hoverBox == transportBox)
-            && player().canSendTransports()) {
+            if (hoverBox == transportBox) {
                 Stroke prevStroke = g.getStroke();
                 g.setStroke(stroke2);
                 g.setColor(SystemPanel.yellowText);
@@ -604,7 +601,6 @@ public class SystemMassQueryPanel extends BasePanel {
                 sys.colony().shipyard().switchToDesign(topParent.currDesign);
         }
         private boolean rallyPointEnabled() { return player().canRallyFleets(); }
-        private boolean transportEnabled() { return player().canSendTransports(); }
         private Image initializedBackgroundImage(int w, int h) {
             if ((starBackground == null)
             || (starBackground.getWidth() != w)
@@ -667,10 +663,8 @@ public class SystemMassQueryPanel extends BasePanel {
                 }
             }
             else if (transportBox.contains(x,y)){
-                if (transportEnabled()) {
-                    topParent.showTransportPanel();
-                    repaint();
-                }
+                topParent.showTransportPanel();
+                repaint();
             }
             else if (spendingBox.contains(x,y)){
                 topParent.showSpendingPanel();

@@ -532,9 +532,6 @@ public final class Empire implements Base, NamedObject, Serializable {
     public boolean canRallyFleets() {
         return allColonizedSystems().size() > 1;
     }
-    public boolean canSendTransports() {
-        return allColonizedSystems().size() > 1;
-    }
     public int maxTransportsAllowed(StarSystem sys) {
         if (!canSendTransportsTo(sys))
             return 0;
