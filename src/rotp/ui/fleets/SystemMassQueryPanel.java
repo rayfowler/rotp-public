@@ -503,8 +503,7 @@ public class SystemMassQueryPanel extends BasePanel {
             g.setPaint(prevPaint);
 
             Stroke prevStroke = g.getStroke();
-            if ((hoverBox == rallyPointBox)
-            && player().canRallyFleets())
+            if (hoverBox == rallyPointBox)
                 g.setColor(SystemPanel.yellowText);
             else
                 g.setColor(FleetUI.rallyBorderC);
@@ -516,9 +515,7 @@ public class SystemMassQueryPanel extends BasePanel {
             String s = text("FLEETS_RELOCATE_LABEL");
             g.setFont(narrowFont(17));
             this.scaledFont(g, s, scaled(120), 17, 14);
-            if (!player().canRallyFleets())
-                g.setColor(SystemPanel.grayText);
-            else if (hoverBox == rallyPointBox)	
+            if (hoverBox == rallyPointBox)	
                 g.setColor(SystemPanel.yellowText);
             else
                 g.setColor(SystemPanel.blackText);
@@ -600,7 +597,6 @@ public class SystemMassQueryPanel extends BasePanel {
             for (StarSystem sys: topParent.filteredSystems) 
                 sys.colony().shipyard().switchToDesign(topParent.currDesign);
         }
-        private boolean rallyPointEnabled() { return player().canRallyFleets(); }
         private Image initializedBackgroundImage(int w, int h) {
             if ((starBackground == null)
             || (starBackground.getWidth() != w)
@@ -657,10 +653,8 @@ public class SystemMassQueryPanel extends BasePanel {
                 topParent.repaint();
             }
             else if (rallyPointBox.contains(x,y)){
-                if (rallyPointEnabled()) {
-                    topParent.showRallyPanel();
-                    repaint();
-                }
+                topParent.showRallyPanel();
+                repaint();
             }
             else if (transportBox.contains(x,y)){
                 topParent.showTransportPanel();
