@@ -57,7 +57,6 @@ public class UserPreferences {
     private static boolean playSounds = true;
     private static int musicVolume = 10;
     private static int soundVolume = 10;
-    private static int defaultMaxBases = 1;
     private static boolean displayYear = true;
     private static boolean autoColonize = false;
     private static boolean divertColonyExcessToResearch = false;
@@ -194,7 +193,6 @@ public class UserPreferences {
     }
     public static void toggleYearDisplay()    { displayYear = !displayYear; save(); }
     public static boolean displayYear()       { return displayYear; }
-    public static int defaultMaxBases()    { return defaultMaxBases; }
     public static boolean divertColonyExcessToResearch()  { return divertColonyExcessToResearch; }
 
     
@@ -237,7 +235,6 @@ public class UserPreferences {
             out.println(keyFormat("AUTOBOMBARD")+autoBombardToSettingName(autoBombardMode));
             out.println(keyFormat("SENSITIVITY")+sensitivityToSettingName(sensitivityMode));
             out.println(keyFormat("DISPLAY_YEAR")+ yesOrNo(displayYear));
-            out.println(keyFormat("DEFAULT_MAX_BASES") + defaultMaxBases);
             out.println(keyFormat("DIVERT_COLONY_EXCESS_TO_RESEARCH")+ yesOrNo(divertColonyExcessToResearch));
             out.println(keyFormat("SCREEN_SIZE_PCT")+ screenSizePct());
             out.println(keyFormat("LANGUAGE")+ languageDir());
@@ -282,7 +279,6 @@ public class UserPreferences {
             case "AUTOBOMBARD":  autoBombardMode = autoBombardFromSettingName(val); return;
             case "SENSITIVITY":  sensitivityMode = sensitivityFromSettingName(val); return;
             case "DISPLAY_YEAR": displayYear = yesOrNo(val); return;
-            case "DEFAULT_MAX_BASES": defaultMaxBases = Integer.valueOf(val); return;
             case "DIVERT_COLONY_EXCESS_TO_RESEARCH": divertColonyExcessToResearch = yesOrNo(val); return;
             case "SCREEN_SIZE_PCT": screenSizePct(Integer.valueOf(val)); return;
             case "LANGUAGE":     selectLanguage(val); return;

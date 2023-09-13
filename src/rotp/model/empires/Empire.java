@@ -126,7 +126,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     private float totalReserve = 0;
     private float tradePiracyRate = 0;
     private NamedObject lastAttacker;
-    private int defaultMaxBases = UserPreferences.defaultMaxBases();
+    private int defaultMaxBases = 0;
     private final String dataRaceKey;
     
     private transient float avgX, avgY, nameX1, nameX2;
