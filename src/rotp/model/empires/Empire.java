@@ -524,10 +524,10 @@ public final class Empire implements Base, NamedObject, Serializable {
         return canColonize(sys.planet().type());
     }
     public boolean canRallyFleetsFrom(int sysId) {
-        return (sysId != StarSystem.NULL_ID) && (sv.empire(sysId) == this) && (allColonizedSystems().size() > 1);
+        return (sysId != StarSystem.NULL_ID) && (sv.empire(sysId) == this);
     }
     public boolean canRallyFleetsTo(int sysId) {
-        return (sysId != StarSystem.NULL_ID) && (sv.empire(sysId) == this) && (allColonizedSystems().size() > 1);
+        return (sysId != StarSystem.NULL_ID) && sv.inShipRange(sysId);
     }
     public int maxTransportsAllowed(StarSystem sys) {
         if (!canSendTransportsTo(sys))

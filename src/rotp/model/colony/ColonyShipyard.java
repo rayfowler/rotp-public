@@ -234,14 +234,14 @@ public class ColonyShipyard extends ColonySpendingCategory {
         }
         prevDesign = design;
     }
-    private void placeNewShipsInOrbit(ShipDesign d, int count) {
+    private void placeNewShipsInOrbit(ShipDesign design, int count) {
         Empire emp = colony().empire();
         StarSystem sys = colony().starSystem();
         int sysId = sys.id;
-        int designId = d.id();
+        int designId = design.id();
         
         // if we are rallying, note how many of which design we need to deploy later
-        if ((emp.sv.hasRallyPoint(sysId)) && (emp.alliedWith(emp.sv.empId(sysId)))) {
+        if (emp.sv.hasRallyPoint(sysId) && emp.canRallyFleetsTo(sysId)) {
             rallyCount = count;
             rallyDesignId = designId;
             rallyDestSysId = id(emp.sv.rallySystem(sysId));

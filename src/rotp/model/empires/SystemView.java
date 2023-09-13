@@ -120,10 +120,8 @@ public class SystemView implements IMappedObject, Base, Serializable {
     public float spyTurn()                   { return spyTime - galaxy().beginningYear(); }
     public float scoutTurn()                 { return scoutTime - galaxy().beginningYear(); }
     public void rallySystem(StarSystem sys)  {
-        if (canRallyTo(sys)) {
-            relocationSystem = (sys == system()) ? null : sys;
-            system().rallySprite().clear();
-        }
+        relocationSystem = (sys == system()) ? null : sys;
+        system().rallySprite().clear();
     }
     public boolean forwardRallies()          { return forwardRallies; }
     public void toggleForwardRallies()       { forwardRallies = !forwardRallies; }
@@ -423,8 +421,6 @@ public class SystemView implements IMappedObject, Base, Serializable {
     public int lastReportYear()              { return (owner() == empire()) ? galaxy().currentYear() : (int) spyTime(); }
     public int lastReportTurn()              { return (int) max(spyTurn(), scoutTurn()); }
     public int spyReportAge()                { return galaxy().currentYear() - lastReportYear(); }
-
-    public boolean canRallyTo(StarSystem sys) { return sys.empire() == owner(); }
 
     public float distanceTo(SystemView v)   { return system().distanceTo(v.system()); }
 
