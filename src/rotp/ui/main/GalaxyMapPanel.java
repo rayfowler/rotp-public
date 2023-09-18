@@ -55,7 +55,6 @@ import rotp.ui.map.IMapHandler;
 import rotp.ui.sprites.FlightPathDisplaySprite;
 import rotp.ui.sprites.FlightPathSprite;
 import rotp.ui.sprites.DistanceDisplaySprite;
-import rotp.ui.sprites.ShipDisplaySprite;
 import rotp.ui.sprites.SpyReportSprite;
 import rotp.ui.sprites.SystemNameDisplaySprite;
 import rotp.ui.sprites.TechStatusSprite;
@@ -73,10 +72,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public static final int SHOW_ALL_FLIGHTPATHS = 0;
     public static final int SHOW_IMPORTANT_FLIGHTPATHS = 1;
     public static final int SHOW_NO_FLIGHTPATHS = 2;
-
-    public static final int SHOW_ALL_SHIPS = 0;
-    public static final int SHOW_NO_UNARMED_SHIPS = 1;
-    public static final int SHOW_ONLY_ARMED_SHIPS = 2;
 
     public static final int MAX_FLAG_SCALE = 80;
     public static final int MAX_STARGATE_SCALE = 40;
@@ -102,7 +97,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     private static final List<Sprite> baseControls = new ArrayList<>();
     private static int systemNameDisplay = SHOW_SYSTEM_DATA;
     private static int flightPathDisplay = SHOW_IMPORTANT_FLIGHTPATHS;
-    private static int shipDisplay = SHOW_ALL_SHIPS;
     private static boolean showDistance = false;
 
     private float desiredScale;
@@ -161,30 +155,10 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             }
         }
     }
-    public void toggleShipDisplay(boolean reverse)       {
-        if (reverse) {
-            switch(shipDisplay) {
-                case SHOW_ALL_SHIPS:        shipDisplay = SHOW_ONLY_ARMED_SHIPS; break;
-                case SHOW_NO_UNARMED_SHIPS: shipDisplay = SHOW_ALL_SHIPS; break;
-                case SHOW_ONLY_ARMED_SHIPS: shipDisplay = SHOW_NO_UNARMED_SHIPS; break;
-            }
-        }
-        else {
-            switch(shipDisplay) {
-                case SHOW_ALL_SHIPS:        shipDisplay = SHOW_NO_UNARMED_SHIPS; break;
-                case SHOW_NO_UNARMED_SHIPS: shipDisplay = SHOW_ONLY_ARMED_SHIPS; break;
-                case SHOW_ONLY_ARMED_SHIPS: shipDisplay = SHOW_ALL_SHIPS; break;
-            }
-        }
-    }
     public void toggleDistanceDisplay()     	{ showDistance = !showDistance; }
     public boolean showDistance()           	{ return showDistance; }
-    public boolean showFleetsOnly()             { return flightPathDisplay == SHOW_NO_FLIGHTPATHS; }
     public boolean showImportantFlightPaths()   { return flightPathDisplay != SHOW_NO_FLIGHTPATHS; }
     public boolean showAllFlightPaths()         { return flightPathDisplay == SHOW_ALL_FLIGHTPATHS; }
-    public boolean showFriendlyTransports()     { return shipDisplay != SHOW_ONLY_ARMED_SHIPS; }
-    public boolean showUnarmedShips()           { return shipDisplay == SHOW_ALL_SHIPS; }
-    public boolean showArmedShips()             { return true; }
     public boolean hideSystemNames()            { return systemNameDisplay == HIDE_SYSTEM_NAME; }
     public boolean showSystemNames()            { return systemNameDisplay == SHOW_SYSTEM_NAME; }
     public boolean showSystemData()             { return systemNameDisplay == SHOW_SYSTEM_DATA; }
@@ -230,15 +204,13 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         setOpaque(true);
 
         flightPathDisplay = parent.defaultFleetDisplay();
-        shipDisplay = SHOW_ALL_SHIPS;
         showDistance = parent.defaultDistanceDisplay();
 
         if (baseControls.isEmpty()) {
-            baseControls.add(new ZoomOutWidgetSprite(10,225,30,30));
-            baseControls.add(new ZoomInWidgetSprite(10,190,30,30));
-            baseControls.add(new DistanceDisplaySprite(10,155,30,30));
-            baseControls.add(new FlightPathDisplaySprite(10,120,30,30));
-            baseControls.add(new ShipDisplaySprite(10,85,30,30));
+            baseControls.add(new ZoomOutWidgetSprite(10,190,30,30));
+            baseControls.add(new ZoomInWidgetSprite(10,155,30,30));
+            baseControls.add(new DistanceDisplaySprite(10,120,30,30));
+            baseControls.add(new FlightPathDisplaySprite(10,85,30,30));
             baseControls.add(new SystemNameDisplaySprite(10,50,30,30));
 
             int y0 = unscaled(getHeight())-310;

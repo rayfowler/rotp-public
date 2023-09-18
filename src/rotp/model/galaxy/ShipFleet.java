@@ -974,18 +974,8 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
             return;
         if (map.scaleX() > maxMapScale())
             return;
-        Sprite clickedSprite = map.parent().clickedSprite();
-        boolean clickingOnThisFleet = false;
-        if ((clickedSprite == this)
-        || ((destination() != null) && (destination() == clickedSprite)))
-            clickingOnThisFleet = true;
 
-        // if fleet is unarmed and map is not showing unarmed, then
-        // don't draw unless we are clicking on this fleet
-        boolean armed = isPotentiallyArmed(player());    
-        if (!armed && !map.showUnarmedShips() && !clickingOnThisFleet)
-            return;
-        
+        boolean armed = isPotentiallyArmed(player());            
         // stop drawing unarmed AI fleets at a certain zoom level
         if (!armed && !empire().isPlayerControlled() && (map.scaleX() > GalaxyMapPanel.MAX_FLEET_UNARMED_SCALE))
             return;

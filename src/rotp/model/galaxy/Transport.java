@@ -343,12 +343,6 @@ public class Transport implements Base, Ship, Sprite, Serializable {
     @Override
     public void setDisplayed(GalaxyMapPanel map) {
         displayed = false;
-        if (!map.parent().isClicked(this)) {
-            if ((empire == targetEmp) && !map.showFriendlyTransports())
-                return;
-            if ((empire != targetEmp) && !map.showArmedShips())
-                return;
-        }
         if (map.scaleX() > maxMapScale())
             return;
         displayed = true;
@@ -399,7 +393,7 @@ public class Transport implements Base, Ship, Sprite, Serializable {
 
     @Override
     public boolean isSelectableAt(GalaxyMapPanel map, int mapX, int mapY) {
-        return map.showFriendlyTransports() && selectBox().contains(mapX, mapY);
+        return selectBox().contains(mapX, mapY);
     }
 
     private void drawSelection(Graphics2D g, GalaxyMapPanel map, Transport fl, int x, int y, int w, int h, int cnr) {

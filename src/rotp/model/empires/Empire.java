@@ -2628,7 +2628,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         Collections.sort(list, IMappedObject.MAP_ORDER);
         return list;
     }
-    public List<StarSystem> orderedUnderAttackSystems(boolean showUnarmed, boolean showTransports) {
+    public List<StarSystem> orderedUnderAttackSystems() {
         List<StarSystem> list = new ArrayList<>();
         Galaxy g = galaxy();
         Empire pl = player();
@@ -2647,10 +2647,7 @@ public final class Empire implements Base, NamedObject, Serializable {
                             Empire emp = g.empire(sh.empId());
                             // add if incoming fleet is hostile to player
                             if (emp.aggressiveWith(pl.id)) {
-                                boolean showShip = showUnarmed 
-                                        || (showTransports && (sh instanceof Transport)) || sh.isPotentiallyArmed(pl);
-                                if (showShip)
-                                    list.add(sys);
+                            	list.add(sys);
                             }
                         }
                     }
