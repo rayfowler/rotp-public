@@ -25,7 +25,6 @@ import rotp.ui.main.GalaxyMapPanel;
 
 public class SystemNameDisplaySprite  extends MapControlSprite  {
     static Color greenC = Color.green;
-    static Color darkGreenC = new Color(0,128,0);
     static FlightPathSprite sprite = new FlightPathSprite();
 
     Color extColor, normColor;
@@ -72,10 +71,7 @@ public class SystemNameDisplaySprite  extends MapControlSprite  {
             g2.fillRect(startX, y2+scaled(12), width, s1);
         }
         g2.setFont(narrowFont(12));
-
-        Color textC = map.hideSystemNames() ? darkGreenC : greenC;
-
-        g2.setColor(textC);
+        g2.setColor(greenC);
         String name = map.parent().systemLabel(home);
         int sw = g2.getFontMetrics().stringWidth(name);
 

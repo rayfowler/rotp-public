@@ -2703,9 +2703,6 @@ public final class Empire implements Base, NamedObject, Serializable {
         draw(map, g2, nameX1, nameX2, avgX, avgY);
     }
     public void draw(GalaxyMapPanel map, Graphics2D g2, float xMin, float xMax, float xAvg, float yAvg) {
-        if (map.hideSystemNames())
-            return;
-        
         // old save: new var hasn't been calculated yet
         if (avgX == 0)
             return;

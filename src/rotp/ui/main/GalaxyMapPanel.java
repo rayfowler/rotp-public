@@ -65,7 +65,6 @@ import rotp.ui.sprites.ZoomOutWidgetSprite;
 public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseListener, MouseWheelListener, MouseMotionListener {
     private static final long serialVersionUID = 1L;
     
-    public static final int HIDE_SYSTEM_NAME = 0;
     public static final int SHOW_SYSTEM_NAME = 1;
     public static final int SHOW_SYSTEM_DATA = 2;
     
@@ -126,16 +125,14 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public void toggleSystemNameDisplay(boolean reverse)       { 
         if (reverse) {
                 switch(systemNameDisplay) {
-                case HIDE_SYSTEM_NAME: systemNameDisplay = SHOW_SYSTEM_DATA; break;
-                case SHOW_SYSTEM_NAME: systemNameDisplay = HIDE_SYSTEM_NAME; break;
+                case SHOW_SYSTEM_NAME: systemNameDisplay = SHOW_SYSTEM_DATA; break;
                 case SHOW_SYSTEM_DATA: systemNameDisplay = SHOW_SYSTEM_NAME; break;
             }
         }
         else {
             switch(systemNameDisplay) {
-                case HIDE_SYSTEM_NAME: systemNameDisplay = SHOW_SYSTEM_NAME; break;
                 case SHOW_SYSTEM_NAME: systemNameDisplay = SHOW_SYSTEM_DATA; break;
-                case SHOW_SYSTEM_DATA: systemNameDisplay = HIDE_SYSTEM_NAME; break;
+                case SHOW_SYSTEM_DATA: systemNameDisplay = SHOW_SYSTEM_NAME; break;
             }
         }
     }
@@ -159,7 +156,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public boolean showDistance()           	{ return showDistance; }
     public boolean showImportantFlightPaths()   { return flightPathDisplay != SHOW_NO_FLIGHTPATHS; }
     public boolean showAllFlightPaths()         { return flightPathDisplay == SHOW_ALL_FLIGHTPATHS; }
-    public boolean hideSystemNames()            { return systemNameDisplay == HIDE_SYSTEM_NAME; }
     public boolean showSystemNames()            { return systemNameDisplay == SHOW_SYSTEM_NAME; }
     public boolean showSystemData()             { return systemNameDisplay == SHOW_SYSTEM_DATA; }
 

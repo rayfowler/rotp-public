@@ -600,8 +600,6 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         Rectangle box = nameBox();
         box.width = 0;
         box.height = 0;
-        if (map.hideSystemNames())
-            return;
 
         int fontSize = fontSize(map);
         int realFontSize = unscaled(fontSize);
