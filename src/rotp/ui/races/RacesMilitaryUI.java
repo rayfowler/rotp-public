@@ -369,7 +369,6 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         g.fillRect(x, y, w, h-s40);
         int y0 = y + s20;
 
-        Empire pl = player();
         EmpireView v = player().viewForEmpire(emp.id);
         if (v == null)
             return;

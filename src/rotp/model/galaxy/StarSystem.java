@@ -698,11 +698,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         return dist <= max(BasePanel.s2, clickR);
     }
     @Override
-    public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean sound) {
-//        if (canShowDetail(map)) 
-//            RotPUI.instance().selectDisplaySystemPanel(this);
-    }
-    private boolean canShowDetail(GalaxyMapPanel map)   { return map.parent().isClicked(this) && player().sv.isScouted(id); }
+    public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean sound) { }
     @Override
     public void mouseEnter(GalaxyMapPanel map) {
         hovering = true;

@@ -70,7 +70,6 @@ public class MapOverlayNone extends MapOverlay {
             return true;
         }
 
-        int code = e.getModifiersEx();
         switch(e.getKeyCode()) {
             case KeyEvent.VK_ESCAPE:
                 if (parent.displayPanel().canEscape())

@@ -37,7 +37,6 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 import rotp.model.empires.SystemView;
 import rotp.model.galaxy.StarSystem;
-import rotp.model.planet.Planet;
 import rotp.ui.BasePanel;
 import rotp.ui.BaseTextField;
 import rotp.ui.UserPreferences;
@@ -949,7 +948,6 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             String val = sys.getAttribute(attributeKey);
             int sw = g.getFontMetrics().stringWidth(val);
 
-            Planet p = sys.planet();
             if (player().isEnvironmentFertile(sys) || player().isEnvironmentGaia(sys))
                 g.setColor(palette.green);
             else if (player().isEnvironmentHostile(sys))

@@ -370,7 +370,6 @@ public class Transport implements Base, Ship, Sprite, Serializable {
 
         int s5 = BasePanel.s5;
         int s10 = BasePanel.s10;
-        int s20 = BasePanel.s20;
         int cnr = BasePanel.s10;
 
         selectBox().setBounds(x-s5,y-s5,sW+s10,sH+s10);
