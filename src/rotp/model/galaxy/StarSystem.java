@@ -60,8 +60,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     private static final Color shield15C = new Color(160,48,240);
     private static final Color shield20C = new Color(255,128,0);
     private static final Color selectionC = new Color(160,160,0);
-    public static final Color systemNameBackC = Color.BLACK;
-    public static final Color systemDataBackC = new Color(160,160,160);
+    private static final Color systemNameBackC = Color.BLACK;
     public static final int NULL_ID = -1;
 
     private String name = "";
@@ -607,7 +606,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         if (realFontSize < 8)
             return;
         
-        if (map.parent().showSystemName(this) || !colonized) {
+        if (!colonized) {
             String s1 = map.parent().systemLabel(this);
             String s2 = map.parent().systemLabel2(this);
             if (s2.isEmpty())
@@ -636,7 +635,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
                 box.height = BasePanel.s20;
             }
         }
-        else if (map.parent().showSystemData(this)) {
+        else {
             String label1 = map.parent().systemLabel(this);
             String label2 = map.parent().systemLabel2(this);
             if (label2.isEmpty())

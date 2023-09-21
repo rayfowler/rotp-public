@@ -106,8 +106,6 @@ public interface IMapHandler {
     default void drawEmpireName(Empire e, GalaxyMapPanel ui, Graphics2D g)  { e.draw(ui,g); }
     default boolean drawStargate(StarSystem s)           { return true; }
     default boolean drawFlag(StarSystem s)               { return true; }
-    default boolean showSystemName(StarSystem s)         { return map().showSystemNames(); } 
-    default boolean showSystemData(StarSystem s)         { return map().showSystemData(); } 
     default boolean shouldDrawSprite(Sprite s)           { return true; }
     default boolean canChangeMapScales()                 { return true; }
     default boolean displayNextTurnNotice()              { return false; }

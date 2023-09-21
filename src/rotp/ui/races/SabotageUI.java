@@ -860,10 +860,6 @@ public final class SabotageUI extends BasePanel implements MouseListener {
             drawString(g,title, (w-sw)/2, s24);
         }
         @Override
-        public boolean showSystemName(StarSystem s)         { return s.empire() != mission.target();  } 
-        @Override
-        public boolean showSystemData(StarSystem s)         { return s.empire() == mission.target(); } 
-        @Override
         public boolean suspendAnimationsDuringNextTurn()    { return false; }
         @Override
         public Color shadeC()                          { return Color.darkGray; }

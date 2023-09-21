@@ -56,7 +56,6 @@ import rotp.ui.sprites.FlightPathDisplaySprite;
 import rotp.ui.sprites.FlightPathSprite;
 import rotp.ui.sprites.DistanceDisplaySprite;
 import rotp.ui.sprites.SpyReportSprite;
-import rotp.ui.sprites.SystemNameDisplaySprite;
 import rotp.ui.sprites.TechStatusSprite;
 import rotp.ui.sprites.TreasurySprite;
 import rotp.ui.sprites.ZoomInWidgetSprite;
@@ -64,9 +63,6 @@ import rotp.ui.sprites.ZoomOutWidgetSprite;
 
 public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseListener, MouseWheelListener, MouseMotionListener {
     private static final long serialVersionUID = 1L;
-    
-    public static final int SHOW_SYSTEM_NAME = 1;
-    public static final int SHOW_SYSTEM_DATA = 2;
     
     public static final int SHOW_ALL_FLIGHTPATHS = 0;
     public static final int SHOW_IMPORTANT_FLIGHTPATHS = 1;
@@ -94,7 +90,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     private static float scaleX, scaleY;
     private static float sizeX, sizeY;
     private static final List<Sprite> baseControls = new ArrayList<>();
-    private static int systemNameDisplay = SHOW_SYSTEM_DATA;
     private static int flightPathDisplay = SHOW_IMPORTANT_FLIGHTPATHS;
     private static boolean showDistance = false;
 
@@ -122,20 +117,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
 
     public IMapHandler parent()                 { return parent; }
 
-    public void toggleSystemNameDisplay(boolean reverse)       { 
-        if (reverse) {
-                switch(systemNameDisplay) {
-                case SHOW_SYSTEM_NAME: systemNameDisplay = SHOW_SYSTEM_DATA; break;
-                case SHOW_SYSTEM_DATA: systemNameDisplay = SHOW_SYSTEM_NAME; break;
-            }
-        }
-        else {
-            switch(systemNameDisplay) {
-                case SHOW_SYSTEM_NAME: systemNameDisplay = SHOW_SYSTEM_DATA; break;
-                case SHOW_SYSTEM_DATA: systemNameDisplay = SHOW_SYSTEM_NAME; break;
-            }
-        }
-    }
     public void toggleFlightPathDisplay(boolean reverse)       {
         if (reverse) {
             switch(flightPathDisplay) {
@@ -156,8 +137,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public boolean showDistance()           	{ return showDistance; }
     public boolean showImportantFlightPaths()   { return flightPathDisplay != SHOW_NO_FLIGHTPATHS; }
     public boolean showAllFlightPaths()         { return flightPathDisplay == SHOW_ALL_FLIGHTPATHS; }
-    public boolean showSystemNames()            { return systemNameDisplay == SHOW_SYSTEM_NAME; }
-    public boolean showSystemData()             { return systemNameDisplay == SHOW_SYSTEM_DATA; }
 
     public void clearHoverSprite()              { hoverSprite = null; }
     public Location currentFocus()        { return parent.mapFocus();  }
@@ -203,11 +182,10 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         showDistance = parent.defaultDistanceDisplay();
 
         if (baseControls.isEmpty()) {
-            baseControls.add(new ZoomOutWidgetSprite(10,190,30,30));
-            baseControls.add(new ZoomInWidgetSprite(10,155,30,30));
-            baseControls.add(new DistanceDisplaySprite(10,120,30,30));
-            baseControls.add(new FlightPathDisplaySprite(10,85,30,30));
-            baseControls.add(new SystemNameDisplaySprite(10,50,30,30));
+            baseControls.add(new ZoomOutWidgetSprite(10,155,30,30));
+            baseControls.add(new ZoomInWidgetSprite(10,120,30,30));
+            baseControls.add(new DistanceDisplaySprite(10,85,30,30));
+            baseControls.add(new FlightPathDisplaySprite(10,50,30,30));
 
             int y0 = unscaled(getHeight())-310;
             baseControls.add(new TechStatusSprite(TechCategory.WEAPON,       10,y0+210,30,30));
