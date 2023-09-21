@@ -60,7 +60,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     private static final Color shield15C = new Color(160,48,240);
     private static final Color shield20C = new Color(255,128,0);
     private static final Color selectionC = new Color(160,160,0);
-    public static final Color systemNameBackC = new Color(40,40,40);
+    public static final Color systemNameBackC = Color.BLACK;
     public static final Color systemDataBackC = new Color(160,160,160);
     public static final int NULL_ID = -1;
 
@@ -603,13 +603,11 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
 
         int fontSize = fontSize(map);
         int realFontSize = unscaled(fontSize);
-        if (map.parent().showSystemData(this))
-            fontSize = fontSize * 7 / 10;
         
         if (realFontSize < 8)
             return;
         
-        if (map.parent().showSystemName(this) || !colonized || (realFontSize < 12)) {
+        if (map.parent().showSystemName(this) || !colonized) {
             String s1 = map.parent().systemLabel(this);
             String s2 = map.parent().systemLabel2(this);
             if (s2.isEmpty())
@@ -639,30 +637,17 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             }
         }
         else if (map.parent().showSystemData(this)) {
-            int pop = pl.sv.population(id);
-            int mgn = BasePanel.s6;
-            int s1 = BasePanel.s1;
-            String popStr = ""+pop;
-            String fact = ""+pl.sv.factories(id);
-            int miss = pl.sv.bases(id);
-            String lbl;
-            if (pop == 0)
-                lbl = text("MAIN_SYSTEM_DETAIL_NO_DATA");
-            else if (miss > 0)
-                lbl = text("MAIN_SYSTEM_DETAIL_PFB",popStr,fact,str(miss));
-            else
-                lbl = text("MAIN_SYSTEM_DETAIL_PF",popStr,fact);
             String label1 = map.parent().systemLabel(this);
             String label2 = map.parent().systemLabel2(this);
             if (label2.isEmpty())
                 label2 = name2(map);
             if (!label1.isEmpty() || !label2.isEmpty()) {
+            	int s1 = BasePanel.s1;
+                int s2 = BasePanel.s2;
                 Font prevFont = g2.getFont();
                 g2.setFont(narrowFont(fontSize));
                 int sw = g2.getFontMetrics().stringWidth(label1);
-                g2.setFont(narrowFont(fontSize*3/5));
-                int swData = g2.getFontMetrics().stringWidth(lbl);
-                int boxW = max(sw, swData)+mgn;
+                int boxW = sw + BasePanel.s8;
                 int boxSize = r0;
                 int yAdj = drawStar ? scaled(fontSize)+boxSize : scaled(fontSize)/2;
                 int fontH = scaled(fontSize);
@@ -671,26 +656,17 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
                 g2.setColor(systemNameBackC);
                 Stroke prevStroke = g2.getStroke();
                 g2.setStroke(BasePanel.stroke1);
-                g2.fillRoundRect(x0a, y0+yAdj-(fontH*3/4), boxW, fontH*3/2, cnr,cnr);
-                g2.setColor(systemDataBackC);
-                g2.drawRoundRect(x0a, y0+yAdj-(fontH*3/4), boxW, fontH*3/2, cnr,cnr);
-                g2.fillRoundRect(x0a, y0+yAdj+(fontH*3/16), boxW+s1, fontH*3/4, cnr, cnr);
-                g2.fillRect(x0a, y0+yAdj+(fontH*3/16), boxW+s1, fontH*3/8);
-                g2.setStroke(prevStroke);
+                g2.fillRoundRect(x0a, y0+yAdj-(fontH*3/4)-s1, boxW, fontH+s2, cnr,cnr);
                 g2.setColor(map.parent().systemLabelColor(this));
+                g2.drawRoundRect(x0a, y0+yAdj-(fontH*3/4)-s1, boxW, fontH+s2, cnr,cnr);
+                g2.setStroke(prevStroke);
                 if (!label1.isEmpty()) {
-                    g2.setFont(narrowFont(fontSize));
-                    drawString(g2,label1, x0-(sw/2), y0+yAdj+BasePanel.s1);
-                    y0 += scaled(fontSize-2);
-                    g2.setFont(narrowFont(fontSize*3/5));
-                    g2.setColor(Color.black);
-                    drawString(g2,lbl, x0-(swData/2), y0+yAdj-(fontH*3/16));
+                    drawString(g2,label1, x0-(sw/2), y0+yAdj+s1);
                 }
                 if (!label2.isEmpty()) {
-                    g2.setColor(map.parent().systemLabelColor(this));
                     g2.setFont(narrowFont(fontSize-2));
                     int sw2 = g2.getFontMetrics().stringWidth(label2);
-                    drawString(g2,label2, x0-(sw2/2), y0+yAdj+fontH+BasePanel.s2);
+                    drawString(g2,label2, x0-(sw2/2), y0+yAdj+fontH+s2);
                 }
                 g2.setFont(prevFont);
                 box.x = x0-(sw/2);
