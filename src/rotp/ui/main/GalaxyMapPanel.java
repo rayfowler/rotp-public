@@ -182,10 +182,10 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         showDistance = parent.defaultDistanceDisplay();
 
         if (baseControls.isEmpty()) {
-            baseControls.add(new ZoomOutWidgetSprite(10,155,30,30));
-            baseControls.add(new ZoomInWidgetSprite(10,120,30,30));
-            baseControls.add(new DistanceDisplaySprite(10,85,30,30));
-            baseControls.add(new FlightPathDisplaySprite(10,50,30,30));
+            baseControls.add(new DistanceDisplaySprite(10,155,30,30));
+            baseControls.add(new FlightPathDisplaySprite(10,120,30,30));
+            baseControls.add(new ZoomOutWidgetSprite(10,85,30,30));
+            baseControls.add(new ZoomInWidgetSprite(10,50,30,30));
 
             int y0 = unscaled(getHeight())-310;
             baseControls.add(new TechStatusSprite(TechCategory.WEAPON,       10,y0+210,30,30));

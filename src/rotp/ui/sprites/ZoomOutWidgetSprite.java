@@ -39,7 +39,7 @@ public class ZoomOutWidgetSprite extends MapControlSprite {
         drawBackground(map,g2);
 
         int cnr = BasePanel.s12;        
-        g2.setColor(map.parent().backC());
+        g2.setColor(Color.black);
         g2.fillRoundRect(startX, startY, width, height, cnr, cnr);
 
         Stroke str0 = g2.getStroke();
