@@ -391,11 +391,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
                 return true;
             if (FlightPathSprite.workingPaths().contains(fp))
                 return true;
-            if (map.showAllFlightPaths())
-                return true;
-            if (map.showImportantFlightPaths())
-                return fp.isPlayer() || fp.aggressiveToPlayer();
-            return false;
+            return fp.isPlayer() || fp.aggressiveToPlayer();
         }      
         return true;
     }

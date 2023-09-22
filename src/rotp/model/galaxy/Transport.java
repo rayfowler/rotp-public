@@ -384,7 +384,7 @@ public class Transport implements Base, Ship, Sprite, Serializable {
             if (path != null)
                 path.draw(map, g2);
         }
-        boolean showMyPath = player().knowETA(this) && (map.showAllFlightPaths() || map.parent().isClicked(this));
+        boolean showMyPath = player().knowETA(this) && map.parent().isClicked(this);
 
         if (showMyPath)
             pathSprite().draw(map, g2);

@@ -52,7 +52,6 @@ import rotp.ui.BasePanel;
 import rotp.ui.RotPUI;
 import rotp.ui.UserPreferences;
 import rotp.ui.map.IMapHandler;
-import rotp.ui.sprites.FlightPathDisplaySprite;
 import rotp.ui.sprites.FlightPathSprite;
 import rotp.ui.sprites.DistanceDisplaySprite;
 import rotp.ui.sprites.SpyReportSprite;
@@ -63,10 +62,6 @@ import rotp.ui.sprites.ZoomOutWidgetSprite;
 
 public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseListener, MouseWheelListener, MouseMotionListener {
     private static final long serialVersionUID = 1L;
-    
-    public static final int SHOW_ALL_FLIGHTPATHS = 0;
-    public static final int SHOW_IMPORTANT_FLIGHTPATHS = 1;
-    public static final int SHOW_NO_FLIGHTPATHS = 2;
 
     public static final int MAX_FLAG_SCALE = 80;
     public static final int MAX_STARGATE_SCALE = 40;
@@ -90,7 +85,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     private static float scaleX, scaleY;
     private static float sizeX, sizeY;
     private static final List<Sprite> baseControls = new ArrayList<>();
-    private static int flightPathDisplay = SHOW_IMPORTANT_FLIGHTPATHS;
     private static boolean showDistance = false;
 
     private float desiredScale;
@@ -117,26 +111,8 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
 
     public IMapHandler parent()                 { return parent; }
 
-    public void toggleFlightPathDisplay(boolean reverse)       {
-        if (reverse) {
-            switch(flightPathDisplay) {
-                case SHOW_ALL_FLIGHTPATHS:       flightPathDisplay = SHOW_NO_FLIGHTPATHS; break;
-                case SHOW_IMPORTANT_FLIGHTPATHS: flightPathDisplay = SHOW_ALL_FLIGHTPATHS; break;
-                case SHOW_NO_FLIGHTPATHS:        flightPathDisplay = SHOW_IMPORTANT_FLIGHTPATHS; break;
-            }
-        }
-        else {
-            switch(flightPathDisplay) {
-                case SHOW_ALL_FLIGHTPATHS:       flightPathDisplay = SHOW_IMPORTANT_FLIGHTPATHS; break;
-                case SHOW_IMPORTANT_FLIGHTPATHS: flightPathDisplay = SHOW_NO_FLIGHTPATHS; break;
-                case SHOW_NO_FLIGHTPATHS:        flightPathDisplay = SHOW_ALL_FLIGHTPATHS; break;
-            }
-        }
-    }
     public void toggleDistanceDisplay()     	{ showDistance = !showDistance; }
     public boolean showDistance()           	{ return showDistance; }
-    public boolean showImportantFlightPaths()   { return flightPathDisplay != SHOW_NO_FLIGHTPATHS; }
-    public boolean showAllFlightPaths()         { return flightPathDisplay == SHOW_ALL_FLIGHTPATHS; }
 
     public void clearHoverSprite()              { hoverSprite = null; }
     public Location currentFocus()        { return parent.mapFocus();  }
@@ -178,12 +154,10 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         setBackground(Color.BLACK);
         setOpaque(true);
 
-        flightPathDisplay = parent.defaultFleetDisplay();
         showDistance = parent.defaultDistanceDisplay();
 
         if (baseControls.isEmpty()) {
-            baseControls.add(new DistanceDisplaySprite(10,155,30,30));
-            baseControls.add(new FlightPathDisplaySprite(10,120,30,30));
+            baseControls.add(new DistanceDisplaySprite(10,120,30,30));
             baseControls.add(new ZoomOutWidgetSprite(10,85,30,30));
             baseControls.add(new ZoomInWidgetSprite(10,50,30,30));
 

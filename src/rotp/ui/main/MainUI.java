@@ -476,11 +476,7 @@ public class MainUI extends BasePanel implements IMapHandler {
                 return true;
             if (FlightPathSprite.workingPaths().contains(fp))
                 return true;
-            if (map.showAllFlightPaths())
-                return true;
-            if (map.showImportantFlightPaths())
-                return fp.isPlayer() || fp.aggressiveToPlayer();
-            return false;
+            return fp.isPlayer() || fp.aggressiveToPlayer();
         }      
         return true;
     }
