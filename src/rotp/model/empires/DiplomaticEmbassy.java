@@ -31,7 +31,6 @@ import rotp.model.incidents.DiplomaticIncident;
 import rotp.model.incidents.EncroachmentIncident;
 import rotp.model.incidents.ErraticWarIncident;
 import rotp.model.incidents.ExchangeTechnologyIncident;
-import rotp.model.incidents.FirstContactIncident;
 import rotp.model.incidents.OathBreakerIncident;
 import rotp.model.incidents.ParanoiaIncident;
 import rotp.model.incidents.SignAllianceIncident;
@@ -600,8 +599,6 @@ public class DiplomaticEmbassy implements Base, Serializable {
         if (!contact()) {
             contactYear = galaxy().currentYear();
             contact(true);
-            DiplomaticIncident inc = FirstContactIncident.create(owner(), empire());
-            addIncident(inc);
         }
     }
     public void makeFirstContact() {
