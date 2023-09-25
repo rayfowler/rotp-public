@@ -526,7 +526,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
     }
     @Override
     public ShipDesign newFighterDesign(int size) {
-    //    ShipDesign design = ShipFighterTemplate.newDesign(this);
         ShipDesign design = NewShipTemplate.newFighterDesign(this);
         design.mission(ShipDesign.FIGHTER);
         design.maxUnusedTurns(OBS_FIGHTER_TURNS);
@@ -534,7 +533,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
     }
     @Override
     public ShipDesign newBomberDesign(int size) {
-    //    ShipDesign design = ShipBomberTemplate.newDesign(this);
         ShipDesign design = NewShipTemplate.newBomberDesign(this);
         design.mission(ShipDesign.BOMBER);
         design.maxUnusedTurns(OBS_BOMBER_TURNS);
@@ -542,7 +540,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
     }
     @Override
     public ShipDesign newDestroyerDesign(int size) {
-    //    ShipDesign design = ShipDestroyerTemplate.newDesign(this);
         ShipDesign design = NewShipTemplate.newDestroyerDesign(this);
         design.mission(ShipDesign.DESTROYER);
         design.maxUnusedTurns(OBS_DESTROYER_TURNS);
