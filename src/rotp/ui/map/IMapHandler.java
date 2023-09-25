@@ -83,7 +83,6 @@ public interface IMapHandler {
     default public void reselectCurrentSystem() { };
 
     default public boolean showShipRanges()              { return true; }
-    default public boolean defaultDistanceDisplay()  { return false; }
     default public IMappedObject distanceOrigin()            { return null; }
     default public void drawAlerts(Graphics2D g)         { }
 

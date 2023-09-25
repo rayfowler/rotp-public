@@ -148,13 +148,9 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public GalaxyMapPanel(IMapHandler p) {
         parent = p;
         zoomTimer = new Timer(10, this);
-        init0();
-    }
-    private void init0() {
+
         setBackground(Color.BLACK);
         setOpaque(true);
-
-        showDistance = parent.defaultDistanceDisplay();
 
         if (baseControls.isEmpty()) {
             baseControls.add(new DistanceDisplaySprite(10,120,30,30));
