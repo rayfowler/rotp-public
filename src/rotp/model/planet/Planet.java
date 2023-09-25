@@ -92,7 +92,6 @@ public class Planet implements Base, IMappedObject, Serializable {
     private int bonusTechs = 0;
     private float waste = 0;
 
-    private int founderId = Empire.NULL_ID;
     private Colony colony;
 
     // vars for visual display
@@ -347,15 +346,12 @@ public class Planet implements Base, IMappedObject, Serializable {
         return (isEnvironmentHostile() && civ.tech().canTerraformHostile());
     }
     public Colony becomeColonized(Empire c) {
-        if (founderId == Empire.NULL_ID)
-            founderId = c.id;
         colony = new Colony(c, this);
         colony.industry().factories(alienFactories(c.id));
         removeAlienFactories(c.id);
         return colony;
     }
     public boolean isColonized() { return (colony != null); }
-    public int founderId()       { return founderId; }
 
     public float researchAdj() {
         switch (artifacts) {

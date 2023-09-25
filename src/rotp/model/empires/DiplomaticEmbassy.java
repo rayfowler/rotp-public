@@ -32,7 +32,6 @@ import rotp.model.incidents.EncroachmentIncident;
 import rotp.model.incidents.ErraticWarIncident;
 import rotp.model.incidents.ExchangeTechnologyIncident;
 import rotp.model.incidents.OathBreakerIncident;
-import rotp.model.incidents.ParanoiaIncident;
 import rotp.model.incidents.SignAllianceIncident;
 import rotp.model.incidents.SignBreakAllianceIncident;
 import rotp.model.incidents.SignDeclareWarIncident;
@@ -644,7 +643,6 @@ public class DiplomaticEmbassy implements Base, Serializable {
         clearForgottenIncidents();
 
         List<DiplomaticIncident> newEventsAll = new ArrayList<>();
-        addIncident(ParanoiaIncident.create(view));
         owner().diplomatAI().noticeNoRelationIncident(view, newEventsAll);
         owner().diplomatAI().noticeAtWarWithAllyIncidents(view, newEventsAll);
         owner().diplomatAI().noticeAlliedWithEnemyIncidents(view, newEventsAll);
