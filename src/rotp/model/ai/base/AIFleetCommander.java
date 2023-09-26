@@ -75,7 +75,6 @@ public class AIFleetCommander implements Base, FleetCommander {
     }
     @Override
     public float maxShipMaintainance()   { return MAX_ALLOWED_SHIP_MAINT; }
-
     @Override
     public boolean inExpansionMode() {
         return empire.tech().shipRange() < 6;

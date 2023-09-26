@@ -148,7 +148,6 @@ public class NewShipTemplate implements Base {
         
         for (int i = 0; i<costMultiplier.length; i++) {
             ShipDesign design = shipDesigns[i];
-            
             // number of whole designs we can build within our budget
             // modnar: change to float, in order to consider fractional damage/BC
             float count = (float) (shipBudgetBC / (design.cost() * costMultiplier[i]));

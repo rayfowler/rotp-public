@@ -83,12 +83,10 @@ public class AIGovernor implements Base, Governor {
             session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_BASES_COMPLETE", name, col.defense().maxBases()));
         if (col.industry().isCompletedThisTurn())
             session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_MAX_FACTORIES", name, (int)col.industry().maxBuildableFactories()));
-        if (!cleanupOK) {
-        	session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_ECO_LOCKED_WASTE", name));
-        }
-        if (col.ecology().populationGrowthCompletedThisTurn()) {
-        	session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_MAX_POPULATION", name, (int) col.maxSize()));
-        }
+        if (!cleanupOK)
+            session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_ECO_LOCKED_WASTE", name));
+        if (col.ecology().populationGrowthCompletedThisTurn())
+            session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_MAX_POPULATION", name, (int)col.maxSize()));
         if (col.ecology().atmosphereCompletedThisTurn())
             session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_ATMOSPHERE_COMPLETE", name));
         if (col.ecology().soilEnrichCompletedThisTurn()) {
@@ -430,6 +428,7 @@ public class AIGovernor implements Base, Governor {
 
         return .25f;
     }
+
     //
 // PRIVATE
 //

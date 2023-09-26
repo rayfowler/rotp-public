@@ -276,7 +276,7 @@ public class AIDiplomat implements Base, Diplomat {
 
         // sort techs by the diplomat's research priority (hi to low)
         Tech.comparatorCiv = empire;
-        Collections.sort(worthyTechs, Tech.BASE_VALUE);        
+        Collections.sort(worthyTechs, Tech.BASE_VALUE);
         
         // limit return to top 5 techs
         Tech.comparatorCiv = requestor;
@@ -363,9 +363,9 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         if(!e.inEconomicRange(empire.id))
             return false;
-        
+
         EmpireView view = empire.viewForEmpire(id(e));
-        
+
         if (!view.embassy().contact())
             return false;
 
@@ -1864,6 +1864,5 @@ public class AIDiplomat implements Base, Diplomat {
         inc.duration = 50;
         return true;
     }
-
 
 }

@@ -364,6 +364,7 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         if(!e.inEconomicRange(empire.id))
             return false;
+
         EmpireView view = empire.viewForEmpire(id(e));
 
         if (!view.embassy().contact())

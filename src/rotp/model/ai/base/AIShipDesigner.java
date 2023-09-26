@@ -175,20 +175,19 @@ public class AIShipDesigner implements Base, ShipDesigner {
         
         // recalculate current design's damage vs. current targets
         ShipDesign currDesign = lab.bomberDesign();
-
+        int currSlot = currDesign.id();
+        
         // if we don't have any faster engines
         if (currDesign.engine() == lab.fastestEngine()) {
             // and if the design has less than 10% free space or has less than 25/50/75/100 free space, we assume the redesign has no sense
             // 25/50/75/100 may be a too straight-line set of values
             if ((currDesign.availableSpace()/(currDesign.totalSpace()) < 0.1f) || (currDesign.availableSpace() < (currDesign.size()+1) * 25)) {
                 // we're fairly certain AI packed the ship before and if the current modules haven't shrinked enough,
-                // that means we don't have enough new tech to make the new design markedly better            
+                // that means we don't have enough new tech to make the new design markedly better
                 currDesign.remainingLife++;
                 return;
             }
         }
-
-        int currSlot = currDesign.id();
         
         // find best hypothetical design vs current targets
         ShipDesign newDesign = newBomberDesign(currDesign.size());
@@ -246,7 +245,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
             lab.setBomberDesign(newDesign, currSlot);
             return;
         }
-       
+        
         // if there is a slot available, use it for the new design
         if (slot > 0) {
             log("Slot available: Bomber upgrade chance:"+upgradeChance);
@@ -259,7 +258,8 @@ public class AIShipDesigner implements Base, ShipDesigner {
         
         // recalculate current design's damage vs. current targets
         ShipDesign currDesign = lab.fighterDesign();
-
+        int currSlot = currDesign.id();
+        
         // if we don't have any faster engines
         if (currDesign.engine() == lab.fastestEngine()) {
             // and if the design has less than 10% free space or has less than 25/50/75/100 free space, we assume the redesign has no sense
@@ -271,8 +271,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
             }
         }
 
-        int currSlot = currDesign.id();
-    //    ShipFighterTemplate.setPerTurnDamage(currDesign, empire());
         NewShipTemplate.setPerTurnShipDamage(currDesign, empire());
 
         // find best hypothetical design vs current targets
@@ -329,7 +327,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
             lab.setFighterDesign(newDesign, currSlot);
             return;
         }
-       
+        
         // if there is a slot available, use it for the new design
         if (slot > 0) {
             log("Slot available: Fighter upgrade chance:"+upgradeChance);
@@ -342,6 +340,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         
         // recalculate current design's damage vs. current targets
         ShipDesign currDesign = lab.destroyerDesign();
+        int currSlot = currDesign.id();
 
         // if we don't have any faster engines
         if (currDesign.engine() == lab.fastestEngine()) {
@@ -355,7 +354,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
             }
         }
 
-        int currSlot = currDesign.id();
         // ShipDestroyerTemplate.setPerTurnDamage(currDesign, empire());
         NewShipTemplate.setPerTurnShipDamage(currDesign, empire);
 
@@ -413,7 +411,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
             lab.setDestroyerDesign(newDesign, currSlot);
             return;
         }
-       
+        
         // if there is a slot available, use it for the new design
         if (slot > 0) {
             log("Slot available: Destroyer upgrade chance:"+upgradeChance);

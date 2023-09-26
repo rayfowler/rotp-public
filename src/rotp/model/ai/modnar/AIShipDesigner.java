@@ -289,10 +289,9 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 return;
             }
         }
-        
-        // ShipFighterTemplate.setPerTurnDamage(currDesign, empire());
+
         // NewShipTemplate.setPerTurnShipDamage(currDesign, empire()); // modnar: not needed
-        
+
         // find best hypothetical design vs current targets
         ShipDesign newDesign = newFighterDesign(currDesign.size());
         
@@ -381,7 +380,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         // recalculate current design's damage vs. current targets
         ShipDesign currDesign = lab.destroyerDesign();
         int currSlot = currDesign.id();
-        
+
         // if we don't have any faster engines
         if (currDesign.engine() == lab.fastestEngine()) {
             // modnar: change this check to 15%, remove absolute free space check
@@ -393,7 +392,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 return;
             }
         }
-        
+
         // ShipDestroyerTemplate.setPerTurnDamage(currDesign, empire());
         // NewShipTemplate.setPerTurnShipDamage(currDesign, empire); // modnar: not needed
         
