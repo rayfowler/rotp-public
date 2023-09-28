@@ -59,7 +59,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private String selectedStarDensityOption;
     private String selectedPlanetQualityOption;
     private String selectedTerraformingOption;
-    private String selectedFuelRangeOption;
     private String selectedAIHostilityOption;
     private String selectedColonizingOption;
     private String selectedOpponentAIOption;
@@ -159,10 +158,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     @Override
     public void selectedColonizingOption(String s) { selectedColonizingOption = s; }
     @Override
-    public String selectedFuelRangeOption()       { return selectedFuelRangeOption == null ? FUEL_RANGE_NORMAL : selectedFuelRangeOption; }
-    @Override
-    public void selectedFuelRangeOption(String s) { selectedFuelRangeOption = s; }
-    @Override
     public String selectedAutoplayOption()          { return selectedAutoplayOption == null ? AUTOPLAY_OFF : selectedAutoplayOption; }
     @Override
     public void selectedAutoplayOption(String s)    { selectedAutoplayOption = s; }
@@ -253,7 +248,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedStarDensityOption = opt.selectedStarDensityOption;
         selectedPlanetQualityOption = opt.selectedPlanetQualityOption;
         selectedTerraformingOption = opt.selectedTerraformingOption;
-        selectedFuelRangeOption = opt.selectedFuelRangeOption;
         selectedAutoplayOption = opt.selectedAutoplayOption;
         selectedAIHostilityOption = opt.selectedAIHostilityOption;
         selectedColonizingOption = opt.selectedColonizingOption;
@@ -730,15 +724,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         return list;
     }
     @Override
-    public List<String> fuelRangeOptions() {
-        List<String> list = new ArrayList<>();
-        list.add(FUEL_RANGE_NORMAL);
-        list.add(FUEL_RANGE_HIGH);
-        list.add(FUEL_RANGE_HIGHER);
-        list.add(FUEL_RANGE_HIGHEST);
-        return list;
-    }
-    @Override
     public List<String> autoplayOptions() {
         List<String> list = new ArrayList<>();
         list.add(AUTOPLAY_OFF);
@@ -805,7 +790,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedResearchRate = RESEARCH_NORMAL;
         selectedTechTradeOption = TECH_TRADING_YES;
         selectedRandomEventOption = RANDOM_EVENTS_ON;
-        selectedFuelRangeOption = FUEL_RANGE_NORMAL;
         selectedNebulaeOption = NEBULAE_NORMAL;
         selectedStarDensityOption = STAR_DENSITY_NORMAL;
         selectedAutoplayOption = AUTOPLAY_OFF;

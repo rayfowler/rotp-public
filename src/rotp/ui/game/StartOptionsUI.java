@@ -52,7 +52,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
     BaseText colonizingText;
     BaseText autoplayText;
     BaseText researchRateText;
-    BaseText fuelRangeText;
     BaseText techTradingText;
     BaseText aiHostilityText;
     
@@ -71,7 +70,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         colonizingText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         autoplayText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         researchRateText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
-        fuelRangeText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         techTradingText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         aiHostilityText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         addMouseListener(this);
@@ -86,7 +84,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         terraformingText.displayText(terraformingStr());
         colonizingText.displayText(colonizingStr());
         autoplayText.displayText(autoplayStr());
-        fuelRangeText.displayText(fuelRangeStr());
         researchRateText.displayText(researchRateStr());
         techTradingText.displayText(techTradingStr());
         aiHostilityText.displayText(aiHostilityStr());
@@ -316,23 +313,9 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         
         // Gap made by warp speed settings removal
         y2 += (h2+s20);
-          
+        
+        // Gap made by fuel range settings removal
         y2 += (h2+s20);
-        g.setColor(SystemPanel.blackText);
-        g.drawRect(x2, y2, w2, h2);
-        g.setPaint(GameUI.settingsSetupBackground(w));
-        g.fillRect(x2+s10, y2-s10, fuelRangeText.stringWidth(g)+s10,s30);
-        fuelRangeText.setScaledXY(x2+s20, y2+s7);
-        fuelRangeText.draw(g);
-        desc = text("SETTINGS_FUEL_RANGE_DESC");
-        g.setColor(SystemPanel.blackText);
-        g.setFont(descFont);
-        lines = this.wrappedLines(g,desc, w2-s30);
-        y3 = y2+s10;
-        for (String line: lines) {
-            y3 += lineH;
-            drawString(g,line, x2+s20, y3);
-        }
 
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
@@ -447,10 +430,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         String opt = text(newGameOptions().selectedAIHostilityOption());
         return text("SETTINGS_AI_HOSTILITY", opt)+"   ";
     }
-    private String fuelRangeStr() {
-        String opt = text(newGameOptions().selectedFuelRangeOption());
-        return text("SETTINGS_FUEL_RANGE", opt)+"   ";
-    }
     private String techTradingStr() {
         String opt = text(newGameOptions().selectedTechTradeOption());
         return text("SETTINGS_TECH_TRADING", opt)+"   ";
@@ -505,11 +484,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         newGameOptions().selectedResearchRate(newGameOptions().nextResearchRate());
         researchRateText.repaint(researchRateStr());
     }
-    private void toggleFuelRange() {
-        softClick();
-        newGameOptions().selectedFuelRangeOption(newGameOptions().nextFuelRangeOption());
-        fuelRangeText.repaint(fuelRangeStr());
-    }
     private void toggleTechTrading(MouseEvent e) {
         softClick();
         newGameOptions().selectedTechTradeOption(newGameOptions().nextTechTradeOption());
@@ -556,8 +530,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             hoverBox = autoplayText.bounds();
         else if (researchRateText.contains(x,y))
             hoverBox = researchRateText.bounds();
-        else if (fuelRangeText.contains(x,y))
-            hoverBox = fuelRangeText.bounds();
         else if (techTradingText.contains(x,y))
             hoverBox = techTradingText.bounds();
         else if (okBox.contains(x,y))
@@ -586,8 +558,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
                 autoplayText.mouseExit();
             else if (prevHover == researchRateText.bounds())
                 researchRateText.mouseExit();
-            else if (prevHover == fuelRangeText.bounds())
-                fuelRangeText.mouseExit();
             else if (prevHover == techTradingText.bounds())
                 techTradingText.mouseExit();
             if (hoverBox == galaxyAgeText.bounds())
@@ -610,8 +580,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
                 autoplayText.mouseEnter();
             else if (hoverBox == researchRateText.bounds())
                 researchRateText.mouseEnter();
-            else if (hoverBox == fuelRangeText.bounds())
-                fuelRangeText.mouseEnter();
             else if (hoverBox == techTradingText.bounds())
                 techTradingText.mouseEnter();
             if (prevHover != null)
@@ -650,8 +618,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             toggleAutoplay(e);
         else if (hoverBox == researchRateText.bounds())
             toggleResearchRate(e);
-        else if (hoverBox == fuelRangeText.bounds())
-            toggleFuelRange();
         else if (hoverBox == techTradingText.bounds())
             toggleTechTrading(e);
         else if (hoverBox == okBox)

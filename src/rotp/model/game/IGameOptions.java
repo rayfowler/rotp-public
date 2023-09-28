@@ -104,11 +104,6 @@ public interface IGameOptions {
     public static final String COLONIZING_NORMAL      = "SETUP_COLONIZING_NORMAL";
     public static final String COLONIZING_RESTRICTED  = "SETUP_COLONIZING_RESTRICTED";
 
-    public static final String FUEL_RANGE_NORMAL   = "SETUP_FUEL_RANGE_NORMAL";
-    public static final String FUEL_RANGE_HIGH     = "SETUP_FUEL_RANGE_HIGH";
-    public static final String FUEL_RANGE_HIGHER   = "SETUP_FUEL_RANGE_HIGHER";
-    public static final String FUEL_RANGE_HIGHEST  = "SETUP_FUEL_RANGE_HIGHEST";
-
     public static final String AI_HOSTILITY_LOWEST   = "SETUP_AI_HOSTILITY_LOWEST";
     public static final String AI_HOSTILITY_LOWER    = "SETUP_AI_HOSTILITY_LOWER";
     public static final String AI_HOSTILITY_LOW      = "SETUP_AI_HOSTILITY_LOW";
@@ -177,7 +172,6 @@ public interface IGameOptions {
     public List<String> planetQualityOptions();
     public List<String> terraformingOptions();
     public List<String> colonizingOptions();
-    public List<String> fuelRangeOptions();
     public List<String> autoplayOptions();
     public List<String> opponentAIOptions();
     public List<String> specificOpponentAIOptions();
@@ -211,8 +205,6 @@ public interface IGameOptions {
     public void selectedTerraformingOption(String s);
     public String selectedColonizingOption();
     public void selectedColonizingOption(String s);
-    public String selectedFuelRangeOption();
-    public void selectedFuelRangeOption(String s);
     public String selectedOpponentAIOption();
     public void selectedOpponentAIOption(String s);
     public String specificOpponentAIOption(int empId);
@@ -248,15 +240,6 @@ public interface IGameOptions {
     public void selectedOpponentRace(int i, String s);
 
     default void copyOptions(IGameOptions opt) { }
-    default float fuelRangeMultiplier() {
-        switch(selectedFuelRangeOption()) {
-            case FUEL_RANGE_NORMAL: return 1;
-            case FUEL_RANGE_HIGH: return 1.5f;
-            case FUEL_RANGE_HIGHER: return 2;
-            case FUEL_RANGE_HIGHEST: return 2.5f;
-            default: return 1;
-        }
-    }
     default String nextGalaxySize(boolean bounded) {
         List<String> opts = galaxySizeOptions();
         int index = opts.indexOf(selectedGalaxySize())+1;
@@ -377,11 +360,6 @@ public interface IGameOptions {
     default String nextColonizingOption() {
         List<String> opts = colonizingOptions();
         int index = opts.indexOf(selectedColonizingOption())+1;
-        return index >= opts.size() ? opts.get(0) : opts.get(index);
-    }
-    default String nextFuelRangeOption() {
-        List<String> opts = fuelRangeOptions();
-        int index = opts.indexOf(selectedFuelRangeOption())+1;
         return index >= opts.size() ? opts.get(0) : opts.get(index);
     }
     default String nextAutoplayOption() {
