@@ -72,7 +72,7 @@ public class AI implements Base {
                 shipDesigner =   new rotp.model.ai.modnar.AIShipDesigner(empire);
                 fleetCommander = new rotp.model.ai.modnar.AIFleetCommander(empire);
                 spyMaster =      new rotp.model.ai.modnar.AISpyMaster(empire);
-                treasurer =      new rotp.model.ai.modnar.AITreasurer(empire);
+                treasurer =      new rotp.model.ai.base.AITreasurer(empire);
                 break;
             case XILMI:
                 general =        new rotp.model.ai.xilmi.AIGeneral(empire);
