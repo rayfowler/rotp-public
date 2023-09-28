@@ -57,14 +57,8 @@ public class Leader implements Base, Serializable {
     public Leader(Empire c, String s) {
         empire = c;
         name = s;
-        if (!c.isPlayerControlled() && options().randomizeAIPersonality()) {
-            personality = random(Personality.values());
-            objective = random(Objective.values());
-        }
-        else {
-            personality = Personality.values()[empire.race().randomLeaderAttitude()];
-            objective = Objective.values()[empire.race().randomLeaderObjective()];
-        }
+        personality = Personality.values()[empire.race().randomLeaderAttitude()];
+        objective = Objective.values()[empire.race().randomLeaderObjective()];
     }
     public String objective()   { return text(objective.label); }
     public String personality() { return text(personality.label); }
@@ -84,14 +78,7 @@ public class Leader implements Base, Serializable {
     public boolean isTechnologist() { return (objective == Objective.TECHNOLOGIST); }
 
     public String dialogueContactType() {
-        Personality p = personality;
-        
-        // when using the random personality option, use the most common attitude for  
-        // contact dialogue since there is not text for every race/attitude combination
-        if (options().randomizeAIPersonality())
-            p = Personality.values()[empire.race().mostCommonLeaderAttitude()];
-
-        switch(p) {
+        switch(personality) {
             case PACIFIST:   return DialogueManager.CONTACT_PACIFIST;
             case HONORABLE:  return DialogueManager.CONTACT_HONORABLE;
             case RUTHLESS:   return DialogueManager.CONTACT_RUTHLESS;

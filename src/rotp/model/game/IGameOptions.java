@@ -112,11 +112,6 @@ public interface IGameOptions {
     public static final String FUEL_RANGE_HIGH     = "SETUP_FUEL_RANGE_HIGH";
     public static final String FUEL_RANGE_HIGHER   = "SETUP_FUEL_RANGE_HIGHER";
     public static final String FUEL_RANGE_HIGHEST  = "SETUP_FUEL_RANGE_HIGHEST";
-    
-    public static final String RANDOMIZE_AI_NONE        = "SETUP_RANDOMIZE_AI_NONE";
-    public static final String RANDOMIZE_AI_PERSONALITY = "SETUP_RANDOMIZE_AI_PERSONALITY";
-    public static final String RANDOMIZE_AI_ABILITY     = "SETUP_RANDOMIZE_AI_ABILITY";
-    public static final String RANDOMIZE_AI_BOTH        = "SETUP_RANDOMIZE_AI_BOTH";
 
     public static final String AI_HOSTILITY_LOWEST   = "SETUP_AI_HOSTILITY_LOWEST";
     public static final String AI_HOSTILITY_LOWER    = "SETUP_AI_HOSTILITY_LOWER";
@@ -146,24 +141,6 @@ public interface IGameOptions {
     public default boolean restrictedColonization() { return selectedColonizingOption().equals(COLONIZING_RESTRICTED); }
     public default int baseAIRelationsAdj()       { return 0; }
     public default int selectedAI(Empire e)       { return AI.BASE; }
-    public default boolean randomizeAIPersonality()  { 
-        switch (selectedRandomizeAIOption()) {
-            case RANDOMIZE_AI_PERSONALITY:
-            case RANDOMIZE_AI_BOTH:
-                return true;
-            default:
-                return false;
-        }
-    }
-    public default boolean randomizeAIAbility()  { 
-        switch (selectedRandomizeAIOption()) {
-            case RANDOMIZE_AI_ABILITY:
-            case RANDOMIZE_AI_BOTH:
-                return true;
-            default:
-                return false;
-        }
-    }
     public String name();
     public void setToDefault();
 
@@ -207,7 +184,6 @@ public interface IGameOptions {
     public List<String> terraformingOptions();
     public List<String> colonizingOptions();
     public List<String> fuelRangeOptions();
-    public List<String> randomizeAIOptions();
     public List<String> autoplayOptions();
     public List<String> opponentAIOptions();
     public List<String> specificOpponentAIOptions();
@@ -245,8 +221,6 @@ public interface IGameOptions {
     public void selectedColonizingOption(String s);
     public String selectedFuelRangeOption();
     public void selectedFuelRangeOption(String s);
-    public String selectedRandomizeAIOption();
-    public void selectedRandomizeAIOption(String s);
     public String selectedOpponentAIOption();
     public void selectedOpponentAIOption(String s);
     public String specificOpponentAIOption(int empId);
@@ -421,11 +395,6 @@ public interface IGameOptions {
     default String nextFuelRangeOption() {
         List<String> opts = fuelRangeOptions();
         int index = opts.indexOf(selectedFuelRangeOption())+1;
-        return index >= opts.size() ? opts.get(0) : opts.get(index);
-    }
-    default String nextRandomizeAIOption() {
-        List<String> opts = randomizeAIOptions();
-        int index = opts.indexOf(selectedRandomizeAIOption())+1;
         return index >= opts.size() ? opts.get(0) : opts.get(index);
     }
     default String nextAutoplayOption() {

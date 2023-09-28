@@ -371,12 +371,7 @@ public final class Empire implements Base, NamedObject, Serializable {
             g.player(this);
         }
 
-        // if not the player, we may randomize the race ability
-        if ((empId != Empire.PLAYER_ID) && options().randomizeAIAbility())
-            dataRaceKey = random(options().startingRaceOptions());
-        else
-            dataRaceKey = raceKey;
-        
+        dataRaceKey = raceKey;
         colorId(cId);
         Race r = race();
         String raceName = r.nextAvailableName();

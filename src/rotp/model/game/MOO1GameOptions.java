@@ -62,7 +62,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private String selectedPlanetQualityOption;
     private String selectedTerraformingOption;
     private String selectedFuelRangeOption;
-    private String selectedRandomizeAIOption;
     private String selectedAIHostilityOption;
     private String selectedColonizingOption;
     private String selectedOpponentAIOption;
@@ -170,10 +169,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     @Override
     public void selectedFuelRangeOption(String s) { selectedFuelRangeOption = s; }
     @Override
-    public String selectedRandomizeAIOption()       { return selectedRandomizeAIOption == null ? RANDOMIZE_AI_NONE : selectedRandomizeAIOption; }
-    @Override
-    public void selectedRandomizeAIOption(String s) { selectedRandomizeAIOption = s; }
-    @Override
     public String selectedAutoplayOption()          { return selectedAutoplayOption == null ? AUTOPLAY_OFF : selectedAutoplayOption; }
     @Override
     public void selectedAutoplayOption(String s)    { selectedAutoplayOption = s; }
@@ -266,7 +261,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedPlanetQualityOption = opt.selectedPlanetQualityOption;
         selectedTerraformingOption = opt.selectedTerraformingOption;
         selectedFuelRangeOption = opt.selectedFuelRangeOption;
-        selectedRandomizeAIOption = opt.selectedRandomizeAIOption;
         selectedAutoplayOption = opt.selectedAutoplayOption;
         selectedAIHostilityOption = opt.selectedAIHostilityOption;
         selectedColonizingOption = opt.selectedColonizingOption;
@@ -767,15 +761,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         return list;
     }
     @Override
-    public List<String> randomizeAIOptions() {
-        List<String> list = new ArrayList<>();
-        list.add(RANDOMIZE_AI_NONE);
-        list.add(RANDOMIZE_AI_PERSONALITY);
-        list.add(RANDOMIZE_AI_ABILITY);
-        list.add(RANDOMIZE_AI_BOTH);
-        return list;
-    }
-    @Override
     public List<String> autoplayOptions() {
         List<String> list = new ArrayList<>();
         list.add(AUTOPLAY_OFF);
@@ -846,7 +831,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedFuelRangeOption = FUEL_RANGE_NORMAL;
         selectedNebulaeOption = NEBULAE_NORMAL;
         selectedStarDensityOption = STAR_DENSITY_NORMAL;
-        selectedRandomizeAIOption = RANDOMIZE_AI_NONE;
         selectedAutoplayOption = AUTOPLAY_OFF;
         selectedAIHostilityOption = AI_HOSTILITY_NORMAL;
     }
