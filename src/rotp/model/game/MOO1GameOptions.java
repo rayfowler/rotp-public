@@ -32,7 +32,6 @@ import rotp.model.galaxy.StarSystem;
 import rotp.model.galaxy.StarType;
 import rotp.model.planet.Planet;
 import rotp.model.planet.PlanetType;
-import rotp.model.tech.TechEngineWarp;
 import rotp.ui.game.SetupGalaxyUI;
 import rotp.util.Base;
 
@@ -54,7 +53,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private String selectedResearchRate;
     private String selectedTechTradeOption;
     private String selectedRandomEventOption;
-    private String selectedWarpSpeedOption;
     private String selectedNebulaeOption;
     private int selectedNumberOpponents;
     private boolean disableRandomEvents = false;
@@ -140,10 +138,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     public String selectedRandomEventOption()       { return selectedRandomEventOption == null ? RANDOM_EVENTS_ON : selectedRandomEventOption; }
     @Override
     public void selectedRandomEventOption(String s) { selectedRandomEventOption = s; }
-    @Override
-    public String selectedWarpSpeedOption()         { return selectedWarpSpeedOption == null ? WARP_SPEED_NORMAL : selectedWarpSpeedOption; }
-    @Override
-    public void selectedWarpSpeedOption(String s)   { selectedWarpSpeedOption = s; }
     @Override
     public String selectedNebulaeOption()           { return selectedNebulaeOption == null ? NEBULAE_NORMAL : selectedNebulaeOption; }
     @Override
@@ -255,7 +249,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedResearchRate = opt.selectedResearchRate;
         selectedTechTradeOption = opt.selectedTechTradeOption;
         selectedRandomEventOption = opt.selectedRandomEventOption;
-        selectedWarpSpeedOption = opt.selectedWarpSpeedOption;
         selectedNebulaeOption = opt.selectedNebulaeOption;
         selectedStarDensityOption = opt.selectedStarDensityOption;
         selectedPlanetQualityOption = opt.selectedPlanetQualityOption;
@@ -459,14 +452,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
             case RANDOM_EVENTS_NO_MONSTERS: return !ev.monsterEvent();
         }
         return true;
-    }
-    @Override
-    public int warpSpeed(TechEngineWarp tech) {
-        switch(selectedWarpSpeedOption()) {
-            case WARP_SPEED_NORMAL:  return tech.baseWarp();
-            case WARP_SPEED_FAST: return fibonacci(tech.baseWarp());
-        }
-        return tech.baseWarp();
     }
     @Override
     public String randomStarType() {
@@ -685,13 +670,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         return list;
     }
     @Override
-    public List<String> warpSpeedOptions() {
-        List<String> list = new ArrayList<>();
-        list.add(WARP_SPEED_NORMAL);
-        list.add(WARP_SPEED_FAST);
-        return list;
-    }
-    @Override
     public List<String> nebulaeOptions() {
         List<String> list = new ArrayList<>();
         list.add(NEBULAE_NONE);
@@ -827,7 +805,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedResearchRate = RESEARCH_NORMAL;
         selectedTechTradeOption = TECH_TRADING_YES;
         selectedRandomEventOption = RANDOM_EVENTS_ON;
-        selectedWarpSpeedOption = WARP_SPEED_NORMAL;
         selectedFuelRangeOption = FUEL_RANGE_NORMAL;
         selectedNebulaeOption = NEBULAE_NORMAL;
         selectedStarDensityOption = STAR_DENSITY_NORMAL;

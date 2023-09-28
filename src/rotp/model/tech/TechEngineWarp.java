@@ -54,7 +54,7 @@ public final class TechEngineWarp extends Tech {
         }
     }
     public int baseWarp()                { return baseWarp; }
-    public int warp()                    { return options().warpSpeed(this); }
+    public int warp()                    { return baseWarp; }
     @Override
     public float warModeFactor()        { return 1.5f; }
     @Override

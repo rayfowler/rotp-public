@@ -24,7 +24,6 @@ import rotp.model.events.RandomEvent;
 import rotp.model.galaxy.GalaxyShape;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.planet.Planet;
-import rotp.model.tech.TechEngineWarp;
 import rotp.ui.game.SetupGalaxyUI;
 
 public interface IGameOptions {
@@ -76,9 +75,6 @@ public interface IGameOptions {
     public static final String RANDOM_EVENTS_ON  = "SETUP_RANDOM_EVENTS_ON";
     public static final String RANDOM_EVENTS_OFF = "SETUP_RANDOM_EVENTS_OFF";
     public static final String RANDOM_EVENTS_NO_MONSTERS = "SETUP_RANDOM_EVENTS_NO_MONSTERS";
-    
-    public static final String WARP_SPEED_NORMAL = "SETUP_WARP_SPEED_NORMAL";
-    public static final String WARP_SPEED_FAST   = "SETUP_WARP_SPEED_FAST";
     
     public static final String NEBULAE_NONE      = "SETUP_NEBULA_NONE";
     public static final String NEBULAE_RARE      = "SETUP_NEBULA_RARE";
@@ -150,7 +146,6 @@ public interface IGameOptions {
     public List<Integer> possibleColors();
     public float researchCostBase(int techLevel);
     public boolean canTradeTechs(Empire e1, Empire e2);
-    public int warpSpeed(TechEngineWarp tech);
     public boolean allowRandomEvent(RandomEvent ev);
     public String randomStarType();
     public String randomPlayerStarType(Race r);
@@ -176,7 +171,6 @@ public interface IGameOptions {
     public List<String> researchRateOptions();
     public List<String> techTradingOptions();
     public List<String> randomEventOptions();
-    public List<String> warpSpeedOptions();
     public List<String> nebulaeOptions();
     public List<String> starDensityOptions();
     public List<String> aiHostilityOptions();
@@ -205,8 +199,6 @@ public interface IGameOptions {
     public void selectedTechTradeOption(String s);
     public String selectedRandomEventOption();
     public void selectedRandomEventOption(String s);
-    public String selectedWarpSpeedOption();
-    public void selectedWarpSpeedOption(String s);
     public String selectedNebulaeOption();
     public void selectedNebulaeOption(String s);
     public String selectedStarDensityOption();
@@ -355,11 +347,6 @@ public interface IGameOptions {
     default String nextRandomEventOption() {
         List<String> opts = randomEventOptions();
         int index = opts.indexOf(selectedRandomEventOption())+1;
-        return index >= opts.size() ? opts.get(0) : opts.get(index);
-    }
-    default String nextWarpSpeedOption() {
-        List<String> opts = warpSpeedOptions();
-        int index = opts.indexOf(selectedWarpSpeedOption())+1;
         return index >= opts.size() ? opts.get(0) : opts.get(index);
     }
     default String nextNebulaeOption() {
