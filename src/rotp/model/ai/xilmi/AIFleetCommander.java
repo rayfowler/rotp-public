@@ -859,7 +859,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                             transportsToDealWith = max(transportsToDealWith, systemInfoBuffer.get(fleet.sysId()).myIncomingTransports);
                         if(transportsToDealWith > 0)
                         {
-                            float TransportKills = fleet.firepowerAntiShip(0) * transportGauntletRounds(max(1, empire.tech().topEngineWarpTech().baseWarp() - 1)) / empire.tech().topArmorTech().transportHP;
+                            float TransportKills = fleet.firepowerAntiShip(0) * transportGauntletRounds(max(1, empire.tech().topEngineWarpTech().warp() - 1)) / empire.tech().topArmorTech().transportHP;
                             transportsToDealWith *= 1 - empire.combatTransportPct();
                             stayToKillTransports = fleet.bcValue() * min(1, transportsToDealWith / TransportKills);
                             //System.out.print("\n"+galaxy().currentTurn()+" "+fleet.empire().name()+" Fleet at "+fleet.system().name()+" should be able to kill "+TransportKills+"/"+transportsToDealWith+" transports. Need to keep: "+stayToKillTransports+" of "+fleet.bcValue());
@@ -950,7 +950,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                                 float TransportKillBCNeeded = 0;
                                 if(incomingTransports > 0)
                                 {
-                                    float TransportKills = fleet.firepowerAntiShip(0) * transportGauntletRounds(max(1, empire.tech().topEngineWarpTech().baseWarp() - 1)) / empire.tech().topArmorTech().transportHP;
+                                    float TransportKills = fleet.firepowerAntiShip(0) * transportGauntletRounds(max(1, empire.tech().topEngineWarpTech().warp() - 1)) / empire.tech().topArmorTech().transportHP;
                                     incomingTransports *= 1 - empire.combatTransportPct();
                                     TransportKillBCNeeded = fleet.bcValue() * min(1, incomingTransports / TransportKills);
                                     //System.out.print("\n"+galaxy().currentTurn()+" "+fleet.empire().name()+" Fleet at "+fleet.system().name()+" should be able to kill "+TransportKills+"/"+transportsToDealWith+" transports. Need to keep: "+stayToKillTransports+" of "+fleet.bcValue());

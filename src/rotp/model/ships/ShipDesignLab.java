@@ -499,7 +499,7 @@ public class ShipDesignLab implements Base, Serializable {
     }
     public List<ShipManeuver> availableManeuversForDesign(ShipDesign d) {
         List<ShipManeuver> manvList = new ArrayList<>();
-        int engWarpLevel = d.engine().baseWarp();
+        int engWarpLevel = d.engine().warp();
         for (ShipManeuver manv: maneuver) {
             if (manv.level() <= engWarpLevel)
                 manvList.add(manv);

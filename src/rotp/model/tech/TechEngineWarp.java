@@ -21,7 +21,7 @@ import rotp.model.ships.ShipEngine;
 import rotp.model.ships.ShipManeuver;
 
 public final class TechEngineWarp extends Tech {
-    private int baseWarp;
+    private int warp;
     public String shName;
 
     public TechEngineWarp(String typeId, int lv, int seq, boolean b, TechCategory c) {
@@ -42,19 +42,18 @@ public final class TechEngineWarp extends Tech {
         techType = Tech.ENGINE_WARP;
 
         switch(typeSeq) {
-            case 0: baseWarp = 1; break;
-            case 1: baseWarp = 2; break;
-            case 2: baseWarp = 3; break;
-            case 3: baseWarp = 4; break;
-            case 4: baseWarp = 5; break;
-            case 5: baseWarp = 6; break;
-            case 6: baseWarp = 7; break;
-            case 7: baseWarp = 8; break;
-            case 8: baseWarp = 9; break;
+            case 0: warp = 1; break;
+            case 1: warp = 2; break;
+            case 2: warp = 3; break;
+            case 3: warp = 4; break;
+            case 4: warp = 5; break;
+            case 5: warp = 6; break;
+            case 6: warp = 7; break;
+            case 7: warp = 8; break;
+            case 8: warp = 9; break;
         }
     }
-    public int baseWarp()                { return baseWarp; }
-    public int warp()                    { return baseWarp; }
+    public int warp()                    { return warp; }
     @Override
     public float warModeFactor()        { return 1.5f; }
     @Override
@@ -91,12 +90,12 @@ public final class TechEngineWarp extends Tech {
     }
     @Override
     public float baseCost() {
-        return baseWarp * 2;
+        return warp * 2;
     }
-    public float powerOutput() { return baseWarp * 10; }
+    public float powerOutput() { return warp * 10; }
     @Override
     public float baseSize(ShipDesign d) {
-        switch(baseWarp) {
+        switch(warp) {
             case 1: return 10;
             case 2: return 18;
             case 3: return 26;
@@ -107,7 +106,7 @@ public final class TechEngineWarp extends Tech {
             case 8: return 47;
             case 9: return 50;
         }
-        return (23 + (baseWarp * 3));
+        return (23 + (warp * 3));
     }
     public float baseManeuverSize(int size, int engineWarp) {
         switch (size) {
@@ -120,10 +119,10 @@ public final class TechEngineWarp extends Tech {
     }
     public float baseManeuverPower(int size, int engineWarp) {
         switch (size) {
-            case ShipDesign.SMALL:  return 2 * baseWarp / engineWarp;
-            case ShipDesign.MEDIUM: return 15 * baseWarp / engineWarp;
-            case ShipDesign.LARGE:  return 100 * baseWarp / engineWarp;
-            case ShipDesign.HUGE:   return 700 * baseWarp / engineWarp;
+            case ShipDesign.SMALL:  return 2 * warp / engineWarp;
+            case ShipDesign.MEDIUM: return 15 * warp / engineWarp;
+            case ShipDesign.LARGE:  return 100 * warp / engineWarp;
+            case ShipDesign.HUGE:   return 700 * warp / engineWarp;
         }
         return 0;
     }

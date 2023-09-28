@@ -746,8 +746,8 @@ public final class TechTree implements Base, Serializable {
         return max(1, (topSpeed() - 1));
     }
     public float transportCombatSpeed() {
-        float topBaseWarp = topEngineWarpTech == null ? 1 : topEngineWarpTech().baseWarp();
-        return max(1, (topBaseWarp - 1));
+        float topWarp = topEngineWarpTech == null ? 1 : topEngineWarpTech().warp();
+        return max(1, (topWarp - 1));
     }
     public float shipDamageRepairPct() {
         return topAutomatedRepairTech == null ? 0 : topAutomatedRepairTech().repairAdj;
