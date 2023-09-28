@@ -630,8 +630,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             return;
         if (hoverBox == null)
             return;
-        int x = e.getX();
-        int y = e.getY();
         if (hoverBox == galaxyAgeText.bounds())
             toggleGalaxyAge();
         else if (hoverBox == starDensityText.bounds())

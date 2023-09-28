@@ -31,11 +31,9 @@ import rotp.model.ai.interfaces.Treasurer;
 import rotp.model.colony.Colony;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
-import rotp.model.empires.SystemView;
 import rotp.model.galaxy.IMappedObject;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
-import rotp.model.planet.Planet;
 import rotp.model.ships.ShipDesign;
 import rotp.ui.UserPreferences;
 import rotp.ui.notifications.BombardSystemNotification;
@@ -264,22 +262,6 @@ public class AI implements Base {
 
         // else don't bomb
         return false;
-    }
-    private float targetPopPct(SystemView sv) {
-        if (sv.borderSystem()) return .75f;
-        
-        Planet pl = sv.system().planet();
-
-        if (pl.isResourceRich()) return .75f;
-        if (pl.isResourceUltraRich()) return .75f;
-        if (pl.isArtifact()) return .75f;
-        if (pl.isOrionArtifact()) return .75f;
-        if (pl.currentSize() <= 20) return .75f;
-
-        if (sv.supportSystem()) return .5f;
-        if (pl.currentSize() <= 40) return .5f;
-
-        return .25f;
     }
     class ColonyTransporter implements IMappedObject {
         Colony colony;
