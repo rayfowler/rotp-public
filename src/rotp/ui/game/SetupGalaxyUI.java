@@ -457,11 +457,6 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         newGameOptions().selectedOpponentAIOption(newGameOptions().prevOpponentAI());
         repaint();
     }
-    public void nextResearchRate(boolean click) {
-        if (click) softClick();
-        newGameOptions().selectedResearchRate(newGameOptions().nextResearchRate());
-        repaint();
-    }
     public void increaseOpponents(boolean click) {
         int numOpps = newGameOptions().selectedNumberOpponents();
         if (numOpps >= newGameOptions().maximumOpponentsOptions())

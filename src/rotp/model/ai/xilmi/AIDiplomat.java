@@ -1959,7 +1959,7 @@ public class AIDiplomat implements Base, Diplomat {
         for(int i = 0; i < NUM_CATEGORIES; ++i)
         {
             int levelToCheck = (int)Math.ceil(empire.tech().category(i).techLevel());
-            float techCost = empire.tech().category(i).baseResearchCost(levelToCheck) * levelToCheck * levelToCheck * empire.techMod(i);
+            float techCost = empire.tech().category(i).baseResearchCost() * levelToCheck * levelToCheck * empire.techMod(i);
             if(techCost < empire.totalIncome())
             {
                 //System.out.println(galaxy().currentTurn()+" "+empire.name()+" cat: "+empire.tech().category(i).id()+" techlevel: "+levelToCheck+" techcost: "+techCost+" income: "+empire.totalIncome());

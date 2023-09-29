@@ -120,7 +120,7 @@ public final class TechCategory implements Base, Serializable {
         }
         allocation(MAX_ALLOCATION_TICKS);
     }
-    public float baseResearchCost(int techLevel)  { return options().researchCostBase(techLevel)*session().researchMapSizeAdjustment();}
+    public float baseResearchCost()  { return 30f*session().researchMapSizeAdjustment();}
     private void init() {
         if (!tree.spy())
             buildResearchList();
@@ -423,7 +423,7 @@ public final class TechCategory implements Base, Serializable {
         return r;
     }
     public int costForTech(Tech t) {
-        float rawCost = baseResearchCost(t.level) * t.level * t.level * racialMod();
+        float rawCost = baseResearchCost() * t.level * t.level * racialMod();
         if (rawCost > 1000000000) 
             return (int)Math.ceil(rawCost/100000000)*100000000;
         else if (rawCost > 100000000) 

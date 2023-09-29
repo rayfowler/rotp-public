@@ -23,9 +23,6 @@ import rotp.model.empires.EmpireView;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.Ships;
 import rotp.model.galaxy.StarSystem;
-import static rotp.model.game.IGameOptions.RESEARCH_SLOW;
-import static rotp.model.game.IGameOptions.RESEARCH_SLOWER;
-import static rotp.model.game.IGameOptions.RESEARCH_SLOWEST;
 import rotp.model.planet.PlanetType;
 import rotp.model.ships.ShipDesign;
 import static rotp.model.ships.ShipDesign.maxSpecials;
@@ -547,15 +544,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
         float rangeTechLevelThreshold = 9;
         
         rangeTechLevelThreshold /= max(1.0f, session().researchMapSizeAdjustment());
-        
-        //System.out.print("\n"+empire.name()+" rangeTechLevelThreshold for galaxysize/empires: "+rangeTechLevelThreshold);
-        
-        if(session().options().selectedResearchRate().equals(RESEARCH_SLOW))
-            rangeTechLevelThreshold /= sqrt(9/3.0f);
-        else if(session().options().selectedResearchRate().equals(RESEARCH_SLOWER))
-            rangeTechLevelThreshold /= sqrt(9);
-        else if(session().options().selectedResearchRate().equals(RESEARCH_SLOWEST))
-            rangeTechLevelThreshold /= sqrt(9*5);
             
         if(empire.uncolonizedPlanetsInRange(empire.shipRange()).isEmpty() 
                 && empire.enemies().isEmpty()

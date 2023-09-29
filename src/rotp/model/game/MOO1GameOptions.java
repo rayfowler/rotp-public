@@ -37,7 +37,6 @@ import rotp.util.Base;
 
 public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private static final long serialVersionUID = 1L;
-    private static final float BASE_RESEARCH_MOD = 30f;
     private final String[] opponentRaces = new String[MAX_OPPONENTS];
     private final List<Integer> colors = new ArrayList<>();
     private final List<Color> empireColors = new ArrayList<>();
@@ -50,7 +49,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     
     private String selectedGalaxyAge;
     private String selectedGameDifficulty;
-    private String selectedResearchRate;
     private String selectedTechTradeOption;
     private String selectedRandomEventOption;
     private String selectedNebulaeOption;
@@ -125,10 +123,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     public String selectedGameDifficulty()       { return selectedGameDifficulty; }
     @Override
     public void selectedGameDifficulty(String s) { selectedGameDifficulty = s; }
-    @Override
-    public String selectedResearchRate()         { return selectedResearchRate == null ? RESEARCH_NORMAL : selectedResearchRate; }
-    @Override
-    public void selectedResearchRate(String s)   { selectedResearchRate = s; }
     @Override
     public String selectedTechTradeOption()         { return selectedTechTradeOption == null ? TECH_TRADING_YES : selectedTechTradeOption; }
     @Override
@@ -241,7 +235,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedNumberOpponents = opt.selectedNumberOpponents;
 
         selectedGalaxyAge = opt.selectedGalaxyAge;
-        selectedResearchRate = opt.selectedResearchRate;
         selectedTechTradeOption = opt.selectedTechTradeOption;
         selectedRandomEventOption = opt.selectedRandomEventOption;
         selectedNebulaeOption = opt.selectedNebulaeOption;
@@ -394,26 +387,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
             case TERRAFORMING_NONE:  return 0.0f;
             case TERRAFORMING_REDUCED: return 0.5f;
             default:  return 1.0f;
-        }
-    }
-    @Override
-    public float researchCostBase(int techLevel) {
-        // this is a flat research rate adjustment. The method that calls this to calculate
-        // the research cost already factors in the tech level (squared), the map sizes, and
-        // the number of opponents.
-        
-        // the various "slowing" options increase the research cost for higher tech levels
-        
-        float amt = BASE_RESEARCH_MOD;                  // default adjustment
-        switch(selectedResearchRate()) {
-            case RESEARCH_SLOW:
-                return amt*sqrt(techLevel/3.0f); // approx. 4x slower for level 50
-            case RESEARCH_SLOWER:
-                return amt*sqrt(techLevel);   // approx. 7x slower for level 50
-            case RESEARCH_SLOWEST:
-                return amt*sqrt(techLevel*5); // approx. 16x slower for level 50
-            default:  
-                return amt;                   // no additional slowing. 
         }
     }
     @Override
@@ -639,15 +612,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         return list;
     }
     @Override
-    public List<String> researchRateOptions() {
-        List<String> list = new ArrayList<>();
-        list.add(RESEARCH_NORMAL);
-        list.add(RESEARCH_SLOW);
-        list.add(RESEARCH_SLOWER);
-        list.add(RESEARCH_SLOWEST);
-        return list;
-    }
-    @Override
     public List<String> techTradingOptions() {
         List<String> list = new ArrayList<>();
         list.add(TECH_TRADING_YES);
@@ -787,7 +751,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedPlanetQualityOption = PLANET_QUALITY_NORMAL;
         selectedTerraformingOption = TERRAFORMING_NORMAL;
         selectedColonizingOption = COLONIZING_NORMAL;
-        selectedResearchRate = RESEARCH_NORMAL;
         selectedTechTradeOption = TECH_TRADING_YES;
         selectedRandomEventOption = RANDOM_EVENTS_ON;
         selectedNebulaeOption = NEBULAE_NORMAL;

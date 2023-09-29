@@ -273,7 +273,7 @@ public class AIScientist implements Base, Scientist {
             if(tech(empire.tech().category(i).currentTech()) != null)
                 totalTechCost += tech(empire.tech().category(i).currentTech()).researchCost();
             else
-                totalTechCost += empire.tech().category(i).baseResearchCost(Math.round(empire.tech().category(i).techLevel()));
+                totalTechCost += empire.tech().category(i).baseResearchCost();
         
         float totalInverse = 0;
         
@@ -281,13 +281,13 @@ public class AIScientist implements Base, Scientist {
             if(tech(empire.tech().category(i).currentTech()) != null)
                 totalInverse += totalTechCost / tech(empire.tech().category(i).currentTech()).researchCost();
             else
-                totalInverse += totalTechCost / empire.tech().category(i).baseResearchCost(Math.round(empire.tech().category(i).techLevel()));
+                totalInverse += totalTechCost / empire.tech().category(i).baseResearchCost();
         
         for(int i = 0; i < 6; ++i)
             if(tech(empire.tech().category(i).currentTech()) != null)
                 empire.tech().category(i).allocationPct((totalTechCost / tech(empire.tech().category(i).currentTech()).researchCost()) / totalInverse);
             else
-                empire.tech().category(i).allocationPct((totalTechCost / empire.tech().category(i).baseResearchCost(Math.round(empire.tech().category(i).techLevel()))) / totalInverse);
+                empire.tech().category(i).allocationPct((totalTechCost / empire.tech().category(i).baseResearchCost()) / totalInverse);
         
         if (empire.fleetCommanderAI().inExpansionMode()) {
             if(empire.ignoresPlanetEnvironment())
