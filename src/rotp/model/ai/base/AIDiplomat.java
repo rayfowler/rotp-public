@@ -35,7 +35,6 @@ import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.incidents.AlliedWithEnemyIncident;
 import rotp.model.incidents.AtWarWithAllyIncident;
-import rotp.model.incidents.BioweaponIncident;
 import rotp.model.incidents.ColonyAttackedIncident;
 import rotp.model.incidents.ColonyCapturedIncident;
 import rotp.model.incidents.ColonyDestroyedIncident;
@@ -1806,10 +1805,6 @@ public class AIDiplomat implements Base, Diplomat {
     @Override
     public int leaderGenocideDurationMod() { 
         return empire.leader().genocideDurationMod();
-    } 
-    @Override
-    public float leaderBioweaponMod()         { 
-        return empire.leader().bioweaponMod();
     }
     @Override
     public int leaderOathBreakerDuration() { 
@@ -1857,12 +1852,5 @@ public class AIDiplomat implements Base, Diplomat {
     }
     @Override
     public  boolean leaderHatesAllSpies() { return empire.leader().isXenophobic(); }
-    
-    @Override
-    public boolean setSeverityAndDuration(BioweaponIncident inc)  { 
-        inc.severity = max(-30, -20*leaderBioweaponMod());
-        inc.duration = 50;
-        return true;
-    }
 
 }

@@ -21,7 +21,6 @@ import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.Leader.Personality;
 import rotp.model.incidents.DiplomaticIncident;
-import rotp.model.incidents.BioweaponIncident;
 // modnar: add incidents for modnar-AI
 import rotp.model.incidents.EspionageTechIncident;
 import rotp.model.incidents.FinancialAidIncident;
@@ -97,7 +96,6 @@ public interface Diplomat {
     float leaderContemptDeclareWarMod(Empire e);
     float leaderContemptAcceptPeaceMod(Empire e);
     int leaderGenocideDurationMod();
-    float leaderBioweaponMod();
     int leaderOathBreakerDuration();
     float leaderDiplomacyAnnoyanceMod(EmpireView v);
     float leaderDeclareWarMod();
@@ -114,7 +112,6 @@ public interface Diplomat {
     // generic api for overriding diplomat incident settings
     // create as needed for incidents, but always set default return false to false
     // when overriding, set return to true.
-    default boolean setSeverityAndDuration(BioweaponIncident inc)  { return false; }
     // modnar: add incidents for modnar-AI
     default boolean setSeverityAndDuration(EspionageTechIncident inc, float spySeverity)  { return false; }
     default boolean setSeverityAndDuration(FinancialAidIncident inc)  { return false; }

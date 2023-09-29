@@ -1817,10 +1817,6 @@ public class AIDiplomat implements Base, Diplomat {
     @Override
     public int leaderGenocideDurationMod() { 
         return empire.leader().genocideDurationMod();
-    } 
-    @Override
-    public float leaderBioweaponMod()         { 
-        return empire.leader().bioweaponMod();
     }
     @Override
     public int leaderOathBreakerDuration() { 

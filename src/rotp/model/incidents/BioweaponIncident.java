@@ -52,11 +52,8 @@ public class BioweaponIncident extends DiplomaticIncident {
         empVictim = v.id;
         sysId = sys.id;
         dateOccurred = galaxy().currentYear();
-
-        if (n.diplomatAI().setSeverityAndDuration(this))
-            return;
               
-        severity = max(-30, -20*n.diplomatAI().leaderBioweaponMod());
+        severity = max(-30, -20*n.leader().bioweaponMod());
         duration = 50;
     }
     private String systemName() { return player().sv.name(sysId); }

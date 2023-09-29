@@ -1744,10 +1744,6 @@ public class AIDiplomat implements Base, Diplomat {
             case ERRATIC:    return 25;
             default:         return 25;
         }
-    } 
-    @Override
-    public float leaderBioweaponMod()         { 
-        return 0;
     }
     @Override
     public int leaderOathBreakerDuration() { 
