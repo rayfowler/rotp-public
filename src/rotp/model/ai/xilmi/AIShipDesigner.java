@@ -15,13 +15,11 @@
  */
 package rotp.model.ai.xilmi;
 
-import java.util.Arrays;
 import java.util.List;
 import rotp.model.ai.interfaces.ShipDesigner;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.galaxy.ShipFleet;
-import rotp.model.galaxy.Ships;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.planet.PlanetType;
 import rotp.model.ships.ShipDesign;
@@ -149,7 +147,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
                     keepScore = (1 - d.availableSpace()/d.totalSpace()) * (float)d.engine().warp() / (float)lab().fastestEngine().warp();
                 }
                 keepScore *= keepScore;
-                float keepBeforeCounts = keepScore;
                 keepScore *= shipCounts[d.id()] * d.cost();
                 //we can scrap all that we don't need at all
                 //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+d.name()+" keepScore: "+keepScore+" before counts: "+keepBeforeCounts+" role: "+d.mission());

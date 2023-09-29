@@ -376,9 +376,6 @@ public class AIDiplomat implements Base, Diplomat {
     public Tech mostDesirableTech(EmpireView v) {
         return empire.ai().scientist().mostDesirableTech(v.empire().diplomatAI().offerableTechnologies(empire));
     }
-    private float techDealValue(EmpireView v) {
-        return 1.0f;
-    }
     //-----------------------------------
     //  TRADE TREATIES
     //-----------------------------------
@@ -484,14 +481,6 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         }
         return true;
-    }
-    private float baseChanceForTrade(EmpireView v) {
-        // -50 relations is minimum allowed to accept trade
-        float adjustedRelations = v.embassy().relations()+50;
-        float leaderMod = leaderAcceptTradeMod();
-        float raceBonusMod = v.empire().tradePctBonus();
-        float allianceMod = v.embassy().alliedWithEnemy() ? -50 : 0;
-        return adjustedRelations+leaderMod+raceBonusMod+allianceMod;
     }
     private String declineReasonText(EmpireView v) {
         DialogueManager dlg = DialogueManager.current();
@@ -889,15 +878,6 @@ public class AIDiplomat implements Base, Diplomat {
  
         DiplomaticIncident inc =  empire.viewForEmpire(targetId).embassy().declareJointWar(requestor);
         return empire.viewForEmpire(requestor).accept(DialogueManager.ACCEPT_JOINT_WAR, inc);   
-    }
-    private float bribeAmountToJointWar(Empire target) {
-        EmpireView v = empire.viewForEmpire(target);
-        float myFleets = empire.totalArmedFleetSize();
-        float tgtFleets = empire.totalFleetSize(target);
-        float myTech = empire.tech().avgTechLevel();
-        float tgtTech = v.spies().tech().avgTechLevel();
-        float fleetShortcoming = (tgtFleets*tgtTech)-(myFleets*myTech);
-        return max(0, fleetShortcoming);
     }
     @Override
     public DiplomaticReply acceptOfferJointWar(Empire requestor, Empire target) {
@@ -1454,11 +1434,6 @@ public class AIDiplomat implements Base, Diplomat {
         log(view+" - Declaring war based on opportunity");
         //System.out.print("\n"+empire.name()+" starts opportunity-war on "+view.empire().name());
         view.embassy().beginWarPreparations(DialogueManager.DECLARE_OPPORTUNITY_WAR, null);
-    }
-    //ail: I need a war that isn't checked for still being valid for our prevention-war
-    private void beginErraticWar(EmpireView view) {
-        log(view+" - Declaring war based on erratic");
-        view.embassy().beginWarPreparations(DialogueManager.DECLARE_ERRATIC_WAR, null);
     }
     @Override
     public Empire councilVoteFor(Empire civ1, Empire civ2) {

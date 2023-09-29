@@ -55,9 +55,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
     BaseText aiHostilityText;
     
     public StartOptionsUI() {
-        init0();
-    }
-    private void init0() {
         setOpaque(false);
         Color textC = SystemPanel.whiteText;
         galaxyAgeText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);

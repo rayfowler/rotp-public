@@ -74,7 +74,6 @@ import rotp.model.tech.TechSubspaceInterdictor;
 import rotp.model.tech.TechTeleporter;
 import rotp.model.tech.TechTorpedoWeapon;
 import rotp.model.tech.TechTree;
-import rotp.ui.UserPreferences;
 import rotp.ui.notifications.SelectTechNotification;
 import rotp.util.Base;
 

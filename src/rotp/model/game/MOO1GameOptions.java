@@ -83,12 +83,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     public int numColors()                       { return 10; }
     @Override
     public NewPlayer selectedPlayer()            { return player; }
-/*
-    @Override
-    public boolean communityAI()                 { return communityAI; }
-    @Override
-    public void communityAI(boolean b)           { communityAI = b; }
-    */
     @Override
     public boolean disableRandomEvents()         { return disableRandomEvents; }
     @Override
